@@ -1,0 +1,51 @@
+[
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends libsox-fmt-all sox libsox-dev",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "WORKDIR /workspace",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "RUN conda install ffmpeg -c conda-forge",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "RUN pip install musdb>=0.4.0",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "RUN pip install openunmix['stempeg']",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime",
+        "after_instruct": "ENTRYPOINT umx",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN pip install musdb>=0.4.0",
+        "after_instruct": "RUN pip install openunmix['stempeg']",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    }
+]

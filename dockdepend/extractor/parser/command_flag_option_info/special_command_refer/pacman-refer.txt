@@ -1,0 +1,59 @@
+--arch <arch>
+--asdeps
+--asexplicit
+--assume-installed <package_version>
+-b, --dbpath <path>
+--cachedir <dir>
+-c, --cascade
+-c, --changelog
+-c, -cc, --clean
+--color <when>
+--config <path>
+--confirm
+--dbonly
+-D --database
+-d, --deps
+-d, -dd, --nodeps
+--debug
+--disable-download-timeout
+-e, --explicit
+-F --files
+-g, -gg, --groups
+--gpgdir <path>
+-h --help
+--hookdir <dir>
+--ignoregroup <grp>
+--ignore <pkg>
+-i, -ii, --info
+-k, -kk, --check
+--logfile <path>
+--machinereadable
+-m, --foreign
+--needed
+-n, --native
+-n, --nosave
+--noconfirm
+--noprogressbar
+--noscriptlet
+-o, --owns <file>
+--overwrite <glob>
+--print-format <string>
+-Q --query
+-q, --quiet
+-R --remove
+-r, --root <path>
+-ss, --recursive
+-s, --search <regex>
+-S --sync
+--sysroot
+-T --deptest
+-t, -tt, --unrequired 
+-u, -uu, --sysupgrade
+-u, --unneeded
+-u, --upgrades
+-U --upgrade
+-v, --verbose
+-V --version
+-w, --downloadonly
+-x, --regex
+-y, -yy, --refresh

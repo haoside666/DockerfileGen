@@ -1,0 +1,8 @@
+{
+    "filename": "youxiang-Itchat###57b5bf1cee2a8e9f9ed1660fc27f1de45fd893d5.txt",
+    "command_length": 8,
+    "processing_time": 0.0013916492462158203,
+    "dependency_count": 13,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (2, 3), (2, 4), (2, 6), (3, 6), (4, 6), (5, 6)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /youxiang', 'exist file or directory dependency,because common path /youxiang/requirements.txt', 'exist file or directory dependency,because common path /youxiang', 'environment variable dependencies']"
+}

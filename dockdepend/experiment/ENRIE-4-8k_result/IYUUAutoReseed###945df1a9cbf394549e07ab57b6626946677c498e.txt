@@ -1,0 +1,13 @@
+```
+[(0, 1),  # LABEL依赖于FROM，因为LABEL指令通常在基础镜像之后定义元数据
+ (0, 2),  # ARG依赖于FROM，因为ARG指令定义参数，这些参数可能在后续指令中使用
+ (0, 3),  # ENV依赖于FROM，因为ENV指令设置环境变量，通常基于基础镜像
+ (0, 4),  # RUN依赖于FROM，因为RUN指令执行命令，需要基于基础镜像的环境
+ (1, 4),  # RUN也依赖于LABEL，尽管不直接使用LABEL，但LABEL为镜像提供元数据上下文
+ (2, 4),  # RUN依赖于ARG，因为RUN中可能使用了ARG定义的参数
+ (3, 4),  # RUN依赖于ENV，因为RUN中的命令可能会用到ENV设置的环境变量
+ (0, 5),  # WORKDIR依赖于FROM，因为WORKDIR设置工作目录，需要基于镜像的文件系统
+ (4, 5),  # WORKDIR依赖于RUN，因为RUN可能创建了WORKDIR要设置的目录
+ (0, 6),  # ENTRYPOINT依赖于FROM，因为ENTRYPOINT定义容器启动时运行的命令
+ (5, 6)]  # ENTRYPOINT依赖于WORKDIR，因为ENTRYPOINT中的命令可能在工作目录中执行
+```

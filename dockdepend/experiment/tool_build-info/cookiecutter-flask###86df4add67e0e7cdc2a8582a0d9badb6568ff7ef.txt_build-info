@@ -1,0 +1,8 @@
+{
+    "filename": "cookiecutter-flask###86df4add67e0e7cdc2a8582a0d9badb6568ff7ef.txt",
+    "command_length": 5,
+    "processing_time": 0.0010809898376464844,
+    "dependency_count": 5,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /requirements.txt']"
+}

@@ -1,0 +1,15 @@
+[
+	(0, 1),	# environment variable dependencies
+	(1, 2),	# Image dependency
+	(1, 3),	# Image dependency
+	(1, 4),	# Image dependency
+	(1, 5),	# Image dependency
+	(1, 6),	# Image dependency
+	(1, 7),	# Image dependency
+	(1, 8),	# Image dependency
+	(1, 9),	# Image dependency
+	(2, 3),	# environment variable dependencies
+	(2, 7),	# environment variable dependencies
+	(2, 8),	# environment variable dependencies
+	(6, 7),	# environment variable dependencies
+]

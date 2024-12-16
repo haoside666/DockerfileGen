@@ -1,0 +1,100 @@
+[
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN mkdir -p /usr/src/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "ENV NODE_ENV=production",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY package.json yarn.lock /usr/src/app/",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN yarn --pure-lockfile && yarn cache clean",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY . /usr/src/app",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "EXPOSE 3000",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "CMD yarn start",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/app",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /usr/src/app"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/app",
+        "after_instruct": "RUN yarn --pure-lockfile && yarn cache clean",
+        "edge": "(1, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /usr/src/app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY package.json yarn.lock /usr/src/app/",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "RUN yarn --pure-lockfile && yarn cache clean",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY . /usr/src/app",
+        "edge": "(2, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY package.json yarn.lock /usr/src/app/",
+        "after_instruct": "RUN yarn --pure-lockfile && yarn cache clean",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/app/package.json"
+    }
+]

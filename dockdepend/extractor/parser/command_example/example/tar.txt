@@ -1,0 +1,2501 @@
+tar xf -)
+tar -xvf openjdk-15.0.2_linux-x64_bin.tar.gz -C /usr/lib/jvm/
+tar xzf nginx-dav-ext-module.tar.gz
+tar xzf /tmp/nginx.tar.gz
+tar zxf ghostxps-9.26-linux-x86_64.tgz
+tar -zxC /usr/src -f ngx_devel_kit.tar.gz
+tar -C /opt -zxvf /tmp/fp-Linux.x86.32-ws.tar.gz
+tar -xf gowin.tgz
+tar -xf node-${NODEJS_VERSION}.tar.xz -C ${NODE_ROOT} --strip-components=1
+tar -zxvf gromacs-2018.3.tar.gz
+tar --strip-components=1 -axvf uwsgi-2.0.13.1.tar.gz
+tar xf kubeval-linux-amd64.tar.gz
+tar xzf $DANTE_FILE --strip 1
+tar -xzf chevereto.tar.gz --strip 1
+tar xvf firefox-46.0.tar
+tar zxf nginx-$nginx_version.tar.gz
+tar xf     /tmp/nzbnotify.tar.gz -C     /app/nzbnotify --strip-components=1
+tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc;
+tar xzvf gost_${GOST_VERSION}_linux_386.tar.gz
+tar -xzf flyway.tar.gz --strip-components=1
+tar -zxvf "stunnel-${STUNNEL_VERSION}.tar.gz"
+tar -zxf /tmp/s6-overlay-amd64.tar.gz -C /
+tar -xzf syslinux-"$SYSLINUX_VERSION".tar.gz
+tar cvzf libs.tar.gz ../lib
+tar xzvf helm.tar.gz
+tar zxf /tmp/linux.tar.gz -C ${PS_INSTALL_FOLDER}
+tar -zxf /tmp/turtlecoin.tar.gz --strip-components=1 -C ${TRTL_PATH}
+tar xf readline-6.3.tar.gz
+tar -xzf /tmp/google-cloud-sdk.tar.gz -C /usr/src/google-cloud-sdk --strip-components 1
+tar xvf /tmp/docker.tgz
+tar xf rav1e.tar.gz
+tar -xzf trnascan.tar.gz -C /tmp/trnascan
+tar -xzf liquibase-core-${LIQUIBASE_VERSION}-bin.tar.gz
+tar -x -C /opt -f /tmp/pypy2-v6.0.0-linux64.tar.bz2
+tar -zxf ./vcftools-0.1.14.tar.gz
+tar -xz --strip-components=1 -f v${LIBSRT_VERSION}.tar.gz
+tar xzf libsodium-1.0.2.tar.gz
+tar xvzf /lua-nginx.tar.gz
+tar zxf ${LUAROCKS}.tar.gz
+tar xf 2019_U1.tar.gz
+tar  xf hub.tgz
+tar -xjvf bwa-0.7.17.tar.bz2
+tar -xvzf lfs/git-lfs-linux-amd64-2.3.0.tar.gz
+tar -xzf /tmp/geckodriver.tar.gz -C /tmp/
+tar xvfz samba-samba-4.12.2.tar.gz
+tar -C / -xvzf /lua-resty-core.tar.gz
+tar xvfz dntk-linux-amd64-v1.0.8.tar.gz
+tar xzf nginx-${NGINX_VERSION}.tar.gz
+tar -zxvf helm-v3.0.1-linux-amd64.tar.gz
+tar xzf /chromaprint-${CHROMAPRINT_VERSION}.tar.gz -C /
+tar xzf /root/hadoop-2.9.2.tar.gz -C /root
+tar -xpj --overwrite -f ./Jetson_Linux_R32.4.3_aarch64.tbz2
+tar zxf ${NGINX_DEVEL_KIT}.tar.gz
+tar xzvf walle.tgz
+tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
+tar xf /opt/apache-maven-*.tar.gz -C /opt
+tar xzf /tmp/s6-overlay-$ARCH.tar.gz -C /
+tar -xvzf ./stack.tar.gz
+tar xvf samtools-1.9.tar.bz2
+tar -xf bitcoin-0.19.1-x86_64-linux-gnu.tar.gz
+tar -xzf spark-2.4.0-bin-hadoop2.7.tgz
+tar -zxvf bison-3.5.2.tar.gz
+tar xzf libiconv-${GNU_LIBICONV_VERSION}.tar.gz
+tar -zxvf /curl-7.82.0.tar.gz -C /usr/src --strip-components=1
+tar xf /opt/flutter*.xz
+tar -xf sqlany-php.tar.gz -C sqlany --strip-components=1
+tar xf libjpeg-turbo-1.4.1.tar.gz -C /src
+tar -zxvf steamcmd_linux.tar.gz
+tar -xf KronaTools-2.7.1.tar
+tar -zxvf vnc2flv-20100207.tar.gz
+tar -xf zendopcache-7.0.5.tgz
+tar --strip-components=1 -xaf perl-5.8.9.tar.bz2 -C /usr/src/perl
+tar -xzf "resin-xbuild1.0.0.tar.gz"
+tar -xzvf ngx_openresty-*.tar.gz
+tar -xzf httpx.tar.gz
+tar -xzvf uvncrep017-ws.tar.gz
+tar -xz --strip-components=1 -f v${LIBZMQ_VERSION}.tar.gz
+tar zxvf geoipupdate-${VERSION}.tar.gz
+tar xfv xmr-stak-cpu.tar.gz --strip 1 -C /opt/xmr-stak-cpu
+tar -xzvf /sserver
+tar vxf linux-4.8.2.tar.xz
+tar xzvf "unrarsrc-${RAR_VERSION}.tar.gz"
+tar -C / -xvzf /lua-openresty-shell.tar.gz
+tar zxvf salmon-1.1.0_linux_x86_64.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-amd64-libffi3.4.tar.gz" --strip-components=1
+tar xf /tmp/kodi.tar.gz -C /tmp/kodi_src --strip-components=1
+tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-v0.3.0.tar.gz
+tar xzf modules-${MODULE_VERSION}.tar.gz
+tar xzf src/target/universal/kafka-manager-$KAFKA_MANAGER_VERSION.tgz --strip 1
+tar --no-same-owner -xzf cudnn-9.0-linux-x64-v7.tgz -C /usr/local
+tar xf samtools-0.1.19.tar.bz2
+tar -jxf ./samtools-1.3.1.tar.bz2
+tar zxf lazybalancer.tar.gz --strip-components=1 -C /app/lazy_balancer
+tar -C /rar2fs --strip-components 1 -xzvf "rar2fs-$RAR2FS_VERSION.tar.gz"
+tar xvfz guile-1.8.8.tar.gz
+tar -xvf /opt/rudiments-1.0.5.tar.gz
+tar -xzf /tmp/server.tar.gz -C /tmp
+tar -xzf ./boost*
+tar xvfz $IPFS_BIN
+tar xzf php7.1.tar.gz
+tar cfz libFesapiCpp.tar.gz install
+tar -C / -Jxpf /tmp/s6-overlay-noarch-${S6_OVERLAY_VERSION}.tar.xz
+tar -xvvzf ioncube.tar.gz
+tar -zxvf /frps.tar.gz frp_0.31.2_linux_amd64/frps frp_0.31.2_linux_amd64/frps.ini
+tar xvzf /nginx.tar.gz
+tar xzf xhprof-${PHPXHPROF_VER}.tar.gz
+tar -xzvf ncbi-rmblastn*
+tar -xvf /tmp/nedi-"$NEDI_VERSION".tgz --directory /var/nedi/
+tar -xjf manta-1.5.0.centos6_x86_64.tar.bz2
+tar -xzf "go$GO_VERSION.linux-arm64.tar.gz" -C /usr/local/go --strip-components=1
+tar xf *.tar
+tar xf opencoreamr.tar.gz
+tar xvfz samba-samba-4.10.3.tar.gz
+tar -xzf Python-3.6.9.tgz
+tar -xpj --overwrite -f ./Jetson_Linux_R32.1.0_aarch64.tbz2
+tar -xvzf protobuf-python-3.1.0.tar.gz
+tar -xzf dnscrypt-proxy-linux_${ARCH}.tar.gz
+tar xvzf linux-$CHECKOUT_TAG.tar.gz
+tar --strip-components=1 -xzf installer.tgz
+tar -xzf /tmp/PrivateBin-${tag}.tar.gz --strip 1
+tar xzfv $DST/$ZIP -C $DST
+tar -xzvf docker.tar.gz
+tar xzfv myami-trunk-11-16-18.tar.gz -C /sw
+tar xf mongodb.tgz
+tar -xJf ruby.tar.xz -C /usr/src/ruby --strip-components=1
+tar zxvf muscle3.8.31_src.tar.gz
+tar -xzf libpfm-4.11.0.tar.gz
+tar fxz swift-$SWIFT_VERSION-RELEASE-ubuntu18.04.tar.gz
+tar xfz lcms2.tar.gz
+tar -xvzf conftest_${CONFTEST_VERSION}_Linux_arm64.tar.gz
+tar xf ccache.tar.gz
+tar xJf filebot.tar.xz
+tar xvf xppaut_latest.tar.gz -C /opt/xppaut
+tar -zxvf gmap-gsnap-2015-12-31.v10.tar.gz
+tar zvxf libheif-${LIBHEIF_VERSION}.tar.gz
+tar xvfz samba-samba-4.11.0.tar.gz
+tar zxf curl-${CURL_VERSION}.tar.gz
+tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
+tar -zxvf Leantime-v${LEAN_VERSION}.tar.gz --strip-components 1
+tar zxf v${NGINX_RTMP_VERSION}.tar.gz
+tar xzf redis-${PHPREDIS_VER}.tgz
+tar -xzvf openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit.tar.gz
+tar -zxvf nginx.tar.gz
+tar -x -C /usr/local/bin -f /tmp/restify.tgz restify
+tar -xvf $PKG -C /var/www
+tar xf /tmp/apcu_bc.tar.gz -C /usr/src/php/ext/apcu-bc --strip-components=1
+tar -zxf v2ray_plugin.tar.gz
+tar xzf xhprof.${XHPROF_VER}.tar.gz
+tar xzfv eman-linux-x86_64-cluster-1.9_stripped.tar.gz -C /sw
+tar xf mongosh.tgz
+tar xf node-v8.10.0-linux-x64.tar.xz
+tar xvfz samba-samba-4.12.0.tar.gz
+tar -xzf "go$GO_VERSION.linux-armv6l.tar.gz" -C /usr/local/go --strip-components=1
+tar -xJf "node-v$NODE_VERSION-linux-$ARCH-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+tar -xzf opencv-2.4.13.3.tar.gz
+tar xzf stacks-${STACKVERSION}.tar.gz
+tar -vxzf sbt.tar.gz
+tar xzf ssdeep-$SSDEEP.tar.gz
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C /usr ./bin
+tar -xf V-REP_PRO_EDU_V3_5_0_Linux.tar.gz
+tar -xf lina-${Version}.tar.gz
+tar xf ${HDF5_MINOR_REL}.tar.gz
+tar -zxvf augustus.current.tar.gz
+tar xzf /tmp/s6overlay.tar.gz -C /
+tar xzf "bitcoin-${BITCOIN_CORE_VERSION}-x86_64-linux-gnu.tar.gz"
+tar xvf /sandbox-rootfs.tar.xz
+tar xvf GeoLite2-Country.tar.gz --strip 1
+tar -zxf jdk8.tgz linux-x86
+tar -xvf *.tar.gz
+tar zxf kafka_${VERSION}.tgz -C ${INSTALL_DIR}
+tar zxf /tmp/tomcat8.tar.gz
+tar xfz /tmp/pcre.tar.gz -C /usr/local/src/pcre
+tar -xzf kafka-manager-sources.tar.gz -C $KAFKA_MANAGER_SRC_DIR --strip-components=1
+tar -xpf /tmp/cmake-${CMAKE_VERSION}-linux-$(uname -m).tar --directory=/tmp
+tar -xzvf etcd-v3.4.0-linux-amd64.tar.gz
+tar -xzf "node.tar.gz" -C /usr/local --strip-components=1
+tar -zx --strip-components=1 -f libogg-${OGG_VERSION}.tar.gz
+tar -zxf kcptun-linux-amd64-$KCP_VERSION.tar.gz
+tar -zxf git-lfs-linux-amd64-v2.6.0.tar.gz
+tar zxvf libbbb-*-arm-none-eabi.tar.gz
+tar -xzvf helm-v3.0.0-beta.3-linux-amd64.tar.gz
+tar -xf apache-spark.tgz -C /opt/spark --strip-components=1
+tar -xzvf hadoop-3.2.0-src.tar.gz
+tar -zxvf danpos-2.2.2.tgz
+tar -xzf s6-overlay-${ARCH}.tar.gz -C /usr ./bin
+tar xjf arm-1.4.5.0.tar.bz2
+tar xzf linux_amd64_server.tar.gz
+tar -xzf "go$GO_VERSION.linux-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
+tar xvjf /root/phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /root/phantomjs/
+tar zxf /tmp/swig-3.0.10.tar.gz -C /tmp/
+tar -C / -xvzf /nginx.tar.gz
+tar xf libvorbis.tar.gz
+tar -C /usr/src/app -zxvf progs_consensx.tar.gz
+tar zxf openresty-$OPENRESTY.tar.gz
+tar zxf /tmp/powershell.tar.gz -C ${PS_INSTALL_FOLDER}
+tar xzvf dokuwiki.tgz
+tar -xzf ops_manager.tar.gz
+tar xf nagiostv-${NAGIOSTV_VERSION}.tar.gz -C /opt/nagios/share/
+tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.4.tar.gz" --strip-components=1
+tar -jxvf ffmpeg.tar.bz2 -C ffmpeg
+tar xzvf $HOME/$CLIENT_NAME.tar.gz -C $HOME/radium
+tar --strip-components=1 -xvf cd-hit.tar.gz -C /usr/src/cd-hit
+tar xvf cctools-5b94c693-x86_64-redhat7.tar.gz
+tar -xvf tomcat.tar.gz --strip-components=1
+tar -xzf helm.tar.gz
+tar -zxvf /tmp/$ZIP -C /home/biodocker/bin/ssaha2/
+tar xjvf vim-7.3.tar.bz2
+tar xvf linux-x64-v951.tgz
+tar xzvf filebeat-oss-${VERSION}-linux-x86_64.tar.gz
+tar xvf sortmerna-2.tar.gz
+tar -xvf ImageMagick.tar.gz
+tar zxvf rocket.chat.tgz
+tar xfz proj-4.9.3.tar.gz
+tar xvf zlib-1.2.13.tar.gz
+tar -x -C /opt -f /tmp/pypy3-v6.0.0-linux64.tar.bz2
+tar xf MG5_aMC_v2.7.0.tar.gz
+tar zxf "${TAR}"
+tar 		--extract 		--file postgresql.tar.bz2 		--directory /usr/src/postgresql 		--strip-components 1
+tar xf /tmp/consul-template.tgz -C /usr/bin/
+tar -xvzf kubesec_linux_arm64.tar.gz
+tar xvjf $PHANTOM_JS.tar.bz2
+tar xvzf OpenBUGS-3.2.3.tar.gz
+tar -zxC /usr/src/tengine-$TENGINE_VERSION/modules -f more.tar.gz
+tar xzfv myami-trunk-11-22-18.tar.gz -C /sw
+tar -xzf "beanstalkd-${BEANSTALKD_VERSION}.tar.gz"
+tar zxf v2.4.1.1.tar.gz
+tar -xvzf prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz
+tar --extract 		--file openjdk-17.0.1_linux-x64_bin.tar.gz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner
+tar -xzf readline-${READLINE_VERSION}.tar.gz
+tar -xzf /caddy/caddy.tar.gz -C /caddy
+tar xz -C /tmp/alertmanager -f /tmp/alertmanager.tar.gz
+tar -xzvf /coredns.tgz
+tar xzfv mosquitto-${MOSQUITTO_VERSION}.tar.gz
+tar -C /opt/kimai -zcvf /var/tmp/public.tgz public
+tar --strip-components=2 -C /usr/bin -xf hub.tgz hub-linux-amd64-2.11.2/bin/hub
+tar -xzvf tinc-${TINC_VER}.tar.gz
+tar xzf bitcoin-0.17.0.1-x86_64-linux-gnu.tar.gz
+tar jxf pymol-v${PYMOL_VERSION}.tar.bz2
+tar -xvf pandoc-2.9.1.1-linux-amd64.tar.gz -C /root/
+tar xf docker.tgz
+tar -zxf php-$PHP_VERSION.tar.gz
+tar zxf ucx-1.9.0.tar.gz
+tar zxf /tmp/geckodriver.tgz -C /usr/bin/
+tar zvxf yarn-v1.7.0.tar.gz
+tar xf cmake-*.tar.gz
+tar xvzf aiarena-client-master.tar.gz
+tar xzf /tmp/${S6_OVERLAY_FILE} -C /
+tar -zxvf Trinity-v2.4.0.tar.gz
+tar -Jxf /tmp/Lyx.tar.xz -C ${HOME}/.cxoffice/${BOTTLE}/drive_c/Program\ Files/
+tar zxf HRC.r1-1.EGA.GRCh37.metafiles.deploy.tar.gz
+tar -xzf v2.29.1.tar.gz
+tar xvf ${VERSION}.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.3.tar.gz" --strip-components=1
+tar zxvf HTStream_1.0.0-release.tar.gz
+tar -xvzf geckodriver*
+tar -xvzf geckodriver-v0.24.0-linux64.tar.gz
+tar zxvf /tmp/swoole.tar.gz
+tar -zxvf augustus-3.3.3.tar.gz
+tar -zxvf *.gz
+tar --strip-components 1 -xzvf "rar2fs-$RAR2FS_VERSION.tar.gz" -C /tmp/rar2fs
+tar xf openresty-${OPENRESTY_VERSION}.tar.gz
+tar xvf ./geckodriver-v0.21.0-linux64.tar.gz
+tar xzvf prinseq-lite-0.20.4.tar.gz
+tar xvfh /tmp/wolfpacs-0.0.1.tar.gz -C /usr/local
+tar zxvf /rrshare/rrshareweb_centos7.tar.gz -C /rrshare/
+tar xvfz dntk-linux-amd64-v1.0.9.tar.gz
+tar -xzf etlegacy-v2.75-x86_64.tar.gz
+tar --strip-components=1 -xaf perl-5.30.3.tar.xz -C /usr/src/perl
+tar -xzf data.tar.gz
+tar xf libass.tar.gz
+tar -xf kubectl_aliases.tar.gz -C /opt/kubectl-aliases/
+tar xzf jpegsrc.v7.tar.gz
+tar -C /usr/src/openssl --strip-components=1 -xvzf openssl.tar.gz
+tar -xzf aspera-connect-3.7.4.147727-linux-64.tar.gz
+tar -zxvf "curl-${CURL_VERSION}.tar.gz"
+tar -xzf "go$GO_VERSION.linux-alpine-armv7hf.tar.gz" -C /usr/local/go --strip-components=1
+tar -zxvf SpliceGrapher-0.2.5.tgz
+tar -xvf /caddy/caddy_v0.11.4_linux_amd64.tar.gz -C /caddy
+tar -C /usr/local -xzf go$GoV.linux-$GOARCH.tar.gz
+tar xfz /tmp/ngx-pagespeed.tar.gz -C /usr/local/src/ngx-pagespeed
+tar xvf docker-${DOCKER_VERSION}.tgz
+tar -xzvf filebeat.tar.gz
+tar zxf neo4j-community-2.3.9-unix.tar.gz
+tar -zxC /usr/src -f nginx.tar.gz
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.2.1_aarch64.tbz2
+tar -xz --strip-components=1 -f v${LIBVMAF_VERSION}.tar.gz
+tar -zxf kag-linux32-dedicated-release.tar.gz
+tar -zx --strip-components=1 -f freetype-${FREETYPE_VERSION}.tar.gz
+tar -C /home/work/_app -xzf /home/work/_src/go.tgz
+tar -xvzf tldr_${TLDR_VERSION}_linux_amd64.tar.gz
+tar jxvf xlifepp-snapshot-full-2018-01-08-v1.5.1-r710.tbz -C /xlifepp
+tar -xzvf hiredis.tar.gz -C ./hiredis --strip-components 1
+tar xzvf Python-3.7.13.tgz
+tar -xzf Python-3.8.0.tgz
+tar --extract 		--file openjdk-16.0.1_linux-x64_bin.tar.gz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner
+tar xf libmodplug.tar.gz
+tar zxvf CRF++-0.58.tar.gz
+tar xvjf firefox-67.0.tar.bz2
+tar -xf kibana-${version}-linux-x86_64.tar.gz -C /tmp
+tar -xzvf revealjs.tar.gz
+tar zxvf gromacs-2018.3.tar.gz
+tar --strip-components 1 -xzvf "rar2fs-$RAR2FS_VERSION.tar.gz -C /tmp/rar2fs
+tar xvf /tmp/dokuwiki.tgz -C /www --strip-components 1
+tar -xjf strelka-2.9.10.centos6_x86_64.tar.bz2
+tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.1.0.tar.gz
+tar xzf master.tar.gz -C /mjpg
+tar -C /opt -zxf /tmp/geckodriver.tar.gz
+tar -zx --strip-components=1 -f libtheora-${THEORA_VERSION}.tar.gz
+tar xzf $s6tar -C /
+tar -xzf openssl-1.1.1l.tar.gz
+tar xzf szip-${SZIP_VERSION}.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.4.tar.gz" --strip-components=1
+tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1
+tar -xzf 2.5.2b.tar.gz
+tar xzvf "/tmp/unrarsrc-$RAR_VERSION.tar.gz"
+tar -zxf geckodriver-v0.26.0-linux64.tar.gz -C /usr/bin
+tar -zxvf /antivir_workstation-pers.tar.gz
+tar xzvf stress-$STRESS_VERSION.tar.gz
+tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar xf vmaf.tar.gz
+tar x -f /tmp/rcon-cli.tar.gz -C /opt/rcon-cli
+tar -xzf "node-v$NODE_VERSION-linux-alpine-amd64.tar.gz" -C /usr/local --strip-components=1
+tar zxf /tmp/tomcat7.tar.gz
+tar zxvf observium-community-latest.tar.gz
+tar xzfv eman-linux-x86_64-cluster-1.9.tar.gz -C /sw
+tar -zx --strip-components=1 -f opus-${OPUS_VERSION}.tar.gz
+tar -xz hugo.tar.gz
+tar xzf mcrypt-${PHPMCRYPT_VER}.tgz
+tar xvzf sc2-match-runner-gui-master.tar.gz
+tar -xzf "node-v$NODE_VERSION-linux-alpine-armv7hf.tar.gz" -C /usr/local --strip-components=1
+tar xjf $FIREFOX_SETUP -C /opt/
+tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
+tar -xvf olm-master.tar.bz2
+tar xf     /tmp/binmerge.tar.gz -C     /tmp/ --strip-components=1
+tar -xzf v1.1.1.tar.gz
+tar xzf gor.tar.gz
+tar -xvzf apacheds.tar.gz
+tar xvf lua-${LUA_VERSION}.tar.gz
+tar vxf helm-*
+tar -xf openssl-${OPENSSL_VERSION}.tar.gz
+tar -xjf bwakit-0.7.15_x64-linux.tar.bz2
+tar -xvf /usr/src/firefox-35.0.1.tar.bz2
+tar xf fastx_toolkit_0.0.13_binaries_Linux_2.6_amd64.tar.bz2
+tar -C "$spdk_repo" -xf "$spdk_tar"
+tar -xvf m4ri-20140914.tar.gz
+tar -xzvf node-v8.4.0-linux-x64.tar.gz
+tar -zxvf $open_scanner_protocol_daemon.tar.gz
+tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help        --exclude=share/vim        --exclude=share/vim
+tar xvfz Figures.tar.gz
+tar -xzvf helm-v3.0.0-rc.3-linux-amd64.tar.gz
+tar --no-same-owner -xzf cudnn-9.1-linux-x64-v7.tgz -C /usr/local
+tar --strip-components=1 -xaf perl-5.24.4.tar.bz2 -C /usr/src/perl
+tar -zxvf elastalert.tar.gz -C ${ELASTALERT_HOME} --strip-components 1
+tar xjvf curl-$CURL_VERSION.tar.bz2
+tar xzf /root/apache-hive-2.3.6-bin.tar.gz -C /root
+tar zxf neo4j-community-2.3.11-unix.tar.gz
+tar xzf openssl-${RESTY_OPENSSL_VERSION}.tar.gz
+tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp/blackfire
+tar -jxf xlifepp-snapshot-full-2018-01-08-v1.5.1-r710.tbz --transform=s/xlifepp-snapshot-full-2018-01-08-v1.5.1-r710/xlifepp/
+tar zxf openmpi-${OPENMPI_VERSION}.tar.gz
+tar -zxf $openvas_smb.tar.gz
+tar xf ./apache-qpid-broker-j.tar.gz -C ${WORKDIR}/out --strip-components=2 qpid-broker/${BROKER_J_VERSION}/bin
+tar xzvf ffmpeg-${FFMPEG_VERSION}.tar.gz
+tar -xvf xmrig-2.4.4-gcc7-xenial-amd64-no-api.tar.gz
+tar xzf ghostscript.tar.gz
+tar xzvf Python-3.8.13.tgz
+tar xzf imagick-${PHPIMAGICK_VER}.tgz
+tar xf cmake-3.14.1-Linux-x86_64.tar.gz
+tar -C /tmp/libevent-php -zxvf /tmp/libevent.tar.gz --strip 1
+tar -xvf ${PKG} -C /var/www
+tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz           --exclude=bin/cmake-gui           --exclude=doc/cmake           --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help        --exclude=share/vim
+tar -x -C /tmp -f /tmp/phantomjs.tar.bz2
+tar -xzf pico-release-v2.0.4.tar.gz
+tar xvzf /lua-resty-core.tar.gz
+tar -xf /tmp/azcopy/azcopy.tar.gz -C /tmp/azcopy
+tar -xvzf kubectl-who-can_linux_arm64.tar.gz
+tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1
+tar --strip-components=1 -xvf graphiql.io.tar
+tar -xzC /usr/src/dbus-python --strip-components=1 -f dbus-python.tar.gz
+tar xvzf GeoLite2-City.tar.gz
+tar -xvzf ruby-2.6.5.tar.gz
+tar xfv $ZIP
+tar xf     /tmp/calibre-web.tar.gz -C     /app/calibre-web --strip-components=1
+tar -xzf elixir-src.tar.gz -C /usr/src/elixir-src --strip-components=1
+tar xvzf /ranger/dist/ranger-admin.tar.gz -C /ranger
+tar -xpj --overwrite -f ./Jetson_Linux_R32.3.1_aarch64.tbz2
+tar -vxj --strip-components 1 -C /usr/local/bin -f /tmp/ricochet.tar.bz2
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C
+tar xzf caddy_linux_amd64.tar.gz
+tar -xf pcre-${PCRE_VERSION}.tar.gz
+tar vxf wkhtmltox-0.12.3_linux-generic-amd64.tar.xz
+tar xvf mxml-2.11.tar.gz -C /tmp/mxml --strip-components=1
+tar xzf ImageMagick.tar.gz
+tar xf index.html?f=LHAPDF-6.2.3.tar.gz
+tar -xzvf ${NGINX_DEVEL_KIT}.tar.gz
+tar -zxvf shapeit.v2.r904.glibcv2.17.linux.tar.gz
+tar -xf etlegacy-v2.76-i386.tar.gz
+tar -xvzf ta-lib-0.4.0-src.tar.gz
+tar xzf "v${VERSION}.tar.gz"
+tar -zxf aspnetcore.tar.gz -C /usr/share/dotnet ./shared/Microsoft.AspNetCore.App
+tar xjf ilastik-1.*-Linux.tar.bz2
+tar -C /tmp -xf /tmp/haproxy.tar.gz
+tar -xvf go${GO_VERSION}.linux-amd64.tar.gz
+tar xzf openresty-${RESTY_VERSION}.tar.gz
+tar xzf Python-2.6.9.tgz
+tar -xzf code-server2.1688-vsc1.39.2-linux-x86_64.tar.gz
+tar -xvzf ./spago.tar.gz
+tar xzf ssd_mobilenet_v1_0.75_depth_300x300_coco14_sync_2018_07_03.tar.gz
+tar zxvf $SSDEEP.tar.gz
+tar -xvzf nginx.tar.gz -C /src
+tar zxvf ngrok-1.7.1.tar.gz
+tar xzf /tmp/atlassian.tar.gz -C ${JIRA_INSTALL}/ --strip-components 1
+tar --strip-components=1 -xvzf "$DOCKER_ARCHIVE" -C /usr/local/bin
+tar -C / -xvzf /lua-openresty-redis.tar.gz
+tar -zxvf breseq-0.33.2-Linux-x86_64.tar.gz
+tar -zxvf /tmp/helm* -C /tmp
+tar -C /usr/local -xzf go1.9.linux-amd64.tar.gz
+tar -zxf app.tar.gz
+tar -xf guacamole-server-1.4.0.tar.gz
+tar xzf haproxy-${HAPROXY_VER}.tar.gz
+tar xf tbb-*.tar.gz
+tar -xvzf node_exporter-${exporter_version}.linux-amd64.tar.gz
+tar xf subread-1.4.5-p1-Linux-x86_64.tar.gz
+tar -zxf pftools3.tar.gz
+tar -zxf cmake-${cmakesuff}-x86_64.tar.gz
+tar -xvf /tmp/helm_provider.tar.gz -C /tmp
+tar --strip-components=1 -xvf bmsl.tar.gz -C /usr/src/bmsl
+tar xvzf LibreOffice_6.3.1_Linux_x86-64_deb.tar.gz
+tar -xzvf flyway-commandline-5.2.4-linux-x64.tar.gz
+tar xzf nginx-module-rtmp-${NGINX_RTMP_VERSION}.tar.gz
+tar -zxf FLASH-1.2.11.tar.gz
+tar -xzf subfinder.tar.gz
+tar xzf /tmp/java/jdk.tar.gz -C /tmp/java
+tar zxf kcptun-linux-amd64-${KCP_VERSION}.tar.gz
+tar -xf /tmp/${HUGO_ID}_Linux-64bit.tar.gz -C /tmp
+tar --strip-components=1 -xaf perl-5.16.3.tar.bz2 -C /usr/src/perl
+tar -xvf go1.10.1.linux-amd64.tar.gz
+tar -xzf /home/work/_src/wordpress.tar.gz -C /home/work/_app/nginx/html
+tar -xvf /usr/src/firefox-36.0.4.tar.bz2
+tar zxvf tophat-2.1.1.Linux_x86_64.tar.gz
+tar zxvf aliyun-cli-linux-amd64.tar.gz
+tar xf tabix-0.2.5.tar.bz2
+tar -C /usr/local/ -xvf /tmp/node.tar.xz --strip-components 1
+tar -zxvf $REDIS_VERSION.tar.gz
+tar -xvf /tmp/apisix-dashboard.tar.gz -C /usr/local/apisix-dashboard --strip 1
+tar gotty_linux_amd64.tar.gz
+tar xf Python-2.7.13.tar.xz
+tar xfv ffmpeg-git-64bit-static.tar.xz -C /sw
+tar xjf /tmp/ts/ts.tar.bz2 -C /opt
+tar xf mdbook-v$MDBOOK_VERSION-x86_64-unknown-linux-gnu.tar.gz
+tar zxf git.tgz
+tar -zxvf xgawk-3.1.6-20080101.tar.gz
+tar xvzf ./mosquitto-1.4.15.tar.gz
+tar xvf scilab-${SCILAB_VERSION}.bin.linux-x86_64.tar.gz -C /opt/scilab-${SCILAB_VERSION} --strip-components=1
+tar xf davs2.tar.gz
+tar xvzf /ngx_devel_kit.tar.gz
+tar xzf ${DNS_FILE} --strip 1
+tar -xzf go1.18.linux-amd64.tar.gz
+tar xzvf /home/radium/radium/$CLIENT_NAME.tar.gz -C $HOME/radium
+tar -pxvzf interproscan-core-$IPRSCAN.tar.gz     -C /opt/interproscan --strip-components=1
+tar -xzf /tmp/go.tar.gz -C /usr/local
+tar xf     /tmp/emulatorjs-blob.tar.gz -C     /emulatorjs/frontend/ --strip-components=1
+tar -xvz --strip-components=1 -C /usr/local/bin -f $ULX3STMP
+tar -C /usr/bin -xvf grpcurl.tar.gz
+tar -xzf /tmp/fly.tgz -C /tmp
+tar xf lame.tar.gz
+tar xvf /usr/src/zeppelin/zeppelin-distribution/target/zeppelin*.tar.gz -C /usr/
+tar -zxvf  shibboleth-identity-provider-$idp_version.tar.gz -C /opt
+tar -xzf "node-v$NODE_VERSION-linux-i386.tar.gz" -C /usr/local --strip-components=1
+tar xvf KronaTools-2.7.tar
+tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+tar xzvf ${DOCKER_CLI_DOWNLOAD_FILE} --strip 1 -C /usr/local/bin docker/docker
+tar -xzf couchdb.tar.gz -C /usr/src/couchdb --strip-components=1
+tar -xjf jemalloc-5.3.0.tar.bz2
+tar --strip-components=1 --wildcards -C /bin -xf ffmpeg.txz "*/ffmpeg"
+tar xfv go${GO_RELEASE}.linux-amd64.tar.gz -C /usr/local
+tar -zxvf SE-MEI.tar.gz
+tar xf mozjpeg-${MOZJPEG_VERSION}.tar.gz
+tar -C /opt -xf /tmp/rcon-web-admin.tgz
+tar -xzf openssl-$SSL_VERSION.tar.gz
+tar xzf "${julia_installer}" -C "/opt/julia-${JULIA_VERSION}" --strip-components=1
+tar xfz proftpd-1.3.5.tar.gz
+tar -zxf /tmp/openmpi-4.1.4-bin.tar.gz
+tar xzf re2c-${RE2C_VER}.tar.gz
+tar xvf $DST/$ZIP -C $DST
+tar -zxvf thinkphp-2.1.tar.gz
+tar -zx --strip-components=1 -f libXau-${XAU_VERSION}.tar.gz
+tar xf go${GOALNG_VERSION}.linux-amd64.tar.gz
+tar xvzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+tar -xzf etlegacy-v2.76-x86_64.tar.gz
+tar -zxvf helm-v${HELM_VERSION}-linux-arm64.tar.gz
+tar xf     /tmp/jacket.tar.gz -C     /app/Jackett --strip-components=1
+tar xzf /audiofile-${AUDIOFILE_VERSION}.tar.gz -C /
+tar xzf spark-2.4.0-bin-hadoop2.7.tgz -C /usr/local
+tar -xzf "apache-maven-$MAVEN_VERSION-bin.tar.gz"
+tar -xf "node-v%%NODEJS_CANONICAL%%.tar.xz"
+tar -zxvf BRAKER2.tar.gz
+tar --strip-components=1 -xzf ttrss.tar.gz \\
+tar -zxvf v5.5.0.tar.gz
+tar -xvf /usr/src/firefox-36.0.1.tar.bz2
+tar -xvf ergatis.tar.gz -C /usr/src/ergatis --strip-components=1
+tar -xJf node-v*.tar.xz --strip-components 1 -C /usr/local
+tar -xvzf xmrig-$VERSION-xenial-x64.tar.gz
+tar -xf ${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-linux-x64.tar -C /opt
+tar -xjvf jemalloc-4.5.0.tar.bz2
+tar -xvf PHP-7.2-Linux-x86_64.tar.gz
+tar -xzf $GORELEASER_DOWNLOAD_FILE -C /usr/bin/ goreleaser
+tar xzf *.tar.gz
+tar -xvf openjdk-9.0.4_linux-x64_bin.tar.gz
+tar -xvf uvncrep017-ws.tar
+tar -C /tmp -xf /tmp/openssl.tar.gz
+tar -xzf App-cpanminus-1.7046.tar.gz
+tar -jxvf geos-3.3.8.tar.bz2
+tar xzf php7.tar.gz
+tar xzvf lookbusy.tar.gz -C lookbusy --strip-components=1
+tar xzf ${MAGENTO_FILE} --strip 1
+tar xzf /opus-${OPUS_VERSION}.tar.gz -C /
+tar -xvf /caddy/caddy.tar.gz -C /caddy
+tar xvzf $KONTEMPLATE_BIN
+tar -xzf dalfox.tar.gz
+tar xzf /source/_build/prod/rel/$APP_NAME/releases/*/$APP_NAME.tar.gz
+tar -xf azcopyv10.tar --strip-components=1
+tar -zxvf swoole-${SWOOLE_VER}.tgz
+tar -xzvf docker-18.09.6.tgz
+tar xf helm-v${HELM_VERSION}-linux-amd64.tar.gz
+tar -xzf muscle3.8.31_i86linux64.tar.gz
+tar xfv v$SRTP.tar.gz
+tar xzf Montage_v5.0.tar.gz
+tar -xzf "node-v$NODE_VERSION-linux-alpine-armv6hf.tar.gz" -C /usr/local --strip-components=1
+tar xfz /tmp/s6-overlay.tar.gz -C /
+tar -xzf /tmp/openvino.tar.gz -C /tmp
+tar xvfz gsl-1.16.tar.gz
+tar zxf ghostpcl-9.26-linux-x86_64.tgz
+tar -zxvf hugo.tar.gz
+tar -xvf jdk_ri-7u75-b13-linux-x64-18_dec_2014.tar.gz
+tar zxf c-ares-${CARES_VERSION}.tar.gz
+tar xf /tmp/yourls.tar.gz --strip-components=1 --directory=/opt/yourls
+tar -zxf /tmp/openmpi-3.0.0-bin.tar.gz
+tar -zxvf check_tcptraffic-2.2.7.tar.gz
+tar -xzvf elastalert.tar.gz -C ${ELASTALERT_HOME} --strip-components 1
+tar -xf /tmp/firefox.tar -C /home/browsh/bin/ --strip-components 1 	)
+tar -zxf libressl.tar.gz
+tar -xvf spark-2.4.3-bin-hadoop2.7.tgz
+tar xzf Python-3.7.3.tgz
+tar zxvf /tmp/node_exporter.tar.gz -C /home/admin
+tar -zxf cmake-${cmakever}-linux-$(uname -m).tar.gz
+tar xf  netcdf4-python-${NETCDF4_PYTHON}.tar.gz
+tar c -C /tmp/tigervnc-1.10.1.x86_64 usr | tar x -C /
+tar xvf "mozjpeg-3.2-release-source.tar.gz"
+tar xzf /var/tmp/$JDK_DOWNLOAD_TAR -C $JAVA_HOME --strip-components=1
+tar -xzf "Python-$PYTHON_VERSION.linux-i386-libffi3.3.tar.gz" --strip-components=1
+tar zxvf docker-latest.tgz
+tar -xzf $ANDROID_SDK_FILE
+tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz
+tar -C / -xvzf /nginx-lua-prometheus.tar.gz
+tar xzvf sav-linux-free-9.tgz
+tar -zxvf /tmp/noVNC.tar.gz -C /opt
+tar xzfv tomo3d_January2015.tar.gz -C /sw
+tar xvzf /root/monocle-gateway.tar.gz monocle-gateway
+tar zxf LibreOffice_6.2.1_Linux_x86-64_deb.tar.gz
+tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+tar -xvf backend-challenge-2019-boot-1.0.tar
+tar -xzvf hbase-1.2.2-bin.tar.gz
+tar xzf /tmp/tigervnc.tar.gz -C /tmp
+tar -oxzf dotnet-monitor-base.tar.gz -C /app
+tar -xzC /usr/local/src/elixir --strip-components=1 -f elixir-src.tar.gz
+tar -xzvf nginx.tar.gz -C ./nginx --strip-components 1
+tar -zx --strip-components=1 -f util-macros-${XORG_MACROS_VERSION}.tar.gz
+tar xzf ${PIWIK_FILE} --strip 1
+tar -zxvf tmp.tgz --strip=1
+tar -xzf guacamole-server-${GUAC_VER}.tar.gz
+tar xzf src/target/universal/cmak-$CMAK_VERSION.tgz --strip 1
+tar -xf spark-2.4.3-bin-hadoop2.7.tgz
+tar xf $ACTIVEMQ-bin.tar.gz -C /opt/
+tar xf $TOR_TARBALL_NAME
+tar -xzvf hadoop-3.2.0.tar.gz
+tar -xvf cmake-3.14.5-Linux-x86_64.tar.gz
+tar -xvf v1.2.1.tar.gz
+tar xf netcdf-c-${NETCDF_C_VERSION}.tar.gz
+tar xvfz ssdeep-2.13.tar.gz
+tar -xvf /tmp/s6-overlay-amd64.tar.gz
+tar -xzf oc.tar.gz
+tar zxf LuaJIT-${LUAJIT_VERSION}.tar.gz
+tar xf apache-qpid-broker-j.tar.gz -C ${BUILD_DIR}/out --strip-components=2 qpid-broker/${BROKER_J_VERSION}/
+tar xf vid.stab.tar.gz
+tar -C /rar2fs --strip-components 1 -xzvf "rar2fs-${RAR2FS_VERSION}.tar.gz"
+tar --strip 1 -xzvf apache-atlas-${VERSION}-sources.tar.gz -C /tmp/atlas-src
+tar -zxvf go.tgz
+tar -xzvf docker.tgz
+tar -xvf bcftools-1.9.tar
+tar -zxvf /phicomm-tv-ctrl.tar.gz
+tar xfz /graalvm-ce-java8-linux-amd64-20.0.0.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-i386-libffi3.3.tar.gz" --strip-components=1
+tar zxf kcptun-linux-amd64-20190515.tar.gz
+tar xf  netcdf4-python-1.4.2rel.tar.gz
+tar -zxC /usr/src -f ngx_http_geoip2_module.tar.gz
+tar zxvf /tmp/luna.tar.gz -C /opt
+tar -xz --strip-components=1 -f drupal.tar.gz
+tar --no-same-owner -xzf cudnn-8.0-linux-x64-v7.tgz -C /usr/local
+tar xvzf "openssl-$OPENSSL_VERSION.tar.gz"
+tar xzf nagios-plugins-release-2.2.1.tar.gz
+tar -xzf /tmp/clang.tar.gz -C /usr/local
+tar xvfz 1.0.1.tar.gz
+tar xzf libevent-2.0.21-stable.tar.gz
+tar xzf php-${PHP_VER}.tar.gz
+tar -xvzf /tmp/geckodriver.tar.gz  -C /usr/local/bin
+tar xzf zlib-$VERS.tar.gz
+tar xvf $ARTEMIS_BUILD_DIR/target/release-artifacts/unix-release/artemis-unix-release-*.tar.gz --strip-components=1 -C ${INSTALL_DIR}
+tar -xzf ./Python*
+tar xzf ${octoprint_ref}.tar.gz --strip-components 1 -C /opt/octoprint --no-same-owner
+tar -zxf v${PHP_MEMCACHED}.tar.gz --no-same-owner
+tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
+tar xf /tmp/code-server.tar.gz -C     /app/code-server --strip-components=1
+tar --strip-components=1 -xaf perl-5.12.5.tar.bz2 -C /usr/src/perl
+tar xvzf v${PG_VERSION}
+tar xzf nsd-${NSD_VERSION}.tar.gz
+tar -xzf opencv-2.4.13.4.tar.gz
+tar -Jxvf ${AMD_DRIVER}
+tar xzfv myami-trunk-11-24-18b.tar.gz -C /sw
+tar -xz -C /tmp -f /tmp/docker-${DOCKER_VERSION}.tgz
+tar -zxf *.gz
+tar xvzf nginx-1.15.7.tar.gz
+tar -xzf "/tmp/mongodb_server_ubi.tgz" --directory "/var/lib/mongodb-mms-automation/downloads"
+tar -zxf mysql-connector-odbc-8.0.19-linux-debian10-x86-64bit.tar.gz
+tar xf libbluray.tar.gz
+tar -xvzf etcd-v${ETCDCTL_VERSION}-linux-arm64.tar.gz
+tar xzf vsearch-2.tar.gz
+tar --strip-components=1 -xaf perl-5.26.3.tar.bz2 -C /usr/src/perl
+tar -xvzf alertmanager-${alertmanager_version}.linux-amd64.tar.gz
+tar -C / -xvzf /lua-nginx.tar.gz
+tar --extract --file ${NEO4J_TARBALL} --directory /var/lib
+tar -xzf /tmp/cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz -C /tmp        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help        --exclude=share/vim        --exclude=share/vim
+tar -zxf pulumi-v*-linux-x64.tar.gz
+tar -C /app/ -xvf /app/v1.8.3.tar.gz
+tar zxf $vNGRTMP.tar.gz
+tar zxvpf $MICRO
+tar -xzvf hadoop-3.1.1-src.tar.gz
+tar xzf mhash-0.9.9.9.tar.gz
+tar zxvf /tmp/rp_bin.tgz --strip 1 -C /ricopili/bin/
+tar xfv /opt/xmr-stak-cpu.tar.gz --strip 1 -C /opt/xmr-stak-cpu
+tar xzf libiconv-${LIBICONV_VER}.tar.gz
+tar xzvf ${ZEPPELIN_VERSION}-bin-netinst.tgz -C $ZEPPELIN_INST_PATH --strip-components 1
+tar zxvf         /tmp/code.tar.gz         --strip 1 -C /usr/local/lib/code-server
+tar xvf hello.tar.gz
+tar -xzf ruby-2.2.2.tar.gz
+tar -xvzf kubesec_linux_amd64.tar.gz
+tar -xjf /tmp/nmap.tar.bz2 -C /tmp
+tar -xvf  FLASH-1.2.11-Linux-x86_64.tar.gz
+tar zxf llvmorg-${CLANG_VERSION}.tar.gz
+tar xf rubberband.tar.bz2
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.4.tar.gz" --strip-components=1
+tar -zxvf /tmp/flyway.tar.gz -C /usr/local/share
+tar zxvf nginx-1.18.0.tar.gz
+tar --extract 		--file openjdk-17.0.1_linux-aarch64_bin.tar.gz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner
+tar xzf inotify-${PHPINOTIFY_VER}.tgz
+tar zxvf /usr/local/review_site.tar.gz
+tar zxf neo4j-community-2.3.10-unix.tar.gz
+tar -xvf /tmp/helm.tar.gz
+tar -xf /tmp/websockify.tar.gz --strip-components=1 -C /usr/share/novnc/utils/websockify
+tar xjf FirefoxSetup.tar.bz2
+tar -zxf hmmer.tar.gz
+tar -xvf /tmp/nedi-1.5C.tgz --directory /var/www/html/
+tar xvzf $ES_PKG_NAME.tar.gz
+tar -xvf service.tar
+tar -xzvf credhub-linux-${CREDHUB_VERSION}.tgz
+tar -xzf "dokuwiki-$DOKUWIKI_VERSION.tgz" --strip 1
+tar -xzf google-cloud-sdk.tar.gz
+tar xfj teamspeak3-server_linux_amd64.tar.bz2
+tar -xvf /usr/src/firefox-37.0.2.tar.bz2
+tar --strip-components=1 --wildcards -C /bin -xf ffmpeg.txz "*/ffprobe"
+tar -xzf /tmp/data.tar.gz
+tar -zxvf apache-ant-${ANT_VERSION}-bin.tar.gz
+tar -xz --strip-components=1 -f ${MANTIS_FILE}
+tar -vxzf hdf5-1.8.20.tar.gz
+tar -xzf s6-overlay-${ARCH}.tar.gz -C /
+tar xf   /tmp/syncthing-src.tar.gz -C     /tmp/sync --strip-components=1
+tar -zxvf v2.17.tar.gz
+tar -xvf openjdk-14.0.1_linux-x64_bin.tar.gz -C /usr/lib/jvm/
+tar xzf /jdk.tar.gz --strip-components=1 -C /opt/jdk
+tar xfv ffmpeg-git-amd64-static.tar.xz -C /sw
+tar xf openresty-1.15.8.1.tar.gz
+tar zxvf acestream_3.1.16_ubuntu_16.04_x86_64.tar.gz
+tar -xzf git-lfs.tar.gz
+tar xfj php-${PHP_VERSION}.tar.bz2
+tar -zxC /usr/src -f ndk.tar.gz
+tar -xzv -f squid3.tar.gz -C ./usr/src/
+tar zxvf pg_repack.tar.gz
+tar xvf "znc.tar.gz" -C /usr/local/src/znc --strip-components=1
+tar xvjf firefox-69.0b7.tar.bz2
+tar xf htslib-1.10.tar.bz2
+tar xf mono.txz
+tar -zxvf libspatialite-4.1.0.tar.gz
+tar -zxf go.tar.gz
+tar xzf $SWIFT_SNAPSHOT
+tar xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz
+tar -xjf /tmp/linapple.tar.bz2 -C /usr/src/linapple --strip-components=1
+tar -zxf $gsa_version.tar.gz
+tar -zxf actions-runner-linux-x64-${GH_NER_VERSION}.tar.gz
+tar xf ffmpeg.tar.bz2
+tar xvzf $DST/$ZIP -C $DST
+tar xzf ${GALAXY_OF_DRONES_ONLINE_VERSION}.tar.gz --strip-components=1
+tar -xzf etlegacy-v2.76-i386.tar.gz
+tar -xzvf apache-cassandra-3.11.4-bin.tar.gz
+tar --strip-components=1 -xaf perl-5.20.3.tar.bz2 -C /usr/src/perl
+tar xzvf julia-1.6.3-linux-x86_64.tar.gz
+tar xzf Python-3.7.5.tgz
+tar xf exonerate-2.2.0-x86_64.tar.gz --no-same-owner
+tar zxf ffmpeg-${FFMPEG_VERSION}.tar.gz
+tar -xjvf sinusbot-0.9.18-8499d2c.tar.bz2
+tar -xvzpf v0.1.tar.gz
+tar xzf r${JAMULUS_VERSION}.tar.gz
+tar xvf alien4cloud-dist-${a4c_ver}-dist.tar.gz
+tar -xzf spark-$SPARK_VERSION-bin-hadoop$HADOOP_VERSION.tgz
+tar zxf ghostscript-9.26-linux-x86_64.tgz
+tar xJf boringssl-$BoringV.tar.xz
+tar -xf /tmp/eclipse-inst.tar.gz -C ${ECLIPSE_OOMPH_INSTALLER_DIRECTORY}
+tar -zxvf spatialite-tools-4.1.0.tar.gz
+tar -xJf "node-v${NODE_VERSION}-linux-x64-musl.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+tar -zx --strip-components=1 -f libpthread-stubs-${LIBPTHREAD_STUBS_VERSION}.tar.gz
+tar -xzf v$NinjaV.tar.gz
+tar -zxvf salmon-0.14.1_linux_x86_64.tar.gz
+tar -xf *.xz
+tar zxvf nagioscore.tar.gz
+tar xvfz /tmp/s6-overlay.tar.gz -C /
+tar zxvf curl-7.12.0.tar.gz
+tar -zxvf nginx-1.15.8.tar.gz
+tar xf phantomjs-1.9.8-linux-x86_64.tar
+tar -xf autoconf-2.71.tar.xz
+tar xf /tmp/pandoc-crossref.tar.xz
+tar -zx --strip-components=1 -f nginx.tar.gz
+tar -xvf grin-wallet-v1.1.0-beta.4-linux-amd64.tar.gz
+tar -xzvf ${NGINX_RTMP_MODULE}.tar.gz
+tar -C / -xzf /apache-jmeter.tgz
+tar -C /usr/local -xzf $GOLANG_TAR_BALL
+tar -zxvf XML-XORT-0.010.tar.gz
+tar xzf msgpack-${PHPMSGPACK_VER}.tgz
+tar -zxvf gth-1.7.3-Linux_x86_64-64bit.tar.gz
+tar -xzvf etcd-v3.1.5-linux-amd64.tar.gz
+tar xzvf nginx-${NGINX_VERSION}.tar.gz
+tar -xJf gcc-libs.tar.xz -C /tmp usr/lib
+tar -xzvf helm-v2.8.1-linux-amd64.tar.gz
+tar -zxvf Leantime-V2.0.13.tar.gz --strip-components 1
+tar -xf arduino-1.8.8-linux32.tar.xz
+tar xf util-linux-2.33.tar.gz
+tar -xvf Python-3.6.3.tgz
+tar zxvf ${OPENSSL_VER}.tar.gz
+tar xzvf cmake-3.14.0.tar.gz
+tar -xf trex.tar.gz
+tar xzf v2.13.4.tar.gz
+tar zxvf sdk.tgz
+tar xf     /tmp/bookstack.tar.gz -C     /app/www/ --strip-components=1
+tar xvzf $KIBANA_PKG_NAME.tar.gz
+tar -C /bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+tar xf xavs2.tar.gz
+tar zxvf BBMap_38.79.tar.gz
+tar -xzf megahit_v1.1.4_LINUX_CPUONLY_x86_64-bin.tar.gz
+tar xzvf $HOME/NConf.tgz -C $WWWHOME
+tar xvf /tmp/calibre-tarball.txz -C     /opt/calibre
+tar xf   /tmp/ddclient.tar.gz -C     /tmp/ddclient --strip-components=1
+tar xf gcc-infrastructure.tar.xz
+tar xzf pcre-${RESTY_PCRE_VERSION}.tar.gz
+tar xvfJ /tmp/telegram.tar.xz
+tar -zxf v${YAPI_VERSION}.tar.gz
+tar xf nginx-1.9.11.tar.gz
+tar -xzf openssl-${OPENSSL_VERSION}.tar.gz
+tar xf v${BUILD_VERSION}.tar.gz
+tar xf svtav1.tar.bz2
+tar -zxvf Leantime-V2.0.10.tar.gz --strip-components 1
+tar -C /usr/local/bin -xvzf dockerize-linux-amd64-v0.0.4.tar.gz
+tar -xvzf ./purescript.tar.gz
+tar -zxvf /frps.tar.gz frp_0.31.2_linux_amd64/frps
+tar xzfv imod_4.10.11_docker.tar.gz -C /sw
+tar -xzvf /tmp/radarr.tar.gz -C /opt/radarr --strip-components 1
+tar xzvf opus-$OPUS.tar.gz
+tar xvfz edirect.tar.gz
+tar -xf jumpserver-${Version}.tar.gz
+tar xvzf bundle.tar.gz
+tar xzf ${PFA_TARBALL} -C /postfixadmin
+tar -xvzf kubeaudit_${KUBEAUDIT_VERSION}_linux_arm64.tar.gz
+tar -xf ./${ZULU_ARCH} -C ${INSTALL_DIR}
+tar xf     /tmp/snipeit.tar.gz -C     /app/www/ --strip-components=1
+tar xzf /wildmidi-${WILDMIDI_VERSION}.tar.gz -C /
+tar xvzf /voy_dev_track/tmp/$VERSION.tar.gz -C /voy_dev_track/tmp/
+tar -xvf 5.7.0.tar.gz
+tar -xzvf v${VERSION}.tar.gz
+tar -xzvf nginx-1.15.0.tar.gz
+tar -xzf ${pkgver}.tar.gz
+tar -x -C /usr/local/bin -f /tmp/mc-server-runner.tgz mc-server-runner
+tar -xvf openjdk-10.0.2_linux-x64_bin.tar.gz
+tar xzf turnserver-4.4.2.2-debian-wheezy-ubuntu-mint-x86-64bits.tar.gz
+tar -xjvf jemalloc-5.2.1.tar.bz2
+tar zxf ./mongo-c-driver-1.15.3.tar.gz
+tar -xzvf helm-v2.14.3-linux-amd64.tar.gz
+tar xf arduino-$IDE_VERSION-linux64.tar.xz
+tar xjvf nasm-${NASM_VERSION}.tar.bz2
+tar xvzf ./mosquitto-1.6.8.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-amd64-libffi3.3.tar.gz" --strip-components=1
+tar zxvf ioncube_loaders_lin_x86-64.tar.gz
+tar -zxf /tmp/icu.tgz -C /tmp
+tar zxf aliyun-cli.tar.gz
+tar zxvf /tmp/swoole.tar.gz -C swoole --strip-components=1
+tar zvxf /tmp/dnscrypt-proxy.tar.gz
+tar xvf hello.tar.gz  -C ./hello
+tar -xzf /tmp/cf-cli.tgz -C /usr/local/bin
+tar -xzf unms.tar.gz
+tar xzvf gost_${GOST_VERSION}_linux_amd64.tar.gz
+tar xf cargo-about-$CARGO_ABOUT_VERSION-x86_64-unknown-linux-musl.tar.gz
+tar -xvf go1.16.4.linux-amd64.tar.gz
+tar -zxvf Leantime-V2.0.4.tar.gz --strip-components 1
+tar -xzf /opt/pandoc/pandoc-${PANDOC_VERSION}-linux.tar.gz -C /opt/pandoc
+tar -xzvf chruby-0.3.9.tar.gz
+tar xzf /tmp/atlassian.tar.gz -C /opt/confluence/ --strip-components 1
+tar -zxvf jdk-8u211-linux-x64.tar.gz
+tar -zxvf Leantime-V2.1.tar.gz --strip-components 1
+tar -zxf nginx-rtmp-module-${NGINX_RTMP_MODULE_VERSION}.tar.gz
+tar -C /opt -xf /tmp/java.tar
+tar xvf ansible-tower-setup-${TOWER_VERSION}.tar.gz
+tar xvfz /usr/bin/docker-$DOCKER_VERSION_OVERRIDE.tar.gz; rm /usr/bin/docker-$DOCKER_VERSION_OVERRIDE.tar.gz
+tar xvf v${MQTT_VERSION}.tar.gz
+tar -xf monero.tar.bz2
+tar xzvf /opt/connectors.tar.gz
+tar --strip-components=1 -xaf perl-5.14.4.tar.bz2 -C /usr/src/perl
+tar -xf sqlany-php.tar.gz -C /tmp/sqlany --strip-components=1
+tar -zxvf oniguruma-6.9.4.tar.gz
+tar -xzf code-server*.tar.gz
+tar -zxvf Leantime-V${LEAN_VERSION}.tar.gz --strip-components 1
+tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 -C /usr/local/bin docker/docker
+tar -xzf /tmp/sbt.tgz -C /opt/
+tar -C /usr/local/bin -xzvf dockerize.tar.gz
+tar -jxf phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar xzf linux_amd64_yamlsort_${YAMLSORT_VERSION}.tar.gz
+tar zxf v1.2.9.tar.gz
+tar -xf trex_client*.tar.gz
+tar -zxvf Leantime-V2.0.14.tar.gz --strip-components 1
+tar xzf 1.5.1.0.tar.gz -C /radium
+tar -xzf git.tar.gz
+tar xjf jemalloc-${JEMALLOC_VER}.tar.bz2
+tar -xzf otp-src.tar.gz -C /tmp/erlang-build --strip-components=1
+tar xvzf calibro_V2.1.tar.gz
+tar -xvzf apache-activemq-$ACTIVEMQ_VERSION-bin.tar.gz
+tar -ztf /tmp/proto-bins_$(cat /version.txt)_linux-$(uname -m).tar.gz
+tar xvzf /tmp/helm.tar.gz
+tar xzvf ncbi-blast-2.10.0+-x64-linux.tar.gz
+tar -xvf retdec-v4.0-ubuntu-64b.tar.xz
+tar zxf /sratoolkit.2.9.2-ubuntu64.tar.gz
+tar xvfz dntk-linux-amd64-vvvv1.0.12.tar.gz
+tar -xfz ${HUGO_ID}_Linux-64bit.tar.gz
+tar -zxvf limesurvey3.22.7+200225.tar.gz
+tar xvzf /tmp/s6-overlay-amd64.tar.gz -C / --exclude="./bin" --exclude="./sbin"
+tar -xzf /tmp/golang.tar.gz -C /usr/local
+tar xzf ${HUGO_BINARY}
+tar -xzf ffmpeg-4.0.2.tar.gz; rm -r ffmpeg-4.0.2.tar.gz
+tar -xzf infernal.tar.gz
+tar -xjf cortex_m.tar.bz2
+tar -xzf /tmp/install-tl-unx.tar.gz -C /tmp/
+tar zxvf ${HELM_FILENAME}
+tar -jx --strip-components=1 -f fontconfig-${FONTCONFIG_VERSION}.tar.bz2
+tar xvzf /root/monocle-gateway.tar.gz monocle-proxy
+tar xzfv imod_4.10.11_docker_stripped.tar.gz -C /sw
+tar -C /usr/local -xzf /tmp/go.tar.gz
+tar xvzf ubuntu.tar.gz
+tar xf openjpeg.tar.gz
+tar -xzf v2.16.2.tar.gz
+tar -C /opt/ -xzvf /opt/dart-sass-1.17.2-linux-ia32.tar.gz
+tar -xzvf backend.tar.gz
+tar -xzvf v0.0.5.tar.gz
+tar zxpf /tmp/ioncube_loaders_lin_x86-64.tar.gz -C /tmp
+tar xvfz stunnel-5.55.tar.gz
+tar -xzvf /tmp/vernemq-$VERNEMQ_VERSION.stretch.tar.gz
+tar xzf ckb_v0.30.2_x86_64-unknown-linux-gnu.tar.gz
+tar -xzvf compiler-20161201.tar.gz closure-compiler-v20161201.jar
+tar xvzf calibro_V1.76.tar.gz
+tar zxvf krew.tar.gz
+tar -xf glyptodon-enterprise-player-${PLAY_VERSION}.tar.gz -C /opt/player --strip-components 1
+tar -xzvf ruby-install-0.6.1.tar.gz
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.4.3_aarch64.tbz2
+tar -xvzf geckodriver-v0.24.0-linux32.tar.gz
+tar -zxC /usr/src -f set-misc.tar.gz
+tar xf libtheora.tar.bz2
+tar -xzf v18.0.00.tar.gz
+tar -zxvf $gvmd_version.tar.gz
+tar xf libaribb24.tar.gz -C libaribb24 --strip-components=1
+tar xvf ansible-tower-setup-${ANSIBLE_TOWER_VER}.tar.gz
+tar -zxvf "nginx-${NGINX_VERSION}.tar.gz"
+tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1
+tar -xzvf "nfpm_${NFPM_VERSION}_Linux_x86_64.tar.gz" -C /usr/local/bin  --no-same-owner
+tar -zxvf v1.1.1.tar.gz
+tar -xvf /tmp/build -C /usr/bin/
+tar -xfz /tmp/hugo_extended_${VERSION}_Linux-64bit.tar.gz -C /tmp
+tar -zxvf progs_consensx.tar.xz
+tar -xzf /opt/pandoc/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz -C /opt/pandoc
+tar xvfz samba-samba-4.11.4.tar.gz
+tar -xf logstash-${version}.tar.gz -C /tmp
+tar xzf subconverter_linux64.tar.gz
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.2.0_aarch64.tbz2
+tar -zxvf ntripcaster.tar.gz -C /
+tar -xJf "node-$NODE_VERSION-$ARCHITECTURE.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+tar xzf /var/tmp/apache-maven-$MAVEN_VERSION-bin.tar.gz -C $MAVEN_HOME --strip-components=1
+tar -xzf infernal.tar.gz -C /tmp/infernal
+tar -zxvf PASApipeline-v2.3.3.tar.gz
+tar xf     /tmp/qbt.tar.gz -C     /qbt
+tar -C /opt -zxvf /root/openfire.tar.gz
+tar xvf $DST/$ZIP --strip-components=1 -C $DST
+tar xvf spark-3.0.1-bin-hadoop3.2.tgz
+tar zxvf /tmp/dockerize.tar.gz -C /usr/local/bin
+tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1
+tar -zxvf readosm-1.1.0.tar.gz
+tar zxf LibreOffice_6.3.1_Linux_x86-64_deb.tar.gz
+tar -xzf /tmp/nedi-1.5C.tgz -C /var/www/html/ --strip-components=1
+tar xfz /tmp/socklog-overlay.tar.gz -C /
+tar xvfz $STUNNEL_TAR
+tar xvzf /tmp/defb.tar.gz
+tar -zxf tor-${TOR-VERSION}.tar.gz
+tar -xf /tmp/util-linux-libs.tar.zst -C /tmp/util-linux-libs
+tar xf ${BUILD_DIR}/apache-qpid-broker-j.tar.gz -C ${BUILD_DIR}/out --strip-components=2 qpid-broker/${BROKER_J_VERSION}/
+tar zxf lnmpa.tar.gz
+tar -xzf /tmp/ruby.tar.gz -C /usr/src/ruby --strip-components=1
+tar -C /var/www/ -xvf /tmp/owncloud.tar.gz
+tar xfz ./openresty.tar.gz
+tar xf /sandbox-rootfs.tar.xz
+tar -zxf pcre-$PCRE.tar.gz
+tar -C /opt zxvf /opt/network-tests-${VERSION}.tar.gz
+tar -xaf HyperSpec-7-0.tar.gz
+tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz
+tar -C /tmp -xzf /tmp/helm.tgz
+tar -C /usr/local/go/bin -xzf go1.14.linux-amd64.tar.gz
+tar xvzf ucspi-tcp-0.88.tar.gz
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.3.1_aarch64.tbz2
+tar -xzf /tmp/gitlist.tar.gz -C /tmp/
+tar -x -C /usr/local/src/ -f v${BUILD_VERSION}.tar.gz
+tar -zxvf zulu$zulu_version-ca-jdk$java_version-linux_x64.tar.gz -C /opt
+tar xf  netcdf4-python-1.4.3rel.tar.gz
+tar -xzvf particl-${PARTICL_VERSION%rc1}-x86_64-linux-gnu.tar.gz
+tar xfz /tools/mongodb_tools.tgz --directory /tools
+tar -zxf libevent*
+tar -zxf v${SNVER}.tar.gz
+tar -xvf yugabyte.tar.gz -C $YB_BIN_PATH --strip-components=1
+tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+tar xf $install_name.tar.gz
+tar xjfv minimap2-2.17_x64-linux.tar.bz2
+tar -xzf /tmp/*.tar.gz -C /tmp
+tar zvxf yarn-v1.2.1.tar.gz
+tar xzvf $VPX.tar.gz
+tar -zxvf helm-v2.13.1-linux-amd64.tar.gz
+tar -zxvf jetty-distribution-$jetty_version.tar.gz -C /opt
+tar zvxf yarn-v1.0.1.tar.gz
+tar -xf linux-$KERNEL_VERSION.tar.xz
+tar -zxvf Leantime-V2.0.1.tar.gz --strip-components 1
+tar xzf ckb_v0.27.1_x86_64-unknown-linux-gnu.tar.gz
+tar -jxf xlifepp-snapshot-sources-2018-02-15-v1.5.1-r762.tbz --transform=s/xlifepp-snapshot-sources-2018-02-15-v1.5.1-r762/xlifepp/
+tar -C /usr/local -xzf go1.8.2.linux-amd64.tar.gz
+tar -zxvf nginx-${NGINX_VERSION}.tar.gz
+tar xzvf $HOME/NConf.tgz -C $WWWHOME;cp $WWWHOME/nconf/INSTALL/create_database.sql $HOME/create_database.sql
+tar -C /usr/local -xzf go$GOLANG_VERSION_OS_ARCH.tar.gz
+tar xvzf $gdb_install_dir/FileGDB_API_1_5_1-64gcc51.tar.gz
+tar -xvf 1.2.4.tar.gz
+tar -xf mingw.tar.gz -C /opt/
+tar zxf LibreOffice_6.2.5_Linux_x86-64_deb.tar.gz
+tar xvzf ./mosquitto-1.5.8.tar.gz
+tar -zxf /tmp/turtlecoin-rel.tar.gz --strip-components=1 -C ${TRTL_PATH}
+tar xzf s6-overlay-amd64.tar.gz -C /
+tar --strip-components=1 -xaf perl-5.10.1.tar.bz2 -C /usr/src/perl
+tar -zxvf freexl-1.0.3.tar.gz
+tar -xf kibana-${version}-linux-x64.tar.gz -C /tmp
+tar -zxf /odbc.tar.gz
+tar -xzf prank.linux64.170427.tgz
+tar -C /tmp -xzf /tmp/resty_cli.tgz
+tar --strip-components=1 -xzf trnascan-se.tar.gz -C /usr/src/trnascan-se
+tar -xzf /tmp/openjdk.tar.gz -C /opt/openjdk --strip-components=1
+tar zxf neo4j-community-2.3.8-unix.tar.gz
+tar -xvzf Joomla_3.9.3-Stable-Full_Package.tar.gz -C /var/www/html
+tar -zxvf progs_consensx.tar.gz
+tar -C . -ozxvf hab.tar.gz
+tar zxf /tmp/dnnl_lnx_1.1.0_cpu_gomp.tgz -C /root
+tar -zxf ${NGINX_VERSION}.tar.gz
+tar -zxvf BRAKER1.tar.gz
+tar xf go1.15.8.linux-amd64.tar.gz
+tar --strip-components=1 -xvf trnascan-se.tar.gz -C /usr/src/trnascan-se
+tar -xf silo-4.10.2.tar.gz
+tar -zxf nginx.tar.gz
+tar -xzvf helm-v2.9.0-linux-amd64.tar.gz
+tar -zxf kcptun-linux-amd64-${KCP_VERSION}.tar.gz
+tar -xf "node-v$NODE_VERSION.tar.xz"
+tar xzvf /tmp/ct-${CHART_TESTING_VERSION}-linux-${TARGETARCH}.tar.gz -C /tmp/ct-download
+tar -xvf /opt/${APP_NAME}.tar -C /opt/.
+tar zxfv glide-${GLIDE_VERSION}-linux-amd64.tar.gz
+tar -xJf zlib.tar.xz -C /tmp usr/lib
+tar -xvf backend-challenge-2019-1.0.tar
+tar xjf nightly.tar.bz
+tar -xvf Python-3.6.8.tgz
+tar -xzf bitcoin-0.19.1-x86_64-linux-gnu.tar.gz  -C /opt
+tar x -f /tmp/entrypoint-demoter.tar.gz -C /opt/entrypoint-demoter
+tar -xzvf rakkess-amd64-linux.tar.gz
+tar -xf luna-${Version}.tar.gz
+tar -xvf 5.6.7.tar.gz
+tar -xvzf sipp_${SIPP_VERSION}.tar.gz
+tar zxvfC /tmp/$PACKAGE.tar.gz /tmp/
+tar -xzf cmake-${CMAKE_VERSION_FULL}.tar.gz
+tar xvfz ssdeep-2.12.tar.gz
+tar xf /tmp/syncthing.tar.gz -C /tmp/
+tar xf /opt/wabt-${WABT_VER}-ubuntu.tar.gz -C /opt
+tar xzf "spark.tgz" -C /usr/local --owner root --group root --no-same-owner
+tar xfvz jellyfish.tar.gz
+tar xzvf /var/tmp/apache-maven-$MAVEN_VERSION-bin.tar.gz -C $MAVEN_HOME --strip-components=1
+tar zxvf /pip.tar.gz
+tar -xf ~/esp32work/eclipse-cpp-2019-03-R-linux-gtk-x86_64.tar.gz -C ../root
+tar -xf service.tar
+tar xf /tmp/apcu.tar.gz -C /usr/src/php/ext/apcu --strip-components=1
+tar -xvf helm-${HELM_VERSION}-linux-amd64.tar.gz
+tar -xzvf jdk.tar.gz -C /usr/local/java --strip-components 1
+tar xfz file.tar.gz
+tar -xzf nginx-${NGINX_VERSION}.tar.gz
+tar xzvf ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.9.0+-x64-linux.tar.gz
+tar -xjf manta-1.6.0.centos6_x86_64.tar.bz2
+tar --strip=1 -xzf osxcross.tar.gz
+tar xzf libevent-2.0.22-stable.tar.gz
+tar -zxf tor-${VERSION}.tar.gz
+tar -xzvf gitleaks_${GITLEAKS_VERSION}_linux_arm64.tar.gz
+tar -xvzf v13.0.02.tar.gz
+tar -zxvf Trinity-v2.8.5.tar.gz
+tar -xzf ioxclient_1.8.1.0_linux_amd64.tar.gz
+tar xfz rabbitmq-c.tar.gz
+tar xzf /s6-overlay-amd64.tar.gz
+tar --strip-components=1 -xzf ttrss.tar.gz
+tar xzf /tmp/Python37/Python-3.7.1.tar.xz
+tar xf     /tmp/emulatorjs.tar.gz -C     /emulatorjs/ --strip-components=1
+tar zxf luajit.tar.gz -C ${tempDir}
+tar -xvf bin/tomcat-native.tar.gz -C "$nativeBuildDir" --strip-components=1
+tar -xzf guacamole-${i}-${GUAC_VER}.tar.gz
+tar -xzf subjs.tar.gz
+tar xzf julia-${JULIA_VERSION}-linux-x86_64.tar.gz -C /opt/julia-${JULIA_VERSION} --strip-components=1
+tar -zxvf gmap-gsnap-2017-11-15.tar.gz
+tar xvf ncbi-blast-2.6.0+-x64-linux.tar.gz
+tar xvzf /opt/ansible-tower-setup-${ANSIBLE_TOWER_VER}.tar.gz -C /opt
+tar xvf alien4cloud-dist-1.4.3.2-dist.tar.gz
+tar xzf libevent-2.1.5-beta.tar.gz
+tar zxvf zulu8.19.0.1-jdk8.0.112-linux_x64.tar.gz
+tar zxvf ssh2-1.1.2.tgz
+tar -Jxf en.pak.tar.xz
+tar -xzf /tmp/tinytex.tar.gz -C $HOME
+tar -xzf install-ubuntu2004-rev5461.tar.gz
+tar -xzvf etcd-v3.3.13-linux-amd64.tar.gz
+tar -zxf v1.1.1.tar.gz
+tar -xf /tmp/openjdk.tar.gz --strip-components=1
+tar xf /tmp/jacket.tar.gz -C /opt/Jackett --strip-components=1
+tar vxzf ssh2-1.1.2.tgz
+tar cf - /usr/local/ssl | (cd /opt/dist
+tar -xzf /tmp/tarsnap.tgz -C /usr/src/tarsnap --strip-components 1
+tar xfv tinygo${TINYGO_RELEASE}.linux-amd64.tar.gz -C /usr/local
+tar -C /usr/local -xzf /root/go1.13.5.linux-amd64.tgz
+tar -xzf v2.3.1.tar.gz
+tar -xf release-11.2.tar.gz
+tar zxvf pgpool.tar.gz
+tar xf hdf5-1.8.21.tar.gz
+tar xzf modsecurity.tar.gz
+tar xzfp download.tar.gz
+tar --strip-components=1 -axvf uwsgi-2.0.12.tar.gz
+tar -zxvf grafana-4.2.0.linux-x64.tar.gz
+tar -zxvf ProDy-1.9.tar.gz
+tar xjf samtools.tar.bz2
+tar -xzf workflow.tar.gz -C /usr/src/workflow
+tar xf /tmp/mplabx_installer.tar -C /tmp
+tar xvfz TPP5.2_ubuntu.tgz
+tar Jxf gcc-${GCC_VERSION}.tar.xz
+tar xzvf libretime.tar.gz
+tar xzfv $DST/$TAR
+tar zxvf aliyun-cli.tar.gz
+tar -xz frp_0.31.2_linux_amd64.tar.gz
+tar -xf singularity-${SINGULARITY_VERSION}.tar.gz
+tar -xzf "apache-$ZK_DIST.tar.gz" -C /opt
+tar -xf ocserv.tar.xz -C /usr/src/ocserv --strip-components=1
+tar -C /usr/local/bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+tar xvzf /tmp/pivx.tar.gz
+tar zxf ./mongo-c-driver-1.14.0.tar.gz
+tar -xvzf kubeaudit_${KUBEAUDIT_VERSION}_linux_amd64.tar.gz
+tar xzvf tengine-2.2.0.tar.gz
+tar zxf freetype-2.4.0.tar.gz
+tar -xJf a.tar.xz
+tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/
+tar -zxvf seqkit_linux_amd64.tar.gz
+tar zxvf swoole.tar.gz -C swoole --strip-components=1
+tar -zxvf fasta-36.3.8e.tar.gz
+tar xf teamspeak.tgz --strip-components=1
+tar -zxvf gateone-1.1.tar.gz
+tar --strip-components 1 -xzvf "/rar2fs-$RAR2FS_VERSION.tar.gz"
+tar -zxvf fasta-36.3.8g.tar.gz
+tar zxf ${NGINX_RTMP_MODULE}.tar.gz
+tar xvfz 1.0.0.tar.gz
+tar xvf gremlin.tar -C /usr/src/exakat/neo4j/plugins/gremlin-plugin
+tar -xzf "node-v$NODE_VERSION-linux-armv7l.tar.gz" -C /usr/local --strip-components=1
+tar xzvf /OpenSSL_1_1_1m.tar.gz -C /usr/src --strip-components=1
+tar -xzf ${APP_NAME}.tar.gz
+tar -xf /tmp/pathbrute_0.0.10_linux_amd64.tar.gz --directory /tmp
+tar -zx --strip-components=1 -f ${LIBASS_VERSION}.tar.gz
+tar xzf $ACTIVEMQ-bin.tar.gz -C  /opt
+tar xzf /tmp/java/jre.tar.gz -C /tmp/java $LITE_VERSION_EXCLUDES
+tar -xjf firefox-74.0.tar.bz2
+tar -xzf jdk.tar.gz
+tar -C /usr/local -xzf go.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-amd64-libffi3.4.tar.gz" --strip-components=1
+tar xf ./apache-qpid-broker-j.tar.gz -C ${WORKDIR}/out --strip-components=2 qpid-broker/${BROKER_J_VERSION}/lib
+tar zxvf v${SWOOLE_VERSION}.tar.gz
+tar xvfz /tmp/geckodriver.tar.gz -C /tmp
+tar --strip-components=1 -xvf virome.tar.gz -C /opt/virome
+tar zxf /tmp/dnscrypt-proxy.tar.gz
+tar xvzf google-cloud-sdk.tar.gz -C /root/tools
+tar -x -C /opt -f pypy3.6-v7.3.3-linux64.tar.bz2
+tar -zx --strip-components=1 -f xcb-proto-${XCBPROTO_VERSION}.tar.gz
+tar -zxvf R-${r_version}.tar.gz
+tar -xzf v14.0.01.tar.gz
+tar -C /bin -xf /bin/kindlegen_linux_2.6_i386_v2_9.tar.gz
+tar -xf Radarr* -C /opt/
+tar -zxvf v2.0.2.tar.gz
+tar xvf spark-2.2.1-bin-hadoop2.7.tgz
+tar -zxf geckodriver-`curl https://github.com/mozilla/geckodriver/releases/latest | grep -Po 'v[0-9]+.[0-9]+.[0-9]+'`-linux64.tar.gz -C /usr/local/bin
+tar -zxvf Leantime-V2.0.6.tar.gz --strip-components 1
+tar -xvf firefox-$VERSION.tar.bz2
+tar -xzf "go$GO_VERSION.linux-amd64.tar.gz" -C /usr/local/go --strip-components=1
+tar -xvf v$LIBRDKAFKA_VERSION.tar.gz
+tar zxvf semagrow-tomcat.tar.gz -C $SEMAGROW_HOME
+tar xzf google-cloud-sdk.tar.gz
+tar xzf *.tgz -C kafka --strip-component 1
+tar xzf linux_amd64_yamlsort_v0.1.5.tar.gz
+tar zxf neo4j-community-2.3.7-unix.tar.gz
+tar -xzvf ruby-install-0.7.0.tar.gz
+tar -zxC /usr/src -f libressl.tar.gz
+tar xvf wkhtmltox.tar.xz
+tar xzf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar xzf /tmp/java/jdk.tar.gz -C /tmp/java $LITE_VERSION_EXCLUDES
+tar --extract --file docker.tgz --strip-components 1  --directory /usr/local/bin/
+tar -xzf FileGDB_API-RHEL7-64gcc83.tar.gz
+tar xvf node-${node_version}-linux-x64.tar.xz
+tar xJof /tmp/calibre-cache/calibre-x86_64.txz -C /opt/calibre
+tar -xzvf helm-v2.13.1-linux-amd64.tar.gz
+tar -zxf brooklyn-dist-${BROOKLYN_VERSION}-dist.tar.gz
+tar -xzf /redis-3.2.0.tar.gz -C /tmp/
+tar -C /usr/local/bin -xzf "dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz"
+tar zxvf /tmp/rp_dep.tgz -C /ricopili/rp_dep/
+tar           --extract           --file postgis.tar.gz           --directory /usr/src/postgis           --strip-components 1
+tar xzvf nginx-1.16.1.tar.gz
+tar -zxvf nginx-1.*.tar.gz
+tar xzf /tmp/java/jre.tar.gz -C /tmp/java
+tar xf twolame.tar.gz
+tar -xf chia-gigahorse-farmer.tar.gz
+tar -xzvf /home/admin/canal.deployer-*.tar.gz -C /home/admin/canal-server
+tar -xvzf *.tar.gz
+tar -oxzf dotnet.tar.gz -C /usr/share/dotnet
+tar zxvf v3.2.0.tar.gz
+tar -xzvf elasticsearch.tar.gz
+tar zxvf tophat-2.1.1.tar.gz
+tar -C /bin -xzf /tmp/docker-gen-linux-${ARCH}-$DOCKER_GEN_VERSION.tar.gz
+tar -xzf /tmp/src.tar.gz -C /opt/gavel --strip-components 1
+tar -xzf rcon-cli.tgz
+tar -xf openssl-1.1.0h.tar.gz
+tar -xzf /tmp/privatebin.tar.gz --strip 1
+tar xzf filebeat-${FILEBEAT_VERSION}-linux-x86_64.tar.gz
+tar -zxvf Leantime-V2.0.8.tar.gz --strip-components 1
+tar xf /usr/local/$GO_ARCHIVE_FILENAME
+tar xf /opt/wasi-sdk-${WASI_SDK_VER}.0-linux.tar.gz -C /opt
+tar -xzf kafka-manager-sources.tar.gz -C /kafka-manager-source --strip-components=1
+tar xzf /v${MPD_VERSION}.tar.gz -C /
+tar xjf FirefoxSetup.tar.bz2 -C /opt/
+tar zxvf nrpe-3.2.1.tar.gz
+tar xf "$(cat ~/file_name)" --strip=1 --no-same-owner -C .
+tar -xf sqlany-php71.tar.gz -C /tmp/sqlany --strip-components=1
+tar xzf curl-7.41.0.tar.gz
+tar -zxf $ospd_openvas.tar.gz
+tar xf     /tmp/healthchecks.tar.gz -C     /app/healthchecks/ --strip-components=1
+tar -xzvf 0.16.1.tar.gz
+tar zxvf fsls-${FSECURE_VERSION}.tar.gz
+tar -xf cmake-3.8.1.tar.gz
+tar -xzf /root/leanote.tar.gz -C /data/
+tar -C /var/www/ -xvf /tmp/owncloud.tar.bz2
+tar xf MG5aMC_PY8_interface_V1.0.tar.gz -C /MG5aMC_PY8_interface_V1.0
+tar -xzf zookeeper-${ZOOKEEPER_VERSION}.tar.gz -C /opt
+tar -xjf bwa-0.7.17.tar.bz2
+tar xzf ./actions-runner-linux-x64-${NER_VERSION}.tar.gz
+tar -zxvf gmap-gsnap-2017-06-20.tar.gz
+tar -xz --strip-components=1 -f mediawiki.tar.gz
+tar -xf opengfx-0.5.0.tar
+tar -xzf stdiscosrv.tar.gz
+tar -xzf ruby.tar.gz -C /usr/src/ruby --strip-components=1
+tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz
+tar -xvf go1.10.3.linux-amd64.tar.gz
+tar -xf helm.tar.gz
+tar xzf cmake-${CMAKE_VERSION}-Linux-x86_64.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.3.tar.gz" --strip-components=1
+tar xvf gr-latest-Ubuntu-x86_64.tar.gz -C /usr/local --strip-components=1
+tar xvzf $proj_archive -C /tmp
+tar zxvf temp.tgz
+tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.3.tar.gz" --strip-components=1
+tar xzvf $HOME/NConf.tgz -C $WWWHOME;     cp $WWWHOME/nconf/INSTALL/create_database.sql $HOME/create_database.sql;     rm -rf $WWWHOME/nconf/INSTALL* $WWWHOME/nconf/UPDATE*;     rm -rf $WWWHOME/nconf/config/;     cp -rp $WWWHOME/nconf/config.orig/ $WWWHOME/nconf/config/
+tar -xzvpf sqla17_client_linux_x86x64.tar.gz
+tar xzf Jamulus-${JAMULUS_VERSION}.tar.gz
+tar -xzvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar xf libmysofa.tar.gz
+tar jxvf xlifepp-snapshot-full-2018-01-08-v1.5.1-r710.tbz --transform /xlifepp
+tar -xf linux-4.8.2.tar.xz
+tar -xzf Python-3.7.4.tgz
+tar xvf "mozjpeg-3.1-release-source.tar.gz"
+tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1
+tar -xvjf gatk-3.8.1.0.tar.bz2
+tar -xf /tmp/build/openjdk.tar.gz --strip-components=1
+tar zvxf yarn-v1.5.1.tar.gz
+tar xf ./cache/pandoc-crossref.tar.gz
+tar zvxf yarn-v1.0.2.tar.gz
+tar -xjf brial-1.2.7.tar.bz2
+tar -xzf /etc/alpine-node-${NODE_VERSION}.tar.gz -C /usr --no-same-owner
+tar -C /usr/local/bootstrap -xzf golang.tar.gz
+tar -zxf cmake-${cmakesuff}-aarch64.tar.gz
+tar -xvf ${FTD_ANSIBLE_VERSION}.tar.gz
+tar -xvf mash-Linux64-v2.2.tar
+tar zxvf frp_${FRP_VERSION}_linux_arm.tar.gz
+tar -xzf pachi-11.00-retsugen.tar.gz
+tar xzvf /OpenSSL_1_0_1c.tar.gz -C /usr/src --strip-components=1
+tar zxf v${TERRAFORM_VERSION}.tar.gz -C src/github.com/hashicorp
+tar -xvf go1.13.3.linux-amd64.tar.gz
+tar -C / -xvzf /lua-openresty-dns.tar.gz
+tar -xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1
+tar -xvf /usr/src/firefox-40.0.3.tar.bz2
+tar xzvf fdk-aac.tar.gz
+tar -xvJf a.tar.xz
+tar xvf /tmp/nomad.tar.gz --strip-components 1 -C /go/src/github.com/hashicorp/nomad/
+tar -zxvf /tmp/${FILENAME} -C /tmp
+tar xz kcptun-linux-amd64-${KCP_VERSION}.tar.gz
+tar -xvf /tigervnc.tar.gz -C /
+tar -xzf cmake-3.15.7-Linux-x86_64.tar.gz        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-3.15/Help        --exclude=share/vim        --exclude=share/vim
+tar -C / -Jxpf /tmp/s6-overlay-x86_64-${S6_OVERLAY_VERSION}.tar.xz
+tar -C /opt -zxvf /tmp/openfire.tar.gz
+tar -xzf /tmp/lld.tar.gz -C /usr/local
+tar -zxvf etcd-${ETCD_VERSION}-linux-amd64.tar.gz
+tar -xzf /tmp/postfixadmin-$VERSION.tar.gz -C /postfixadmin
+tar xvzf apache-zookeeper-${ZK_VERSION}-bin.tar.gz
+tar -zxvf Trinity-v2.5.1.tar.gz
+tar xvfz 4.1.0.tar.gz
+tar xJvf gawk-5.0.0.tar.xz
+tar -oxzf aspnetcore.tar.gz -C /dotnet ./shared/Microsoft.AspNetCore.App
+tar -xzf "node-v$NODE_VERSION-linux-armv6hf.tar.gz" -C /usr/local --strip-components=1
+tar xf ALL_1000G_phase1integrated_v3_annotated_legends.tar
+tar xzf /tmp/helm.tar.gz -C /tmp/
+tar -xzvf ${LUA_NGINX_MODULE}.tar.gz
+tar -zxvf v2.2.0.tar.gz
+tar -xvf presentator.tar.gz --strip 1
+tar xzf release-1.10.0.tar.gz
+tar -zxf $ZLIB.tar.gz
+tar -xzf /tmp/jetty.tar.gz -C /opt
+tar zxvf autoclass-c-3-3-6.tar.gz
+tar xzvf gawk-5.0.0.tar.gz
+tar -zxvf  XEngine_8_4_1_23.tar.gz     else         echo -e "\nNo XEngine_8_4_1_23.tar.gz present in ${ORACLE_HOME}/soa/soa/thirdparty/edifecs directory. Skipping untar.";     fi
+tar -xzf CMAK.tar.gz
+tar -zxvf diamond-linux64.tar.gz
+tar -C /usr/local -xzf /root/go1.12.linux-amd64.tgz
+tar -vxzf fgsl-0.9.4.tar.gz
+tar -xzvf helm-v3.0.0-beta.5-linux-amd64.tar.gz
+tar xvjf mono-4.8.1.0.tar.bz2
+tar xf  ${NETDATA_VERSION}.tar.gz --strip-components=1
+tar -xzf naabu.tar.gz
+tar xf kubeval-darwin-amd64.tar.gz
+tar -xzvf LuaJIT-${LUAJIT_VERSION}.tar.gz
+tar xzf ngx_brotli.tar.gz
+tar -C C:\RoslynCompilers-3.6.0 -zxf microsoft.net.compilers.3.6.0.zip
+tar -C /usr/local/bin -xvf /tmp/mitmproxy.tar.gz
+tar --no-same-owner -xzf ${KUBECTL_PACKAGE}
+tar -C /opt/ -xzvf /opt/dart-sass-1.17.3-linux-x64.tar.gz
+tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-v*.tar.gz
+tar -zxvf Python-2.7.8.tgz
+tar -zxvf lua-nginx-module.tar.gz
+tar --extract 		--file openjdk-16.0.1_linux-aarch64_bin.tar.gz 		--directory "$JAVA_HOME" 		--strip-components 1 		--no-same-owner
+tar zvxf vips-${LIBVIPS_VERSION}.tar.gz
+tar -xvjf /tmp/micromamba.tar.bz2 --strip-components=1 bin/micromamba
+tar -zxvf v2.1.4.tar.gz
+tar -zxvf readosm-1.0.0e.tar.gz
+tar xf libvpx.tar.gz
+tar -xvzf kubectl-who-can_linux_x86_64.tar.gz
+tar zxvf kubernetes-client-linux-amd64.tar.gz
+tar xvf /opt/firefox.tar.bz2 -C /opt
+tar -zcf vendors.tar.gz vendors
+tar xfz nginx-module-rtmp.tar.gz
+tar -xvf falco.tar.gz
+tar xvf v3.0.3.tar.gz
+tar -xzf gau.tar.gz
+tar xvf lua.tar.gz
+tar -zxvf curl-7.45.0.tar.gz
+tar zxvf sc_serv2_linux_x64-latest.tar.gz
+tar xzf humhub.tar.gz
+tar --strip-components=1 -xzf "ParaView-5.7.0-osmesa-MPI-Linux-Python2.7-64bit.tar.gz"
+tar xf dlib-19.13.tar.bz2
+tar -xf hiredis.tar.gz -C hiredis --strip-components=1
+tar -xzf ibm-aspera-connect-3.9.6.173386-linux-g2.12-64.tar.gz
+tar -xzf /tmp/libcxx.tar.gz -C /usr/local
+tar -xzf kafka-manager-source.tar.gz -C /kafka-manager --strip-components=1
+tar x -f /tmp/rcon-cli.tgz -C /opt/rcon-cli
+tar -xvzf conftest_${CONFTEST_VERSION}_Linux_x86_64.tar.gz
+tar -xzf ansible.tar.gz -C ansible --strip-components 1
+tar -xzf wordpress.tar.gz -C /home/work/_app/nginx/html
+tar -xvzf libsvm.tar.gz
+tar -xf ./${ZULU_ARCH} -C /usr/lib/jvm/
+tar -zxf git.tar.gz
+tar -xvf 5.6.6.tar.gz
+tar xvzf /tmp/$ZIP
+tar -zxvf /tmp/${HELM_FILE_NAME} -C /tmp
+tar xvf go1.13.1.linux-amd64.tar.gz
+tar -xJf zlib.tar.xz -C /tmp
+tar -xvzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+tar -C /tmp/aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1
+tar xzf openssl-${OPENSSL_VERSION}.tar.gz
+tar xf busybox-1.35.0.tar.bz2
+tar -zxvf opencensus.tar.gz
+tar -xzf "/tmp/mongodb_server_ubuntu.tgz" --directory "/var/lib/mongodb-mms-automation/downloads"
+tar -xf openssl-1.0.2u.tar.gz
+tar -zxf ccache.tar.gz
+tar xzvf v$LIBWEBSOCKET.tar.gz
+tar -zxvf $gsa_version.tar.gz
+tar -xvzf ${OMNIDB_VERSION}.tar.gz
+tar xf teamspeak.tar.bz2 --strip-components=1
+tar -xf swoole.tar.gz -C swoole --strip-components=1
+tar zxvf apache-jmeter-${JMETER_VERSION}.tgz
+tar -jxvf extundelete-0.2.4.tar.bz2
+tar -xzf "Python-$PYTHON_VERSION.linux-i386-libffi3.2.tar.gz" --strip-components=1
+tar -xjf jemalloc-4.4.0.tar.bz2
+tar zxf steamcmd_linux.tar.gz
+tar zxvf etcd-$ETCD_INSTALL_VERSION-linux-amd64.tar.gz
+tar -xpj --overwrite -f ./Jetson_Linux_R32.4.4_aarch64.tbz2
+tar -xf libsigc++-${LIBSIG_VERSION}.tar
+tar -zxf Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz
+tar xJvf gawk-5.0.1.tar.xz
+tar xzf nginx-1.15.8.tar.gz
+tar --strip-components=1 -xaf perl-5.32.1.tar.xz -C /usr/src/perl
+tar -zxvf dashcore-${BRANCH}.0-${IS}-linux-gnu.tar.gz
+tar -xf "xpra.tar.xz"
+tar xzpf kcptun.tar.gz server_linux_amd64
+tar -xvzf tldr_${TLDR_VERSION}_linux_arm64.tar.gz
+tar zxf lnmp${LNMPA_VERSION}.tar.gz
+tar -xf nginx-${VERSION}.tar.gz
+tar -xzf ${work}/om.tar.gz --strip-components=1 -C ${OM_HOME}/
+tar -xz -C /tmp/helm -f /tmp/helm.tar.gz
+tar --strip-components=1 -xaf perl-5.28.3.tar.xz -C /usr/src/perl
+tar xzf ${OPENCART_FILE} --strip 2 --wildcards '*/upload/'
+tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+tar --strip-components=1 -xzf "ParaView-5.7.0-osmesa-MPI-Linux-Python3.7-64bit.tar.gz"
+tar -xvf RepeatScout*
+tar -xzf /tmp/mongodb_agent_linux.tgz --directory /
+tar -zxvf freexl-1.0.4.tar.gz
+tar xvf singularity-2.5.2.tar.gz
+tar xzf "zlib-$ZLIB_VERSION.tar.gz"
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.4.tar.gz" --strip-components=1
+tar -xz -C /tmp -f /tmp/docker.tgz
+tar -xvf $LMOD_V.tar.gz
+tar -xf ${QEMU_DIST} -C /opt
+tar -xf wisp-${WISP_VERSION}-linux-${TARGETARCH}.tar.gz
+tar -xzf Python-3.5.3.tgz
+tar xf     /tmp/core.tar.gz -C     /tmp/core --strip-components=1
+tar zxf shadowsocks-libev-${SS_VERSION}.tar.gz
+tar -cvf valhalla.debug.tar valhalla_*.debug
+tar xzfv myami-trunk-11-24-18.tar.gz -C /sw
+tar xf /sandbox-rootfs.tar.gz
+tar -xvzf popeye_Linux_arm64.tar.gz
+tar -xzf /tmp/libcxx-tsan.tar.gz -C /usr/local/libcxx-tsan
+tar -xzvf go.tar.gz -C /usr/local/go  --strip-components 1
+tar -xzf /src/grafana.tar.gz -C /opt/grafana --strip-components=1
+tar xzf libde265.tar.gz
+tar -x -f ngx_http_google_filter_module.tar.gz -C /usr/src
+tar -zvxf bhd-v1.3.4.0-d909c0e-x86_64-linux-gnu.tar.gz
+tar xf libogg.tar.gz
+tar -xf ./${ZULU_PACK} -C ${INSTALL_DIR}
+tar xzf /tmp/vegeta.tar.gz -C /usr/bin/
+tar -xvf /tmp/nedi-${NEDI_VERSION}.tgz --directory /var/www/html/
+tar -zxf ${FRP_FILENAME} --strip 1 -C ${FRP_PATH}
+tar -xzvf hadoop-$HADOOP_VERSION.tar.gz
+tar -xvf /tmp/nedi-"$NEDI_VERSION".tgz --directory /opt/
+tar -zxf ${PHP_REDIS}.tar.gz --no-same-owner
+tar -zxvf nginx-$NGINX_VERSION.tar.gz
+tar -xf "node-v%%NODEJS_CANONICAL%%-linux-x64-musl.tar.xz"
+tar -xzf "$KAFKA_DIST.tgz" -C /opt
+tar -C / -Jxpf /tmp/s6-overlay-${S6_ARCH}.tar.xz
+tar xf pythia8243.tgz
+tar zxvf mafft-7.453-with-extensions-src.tgz
+tar xfz swoole.tar.gz --strip-components=1 -C /usr/src/php/ext/swoole
+tar xvf "${QEMU_TARBALL}"
+tar -C /opt -xjf /tmp/firefox.tar.bz2
+tar -zxvf gm_et_linux_64_4.48_3.60.tar.gz
+tar -xvzf $TARBALL_FILE -C /swift
+tar -xvf gotty_linux_amd64.tar.gz
+tar -zxvf ndk.tar.gz
+tar -xzvf v1.6.0.tar.gz -C easy-mock --strip-components 1
+tar xf flutter_linux_v1.12.13+hotfix.8-stable.tar.xz -C $HOME/opt > /dev/null
+tar xvzf $ACTIVEMQ-bin.tar.gz -C  /opt
+tar xzvf "/tmp/unrarsrc-$RAR_VERSION.tar.gz" -C /tmp
+tar xf php.tar.gz
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.2.3_aarch64.tbz2
+tar zxf /tmp/cmake-3.12.2.tar.gz -C /tmp/
+tar xzf NPB3.3.1.tar.gz
+tar -xf docker-machine-driver-harvester-amd64.tar.gz -C /opt/drivers/management-state/bin
+tar -xf /tmp/irssi-otr.tar.gz -C /usr/src/irssi-otr --strip-components 1
+tar -zxvf freexl-1.0.2.tar.gz
+tar jxf slurm.tar.bz2 -C /usr/local/src/slurm --strip-components=1
+tar -zxvf xlhtml-0.5.tgz
+tar -xzf latest_toolchain.tar.gz --directory / ${ADDITIONAL_TAR_OPTIONS}
+tar -C /usr/local/ -xvf go1.12.6.linux-amd64.tar.gz
+tar -oxzf dotnet.tar.gz -C /usr/share/dotnet ./packs ./sdk ./sdk-manifests ./templates ./LICENSE.txt ./ThirdPartyNotices.txt
+tar -zxf /tmp/s6-overlay.tar.gz -C /
+tar xzvf /var/tmp/$JDK_DOWNLOAD_TAR -C $JAVA_HOME --strip-components=1
+tar zvxf yarn-v1.3.2.tar.gz
+tar zxf dnscrypt-proxy.tar.gz
+tar -xvf /opt/sqlrelay-1.1.0.tar.gz
+tar xf HepMC-2.06.09.tar.gz
+tar -xzf kafka-manager.tar.gz
+tar xf supervisor-3.4.0.tar.gz
+tar zxvf /tmp/joal.tar.gz -C /data/joal >/dev/null
+tar xf 0.8.tar.gz
+tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-${CMAKE_VERSION}/Help        --exclude=share/vim        --exclude=share/vim
+tar -C /usr/local -xzf "go$GO_VERSION.linux-amd64.tar.gz"
+tar xvfz samba-samba-4.11.5.tar.gz
+tar xvzf /ranger/dist/ranger-usersync.tar.gz -C /ranger
+tar -xzf ruby-2.1.5.tar.gz
+tar -jx --strip-components=1 -f ffmpeg-${FFMPEG_VERSION}.tar.bz2
+tar xzf /libopusenc-${OPUSENC_VERSION}.tar.gz -C /
+tar xfz /tmp/zookeeper.tar.gz -C /opt/
+tar zxvf /tmp/mLNHIICC_Setup.tar.gz -C /usr/local
+tar xvf goreman.tar.gz
+tar -C . -xzf telegraf-${TELEGRAF_VERSION}-static_linux_amd64.tar.gz
+tar --strip-components=1 -xvf ergatis.tar.gz -C /usr/src/ergatis
+tar -zxvf go.tar.gz
+tar -xz --strip-components=1 -f watchman.tar.gz
+tar -zxvf proj-4.8.0.tar.gz
+tar -xzvf kubectl-who-can_linux_x86_64.tar.gz
+tar zxf nginx-${NGINX_VERSION}.tar.gz
+tar -xzvf helm-v3.1.1-linux-amd64.tar.gz
+tar xJf /tmp/gcc/gcc-libs.tar.xz -C /tmp/gcc
+tar -zxvf $openvas_scanner_version.tar.gz
+tar zxf ./mongo-c-driver-1.13.0.tar.gz
+tar -xvf master.tar.gz
+tar -C /tmp -xzf /tmp/luarocks.tgz
+tar -xvf $DST/libgtextutils-0.7.tar.gz -C $DST
+tar zxf "apache-drill-${APACHE_DRILL_VERSION}.tar.gz"
+tar -xvf go1.7.4.linux-amd64.tar.gz
+tar -xvf /usr/src/firefox-50.0.2.tar.bz2
+tar -xzf /usr/src/squid -f squid3.tar.gz
+tar xzf ${TC}.tar.gz -C /usr
+tar -zxf $open_scanner_protocol_daemon.tar.gz
+tar -xzf CMAK-sources.tar.gz -C $KAFKA_MANAGER_SRC_DIR --strip-components=1
+tar -zxf hwloc-1*
+tar xzf nagios-4.4.3.tar.gz
+tar xf genometools-1.5.9.tar.gz
+tar -zxvf v3.6.2.tar.gz
+tar xf     /tmp/sonarr.tar.gz -C     /app/sonarr/bin --strip-components=1
+tar xzf  helm-v2.9.1-linux-amd64.tar.gz
+tar xzf libheif.tar.gz
+tar xzf v${VERSION}.tar.gz
+tar -C memcached -zxvf /tmp/memcached.tar.gz --strip 1
+tar -xf vips-${LIBVIPS_VERSION}.tar.gz
+tar xavf i2c-tools_3.1.0.orig.tar.bz2
+tar xvjf /tmp/gcc-arm-none-eabi-4_9-2015q3-20150921-linux.tar.bz2 -C /usr/local/
+tar xzvf Python-3.8.2.tgz
+tar -xzvf db-4.8.30.NC.tar.gz
+tar -xpj --overwrite -f ./Jetson_Linux_R32.2.1_aarch64.tbz2
+tar -xvf firefox-57.0.2.tar.bz2
+tar -xzf v${VERSION}.tar.gz
+tar -C / -xvzf /luajit.tar.gz
+tar -zxC /usr/src -f http-redis.tar.gz
+tar -xzC /usr/src/otp-src --strip-components=1 -f otp-src.tar.gz
+tar zxvf cmake-3.*
+tar -xvzf docker-${DOCKER_VERSION}.tgz
+tar xfz /grpy.tar.gz
+tar -xvf zeromq-${ZEROMQ_VERSION}.tar.gz
+tar -C /usr/local -xzf go1.7.3.linux-amd64.tar.gz
+tar xzf google-cloud-cli-${CLOUD_SDK_VERSION}-linux-${ARCH}.tar.gz
+tar -xf R-${R_VERSION}.tar.gz
+tar -czvf "/out/registry_${VERSION#v}_${TARGETOS}_${TARGETARCH}${TARGETVARIANT}.tar.gz" *
+tar zxvf seqkit_linux_amd64.tar.gz
+tar xvf lrzsz-0.12.20.tar.gz
+tar xzf swoole-${SWOOLE_VER}.tgz
+tar -xf jotta-cli-0.6.18443_linux_x86.tar.gz -C /
+tar -xzf /tmp/hugo.tar.gz -C /tmp
+tar xzf v${OPENJPEG_VERSION}.tar.gz
+tar -xvz  -C /opt -f $ULX3STMPOPT
+tar -zxf boost_1_70_0.tar.gz
+tar -xzvf code-server1.408-vsc1.32.0-linux-x64.tar.gz
+tar -xf idea.tar.gz
+tar xvfz ann_1.1.2.tar.gz
+tar xzfv eman2_centos6_docker.tgz -C /sw
+tar -zxvf discuz7-2009.11.26.tar.gz
+tar -C /usr/local/${GO_VERSION} -xzf ${GO_VERSION}.linux-amd64.tar.gz --strip-components=1 go
+tar xf /tmp/node.tar.xz -C /opt/
+tar -xzf mpich-3.2.tar.gz
+tar -xzf ${JOOMLA_FILE}
+tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.4.tar.gz" --strip-components=1
+tar fxz /tmp/zero-ui.tar.gz
+tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-${CMAKE_VERSION_MAJOR_MINOR}/Help        --exclude=share/vim
+tar -zxvf hadoop-3.2.0.tar.gz -C /opt/
+tar -xzf cmake-${CMAKE_VERSION}.tar.gz
+tar -xzf ruby-2.6.3.tar.gz
+tar xfvz /dropbox.tgz
+tar xvzf ProReports.utf8-lin.tar.gz
+tar xvf node-v8.1.2-linux-x64.tar.gz
+tar -xvf gobgp.tar.gz
+tar -zxvf freexl-1.0.5.tar.gz
+tar xfz spark-2.4.4-bin-hadoop2.7.tgz
+tar xzf "${temp_dir}/${subsonic_latest_version}" -C "${app_base_dir}"
+tar xzvf julia-1.7.3-linux-x86_64.tar.gz
+tar -C /usr/local -xzf go1.12.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc;
+tar -xzf $GIT_CHGLOG_DOWNLOAD_FILE -C /usr/bin/ git-chglog
+tar -xzvf latest.tar.gz  >/dev/null 2>&1
+tar -xvzf Hg19.tar.gz
+tar -xf google-cloud-cli-407.0.0-linux-x86_64.tar.gz
+tar -xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz -C ${MAVEN_HOME} --strip-components=1
+tar -xvf mga.tar.gz -C /usr/src/mga
+tar xzf MediaInfo_CLI_${MEDIAINFO_VER}_GNU_FromSource.tar.gz
+tar xzvf /tmp/tomcat.tgz -C /opt
+tar xzvf $HOME/radium/$CLIENT_NAME.tar.gz -C $HOME/radium
+tar xzf v2.4.0.tar.gz
+tar zxf rocket.chat.tgz
+tar -zxvf ncbi-blast-2.7.1+-x64-linux.tar.gz
+tar zxvf diamond-linux64.tar.gz
+tar xvjf gnucash-$VGNUCASH.tar.bz2
+tar -zxf $gvmd_version.tar.gz
+tar -xf proftpd.tgz
+tar -zxf *.tar.gz -C /doh-proxy --strip-components=1
+tar -xvf /tmp/nedi-"$NEDI_VERSION".tgz --directory /opt/nedi
+tar zxvf gtool_v0.7.5_x86_64.tgz
+tar xfz ioncube_loaders_lin_x86-64.tar.gz
+tar xvf /tmp/docker.tgz -C /tmp
+tar xjf teamspeak3-server_linux_amd64-${VERSION}.tar.bz2 -C /opt
+tar -xzf /tmp/s6-overlay-amd64.tar.gz -C /
+tar -zxvf libzip-1.2.0.tar.gz
+tar -xf /tmp/sync.tgz -C /usr/bin rslsync
+tar xzf curl-7.42.1.tar.gz
+tar -xzvf "nfpm_1.1.8_Linux_x86_64.tar.gz" -C /usr/local/bin  --no-same-owner
+tar xvfz samba-samba-4.11.2.tar.gz
+tar -xzvf uvncrep017-ws.tar
+tar xf phantomjs-2.1.3-linux-x86_64.tar
+tar xfv /tmp/nexus.tar -C /opt
+tar xjf ffmpeg-snapshot.tar.bz2
+tar zxvf $GIT_TAR_FILE
+tar -C /bin -xzf /tmp/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+tar -I zstd -xf gcc-libs.tar.zst -C /tmp
+tar -zxf boost_1_${boostminorver}_0.tar.gz
+tar -xzvf ncbi-blast*
+tar -xzf "jdk-${JAVA_VERSION}u${JAVA_UPDATE}-linux-x64.tar.gz"
+tar -zxvf ${REBAR_BASE_DIR}/prod/rel/*/*.tar.gz -C /usr/local/xqerl
+tar -xzf /tmp/geckodriver-latest-linux64.tar.gz -C /opt
+tar -xzf boost_1_70_0.tar.gz
+tar -xvf $DST/fastx_toolkit-0.0.14.tar.bz2 -C $DST
+tar xzf /tmp/credhub.tgz -C /usr/local/bin
+tar xzvf /root/arachni-1.5.1-0.5.12-linux-x86_64.tar.gz -C /opt/
+tar zxvf tengine-$TENGINE_VERSION.tar.gz
+tar xf nix-${NIX_VERSION}-$(uname -m)-linux.tar.xz
+tar zxvf v${EFAK_VERSION}.tar.gz -C efak --strip-components 1
+tar xzf ${MOODLE_FILE} --strip 1
+tar -zxf install/apache-tomcat-8.5.23.tar.gz -C /opt
+tar -zxf tor-${TOR_VERSION}.tar.gz
+tar xvf phantomjs-2.1.1-linux-x86_64.tar.bz2
+tar zxf graphviz.tar.gz
+tar fxz /tmp/ZeroTierOne.tar.gz
+tar xf /tmp/jackett.tar.gz -C /opt/jackett --strip-components=1
+tar xvfz libmatheval-1.1.11.tar.gz
+tar -xvzf /opt/mdbook/mdbook.tar.gz
+tar xf infernal-1.1.2-linux-intel-gcc.tar.gz
+tar xzf pnp4nagios-0.6.26.tar.gz
+tar -zxvf HammerDB-$HAMMER_VERSION-Linux.tar.gz
+tar -C / -xvzf /lua-upstream-nginx-module.tar.gz
+tar xf geckodriver_linux64.tar.gz
+tar zxf ${NGINX_LUA_MODULE}.tar.gz
+tar -xzvf helm-v2.6.2-linux-amd64.tar.gz
+tar xvfz samba-samba-4.8.6.tar.gz
+tar xf   /tmp/argtable-src.tar.gz -C     /tmp/argtable --strip-components=1
+tar -xzf "Python-$PYTHON_VERSION.linux-amd64-libffi3.3.tar.gz" --strip-components=1
+tar xvfJ /tmp/telegram-latest.tar.xz
+tar xf kubetest-darwin-amd64.tar.gz
+tar -C /usr/local -xzf go1.12.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc; wget -O /usr/local/bin/curltest https://github.com/centminmod/docker-ubuntu-nghttp2/raw/master/curltest.sh; chmod +x /usr/local/bin/curltest;
+tar xzvf kustomize.tar.gz
+tar xzf jsl-0.3.0-src.tar.gz
+tar -xz --strip-components=1 -f v${LIBARIBB24_VERSION}.tar.gz
+tar xvzf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+tar -xvf /noVNC.tar.gz -C /
+tar -xzf /tmp/credhub.tgz -C /tmp
+tar -xf trojan*
+tar -C / -xvzf /lua-openresty-websocket.tar.gz
+tar -xzf "${PROMETHEUS_FILE_NAME}.tar.gz"
+tar xf '/tmp/avr-toolchain' -C /$C_USER/toolchains
+tar xf wildfly-$WILDFLY_VERSION.tar.gz
+tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1
+tar zxvf cmake-3.16.4.tar.gz
+tar xzf /twolame-${TWOLAME_VERSION}.tar.gz -C /
+tar zxvf /tmp/hadoop-$HADOOP_VERSION.tar.gz -C /usr/local/
+tar -xzf App-cpanminus-1.7044.tar.gz
+tar -zxvf v$SWOOLE_VERSION.tar.gz
+tar -xjf u-boot-2019.10.tar.bz2
+tar xvzf /luajit.tar.gz
+tar -zx -f xvidcore-${XVID_VERSION}.tar.gz
+tar -xzvf pig-0.17.0-src.tar.gz
+tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz
+tar xJ -f /tmp/qtbase-everywhere-src-${QT}.tar.xz
+tar -xjf gccarmnoneeabi532016q120160330linuxtar.bz2
+tar -xzf ~/esp32work/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz -C ../root/esp32work/xtensa-esp32-elf
+tar xzvf yasm-$YASM.tar.gz
+tar xzf ${GALAXY_OF_DRONES_VERSION}.tar.gz --strip-components=1
+tar xJvf gawk-5.1.0.tar.xz
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+tar -zxvf apache-maven-$MAVEN_VERSION-bin.tar.gz
+tar -xvf unbound-${VERSION}.tar.gz
+tar -C / -xvzf /lua-resty-upstream-healthcheck.tar.gz
+tar xzf noip-duc-linux.tar.gz
+tar xf /tmp/lidar.tar.gz -C /opt/lidarr --strip-components=1
+tar xzf ngx_cache_purge.tar.gz
+tar -xjvf /tmp/phantomjs.tar.bz -C /tmp/phantomjs --strip 1
+tar -xf /tmp/rancher-compose.tar.gz -C /tmp
+tar xjf ${NEXTCLOUD_TARBALL} --strip 1 -C /nextcloud
+tar xvf xpplinux.tgz -C /opt/xppaut --strip-components=1
+tar -xzvf hugo_0.62.2_Linux-64bit.tar.gz
+tar -xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+tar -xzf /tmp/libotr.tar.gz -C /usr/src/libotr --strip-components 1
+tar xzf libevent-2.1.8-stable.tar.gz
+tar -zxvf $gvm_libs_version.tar.gz
+tar xzf global-$GLOBAL_VER.tar.gz
+tar xzvf filebeat-${VERSION}-linux-x86_64.tar.gz
+tar -oxzf dotnet-monitor.tar.gz -C /app
+tar -C / -xvzf /lua-openresty-memcached.tar.gz
+tar -xvf /tmp/nedi*.pkg --directory /tmp/nedi/
+tar -xzvf async-profiler.tar.gz
+tar xf 	/tmp/proxy.tar.gz -C 	/defaults/proxy-confs --strip-components=1 --exclude=linux*/.gitattributes --exclude=linux*/.github --exclude=linux*/.gitignore --exclude=linux*/LICENSE
+tar -xvzf julia-1.4.1-linux-x86_64.tar.gz
+tar -x -C /opt -f pypy2.7-v7.3.3-linux64.tar.bz2
+tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.3.tar.gz" --strip-components=1
+tar -xzvf /tmp/sonarr.tar.gz -C /opt/sonarr --strip-components 1
+tar xzf "google-cloud-sdk-$CLOUD_SDK_VERSION-linux-x86_64.tar.gz"
+tar xfv v2.3.0.tar.gz
+tar -xvJf *.xz
+tar -C /tmp -xjf /tmp/gcc-arm-none-eabi-4_7-2013q3-20130916-linux.tar.bz2
+tar -zxf ~/boost.tar.gz -C ~
+tar -xzf cmake.tar.gz -C /cmake --strip-components=1
+tar xzf linux_amd64_server.tar.gz -C /nps
+tar xzf /tmp/ombi-src.tar.gz -C     /app/ombi/
+tar xzf /tmp/Python-3.7.1.tar.xz
+tar --strip-components=1 -zxf /tmp/v${CONFD_VERSION}.tar.gz
+tar xvf node-v6.14.4-linux-x64.tar.gz
+tar xzvf docker-17.04.0-ce.tgz
+tar zxvf seqkit_linux_amd64.tar.gz ; mv seqkit /usr/local/bin/
+tar xzvf "unrarsrc-$RAR_VERSION.tar.gz"
+tar xzf Python-3.7.2.tgz
+tar -zxvf v1.20.tar.gz
+tar -zxf hugo_0.55.6_Linux-64bit.tar.gz
+tar xvzf spades.tar.gz
+tar -zxvf Leantime-V2.0.3.tar.gz --strip-components 1
+tar xzvf julia-1.8.3-linux-x86_64.tar.gz
+tar xvf gotty_linux_amd64.tar.gz
+tar xvjf gnucash-2.6.18.tar.bz2
+tar xvzf /ranger.tar.gz -C /ranger
+tar -xzf ${ATLASSIAN_HOME}/atlassian-jira-software-${JIRA_VERSION}.tar.gz -C ${ATLASSIAN_HOME}/
+tar -xzf "${BUILD_DIR}/latest.tar.gz"
+tar -xzf apache-jmeter-$JMETER_VERSION.tgz
+tar xvf /app/nextcloud.tar.bz2 -C     /tmp
+tar -xf release_${SICKGEAR_VERSION}.tar.gz --strip 1 -C /sickgear
+tar xvf "${FATCAT_TARBALL}"
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.1.0_aarch64.tbz2
+tar -zxvf $openvas_smb.tar.gz
+tar -zxvf google-cloud-sdk.tar.gz
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C / rm -r /tmp
+tar xvfz dntk-linux-amd64-v1.0.10.tar.gz
+tar zxf swoole-src-${SWOOLE_VERSION}.tar.gz
+tar xzf ./actions-runner-linux-x64-2.160.0.tar.gz
+tar xzf GeoLite2-Country.tar.gz
+tar -zxvf frps.tar.gz -C /usr/bin/frps
+tar xzf /tmp/mmark.tgz
+tar -oxzf aspnetcore.tar.gz -C /usr/share/dotnet ./shared/Microsoft.AspNetCore.App
+tar xf     /tmp/sabnzbd.tar.gz -C     /app/sabnzbd --strip-components=1
+tar -xzf php7-memcached.tar.gz
+tar xf     /tmp/tautulli.tar.gz -C     /app/tautulli --strip-components=1
+tar -xf helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz
+tar -zxvf augustus-3.2.2.tar.gz
+tar zxf /tmp/linux.tar.gz -C ${PS_INSTALL_FOLDER} -v
+tar xvf mono-4.8.1.0.tar.bz2
+tar -xzf /zookeeper-3.5.0-alpha.tar.gz -C /tmp/
+tar xjvf samtools-${version}.tar.bz2
+tar -zxf $python_gvm_version.tar.gz
+tar -zvxf Python-3.7.0.tgz
+tar -xzf geckodriver-v0.26.0-linux64.tar.gz
+tar xf nginx-${NGINX_VERSION}.tar.gz
+tar -xvf google-cloud-sdk-241.0.0-linux-x86_64.tar.gz
+tar xzf asterisk-${ASTERISK_VERSION}.tar.gz
+tar -x -C /opt -f julia-1.6.0-linux-x86_64.tar.gz
+tar -C /usr/local/bin -xzvf /tmp/dockerize-linux-amd64.tar.gz
+tar -C /usr/local -xzf /tmp/golang.tar.gz
+tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz
+tar xzf /tmp/$DECRED_ARCHIVE
+tar xzf ckb_v0.31.1_x86_64-unknown-linux-gnu.tar.gz
+tar xf ${PB_PKG} --strip 1
+tar -xzf /usr/src/ant/apache-ant-$ANT_VERSION-bin.tar.gz -C /usr/local
+tar zxvf /tmp/idea.tar.gz --strip-components=1 -C /opt/idea
+tar -zxvf Leantime-V2.0.11.tar.gz --strip-components 1
+tar -xzvf kafka-manager.tar.gz
+tar -xvJf re2c-${RE2C_VER}.tar.xz
+tar xvzf ssdeep.tar.gz
+tar xvfz dna-example-lite.tar.gz
+tar xfvz apache-ambari-$AMBARI_VERSION-src.tar.gz
+tar -xzf singularity-${VERSION}.tar.gz
+tar -xzvf litecoin.tar.gz $BD/litecoin-cli --strip-components=1 --exclude=*-qt
+tar zxf compliance-data.tar.gz
+tar -xvzf /tmp/spark.tgz -C /tmp/spark --strip-components 1
+tar xvzf $GANGLIA_WEB.tar.gz
+tar -C /tmp -xf /tmp/zlib.tar.gz
+tar xvjf /tmp/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2 -C /usr/local/
+tar -C / -xvzf /lua-resty-lrucache.tar.gz
+tar -xf *.gz
+tar xf pythia8244.tgz
+tar -xf /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C /usr/local/bin/
+tar xvzf mysql-connector-java-5.1.47.tar.gz
+tar -zxvf http://genometools.org/pub/genometools-1.5.9.tar.gz
+tar zxf /tmp/mysql-connector-java.tar.gz -C /tmp
+tar xjvf x264-snapshot-$X264.tar.bz2
+tar -xzf /tmp/linux-bridge.tar.gz -C /serverfiles
+tar xJvf /Python-2.7.11.tar.xz
+tar -zvxf  bitcoin-abc-0.19.1-x86_64-linux-gnu.tar.gz
+tar -zxf variant.tar.gz -C variant
+tar xzf libspatialite-${SPATIALITE_VERSION}.tar.gz
+tar -xvzf /tmp/${HUGO_RESOURCE}.tar.gz -C /tmp/
+tar -xf eccodes.tar.gz
+tar x -f /tmp/rcon-cli.tar.gz -C /opt/
+tar -xzf trnascan.tar.gz
+tar -xzf Python-2.7.13.tgz
+tar -zxvf v1.0.0-RC8.tar.gz
+tar xvzf u-boot-$CHECKOUT_TAG.tar.gz
+tar xzf     /tmp/lidarr.tar.gz -C     /app/lidarr/bin --strip-components=1
+tar -C /tmp -xf /tmp/nginx.tar.gz
+tar -xzvf ./openmpi-1.10.3.tar.gz
+tar xfz /tmp/sudo.tar.gz -C /tmp/
+tar --strip-components=1 -xaf perl-5.37.11.tar.xz -C /usr/src/perl
+tar -xzf /tmp/${RELEASE}.tar.gz --strip 1
+tar -xzvf v4.7.3.tar.gz
+tar xvf ices0-master.tar
+tar xvfz julia-0.6.4-linux-x86_64.tar.gz
+tar -xzf Python-3.7.5.tgz
+tar xvf GeoLite2-ASN.tar.gz --strip 1
+tar -xvf  rudiments-1.0.5.tar.gz
+tar -xvf /tmp/nedi-1.5C.tgz
+tar -xvf k9s_${K9S_VERSION}_Linux_x86_64.tar.gz
+tar -zx --strip-components=1 -f v${LIBVIDSTAB_VERSION}.tar.gz
+tar -xvzf /cntlm-0.92.3.tar.gz
+tar -xzf *.tar.gz
+tar -xzf haproxy.tar.gz -C /usr/src/haproxy --strip-components=1
+tar -zxvf Leantime-V2.0.5.tar.gz --strip-components 1
+tar xvfz aa-example-lite.tar.gz
+tar -xvf /tmp/diagslave.tgz
+tar xvf cctools-${CCTOOLS_VERSION}-x86_64-redhat7.tar.gz
+tar zxf ${LUA_NGINX_MODULE}.tar.gz
+tar xvf chromaprint-fpcalc-${CHROMAPRINT_VER}-linux-x86_64.tar.gz
+tar -xf node-${NODEJS_VERSION}.tar.xz -C / --strip-components=1
+tar -xzf Python-2.7.15.tgz
+tar zxvf redis.tar.gz -C redis --strip-components=1
+tar xzf libreswan.tar.gz
+tar -zxvf $gvm_tools_version.tar.gz
+tar xf apache-qpid-broker-j.tar.gz -C ${BUILD_DIR}/out --strip-components=2 qpid-broker/${BROKER_J_VERSION}
+tar xf v2.17.0.tar.gz
+tar -xvf upx-3.95-amd64_linux.tar
+tar xvf subread-1.6.3-Linux-x86_64.tar.gz
+tar xvf Python-$VERSION.tgz
+tar xfz /$TAR_NAME
+tar xzf /tmp/Python37/Python-3.7.1.tgz
+tar -xzf "node-v$NODE_VERSION-linux-alpine-i386.tar.gz" -C /usr/local --strip-components=1
+tar -xf /tmp/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz -C /tmp
+tar -xvf k9s_Linux_x86_64.tar.gz
+tar xf ImageMagick.tar.gz
+tar -xzf "node-v$NODE_VERSION-linux-arm64.tar.gz" -C /usr/local --strip-components=1
+tar xzf kompose-linux-amd64.tar.gz
+tar -jxvf ffmpeg.tar.bz2 -C ./ffmpeg
+tar xzvf idol_11.4.0.tar.gz
+tar -zxvf $PHP_VERSION.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv6hf-libffi3.3.tar.gz" --strip-components=1
+tar xzf ckb_v0.26.1_x86_64-unknown-linux-gnu.tar.gz
+tar -xzvf helm-v3.0.0-beta.4-linux-amd64.tar.gz
+tar xvjf gnucash-$RGNUCASH.tar.bz2
+tar -xjf u-boot-${UBOOT_VERSION}.tar.bz2
+tar xvf $MAGENTO_VERSION.tar.gz
+tar xvzf node-${NODE_VERSION}-${ARCHITECTURE}.tar.gz
+tar zxf ${ARCHIVE}.linux-amd64.tar.gz
+tar --wildcards --strip-components 1 -xJf $FFMPEG_TAR -C /tmp/ffmpeg
+tar xvfz dntk-linux-amd64-vvv1.0.11.tar.gz
+tar zxf apache-maven-3.6.0-bin.tar.gz
+tar -xvf htslib-1.9.tar
+tar -xvzf webdis.tar.gz
+tar zxvf l_mpi_${INTEL_MPI_VERSION}.tgz
+tar zxf kibana.tar.gz
+tar xf ideaIC-2018.3.1-no-jdk.tar.gz -C /opt/
+tar xfz /tmp/kafka.tgz -C /opt
+tar -I zstd -xf zlib.tar.zst -C /tmp
+tar -xzf pagan.linux64.20150723.tgz
+tar --strip-components=1 -xf kafka.tgz
+tar zxvf infernal-1.1.3.tar.gz
+tar xf     /tmp/grocy.tar.gz -C     /app/www/ --strip-components=1
+tar -C /usr/local/glide -xzf glide.tar.gz
+tar xvf elasticsearch-${VERSION}-linux-x86_64.tar.gz -C ${INSTALL_DIR}
+tar -xpj --overwrite -f ./Jetson_Linux_R32.2.0_aarch64.tbz2
+tar -xf lion-${Version}-linux-${TARGETARCH}.tar.gz
+tar jxvf xlifepp-snapshot-full-2018-01-08-v1.5.1-r710.tbz
+tar -xvzf ruby-2.6.3.tar.gz
+tar zxf ${OPENRESTY}.tar.gz
+tar -xvzf redis-stable.tar.gz
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
+tar -xzf /tmp/docker.tar.gz -C /tmp/
+tar xvzf netifaces-0.10.4.tar.gz
+tar xvzf GeoLite2-ASN.tar.gz
+tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
+tar -zxf jellyfish-1.1.12.tar.gz
+tar -xf doctl.tar.gz --directory /bin
+tar -xvzf logstash-7.3.0.tar.gz
+tar -xvzf Joomla_3.7.3-rc1-Release_Candidate-Full_Package.tar.gz -C /var/www/html
+tar xzf /v${PSR_VERSION}.tar.gz
+tar -zxf $VERSION.tar.gz
+tar -Jxf de.pak.tar.xz
+tar xvfz vegeta-$VEGETA_VERSION-linux-amd64.tar.gz
+tar xzvf ncbi-blast-2.9.0+-x64-linux.tar.gz
+tar --strip-components=1 -xf graphiql.io.tar
+tar xfz /tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz -C /opt
+tar -xzvf v0.6.13.tar.gz
+tar xvfz samba-samba-4.11.1.tar.gz
+tar -xaf cassandra-php-drivers.tar.bz2
+tar -czvf helm-v2.6.2-linux-amd64.tar.gz
+tar -xf frp_${FRP_VERSION}_linux_amd64.tar.gz
+tar xf dav1d.tar.gz
+tar -C /usr/src/php/ext/memcached -zxvf /tmp/memcached.tar.gz --strip 1
+tar -xzf /tmp/golang.tar.gz -C /tmp
+tar xf libsrt.tar.gz
+tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1
+tar xzvf lame-$LAME.tar.gz
+tar xvzf pandoc-${pandoc_tag}-linux-amd64.tar.gz --strip-components 1 -C /usr/local
+tar -zxvf Leantime-V2.0.2.tar.gz --strip-components 1
+tar xf cargo-deny-$CARGO_DENY_VERSION-x86_64-unknown-linux-musl.tar.gz
+tar -zxvf $python_gvm_version.tar.gz
+tar xvf v0.2.9.tar.gz
+tar xzf teamspeak3-server_linux-amd64.tar.gz
+tar -xzf cmake-${CMAKE_VERSION_FULL}-Linux-x86_64.tar.gz        --exclude=bin/cmake-gui        --exclude=doc/cmake        --exclude=share/cmake-3.14/Help
+tar -xf koko-${Version}-linux-${TARGETARCH}.tar.gz
+tar xvzf mecab-0.996.tar.gz
+tar xz server_linux_amd64
+tar zxvf nginx-$NGINX_VERSION.tar.gz
+tar -xaC /usr/local/bin -f jet-linux_amd64_${JET_VERSION}.tar.gz
+tar -xzvf xsddoc-1.0.tar.gz xsddoc-1.0/lib/xsddoc.jar
+tar -jxf ${XLIFEPP}.tbz --transform=s/${XLIFEPP}/xlifepp/
+tar -oxzf dotnet-monitor-egress-s3storage.tar.gz -C /app
+tar -xz *.tar.gz
+tar xvfz "v2.3.0.tar.gz"
+tar xfz swoole.tar.gz --strip-components=1 -C ${PHP_BUILD_DIR}/ext/swoole
+tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar
+tar -zx --strip-components=1 -f ${FRIBIDI_VERSION}.tar.gz
+tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz -C /usr ./bin
+tar -zx --strip-components=1 -f libxcb-${LIBXCB_VERSION}.tar.gz
+tar xzf nginx-ct.tar.gz
+tar -C / -xvzf /ngx_devel_kit.tar.gz
+tar -cvf /tmp/lo.tar instdir/
+tar -xvf mongodb.tar.gz
+tar -zxf kagbeta-linux32-dedicated.tar.gz
+tar xzf /tmp/docker.tgz -C /tmp
+tar zxvf geoipupdate-${GEOIP_UPDATE_VERSION}.tar.gz
+tar -xf $file -C /tmp
+tar xzvf /opt/connectors.tar.gz --absolute-names
+tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-i386-libffi3.4.tar.gz" --strip-components=1
+tar -C /usr/local -xzf go${GOLANG_VERSION}.linux-amd64.tar.gz
+tar xf ${OPENCV_VERSION}.tar.gz
+tar xf libshine.tar.gz
+tar xf     /tmp/custom-cores.tar.gz -C     /emulatorjs/frontend/ --strip-components=1
+tar --strip-components=1 -xvf /deploy/falco-${FALCO_VERSION}-$(uname -m).tar.gz
+tar xvzfC /tmp/ioncube_loaders_lin_x86-64.tar.gz /tmp/
+tar xf gmp-${GMP_VERSION}a.tar.xz
+tar xvzf asterisk-17-current.tar.gz
+tar -xzf $HOME/tinytex.tar.gz
+tar -C /var/www/ -xvf /tmp/3rdparty.tar.gz
+tar -xzf swift.tar.gz --directory / --strip-components=1 $SWIFT_VERSION-$SWIFT_PLATFORM/usr/lib/swift/linux
+tar xzf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.gz -C / --exclude='./bin'
+tar -xzvf helm-v2.7.2-linux-amd64.tar.gz
+tar -zxvf /skynet-bin.tar.gz
+tar -zxvf luajit.tar.gz
+tar -C /home/work -xzf /go$GOLANG_VERSION.src.tar.gz
+tar -zx --strip-components=1 -f xproto-${XPROTO_VERSION}.tar.gz
+tar -xvzf etcd-v${ETCDCTL_VERSION}-linux-amd64.tar.gz
+tar xvzf aiarena-client-gui.tar.gz
+tar xf /tmp/apache-maven.tar.gz -C /opt/
+tar -xzf "go$GO_VERSION.linux-alpine-i386.tar.gz" -C /usr/local/go --strip-components=1
+tar -zxf google-cloud-sdk.tar.gz
+tar -xzf v1.6.17.tar.gz
+tar xvf /tmp/fuelcms.tar.gz
+tar -xzf guacamole-auth-jdbc-${GUAC_VER}.tar.gz
+tar -xzvf docker-17.04.0-ce.tgz
+tar -xzf php-ast.tar.gz -C php-ast --strip-components=1
+tar zxf lnmp1.6.tar.gz
+tar xzvf ${PACK_DOWNLOAD_FILE} -C /usr/local/bin pack --no-same-owner
+tar -xjf ${PHPBB_FILE} --strip-components=1
+tar zxf go${GOVERSION}.linux-amd64.tar.gz
+tar xzf /tmp/logstash-${LOGSTASH_VERSION}.tar.gz -C /opt
+tar -C /usr/local -xzf go${GOVER}.linux-amd64.tar.gz
+tar xzf v2*.tar.gz
+tar xvf calibro_V2.1.tar.gz
+tar xzvf /home/work/_src/supervisor.tgz -C /home/work/_src/
+tar -xf $DAVINCI_ZIP -d /opt/davinci
+tar xfz /agent/mongodb-agent.tar.gz
+tar -xzf /tmp/helm.tar.gz -C /tmp/
+tar -xzvf go-pillage-registries_1.0_Linux_x86_64.tar.gz
+tar xf micro.tar.gz -C /tmp --strip-components=1
+tar xzf /usr/local/hugo/${HUGO_BINARY}.tar.gz -C /usr/local/hugo/
+tar -xzf *.tar.gz -C /opt
+tar -xvf impute_v2.3.2_x86_64_static.tar
+tar xf     /tmp/unrar.tar.gz -C     /tmp/unrar --strip-components=1
+tar -xzvf docker-18.06.0-ce.tgz
+tar -zxvf helm-v${HELM_VERSION}-linux-amd64.tar.gz
+tar xf phantomjs-2.1.1-linux-x86_64.tar
+tar xzf $LUAROCKS_INSTALL.tar.gz
+tar xf cd-hit-v4.6.8-2017-0621-source.tar.gz
+tar xjf samtools-1.4.1.tar.bz2
+tar zxf HRC.r1-1.EGA.GRCh37.1KG_pops.tar.gz
+tar zxvf 1.0.15.tar.gz
+tar xvf ${PHANTOMJS_VERSION}.tar.bz2
+tar -xvzf popeye_Linux_x86_64.tar.gz
+tar -xvzf $SWIFT_ARCHIVE_NAME.tar.gz --directory / --strip-components=1
+tar -C /usr/local -xzf go-installer.tar.gz
+tar -xvf /caddy/caddy_v$CADDYVER_linux_amd64.tar.gz -C /caddy
+tar -xvf /tmp/s6/s6-overlay.tar.xz -C /
+tar xfz $STUNNEL_TAR
+tar -C / -xvzf /lua-resty-cookie.tar.gz
+tar -xzvf helm-v3.0.0-alpha.2-linux-amd64.tar.gz
+tar zxf powershell.tar.gz -C /opt/microsoft/powershell/$POWERSHELL_VERSION
+tar -C /opt/steam -xvzf /tmp/steamcmd_linux.tar.gz
+tar zxvf steamcmd_linux.tar.gz
+tar xfz /tmp/psol.tar.gz -C /usr/local/src/ngx-pagespeed
+tar xzf v1.9.0.tar.gz
+tar -jx --strip-components=1 -f libbluray-${LIBBLURAY_VERSION}.tar.bz2
+tar -xzvf jm.tar.gz -C /jm/clientserver --strip-components=1
+tar -xzf opkg.tar.gz
+tar --strip-components=1 -axvf uwsgi-2.0.15.tar.gz
+tar xzvf nginx.tgz
+tar xzfv myami-trunk-12-10-18.tar.gz -C /sw
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C / --exclude="./bin"
+tar -x -f ngx_http_substitutions_filter_module.tar.gz -C /usr/src
+tar -xvf  sqlrelay-1.1.0.tar.gz
+tar xzf racon.tar.gz
+tar -xvf /tmp/s6/s6-overlay-noarch.tar.xz -C /
+tar -xzf openssl.tar.gz -C openssl --strip-components=1
+tar xvzf ./mosquitto-1.6.3.tar.gz
+tar -xzvf $BITCOIN_TARBALL $BD/bitcoin-cli --strip-components=1
+tar -zxf minikraken_20171019_4GB.tgz
+tar xf php-${PHP_VERSION}.tar.gz
+tar xf fdk-aac.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-aarch64-libffi3.4.tar.gz" --strip-components=1
+tar -x -C /usr/local/bin -f /tmp/rcon-cli.tgz rcon-cli
+tar -zxvf genometools-1.5.9.tar.gz
+tar xvzf /tmp/s6-overlay-amd64.tar.gz -C /usr ./bin ./libexec
+tar xvf /tmp/hugo.tar.gz
+tar xzvf connectors.tar.gz
+tar -C /usr/local/bin -xvzf docker-gen-alpine-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
+tar -xf 4.6.5.tar.gz
+tar --strip-components=1 -xvf ncbi-blast+.tar.gz -C /usr/src/ncbi-blast+
+tar zxf shadowsocks-libev-3.2.5.tar.gz
+tar xzf ckb_v0.28.0_x86_64-unknown-linux-gnu.tar.gz
+tar xf     /tmp/heimdall.tar.gz -C     /app/www-tmp --strip-components=1
+tar -xf kubectl-linux-${TARGETARCH}.tar.gz
+tar xfz /agent/mongodb-tools.tgz --directory /var/lib/mongodb-mms-automation/
+tar -xvzf sample_audio_files.tar.gz
+tar xf openssl-cmake-1.0.1e-src.tar.gz
+tar zxvf fqtrim-0.9.7.tar.gz
+tar xfz stunnel-5.55.tar.gz
+tar -xf qt-everywhere-src-5.12.6.tar.xz
+tar -C /usr/local -xzf golang.tar.gz
+tar -xzf openssl.gz
+tar -C C:\RoslynCompilers -zxf microsoft.net.compilers.2.9.0.zip
+tar -xvf upx-3.96-amd64_linux.tar.xz
+tar xf speex.tar.gz
+tar -C /tmp/event-php -zxvf /tmp/event.tar.gz --strip 1
+tar -xjf /tmp/firefox.tar.bz2 -C /tmp/
+tar zxvf nagiosgraph.tar.gz
+tar zxf ${LIBEV_NAME}.tar.gz
+tar xvfz fftw-3.3.4.tar.gz
+tar -C /opt/ -xzvf /opt/dart-sass-${UPSTREAM_VERSION}-linux-x64.tar.gz
+tar -xf xcache.tar.gz -C xcache --strip-components=1
+tar -xpj --overwrite -f ./Jetson-210_Linux_R32.4.4_aarch64.tbz2
+tar -xvzf $VERSION.tar.gz
+tar -xzf v1.2.10.tar.gz
+tar -xzf "$ZK_DIST.tar.gz" -C /opt
+tar -zxf dokuwiki.tgz -C ${DATA_PATH} --strip-components 1
+tar -zxvf /frps.tar.gz /frp_0.31.2_linux_amd64/frps /frp_0.31.2_linux_amd64/frps.ini
+tar -xvf samtools-1.9.tar
+tar -xzvf pig-0.17.0.tar.gz
+tar -zxvf v2.1.5.tar.gz
+tar jxvf /tmp/sbcl.tar.bz2 --strip-components=1 -C /tmp/sbcl
+tar xfz s6-overlay.tar.gz -C /
+tar xzf nginx.tar.gz
+tar -xvf virome.tar.gz -C /usr/src/virome --strip-components=1
+tar -xzf lua-${LUA_VERSION}.tar.gz -C /usr/src/lua --strip-components=1
+tar -xzf /home/hugo.tar.gz -C /home
+tar xzf ${MINER_FILENAME}
+tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+tar xzf "libreswan-${SWAN_VER}.tar.gz"
+tar xjf ~/FirefoxSetup.tar.bz2 -C /opt/
+tar xzvf /root/ZAP_2.8.1_Linux.tar.gz -C /opt/
+tar zxvf /tmp/rp_bin.tgz -C /ricopili/
+tar -xzvf crowd.tar.gz
+tar -xzf signalp-4.1f.Linux.tar.gz -C bin/signalp/4.1 --strip-components 1
+tar -xvzf linux-pandoc_*
+tar -zxvf TransDecoder-v5.5.0.tar.gz
+tar xvf node-v8.11.4-linux-x64.tar.xz
+tar -C /usr/local/bin -xvzf dockerize.tar.gz
+tar xf  ${WPSCAN_V3_VERSION}.tar.gz --strip-components=1
+tar -xzf dnscrypt-proxy-linux_arm.tar.gz
+tar xzf openjdk-${JAVA_VERSION}*.tar.gz
+tar -xzf /tmp/cf.tgz -C /tmp
+tar -xf /tmp/nspr.tar.zst -C /tmp/nspr
+tar -zxf chproxy-linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.5.2.linux-amd64.tar.gz
+tar zxvf SPAdes-3.14.0-Linux.tar.gz
+tar xzvf Python-3.10.3.tgz
+tar -zxf $openvas_scanner_version.tar.gz
+tar xvfz samba-samba-4.11.3.tar.gz
+tar -xzvf etcd-v3.3.9-linux-amd64.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-alpine-armv7hf-libffi3.3.tar.gz" --strip-components=1
+tar -xf trojan.tgz
+tar xvjf /tmp/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2 -C /usr/local/
+tar -xvzf jobscheduler_linux-x64.1.12.8.tar.gz
+tar xzf linux_amd64_client.tar.gz
+tar -zxf arachni-1.5.1-0.5.12-linux-x86_64.tar.gz
+tar -xzf latest_toolchain.tar.gz --directory / --strip-components=1
+tar xzf "/tmp/s6-overlay-amd64.tar.gz" -C /
+tar -zxvf $ospd_openvas.tar.gz
+tar -xf /tmp/nss.tar.zst -C /tmp/nss
+tar xzvf "/usr/local/apache-maven/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -C /usr/local/apache-maven/
+tar xzf ngx_http_substitutions_filter_module.tar.gz
+tar -xpj --overwrite -f ./Jetson_Linux_R32.2.3_aarch64.tbz2
+tar xvfz 01r73d4a15utl13himv4d7cjpa6etf6z.gz
+tar zxvf /tmp/redis.tar.gz -C redis --strip-components=1
+tar -xvf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+tar -C /usr/local/ -xzf go1.14.linux-amd64.tar.gz
+tar xzvf Python-3.6.15.tgz
+tar -pxvzf interproscan-5.27-66.0-64-bit.tar.gz
+tar -zxvf apache-maven-3.3.9-bin.tar.gz
+tar -C /root-out -Jxpf /tmp/s6-overlay-symlinks-arch.tar.xz
+tar zxf /tmp/powershell-linux.tar.gz -C ${PS_INSTALL_FOLDER}
+tar zxf shadowsocks-libev-3.3.0.tar.gz
+tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1
+tar xzvf etcd-v3.4.7-linux-amd64.tar.gz
+tar -xf pw-linux-amd64.tar.gz
+tar -xzf /tmp/CGatePro-Linux-Intel.tgz
+tar -xzf $KO_DOWNLOAD_FILE -C /usr/bin/ ko
+tar -C / -xvzf /lua-openresty-mysql.tar.gz
+tar zxvf /tmp/scancl-linux_glibc22.tar.gz
+tar -xzf "supervisor-${SUPERVISOR_VERSION}.tar.gz"
+tar xzvf php.tgz
+tar xvzf openshift-client-linux.tar.gz
+tar xvf "$PACKAGE_FILE"
+tar -xzf $HOME/tinytex.tar.gz -C $HOME
+tar xzf /tmp/s6-overlay-amd64.tar.gz -C /opt/s6-overlay/
+tar xvf assembly/target/semagrow-*-tomcat-bundle.tar.gz -C $SEMAGROW_HOME
+tar -xzvf gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz
+tar -xvzf bison-2.6.5.tar.gz
+tar -xzvf php.tar.gz -C ./php --strip-components 1
+tar -xvf maya.tgz -C /maya
+tar -xf jotta-cli-0.6.24251_linux_x86.tar.gz -C /
+tar zxvf v0.3.5.tar.gz
+tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
+tar -xzf v13.0.02.tar.gz
+tar -oxzf dotnet.tar.gz -C /dotnet
+tar xvzf webrtc-streamer*.tar.gz --strip=1 -C /app/
+tar zxvf /usr/local/review_site.tar.gz -C /usr/local/
+tar xzf linux_amd64_yamlsort_v0.1.6.tar.gz
+tar xzfv tomoctf_x86_64_July2013.tar.gz -C /sw
+tar -xzf novnc.tar.gz -C /root/novnc
+tar -xvf jdk_ri-8u40-b25-linux-x64-10_feb_2015.tar.gz
+tar -xjf polenum-0.2.tar.bz2
+tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+tar fzxC systemc-$SYSTEMC_VERSION.tar.gz /usr/src/systemc
+tar -xzf v1.0.4.tar.gz
+tar xvf 2*.tar.gz
+tar -C /usr/local/bin -xvzf dockerize-linux-amd64-v0.6.1.tar.gz
+tar xzvf Class-DBI-Pg-0.09.tar.gz
+tar -xvf download
+tar -xvf go1.12.6.linux-amd64.tar.gz
+tar -xJf /tmp/irssi.tar.xz -C /usr/src
+tar zxvf /rrshareweb_centos7.tar.gz -C /rrshare/
+tar -xzvf openshift-origin-client-tools-v1.5.1-7b451fc-linux-64bit.tar.gz
+tar xzvf "/unrarsrc-$RAR_VERSION.tar.gz"
+tar xzf "${TEMP}/${SUBSONICLATEST}" -C "${APPBASE}"
+tar xf lua-5.3.5.tar.gz
+tar -zxf dokuwiki.tgz -C /www --strip-components 1
+tar xf monero.tar.bz2
+tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+tar zxvf frp_${FRP_VERSION}_linux_386.tar.gz
+tar xvf cctools-${CCTOOLS_VERSION}-x86_64-centos7.tar.gz
+tar -xvzf Radarr.master.*.linux-core-$arch.tar.gz
+tar xf im2txt_model.tar.gz
+tar -zxvf /tmp/mysql_connector.tar.gz -C /opt/solr/contrib/dataimporthandler/lib "mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar" --strip-components 1
+tar xzvf $HOME/NConf.tgz -C /var/www/html/
+tar -xzf swift.tar.gz --directory / --strip-components=1
+tar xvf openjdk-${VERSION}_linux-x64_bin.tar.gz -C /usr/lib/jvm/
+tar xzvf /tmp/sqlplus_12_2.tar.gz -C /tmp
+tar -Jxf ru.pak.tar.xz
+tar -zxvf 3.0.5.tar.gz
+tar xzf sratoolkit.2.8.2-ubuntu64.tar.gz
+tar -xvzf geckodriver-v0.11.1-linux64.tar.gz
+tar -xaf abcl-bin-1.6.0.tar.gz
+tar xf ton-blockchain-full.tar.xz
+tar -xvf workflow.tar.gz -C /usr/src/workflow
+tar -xzf "Python-$PYTHON_VERSION.linux-aarch64-libffi3.2.tar.gz" --strip-components=1
+tar zxvf /tmp/rp_dep.tgz -C /ricopili/dependencies/
+tar -xzvf tinc-1.1pre17.tar.gz
+tar -xvzf pachi-11.00-retsugen.tar.gz
+tar -zxvf wal-g.linux-amd64.tar.gz
+tar -zxvf tedlium_nnet_ms_sp_online.tgz
+tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+tar xzf v3.9.tar.gz
+tar -zxvpf polynote-dist.tar.gz
+tar -zxf $gvm_tools_version.tar.gz
+tar xvf cobaltstrike-trial.tgz
+tar zvxf yarn-v1.17.0.tar.gz
+tar xzvf cmake-3.16.0.tar.gz
+tar xzf /tmp/kibana-${KIBANA_VERSION}-linux-x64.tar.gz       -C /
+tar xfv /opt/v1.3.0-1.5.0.tar.gz -C /opt/xmr-stak-cpu
+tar xzf libwebp.tar.gz
+tar -xzf "go$GO_VERSION.linux-alpine-aarch64.tar.gz" -C /usr/local/go --strip-components=1
+tar -zxC /usr/src -f lua.tar.gz
+tar -zxC /usr/src -f tengine.tar.gz
+tar -zxf redis-$REDIS_VERSION.tar.gz -C /usr/local
+tar xzf ${TARBALL_BASE}.tar.gz
+tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/yarn --strip-components=1
+tar -C /usr/bin -xzf go1.14.linux-amd64.tar.gz
+tar zxvf jdk.tar.gz -C /opt/jdk --strip-components=1
+tar xvf /firefox.tar.bz2
+tar -C /opt/ -xzvf /opt/dart-sass-1.17.2-linux-x64.tar.gz
+tar xfvz swift-${SWIFT_VERSION}-RELEASE-ubuntu18.04.tar.gz
+tar -C /root-out -Jxpf /tmp/s6-overlay-noarch.tar.xz
+tar xjf FirefoxSetup.tar.bz2 -C /opt/firefox/
+tar xzfv myami-trunk-11-23-18.tar.gz -C /sw
+tar -xzf dnscrypt-proxy-linux_x86_64.tar.gz
+tar zxf docker-${DOCKER_VERSION}.tgz
+tar -zxvf asterisk-17-current.tar.gz
+tar xvf protobuf-all-3.5.1.tar.gz
+tar xvjf gnucash-2.6.17.tar.bz2
+tar xzvf /tmp/lidar.tar.gz -C /opt/lidarr --strip-components=1
+tar -C /root-out -Jxpf /tmp/s6-overlay-${S6_OVERLAY_ARCH}.tar.xz
+tar xfvz socklog-2.1.0.tar.gz
+tar xvzf redis-stable.tar.gz
+tar -xf zlib-${ZLIB_VERSION}.tar.gz
+tar -zxvf gmap-gsnap-2016-09-23.tar.gz
+tar xf     /picons.tar.bz2 -C     /picons
+tar xvf OpenJDK11-jdk_x64_linux_openj9_11_28.tar.gz -C /usr/lib/jvm/
+tar -xzf ncbi-blast-2.9.0+-x64-linux.tar.gz
+tar --extract --file docker.tgz --strip-components 1  --directory /usr/local/bin
+tar -zxvf helm-v${HELMV2_VERSION}-linux-amd64.tar.gz
+tar -zxf helm-v2.13.0-linux-amd64.tar.gz
+tar -xzf /tmp/libcxx-msan.tar.gz -C /usr/local/libcxx-msan
+tar axvf $DST/$ZIP -C $DST --strip-components=1
+tar xf libssh.tar.gz
+tar -xzf MwEmbedSupport.tgz -C extensions/MwEmbedSupport
+tar -zxvf augustus-3.2.3.tar.gz
+tar zxvfC /tmp/$PACKAGE-BETA.tar.gz /tmp/
+tar -zxf kcpraw-linux-amd64-$KCPRAW_VERSION.tar.gz
+tar xvf 2.1b.tar.gz
+tar xf root_v6.18.04.Linux-ubuntu18-x86_64-gcc7.4.tar.gz
+tar -xvf Python-3.7.0.tgz
+tar -xvzf xmrig-${XMRIG_VERSION}-xenial-x64.tar.gz
+tar -xzvf "nfpm_1.1.10_Linux_x86_64.tar.gz" -C /usr/local/bin  --no-same-owner
+tar -xjf samtools-1.9.tar.bz2
+tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc;
+tar xzf 1.3.3.tar.gz
+tar -C /tmp/ssdb-client-php -zxvf /tmp/ssdb-client-php.tar.gz --strip 1
+tar zxvf v1.0.8.tar.gz
+tar xvf apache-jmeter-5.0.tgz
+tar xvf ices-0.4.tar
+tar -vxzf docker-latest.tgz
+tar -xof php.tar.xz -C /usr/src/php --strip-components=1
+tar -C /usr/local -xzf go1.12.1.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc; wget  --no-check-certificate -O /usr/local/bin/curltest https://github.com/centminmod/docker-ubuntu-nghttp2/raw/master/curltest.sh; chmod +x /usr/local/bin/curltest;
+tar zxvf frp_${FRP_VERSION}_linux_arm64.tar.gz
+tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner
+tar --strip-components=1 -xaf perl-5.36.1.tar.xz -C /usr/src/perl
+tar -C /usr/local -xzf go.tgz
+tar zxvf frp_${FRP_VERSION}_linux_amd64.tar.gz
+tar czf SecList.tar.gz ${HOME}/wordlists/SecLists/
+tar -xzf ${ATLASSIAN_HOME}/mysql-connector-java-${MYSQL_CONNECTOR_VERSION}.tar.gz -C ${ATLASSIAN_HOME}/
+tar xzf bacula-${BACULA_VERSION}.tar.gz
+tar xvf poppler-0.56.0.tar
+tar -zxvf v2.1.0.tar.gz
+tar -zxf v1.3.tar.gz
+tar xvf netatalk-${netatalk_version}.tar.gz
+tar xvf kustomize_v${KUSTOMIZE_VERSION}_linux_${TARGETARCH}.tar.gz -C /usr/local/bin
+tar xf nasm-*.tar.gz
+tar -xzvf helm-v3.0.0-linux-amd64.tar.gz
+tar -xzf /tmp/znc.tar.gz -C /usr/src/znc --strip-components 1
+tar -zxvf libmcrypt-2.5.7.tar.gz
+tar -C /usr/src -xzf influxdb-${INFLUXDB_VERSION}-static_linux_amd64.tar.gz
+tar -vxzf docker-${DOCKER_VERSION}.tgz
+tar -xvf amap-5.4.tar.gz
+tar xzfv myami-trunk-11-24-18c.tar.gz -C /sw
+tar -xzf "go$GO_VERSION.linux-386.tar.gz" -C /usr/local/go --strip-components=1
+tar xvf apache-jmeter-5.1.tgz
+tar xf ideaIC-2018.3-no-jdk.tar.gz -C /opt/
+tar -xvf openjdk-17_linux-x64_bin.tar.gz -C /usr/lib/jvm/
+tar xf keycloak-wildfly-adapter-dist-$KEYCLOAK_VERSION.tar.gz -C $JBOSS_HOME
+tar -xJf "/tmp/mono.pkg.tar.xz"
+tar -zxf frp_${Frp_ver}_linux_amd64.tar.gz
+tar zxvf nagios-plugins.tar.gz
+tar -xvzf steamcmd_linux.tar.gz
+tar -C /usr/local -xzf /usr/local/$GO_ARCHIVE_FILENAME
+tar -xvf BRiAl-1.2.4.tar.gz
+tar xf cross-compiler-x86_64.tar.bz2 -C /usr/local/
+tar x -ovzf THIRD-PARTY-LICENSES-20200824.tar.gz
+tar xjf nasm-2.13.03.tar.bz2
+tar -xvf /tmp/nedi*.pkg --directory /var/nedi/
+tar -xvf "$FX_ARCHIVE" -C "$FX_PATH"
+tar -xzvf helm-v3.0.0-rc.3-linux-arm64.tar.gz
+tar xzvf yasm-${YASM_VERSION}.tar.gz
+tar xvf ht-2.1.0.tar.bz2
+tar zxvf jdk.tar.gz
+tar -xzf "go$GO_VERSION.linux-alpine-armv6hf.tar.gz" -C /usr/local/go --strip-components=1
+tar zxf apache-artemis-${VERSION}-bin.tar.gz -C ${INSTALL_DIR}
+tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz
+tar xvf GEM.tbz2
+tar -xjf firefox-${FF_VERSION}.tar.bz2
+tar xf x265_git.tar.bz2
+tar -xvzf Microsoft.Spark.Worker.netcoreapp${DOTNET_CORE_VERSION}.linux-x64-${DOTNET_SPARK_VERSION}.tar.gz
+tar xf flutter.tar.xz -C /home/$USER
+tar --strip-components=1 -xaf perl-5.34.1.tar.xz -C /usr/src/perl
+tar -xzf SPAdes-3.14.0-Linux.tar.gz
+tar xvfz samba-samba-4.8.4.tar.gz
+tar xzf /tmp/Jackett.Binaries.LinuxAMDx64.tar.gz -C /opt/
+tar xvzf /ranger_dist/ranger-2.0.0-admin.tar.gz -C /ranger
+tar xf cmake-3.10.0-rc3.tar.gz
+tar -xf magnus-${Version}-linux-${TARGETARCH}.tar.gz
+tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz
+tar -C /usr/local -xzf go1.10.2.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc
+tar xzf frp_${FRP_VERSION}_linux_amd64.tar.gz
+tar -xf upx-3.96-amd64_linux.tar.xz
+tar xzf ckb_v0.26.0_x86_64-unknown-linux-gnu.tar.gz
+tar -zxvf amqp-$AMQP_VERSION.tgz
+tar zxf lazybalancer.tar.gz --strip-components=1 -C /app/lazy-balancer
+tar -jxf install/phantomjs-2.1.1-linux-i686.tar.bz2 -C /opt
+tar -xvvf /tmp/diagslave.tgz
+tar -xzf ookla-speedtest-1.0.0-x86_64-linux.tgz
+tar -zxvf ncbi-blast-2.9.0+-x64-linux.tar.gz
+tar -czf proto-bins_$(cat /version.txt)_linux-$(uname -m).tar.gz proto-bins_$(cat /version.txt)_linux-$(uname -m)
+tar -xzf "Python-$PYTHON_VERSION.linux-i386-libffi3.4.tar.gz" --strip-components=1
+tar -xjf nextcloud.tar.bz2
+tar xzf libzen_${LIBZEN_VER}.tar.gz
+tar -zxf shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz
+tar -xzf "${ESP_PATH}.tar.gz" -C "${ESP_PATH}" --strip-components 1
+tar xvf Python-3.6.8.tgz
+tar -zxf hwloc-2*
+tar xvf v1.1.5.tar.gz
+tar -xf /tmp/novnc.tar.gz --strip-components=1 -C /usr/share/novnc
+tar zxf mysql.tar.gz
+tar xzf rabbitmq-c.tar.gz
+tar -C /root-out -Jxpf /tmp/s6-overlay-symlinks-noarch.tar.xz
+tar xf apache-qpid-broker-j.tar.gz -C out --strip-components=2 qpid-broker/${BROKER_J_VERSION}/
+tar xzf dnscrypt-proxy-1.4.3.tar.gz
+tar -zxvf jdk-8u211-linux-x64.tar.gz -C  /usr/local/
+tar xfv *.tar.gz --strip 1 -C /opt/xmr-stak-cpu
+tar xzf xl2tpd.tar.gz
+tar -zxvf helm-${HELM_VERSION}-linux-amd64.tar.gz
+tar -zxvf Leantime-V2.0.12.tar.gz --strip-components 1
+tar xf opus.tar.gz
+tar -oxzf aspnetcore.tar.gz ./shared/Microsoft.AspNetCore.App
+tar xzf  helm-${HELM_CLIENT_VERSION}-linux-amd64.tar.gz
+tar -zxv -f frp.tar.gz
+tar -xvf /tmp/nedi*.tgz --directory /var/nedi
+tar -xjf firefox-68.0.2.tar.bz2
+tar xfvz swift-${SWIFT_VERSION}-RELEASE-ubuntu16.04.tar.gz
+tar xf '/tmp/arm-toolchain' -C /$C_USER/toolchains
+tar -C ~ -xzf ~/apache-jmeter.tgz
+tar xjf ${NC_FILE} --strip 1
+tar -xvf xhprof.tar.gz
+tar -xvf /tmp/nedi-"$NEDI_VERSION".tgz --directory /var/www/html/
+tar xf libwebp.tar.gz
+tar -zx --strip-components=1 -f libvorbis-${VORBIS_VERSION}.tar.gz
+tar -zxvf gt-1.6.0-Linux_x86_64_x86_64-64bit.tar.gz
+tar -zxvf AATpackage-r03052011.tgz
+tar -xzf "Python-$PYTHON_VERSION.linux-amd64-libffi3.2.tar.gz" --strip-components=1
+tar xzf ${cachet_ver}.tar.gz --strip-components=1
+tar -zxvf Leantime-V2.0.15.tar.gz --strip-components 1
+tar -xvzf /tmp/soulseek.tgz -C /tmp
+tar xvzf s6-overlay-amd64.tar.gz -C /files
+tar zxvf swoole
+tar -zxf lair-v2.5.0-linux-amd64.tar.gz
+tar xf  ${PROMETHEUS_VERSION}.tar.gz --strip-components=1
+tar -x -f nginx.tar.gz -C /usr/src
+tar -xvf helm-${HELM_LATEST_VERSION}-linux-amd64.tar.gz
+tar xzf luarocks-${RESTY_LUAROCKS_VERSION}.tar.gz
+tar -xvf /websockify.tar.gz -C /
+tar xzf /opt/connectors.tar.gz
+tar xf     /tmp/proxy-confs.tar.gz -C     /defaults/nginx/proxy-confs --strip-components=1 --exclude=linux*/.editorconfig --exclude=linux*/.gitattributes --exclude=linux*/.github --exclude=linux*/.gitignore --exclude=linux*/LICENSE
+tar zxvf /tmp/rp_bin.tgz --strip 1 -C /ricopili/
+tar -xf jotta-cli-0.5.15025_linux_x86.tar.gz -C /
+tar xzvf Python-3.5.2.tgz
+tar xf cargo-audit-x86_64-unknown-linux-gnu-v${CARGO_AUDIT_VERSION}.tgz
+tar xzf ${octoprint_ref}.tar.gz --strip-components 1 -C tmp
+tar -xvf mysql-connector-odbc-8.0.13-linux-ubuntu18.04-x86-64bit.tar.gz
+tar -zxf geckodriver-$GECKODRIVER_VERSION-linux64.tar.gz -C /usr/local/bin
+tar xzf $TOR_FILE
+tar xzf ${INSTALL_DIR}/kafka.tgz -C ${KAFKA_HOME} --strip-components 1
+tar xvzf /ranger_dist/ranger-2.0.0-usersync.tar.gz -C /ranger
+tar -xzvf axibase-collector-*.tar.gz -C /opt/
+tar -xzf /tmp/android-sdk.tgz -C /usr/local/
+tar -xzf git-annex-standalone-amd64.tar.gz
+tar -C /usr/local -xz;
+tar xf /app/nextcloud.tar.bz2 -C /tmp2 --strip-components=1
+tar -xzf openjdk.tar.gz --directory /usr/lib/jvm
+tar -zxvf Porechop.tar.gz
+tar -xvf /tmp/nedi-"$NEDI_VERSION".tgz --directory /var/nedi
+tar -jxf ./bcftools-1.3.tar.bz2
+tar xzvf php-7.1.9.tar.gz
+tar -xzvf openresty-*.tar.gz
+tar --strip-components=1 -xaf perl-5.18.4.tar.bz2 -C /usr/src/perl
+tar -C /usr/local --strip-components 1 -xzf node-v11.15.0-linux-x64.tar.gz
+tar -xvf maven.tar.gz
+tar zxf php-$php_version.tar.gz
+tar -xzvf ${UPSTREAM_HC_MODULE}.tar.gz
+tar xzf MediaInfo_DLL_${MEDIAINFO_VER}_GNU_FromSource.tar.gz
+tar -xf swow.tar.gz -C swow --strip-components=1
+tar -xzf /tmp/om.tar.gz -C /tmp
+tar xf im2txt_data.tar.gz
+tar xavf phantomjs.tar.bz2 --strip-components 1
+tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz
+tar -xzf "Python-$PYTHON_VERSION.linux-armv6hf-libffi3.2.tar.gz" --strip-components=1
+tar -zxf node-v10.6.0.tar.gz
+tar -xzf /factorio.tar.gz -C /
+tar fxz /tmp/libpqxx.tar.gz
+tar xzf "postgresql-$POSTGRESQL_VERSION.tar.gz"
+tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp
+tar -C /usr/local -xzf go1.9.4.linux-amd64.tar.gz
+tar xvf lhasa-0.3.1.tar.gz
+tar xzf emailrelay.tar.gz
+tar xvf httpd.tar.gz
+tar -xvzf routes-large.kite.tar.gz
+tar -xzf /root/librdkafka-${LIBRDKAFKA_VERSION}.tar.gz -C /root
+tar zxf kustomize_${KUSTOMIZE_VERSION}_linux_amd64.tar.gz
+tar -C /usr/src/app -zxf progs_consensx.tar.gz
+tar -xzvf "nfpm_1.1.6_Linux_x86_64.tar.gz" -C /usr/local/bin  --no-same-owner
+tar zxvf /rrshareweb_centos7.tar.gz -C /srv/
+tar xf kubetest-linux-amd64.tar.gz
+tar -zxvf v3.0.1.tar.gz
+tar xzf diamond-linux64.tar.gz
+tar --strip-components=1 -zxf ${ELASTIC_PRODUCT}-${ELASTIC_STACK}-${OS_AND_ARCH}.tar.gz
+tar -zxf dotnet.tar.gz -C /usr/share/dotnet
+tar xvzf diamond-linux64.tar.gz
+tar xzf google-cloud-sdk.tar.gz -C /
+tar -xzf "Python-$PYTHON_VERSION.linux-armv7hf-libffi3.2.tar.gz" --strip-components=1
+tar -xvf /tmp/nedi*.pkg --directory /var/nedi
+tar zxvf /v${VERSION}.tar.gz -C /opt
+tar xzf "libreswan.tar.gz"
+tar xf gcc-10-20200405.tar.xz
+tar xzf pyyaml-6.0.tar.gz
+tar xzf /v${PHALCON_VERSION}.tar.gz
+tar zxf tengine.tar.gz -C ${tempDir}
+tar zxvf eclipse-cpp-2018-09-linux-gtk-x86_64.tar.gz
+tar -xzf tmhmm-2.0c.Linux.tar.gz -C ./
+tar xfz maxwell-$MAXWELL_VER.tar.gz
+tar -xzf ~/esp32work/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz -C ../root/esp32work/
+tar -zxf $gvm_libs_version.tar.gz
+tar xvzf humhub.tar.gz
+tar -xf /tmp/eclipse.tar.gz -C /opt
+tar -C /app/ -xvf /app/v${YAPI_VERSION}.tar.gz
+tar -xf nasm-2.13.01.tar.xz
+tar xf jdk.tar.gz
+tar -xzf R-devel.tar.gz
+tar xf libxvid.tar.gz
+tar -xzvf /tmp/atlas-src/distro/target/apache-atlas-${VERSION}-server.tar.gz -C /opt
+tar xzf exiftool.tar.gz
+tar -xfz hugo_extended_${VERSION}_Linux-64bit.tar.gz
+tar -xzf clustalw-2.1-linux-x86_64-libcppstatic.tar.gz
+tar -xvf eclipse.tar.gz
+tar -xzf latest_toolchain.tar.gz --directory / --strip-components=1 ${DOWNLOAD_DIR}-${OS_VER}/usr/lib/swift/linux
+tar xzf     /tmp/prowlarr.tar.gz -C     /app/prowlarr/bin --strip-components=1
+tar -C /usr/local -xzf go1.11.linux-amd64.tar.gz; echo "alias cipherscan='cipherscan -o /usr/local/http2-15/bin/openssl'" >> /root/.bashrc; echo "alias testssl='testssl --openssl=/usr//bin/openssl'" >> /root/.bashrc; echo "alias h2load-cf='h2load --ciphers=ECDHE-ECDSA-AES128-GCM-SHA256'" >> /root/.bashrc;
+tar -zxf linux_amd64.tar.gz
+tar xzf v2.0.2.tar.gz
+tar -zxvf SPAdes-3.13.0-Linux.tar.gz
+tar -zxvf $HELM_ARCHIVE
+tar -xvf ${MOTIONEYE_VERSION}.tar.gz
+tar xzf ripgrep-${RG_VERSION}-x86_64-unknown-linux-musl.tar.gz
+tar xf fastjet-3.3.3.tar.gz
+tar xzf ds-${PHPDS_VER}.tgz
+tar xvf alien4cloud-dist-${a4c_ver}-dist.tar.gz --strip 1 -C "${a4c_install_path}/${a4c_install_dir}"
+tar -xvzf swift-5.2.3-RELEASE-ubuntu18.04.tar.gz -C ~/swift
+tar -xf proj-6.3.1.tar.gz
+tar -oxzf dotnet-monitor-egress-azureblobstorage.tar.gz -C /app
+tar -C . -ozxvf hab-\$latest-x86_64-linux.tar.gz?bt_package=hab-x86_64-linux
+tar -zxf microsoft-windows-netfx3.zip
+tar xvzf $gdal_archive -C /tmp
+tar xvzf ${SOURCE_ROOT}/openresty-${OPENRESTY_VERSION}.tar.gz -C ${SOURCE_ROOT};
+tar -xvf boost_${BOOST_VERSION}.tar.bz2
+tar zxf /tmp/subsonic.tar.gz -C /var/subsonic
+tar xf nginx.tar.gz
+tar -zxf frp_${FRP_VERSION}_linux_amd64.tar.gz
+tar -xvzf Radarr.develop.*.linux.tar.gz
+tar xvzf gnu-cobol-${GNU_COBOL}.tar.gz
+tar -xf gin-cli-latest-linux-amd64.tar.gz
+tar -xzf openshift-install.tar.gz
+tar xfzp $DIST_TAR
+tar -xvvzf ioncube_loaders_lin_x86-64.tar.gz
+tar -zxvf iAssembler-v1.3.2.x64.tgz
+tar -xvf bmsl.tar.gz -C /usr/src/bmsl --strip-components=1
+tar -zxvf /frp.tar.gz frp_0.31.2_linux_amd64/frps
+tar xzf /tmp/kafka.tgz -C /usr/local
+tar zxf /tmp/ghostscript.tgz --strip-components 1 -C /tmp/
+tar -xjf jemalloc-4.5.0.tar.bz2
+tar xzvf lame-${LAME_VERSION}.tar.gz
+tar -xzf Python-3.5.7.tgz
+tar -xzvf phpmyadmin.tar.gz -C /var/tools/phpmyadmin --strip-components 1
+tar -xzf swift.tar.gz --directory / --strip-components=1 $SWIFT_VERSION-$SWIFT_PLATFORM$OS_ARCH_SUFFIX/usr/lib/swift/linux
+tar -xzvf redis.tar.gz -C ./redis --strip-components 1
+tar xzf "xl2tpd.tar.gz"
+tar xzf ${DG_FILE}
+tar --strip-components=1 -xaf perl-5.22.4.tar.bz2 -C /usr/src/perl
+tar -xvf node.tar.xz
+tar xfv /opt/squid-4.4.tar.gz -C /opt/
+tar xzfv protomo2-centos7-docker.tgz -C /sw
+tar -xzf wordpress.tar.gz -C /usr/src/
+tar xzvf $COTURN.tar.gz
+tar zxf sipp_${SIPP_VERSION}.orig.tar.gz
+tar zxf logstash.tar.gz
+tar -xvzpf v0.2.tar.gz
+tar -xzvf bamboo.tar.gz
+tar xf ~/esp32work/gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2 -C ../opt/
+tar zxf /tmp/powershell-linux.tar.gz -C ${PS_INSTALL_FOLDER} -v
+tar -xvf *.tar
+tar xf keycloak-overlay-$KEYCLOAK_VERSION.tar.gz -C $JBOSS_HOME
+tar xvf libmpc_0.1~r495-1.debian.tar.xz
+tar -C /usr/local -xzf go1.8.linux-amd64.tar.gz
+tar xf ${VERSION}.tar.gz
+tar xzf GeoLite2-City.tar.gz
+tar xf /tmp/apache-ant.tar.gz -C /opt/
+tar -xvf impute_v2.3.2_x86_64_dynamic.tar
+tar xvzf glide.tar.gz
+tar -zxC /usr/src -f ngx_http_substitutions_filter_module.tar.gz
+tar -xf Python-3.7.9.tar.xz
+tar -xzf /var/tmp/apache-ant-$ANT_VERSION-bin.tar.gz -C /opt
+tar xfz epusdt.tar.gz -C /app
+tar xzf sbt.tgz -C /usr/local/bin/
+tar -zxvf helm-v${HELMV2_VERSION}-linux-arm64.tar.gz
+tar xvf mxml-2.11.tar.gz -C /tmp/mxml
+tar -xzf /tmp/s6-overlay.tar.gz -C /
+tar xf confluent-hub-client-latest.tar.gz
+tar -xvf /tmp/docker.tar.gz -C /tmp/
+tar -xzf "node-v$NODE_VERSION-linux-alpine-aarch64.tar.gz" -C /usr/local --strip-components=1
+tar -xzvf v1.20.tar.gz
+tar xf kvazaar.tar.gz
+tar xzfv myami-trunk-01-29-19.tar.gz -C /sw
+tar -xzf wawision.tar.gz -C /var/www/html/ --strip-components=1
+tar xfz mpich-3.3.2.tar.gz
+tar zxvf debezium-connector-oracle-${DEBEZIUM_VERSION}-plugin.tar.gz -C ${INSTALL_DIR}
+tar xvzf /lua-resty-lrucache.tar.gz
+tar zxvf /cf.tgz cf
+tar xvzf pandoc-2.7.3-linux.tar.gz --strip-components 1 -C /usr/local
+tar -x -C idea-IC --strip-components=1 -z -f /tmp/ideaIC-jdk.tar.gz
+tar -xf /tmp/pathbrute_0.0.9_linux_amd64.tar.gz --directory /tmp
+tar xzvf filebeat-${VERSION}-linux-x86_64.tar.gz --strip-components 1 -C ${INSTALL_DIR}/
+tar -xzvf RepeatMasker-open*.tar.gz
+tar -xvzf /tmp/nedi-1.5C.tgz -C /var/www/html/ --strip-components=1
+tar xf   /tmp/webapp.tar.gz -C     /app/ --strip-components=1
+tar xzf hiredis-${HIREDIS_VER}.tar.gz
+tar -xzf "go$GO_VERSION.linux-alpine-amd64.tar.gz" -C /usr/local/go --strip-components=1
+tar -zxf fd.tar.gz
+tar xf MG5_aMC_v2.6.7.tar.gz
+tar -xJvf duktape-${DUKTAPE_VERSION}.tar.xz
+tar xf gcc-*.tar.gz
+tar -xvzf /opt/ant/apache-ant-1.9.8-bin.tar.gz -C /opt/ant/
+tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz
+tar xvfz ${SERVER_HOME}.tar.gz
+tar -zx --strip-components=1 -f v${KVAZAAR_VERSION}.tar.gz
+tar xvzf ${IMAGEMAGICK_VERSION}.tar.gz
+tar xf flutter*.xz
+tar -xzf airconnect.tar.gz -C /tmp/
+tar -xvf go1.12.7.linux-amd64.tar.gz
+tar -xjf ${PYPY_VERSION}.tar.bz2
+tar -zxvf 2.7.3a.tar.gz
+tar x -f /tmp/entrypoint-demoter.tar.gz -C /opt/
+tar xf places365_model.tar.gz
+tar zxf $GIT_TAR_FILE
+tar xf Prodigal.tar.gz
+tar -vxJ --strip-components 1 -C /usr/local/bin -f tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz
+tar xf ALL_1000G_phase1integrated_v3_impute.tar
+tar xvf cctools-6.2.8-x86_64-redhat7.tar.gz
+tar jxvf phantomjs.tar.bz2
+tar -zxvf gm_et_linux_64.tar.gz
+tar xvzf v$VERSION.tar.gz
+tar         --extract         --file postgis.tar.gz         --directory /usr/src/postgis         --strip-components 1
+tar cf - /opt/intel/QATzip | (cd /opt/dist
+tar xf /tmp/kodi.tar.gz -C 	/tmp/kodi-source --strip-components=1
+tar -xzf /tmp/atd.tar.gz -C /usr/src/atd --strip-components 1
+tar -xvf unbound-1.5.4.tar.gz
+tar -xvzf /tmp/nedi-1.5C.tgz -C /var/www/html/
+tar -xf libv8.gem
+tar xvf debezium-connector-postgres-${DEBEZIUM_VERSION}-plugin.tar.gz -C ${INSTALL_DIR}
+tar xvf /tmp/dokuwiki.tgz -C /dokuwiki --strip-components 1
+tar xvzf /tmp/vault_certificate_issuer.tar.gz
+tar -xzvf hadoop-2.7.2.tar.gz
+tar -xzvf particl-${PARTICL_VERSION%alpha}-x86_64-linux-gnu.tar.gz
+tar xzfv myami-trunk-11-25-18.tar.gz -C /sw
+tar zxvf fsls-${FSECURE_VERSION}-rtm.tar.gz
+tar xvf go${GOALNG_VERSION}.linux-amd64.tar.gz
+tar xf zimg.tar.gz
+tar xf libevent-2.0.22-stable.tar.gz
+tar --strip-components=1 -axvf uwsgi-2.0.14.tar.gz
+tar -xvzf xmrig-${XMRIG_VERSION}-xenial-amd64.tar.gz
+tar xzf     /tmp/radarr.tar.gz -C     /app/radarr/bin --strip-components=1
+tar --strip-components=2 -C /usr/bin -xf hub.tgz hub-linux-amd64-2.14.2/bin/hub
+tar -xvf 5.6.5.tar.gz
+tar xf /tmp/couchpotato.tar.gz -C 	/app/couchpotato --strip-components=1

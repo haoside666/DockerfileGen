@@ -1,0 +1,156 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "WORKDIR /opt/workdir",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "ENV PATH=$PATH:/home/workuser/.cargo/bin",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "ENV PATH=$PATH:/home/workuser/.cargo/bin:/home/workuser/.local/bin:/home/workuser/.local/bin",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "RUN useradd -m workuser",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "USER workuser",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "RUN python3 -m pip install requests xbstrap",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:latest",
+        "after_instruct": "ENTRYPOINT python3 aero.py --no-run",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV PATH=$PATH:/home/workuser/.cargo/bin",
+        "after_instruct": "ENV PATH=$PATH:/home/workuser/.cargo/bin:/home/workuser/.local/bin:/home/workuser/.local/bin",
+        "edge": "(2, 3)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "USER workuser",
+        "edge": "(4, 7)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "edge": "(4, 8)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sh'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils",
+        "after_instruct": "USER workuser",
+        "edge": "(5, 7)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils",
+        "after_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "edge": "(5, 8)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sh'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils",
+        "after_instruct": "RUN python3 -m pip install requests xbstrap",
+        "edge": "(5, 9)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'python3'}"
+    },
+    {
+        "before_instruct": "RUN useradd -m workuser",
+        "after_instruct": "USER workuser",
+        "edge": "(6, 7)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN useradd -m workuser",
+        "after_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "edge": "(6, 8)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sh'}"
+    },
+    {
+        "before_instruct": "USER workuser",
+        "after_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "edge": "(7, 8)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER workuser",
+        "after_instruct": "RUN python3 -m pip install requests xbstrap",
+        "edge": "(7, 9)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+        "after_instruct": "RUN python3 -m pip install requests xbstrap",
+        "edge": "(8, 9)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'sh'}"
+    }
+]

@@ -1,0 +1,26 @@
+FROM alpine:3.13
+RUN apk --no-cache add ca-certificates curl bash jq py3-pip && pip install awscli
+COPY ecs-deploy /usr/local/bin/ecs-deploy
+RUN chmod a+x /usr/local/bin/ecs-deploy
+RUN ln -s /usr/local/bin/ecs-deploy /ecs-deploy
+COPY test.bats /test.bats
+COPY run-tests.sh /run-tests.sh
+RUN chmod a+x /run-tests.sh
+ENTRYPOINT ["ecs-deploy"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(2, 3),	# 目录依赖
+	(2, 4),	# 目录依赖
+	(6, 7),	# 文件依赖
+]
+
+所用时间：43.84

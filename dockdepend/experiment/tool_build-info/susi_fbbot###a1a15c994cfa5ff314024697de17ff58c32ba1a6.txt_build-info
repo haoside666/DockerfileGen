@@ -1,0 +1,8 @@
+{
+    "filename": "susi_fbbot###a1a15c994cfa5ff314024697de17ff58c32ba1a6.txt",
+    "command_length": 8,
+    "processing_time": 0.0015103816986083984,
+    "dependency_count": 13,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (1, 2), (1, 4), (2, 3), (2, 4), (2, 5), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /usr/src/app', 'have shell io intersection,because common path /usr/src/app', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /usr/src/app', 'exist file or directory dependency', 'exist file or directory dependency,because common path /usr/src/app']"
+}

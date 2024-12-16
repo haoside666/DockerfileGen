@@ -1,0 +1,13 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM
+ (0, 2),  # ENV依赖于FROM
+ (0, 3),  # WORKDIR依赖于FROM
+ (0, 4),  # COPY .依赖于FROM
+ (3, 5),  # RUN curl依赖于WORKDIR
+ (4, 6),  # RUN cd /var/www/html && composer install依赖于COPY .
+ (0, 7),  # COPY docker-entrypoint.sh依赖于FROM
+ (3, 8),  # RUN chmod -R 777 storage依赖于WORKDIR
+ (0, 9),  # EXPOSE依赖于FROM
+ (0, 10), # ENTRYPOINT依赖于FROM
+ (0, 11)] # CMD依赖于FROM
+```

@@ -1,0 +1,26 @@
+read_cmd_args() {
+    # Transform long options to short ones
+    for arg in "$@"; do
+        shift
+        case "$arg" in
+            "--opt-agg")        set -- "$@" "-o" ;;
+            "--show-deps")      set -- "$@" "-s" ;;
+            "--install-eval")   set -- "$@" "-e" ;;
+            "--help")           set -- "$@" "-h" ;;
+            *)                  set -- "$@" "$arg"
+        esac
+    done
+
+    while getopts 'opsreh' opt; do
+        case $opt in
+            # passthrough the variable to the Makefile for libdash
+            o) export optimized_agg_flag=1 ;;
+            s) export show_deps=1 ;;
+            r) export show_eval_deps=1 ;;
+            e) export install_eval=1 ;;
+            h) usage >&2 ;;
+            *) echo 'Error in command line parsing' >&2
+                exit 1
+        esac
+    done
+}

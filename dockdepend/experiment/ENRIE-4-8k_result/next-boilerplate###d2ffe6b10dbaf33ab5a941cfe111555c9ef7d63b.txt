@@ -1,0 +1,9 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM，创建工作目录需要在基础镜像上操作
+ (0, 2),  # ENV依赖于FROM，设置环境变量需要在镜像上操作
+ (0, 3),  # COPY package*.json ./ 依赖于FROM，复制文件到镜像中
+ (3, 4),  # RUN npm ci依赖于COPY package*.json ./，需要先复制package.json才能执行npm安装命令
+ (0, 5),  # COPY . /opt/app依赖于FROM，复制当前上下文到镜像的工作目录
+ (4, 6),  # RUN npm install --dev && npm run build依赖于RUN npm ci，需要先安装依赖再构建项目
+ (0, 7)]  # CMD [ "npm", "start" ]依赖于FROM，设置容器启动命令需要在镜像上操作
+```

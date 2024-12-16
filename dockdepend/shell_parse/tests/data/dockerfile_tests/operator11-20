@@ -1,0 +1,36 @@
+#NUNTIL nbinary			# the until statement
+until true; do forever & ever & ever & done
+
+#NFOR nfor			# the for statement
+for y in foo; do cmd1; done
+
+
+#NCASE ncase			# a case statement
+case foo in
+     bar)
+        ;;
+     *)
+        echo hi;;
+esac
+
+#NCLIST nclist			# a case ---> bar)        ;;
+# None
+
+#NDEFUN ndefun			# a function
+foo() { echo $*; export x=$((x + 1)) ; }
+
+#NARG narg			# represents a word
+
+
+#NTO nfile			# fd> fname
+echo "123"> 1.txt
+
+
+#NCLOBBER nfile			# fd>| fname
+echo "This will overwrite the file." >| output.txt
+
+#NFROM nfile			# fd< fname
+grep "pattern" < input.txt
+
+#NFROMTO nfile			# fd<> fname
+grep "pattern" <> input.txt

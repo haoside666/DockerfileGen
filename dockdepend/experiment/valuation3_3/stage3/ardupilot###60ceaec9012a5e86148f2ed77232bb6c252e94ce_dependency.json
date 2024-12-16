@@ -1,0 +1,583 @@
+[
+    {
+        "before_instruct": "ARG BASE_IMAGE=ubuntu",
+        "after_instruct": "FROM ubuntu:22.04",
+        "edge": "(0, 2)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG TAG=22.04",
+        "after_instruct": "FROM ubuntu:22.04",
+        "edge": "(1, 2)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "WORKDIR /ardupilot",
+        "edge": "(2, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG DEBIAN_FRONTEND=noninteractive",
+        "edge": "(2, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG USER_NAME=ardupilot",
+        "edge": "(2, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG USER_UID=1000",
+        "edge": "(2, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG USER_GID=1000",
+        "edge": "(2, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG SKIP_AP_EXT_ENV=1",
+        "edge": "(2, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG SKIP_AP_GRAPHIC_ENV=1",
+        "edge": "(2, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG SKIP_AP_COV_ENV=1",
+        "edge": "(2, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ARG SKIP_AP_GIT_CHECK=1",
+        "edge": "(2, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "edge": "(2, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "edge": "(2, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/",
+        "edge": "(2, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "COPY Tools/completion /ardupilot/Tools/completion/",
+        "edge": "(2, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ENV USER=ardupilot",
+        "edge": "(2, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "edge": "(2, 17)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "edge": "(2, 18)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(2, 19)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "USER ardupilot",
+        "edge": "(2, 20)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ENV SKIP_AP_EXT_ENV=1 SKIP_AP_GRAPHIC_ENV=1 SKIP_AP_COV_ENV=1 SKIP_AP_GIT_CHECK=1",
+        "edge": "(2, 21)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "edge": "(2, 22)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN echo \"alias waf=\\\"/ardupilot/waf\\\"\" >> ~/.ardupilot_env",
+        "edge": "(2, 23)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN echo \"if [ -d \\\"\\$HOME/.local/bin\\\" ] ; then\\nPATH=\\\"\\$HOME/.local/bin:\\$PATH\\\"\\nfi\" >> ~/.ardupilot_env",
+        "edge": "(2, 24)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(2, 25)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ENV BUILDLOGS=/tmp/buildlogs",
+        "edge": "(2, 26)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(2, 27)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ENV CCACHE_MAXSIZE=1G",
+        "edge": "(2, 28)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(2, 29)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:22.04",
+        "after_instruct": "CMD bash",
+        "edge": "(2, 30)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /ardupilot",
+        "after_instruct": "COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/",
+        "edge": "(3, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /ardupilot",
+        "after_instruct": "COPY Tools/completion /ardupilot/Tools/completion/",
+        "edge": "(3, 15)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /ardupilot",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(3, 19)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /ardupilot"
+    },
+    {
+        "before_instruct": "WORKDIR /ardupilot",
+        "after_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "edge": "(3, 22)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /ardupilot"
+    },
+    {
+        "before_instruct": "WORKDIR /ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(3, 25)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /ardupilot"
+    },
+    {
+        "before_instruct": "ARG DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "edge": "(4, 13)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "edge": "(5, 12)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "ENV USER=ardupilot",
+        "edge": "(5, 16)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "edge": "(5, 17)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "edge": "(5, 18)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(5, 19)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "USER ardupilot",
+        "edge": "(5, 20)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN echo \"alias waf=\\\"/ardupilot/waf\\\"\" >> ~/.ardupilot_env",
+        "edge": "(5, 23)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_NAME=ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(5, 25)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_UID=1000",
+        "after_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "edge": "(6, 12)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_GID=1000",
+        "after_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "edge": "(7, 12)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG SKIP_AP_EXT_ENV=1",
+        "after_instruct": "ENV SKIP_AP_EXT_ENV=1 SKIP_AP_GRAPHIC_ENV=1 SKIP_AP_COV_ENV=1 SKIP_AP_GIT_CHECK=1",
+        "edge": "(8, 21)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG SKIP_AP_GRAPHIC_ENV=1",
+        "after_instruct": "ENV SKIP_AP_EXT_ENV=1 SKIP_AP_GRAPHIC_ENV=1 SKIP_AP_COV_ENV=1 SKIP_AP_GIT_CHECK=1",
+        "edge": "(9, 21)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG SKIP_AP_COV_ENV=1",
+        "after_instruct": "ENV SKIP_AP_EXT_ENV=1 SKIP_AP_GRAPHIC_ENV=1 SKIP_AP_COV_ENV=1 SKIP_AP_GIT_CHECK=1",
+        "edge": "(10, 21)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG SKIP_AP_GIT_CHECK=1",
+        "after_instruct": "ENV SKIP_AP_EXT_ENV=1 SKIP_AP_GRAPHIC_ENV=1 SKIP_AP_COV_ENV=1 SKIP_AP_GIT_CHECK=1",
+        "edge": "(11, 21)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(12, 19)",
+        "type": "RUN_OTHER",
+        "dependency_description": "have shell other intersection,because exist intersection {'ardupilot'}"
+    },
+    {
+        "before_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "after_instruct": "USER ardupilot",
+        "edge": "(12, 20)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(12, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN groupadd ardupilot --gid 1000 && useradd -l -m ardupilot -u 1000 -g 1000 -s /bin/bash",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(12, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "after_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "edge": "(13, 18)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "after_instruct": "USER ardupilot",
+        "edge": "(13, 20)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(13, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(13, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(14, 19)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /ardupilot"
+    },
+    {
+        "before_instruct": "COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/",
+        "after_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "edge": "(14, 22)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /ardupilot/Tools/environment_install"
+    },
+    {
+        "before_instruct": "COPY Tools/completion /ardupilot/Tools/completion/",
+        "after_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "edge": "(15, 19)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /ardupilot"
+    },
+    {
+        "before_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "after_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "edge": "(17, 18)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc/sudoers.d/ardupilot"
+    },
+    {
+        "before_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "after_instruct": "USER ardupilot",
+        "edge": "(17, 20)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(17, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN echo \"ardupilot ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/ardupilot",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(17, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "after_instruct": "USER ardupilot",
+        "edge": "(18, 20)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(18, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN chmod 0440 /etc/sudoers.d/ardupilot",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(18, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "after_instruct": "USER ardupilot",
+        "edge": "(19, 20)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(19, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN chown -R ardupilot:ardupilot /ardupilot",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(19, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "USER ardupilot",
+        "after_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "edge": "(20, 22)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER ardupilot",
+        "after_instruct": "RUN echo \"alias waf=\\\"/ardupilot/waf\\\"\" >> ~/.ardupilot_env",
+        "edge": "(20, 23)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER ardupilot",
+        "after_instruct": "RUN echo \"if [ -d \\\"\\$HOME/.local/bin\\\" ] ; then\\nPATH=\\\"\\$HOME/.local/bin:\\$PATH\\\"\\nfi\" >> ~/.ardupilot_env",
+        "edge": "(20, 24)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER ardupilot",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(20, 25)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER ardupilot",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(20, 27)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(22, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN Tools/environment_install/install-prereqs-ubuntu.sh -y",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(22, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN echo \"alias waf=\\\"/ardupilot/waf\\\"\" >> ~/.ardupilot_env",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(23, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN echo \"alias waf=\\\"/ardupilot/waf\\\"\" >> ~/.ardupilot_env",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(23, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN echo \"if [ -d \\\"\\$HOME/.local/bin\\\" ] ; then\\nPATH=\\\"\\$HOME/.local/bin:\\$PATH\\\"\\nfi\" >> ~/.ardupilot_env",
+        "after_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "edge": "(24, 25)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN echo \"if [ -d \\\"\\$HOME/.local/bin\\\" ] ; then\\nPATH=\\\"\\$HOME/.local/bin:\\$PATH\\\"\\nfi\" >> ~/.ardupilot_env",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(24, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because latter instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN export ARDUPILOT_ENTRYPOINT=\"/home/ardupilot/ardupilot_entrypoint.sh\" && echo \"#!/bin/bash\" > $ARDUPILOT_ENTRYPOINT && echo \"set -e\" >> $ARDUPILOT_ENTRYPOINT && echo \"source /home/ardupilot/.ardupilot_env\" >> $ARDUPILOT_ENTRYPOINT && echo 'exec \"$@\"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh",
+        "after_instruct": "RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*",
+        "edge": "(25, 27)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'sudo'}"
+    }
+]

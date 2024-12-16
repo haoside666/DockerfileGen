@@ -1,0 +1,64 @@
+#FROM --platform=linux/amd64 adoptopenjdk:12-jre-hotspot
+#FROM --platform=linux/amd64 adoptopenjdk:12-jre-hotspot AS base
+#FROM --platform=linux/amd64 alpine:latest@sha256:7df6db5aa61ae9480f52f0b3a06a140ab98d427f86d8d5de0bedab9b8df6b1c0 AS base2
+FROM ubuntu
+
+RUN apk --update --no-cache add curl tini libcap bash python openssl net-tools ca-certificates && \
+    rm -rf /var/cache/apk/*
+RUN --network=none pip install aaa
+RUN ["/bin/sh","-c","sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+&& apk add --no-cache  tini tzdata ttf-dejavu fontconfig"]
+RUN ["/bin/bash","-o","errtrace","-o","nounset","-o","pipefail","-o","errexit", "-c","python", "app.py"]
+RUN ["powershell", "-command", "Execute-MyCmdlet", "-param1 \"c:\\foo.txt\""]
+RUN ["cmd","/S", "/C","help"]
+RUN ["python", "app.py"]
+
+CMD python
+CMD ["python", "./worker.py"]
+
+LABEL com.redhat.delivery.operator.bundle=true
+LABEL com.redhat.delivery.backport="false"
+
+MAINTAINER Jose Diaz-Gonzalez <dokku@josediazgonzalez.com>
+
+EXPOSE 27015/tcp 27015/udp 27020/udp
+EXPOSE 80
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND 61616 ACTIVEMQ_AMQP 5672
+ENV ACTIVEMQ_TCP=61616 ACTIVEMQ_AMQP=5672 ACTIVEMQ_STOMP=61613 ACTIVEMQ_MQTT=1883 ACTIVEMQ_WS=61614 ACTIVEMQ_UI=8161
+ENV PYTHON_DEPS  python3 \
+		 python3-six \
+		 python3-pandas \
+		 libpython3-dev
+
+ADD release.sh create-credentials.js .releaserc.json /semantic-release/
+ADD --chown=10:11 files /somedir/
+
+COPY package.json package-lock.json ./
+COPY --chown=10:11 --from=base /app/deployer /usr/local/bin/deployer
+
+ENTRYPOINT ["/go/bin/botkube"]
+ENTRYPOINT /go/bin/botkube
+
+VOLUME ["/data"]
+VOLUME /var/log /var/db
+
+USER 1000
+USER nonroot:nonroot
+
+WORKDIR /app
+
+ARG DEBIAN_FRONTEND noninteractive
+ARG app_path=/srv
+
+ONBUILD RUN npm install
+ONBUILD RUN cd /src && chmod +x ./build.sh && sleep 1 && sync && ./build.sh "$(cat VERSION)-custom"
+
+STOPSIGNAL SIGTERM
+
+HEALTHCHECK --interval=120s --timeout=15s --start-period=120s --retries=2 \
+            CMD wget --no-check-certificate -e use_proxy=yes -e https_proxy=127.0.0.1:8118 --quiet --spider 'https://3g2upl4pq6kufc4m.onion' && echo "HealthCheck succeeded..." || exit 1
+HEALTHCHECK NONE
+
+SHELL ["cmd"\, "/S"\, "/C"]

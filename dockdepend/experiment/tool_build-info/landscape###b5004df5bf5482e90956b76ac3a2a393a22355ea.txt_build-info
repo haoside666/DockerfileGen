@@ -1,0 +1,8 @@
+{
+    "filename": "landscape###b5004df5bf5482e90956b76ac3a2a393a22355ea.txt",
+    "command_length": 5,
+    "processing_time": 0.0002353191375732422,
+    "dependency_count": 5,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency']"
+}

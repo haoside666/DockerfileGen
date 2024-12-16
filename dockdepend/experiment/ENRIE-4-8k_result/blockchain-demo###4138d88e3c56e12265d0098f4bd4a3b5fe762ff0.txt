@@ -1,0 +1,10 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM
+ (0, 2),  # EXPOSE依赖于FROM
+ (0, 3),  # WORKDIR依赖于FROM
+ (3, 4),  # COPY package.json依赖于WORKDIR
+ (3, 6),  # COPY . 依赖于WORKDIR
+ (4, 5),  # RUN npm install依赖于COPY package.json
+ (0, 7),  # CMD依赖于FROM，虽然不直接依赖，但FROM创建了基础环境
+ (5, 7)]  # CMD隐式依赖于RUN npm install，因为需要安装后的环境来运行命令
+```

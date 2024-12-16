@@ -1,0 +1,20 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (1, 2),  # RUN a2enmod rewrite依赖于LABEL
+ (2, 3),  # RUN apt-get update...libpng-dev依赖于RUN a2enmod rewrite
+ (3, 4),  # RUN docker-php-ext-install pdo_mysql依赖于上一个RUN指令
+ (4, 5),  # RUN docker-php-ext-install mbstring依赖于上一个RUN指令
+ (5, 6),  # RUN apt-get update...install zip依赖于上一个RUN指令
+ (6, 7),  # RUN apt-get update...install intl依赖于上一个RUN指令
+ (7, 8),  # COPY var/docker/php/php.ini依赖于上一个RUN指令
+ (8, 9),  # RUN pecl install xdebug-2.9.8依赖于COPY指令
+ (9, 10), # RUN curl -sS https://getcomposer.org...依赖于上一个RUN指令
+ (10, 11), # WORKDIR /var/www/html依赖于上一个RUN指令
+ (11, 12), # COPY composer.json ./依赖于WORKDIR指令
+ (12, 13), # COPY composer.lock ./依赖于上一个COPY指令
+ (13, 14), # RUN composer install...依赖于上一个COPY指令
+ (14, 15), # COPY . /var/www/html依赖于上一个RUN指令
+ (15, 16), # RUN composer dump-autoload...依赖于上一个COPY指令
+ (16, 17), # RUN chown -R www-data:www-data /var/www/html依赖于上一个RUN指令
+ (17, 18)]  # EXPOSE 80 443依赖于上一个RUN指令
+```

@@ -1,0 +1,8 @@
+{
+    "filename": "esp-link###cf329e8b84a55a05afa04df971d9abd9793c9130.txt",
+    "command_length": 8,
+    "processing_time": 0.0037140846252441406,
+    "dependency_count": 9,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (1, 2), (1, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'curl'}\", \"have shell pkg intersection,because exist intersection {'curl'}\"]"
+}

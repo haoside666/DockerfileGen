@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "COPY . /app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "RUN apk add --no-cache build-base libffi-dev libxml2-dev libxslt-dev",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "RUN /usr/local/bin/python -m pip install --upgrade pip",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "RUN /usr/local/bin/python --version",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "RUN chmod +x *.py",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine3.18",
+        "after_instruct": "ENTRYPOINT /app/dnsrecon.py",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . /app",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN chmod +x *.py",
+        "edge": "(1, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(2, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "RUN chmod +x *.py",
+        "edge": "(2, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    }
+]

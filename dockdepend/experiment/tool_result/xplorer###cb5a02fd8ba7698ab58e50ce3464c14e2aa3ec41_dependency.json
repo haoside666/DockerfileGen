@@ -1,0 +1,44 @@
+[
+    {
+        "before_instruct": "FROM gitpod/workspace-full-vnc:latest",
+        "after_instruct": "RUN sudo apt-get update && sudo apt-get install -y jwm && sudo apt-get install -y libx11-dev libxkbfile-dev",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM gitpod/workspace-full-vnc:latest",
+        "after_instruct": "RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq libwebkit2gtk-4.0-dev build-essential curl wget libssl-dev libgtk-3-dev libappindicator3-dev patchelf librsvg2-dev",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM gitpod/workspace-full-vnc:latest",
+        "after_instruct": "RUN sudo apt-get update && sudo apt-get install -y libasound2-dev libgtk-3-dev libnss3-dev",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN sudo apt-get update && sudo apt-get install -y jwm && sudo apt-get install -y libx11-dev libxkbfile-dev",
+        "after_instruct": "RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq libwebkit2gtk-4.0-dev build-essential curl wget libssl-dev libgtk-3-dev libappindicator3-dev patchelf librsvg2-dev",
+        "edge": "(1, 2)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN sudo apt-get update && sudo apt-get install -y jwm && sudo apt-get install -y libx11-dev libxkbfile-dev",
+        "after_instruct": "RUN sudo apt-get update && sudo apt-get install -y libasound2-dev libgtk-3-dev libnss3-dev",
+        "edge": "(1, 3)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'sudo'}"
+    },
+    {
+        "before_instruct": "RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq libwebkit2gtk-4.0-dev build-essential curl wget libssl-dev libgtk-3-dev libappindicator3-dev patchelf librsvg2-dev",
+        "after_instruct": "RUN sudo apt-get update && sudo apt-get install -y libasound2-dev libgtk-3-dev libnss3-dev",
+        "edge": "(2, 3)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'sudo'}"
+    }
+]

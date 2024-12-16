@@ -1,0 +1,213 @@
+cat >/etc/apk/repositories<<-EOF
+cat /DeepQA/chatbot_website/chatbot_website/settings.py
+cat > /etc/yum.repos.d/nginx.repo << EOF
+cat /dev/null > /etc/v2ray/config.json
+cat /tmp/playlisturl
+cat /etc/alpine-release
+cat .bashrc | sed 's/#force_color_prompt=yes/force_color_prompt=yes/' >.bashrc_new
+cat /etc/hosts
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+cat hosts     >> /etc/hosts
+cat /etc/apache2/apache2.conf.append | tee -a /etc/apache2/apache2.conf
+cat /etc/locale.gen
+cat hosts >> /etc/hosts
+cat /etc/apk/repositories
+cat /tmp/requirements.txt | xargs -n 1 pip install --force-reinstall || echo -e "${RED}ERROR: pip install failed. See above.${NC}"
+cat ./VERSION >> /etc/docker.conf
+cat id_rsa.pub >> .ssh/authorized_keys
+cat /etc/pacman.d/mirrorlist     ; fi
+cat /var/spool/cron/root
+cat password.txt password.txt | smbpasswd -sa root
+cat "${APACHE_DOCUMENT_ROOT}"nedi.conf | grep dbhost
+cat requirements.txt | xargs -n 1 pip install || true
+cat /run.txt > /app/run.sh
+cat ${APACHE_DOCUMENT_ROOT}"nedi.conf | grep dbhost
+cat /root/rc >> /root/.bashrc
+cat  ${a4c_install_path}/indigo-dc-tosca-types/custom_types.yaml
+cat /habidat/config/projects.json.sample
+cat /tmp/env_register.txt >> ${GYMDIR}/__init__.py
+cat /tmp/php.ini >> /etc/php/7.2/apache2/php.ini
+cat /root/.ssh/id_rsa.pub > /root/.ssh/authorized_keys
+cat /tmp/key.pem /tmp/cert.pem > /etc/lighttpd/ssl/localhost.pem
+cat config/rc >> /root/.bashrc
+cat zshrc_append >> .zshrc
+cat Pipfile
+cat /home/tester/.bashrc >> /etc/bash.bashrc
+cat ./NAME > /etc/docker.conf
+cat `python --version` | sed "s/Python //" | xargs -I {} bash -c "if [ {}: -ne $PYTHON_VERSION 5]; then exit 1;"
+cat udpfs.log
+cat key.pem cert.pem >> /usr/local/etc/stunnel/stunnel.pem
+cat /etc/resolv.conf.nope > /etc/resolv.conf
+cat > /tmp/prova.txt
+cat custom.css >> tmp_custom.css
+cat /etc/debian_release || true
+cat "${PHP_INI_FILE}"
+cat ~/.zshrc
+cat ~/.bash_profile
+cat /etc/xdg/openbox/rc.xml       | sed -e 's@<number>4</number>@<number>8</number>@'       > /usr/share/ubuntu-desktop/openbox/rc.xml
+cat /tmp/dir.jst > /usr/lib/node_modules/serve/node_modules/serve-handler/src/directory.jst
+cat /etc/motd'     >> /etc/bashrc;     echo -e " ################################################################\n"     "#\t\t\t\t\t\t\t\t#\n"     "# Swift Nightly Docker Image\t\t\t\t\t#\n"     "# Tag: $(cat .swift_tag)\t\t\t#\n"     "#\t\t\t\t\t\t\t\t#\n"      "################################################################\n" > /etc/motd
+cat /tmp/id_rsa.pub >> /root/.ssh/authorized_keys
+cat /tmp/customFunctions >> /root/.zshrc
+cat yarn.gpg | apt-key add -
+cat /tmp/trtl-checkpoints.csv /tmp/trtl-1m-checkpoints.csv > "${TRTL_HOME}/checkpoints.csv"
+cat ${HOME}/.ipython/profile_default/ipython_config.py | sed -e "s/#c.InteractiveShellApp.exec_lines = \[\]/c.InteractiveShellApp.exec_lines = \['%matplotlib widget'\]/g" | tee ${HOME}/.ipython/profile_default/ipython_config.py
+cat /tmp/id_rsa >> /root/.ssh/id_rsa
+cat /tmp/php.ini >> /etc/php/7.2/cli/php.ini
+cat /root/.cache/Cypress/*/Cypress/binary_state.json
+cat /root/.bowerrc
+cat /usr/local/etc/renderd.conf.bak | grep -v ';' > /usr/local/etc/renderd.conf
+cat dns-Jhaddix.txt | head -n -14 > clean-jhaddix-dns.txt
+cat /init/LOCALE.md | parallel "echo generate locale {}; /usr/glibc-compat/bin/localedef --force --inputfile {} --charmap UTF-8 {}.UTF-8;"
+cat server/pom.xml | /clone_snapshots.sh
+cat /app/build/contracts/QARK.json | jq '.abi'
+cat /etc/yum.repos.d/pgdg*
+cat /etc/apk/repositories | sed -e "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/" | tee /etc/apk/repositories
+cat  $UHOME/my.vimrc >> $UHOME/.vimrc~
+cat ~/.bashrc ../conf_files/pathToExport.txt > ~/.bashrc_new
+cat ${DIRWORK}/.flutter_version >> ${INSTALLED_VERSIONS}
+cat /app/run.sh >> /run.txt
+cat /root/rcsource >> /root/.bashrc
+cat /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c20 | (echo -n "root:"
+cat httpd-2.4-tpp.conf | sed 's/#Require all granted/Require all granted/' > httpd-2.4-tpp-1.conf
+cat /etc/motd'     >> /etc/bash.bashrc;     echo " ################################################################\n"     "#\t\t\t\t\t\t\t\t#\n"     "# Swift Nightly Docker Image\t\t\t\t\t#\n"     "# Tag: $(cat .swift_tag)\t\t\t#\n"     "#\t\t\t\t\t\t\t\t#\n"      "################################################################\n" > /etc/motd
+cat python/requirements.txt | xargs -n1 pip install
+cat tests/database/myemsl_metadata-website_prefs.sql | sqlite3 tests/database/myemsl_metadata-website_prefs.sqlite3
+cat $HOME/.jupyter/nbconfig/notebook.json | jq '.toc2={"moveMenuLeft": false,"widenNotebook": false,"skip_h1_title": false,"sideBar": true,"number_sections": false,"collapse_to_match_collapsible_headings": true}' > tmp.$$.json
+cat /etc/sudoers
+cat `python --version` | sed "s/Python //" | xargs if [[ "$1:" -ne "$PYTHON_VERSION" ]]; then exit 1;
+cat ${SDK_PACKAGES_LIST} | grep -v '='
+cat /usr/local/src/valhalla_locales | xargs -d '\n' -n1 locale-gen
+cat tests/database/myemsl_metadata-eus.sql | sqlite3 tests/database/myemsl_metadata-eus.sqlite3
+cat /etc/resolv.conf > /etc/resolv.conf.nope
+cat /root/udpfs.log
+cat /etc/group | grep $rootOrAppRegex > "/staging/etc/group"
+cat ips-v4 | sed -e 's/^/set_real_ip_from /' -e 's/$/;/' >> /etc/nginx/cloudflare.conf
+cat /etc/lsb_release || true
+cat /tmp/prova.txt
+cat jupyter_notebook_config.py >> .jupyter/jupyter_notebook_config.py
+cat > /etc/motd
+cat build_simple.sh | sed s/-static//g > build_simple.sh
+cat debian/rules
+cat ${SDK_PACKAGES_LIST} | grep "platforms;android-[[:digit:]][[:digit:]]\+ " | tail -n8 | awk '{print $1}'     >> $LAST8_PACKAGES
+cat _pgis_full_version.txt
+cat /etc/passwd | grep $rootOrAppRegex > "/staging/etc/passwd"
+cat /dev/null > /etc/apt/sources.list
+cat ips-v6 | sed -e 's/^/set_real_ip_from /' -e 's/$/;/' >> /etc/nginx/cloudflare.conf
+cat /etc/rsyslog.conf | grep -v '^#' | grep '^\$' | sed '/imklog.so/d' > /etc/rsyslog.conf.new
+cat > /etc/periodic/friday/friday-0 <<'EOF' its great server ip $DEEZSERVER and should stay that way EOF
+cat /upload.sh
+cat sha256sums_min
+cat << EOF > /usr/local/etc/v2ray/config.json
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+cat config/rc >> ~/.zshrc
+cat /var/nedi/nedi.conf | grep dbhost
+cat auto/lib/libgd/conf
+cat /etc/mosquitto/mosquitto.conf
+cat /etc/apt/sources.list.bkp >> /etc/apt/sources.list
+cat /etc/passwd | grep $rootOrAppRegex > "/rootfs/etc/passwd"
+cat /usr/share/zoneinfo/Asia/Shanghai > /etc/localtime
+cat *.patch | patch -p1
+cat /tmp/additional_components
+cat /etc/passwd | grep osm
+cat rvm.sh | bash -s stable
+cat ./vmware-workstation.tar.* | tar -xzvf -
+cat /usr/share/nginx/html/torrentmonitor/db_schema/sqlite.sql | sqlite3 /usr/share/nginx/html/torrentmonitor/db_schema/tm.sqlite
+cat /etc/os-release
+cat /etc/apt/sources.list
+cat /etc/issue
+cat /root/rc >> /root/.zshrc
+cat /hello
+cat hadoop-3.2.0.tar.gz-* > hadoop-3.2.0.tar.gz
+cat /root/rcsource >> /root/.zshrc
+cat scripts/mariadb_sig.txt >> /etc/MOTD
+cat wrapper.sh
+cat VERSION
+cat requirements.txt | echo
+cat /tmp/global-profile.sh >> /etc/bash.bashrc
+cat tests/database/myemsl_metadata-myemsl.sql | sqlite3 tests/database/myemsl_metadata-myemsl.sqlite3
+cat /DATA/htdocs/db_schema/sqlite.sql | sqlite3 /DATA/htdocs/db_schema/tm.sqlite
+cat ${JIRA_INSTALL}/atlassian-jira/WEB-INF/classes/jira-application.properties
+cat /etc/apt/preferences.d/sid
+cat /etc/zav/zavd.conf | grep UPDATE_KEY
+cat /usr/local/apache2/conf/httpd.conf         | tr '\n' '\r'         | perl -pe 's|<Directory />.*?</Directory>|<Directory />\n    AllowOverride none\n    Require all granted\n</Directory>|isg'         | tr '\r' '\n'         | tee /tmp/httpd.conf
+cat ./vmware-ovftool.tar.* | tar -xzvf -
+cat /tmp/swoole-releases | grep 'href=".*archive.*.tar.gz"' | head -1 |     awk -F '"' ' {print "curl -o /tmp/swoole.tar.gz https://github.com"$2" -L" > "/tmp/swoole.download"}'
+cat janitoo/docker/supervisord.conf
+cat /proc/cpuinfo || true
+cat  $UHOME/my.vimrc      >> $UHOME/.vimrc~
+cat /tmp/git-prompt >> /root/.bashrc
+cat /etc/periodic/friday/friday-0
+cat /etc/pacman.d/mirrorlist ; fi
+cat > /etc/yum.repos.d/nginx.repo << 'EOF'
+cat ssh_config >> ~/.ssh/config
+cat $NVM_DIR/nvm.sh
+cat /dev/null > ~/.bash_history
+cat /var/www/html/biocorepipe/db/biocorepipe.sql|mysql -uroot biocorepipe
+cat /usr/local/etc/renderd.conf | grep -v ';' > /usr/local/etc/renderd.conf.new
+cat /pan-configurator/utils/alias.sh >> /root/.bashrc
+cat /var/www/html/dolphinnext/db/dolphinnext.sql|mysql -uroot dolphinnext
+cat /etc/motd' >> ~/.zshrc
+cat /etc/nginx/nginx.conf
+cat /home/dev/.abuild/abuild.conf > /etc/abuild.conf
+cat requirements.txt | grep -v numpy | grep -v scipy | tee  requirements.txt
+cat /app/build/contracts/QARK.json | jq '.bytecode'
+cat config/rc >> /root/.zshrc
+cat /data/htdocs/db_schema/sqlite.sql | sqlite3 /data/htdocs/db_schema/tm.sqlite
+cat /code/requirements-prod.txt
+cat /var/spool/cron/crontabs/default >> /var/spool/cron/crontabs/root
+cat /usr/src/exakat/config/exakat.ini
+cat config/rc >> ~/.bashrc
+cat  /etc/redhat-release
+cat /var/nedi/nedi.conf | grep db
+cat /supervisor/supervisord.conf
+cat /etc/group | grep $rootOrAppRegex > "/rootfs/etc/group"
+cat .env || cat .env.example     | sed -e 's/SERVER_ADDRESS=127.0.0.1/SERVER_ADDRESS=0.0.0.0/g'     | sed -e 's/IP_WHITELIST=127.0.0.1/IP_WHITELIST=/g'     > .env;
+cat deployment/octane/utilities.sh >> ~/.bashrc
+cat /tmp/requirements.txt | xargs -n 1 pip install --force-reinstall || echo "pip install failed."
+cat $HOME/.cargo/env >> $HOME/.bashrc
+cat debian-buster-DI-alpha4-amd64-netinst.iso | bsdtar -C "/tmp/iso" -xf -
+cat /etc/os-release | grep PRETTY_NAME
+cat /azure-cli/az.completion > ~/.bashrc
+cat ./Sources/App/gitCommit.swift
+cat /tmp/alias >> /root/.zshrc
+cat index.html
+cat nginx.conf
+cat password.txt password.txt | vncpasswd
+cat smb.txt >> /etc/samba/smb.conf
+cat ${DIRWORK}/.*_version >> ${INSTALLED_VERSIONS}
+cat /etc/*release*
+cat /etc/group
+cat jdk-12.0.1_linux-x64_bin.rpm-* >> jdk-12.0.1_linux-x64_bin.rpm
+cat /etc/apt/sources.list | sed 's/stable/testing/g' >         /etc/apt/sources.list.d/testing.list
+cat vnc.sh Launch.sh > Launch_custom.sh
+cat /tmp/dir.js > /usr/local/lib/node_modules/serve/node_modules/serve-handler/src/directory.js
+cat /etc/lsb-release
+cat bashrc_extra >> .bashrc
+cat /tmp/id_rsa.pub >> /root/.ssh/id_rsa.pub
+cat node_modules/grunt-contrib-watch/tasks/lib/livereload.js | grep $REALOAD_PORT
+cat /etc/ssh/ssh_config | grep -v StrictHostKeyChecking > /etc/ssh/ssh_config.new
+cat /root/admin_pass.txt | passwd admin --stdin
+cat docker/supervisord.conf
+cat ./entrypoint.sh
+cat /locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8
+cat "bash /root/ssh_agent.sh" >> .profile
+cat /usr/bin/entrypoint.sh
+cat ${DIRWORK}/.jenv_version >> ${INSTALLED_VERSIONS}
+cat /etc/docker.conf
+cat > ${APP_ROOT}/lighttpd.conf << EOF
+cat supervisord.conf
+cat ossl_legacy.cnf > /etc/ssl/openssl.cnf
+cat /tmp/deezvars
+cat payarapwd
+cat /_pgis_full_version.txt
+cat /tmp/dir.jst > /usr/local/lib/node_modules/serve/node_modules/serve-handler/src/directory.jst
+cat > /etc/periodic/friday/friday-0 <<'EOF'     its great     server ip $DEEZSERVER     and should stay that way EOF
+cat redis.conf | sed 's/bind 127.0.0.1 ::1/bind 127.0.0.1/' >redis.conf.bak
+cat /tmp/banner >> /root/.zshrc
+cat requirements.txt
+cat src/datahub/__init__.py
+cat ./pip.conf > $HOME/.config/pip/pip.conf
+cat jdk-12.0.2_linux-x64_bin.rpm-* > jdk-12.0.2_linux-x64_bin.rpm
+cat jdk-8u221-linux-x64.rpm-* > jdk-8u221-linux-x64.rpm
+cat /defaults/nginx_addition >> /defaults/nginx/site-confs/default.conf.sample

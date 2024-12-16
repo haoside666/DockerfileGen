@@ -1,0 +1,108 @@
+ARG BASE_IMAGE="ubuntu"
+ARG TAG="22.04"
+FROM ${BASE_IMAGE}:${TAG}
+WORKDIR /ardupilot
+ARG DEBIAN_FRONTEND=noninteractive
+ARG USER_NAME=ardupilot
+ARG USER_UID=1000
+ARG USER_GID=1000
+ARG SKIP_AP_EXT_ENV=1
+ARG SKIP_AP_GRAPHIC_ENV=1
+ARG SKIP_AP_COV_ENV=1
+ARG SKIP_AP_GIT_CHECK=1
+RUN groupadd ${USER_NAME} --gid ${USER_GID} && useradd -l -m ${USER_NAME} -u ${USER_UID} -g ${USER_GID} -s /bin/bash
+RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion
+COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/
+COPY Tools/completion /ardupilot/Tools/completion/
+ENV USER=${USER_NAME}
+RUN echo "ardupilot ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
+RUN chmod 0440 /etc/sudoers.d/${USER_NAME}
+RUN chown -R ${USER_NAME}:${USER_NAME} /${USER_NAME}
+USER ${USER_NAME}
+ENV SKIP_AP_EXT_ENV=$SKIP_AP_EXT_ENV SKIP_AP_GRAPHIC_ENV=$SKIP_AP_GRAPHIC_ENV SKIP_AP_COV_ENV=$SKIP_AP_COV_ENV SKIP_AP_GIT_CHECK=$SKIP_AP_GIT_CHECK
+RUN Tools/environment_install/install-prereqs-ubuntu.sh -y
+RUN echo "alias waf=\"/${USER_NAME}/waf\"" >> ~/.ardupilot_env
+RUN echo "if [ -d \"\$HOME/.local/bin\" ] ; then\nPATH=\"\$HOME/.local/bin:\$PATH\"\nfi" >> ~/.ardupilot_env
+RUN export ARDUPILOT_ENTRYPOINT="/home/${USER_NAME}/ardupilot_entrypoint.sh" && echo "#!/bin/bash" > $ARDUPILOT_ENTRYPOINT && echo "set -e" >> $ARDUPILOT_ENTRYPOINT && echo "source /home/${USER_NAME}/.ardupilot_env" >> $ARDUPILOT_ENTRYPOINT && echo 'exec "$@"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh
+ENV BUILDLOGS=/tmp/buildlogs
+RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENV CCACHE_MAXSIZE=1G
+ENTRYPOINT ["/ardupilot_entrypoint.sh"]
+CMD ["bash"]
+
+
+[
+	(0, 2),	# environment variable dependencies
+	(1, 2),	# environment variable dependencies
+	(2, 3),	# Image dependency
+	(2, 4),	# Image dependency
+	(2, 5),	# Image dependency
+	(2, 6),	# Image dependency
+	(2, 7),	# Image dependency
+	(2, 8),	# Image dependency
+	(2, 9),	# Image dependency
+	(2, 10),	# Image dependency
+	(2, 11),	# Image dependency
+	(2, 12),	# Image dependency
+	(2, 13),	# Image dependency
+	(2, 14),	# Image dependency
+	(2, 15),	# Image dependency
+	(2, 16),	# Image dependency
+	(2, 17),	# Image dependency
+	(2, 18),	# Image dependency
+	(2, 19),	# Image dependency
+	(2, 20),	# Image dependency
+	(2, 21),	# Image dependency
+	(2, 22),	# Image dependency
+	(2, 23),	# Image dependency
+	(2, 24),	# Image dependency
+	(2, 25),	# Image dependency
+	(2, 26),	# Image dependency
+	(2, 27),	# Image dependency
+	(2, 28),	# Image dependency
+	(2, 29),	# Image dependency
+	(2, 30),	# Image dependency
+	(3, 14),	# /ardupilot 目录依赖，WORKDIR会创建目录
+	(3, 15),	# /ardupilot 目录依赖
+	(3, 19),	# /ardupilot 目录依赖
+	(3, 22),	# 相对路径，与WORKDIR存在依赖
+	(3, 25),	# file or directory dependency
+	(4, 13),	# apt-get 依赖于 DEBIAN_FRONTEND
+	(5, 12),	# environment variable dependencies
+	(5, 16),	# environment variable dependencies
+	(5, 17),	# environment variable dependencies
+	(5, 18),	# environment variable dependencies
+	(5, 19),	# environment variable dependencies
+	(5, 20),	# environment variable dependencies
+	(5, 23),	# environment variable dependencies
+	(5, 25),	# environment variable dependencies
+	(6, 12),	# environment variable dependencies
+	(7, 12),	# environment variable dependencies
+	(8, 21),	# environment variable dependencies
+	(9, 21),	# environment variable dependencies
+	(10, 21),	# environment variable dependencies
+	(11, 21),	# environment variable dependencies
+	(12, 19),	# groupadd创建用户组，chown使用
+	(13, 18),	# apt-get会影响/etc目录
+	(13, 27),	# sudo依赖
+	(14, 19),	# 目录依赖
+	(14, 22),	# 目录依赖
+	(14, 25),	# 目录依赖
+	(15, 19),	# 目录依赖
+	(15, 25),	# 目录依赖
+	(17, 18),	# 文件依赖
+	(17, 25),	# 文件依赖
+	(18, 25),	# 文件权限依赖
+	(19, 25),	# 目录权限依赖
+	(20, 22),	# user dependency
+	(20, 23),	# user dependency
+	(20, 24),	# user dependency
+	(20, 25),	# user dependency
+	(20, 27),	# user dependency
+	(22, 25),	# 脚本依赖
+	(23, 25),	# 文件依赖
+	(24, 25),	# 文件依赖
+]
+
+
+所用时间：860.81

@@ -1,0 +1,12 @@
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(2, 3),	# file or directory dependency
+	(2, 6),	# file or directory dependency
+	(4, 5),	# user dependency
+]

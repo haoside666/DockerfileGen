@@ -1,0 +1,44 @@
+[
+    {
+        "before_instruct": "FROM pensiero/apache-php-mysql:latest",
+        "after_instruct": "RUN apt update -q && apt install -yqq --force-yes mysql-server",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pensiero/apache-php-mysql:latest",
+        "after_instruct": "RUN /etc/init.d/mysql 'start'",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pensiero/apache-php-mysql:latest",
+        "after_instruct": "WORKDIR /var/www/public",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM pensiero/apache-php-mysql:latest",
+        "after_instruct": "COPY . ./",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt update -q && apt install -yqq --force-yes mysql-server",
+        "after_instruct": "RUN /etc/init.d/mysql 'start'",
+        "edge": "(1, 2)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/public",
+        "after_instruct": "COPY . ./",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    }
+]

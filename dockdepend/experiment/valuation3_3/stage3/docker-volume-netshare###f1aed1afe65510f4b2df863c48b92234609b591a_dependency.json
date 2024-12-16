@@ -1,0 +1,30 @@
+[
+    {
+        "before_instruct": "FROM golang:1.6",
+        "after_instruct": "RUN mkdir -p /go/src/github.com/ContainX/docker-volume-netshare",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:1.6",
+        "after_instruct": "COPY . /go/src/github.com/ContainX/docker-volume-netshare",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:1.6",
+        "after_instruct": "WORKDIR /go/src/github.com/ContainX/docker-volume-netshare",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /go/src/github.com/ContainX/docker-volume-netshare",
+        "after_instruct": "WORKDIR /go/src/github.com/ContainX/docker-volume-netshare",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /go/src/github.com/ContainX/docker-volume-netshare"
+    }
+]

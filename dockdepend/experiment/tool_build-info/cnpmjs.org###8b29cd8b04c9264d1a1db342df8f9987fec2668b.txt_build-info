@@ -1,0 +1,8 @@
+{
+    "filename": "cnpmjs.org###8b29cd8b04c9264d1a1db342df8f9987fec2668b.txt",
+    "command_length": 13,
+    "processing_time": 0.0026750564575195312,
+    "dependency_count": 25,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (2, 3), (2, 4), (2, 5), (2, 8), (2, 9), (3, 4), (3, 7), (4, 5), (4, 7), (4, 8), (4, 9), (5, 7), (6, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'exist file or directory dependency,because RUN instruct create /var/app/cnpmjs.org', 'have shell io intersection,because common path /var/app/cnpmjs.org', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /var/app/cnpmjs.org', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because common path /var/app/cnpmjs.org', \"have shell pkg intersection,because exist intersection {'npm'}\"]"
+}

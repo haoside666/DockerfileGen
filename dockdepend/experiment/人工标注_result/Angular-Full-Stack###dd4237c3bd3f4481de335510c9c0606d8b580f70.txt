@@ -1,0 +1,30 @@
+FROM node:18-alpine
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+ENV MONGODB_URI mongodb://mongo:27017/angularfullstack
+RUN npm run build
+EXPOSE 3000
+CMD [ "npm", "start" ]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(1, 2),	# 相对路径，与WORKDIR存在依赖
+	(1, 3),	# npm ci依赖当前目录下的package.json
+	(1, 4),	# 相对路径，与WORKDIR存在依赖
+	(1, 6),	# npm run依赖当前目录下的文件
+	(2, 3),	# package.json文件依赖
+	(3, 6),	# npm 前后顺序有依赖
+	(4, 6),	# 文件依赖
+]
+
+所用时间：22.78

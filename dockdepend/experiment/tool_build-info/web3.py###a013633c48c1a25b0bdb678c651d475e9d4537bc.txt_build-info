@@ -1,0 +1,8 @@
+{
+    "filename": "web3.py###a013633c48c1a25b0bdb678c651d475e9d4537bc.txt",
+    "command_length": 11,
+    "processing_time": 0.001979827880859375,
+    "dependency_count": 25,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9), (3, 10), (4, 10), (5, 10), (6, 10), (7, 9), (7, 10), (8, 9), (8, 10)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /usr/src/app', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because common path /usr/src/app', 'exist file or directory dependency', 'exist file or directory dependency,because common path /usr/src/app', 'exist file or directory dependency']"
+}

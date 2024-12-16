@@ -1,0 +1,114 @@
+[
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "LABEL maintainer \"Jones MAGLOIRE @Joxit\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "WORKDIR /usr/share/nginx/html/",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "ENV NGINX_PROXY_HEADER_Host='$http_host'",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "ENV NGINX_LISTEN_PORT='80'",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "ENV SHOW_CATALOG_NB_TAGS='false'",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "COPY nginx/default.conf /etc/nginx/conf.d/default.conf",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "COPY bin/90-docker-registry-ui.sh /docker-entrypoint.d/90-docker-registry-ui.sh",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "COPY dist/ /usr/share/nginx/html/",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "COPY favicon.ico /usr/share/nginx/html/",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM nginx:alpine-slim",
+        "after_instruct": "RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/share/nginx/html/",
+        "after_instruct": "COPY dist/ /usr/share/nginx/html/",
+        "edge": "(2, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/share/nginx/html/",
+        "after_instruct": "COPY favicon.ico /usr/share/nginx/html/",
+        "edge": "(2, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/share/nginx/html/",
+        "after_instruct": "RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx",
+        "edge": "(2, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/share/nginx/html/"
+    },
+    {
+        "before_instruct": "COPY nginx/default.conf /etc/nginx/conf.d/default.conf",
+        "after_instruct": "RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx",
+        "edge": "(6, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /etc/nginx"
+    },
+    {
+        "before_instruct": "COPY dist/ /usr/share/nginx/html/",
+        "after_instruct": "RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx",
+        "edge": "(8, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/share/nginx/html"
+    },
+    {
+        "before_instruct": "COPY favicon.ico /usr/share/nginx/html/",
+        "after_instruct": "RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx",
+        "edge": "(9, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/share/nginx/html"
+    }
+]

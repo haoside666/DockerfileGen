@@ -1,0 +1,16 @@
+```
+[(0, 1),  # RUN docker-php-ext-install mysqli 依赖于 FROM php:7.4-apache
+ (0, 2),  # RUN docker-php-ext-install pdo 依赖于 FROM php:7.4-apache
+ (0, 3),  # RUN docker-php-ext-install pdo_mysql 依赖于 FROM php:7.4-apache
+ (0, 4),  # RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev libpng-dev 依赖于 FROM php:7.4-apache
+ (0, 5),  # RUN docker-php-ext-install zip 依赖于 FROM php:7.4-apache
+ (0, 6),  # RUN docker-php-ext-install gd 依赖于 FROM php:7.4-apache
+ (0, 7),  # RUN docker-php-ext-install bcmath 依赖于 FROM php:7.4-apache
+ (0, 8),  # RUN a2enmod headers 依赖于 FROM php:7.4-apache
+ (0, 9),  # RUN service apache2 restart 依赖于 FROM php:7.4-apache
+ (0, 10), # COPY ./lhc_web /var/www/html 依赖于 FROM php:7.4-apache
+ (10, 11), # WORKDIR /var/www/html 依赖于 COPY ./lhc_web /var/www/html
+ (0, 12)] # EXPOSE 80 依赖于 FROM php:7.4-apache
+```
+
+注：Dockerfile的每个指令通常会创建一个新的镜像层，并且后续的指令依赖于前面的镜像层。在这个列表中，我们假设每个RUN、COPY等指令都依赖于基础镜像层（即FROM指令），因为它们需要在这个基础层上执行。WORKDIR指令依赖于它之前的COPY指令，因为它需要在COPY指令创建的文件系统结构中进行操作。EXPOSE指令也依赖于基础镜像层，因为它定义了容器在运行时应该监听哪个端口。

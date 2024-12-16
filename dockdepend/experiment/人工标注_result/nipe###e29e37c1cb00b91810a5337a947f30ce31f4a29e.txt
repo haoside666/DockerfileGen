@@ -1,0 +1,16 @@
+FROM perl:5.38
+COPY . /usr/src/nipe
+WORKDIR /usr/src/nipe
+RUN cpanm --installdeps .
+ENTRYPOINT [ "perl", "./nipe.pl" ]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(1, 3),	# 文件依赖
+	(2, 3),	# WORKDIR目录依赖
+]
+
+所用时间：11.69

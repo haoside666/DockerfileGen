@@ -1,0 +1,36 @@
+FROM node:lts
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app/
+COPY package-lock.json /usr/src/app/
+RUN npm install
+COPY . /usr/src/app
+EXPOSE 8443
+COPY config.json-default config.json
+RUN openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com" -keyout privkey.pem -out fullchain.pem
+CMD npm run solid start
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+    (1, 2),	# 目录依赖
+	(1, 5),	# 目录间接依赖
+	(2, 3),	# WORKDIR目录依赖
+	(2, 4),	# WORKDIR目录依赖
+	(2, 5),	# WORKDIR目录依赖
+	(2, 6),	# WORKDIR目录依赖
+	(2, 8),	# WORKDIR目录依赖
+	(2, 9),	# WORKDIR目录依赖
+	(3, 5),	# 文件依赖
+	(4, 5),	# 文件依赖
+]
+
+所用时间：41.53

@@ -1,0 +1,65 @@
+[
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "ENV GOPROXY=https://goproxy.cn,direct",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "WORKDIR $GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "COPY src_dir=['.'] dst_dir=$GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "RUN go build .",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "EXPOSE 8000",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM golang:latest",
+        "after_instruct": "ENTRYPOINT ./go-gin-example",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR $GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "after_instruct": "COPY src_dir=['.'] dst_dir=$GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR $GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "after_instruct": "RUN go build .",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use $GOPATH/src/github.com/EDDYCJY/go-gin-example"
+    },
+    {
+        "before_instruct": "COPY src_dir=['.'] dst_dir=$GOPATH/src/github.com/EDDYCJY/go-gin-example",
+        "after_instruct": "RUN go build .",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path $GOPATH/src/github.com/EDDYCJY/go-gin-example"
+    }
+]

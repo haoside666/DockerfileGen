@@ -1,0 +1,875 @@
+unzip /tmp/envconsul.zip -d /usr/bin/
+unzip -d / /headers-more-nginx-module.zip)
+unzip -o v2ray-linux-64.zip
+unzip gost-engine.zip -d ./
+unzip /tmp/terraform.zip
+unzip -q 4.0.1.zip
+unzip -q /tmp/MCMA2_glibc26_2.zip -d /opt/mcmyadmin2
+unzip bowtie2.zip
+unzip -d /bin /tmp/vault.zip
+unzip -o ergatis.zip
+unzip protoc.zip
+unzip ghidra_${GHIDRA_VERSION}.zip
+unzip dist.zip -d /var/www/organization-feature
+unzip gatk-4.1.0.0.zip
+unzip kp.zip
+unzip ariang.zip
+unzip -o ariang.zip -d /var/www/html
+unzip /tmp/chromedriver_linux64.zip -d /opt/selenium
+unzip -d android-sdk android-sdk-tools.zip
+unzip terraform-provider-template.zip -d ~/.terraform.d/plugins/
+unzip polipo.zip
+unzip /aquatone_linux_arm64_1.7.0.zip
+unzip -qd /apps /tmp/wildfly.zip
+unzip $BI_DISTRO_ZIP2
+unzip viewer.zip
+unzip /pupy.zip
+unzip ${file}
+unzip -q /tmp/cmdline-tools.zip -d ${android_home}/cmdline-tools
+unzip consul-template_0.16.0-rc1_linux_amd64.zip
+unzip protoc-3.0.0-linux-x86_64.zip
+unzip Godot_v${GODOT_VERSION}-${RELEASE_NAME}_export_templates.tpz
+unzip terraform.zip -d /bin
+unzip v2ray.zip -d /tmp
+unzip joomla.zip -d /var/www/html/joomla
+unzip -o ghost.zip -d /var/www/ghost
+unzip /opt/selenium/chromedriver_linux64.zip -d /opt/selenium
+unzip stpyv8-ubuntu-20.04-python-3.8.zip
+unzip /tmp/assp.mod.zip
+unzip instantclient*.zip
+unzip -d /tmp/build consul_${CONSUL_VERSION}_linux_${consulArch}.zip
+unzip /tmp/elastalert.zip -d /opt
+unzip -q ${SCANNER_FILE}
+unzip -qq /tmp/chromedriver_linux64.zip -d /opt/chromedriver-$CHROMEDRIVER_VERSION
+unzip -o /tmp/provisioning/phpredis.zip -d /tmp/provisioning/
+unzip /tmp/GitVersion_${GITVERSION_VERSION}.zip -d /usr/local/GitVersion_${GITVERSION_VERSION}
+unzip /tmp/packer.zip -d /usr/local/bin
+unzip -P AcceptEULA jdk*.zip
+unzip joomla.zip -d /var/www/html
+unzip -q /tmp/xwiki.war -d "${TOMCAT_HOME}/webapps/xwiki"
+unzip fiduswriter.zip
+unzip /tmp/stable.zip -d /mitogen
+unzip /tmp/$PLUGINS_PKG -d /tmp
+unzip /tmp/google-cloud-sdk.zip
+unzip /tmp/bludit.zip
+unzip /tmp/sapui5-rt-${SAPUI5_VERSION}.zip
+unzip app.zip
+unzip SenchaCmd-${SENCHA_VERSION}-linux-amd64.sh.zip
+unzip docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip
+unzip -q musl-cross-make.zip
+unzip gantt.zip -d /root/gantt
+unzip spacemono.zip
+unzip MCMA2_glibc26_2.zip
+unzip bowtie2-*.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/Comet/
+unzip oci-sdk.zip -d src
+unzip /tmp/ddclient.zip -d /tmp/
+unzip allure-${ALLURE_VERSION}.zip
+unzip ${NIFI_BASE_DIR}/nifi-toolkit-${NIFI_VERSION}-bin.zip -d ${NIFI_BASE_DIR}
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /bin
+unzip $OPENCV_VERSION.zip
+unzip www_cn_20140811.zip
+unzip ampinstmgr.zip
+unzip sonar-scanner.zip
+unzip InfCloud_*.zip -d /srv/
+unzip /tmp/frontend.zip -d /frontend
+unzip otrs-$OTRS_VERSION.zip
+unzip "/u01/$PATCH_PKG_33950717" -d /u01
+unzip /tmp/instantclient.x64-12.1.0.2.0.zip -d /usr/local/
+unzip /tmp/glassfish-4.1.zip -d /usr/local
+unzip tpp-4.8.0.zip
+unzip hisat2-2.1.0-Linux_x86_64.zip
+unzip -q -o ${PROTOC_ZIP} -d /usr/local 'include/*'
+unzip -uo ghost.zip -d /var/www/ghost
+unzip ${DISCUZ_FILE} 'upload/*'
+unzip kotlin-compiler-*.zip
+unzip ${BOOKSTACK_PKG}
+unzip protoc-3.1.0-linux-x86_64.zip
+unzip "/u01/$PATCH_PKG_31403376" -d /u01
+unzip target/neo4j-gremlin-plugin-tp3-2.3.5-server-plugin.zip -d ../neo4j/plugins/gremlin-plugin
+unzip master.zip -d extensions/
+unzip v1.9.zip
+unzip packer_1.0.0_linux_amd64.zip -d /usr/local/bin/
+unzip "/u01/$PATCH_PKG_33958532" -d /u01
+unzip /tmp/gitlab_deployment_dashboard.zip -d /tmp/
+unzip -d /opt/gradle gradle-${GRADLE_VERSION}-bin.zip
+unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
+unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/
+unzip -q /tmp/${SAPUI5_SDK_ZIP}
+unzip "/u01/$PATCH_PKG_32575741" -d /u01
+unzip /tmp/fusebundlegen.zip
+unzip mimikatz.zip -d mimikatz
+unzip terraform_${TF_VERSION}_linux_amd64.zip
+unzip fusebundle-linux_glibc22-int.zip
+unzip xteve.zip -d /usr/bin/
+unzip -q eval-build.zip
+unzip /tmp/bentolor.zip
+unzip openliberty-${VERSION}.zip -d ${INSTALL_DIR}
+unzip about.viblo.asia-$VIBLO_PLATFORM_VERSION.zip -d /var/www/about.viblo.asia
+unzip cpp_redis.zip
+unzip ${OPENCV_VERSION}.zip
+unzip ./packer.zip -d /usr/bin/
+unzip sample.war'
+unzip /tmp/cd.zip -d /usr/local/bin/
+unzip -d /opt /opt/h2o.zip
+unzip /opt/webApp/plugin/ProgQuery.zip -d /opt/webApp/plugin/
+unzip search-guard-5-5.3.0-11-20170329.222527-2.zip -d ./tmp
+unzip "terraform_${TERRAFORM_VERSION}_linux_${TARGETARCH}.zip" -d /usr/local/bin
+unzip -u linux_amd64_yamlsort.zip
+unzip -d /opt/gradle /tmp/gradle-*.zip
+unzip -o v2ray-linux-64.zip -d /etc/v2ray
+unzip -o     /tmp/GeoLite2xtables.zip
+unzip packer_1.4.1_linux_amd64.zip
+unzip -d /bin /tmp/consul.zip
+unzip /tmp/rclone.zip -d /tmp/rclone
+unzip /tmp/packer_linux_amd64.zip -d /usr/local/bin/
+unzip ${TAKAOFONT_FILE_NAME}
+unzip -q /tmp/SDK_15.2.0.zip -d /nrf5
+unzip inspec-profile-aks.zip -d /home/${USER}/${PROFILEDIR}
+unzip /tmp/GeoLite2-Country-CSV.zip -d /tmp
+unzip /tmp/master.zip "icingaweb2-master/modules/doc/*" "icingaweb2-master/modules/monitoring/*" -d "/tmp/master"
+unzip -q master.zip
+unzip logstash-gelf-$LOGSTASH_GELF_VERSION-logging-module.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin
+unzip gatk-4.1.4.0.zip
+unzip terraform_0.12.7_linux_amd64.zip
+unzip -q ${RDS_TMP} -d /tmp
+unzip protoc-3.0.0-linux-x86_64.zip -d proto3
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+unzip bowtie2-2.3.4.3-linux-x86_64.zip
+unzip inspec-profile-eks.zip -d /home/${USER}/${PROFILEDIR}
+unzip /tmp/chevereto.zip
+unzip /tmp/nedi-1.5C.tgz -d /var/www/html/
+unzip terraform-provider-random.zip -d ~/.terraform.d/plugins/
+unzip -q /tmp/SDK_14.2.0.zip -d /nrf5
+unzip v1.0.1.zip
+unzip /qshell.zip -d /dist
+unzip /$DL_FILE -d /terraria
+unzip terraform_${TERRAFORM}_linux_amd64.zip
+unzip -q haranoaji.zip
+unzip /tmp/font.zip -d /usr/share/fonts/
+unzip senseBox_Libraries.zip -d /arduino-ide
+unzip gradle-6.3-bin.zip
+unzip /data/build.zip -d /data/web
+unzip crucible.tar.gz
+unzip terraform-provider-aws.zip -d ~/.terraform.d/plugins/
+unzip -q $OPENCV_VERSION.zip
+unzip -o ariang.zip -d /ariang/html
+unzip ~/elixir-ls.zip -d ~/elixir-ls
+unzip terraform_0.12.14_linux_amd64.zip
+unzip /app/profittrailer.zip -d /app/
+unzip -q /tmp/selfoss-$VERSION.zip -d /selfoss
+unzip /data/serveur-gta.zip
+unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip -d /usr/local include/*
+unzip -q aapt2.jar aapt2 -d ${APKINFO_TOOLS}
+unzip -q /tmp/rainloop-community-latest.zip -d /rainloop
+unzip "/u01/$PATCH_PKG_33618954" -d /u01
+unzip -q sdk-tools-linux-4333796.zip -d $ANDROID_HOME
+unzip pdftk-2.02-src.zip
+unzip "${TEMP}/openvpn-strong.zip" -d "${APPBASE}"
+unzip /tmp/tf012-template.zip -d /bin
+unzip ${ODL_VERSION}
+unzip oci-basic.zip -d src
+unzip /tmp/BinAbsInspector.zip
+unzip v0.0.1.zip
+unzip Cica_${cica_version}.zip -d /usr/share/fonts/opentype/cica
+unzip "${OPENSSL_VERSION}.zip" -d ./
+unzip dist.zip -d /var/www/tools
+unzip "$FX_ARCHIVE2"
+unzip version1.zip
+unzip -d aria2-ng AriaNg-1.0.3.zip
+unzip instantclient-basic-linux.x64-21.6.0.0.0dbru.zip
+unzip /apollo-adminservice/apollo-adminservice-${VERSION}-github.zip -d /apollo-adminservice
+unzip plink2_linux_avx2.zip
+unzip chromedriver_linux64.zip -d /usr/bin/
+unzip BacPipe.v1.7.unix.zip
+unzip ${NIFI_REGISTRY_BASE_DIR}/${NIFI_REGISTRY_BINARY} -d ${NIFI_REGISTRY_BASE_DIR}
+unzip /tmp/raleway.zip -d raleway/
+unzip /tmp/awscliv2.zip -d /opt
+unzip /tmp/$ZIP -d $CLIENT_PATH/
+unzip "${temp_dir}/openvpn-strong.zip" -d "${app_base_dir}"
+unzip /root/terraform.zip -d /usr/local/bin
+unzip tacopie.zip -d tacopie
+unzip sonar-scanner-cli-3.3.0.1492-linux.zip -d /opt/sonar
+unzip trid_linux_64.zip
+unzip sdk.zip
+unzip terraform_0.12.19_linux_amd64.zip
+unzip master.zip -d /home/tv/
+unzip terraform_${VERSION}_linux_amd64.zip -d /tmp
+unzip -q -j -u -o proj-datumgrid-latest.zip  -d /build_projgrids/${PROJ_INSTALL_PREFIX}/share/proj
+unzip -a /tmp/sonar-scanner-cli-3.3.0.1492-linux.zip
+unzip /tmp/icingaweb2.zip "icingaweb2-master/modules/doc/*" "icingaweb2-master/modules/monitoring/*" -d "/tmp/icingaweb2"
+unzip Trimmomatic-0.39.zip
+unzip xteve_beta.zip -d /app
+unzip /consul_${CONSUL_VERSION}_linux_amd64.zip
+unzip $USER_HOME/$ZIP_FILE -d $PIA_PATH
+unzip /tmp/akaunting.zip -d /var/www/html
+unzip vault.zip
+unzip marytts-${MARYTTS_VERSION}.zip -d /
+unzip -q $INSTALL_DIR/install/$GRID_PATCH -d $INSTALL_DIR/install
+unzip /tmp/director.zip -d "/tmp/director"
+unzip minter.zip
+unzip cerebro.zip
+unzip /tmp/tf012-random.zip -d /bin
+unzip -qq "dartium-linux-x64-release.zip"
+unzip wow.zip
+unzip stpyv8-ubuntu-22.04-python-3.10.zip
+unzip /src/download/master.zip
+unzip /usr/src/gradle/gradle-$GRADLE_VERSION-bin.zip -d /usr/local
+unzip ./snpEff_v4_3p_core.zip
+unzip ProfitTrailer.zip
+unzip -q -o ${PROTOC_ZIP} -d /usr/local bin/protoc
+unzip bedrock-server.zip -d bedrock-server
+unzip /tmp/${SAPUI5_SDK_ZIP}
+unzip -q /tmp/SDK_15.0.0.zip -d /nrf5
+unzip -d /usr/local/ /tmp/basic.zip
+unzip nyc-db.zip
+unzip /opt/apache-ant-1.9.14-bin.zip -d /opt/
+unzip -q /opt/spm${SPM_VERSION}_${SPM_REVISION}_Linux_${MATLAB_VERSION}.zip -d /opt
+unzip /tmp/icingaweb2.zip "icingaweb2-2.3.2/modules/doc/*" "icingaweb2-2.3.2/modules/monitoring/*" -d "/tmp/icingaweb2"
+unzip terraform_0.6.10_linux_amd64.zip -d /usr/bin/
+unzip packer_1.3.3_linux_amd64.zip
+unzip xteve.zip -d /app
+unzip protoc.zip -d /usr/local
+unzip -d /usr/local/share/icingaweb2/modules/aws/library/vendor/aws aws.zip
+unzip -q /protoc-gen-lint_${TARGETOS}_${TARGETARCH}.zip
+unzip -d /bin vault_${VAULT_VERSION}_linux_amd64.zip
+unzip ${NIFI_REGISTRY_BASE_DIR}/nifi-toolkit-${NIFI_REGISTRY_VERSION}-bin.zip -d ${NIFI_REGISTRY_BASE_DIR}
+unzip -q jboss.zip
+unzip ulua~latest.zip
+unzip jmxtrans.zip
+unzip pybind11.zip
+unzip snpEff_v4_3_GRCh38.92.zip -d snpEff_v4_3_GRCh38.92
+unzip -d $DEPLOYER_HOME/bin $DEPLOYER_HOME/bin/aws-ssm-env.zip
+unzip /tmp/$ZIP -d /usr/local/tpp/bin/
+unzip /opt/oracle/instantclient-sdk-linux.${ORACLE_INSTANT_CLIENT_ARCH}-${ORACLE_INSTANT_CLIENT_VERSION}.zip -d /opt/oracle
+unzip v0.0.0.zip
+unzip -d /opt/gradle /tmp/gradle.zip
+unzip -x noVNC.zip
+unzip terraform-provider-archive.zip -d ~/.terraform.d/plugins/
+unzip -o virome.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/pwiz/
+unzip master
+unzip Cray1.zip
+unzip -o /tmp/ngrok.zip -d $HOME
+unzip MetaDescriptionTag.zip -d extensions/
+unzip -d /opt/ /tmp/maven.zip
+unzip -q sdk-tools-linux-$ANDROID_SDK_VERSION.zip
+unzip -q /icecoder.zip -d /tmp/
+unzip /tmp/fever-plugin.zip -d /tmp
+unzip apache-tinkerpop-gremlin-server-3.2.6-bin.zip
+unzip platform-tools-latest-linux.zip
+unzip -q "gradle-${GRADLE_VERSION}-bin.zip"
+unzip chromedriver.zip
+unzip /tmp/${ZIP}.zip -d /home/biodocker/bin/
+unzip kotlin-compiler-1.4.32.zip -d /opt/
+unzip "/u01/$PATCH_PKG_32784652" -d /u01
+unzip srell.zip -d /tmp/srell
+unzip nycdb.zip
+unzip /tmp/chromedriver_linux64.zip -d /opt
+unzip tools_r${VERSION_SDK_TOOLS}-linux.zip -d /sdk
+unzip "${ARM_TTK_NAME}" -d "${ARM_TTK_DIRECTORY}"
+unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux.zip
+unzip ${file_name} -d zfile
+unzip $BI_DISTRO_ZIP1
+unzip terraform_0.12.24_linux_amd64.zip -d /usr/local/bin/
+unzip /tmp/GeoLite2-ASN-CSV.zip -d /tmp
+unzip -d /usr/sbin/ /tmp/consul-template.zip
+unzip apache-jmeter-${JMETER_VERSION}.zip
+unzip semagrow-http-*-distribution.zip
+unzip -qd ${APPS_BASE} /tmp/wildfly.zip
+unzip /usr/bin/kube-prompt.zip -d /usr/bin
+unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip -d /usr/local bin/protoc
+unzip /tmp/$ZIP -d /home/biodocker/bin/shotmap/
+unzip /root/ssr.zip
+unzip -d /tmp/install/ /tmp/install.zip
+unzip -q /tmp/SDK_16.0.0.zip -d /nrf5/nRF5_SDK_16.0.0
+unzip /tmp/avira_fusebundlegen-linux_glibc22-en.zip
+unzip 0.7.1.zip
+unzip -q apache-jmeter-${JMETER_VERSION}.zip -d /opt
+unzip "$GRADLE_PATH/gradle-$version-all.zip" -d /usr/local
+unzip /tmp/rclone-v${RCLONE_VERSION}-linux-${RCLONE_TYPE}.zip
+unzip ./EF4.74.zip
+unzip /tmp/vault.zip -d /tmp/
+unzip /tmp/atlas/org.planqk.atlas.web/target/org.planqk.atlas.web.war -d /build/atlas
+unzip /tmp/$ZIP -d /usr/local
+unzip ${APP_FILE}
+unzip cerebro-0.7.3.zip
+unzip kafka-manager-${version}.zip
+unzip bWAPP_latest.zip
+unzip stable.zip
+unzip htop.zip
+unzip -d ${ANDROID_SDK_ROOT}/cmdline-tools commandlinetools-linux-${ANDROID_SDK_VERSION}.zip
+unzip /tmp/jfrog-artifactory-cpp-ce-${VERSION}.zip -d /opt
+unzip /tmp/ALISCORE_v2.0/Aliscore_v.2.0.zip -d /home/biodocker/bin/Aliscore/
+unzip supertokens.zip
+unzip 3.2.0.zip
+unzip -d /usr/local elixir-precompiled.zip
+unzip neo-cli-linux-x64.zip
+unzip aria2.zip
+unzip -qo jboss-$JBOSS_VERSION.zip
+unzip /root/finalspeed_server.zip
+unzip -d autopsy autopsy.zip
+unzip Sia-v1.4.0-linux-amd64.zip
+unzip lbrynet.linux.zip -d /usr/local/bin
+unzip emby.zip -d /usr/lib/emby-server
+unzip /ndk.zip -d $ANDROID_NDK_HOME
+unzip "/usr/src/gradle/gradle-$version-all.zip" -d /usr/local
+unzip datahub-frontend.zip
+unzip kubeless_linux-amd64.zip -d kubeless-bin
+unzip mdbook-graphviz_v${MDBOOK_GRAPHVIZ_VERSION}_x86_64-unknown-linux-musl.zip
+unzip -P iagreetotheeula SC2.4.10.zip
+unzip t.zip
+unzip /tmp/openvpn.zip -d /root
+unzip /sdk.zip -d $ANDROID_HOME
+unzip aquatone.zip -d aquatone
+unzip opencv_contrib.zip
+unzip OpenClinica.war -d OpenClinica
+unzip remco_${REMCO_VER}_linux_amd64.zip
+unzip packer_1.1.3_linux_amd64.zip -d /usr/local/bin/
+unzip kover.zip
+unzip gatk-4.1.4.1.zip
+unzip ndk.zip
+unzip ${VERSION}.zip
+unzip Trimmomatic-0.38.zip
+unzip grav-admin-v${GRAV_VERSION}.zip
+unzip -d neo-cli/ RpcWallet.zip
+unzip tpp-5.0.zip
+unzip /tmp/terraform.zip terraform -d /usr/local/bin
+unzip /tmp/tm-latest.zip -d /tmp
+unzip -j /tmp/rclone-linux-amd64.zip -d /tmp/rclone
+unzip Eisvogel-${EISVOGEL_VER}.zip
+unzip sonarqube.zip
+unzip -q /tmp/UniFi.unix.zip -d /usr/lib
+unzip go_appengine_sdk.zip
+unzip /tmp/latest.zip   -d /tmp
+unzip apache-tinkerpop-gremlin-server-$GREMLIN_VERSION-bin.zip
+unzip gradle-${GRADLE_VERSION}-bin.zip
+unzip ${IPAFONT_FILE_NAME}
+unzip thunder.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/PepNovo/
+unzip tools.zip
+unzip -d /bin consul_${CONSUL_VERSION}_linux_amd64.zip
+unzip faiss.zip
+unzip -d neo-cli/ SimplePolicy.zip
+unzip /tmp/android-sdkmanager.zip -d ${ANDROID_HOME}
+unzip /tmp/newsplus-plugin.zip -d /tmp
+unzip -o tmp.zip -d /usr/local include/*
+unzip jacoco.zip -d /jacoco
+unzip -qq /tmp/opendj-server-legacy-${WRENDS_VERSION}.zip -d /opt
+unzip ${OWNCAST_FILE}
+unzip flamegraph.zip
+unzip /opt/oracle/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /opt/oracle
+unzip -nq /tmp/fusionauth-app.zip -d /usr/local/fusionauth
+unzip /tmp/sapui5-sdk-${SAPUI5_VERSION}.zip
+unzip parser.zip
+unzip gunbot.zip
+unzip /tmp/go-agent.zip -d /usr/local
+unzip -qq "dartsdk-linux-x64-release.zip"
+unzip -q /tmp/${SAPUI5_ZIP}
+unzip ${CLIENT_FILENAME}
+unzip gradle.zip
+unzip ${INSTALL_DIR}/apache-maven-${MAVEN_VERSION}-bin.zip -d ${INSTALL_DIR}
+unzip ${NIFI_REGISTRY_BASE_DIR}/${NIFI_TOOLKIT_BINARY} -d ${NIFI_REGISTRY_BASE_DIR}
+unzip -d /opt /tmp/$CLIF.zip
+unzip -o tmp.zip -d /usr/local bin/protoc
+unzip instantclient-basiclite-linux.x64-19.6.0.0.0dbru.zip
+unzip moodle.zip
+unzip sqlite-src-3290000.zip
+unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
+unzip target/neo4j-gremlin-plugin-tp3-2.3.1-server-plugin.zip -d ../neo4j/plugins/gremlin-plugin
+unzip -q ${S3_TMP} -d /tmp
+unzip dist.zip -d /var/www/app
+unzip vault.zip -d /usr/bin/
+unzip libsvm-3.23.zip
+unzip /apollo-portal/apollo-portal-${VERSION}-github.zip -d /apollo-portal
+unzip /cmdline-tools.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools
+unzip ./download
+unzip -qo /tmp/protoc/protoc.zip -d /tmp/protoc
+unzip -d neo-cli/ CoreMetrics.zip
+unzip v4.1.0.zip
+unzip -o -d /usr/share/fonts/ /tmp/Fonts_URL.zip
+unzip FDOEMCD.builder.zip
+unzip -q /tmp/micro-ecc_v1.0.zip -d /nrf5/nRF5_SDK_15.3.0/external/micro-ecc
+unzip DCEVM-full-7u79-installer.jar
+unzip /chrome/chrome-linux.zip -d /chrome
+unzip consul-template_0.16.0_linux_amd64.zip
+unzip $MINIFI_BASE_DIR/${MINIFI_BINARY} -d $MINIFI_BASE_DIR
+unzip /tmp/mwa2-style.zip -d /tmp
+unzip /tmp/msedgedriver_linux64.zip -d /opt/selenium
+unzip /opt/audiveris/build/distributions/Audiveris.zip
+unzip cmd.zip
+unzip Hg19.zip
+unzip -q android-sdk-tools.zip -d ${ANDROID_HOME}
+unzip terraform.zip -d /usr/bin
+unzip gatk-4.1.2.0.zip
+unzip -q "$GRADLE_PATH/gradle-$GRADLE_VERSION-all.zip" -d /usr/local
+unzip "/u01/$PATCH_PKG_34044738" -d /u01
+unzip sonar-scanner-cli-${SONAR_SCANNER_VERSION}-linux
+unzip /root/git/ghidra/build/dist/ghidra*linux*.zip -d /tmp
+unzip consul-template_0.15.0_linux_amd64.zip
+unzip munkitools.zip -d .
+unzip -o /opt/webApp/plugin/ProgQuery.jar
+unzip /u01/$RP_PKG
+unzip 3.4.2.zip
+unzip rclone-current-linux-amd64.zip
+unzip terraform_${VERSION}_linux_amd64.zip
+unzip /tmp/tf012-aws.zip -d /bin
+unzip terraform_0.12.18_linux_amd64.zip
+unzip ${MINIFI_BASE_DIR}/${MINIFI_BINARY_NAME} -d ${MINIFI_BASE_DIR}
+unzip protoc-3.6.1-linux-x86_64.zip
+unzip /opt/oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/oracle
+unzip "/u01/$PATCH_PKG_34080315" -d /u01
+unzip /tmp/$ZIP -d /home/biodocker/bin/MSGFPlus_9949/
+unzip emby.zip -d /usr/lib/emby-server/bin
+unzip /cmake.zip -d ${ANDROID_HOME}/cmake
+unzip v2ray.zip
+unzip -j fnm-linux.zip
+unzip ${COMMIT}.zip
+unzip -q /u01/$OHS_PKG
+unzip google-cloud-sdk.zip
+unzip -o /tmp/ngrok.zip -d /
+unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray/
+unzip -jo -d "${JAVA_HOME}/jre/lib/security" "jce_policy-${JAVA_VERSION}.zip"
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin/
+unzip ghidra.zip
+unzip serveur-gta.zip
+unzip /tmp/icingaweb2.zip "icingaweb2-2.0.0-beta3/modules/doc/*" "icingaweb2-2.0.0-beta3/modules/monitoring/*" -d "/tmp/icingaweb2"
+unzip bsec_Library.zip -d /arduino-ide/libraries
+unzip /tmp/docker-downloads/terraform.zip
+unzip terraform_*.zip -d /usr/local/sbin/
+unzip /tmp/rclone-${RCLONE_VERSION}-linux-${RCLONE_ARCH}.zip
+unzip /tmp/packer.zip -d /usr/bin/
+unzip "unifont.ttf.zip" -d "./plugins/ImageGraph/fonts/"
+unzip terraform_0.12.13_linux_amd64.zip
+unzip -d ./builded ./target/universal/kafka-manager-${KAFKA_MANAGER_VERSION}.zip
+unzip -d /usr/local/ /tmp/sdk.zip
+unzip -d /opt /tmp/gradle.zip
+unzip -d ${GRADLE_INSTALL_BASE} ${GRADLE_PACKAGE}
+unzip terraform_0.12.24_linux_amd64.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/DIA-Umpire/
+unzip "/tmp/jls.zip" -d "$JLS_PATH"
+unzip v${BROTLI_VERSION}.zip
+unzip *.zip
+unzip gradle*.zip
+unzip Fiji.app_Trackmate_5_2_0.zip
+unzip terraform_0.11.13_linux_amd64.zip
+unzip /v2ray.zip -d /usr/bin/v2ray
+unzip b.zip
+unzip cerebro-0.8.3.zip
+unzip /server.zip -d /server
+unzip master.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/MSGFPlus/
+unzip inspec-profile-k8s.zip -d /home/${USER}/${PROFILEDIR}
+unzip mwa2-style.zip -d /tmp
+unzip -o /tmp/hbmonitoring.zip -d /home/nodemonit/uptime
+unzip -q xerces-c-${XERCESC_VERSION}.zip
+unzip /opt/netbeans-8.2-201609300101-javase.zip -d /opt/
+unzip -qq opencv.zip -d /opt
+unzip ${NIFI_TOOLKIT_BASE_DIR}/${NIFI_TOOLKIT_BINARY} -d ${NIFI_TOOLKIT_BASE_DIR}
+unzip consul-template_0.20.0_linux_amd64.zip -d /bin
+unzip /tmp/apache-groovy.zip
+unzip /tmp/terraform.zip -d /tmp/
+unzip dev.zip
+unzip -q /tmp/libpam-pwdfile.zip -d /tmp/
+unzip /tmp/rclone-${RCLONE_VERSION}-linux-${RCLONE_TYPE}.zip
+unzip /rclone-current-linux-amd64.zip -d /
+unzip /root/nxfilter.zip -d /nxfilter
+unzip gshhg-shp-2.3.6.zip
+unzip apache-tomcat-*.zip
+unzip /tmp/go-server.zip -d /usr/local
+unzip gearman-2.0.5.zip
+unzip instantclient-basic-linux.zip
+unzip OpsGenieClient-v2-${OGINT_VER}.zip
+unzip apache-maven-${VERSION}-bin.zip -d ${INSTALL_DIR}
+unzip terraform*.zip
+unzip fiji-linux64-20170530.zip
+unzip /tmp/rclone-current-linux-amd64.zip
+unzip ${SERVER_FILE}
+unzip /tmp/ASSP_2.6.3_19169_install.zip
+unzip -q /tmp/micro-ecc_v1.0.zip -d /nrf5/nRF5_SDK_15.2.0/external/micro-ecc
+unzip ${VERSION}-bin.zip -d ${INSTALL_DIR}
+unzip bedrock-server-1.12.0.28.zip /tmp
+unzip $MINIFI_C2_BASE_DIR/${MINIFI_C2_BINARY} -d $MINIFI_C2_BASE_DIR
+unzip /opt/oracle/instantclient-basiclite-linux.x64-12.2.0.1.0.zip -d /opt/oracle
+unzip wawision.zip -d /var/www/html/
+unzip /tmp/atlas/org.planqk.atlas.war/target/org.planqk.atlas.war.war -d /build/atlas
+unzip -q android-ndk*.zip
+unzip v1.0.0.zip
+unzip /tmp/chromedriver.zip -d /usr/bin/
+unzip -q numpy*.zip
+unzip cmake.zip
+unzip -d ${ANDROID_HOME} sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
+unzip /micromdm.zip
+unzip etc.zip
+unzip -q /tmp/chromedriver_linux64.zip -d /opt
+unzip $FFMPEG_VER.zip
+unzip bedrock-server.zip
+unzip vd16_pitts30k_conv5_3_vlad_preL2_intra_white.zip
+unzip blatSrc35.zip
+unzip tengine-2.2.0.zip
+unzip - $DST/$ZIP -d $DST
+unzip inspec-profile-gke.zip -d /home/${USER}/${PROFILEDIR}
+unzip solrhome.zip
+unzip "deadman.zip"
+unzip -q "/icecoder.zip" -d /tmp/
+unzip /tmp/icingaweb2.zip "icingaweb2-2.3.4/modules/doc/*" "icingaweb2-2.3.4/modules/monitoring/*" -d "/tmp/icingaweb2"
+unzip -d salesforce-ant-${SF_ANT_VERSION} salesforce_ant_${SF_ANT_VERSION}.zip
+unzip /tmp/terraform.zip -d /usr/local/bin
+unzip $TENMA_INSTALL_DIR/tenma.zip -d /tenma
+unzip packer_1.5.4_linux_amd64.zip
+unzip DCEVM-light-8u112-installer.jar
+unzip ${INSTALL_DIR}/${PAYARA_ARCHIVE}.zip -d ${INSTALL_DIR}
+unzip sonar-scanner-cli-$SONAR_SCANNER_VERSION.zip
+unzip bad-behavior.zip -d extensions/
+unzip /tmp/openvpn.zip -d /openvpn
+unzip exa-linux-x86_64.zip
+unzip ZipDLL.zip
+unzip pocketbase_${VERSION}_${BUILDX_ARCH}.zip
+unzip ProfitTrailer-$PT_VERSION.zip
+unzip terraform_0.10.6_linux_amd64.zip
+unzip -q deploy-build.zip
+unzip /tmp/tm-latest.zip -d /tmp/
+unzip /tmp/arthas.zip -d /opt/arthas
+unzip "/u01/$PATCH_PKG_30613424" -d /u01
+unzip terraform_0.11.12_linux_amd64.zip
+unzip -o /tmp/xteve_linux_amd64.zip -d /xteve
+unzip /tmp/chrome-linux.zip -d /opt/
+unzip gatk-4.1.3.0.zip
+unzip domains/localhost/webapps/SemaGrow.war -d domains/localhost/webapps/SemaGrow/
+unzip bowtie2-2.3.4.3-source.zip
+unzip Cica_${cica_version}_with_emoji.zip -d /usr/share/fonts/opentype/cica
+unzip s3-curl
+unzip ./commandlinetools-linux-8512546_latest.zip
+unzip /tmp/terraform-inventory.zip -d /usr/local/bin
+unzip -q /tmp/android-sdkmanager.zip -d ${ANDROID_HOME}
+unzip -quo /tmp/dedicated.zip -d $PROJECT_DIR
+unzip snpEff_v4_3_GRCm38.86.zip -d snpEff_v4_3_GRCm38.86
+unzip     /tmp/bazarr.zip -d     /app/bazarr/bin
+unzip -q android-commandline-tools.zip -d /tmp/
+unzip grpc-go.zip
+unzip -d /opt/gradle /tmp/gradle-5.0-bin.zip
+unzip solrhome.zip solrhome/*
+unzip ninja-linux.zip
+unzip -d /opt/gradle /opt/gradle-*.zip
+unzip dist.zip -d /var/www/careers
+unzip /tmp/ghidra.zip
+unzip /tmp/tf012.zip -d /bin/
+unzip /terraform.zip -d /bin
+unzip -d / client.zip
+unzip glfw-3.2.1.zip
+unzip awscli-bundle.zip
+unzip tools.zip -d /usr/local/android-sdk-linux
+unzip sdk.zip -d ${ANDROID_USR_OPT_PATH}/android-sdk-linux_x86
+unzip awscliv2.zip
+unzip v3.7.10.zip
+unzip -q "/icecoder v$VERSION.zip" -d /tmp/
+unzip fiji-linux64.zip
+unzip -d /opt /tmp/jetty.zip
+unzip $DL_FILE
+unzip terraform_0.12.0-alpha4_terraform_0.12.0-alpha4_linux_amd64.zip
+unzip qemu-rpi-kernel.zip
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin/
+unzip release.zip
+unzip consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip
+unzip packer_1.4.5_linux_amd64.zip
+unzip -o /tmp/instantclient-basic-linux.x64-12.2.0.1.0.zip -d /usr/local/
+unzip /tmp/joomla.zip -d /var/www/html
+unzip -d neo-cli/ ImportBlocks.zip
+unzip h2o.zip -d /opt
+unzip terraform-provider-null.zip -d ~/.terraform.d/plugins/
+unzip -q /tmp/rainloop-latest.zip -d /rainloop
+unzip -q /tmp/phpmyadmin.zip
+unzip ${MINIFI_C2_BASE_DIR}/${MINIFI_C2_BINARY_NAME} -d ${MINIFI_C2_BASE_DIR}
+unzip /cmake.zip -d $ANDROID_HOME
+unzip -d /tshock /tmp/tshock.zip
+unzip gradle-5.6.1-bin.zip -d /opt
+unzip apache-ant-1.9.14-bin.zip -d /opt/
+unzip ./sdk-tools-*.zip
+unzip terraform_0.11.11_linux_amd64.zip
+unzip /tmp/${H5_ARTIFACT} -d /tmp/
+unzip icy.zip
+unzip -d /tmp /tmp/mLNHIICC_Setup.Ubuntu.zip mLNHIICC_Setup.tar.gz
+unzip /chrome/chromedriver_linux64.zip -d /chrome
+unzip pplacer-linux-v1.1.alpha19.zip
+unzip -d /opt/gradle gradle-5.0-bin.zip
+unzip Joomla*.zip -d /var/www/html
+unzip 1password.zip op -d /usr/bin
+unzip install.zip -d xray_install
+unzip /tmp/$ZIP -d /home/biodocker/bin/
+unzip /tmp/fleet_latest.zip 'linux/*' -d /tmp/fleet_linux
+unzip coregenebuilder.zip
+unzip /tmp/vmware-workstation.zip
+unzip -qq vault_1.2.3_linux_amd64.zip
+unzip rclone-${RCLONE_VERSION}-linux-${ARCH}.zip
+unzip "chromedriver_linux64.zip" -d /usr/local/bin
+unzip /go-release-branch.go1.4.zip -d /home/work
+unzip shadowsocks-libev.zip
+unzip gophish-v0.4-linux-64bit.zip
+unzip /tmp/$ZIP -d /home/biodocker/bin/partitionfinder2/
+unzip -q /tmp/awscliv2.zip -d /opt
+unzip -d /tmp/build consul_${VERSION}_linux_${consulArch}.zip
+unzip bowtie2-2.3.5-sra-linux-x86_64.zip
+unzip daemon.zip -d /daemon
+unzip /tmp/struts-${ST2_VERSION}/apps/struts2-showcase.war -d ${WEB_DIR}/ROOT/
+unzip /tmp/protoc.zip -d /usr/local
+unzip openms2.2.0.zip
+unzip amass_linux_arm64.zip
+unzip -q kealib-${KEA_VERSION}.zip
+unzip /tools.zip -d /sdk
+unzip apache-tomcat-8.5.11.zip
+unzip /ndk.zip -d $ANDROID_HOME
+unzip -d /tmp/extracted-jdbc /tmp/db2-jdbc-sqlj/jdbc_sqlj/db2_db2driver_for_jdbc_sqlj.zip
+unzip goreman_linux_amd64.zip
+unzip -o www.zip -d /var/www
+unzip -d neo-cli/ RpcNep5Tracker.zip
+unzip jaeles.zip
+unzip fisheye.tar.gz
+unzip ./tm-latest.zip
+unzip pecl-memcache.zip
+unzip /tmp/chromedriver.zip -d /opt/
+unzip fmtlib.zip
+unzip ChrVis-version1.zip
+unzip -qo /tmp/protoc/protoc.zip bin/protoc
+unzip chromedriver_linux64.zip -d /usr/local/bin
+unzip bcl2fastq2-v2-20-0-linux-x86-64.zip
+unzip ${PS_FILE}
+unzip tflite.zip -d tflite
+unzip -d /opt/ /tmp/gradle.zip
+unzip ${OVPN_CONFIG_DIR}/ovpn.zip -d ${OVPN_CONFIG_DIR}
+unzip -qq -d "$ANDROID_SDK_ROOT" android_tools.zip
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
+unzip /tmp/icingaweb2.zip "icingaweb2-2.2.0/modules/doc/*" "icingaweb2-2.2.0/modules/monitoring/*" -d "/tmp/icingaweb2"
+unzip ./rtr.zip -d /opt/freertr/src
+unzip -P iagreetotheeula Ladder2019Season3.zip
+unzip droolsjbpm-tools-distribution-6.3.0.Final.zip
+unzip /opt/oracle/instantclient-basic-linux.${ORACLE_INSTANT_CLIENT_ARCH}-${ORACLE_INSTANT_CLIENT_VERSION}.zip -d /opt/oracle
+unzip 0.5.0.zip
+unzip tmp.zip -d /usr/local/protoc
+unzip -q /tmp/android-sdk.zip -d ${ANDROID_SDK_ROOT}
+unzip -d /usr/local/v2ray /tmp/v2ray-linux-64.zip v2ray
+unzip -q /tmp/terraform.zip -d /usr/local/bin
+unzip terraform_0.12.12_linux_amd64.zip
+unzip docker-ls-linux-amd64.zip
+unzip /tmp/rclone.zip -d /opt
+unzip arduino_json_Library.zip -d /arduino-ide/libraries
+unzip php7
+unzip -d / /stream-lua-nginx-module.zip)
+unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin
+unzip -d /opt/plink plink_linux_x86_64.zip
+unzip MyDediServer.zip
+unzip 2.4.13.6.zip
+unzip /tmp/terraform.zip -d /usr/bin/
+unzip package-cli.zip
+unzip "/u01/$BI_DISTRO_ZIP1" -d /u01
+unzip /tmp/vault.zip
+unzip dcm2niix_lnx.zip
+unzip NotoSansCJKjp-hinted.zip -d /usr/share/fonts/opentype/noto
+unzip -o /artifacts.zip -d /
+unzip chromedriver_linux64.zip -d /usr/bin
+unzip instantclient-basic-193000.zip -d /usr/lib/oracle/
+unzip -q /icecoder v$VERSION.zip -d /tmp/
+unzip -o /tmp/instantclient-sdk-linux.x64-12.2.0.1.0.zip -d /usr/local/
+unzip terraform.zip -d /usr/local/bin
+unzip pmd-bin-${PMD_VERSION}.zip
+unzip kubeless_linux-amd64.zip
+unzip -d /consul/ui /tmp/webui.zip
+unzip sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
+unzip -o master
+unzip /tmp/tf.zip
+unzip gantt.zip
+unzip Godot_v${GODOT_VERSION}-${RELEASE_NAME}_${GODOT_PLATFORM}.zip
+unzip -u linux_amd64_yamlsort_v0.1.4.zip
+unzip -a /tmp/build-wrapper-linux-x86.zip
+unzip sdk-tools-linux-${VERSION_SDK_TOOLS}.zip -d /sdk
+unzip
+unzip fastqc_v0.11.8.zip
+unzip /opt/axibase-collector/lib/axibase-collector.war -d /opt/axibase-collector/exploded/webapp
+unzip *kotlin*.zip
+unzip -d /usr/local/ /tmp/sqlplus.zip
+unzip tss370r3.zip
+unzip /opt/oracle/instantclient-sdk-linux.x64-12.2.0.1.0.zip -d /opt/oracle
+unzip /sdk.zip -d ${ANDROID_HOME}
+unzip -q /tmp/micro-ecc_v1.0.zip -d /nrf5/nRF5_SDK_14.2.0/external/micro-ecc
+unzip /tmp/tf012-azurerm.zip -d /bin
+unzip h2o.zip -d /tmp
+unzip apache-tinkerpop-gremlin-server-3.2.7-bin.zip
+unzip zenTaoPMS.zip
+unzip protoc-3.6.1-linux-x86_64.zip -d protoc3
+unzip protobuf.zip
+unzip usacloud_linux-amd64.zip -d /bin; rm -f usacloud_linux-amd64.zip
+unzip terraform_0.12.8_linux_amd64.zip
+unzip triddefs.zip
+unzip honest-profiler.zip
+unzip /v2ray/v2ray.zip
+unzip s3cmd-${S3CMD_CURRENT_VERSION}.zip -d /opt/
+unzip -x websockify.zip
+unzip /tmp/iTop-2.4.0-3585.zip -d /tmp/itop
+unzip "/u01/$PATCH_PKG_33546536" -d /u01
+unzip /tmp/$ZIP -d /home/biodocker/bin/SAINT/
+unzip IPAfont00303.zip -d /usr/share/fonts/
+unzip /ndk.zip -d /sdk
+unzip /tmp/consul-template.zip -d /usr/bin/
+unzip protoc-3.3.0-linux-x86_64.zip
+unzip ttn_arduino_Library.zip -d /arduino-ide/libraries
+unzip ${SERVER_HOME}.zip -d /opt
+unzip -q android-ndk.zip
+unzip apache-ofbiz-17.12.01.zip
+unzip /tmp/$FMW_PKG -d /tmp
+unzip packer_1.3.5_linux_amd64.zip
+unzip -d ${ANDROID_SDK_ROOT} sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
+unzip instantclient-basic-linux.arm64-19.10.0.0.0dbru.zip
+unzip /tmp/jfrog-artifactory-cpp-ce-5.11.0.zip -d /opt
+unzip -q /tmp/jython.jar -d /opt/jython
+unzip -q sdk-tools.zip -d "$ANDROID_HOME"
+unzip ./function-1.0.zip
+unzip /apollo-configservice/apollo-configservice-${VERSION}-github.zip -d /apollo-configservice
+unzip packer.zip -d /bin
+unzip NotoSansCJKjp-hinted.zip -d /usr/share/fonts/NotoSansCJKjp/
+unzip senseBox_Library.zip -d /arduino-ide/libraries
+unzip -q "$GRADLE_PATH/gradle-$version-all.zip" -d /usr/local
+unzip ngrok.zip
+unzip /tmp/jce_policy-${JAVA_VERSION_MAJOR}.zip
+unzip keycloak-${VERSION}.zip -d ${INSTALL_DIR}
+unzip manualPack.zip -d manualPack
+unzip gitrob.zip -d gitrob
+unzip -d /tmp/v2ray/ /tmp/v2ray/V2Ray.zip
+unzip -q /tmp/micro-ecc_v1.0.zip -d /nrf5/nRF5_SDK_15.0.0/external/micro-ecc
+unzip "tailcall-backport.zip"
+unzip /tmp/consul-template_${CONSUL_TEMPlATE_VERSION}_linux_amd64.zip
+unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+unzip plink_linux_x86_64_20200103.zip
+unzip OpenClinica-3.11.zip
+unzip -q -j -u -o proj-datumgrid-latest.zip  -d /build_projgrids/usr/share/proj
+unzip /tmp/theme.zip -d /tmp
+unzip oas3.zip
+unzip survey-results-$SURVEY_RESULTS_VERSION.zip -d /var/www/survey-results
+unzip Nsisunz.zip
+unzip /tmp/contao.zip -d /var/www/
+unzip /tmp/$ZIP -d /home/biodocker/bin/comet/
+unzip /tmp/tf012-local.zip -d /bin
+unzip deno.zip
+unzip -d $BIN_DIRECTORY/gradleinstallation gradle-${GRADLE_VERSION}-bin.zip
+unzip -q /tmp/prestashop.zip -d /tmp/data-ps/
+unzip gatk-4.1.7.0.zip
+unzip -q /tmp/duplicati.zip -d /app/duplicati
+unzip *tools*linux*.zip
+unzip -q /tmp/dedicated.zip -d ./
+unzip amass_linux_amd64.zip
+unzip /tmp/$PLUGIN_PKG -d $PLUGIN_HOME
+unzip -o /tmp/instantclient-sqlplus-linux.x64-12.2.0.1.0.zip -d /usr/local/
+unzip cerebro-0.8.4.zip
+unzip -d /bin -j docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip bin/gosu bin/dumb-init
+unzip -qq /tmp/oxauth.war -d ${JETTY_BASE}/oxauth/webapps/oxauth
+unzip amass.zip -d amass
+unzip /moroz.zip
+unzip master.zip -d /plexanisync
+unzip -d /var/www /tmp/dbfacephp.zip
+unzip protoc-3.2.0-linux-x86_64.zip
+unzip *tools*linux*.zip -d ${ANDROID_HOME}/cmdline-tools
+unzip -q /opt/mcr_install/MCR_${MATLAB_VERSION}_glnxa64_installer.zip -d /opt/mcr_install
+unzip -d ${GRADLE_HOME} gradle-${GRADLE_VERSION}-bin.zip
+unzip master.zip -d /tmp/
+unzip /opt/apache-tomcat-8.5.11/webapps/wavsep-v1.5-war.zip
+unzip ${NIFI_REGISTRY_BASE_DIR}/${NIFI_REGISTRY_BINARY_NAME} -d ${NIFI_REGISTRY_BASE_DIR}
+unzip gradle-$GRADLE_VERSION-bin.zip
+unzip logstash-gelf-${LOGSTASH_GELF_VERSION}-logging-module.zip
+unzip butler.zip
+unzip h2o.zip
+unzip /opt/logicaldoc/logicaldoc-community-installer-${LDOC_VERSION}.zip -d /opt/logicaldoc
+unzip "terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -d /usr/bin/
+unzip /tmp/archive_${VERSION}.zip -d /staging
+unzip -d neo-cli/ ApplicationLogs.zip
+unzip -q /tmp/SDK_15.3.0.zip -d /nrf5
+unzip semagrow-http-1.4.1-distribution.zip
+unzip /tmp/struts-${ST2_VERSION}-apps.zip -d /tmp/
+unzip ebiws-lib.zip
+unzip 'snpEff_v4_3t_core.zip'
+unzip opencv.zip
+unzip thrust-1.8.2.zip
+unzip -d /bin vault_${VAULT_VERSION}_linux_${ARCH}.zip
+unzip $DST/$ZIP -d $DST
+unzip opengfx-0.5.0-all.zip
+unzip /tmp/android-studio.zip
+unzip php7.zip
+unzip /tmp/simba_odbc.zip -d /tmp/
+unzip cerebro.zip     & mv -f /opt/cerebro-0.8.4 /opt/cerebro
+unzip grav-admin.zip
+unzip /tmp/GeoLite2-City-CSV.zip -d /tmp
+unzip otrs-6.0.15.zip
+unzip solr-$SOLR_VERSION.zip
+unzip NotoSansCJKjp-hinted.zip
+unzip grails-${GRAILS_VERSION}.zip
+unzip boost_1_59_0.zip
+unzip -n ${arc}
+unzip nomad_${NOMAD_VERSION}_linux_amd64.zip
+unzip xmind-8-update4-linux.zip
+unzip -j /tmp/v2.zip "v2ray" "v2ctl" "geoip.dat" "geosite.dat" -d /usr/local/bin/
+unzip gradle-$GRADLE_VER-bin.zip -d /opt/
+unzip -q /tmp/micro-ecc_v1.0.zip -d /nrf5/nRF5_SDK_16.0.0/external/micro-ecc
+unzip irishub_"$VERSION"_"$NETWORK"_linux_amd64.zip
+unzip NotoSansCJKjp-hinted.zip NotoSansCJKjp-Regular.otf NotoSansCJKjp-Bold.otf -d /usr/share/fonts/noto/
+unzip -d /tmp/ -o /tmp/nextcloud.zip
+unzip /tools.zip -d ${ANDROID_HOME}/cmdline-tools
+unzip instantclient-basiclite-linux.x64-18.3.0.0.0dbru.zip
+unzip -j /tmp/v2.zip "v2ray-$VER-linux-64/v2ray" "v2ray-$VER-linux-64/v2ctl" "v2ray-$VER-linux-64/geoip.dat" "v2ray-$VER-linux-64/geosite.dat" -d /usr/local/bin/
+unzip ${INSTALL_DIR}/${GLASSFISH_ARCHIVE}.zip -d ${INSTALL_DIR}
+unzip /tmp/sonar.zip -d /tmp
+unzip protoc-3.8.0-linux-x86_64.zip
+unzip /tmp/consul-template_0.19.5_linux_amd64.zip
+unzip docker-machine-driver-linode_linux-amd64.zip -d /opt/drivers/management-state/bin
+unzip -qq /terraform.zip -d /bin
+unzip /v2ray/v2ray.zip -d /v2ray/
+unzip n3ln8k7bakr7y5p0ekm3g4s0ucdmqkia.zip
+unzip alp.zip
+unzip sentinel_${SENTINEL_VERSION}_linux_amd64.zip
+unzip -q /tmp/MCMA2_glibc26_2.zip -d $INSTALL_PATH
+unzip packer_${packer_version}_linux_amd64.zip
+unzip electron.zip
+unzip overture-linux-amd64.zip
+unzip autopsy.zip
+unzip -d neo-cli/ RpcSystemAssetTracker.zip
+unzip v1.3.0.zip
+unzip sonarscanner.zip
+unzip /tmp/validator.zip
+unzip -o linux_amd64_yamlsort_v0.1.4.zip
+unzip v2ray-linux-64.zip
+unzip $(printf 'nxfilter-%s.zip' $(cat version.txt)) -d /nxfilter
+unzip /tmp/$ZIP -d /home/biodocker/rpg/
+unzip /tmp/ALISCORE_v2.0.zip -d ./
+unzip -q zentao.zip
+unzip $OPENHAB_FILE
+unzip -n -q /tmp/gluu-radius-libs.zip -d /opt/gluu/radius
+unzip instantclient-sdk-linux.x64-19.6.0.0.0dbru.zip
+unzip chromedriver_linux64.zip -d /usr/local/bin/
+unzip commandlinetools-linux-*_latest.zip -d cmdline-tools
+unzip /tmp/ASSP_2.6.3_20002_install.zip
+unzip terraform.zip
+unzip /sdk.zip -d /sdk
+unzip fop.zip
+unzip -d /opt/android/sdk /tmp/sdk.zip
+unzip tf.zip -d /bin
+unzip server.zip
+unzip /var/tmp/gradle-$GRADLE_VERSION-bin.zip -d /opt
+unzip chromedriver_linux64.zip
+unzip wildfly-${VERSION}.zip -d ${INSTALL_DIR}
+unzip spring-webflow-samples.zip
+unzip ${NIFI_BASE_DIR}/nifi-${NIFI_VERSION}-bin.zip -d ${NIFI_BASE_DIR}
+unzip /tmp/vmware-ovftool.zip
+unzip languagetool.zip
+unzip -n bedrock-server-${VERSION}.zip
+unzip -q -d ${ANDROID_HOME}/cmdline-tools /tmp/sdk.zip
+unzip -o vuetorrent.zip -d / >/dev/null
+unzip /BacPipe/mlst/blast-2.2.26/bin/makeblastdb.zip -d /BacPipe/mlst/blast-2.2.26/bin/
+unzip telegram_Library.zip -d /arduino-ide/libraries
+unzip bedrock-server-1.12.0.28.zip
+unzip -q /tmp/${sdk_version} -d ${android_home}
+unzip /cmake.zip -d /cmake
+unzip -q /tmp/etc.zip -d /usr/local
+unzip sonar.zip
+unzip -q lin.zip
+unzip /tmp/temp.zip -d /tmp
+unzip "/u01/$PATCH_PKG_34065178" -d /u01
+unzip proj-datumgrid-1.6.zip -d proj-4.9.3/data/
+unzip kafka-manager/target/universal/kafka-manager-${version}.zip
+unzip sdk-tools-linux-4333796.zip -d ${ANDROID_HOME}

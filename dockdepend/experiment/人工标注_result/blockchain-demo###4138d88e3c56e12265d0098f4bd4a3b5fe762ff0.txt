@@ -1,0 +1,26 @@
+FROM       node:alpine
+MAINTAINER https://github.com/anders94/blockchain-demo
+EXPOSE     3000
+WORKDIR    /blockchain-demo
+COPY       package.json /blockchain-demo
+RUN        npm install
+COPY       . /blockchain-demo
+CMD        ["node", "bin/www"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(3, 4),	# WORKDIR目录依赖
+	(3, 5),	# WORKDIR目录依赖
+	(3, 6),	# WORKDIR目录依赖
+	(4, 5),	# 文件依赖
+]
+
+
+所用时间：7.87

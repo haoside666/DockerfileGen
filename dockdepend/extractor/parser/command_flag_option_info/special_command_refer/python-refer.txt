@@ -1,0 +1,20 @@
+-b
+-B
+-c cmd
+-d
+-E
+-h --help
+-i
+-I
+-m mod
+-O
+-OO
+-q
+-s
+-S
+-u
+-v
+-V
+-W arg
+-x
+-X opt

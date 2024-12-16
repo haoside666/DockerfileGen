@@ -1,0 +1,226 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "ENV USER=user",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "ENV HOME_DIR=/home/user",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "ENV WORK_DIR=/home/user/hostcwd SRC_DIR=/home/user/src PATH=/home/user/.local/bin:${PATH}",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends locales && locale-gen en_US.UTF-8",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "ENV LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends autoconf automake build-essential ccache cmake gettext git libffi-dev libltdl-dev libssl-dev libtool openjdk-13-jdk patch pkg-config python3-pip python3-setuptools sudo unzip zip zlib1g-dev",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN useradd --create-home --shell /bin/bash user",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN usermod -append --groups sudo user",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN echo \"%sudo ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "USER user",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "WORKDIR /home/user/hostcwd",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "COPY --chown=user:user src_dir=['.'] dst_dir=/home/user/src",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN pip3 install --user --upgrade \"Cython<3.0\" wheel pip /home/user/src",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "ENTRYPOINT buildozer",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV USER=user",
+        "after_instruct": "ENV HOME_DIR=/home/user",
+        "edge": "(1, 2)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV USER=user",
+        "after_instruct": "RUN useradd --create-home --shell /bin/bash user",
+        "edge": "(1, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV USER=user",
+        "after_instruct": "RUN usermod -append --groups sudo user",
+        "edge": "(1, 8)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV USER=user",
+        "after_instruct": "USER user",
+        "edge": "(1, 10)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV HOME_DIR=/home/user",
+        "after_instruct": "ENV WORK_DIR=/home/user/hostcwd SRC_DIR=/home/user/src PATH=/home/user/.local/bin:${PATH}",
+        "edge": "(2, 3)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV WORK_DIR=/home/user/hostcwd SRC_DIR=/home/user/src PATH=/home/user/.local/bin:${PATH}",
+        "after_instruct": "WORKDIR /home/user/hostcwd",
+        "edge": "(3, 11)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV WORK_DIR=/home/user/hostcwd SRC_DIR=/home/user/src PATH=/home/user/.local/bin:${PATH}",
+        "after_instruct": "COPY --chown=user:user src_dir=['.'] dst_dir=/home/user/src",
+        "edge": "(3, 12)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV WORK_DIR=/home/user/hostcwd SRC_DIR=/home/user/src PATH=/home/user/.local/bin:${PATH}",
+        "after_instruct": "RUN pip3 install --user --upgrade \"Cython<3.0\" wheel pip /home/user/src",
+        "edge": "(3, 13)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends locales && locale-gen en_US.UTF-8",
+        "after_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends autoconf automake build-essential ccache cmake gettext git libffi-dev libltdl-dev libssl-dev libtool openjdk-13-jdk patch pkg-config python3-pip python3-setuptools sudo unzip zip zlib1g-dev",
+        "edge": "(4, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt'}"
+    },
+    {
+        "before_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends locales && locale-gen en_US.UTF-8",
+        "after_instruct": "USER user",
+        "edge": "(4, 10)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends autoconf automake build-essential ccache cmake gettext git libffi-dev libltdl-dev libssl-dev libtool openjdk-13-jdk patch pkg-config python3-pip python3-setuptools sudo unzip zip zlib1g-dev",
+        "after_instruct": "USER user",
+        "edge": "(6, 10)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt update -qq > /dev/null && DEBIAN_FRONTEND=noninteractive apt install -qq --yes --no-install-recommends autoconf automake build-essential ccache cmake gettext git libffi-dev libltdl-dev libssl-dev libtool openjdk-13-jdk patch pkg-config python3-pip python3-setuptools sudo unzip zip zlib1g-dev",
+        "after_instruct": "RUN pip3 install --user --upgrade \"Cython<3.0\" wheel pip /home/user/src",
+        "edge": "(6, 13)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip3'}"
+    },
+    {
+        "before_instruct": "RUN useradd --create-home --shell /bin/bash user",
+        "after_instruct": "RUN usermod -append --groups sudo user",
+        "edge": "(7, 8)",
+        "type": "RUN_OTHER",
+        "dependency_description": "have shell other intersection,because exist intersection {'user'}"
+    },
+    {
+        "before_instruct": "RUN useradd --create-home --shell /bin/bash user",
+        "after_instruct": "USER user",
+        "edge": "(7, 10)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN usermod -append --groups sudo user",
+        "after_instruct": "USER user",
+        "edge": "(8, 10)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN echo \"%sudo ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers",
+        "after_instruct": "USER user",
+        "edge": "(9, 10)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "USER user",
+        "after_instruct": "RUN pip3 install --user --upgrade \"Cython<3.0\" wheel pip /home/user/src",
+        "edge": "(10, 13)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "COPY --chown=user:user src_dir=['.'] dst_dir=/home/user/src",
+        "after_instruct": "RUN pip3 install --user --upgrade \"Cython<3.0\" wheel pip /home/user/src",
+        "edge": "(12, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /home/user/src"
+    }
+]

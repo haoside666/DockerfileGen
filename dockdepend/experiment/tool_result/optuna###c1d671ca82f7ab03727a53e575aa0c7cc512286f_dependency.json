@@ -1,0 +1,135 @@
+[
+    {
+        "before_instruct": "ARG PYTHON_VERSION=3.8",
+        "after_instruct": "FROM python:3.8",
+        "edge": "(0, 1)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "ENV PIP_OPTIONS=--no-cache-dir --progress-bar off",
+        "edge": "(1, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "RUN apt-get update && apt-get -y install openmpi-bin libopenmpi-dev libopenblas-dev && rm -rf /var/lib/apt/lists/* && pip install --no-cache-dir -U pip && pip install ${PIP_OPTIONS} -U setuptools",
+        "edge": "(1, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "WORKDIR /workspaces",
+        "edge": "(1, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "COPY . .",
+        "edge": "(1, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "ARG BUILD_TYPE='dev'",
+        "edge": "(1, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(1, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "RUN pip install ${PIP_OPTIONS} PyMySQL cryptography psycopg2-binary",
+        "edge": "(1, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8",
+        "after_instruct": "ENV PIP_OPTIONS=\"\"",
+        "edge": "(1, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV PIP_OPTIONS=--no-cache-dir --progress-bar off",
+        "after_instruct": "RUN apt-get update && apt-get -y install openmpi-bin libopenmpi-dev libopenblas-dev && rm -rf /var/lib/apt/lists/* && pip install --no-cache-dir -U pip && pip install ${PIP_OPTIONS} -U setuptools",
+        "edge": "(2, 3)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV PIP_OPTIONS=--no-cache-dir --progress-bar off",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(2, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV PIP_OPTIONS=--no-cache-dir --progress-bar off",
+        "after_instruct": "RUN pip install ${PIP_OPTIONS} PyMySQL cryptography psycopg2-binary",
+        "edge": "(2, 8)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get -y install openmpi-bin libopenmpi-dev libopenblas-dev && rm -rf /var/lib/apt/lists/* && pip install --no-cache-dir -U pip && pip install ${PIP_OPTIONS} -U setuptools",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(3, 7)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get -y install openmpi-bin libopenmpi-dev libopenblas-dev && rm -rf /var/lib/apt/lists/* && pip install --no-cache-dir -U pip && pip install ${PIP_OPTIONS} -U setuptools",
+        "after_instruct": "RUN pip install ${PIP_OPTIONS} PyMySQL cryptography psycopg2-binary",
+        "edge": "(3, 8)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "WORKDIR /workspaces",
+        "after_instruct": "COPY . .",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /workspaces",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(4, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /workspaces"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /workspaces"
+    },
+    {
+        "before_instruct": "ARG BUILD_TYPE='dev'",
+        "after_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "edge": "(6, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN if [ \"'dev'\" = \"dev\" ]; then pip install ${PIP_OPTIONS} -e '.[benchmark, checking, document, integration, optional, test]' --extra-index-url https://download.pytorch.org/whl/cpu; else pip install ${PIP_OPTIONS} -e .; fi && pip install ${PIP_OPTIONS} jupyter notebook",
+        "after_instruct": "RUN pip install ${PIP_OPTIONS} PyMySQL cryptography psycopg2-binary",
+        "edge": "(7, 8)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    }
+]

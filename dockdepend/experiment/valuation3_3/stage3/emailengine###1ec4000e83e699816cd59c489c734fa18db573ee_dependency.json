@@ -1,0 +1,205 @@
+[
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ARG TARGETPLATFORM=\"\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ARG TARGETARCH=\"\"",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ARG TARGETVARIANT=\"\"",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN printf \"I'm building for TARGETPLATFORM=${TARGETPLATFORM}\" && printf \", TARGETARCH=${TARGETARCH}\" && printf \", TARGETVARIANT=${TARGETVARIANT} \\n\" && printf \"With uname -s : \" && uname -s && printf \"and  uname -m : \" && uname -mm",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN apk add --no-cache dumb-init",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "WORKDIR /emailengine",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN npm install --omit dev",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN npm run prepare-docker",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN chmod +x ./update-info.sh",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "RUN ./update-info.sh",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ENV EENGINE_APPDIR=/emailengine",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ENV EENGINE_HOST=0.0.0.0",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ENV EENGINE_API_PROXY=true",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "ENTRYPOINT /usr/bin/dumb-init --",
+        "edge": "(0, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM --platform=${BUILDPLATFORM} node:lts-alpine",
+        "after_instruct": "CMD node /emailengine/server.js",
+        "edge": "(0, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ARG TARGETPLATFORM=\"\"",
+        "after_instruct": "RUN printf \"I'm building for TARGETPLATFORM=${TARGETPLATFORM}\" && printf \", TARGETARCH=${TARGETARCH}\" && printf \", TARGETVARIANT=${TARGETVARIANT} \\n\" && printf \"With uname -s : \" && uname -s && printf \"and  uname -m : \" && uname -mm",
+        "edge": "(1, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG TARGETARCH=\"\"",
+        "after_instruct": "RUN printf \"I'm building for TARGETPLATFORM=${TARGETPLATFORM}\" && printf \", TARGETARCH=${TARGETARCH}\" && printf \", TARGETVARIANT=${TARGETVARIANT} \\n\" && printf \"With uname -s : \" && uname -s && printf \"and  uname -m : \" && uname -mm",
+        "edge": "(2, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG TARGETVARIANT=\"\"",
+        "after_instruct": "RUN printf \"I'm building for TARGETPLATFORM=${TARGETPLATFORM}\" && printf \", TARGETARCH=${TARGETARCH}\" && printf \", TARGETVARIANT=${TARGETVARIANT} \\n\" && printf \"With uname -s : \" && uname -s && printf \"and  uname -m : \" && uname -mm",
+        "edge": "(3, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "WORKDIR /emailengine",
+        "after_instruct": "COPY . .",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /emailengine",
+        "after_instruct": "RUN npm install --omit dev",
+        "edge": "(6, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /emailengine"
+    },
+    {
+        "before_instruct": "WORKDIR /emailengine",
+        "after_instruct": "RUN npm run prepare-docker",
+        "edge": "(6, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /emailengine"
+    },
+    {
+        "before_instruct": "WORKDIR /emailengine",
+        "after_instruct": "RUN chmod +x ./update-info.sh",
+        "edge": "(6, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /emailengine"
+    },
+    {
+        "before_instruct": "WORKDIR /emailengine",
+        "after_instruct": "RUN ./update-info.sh",
+        "edge": "(6, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /emailengine"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN npm install --omit dev",
+        "edge": "(7, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /emailengine"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN npm run prepare-docker",
+        "edge": "(7, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /emailengine"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN chmod +x ./update-info.sh",
+        "edge": "(7, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /emailengine"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN ./update-info.sh",
+        "edge": "(7, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /emailengine"
+    },
+    {
+        "before_instruct": "RUN npm install --omit dev",
+        "after_instruct": "RUN npm run prepare-docker",
+        "edge": "(8, 9)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'npm'}"
+    }
+]

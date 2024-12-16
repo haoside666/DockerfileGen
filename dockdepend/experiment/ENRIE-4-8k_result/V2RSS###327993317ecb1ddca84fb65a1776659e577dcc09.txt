@@ -1,0 +1,8 @@
+```
+[(0, 1),  # 第一个WORKDIR指令依赖于FROM指令
+ (1, 2),  # 第一个COPY指令依赖于WORKDIR指令
+ (2, 3),  # 第一个RUN pip指令依赖于COPY requirements.txt指令
+ (3, 4),  # 第二个RUN apt update指令依赖于第一个RUN pip指令
+ (4, 5),  # 第三个RUN wget指令依赖于第二个RUN apt update指令
+ (5, 6)]  # 第二个COPY src指令依赖于第三个RUN wget指令
+```

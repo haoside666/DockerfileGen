@@ -1,0 +1,58 @@
+-a
+-all
+-args
+-asan
+-asmflags arg_list
+-buildmode mode
+-buildvcs
+-c
+-cache
+-cmd
+-compiler name
+-d
+-dropexclude path@version
+-dropreplace old[@v]
+-droprequire path
+-dropretract version
+-exclude path@version
+-exec xprog
+-fix
+-fmt
+-fuzzcache
+-gccgoflags arg_list
+-gcflags arg_list
+-go version
+-i
+-installsuffix suffix
+-json
+-ldflags arg_list
+-linkshared
+-modcache
+-modcacherw
+-modfile file
+-mod mode
+-module
+-msan
+-n
+-o file
+-overlay file
+-pkgdir dir
+-p n
+-print
+-r
+-race
+-replace old[@v]_new[@v]
+-require path@version
+-retract version
+-short
+-src
+-t
+-tags tag_list
+-testcache
+-toolexec cmd_args
+-trimpath
+-u
+-v
+-w
+-work
+-x

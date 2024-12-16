@@ -1,0 +1,51 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "COPY assets /assets",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN /assets/setup.sh",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "EXPOSE 22",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "EXPOSE 1521",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "EXPOSE 8080",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "CMD /usr/sbin/startup.sh && tail -f /dev/null",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY assets /assets",
+        "after_instruct": "RUN /assets/setup.sh",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /assets"
+    }
+]

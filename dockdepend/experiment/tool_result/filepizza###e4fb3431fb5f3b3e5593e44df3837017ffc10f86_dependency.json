@@ -1,0 +1,51 @@
+[
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "MAINTAINER Alexander Kern <filepizza@kern.io>",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY . ./",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN npm install && npm run build",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "ENV NODE_ENV=production",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "EXPOSE 80",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "CMD node ./dist/index.js",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY . ./",
+        "after_instruct": "RUN npm install && npm run build",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /"
+    }
+]

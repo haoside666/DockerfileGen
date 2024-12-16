@@ -1,0 +1,42 @@
+if [ -x some_file ]; then maybe; elif [ -d some_dir ]; then otherwise; fi
+
+if [ ! mplabx = root ] ; then
+    chmod --recursive 755 /home/mplabx
+    chown --recursive --from=0:0 mplabx:mplabx /home/mplabx ;
+fi
+
+if [ "*" != "*" ]; then
+    echo *;
+else
+    cat /etc/*-release | grep VERSION= | egrep -o '\(.+\)' | tr -d "()" | sed -r 's/[ ]+/\\|/g';
+fi
+
+if [ "$#" -gt "1" ]; then
+    batchSize=$2
+fi
+
+if [ ! -f /.dockerenv ]; then
+    export SUDO="sudo"
+fi
+
+
+if type lsb_release >/dev/null 2>&1 ; then
+    distro=$(lsb_release -i -s)
+elif [ -e /etc/os-release ] ; then
+    distro=$(awk -F= '$1 == "ID" {print $2}' /etc/os-release)
+fi
+
+if ! dpkg -s $pkgs >/dev/null 2>&1; then
+  sudo apt-get install $pkgs -y
+fi
+
+if [ "$pash_output_time_flag" -eq 1 ]; then
+    pash_exec_time_ms=$(echo "scale = 3; ($pash_exec_time_end-$pash_exec_time_start)/1000000" | bc)
+    pash_redir_output echo "Execution time: $pash_exec_time_ms  ms"
+fi
+
+if [ "$COMPOSER_VERSION" = "1" ] || [ "$COMPOSER_VERSION" = "2" ]; then \
+  composer self-update --${COMPOSER_VERSION}; \
+else \
+  composer self-update ${COMPOSER_VERSION}; \
+fi

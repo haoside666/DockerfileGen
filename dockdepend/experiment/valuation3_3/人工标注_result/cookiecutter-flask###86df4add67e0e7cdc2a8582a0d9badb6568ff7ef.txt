@@ -1,0 +1,15 @@
+FROM python:3.11.4-slim-buster
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY cookiecutter_spec.py /cookiecutter_spec.py
+ENTRYPOINT [ "python", "/cookiecutter_spec.py" ]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(1, 2),	# 文件依赖
+]
+
+所用时间：8.96

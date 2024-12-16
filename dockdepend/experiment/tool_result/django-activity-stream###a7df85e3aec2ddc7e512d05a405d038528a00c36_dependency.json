@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "ENV PYTHONUNBUFFERED=1",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "ENV LC_ALL=C.UTF-8",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "ADD runtests/requirements.txt /app/",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "RUN pip install -r requirements.txt",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "ENV DJANGO_SETTINGS_MODULE=settings",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "EXPOSE 8000",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9",
+        "after_instruct": "CMD /app/manage.py runserver 0.0.0.0:8000",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD runtests/requirements.txt /app/",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip install -r requirements.txt",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "ADD runtests/requirements.txt /app/",
+        "after_instruct": "RUN pip install -r requirements.txt",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    }
+]

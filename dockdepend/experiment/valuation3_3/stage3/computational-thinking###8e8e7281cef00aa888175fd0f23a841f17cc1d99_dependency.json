@@ -1,0 +1,86 @@
+[
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "EXPOSE 1234",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "RUN apt-get update -y && apt-get upgrade -y",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "RUN useradd -ms /bin/bash pluto",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "WORKDIR /home/pluto",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "USER pluto",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "COPY --chown=pluto src_dir=['.'] dst_dir=$HOME",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "RUN julia --project ${HOME}/pluto-deployment-environment -e \"import Pkg; Pkg.instantiate(); Pkg.precompile()\"",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM julia:1.8.2",
+        "after_instruct": "CMD julia --project=/home/pluto/pluto-deployment-environment -e import PlutoSliderServer; PlutoSliderServer.run_directory(\".\"; SliderServer_port=1234 , SliderServer_host=\"0.0.0.0\")",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y && apt-get upgrade -y",
+        "after_instruct": "USER pluto",
+        "edge": "(2, 5)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN useradd -ms /bin/bash pluto",
+        "after_instruct": "USER pluto",
+        "edge": "(3, 5)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "WORKDIR /home/pluto",
+        "after_instruct": "RUN julia --project ${HOME}/pluto-deployment-environment -e \"import Pkg; Pkg.instantiate(); Pkg.precompile()\"",
+        "edge": "(4, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /home/pluto"
+    },
+    {
+        "before_instruct": "USER pluto",
+        "after_instruct": "RUN julia --project ${HOME}/pluto-deployment-environment -e \"import Pkg; Pkg.instantiate(); Pkg.precompile()\"",
+        "edge": "(5, 7)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    }
+]

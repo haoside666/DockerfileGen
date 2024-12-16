@@ -1,0 +1,8 @@
+{
+    "filename": "pyroomacoustics###58368d93a32664d1a5b00251895ae54ed9ddf371.txt",
+    "command_length": 6,
+    "processing_time": 0.002978801727294922,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (2, 3), (3, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'apt-get'}\", \"have shell pkg intersection,because exist intersection {'pip3'}\"]"
+}

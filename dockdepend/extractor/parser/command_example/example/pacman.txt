@@ -1,0 +1,26 @@
+pacman --noconfirm -S openssl
+pacman -Syy
+pacman -U --noconfirm /tmp/gss-ntlmssp.pkg.tar.zst
+pacman --noconfirm -Syy
+pacman -Syyu --noconfirm
+pacman --noconfirm -S   gtk2   gtk3   libnotify   gconf   nss   xscreensaver   alsa-lib   libxtst   libxss   xorg-xauth   xorg-server-xvfb
+pacman -S --needed --noconfirm base-devel postgresql-libs
+pacman -S python3 python-pip postgresql postgresql-libs neofetch git --noconfirm
+pacman -Sy --noconfirm gcc ruby make python-pip git perl-test-differences sudo wget gawk lua geoip yara file libpcap libmaxminddb libnet lua libtool autoconf gettext automake perl-http-message perl-lwp-protocol-https perl-json perl-socket6
+pacman -Sy --noconfirm texlive-core texlive-bin texlive-latexextra
+pacman -Syu git zip vim nano alsa-utils openssh --noconfirm
+pacman -Syy --noprogressbar --noconfirm --needed ca-certificates lxc e2fsprogs docker
+pacman -S --noconfirm       core/icu       openssl-1.0       openssh
+pacman --noconfirm -S nodejs npm yarn git unzip
+pacman -Sy archlinux-keyring --noconfirm
+pacman -S patch net-tools vim openssh make gcc cmake --noconfirm
+pacman --noconfirm -S base-devel
+pacman -S --noconfirm postgresql-libs
+pacman -Syu --noconfirm
+pacman -Syu git zip vim nano alsa-utils openssh unzip usbutils --noconfirm
+pacman -S --needed --noconfirm base-devel
+pacman --noconfirm -S python-pip
+pacman -S --noconfirm       sudo       git       base-devel       libwbclient       docbook-xsl       doxygen
+pacman --noconfirm -Syu shadowsocks-libev simple-obfs
+pacman --noconfirm -Syyu
+pacman --noconfirm -S python

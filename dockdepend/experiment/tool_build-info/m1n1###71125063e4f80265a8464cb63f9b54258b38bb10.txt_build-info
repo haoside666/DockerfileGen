@@ -1,0 +1,8 @@
+{
+    "filename": "m1n1###71125063e4f80265a8464cb63f9b54258b38bb10.txt",
+    "command_length": 7,
+    "processing_time": 0.002115488052368164,
+    "dependency_count": 8,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 2), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'system level environment variable dependencies(implicit)', 'exist file or directory dependency']"
+}

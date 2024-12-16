@@ -1,0 +1,177 @@
+[
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "VOLUME /data",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "LABEL description \"code-maat docker image.\"",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "ARG dest=/usr/src/code-maat",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "RUN mkdir -p /usr/src/code-maat",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "WORKDIR /usr/src/code-maat",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "COPY src_dir=['project.clj'] dst_dir=/usr/src/code-maat",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "RUN lein deps",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "COPY src_dir=['.'] dst_dir=/usr/src/code-maat",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "RUN mv \"$(lein uberjar | sed -n 's/^Created \\(.*standalone\\.jar\\)/\\1/p')\" app-standalone.jar",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "ENTRYPOINT java -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -jar app-standalone.jar",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM clojure:alpine",
+        "after_instruct": "CMD ",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ARG dest=/usr/src/code-maat",
+        "after_instruct": "RUN mkdir -p /usr/src/code-maat",
+        "edge": "(3, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG dest=/usr/src/code-maat",
+        "after_instruct": "WORKDIR /usr/src/code-maat",
+        "edge": "(3, 5)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG dest=/usr/src/code-maat",
+        "after_instruct": "COPY src_dir=['project.clj'] dst_dir=/usr/src/code-maat",
+        "edge": "(3, 6)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG dest=/usr/src/code-maat",
+        "after_instruct": "COPY src_dir=['.'] dst_dir=/usr/src/code-maat",
+        "edge": "(3, 8)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/code-maat",
+        "after_instruct": "WORKDIR /usr/src/code-maat",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/code-maat",
+        "after_instruct": "RUN lein deps",
+        "edge": "(4, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/code-maat",
+        "after_instruct": "RUN mv \"$(lein uberjar | sed -n 's/^Created \\(.*standalone\\.jar\\)/\\1/p')\" app-standalone.jar",
+        "edge": "(4, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/code-maat",
+        "after_instruct": "COPY src_dir=['project.clj'] dst_dir=/usr/src/code-maat",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/code-maat",
+        "after_instruct": "RUN lein deps",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/code-maat",
+        "after_instruct": "COPY src_dir=['.'] dst_dir=/usr/src/code-maat",
+        "edge": "(5, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/code-maat",
+        "after_instruct": "RUN mv \"$(lein uberjar | sed -n 's/^Created \\(.*standalone\\.jar\\)/\\1/p')\" app-standalone.jar",
+        "edge": "(5, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "COPY src_dir=['project.clj'] dst_dir=/usr/src/code-maat",
+        "after_instruct": "RUN lein deps",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "COPY src_dir=['project.clj'] dst_dir=/usr/src/code-maat",
+        "after_instruct": "RUN mv \"$(lein uberjar | sed -n 's/^Created \\(.*standalone\\.jar\\)/\\1/p')\" app-standalone.jar",
+        "edge": "(6, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/code-maat"
+    },
+    {
+        "before_instruct": "COPY src_dir=['.'] dst_dir=/usr/src/code-maat",
+        "after_instruct": "RUN mv \"$(lein uberjar | sed -n 's/^Created \\(.*standalone\\.jar\\)/\\1/p')\" app-standalone.jar",
+        "edge": "(8, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/code-maat"
+    }
+]

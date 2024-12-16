@@ -1,0 +1,65 @@
+[
+	(2, 3),	# certain dependency
+	(2, 4),	# certain dependency
+	(2, 5),	# certain dependency
+	(2, 6),	# certain dependency
+	(2, 7),	# certain dependency
+	(2, 8),	# certain dependency
+	(2, 9),	# certain dependency
+	(2, 10),	# certain dependency
+	(2, 11),	# certain dependency
+	(2, 12),	# certain dependency
+	(2, 13),	# certain dependency
+	(2, 14),	# certain dependency
+	(2, 15),	# certain dependency
+	(2, 16),	# certain dependency
+	(2, 17),	# certain dependency
+	(2, 18),	# certain dependency
+	(2, 19),	# certain dependency
+	(2, 20),	# certain dependency
+	(2, 21),	# certain dependency
+	(2, 22),	# certain dependency
+	(2, 23),	# certain dependency
+	(2, 24),	# certain dependency
+	(2, 25),	# certain dependency
+	(2, 26),	# certain dependency
+	(2, 27),	# certain dependency
+	(2, 28),	# certain dependency
+	(2, 29),	# certain dependency
+	(2, 30),	# certain dependency
+	(3, 20),	# certain dependency
+	(6, 7),	# exist at the intersection
+	(8, 9),	# exist at the intersection
+	(8, 10),	# exist at the intersection
+	(8, 11),	# exist at the intersection
+	(8, 21),	# exist at the intersection
+	(9, 10),	# exist at the intersection
+	(9, 11),	# exist at the intersection
+	(9, 21),	# exist at the intersection
+	(10, 11),	# exist at the intersection
+	(10, 21),	# exist at the intersection
+	(11, 21),	# exist at the intersection
+	(12, 13),	# exist at the intersection
+	(12, 20),	# exist at the intersection
+	(12, 25),	# exist at the intersection
+	(12, 27),	# exist at the intersection
+	(13, 22),	# exist at the intersection
+	(13, 25),	# exist at the intersection
+	(13, 27),	# exist at the intersection
+	(14, 22),	# exist at the intersection
+	(16, 20),	# exist at the intersection
+	(17, 18),	# exist at the intersection
+	(17, 23),	# exist at the intersection
+	(17, 24),	# exist at the intersection
+	(17, 25),	# exist at the intersection
+	(18, 25),	# exist at the intersection
+	(20, 22),	# certain dependency
+	(20, 23),	# certain dependency
+	(20, 24),	# certain dependency
+	(20, 25),	# certain dependency
+	(20, 27),	# certain dependency
+	(23, 24),	# exist at the intersection
+	(23, 25),	# exist at the intersection
+	(24, 25),	# exist at the intersection
+	(25, 27),	# exist at the intersection
+]

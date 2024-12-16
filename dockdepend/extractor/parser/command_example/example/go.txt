@@ -1,0 +1,1159 @@
+go vet $PROJECT_PATH/cmd/reagled
+go build -v -o outputs/check check/check.go
+go build -o goapp
+go install server-app
+go get github.com/stretchr/testify/assert
+go build -o gke-info
+go get -d github.com/gorilla/handlers
+go build -a --ldflags '-extldflags "-static"' entrypoints/main.go
+go get github.com/brancz/gojsontoyaml
+go build -ldflags '-w -s' -o /go-proto-gql-out/protoc-gen-gogql ./protoc-gen-gogql
+go mod download
+go build     -tags gcc7     -o /bin/temporal-lens     -ldflags "-X main.Version=$LENSVERSION"     ./cmd/temporal-lens
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9
+go get -u github.com/scbizu/Astral
+go get github.com/go-task/task/cmd/task
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards
+go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+go env -w GO111MODULE=auto
+go install
+go test -mod=vendor ./...
+go get -u github.com/mitchellh/gox github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint github.com/go-swagger/go-swagger/cmd/swagger github.com/jteeuwen/go-bindata/... golang.org/x/tools/cmd/goimports github.com/gogo/protobuf/protoc-gen-gogo
+go build -a -installsuffix nocgo -o /traefik-forward-auth ./cmd
+go get -v -u -d github.com/go-delve/delve/cmd/dlv
+go get gopkg.in/ldap.v3
+go get -u gopkg.in/check.v1
+go get -u github.com/esrrhs/pingtunnel/...
+go build -ldflags="-s -w" -a -installsuffix static -o /badcapt cmd/badcapt/badcapt.go
+go build app.go
+go get -u github.com/tomnomnom/qsreplace
+go get -v github.com/gorilla/websocket
+go get       -v       -ldflags "-X github.com/m-lab/go/prometheusx.GitShortCommit=$(git log -1 --format=%h)$(git diff --quiet || echo dirty)"       github.com/m-lab/pusher
+go get github.com/gogo/protobuf/protoc-gen-gogoslick
+go install -ldflags '-w -s' -tags netgo -v github.com/shadowsocks/go-shadowsocks2
+go install github.com/kelseyhightower/confd
+go get -v git.torproject.org/pluggable-transports/meek.git/meek-server FROM alpine:latest
+go build -ldflags "-s -w -X main.version=${VERSION}" -o /nats
+go build -o /bin/deploytag
+go get github.com/idoall/gods
+go get github.com/unidoc/unioffice
+go build -o kudaki_order_service_app
+go install -v       github.com/google/gnxi/gnmi_capabilities       github.com/google/gnxi/gnmi_get       github.com/google/gnxi/gnmi_set       github.com/openconfig/gnmi/cmd/gnmi_cli       github.com/google/gnxi/gnoi_target       github.com/google/gnxi/gnoi_cert
+go build -o $GOBIN/godef github.com/rogpeppe/godef
+go get github.com/sourcegraph/checkup/cmd/checkup
+go get -u github.com/tomnomnom/gf
+go get github.com/DataDog/datadog-go/statsd
+go get -v github.com/m-lab/gcp-service-discovery/cmd/gcp_service_discovery
+go get github.com/gorilla/websocket
+go install -v github.com/hpcloud/tail
+go get -u -v github.com/rogpeppe/godef
+go get github.com/yudai/gotty
+go get -u github.com/gorilla/mux
+go get -tags "v0.13.10" -u -v github.com/gobuffalo/buffalo/buffalo
+go get -v github.com/go-chi/cors
+go get -v github.com/openchirp/oc
+go get -u github.com/go-chi
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/go-playground/validator     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/reddotpay/lambda-warmer     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal     github.com/gofrs/uuid
+go install -ldflags "-X github.com/anderskvist/GoHelpers/version.Version=`date -u '+%Y%m%d-%H%M%S'`-`git rev-parse --short HEAD`" -v ./...
+go get -u go get github.com/mitchellh/gox github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint github.com/go-swagger/go-swagger/cmd/swagger github.com/jteeuwen/go-bindata/... golang.org/x/tools/cmd/goimports
+go test
+go build -o invest-ftw
+go get     github.com/golang/dep/cmd/dep     github.com/GeertJohan/fgt     github.com/golang/lint/golint     github.com/golang/protobuf/protoc-gen-go     github.com/govau/le-dns-certs/cmd/route53renewer     github.com/govau/sdget     github.com/jteeuwen/go-bindata/...     golang.org/x/tools/cmd/cover
+go build -v -ldflags "-X main.VERSION=$VERSION -s -w" -gcflags "" -o /xray-plugin
+go get -d -u gitlab.com/NebulousLabs/Sia/...
+go get -d -v github.com/lightningnetwork/lnd
+go get github.com/mholt/caddy/caddy
+go get -ldflags "-X main.VERSION=$(date -u +%Y%m%d) -s -w" github.com/xtaci/kcptun/client
+go get -v github.com/micro/go-log
+go build -v main.go
+go get github.com/minio/minio-go/v6
+go build -ldflags "-X main.Version=0.1.0" -o /bin/info
+go get -u -v golang.org/x/tools/cmd/gorename
+go get github.com/golang/protobuf/proto
+go get -u github.com/rogpeppe/godef
+go build -o /src/bin/grocerylistsbot ./cmd/...
+go get -u -v   github.com/klauspost/asmfmt/cmd/asmfmt   github.com/derekparker/delve/cmd/dlv   github.com/kisielk/errcheck   github.com/davidrjenni/reftools/cmd/fillstruct   github.com/mdempsky/gocode   github.com/stamblerre/gocode   github.com/rogpeppe/godef   github.com/zmb3/gogetdoc   golang.org/x/tools/cmd/goimports   golang.org/x/lint/golint   github.com/alecthomas/gometalinter    github.com/fatih/gomodifytags   golang.org/x/tools/cmd/gorename   github.com/jstemmer/gotags   golang.org/x/tools/cmd/guru   github.com/josharian/impl   honnef.co/go/tools/cmd/keyify   github.com/fatih/motion   github.com/koron/iferr
+go get github.com/mikemintang/go-curl
+go env -w GOSUMDB=off
+go build Index.go -o main
+go build -ldflags "$LDFLAGS" -v -o /v2ray ./main
+go get -v github.com/lestrrat/go-file-rotatelogs
+go install -v -ldflags "-s -w -X main.version=$(release)" github.com/minio/kes/cmd/kes
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform
+go get -v github.com/go-bindata/go-bindata/...
+go build -ldflags="-s -w" -o /skirmish
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+go get -u github.com/003random/getJS
+go env -w GO111MODULE="on"
+go get -d -v
+go build -o /usr/local/bin/docker-explorer /app/main.go
+go get github.com/czerwonk/bioject/cmd/bioject
+go build hello-docker-web.go
+go get -u golang.org/x/vgo
+go build -ldflags "-X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/info
+go get -u github.com/xtaci/kcptun/server
+go get github.com/golang/lint/golint
+go test -v ./...
+go build -o serverless-registry-api .
+go run ./lib/utils/get-browser
+go get github.com/hashicorp/packer
+go build -o /applifier
+go get         github.com/GeertJohan/fgt         github.com/golang/lint/golint         github.com/govau/sdget         golang.org/x/tools/cmd/cover
+go build -ldflags '-w -s' -o /protoc-gen-gotemplate-out/protoc-gen-gotemplate .
+go build -o /entrypoint
+go get -u golang.org/x/tools/cmd/goimports
+go get github.com/AlekSi/gocov-xml
+go install github.com/sigmonsays/webchat/...
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gogofast ./protoc-gen-gogofast
+go get github.com/anacrolix/tagflag
+go build -o /bin/cluster-recommender .
+go get -u github.com/micro/go-micro
+go get -u golang.org/x/lint/golint
+go get github.com/labstack/echo
+go build -o target/nebula-importer .
+go build -ldflags "-s -w" -o drone-wechat .
+go get -v gcp_service_discovery
+go build -o acmenator .
+go get go.mozilla.org/sops/v3/cmd/sops
+go get -u -tags gcc7 github.com/gen2brain/go-fitz
+go get github.com/anacrolix/torrent
+go get github.com/google/cloud-print-connector/...
+go install -ldflags "-X main.version=$(git describe --tags || git rev-parse --short HEAD || echo dev)"
+go install sigs.k8s.io/kustomize/kustomize/v3
+go build -o /bin/kubenurse .
+go build -v -o /lg
+go get golang.org/x/tools/cmd/gopls
+go install     ./protoc-gen-twirp     ./protoc-gen-twirp_python
+go build -o=/build/slack-counter
+go get github.com/gogo/protobuf/gogoproto
+go build fmpwebserver
+go install spinnaker.io/demo/k8s-demo
+go build -o service-manager cmd/servicemanager/main.go
+go get golang.org/x/crypto/scrypt
+go get gopkg.in/yaml.v2
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gogo ./protoc-gen-gogo
+go get -u github.com/jstemmer/gotags
+go get -v github.com/micro/protoc-gen-micro
+go get github.com/G-Node/libgin/libgin
+go get github.com/hashicorp/terraform@${TERRAFORM_VERSION}
+go build -o $GOBIN/gotags github.com/jstemmer/gotags
+go get -v github.com/kelseyhightower/confd
+go build -trimpath -ldflags="-s -w" -o /out/github-runnerscaleset-listener ./cmd/githubrunnerscalesetlistener
+go build -mod vendor -o /usr/local/bin/svc_mp_token nautilus/cmd/svc_mp_token
+go get -v ./...
+go install github.com/GoogleCloudPlatform/docker-credential-gcr
+go build -tags cse main.go
+go get -u -v github.com/kisielk/errcheck
+go build  .
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp
+go build -o /diuid-docker-proxy /go/src/github.com/weber-software/diuid/diuid-docker-proxy
+go run build.go
+go run make.go
+go get -v -d github.com/belak/go-seabird/cmd/seabird
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gogofaster ./protoc-gen-gogofaster
+go get github.com/quay/clair/cmd/clair || true
+go build ./...
+go get baliance.com/gooxml/
+go get -u -v golang.org/x/tools/cmd/gopls
+go get -v github.com/agtorre/gocolorize
+go get -v -u -d golang.org/x/lint/golint
+go run $GOPATH/src/astral/wx.go
+go get github.com/kokardy/medmst
+go get -v -u -d github.com/davidrjenni/reftools/cmd/fillstruct
+go get -v -u -d github.com/zmb3/gogetdoc
+go get -u github.com/go-chi/docgen
+go install fmpwebserver
+go build -ldflags "-w -X=github.com/pjbgf/gosystract/cmd/cli.gitcommit=$(git describe --tags --always)" -o /go/bin/gosystract
+go build admin/user.go
+go install -tags netgo std
+go build -ldflags "-X main.gitCommit=${COMMIT_HASH}"
+go get -t ./...
+go build -ldflags '-w -s' -o /golang-protobuf-out/protoc-gen-go-grpc .
+go build -ldflags '-w -s' -o /go-proto-validators-out ./...
+go get github.com/googlecloudplatform/gcsfuse
+go build -o /protoplex /tmp/protoplex/protoplex.go
+go build -ldflags="-s -w" -o $GOPATH/linux-amd64/dnscrypt-proxy
+go build -mod vendor -o /usr/local/bin/svc_mp nautilus/cmd/svc_mp
+go get github.com/Masterminds/glide
+go get -v github.com/json-iterator/go
+go build -v -tags "full" -ldflags "-s -w" -o release
+go get -v github.com/G-Node/gin-valid
+go build  -ldflags '-extldflags "-static"' -o /build/weathergo
+go get github.com/G-Node/gin-cli
+go get -v -u -d github.com/josharian/impl
+go build -ldflags '-w -s' -o dynamicProxyEip
+go get         github.com/golang/dep/cmd/dep         github.com/GeertJohan/fgt         github.com/golang/lint/golint         github.com/govau/sdget         github.com/jteeuwen/go-bindata/...         golang.org/x/tools/cmd/cover
+go build -o bin/mclogger main.go
+go get "golang.org/x/time/rate"
+go get github.com/micro/protoc-gen-micro
+go install orca/trainer
+go build -v -o /src/bin/stratum-server-monitor main.go
+go get -u gopkg.in/cheggaaa/pb.v1
+go get github.com/AsynkronIT/protoactor-go/...
+go build -o $GOBIN/gomodifytags github.com/fatih/gomodifytags
+go build -o /go/bin/dockerwall
+go vet -v
+go get -v -u -d github.com/klauspost/asmfmt/cmd/asmfmt
+go get github.com/onsi/gomega
+go get -u -v github.com/lixiangyun/autoproxy
+go get golang.org/x/tools/cmd/goimports
+go get         github.com/golang/dep/cmd/dep         github.com/GeertJohan/fgt         github.com/golang/lint/golint         github.com/govau/le-dns-certs/cmd/route53renewer         github.com/govau/sdget         github.com/jteeuwen/go-bindata/...         golang.org/x/tools/cmd/cover
+go get github.com/kardianos/govendor
+go build -o git-sync
+go get github.com/op/go-logging
+go get -d -v github.com/czerwonk/ovirt_exporter
+go install sigs.k8s.io/kustomize
+go test -tags="gingonic" -mod=vendor ./...
+go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.2.0-beta.1
+go get -d -v github.com/gorilla/mux
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/go-playground/validator     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal     github.com/gofrs/uuid
+go get -v github.com/m-lab/metadata-collector
+go clean -i net
+go get github.com/fatih/gomodifytags
+go get -u -v github.com/cweill/gotests/...
+go install -ldflags '-w -extldflags "-static"' github.com/sigmonsays/webchat/...
+go get -u       github.com/google/gnxi/gnmi_capabilities       github.com/google/gnxi/gnmi_get       github.com/google/gnxi/gnmi_set       github.com/openconfig/gnmi/cmd/gnmi_cli       github.com/google/gnxi/gnoi_target       github.com/google/gnxi/gnoi_cert
+go get -u github.com/mitchellh/gox github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint github.com/go-swagger/go-swagger/cmd/swagger github.com/jteeuwen/go-bindata/... github.com/elazarl/go-bindata-assetfs/... golang.org/x/tools/cmd/goimports github.com/gogo/protobuf/protoc-gen-gogo
+go get -u -v github.com/derekparker/delve/cmd/dlv
+go get -u github.com/bitly/go-simplejson
+go get -v github.com/mattn/go-sqlite3
+go get     github.com/golang/dep/cmd/dep     github.com/GeertJohan/fgt     github.com/golang/lint/golint     github.com/govau/sdget     github.com/jteeuwen/go-bindata/...     golang.org/x/tools/cmd/cover
+go build -ldflags="-w -s" github.com/ulfurinn/talltale/cmd/talltale
+go get gopkg.in/gomail.v2
+go build -o app -i cmd/gladius-edged/main.go
+go install -v github.com/josharian/impl@latest
+go run $GOPATH/src/github.com/scbizu/astral/wx.go
+go get github.com/iamipanda/ygopro-data
+go build -o $GOBIN/motion github.com/fatih/motion
+go get "github.com/Tomasen/realip"
+go build -o deckhand
+go get -u -v golang.org/x/lint/golint
+go install -ldflags '-w -s' -tags netgo -v github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards
+go get -u github.com/stamblerre/gocode
+go get -u github.com/ffuf/ffuf
+go get -v -d
+go build ./cmd/discriminator
+go get -u -v github.com/sourcegraph/go-langserver
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/go-playground/validator     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal     github.com/andelf/go-curl
+go get -v git.torproject.org/pluggable-transports/meek.git/meek-server
+go build -o aes-encryption .
+go get -u github.com/tomnomnom/unfurl; exit 0
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/reddotpay/api     github.com/gorilla/schema     github.com/pariz/gountries
+go get -u -v github.com/ramya-rao-a/go-outline
+go get -u github.com/esrrhs/pingtunnel
+go get -v github.com/m-lab/nodeinfo
+go get -d github.com/gocarina/gocsv
+go get -u github.com/sgotti/glide-vc
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gofast ./protoc-gen-gofast
+go get -u github.com/apex/log/...
+go build -o ytdl-web
+go build -o $GOBIN/dlv github.com/go-delve/delve/cmd/dlv
+go get github.com/lordralex/mightyena
+go get github.com/cespare/reflex
+go clean
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
+go install -tags netgo -v github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier
+go get
+go build /tmp/protoplex/protoplex.go
+go get github.com/dominikh/go-tools/cmd/keyify
+go build ./cmd/subfinder
+go build -ldflags="-s -w" -a -installsuffix static -o /badcapt cmd/badcapt-tg/badcapt-tg.go
+go get -v github.com/rifflock/lfshook
+go install -v golang.org/x/mobile/cmd/gomobile@8578da9835fd
+go build -o ./out/dnschecker .
+go build -o /gosimac
+go build -v -o /go/src/app/app cmd/main.go
+go build -o ../kcptun-server
+go get github.com/hakluke/haktldextract
+go build -o cluster-tests .
+go build     -tags gcc7     -o /bin/temporal-lens     -ldflags "-X main.Version=$LENSVERSION -X main.Edition=$TENSORFLOW_DIST"     ./cmd/temporal-lens
+go install -tags netgo -v github.com/xtaci/kcptun/server
+go build -o /opt/mm-wiki/mm-wiki ./
+go get -u ./...
+go build -ldflags "-X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)"               -o /bin/avscan
+go install github.com/majeinfo/chaingun/player
+go build -o outputs/out out/out.go
+go test -v in/in_test.go
+go get -u github.com/go-chi/chi
+go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.5
+go install github.com/mitchellh/gox@latest
+go get -u -v github.com/acroca/go-symbols
+go get github.com/docopt/docopt-go
+go build $APP
+go build -o /check github.com/arbourd/concourse-slack-alert-resource/check
+go build $GOPATH/src/github.com/zsfree/golang-web
+go get github.com/fatih/motion
+go get github.com/juju/ratelimit
+go build -ldflags "-X main.version=${VERSION}" -o kured ./cmd/kured/*.go
+go build -o /bin/telescopes ./cmd/telescopes
+go build -ldflags "-s -w -X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)"   -o /bin/avscan
+go build -ldflags '-w -s' -o /grpc-gateway-out/protoc-gen-openapiv2 ./protoc-gen-openapiv2
+go build get-ssl.go -o /go/bin/get-ssl
+go build -o fluentd-sidecar-injector
+go get -u github.com/urfave/cli
+go version
+go build -o _build/app
+go get -d -v      github.com/go-redis/redis/v7     github.com/gorilla/mux     gopkg.in/yaml.v2     github.com/thedevsaddam/gojsonq     github.com/yalp/jsonpath
+go build -o /bin/gooid
+go get github.com/czerwonk/ovirt_exporter
+go build -ldflags "-s -w -X main.Version=v$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)"   -o /bin/avscan
+go get github.com/bemasher/rtlamr-collect
+go get -u github.com/gobuffalo/packr/packr
+go get github.com/boltdb/bolt
+go get -d -v ${KCPTUN}
+go get github.com/ramya-rao-a/go-outline@7182a932836a71948db4a81991a494751eccfe77
+go get github.com/ethereum/go-ethereum
+go get -u -v github.com/klauspost/asmfmt/cmd/asmfmt
+go install github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cli/docker-credential-ecr-login
+go build -o app-api .
+go env -w GOSUMDB=sum.golang.org
+go test ./...
+go get -u github.com/99designs/gqlgen@v0.11.1
+go get -v github.com/OWASP/Amass/v3/...
+go build -o $GOBIN/gopls golang.org/x/tools/cmd/gopls
+go build -o /go/bin/botkube ./cmd/botkube
+go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+go get github.com/beego/bee
+go get -v -u -d github.com/jstemmer/gotags
+go install github.com/vmware/govmomi/vcsim@v0.30.4
+go build -o whaling
+go get golang.org/x/lint/golint
+go get github.com/micro/go-micro
+go get github.com/golang/protobuf/protoc-gen-go
+go get -u honnef.co/go/tools/cmd/keyify
+go get -d -v  github.com/go-redis/redis github.com/gorilla/mux
+go get -d -v -t ./...
+go install -v -ldflags "-s -w" github.com/minio/kes/cmd/release
+go get -u github.com/golang/protobuf/protoc-gen-go
+go get github.com/kokardy/medmst     github.com/lib/pq     github.com/jmoiron/sqlx 	github.com/gin-gonic/gin
+go build ./lib/launcher/rod-manager
+go get .
+go get -v .
+go generate -v ./...
+go get -v -u -d golang.org/x/tools/cmd/goimports
+go build -a --installsuffix cgo --ldflags="-s" -o informer
+go get github.com/campoy/embedmd
+go build -o main Index.go
+go get -v github.com/cbeneke/hcloud-fip-controller
+go get github.com/photosojourn/go-microservice
+go build -ldflags '-w -s' -o /golang-protobuf-out/protoc-gen-go ./cmd/protoc-gen-go
+go test --cover ./...
+go get -v github.com/idoall/gomail
+go get -u -v github.com/golang/lint/golint
+go build -mod vendor -o /usr/local/bin/web_redir nautilus/cmd/web_redir
+go get github.com/m-lab/ndt7-client-go/cmd/ndt7-client
+go install github.com/erning/gorun
+go build -trimpath -ldflags="-s -w -X 'github.com/actions/actions-runner-controller/build.Version=${VERSION}'" -o /out/manager main.go
+go get github.com/bemasher/rtlamr
+go build -x -o media-roller ./src
+go get -d -v github.com/go-sql-driver/mysql
+go run make.go -v
+go get github.com/tomnomnom/waybackurls; exit 0
+go get github.com/go-jira/jira/cmd/jira
+go build -ldflags '-w -s' -o /protoc-gen-doc-out/protoc-gen-doc ./cmd/protoc-gen-doc
+go build -o gocron
+go build -mod=vendor .
+go get github.com/hashicorp/consul || true
+go get github.com/jstemmer/gotags
+go get -u github.com/onsi/ginkgo/ginkgo@v1.11.0
+go build -mod vendor -o /usr/local/bin/job_mysql_migrate nautilus/cmd/job_mysql_migrate
+go get -u github.com/go-delve/delve/cmd/dlv
+go get github.com/hashicorp/vault || true
+go get -d -v github.com/shadowsocks/go-shadowsocks2
+go get github.com/jteeuwen/go-bindata/...
+go build -x -ldflags "-X main.githash=$(git log --pretty=format:'%h' -n 1)" -o /bin/matterircd
+go build -o main Index.go"
+go get github.com/michenriksen/aquatone; exit 0
+go build -o /main /main.go
+go build ../cmd/cfssl
+go run build.go -no-upgrade -version v${PKGVER} build stdiscosrv
+go get         github.com/GeertJohan/fgt         github.com/golang/lint/golint         github.com/govau/sdget         github.com/jteeuwen/go-bindata/...         golang.org/x/tools/cmd/cover
+go build -mod vendor -o /usr/local/bin/svc_id_test nautilus/cmd/svc_id_test
+go get -u -v github.com/txthinking/brook/cli/brook
+go install ./cmd/clair
+go build -o http
+go get golang.org/x/crypto/curve25519
+go get -u github.com/quantumew/mustache-cli
+go get -v github.com/idoall/hermes/v2@v2.0.2.1
+go get github.com/m-lab/dash/cmd/dash-client
+go get -v -u -d github.com/mdempsky/gocode
+go get -u github.com/goreleaser/nfpm/...
+go get github.com/fatih/faillint
+go install ./cmd/efs-provisioner
+go get -t .
+go build -a -ldflags '-s' -installsuffix cgo -o kubefate kubefate.go
+go build -o kubefate kubefate.go
+go get github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+go install -tags netgo -v github.com/shadowsocks/go-shadowsocks2
+go get -v -u -d github.com/fatih/gomodifytags
+go build -v
+go get -d github.com/belak/seabird
+go get github.com/hashicorp/nomad
+go install gitlab.com/braneproject/branehub
+go get github.com/zchrykng/gocaster/cmd/caster
+go build        -o sakura_bot        cmd/app/app.go
+go build -i -o ./.build/coding_challenge
+go install -a -ldflags="-s -w" .
+go get -u -v github.com/mdempsky/gocode
+go install github.com/jwilder/dockerize@$DOCKERIZE_VERSION
+go get github.com/akamai/cli
+go get github.com/bitly/go-simplejson
+go install github.com/lwander/k8s-demo
+go build -o ../kcptun-client
+go get -u golang.org/x/tools/cmd/gorename
+go get -u github.com/caddyserver/builds
+go build -o _build/sshfortress
+go get github.com/uber/jaeger-client-go
+go get -u -v github.com/alecthomas/gometalinter
+go install github.com/mingrammer/round@latest
+go get github.com/gogo/protobuf/proto
+go install github.com/tools/godep@latest
+go get github.com/go-bindata/go-bindata/...
+go get -u github.com/smartystreets/goconvey/convey
+go build -o trauth
+go get github.com/aws/aws-sdk-go
+go get github.com/kisielk/errcheck
+go get -v github.com/go-chi/chi
+go get github.com/micro/services/helloworld
+go get github.com/mkouhei/gosh
+go build -v -o test-sds-server sds.go
+go get orca/trainer
+go get github.com/unidoc/unidoc/...
+go get -v github.com/micro/go-api
+go get -u -v github.com/nsf/gocode
+go get -u github.com/gin-gonic/gin
+go install github.com/rakyll/statik
+go build --ldflags '-s -extldflags "-static"' -i -o rehook github.com/jstemmer/rehook
+go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go get github.com/cosmtrek/air
+go get -v .; rm -f main.go; yum clean all
+go build -o astral .
+go build -mod vendor -o /usr/local/bin/web_main nautilus/cmd/web_main
+go get -u -v sourcegraph.com/sqs/goreturns
+go get -v -u github.com/googlecloudplatform/gcsfuse
+go get github.com/Ice3man543/SubOver
+go get -u github.com/derekparker/delve/cmd/dlv
+go build -o $GOBIN/keyify honnef.co/go/tools/cmd/keyify
+go get github.com/onsi/ginkgo/ginkgo
+go get github.com/haccer/subjack
+go get github.com/cjbassi/gotop
+go build ../cmd/multirootca
+go get -u -v github.com/cweill/gotests/gotests
+go install -ldflags '-w -s' -tags netgo -v ${KCPTUN}
+go build get-ssl.go
+go get github.com/gorilla/context
+go get -v github.com/codegangsta/gin
+go get github.com/kokardy/medmst     github.com/lib/pq     github.com/jmoiron/sqlx
+go build -ldflags '-w -s' -o /protoc-gen-validate-out/protoc-gen-validate .
+go get -u github.com/golang/dep/cmd/go get -u github.com/gobuffalo/packr/packr
+go get -t -v ./...
+go build -a -o cloudreve-main -ldflags " -X 'github.com/HFO4/cloudreve/pkg/conf.BackendVersion=$CLOUDREVE_VERSION' -X 'github.com/HFO4/cloudreve/pkg/conf.LastCommit=$COMMIT_SHA'"
+go install ./cmd
+go get github.com/jteeuwen/go-bindata/go-bindata
+go get -tags netgo 		github.com/FiloSottile/gvt 		github.com/client9/misspell/cmd/misspell 		github.com/fzipp/gocyclo 		github.com/gogo/protobuf/gogoproto 		github.com/gogo/protobuf/protoc-gen-gogoslick 		github.com/golang/dep/... 		golang.org/x/lint/golint 		github.com/golang/protobuf/protoc-gen-go 		github.com/kisielk/errcheck 		github.com/mjibson/esc
+go get -u github.com/go-sql-driver/mysql
+go get -d -v github.com/czerwonk/bioject
+go get -d -v      github.com/go-redis/redis     github.com/gorilla/mux     gopkg.in/yaml.v2     github.com/thedevsaddam/gojsonq
+go env -w GO111MODULE=on
+go get -d -v github.com/jstemmer/rehook
+go mod edit -require github.com/mholt/caddy@v${CADDY_VERSION}
+go build -o goreleaser .
+go get honnef.co/go/tools/cmd/staticcheck
+go get github.com/snikch/goodman/cmd/goodman
+go generate ./...
+go build -o main -v -installsuffix cgo -ldflags '-s -w' .
+go build -ldflags '-w -s' -o /protoc-gen-jsonschema/protoc-gen-jsonschema ./cmd/protoc-gen-jsonschema
+go get -u -d gocv.io/x/gocv
+go install github.com/lordralex/mightyena
+go get honnef.co/go/tools/cmd/staticcheck 		golang.org/x/lint/golint 		github.com/google/go-cmp/cmp
+go get github.com/alash3al/wsify
+go get golang.org/x/tools/cmd/guru
+go install -v github.com/lordralex/absol
+go build -mod vendor -o /usr/local/bin/api_mp_callback nautilus/cmd/api_mp_callback
+go build -mod=mod -o /go/bin/velero-plugin-for-csi .
+go get -v github.com/sirupsen/logrus
+go build main.go
+go install /go/src/gitlab.com/braneproject/branehub
+go get github.com/mop-tracker/mop/cmd/mop
+go get github.com/rifflock/lfshook
+go get -u github.com/golang/lint/golint
+go build -o ./main ./cmd
+go get -d -v ./...
+go get -v .; yum clean all
+go get -d -v ${GOSS2}
+go install github.com/raohwork/prpr
+go build -o /go/bin/velero-plugin-for-gcp ./velero-plugin-for-gcp
+go get -u -v golang.org/x/tools/cmd/guru
+go get github.com/go-delve/delve/cmd/dlv@v1.5.0
+go build ./cmd/conductorr
+go build -o /go/bin/ruthie
+go install ./cmd/identityd
+go install -ldflags "-X main.version=$(git describe --tags --always || echo dev)"
+go build -o /go/bin/czds-dl
+go install github.com/txthinking/brook/cli/brook
+go build -a -o statcollector .
+go build -mod vendor ./...
+go run build.go build stdiscosrv
+go build -o /out/reagled $PROJECT_PATH/cmd/reagled
+go get -u -v github.com/lixiangyun/goproxy_deploy
+go install github.com/timescale/timescaledb-parallel-copy/cmd/timescaledb-parallel-copy@latest
+go get github.com/micro/go-api
+go get -v golang.org/x/crypto/scrypt
+go get -u github.com/fatih/gomodifytags
+go get -d github.com/aergoio/aergo-esindexer
+go get github.com/gohugoio/hugo
+go get -u github.com/swaggo/swag/cmd/swag
+go install $(glide nv)
+go build -o /grpcui     -ldflags "-w -extldflags \"-static\" -X \"main.version=$(cat VERSION)\""     ./cmd/grpcui
+go install golang.org/x/tools/cmd/goimports@latest
+go build -mod vendor -o /usr/local/bin/web_null nautilus/cmd/web_null
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms
+go get -d .
+go build -v -o telegram-gateway -ldflags "-X main.buildTime=$(date +"%Y%m%d%H%M%S")"
+go mod tidy
+go get golang.org/x/crypto/bcrypt
+go build -o $GOBIN/guru golang.org/x/tools/cmd/guru
+go build -o /greeter-server main.go
+go build -mod vendor -o /usr/local/bin/svc_id nautilus/cmd/svc_id
+go install -ldflags '-w -s' -tags netgo -v github.com/xtaci/kcptun/server
+go get github.com/lestrrat/go-file-rotatelogs
+go install main
+go mod tidy -v
+go env
+go get -u github.com/sirupsen/logrus
+go build -v -o mindoc_linux_amd64 -ldflags "-w -s -X 'main.VERSION=$TAG' -X 'main.BUILD_TIME=`date`' -X 'main.GO_VERSION=`go version`'"
+go get -v github.com/gin-gonic/gin
+go get -u -v honnef.co/go/tools/...
+go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /checkoutservice .
+go install ./cmd/bytomcli
+go build ./cmd/go
+go run generate.go amd64 386 arm64 arm riscv64 s390x ppc64 ppc64le mips64le mips64
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query
+go test -v out/out_test.go
+go mod download CMD ["go", "run", "Index.go"]
+go get github.com/juliosueiras/terraform-lsp
+go get -u -v github.com/tylerb/gotype-live
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gogoslick ./protoc-gen-gogoslick
+go build -o main main.go
+go get honnef.co/go/tools/cmd/keyify
+go get -u github.com/gobuffalo/packr/...
+go get -u github.com/revel/cmd/revel
+go get golang.org/x/tools/golint
+go build -a -installsuffix cgo -ldflags '-w  -extldflags "-static"' -o /go/bin/ofelia .
+go build -o /usr/local/bin/golangci-linter
+go build -ldflags "-X main.Version $(cat VERSION)" -o /bin/info
+go build -o statuzpage-api .
+go get github.com/qvl/ghbackup
+go install -a -ldflags "-X github.com/aquasecurity/kube-bench/cmd.KubeBenchVersion=${VERSION} -w"
+go build -v -ldflags="-s -w" -o /out/moodboard ./cmd/moodboard
+go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /go/bin/frontend .
+go get github.com/sirupsen/logrus
+go build -o caddy
+go get github.com/idoall/gomail
+go build -ldflags '-w -s' -o /go-proto-gql-out/protoc-gen-gql ./protoc-gen-gql
+go install github.com/magefile/mage
+go build -o outputs/check check/check.go     chmod 755 outputs/*
+go get     -v     -ldflags "-X github.com/m-lab/go/prometheusx.GitShortCommit=$(git log -1 --format=%h)"     ./...
+go build -o $GOBIN/gocode-gomod github.com/stamblerre/gocode
+go get -u -v github.com/jstemmer/gotags
+go get github.com/FooSoft/homemaker
+go get github.com/idoall/hermes
+go build -o httprobe main.go
+go get -u github.com/Masterminds/glide
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials
+go install ./...
+go install github.com/mailhog/MailHog@latest
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go@1.15.27     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp
+go build -o /bin/telescopes .
+go get -d -v github.com/adnanh/webhook
+go get -v -u -d github.com/fatih/motion
+go get -u github.com/golang/dep/cmd/dep
+go get -u github.com/gorilla/handlers
+go install leogregianin/brcep
+go install github.com/simeji/jid/cmd/jid@v$JID_VERSION
+go get -u -v golang.org/x/tools/gopls@v0.7.3
+go build -v -o outputs/in in/in.go
+go get github.com/micro/go-log
+go clean -testcache
+go get -tags "v0.13.9" -u -v github.com/gobuffalo/buffalo/buffalo
+go get github.com/zmb3/gogetdoc
+go get -u github.com/asoorm/go-bench-suite
+go get github.com/garyburd/redigo/redis github.com/gorilla/mux
+go build ./
+go build -o /bin/spot-recommender .
+go get -u -v github.com/labstack/echo/middleware
+go install -v golang.org/x/tools/gopls@latest
+go get -v -u -d github.com/stamblerre/gocode
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/go-playground/validator     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal
+go get -d -v golang.org/x/net/html
+go get github.com/caddyserver/builds
+go build -o /app .
+go get github.com/ga0/netgraph
+go get github.com/kokardy/medmst     github.com/lib/pq     github.com/jmoiron/sqlx   	github.com/gin-gonic/gin
+go build -o /go/bin/irma_bot
+go install github.com/golang/protobuf/protoc-gen-go
+go get github.com/schollz/find
+go build -o /bin/matterircd
+go get -u github.com/klauspost/asmfmt/cmd/asmfmt
+go get -u github.com/labstack/echo
+go env -w GOPROXY=https://goproxy.io,https://goproxy.cn
+go build -o $GOBIN/impl github.com/josharian/impl
+go get -u github.com/parnurzeal/gorequest
+go get -u github.com/kisielk/errcheck
+go get github.com/gruntwork-io/terratest/modules/terraform
+go build -mod=vendor -o /bin/server main.go
+go build -mod vendor -o main .
+go build -o /proxy-server ./main.go
+go get     github.com/golang/dep/cmd/dep     github.com/GeertJohan/fgt     github.com/golang/lint/golint     github.com/golang/protobuf/protoc-gen-go     github.com/govau/le-dns-certs/cmd/route53renewer     github.com/govau/sdget     github.com/jteeuwen/go-bindata/...     golang.org/x/tools/cmd/cover     github.com/prometheus/alertmanager/cmd/amtool
+go get github.com/GeertJohan/go.rice/rice
+go get -v github.com/gomodule/redigo/redis
+go build -o /bin/ipsw -ldflags "-s -w -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppVersion=$(cat VERSION) -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildTime==$(date -u +%Y%m%d)" ./cmd/ipsw
+go install -v github.com/haya14busa/goplay/cmd/goplay@latest
+go install /go/src/github.com/envoyproxy/envoy/example/load-reporting-service
+go build -ldflags '-w -s' -o /grpc-gateway-out/protoc-gen-grpc-gateway ./protoc-gen-grpc-gateway
+go build -o $GOBIN/goimports golang.org/x/tools/cmd/goimports
+go get gopkg.in/DataDog/dd-trace-go.v1/ddtrace
+go get -u github.com/tomnomnom/hacks/tojson
+go get -d -v go.etcd.io/etcd/clientv3
+go install github.com/belak/go-seabird/cmd/seabird
+go install golang.stackrox.io/kube-linter/cmd/kube-linter@$KUBELINTER_VERSION
+go install github.com/google/go-containerregistry/cmd/crane@latest
+go build -a     -o ${GOPATH}/bin/imaginary     -ldflags="-s -w -h -X main.Version=${IMAGINARY_VERSION}"     github.com/h2non/imaginary
+go install sigs.k8s.io/kustomize/v3/cmd/kustomize
+go get -d github.com/webkubectl/gotty
+go get -v github.com/go-sql-driver/mysql
+go get -d github.com/kubernetes/kubernetes > /dev/null 2>&1 || true
+go build -o $GOBIN/errcheck github.com/kisielk/errcheck
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp
+go get -u -v github.com/koron/iferr
+go env -w GOPROXY=$goproxy
+go get github.com/gogits/go-gogs-client
+go get -u github.com/mitchellh/gox github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint github.com/go-swagger/go-swagger/cmd/swagger github.com/jteeuwen/go-bindata/... golang.org/x/tools/cmd/goimports
+go run wx.go
+go install github.com/zhanghudong/drone-test
+go build -o ./bin/globber  ./cmd/globber
+go build -o app -i cmd/main.go
+go get -d -v github.com/tools/godep
+go get -u github.com/josharian/impl
+go install -ldflags "-X \"main.version=$(git  rev-parse --short=10 HEAD)\"" .
+go get github.com/nats-io/go-nats
+go get github.com/iris-contrib/middleware/cors
+go build -o gql .
+go build -o main src/app/entry.go
+go get github.com/rzrbld/iris
+go install github.com/mkouhei/gosh
+go get       -v       -ldflags "-X github.com/m-lab/go/prometheusx.GitShortCommit=$(git log -1 --format=%h)"       github.com/m-lab/pusher
+go mod init greeter-server
+go build -o absol -v github.com/lordralex/absol/core
+go install -v -ldflags "-w -s"
+go build -o /app/wg-dynamic .
+go test -i ./...
+go build -v .
+go get -u google.golang.org/protobuf/cmd/protoc-gen-go
+go build -ldflags="-s -w" -a -installsuffix static -o /badcapt cmd/badcapt-nats/badcapt-nats.go
+go get github.com/flywheel-io/sdk/api
+go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct
+go build -a -ldflags '-s' -installsuffix cgo -o trollBot
+go get github.com/dgrijalva/jwt-go
+go get -u github.com/spf13/cobra/cobra
+go install absCAServer/server
+go get -u github.com/golang/dep/...
+go get github.com/go-task/task/v2/cmd/task
+go test $(go list ./... | grep -v integration | grep -v /vendor/ | grep -v /template/) -cover
+go test -v -coverprofile=/out/cover.out ./...
+go build -v -ldflags "-s -w" -o /frps ./cmd/frps
+go test github.com/attic-labs/noms/...
+go build -o /tmp/burrow .
+go install cuelang.org/go/cmd/cue@latest
+go get -d -v      github.com/go-redis/redis     github.com/gorilla/mux     gopkg.in/yaml.v2     github.com/thedevsaddam/gojsonq     github.com/yalp/jsonpath
+go build -o main
+go build -o /ticker
+go get -d -v .; rm -f main.go /tmp/go.tgz;
+go get github.com/golang/dep/cmd/dep
+go get github.com/spf13/cobra
+go get -d github.com/gorilla/mux
+go get -v .; rm -f main.go /tmp/go.tgz; yum clean all
+go get -d -v .
+go get github.com/idoall/gocryptotrader
+go install .
+go install -v honnef.co/go/tools/cmd/staticcheck@latest
+go run build/ci.go install -static ./cmd/geth
+go get -v -u -d github.com/rogpeppe/godef
+go get github.com/gin-gonic/gin github.com/gorilla/feeds
+go build -o $GOBIN/iferr github.com/koron/iferr
+go build -o /go/bin/factom-open-api main.go
+go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /productcatalogservice .
+go get -u github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint
+go get github.com/m-lab/ndt5-client-go/cmd/ndt5-client
+go build -mod vendor -o /usr/local/bin/svc_user nautilus/cmd/svc_user
+go build -o auto-cluster .
+go get github.com/porjo/braid
+go get github.com/carlpett/terraform-provider-sops
+go version;
+go get -u -v github.com/go-delve/delve/cmd/dlv
+go run build/ci.go install -static ./cmd/bootnode
+go build -trimpath -ldflags="-s -w" -o /out/github-webhook-server ./cmd/githubwebhookserver
+go get -v -u github.com/shuLhan/go-bindata/...
+go get -u github.com/labstack/echo/middleware
+go build ./cmd/gindoid
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp
+go build -trimpath -ldflags="-s -w" -o /out/actions-metrics-server ./cmd/actionsmetricsserver
+go get github.com/wal-g/wal-g@[v0.2.14] || true
+go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+go get github.com/michenriksen/aquatone
+go get -v github.com/micro/go-micro
+go build -i -o /bin/spanner-er  ./
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards
+go get github.com/gorilla/mux
+go get github.com/chrusty/protoc-gen-jsonschema/cmd/protoc-gen-jsonschema
+go env;
+go mod verify
+go get -u github.com/tomnomnom/meg
+go get -v github.com/golang/protobuf/protoc-gen-go
+go get -u github.com/mholt/caddy
+go get github.com/cloudflare/cfssl_trust/...
+go get github.com/bazelbuild/bazelisk
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+go get -u github.com/stretchr/testify/assert
+go get github.com/go-sql-driver/mysql
+go get golang.org/x/tools/cmd/stringer
+go build -o /in github.com/arbourd/concourse-slack-alert-resource/in
+go build --ldflags '-s -extldflags "-static"' -i -o webhook github.com/adnanh/webhook
+go get github.com/alecthomas/gometalinter
+go get -u -v honnef.co/go/tools/cmd/keyify
+go get github.com/axw/gocov
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/gomodule/redigo/redis     github.com/hubcash/cards
+go build -o etcd-proxy-server
+go get ./... ; exit 0
+go get golang.org/x/tools/gopls@v0.6.3
+go get github.com/jstemmer/go-junit-report
+go test *.go
+go get -u -ldflags="-s -w" github.com/golang/protobuf/protoc-gen-go
+go build -ldflags="-s -w" -o /app/goctl ./goctl.go
+go build -o gosimac
+go get -d -v  github.com/go-redis/redis github.com/gorilla/mux gopkg.in/yaml.v2
+go install ./encoding/protobuf/protoc-gen-yarpc-go
+go get github.com/hakluke/hakrawler
+go get -v github.com/astaxie/beego
+go build -ldflags '-w -s' -o /protoc-gen-gorm-out ./...
+go get -v github.com/hpcloud/tail
+go get -u github.com/davidrjenni/reftools/cmd/fillstruct
+go get gopkg.in/robfig/cron.v3
+go build -o ../bin/go-app
+go get github.com/Pandentia/protoplex/cmd/protoplex
+go build -o /tmp/protoplex/protoplex /tmp/protoplex/protoplex.go
+go get github.com/ugorji/go@v1.1.2-0.20180831062425-e253f1f20942
+go get github.com/michenriksen/gitrob
+go get sigs.k8s.io/controller-runtime@v0.2.0-beta.1
+go get github.com/mikefarah/yq/v3
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/reddotpay/api     github.com/gorilla/schema     github.com/pariz/gountries     github.com/aws/aws-xray-sdk-go/...
+go get -v -u -d golang.org/x/tools/cmd/gorename
+go get -d -v .;   go get -u github.com/golang/protobuf/protoc-gen-go;   go get -u -v github.com/mattn/go-sqlite3;   rm -f main.go;   yum clean all;
+go mod init caddy
+go get -u github.com/tomnomnom/httprobe
+go get github.com/astaxie/beego
+go install     ./protoc-gen-gofast     ./protoc-gen-gogo     ./protoc-gen-gogofast     ./protoc-gen-gogofaster     ./protoc-gen-gogoslick
+go build -o $GOBIN/fillstruct github.com/davidrjenni/reftools/cmd/fillstruct
+go install github.com/nicksav/fmpwebserver
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/reddotpay/api     github.com/gorilla/schema     github.com/pariz/gountries     github.com/aws/aws-xray-sdk-go/...     golang.org/x/net/context/ctxhttp
+go build -v -trimpath -ldflags "-X main.VERSION=v$VERSION -s -w -buildid=" -o /v2ray-plugin
+go get -d -v github.com/xtaci/kcptun/server
+go get -u -v github.com/fatih/gomodifytags
+go get github.com/Pandentia/protoplex
+go get -u github.com/micro/protoc-gen-micro
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36
+go install zeit/brcep
+go build ./cmd/migrations
+go build -o ./bin/admin ./cmd/admin
+go get github.com/mdempsky/gocode
+go install -tags no_pkgconfig -v gopkg.in/gographics/imagick.v3/imagick;     go build -o app;     mv app  /opt/app;
+go build orca/trainer
+go get -tags "v0.12.6" -u -v github.com/gobuffalo/buffalo/buffalo
+go get github.com/klauspost/asmfmt/cmd/asmfmt
+go get github.com/derekparker/delve/cmd/dlv
+go test -i -tags=helm ./test
+go get github.com/labstack/echo/middleware
+go build --mod=vendor --tags="release" ngrok/main/ngrok
+go test -v -cover
+go clean -modcache
+go get -d -v  github.com/go-redis/redis github.com/gorilla/mux gopkg.in/yaml.v2     github.com/thedevsaddam/gojsonq
+go get github.com/gempir/go-twitch-irc
+go build ./cmd/ginvalid
+go get github.com/josharian/impl
+go get -u github.com/gobuffalo/packr/v2/packr2
+go get -u github.com/alecthomas/gometalinter
+go get github.com/wadey/gocovmerge
+go install github.com/aquasecurity/kube-bench@latest
+go get github.com/axw/gocov/gocov github.com/mattn/goveralls github.com/golang/lint/golint
+go get github.com/mattn/go-isatty
+go build     -tags gcc7     -o /bin/temporal-lens     -ldflags "-X main.Version=$LENSVERSION -X main.Edition=$(EDITION)"     ./cmd/temporal-lens
+go get github.com/koron/iferr
+go get github.com/hashicorp/terraform
+go get -v github.com/idoall/gods
+go get github.com/rakyll/hey
+go fmt ./...
+go get -v -t -d ./...
+go get github.com/mattn/goreman
+go build --mod=vendor --tags="release" ngrok/main/ngrokd
+go get github.com/xtaci/kcptun/server
+go get github.com/vektra/mockery/.../
+go get github.com/OJ/gobuster
+go get github.com/terraform-linters/tflint
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/reddotpay/api
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal
+go get github.com/elves/elvish
+go get -ldflags "-X main.VERSION=$(date -u +%Y%m%d) -s -w" github.com/xtaci/kcptun/server
+go vet
+go build -ldflags "-s -w -X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/info
+go build ../cmd/cfssljson
+go get -u github.com/asaskevich/govalidator
+go build -tags netgo -a -v -o gladius-network-gateway -ldflags '-w -extldflags "-static"' -i cmd/main.go
+go build .
+go install github.com/idoall/docker/snowflake/cmd/snowflake
+go get github.com/MauveSoftware/provisionize/cmd/provisionize
+go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs
+go build hello.go
+go build -tags netgo
+go build -v -installsuffix cgo -ldflags '-s -w' -o /app/jsonrpc-gateway cmd/gateway.go
+go build -o /bin/chaoskube -v   -ldflags "-X main.version=$(git describe --tags --always --dirty) -w -s"
+go build -o /build/entry-point gerrit.opencord.org/sadis-server
+go install $GOPATH/src/github.com/scbizu/Astral
+go get -u -v github.com/zmb3/gogetdoc
+go get -u github.com/vbatts/git-validation
+go get -u       github.com/notnil/chessimg       github.com/notnil/chess       github.com/urfave/cli
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gostring ./protoc-gen-gostring
+go mod init
+go run build.go -no-upgrade -version v${PKGVER} build strelaysrv
+go get github.com/erning/gorun
+go build -v -o /mqttlg
+go get github.com/phrazzld/rubberduck
+go get github.com/minio/minio/pkg/madmin
+go get -d -v github.com/gorilla/mux go.mongodb.org/mongo-driver/mongo
+go install;     mv $GOPATH/bin/image-server /opt/app
+go get -u -v github.com/haya14busa/goplay/cmd/goplay
+go build -o app
+go build -o outputs/in in/in.go
+go get github.com/anshumanbh/tko-subs
+go get -u -v github.com/RTradeLtd/RTFS
+go build -a -installsuffix cgo -o goecho .
+go get -d github.com/goreleaser/goreleaser
+go build -o /bin/pipeline-client .
+go get -u golang.org/x/tools/cmd/gopls
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2     github.com/shopspring/decimal     github.com/andelf/go-curl
+go build -o /app/main .
+go get ./web/; CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o server ./web/
+go install github.com/OJ/gobuster@latest
+go get github.com/smartystreets/goconvey
+go install ./cmd/identitycli
+go get github.com/nats-io/nats
+go get github.com/agtorre/gocolorize
+go build -o server
+go get -d -v      github.com/gorilla/mux     gopkg.in/yaml.v2     github.com/thedevsaddam/gojsonq     github.com/yalp/jsonpath
+go get -u github.com/kardianos/govendor
+go install ./protoc-gen-twirp ./protoc-gen-twirp_python
+go get -u github.com/micro/protoc-gen-micro/v2@v2.0.0
+go get github.com/gorilla/handlers
+go build -o app .
+go get -u github.com/Masterminds/glide-report
+go get golang.org/x/crypto/ssh
+go get -v
+go build -v -o shopicano
+go get -d -v . ;  rm -f main.go
+go run $GOPATH/src/github.com/scbizu/wxgo/wx.go
+go build -gcflags="${SKAFFOLD_GO_GCFLAGS}" -o /go/bin/shippingservice .
+go build -o main .
+go build -ldflags '-s -w'
+go get -u github.com/sethgrid/curse
+go build -o /usr/bin/auth_server --ldflags=--s
+go get github.com/fogleman/nes
+go get github.com/003random/getJS
+go install -v github.com/cweill/gotests/gotests@latest
+go build -o $GOPATH/bin/gocv-version ./cmd/version/main.go
+go install     github.com/aws/aws-sdk-go-v2/aws     github.com/aws/aws-sdk-go-v2/config     gvisor.dev/gvisor/pkg/tcpip/adapters/gonet     gvisor.dev/gvisor/pkg/tcpip/stack     golang.org/x/crypto/ssh     golang.org/x/crypto/acme     nhooyr.io/websocket     github.com/mdlayher/netlink
+go install github.com/belak/seabird
+go get -u github.com/jbenet/go-cienv
+go build -o bearpost/backend/main .
+go build -v -installsuffix cgo -ldflags '-s -w' -o /app/ethereum-jsonrpc-gateway main.go
+go get github.com/progrium/viewdocs
+go build -o /usr/local/bin/httptest /usr/local/bin/httptest.go
+go get -u github.com/golang/mock/gomock
+go build -o /bin/lsgooi
+go install -v -ldflags "$(go run buildscripts/gen-ldflags.go)"
+go build -v -o /build/seabird-migrate ./cmd/seabird-migrate
+go get -u github.com/tomnomnom/httprobe; exit 0
+go get -u github.com/stretchr/testify/... github.com/kardianos/govendor github.com/kisielk/errcheck github.com/golang/lint/golint github.com/go-swagger/go-swagger/cmd/swagger github.com/jteeuwen/go-bindata/... golang.org/x/tools/cmd/goimports
+go get -u -v github.com/labstack/echo
+go get -u -v github.com/shadowsocks/go-shadowsocks2
+go get github.com/gin-gonic/gin
+go get -v -u -d github.com/alecthomas/gometalinter
+go get google.golang.org/grpc
+go get -u github.com/koron/iferr
+go get -d github.com/nats-io/stan.go/
+go get "golang.org/x/xerrors"
+go get github.com/micro/services
+go build ./cmd/chisel
+go get -v -u github.com/golang/dep/cmd/dep
+go build -v -installsuffix cgo -ldflags '-s -w' -o /app/main cmd/main.go
+go install -v github.com/fatih/gomodifytags@latest
+go build -mod=vendor -o /go/bin/pickme
+go get github.com/openchirp/oc
+go install github.com/zchrykng/caster
+go install ./cmd/bytomd
+go build -ldflags "-s -w -X main.VERSION=$(git describe --tags)" -o /usr/local/bin/cloud-torrent
+go test $TEST_FLAG -v ./...
+go install wonderapp
+go build -i baliance.com/gooxml/...
+go get -d -v .; go get -u github.com/golang/protobuf/protoc-gen-go; rm -f main.go /tmp/go.tgz;
+go install prpr
+go test -v
+go get -u github.com/dustin/go-humanize
+go get -v -u -d honnef.co/go/tools/cmd/keyify
+go build -o readmore-server main.go
+go generate internal/deb/version.go
+go get         github.com/golang/dep/cmd/dep         github.com/GeertJohan/fgt         github.com/golang/lint/golint         github.com/golang/protobuf/protoc-gen-go         github.com/govau/le-dns-certs/cmd/route53renewer         github.com/govau/sdget         github.com/jteeuwen/go-bindata/...         golang.org/x/tools/cmd/cover
+go build -ldflags "-X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan
+go build -o outputs/check check/check.go
+go get -u -v golang.org/x/tools/cmd/goimports
+go get -v github.com/AsynkronIT/protoactor-go/...
+go get -u   github.com/klauspost/asmfmt/cmd/asmfmt   github.com/derekparker/delve/cmd/dlv   github.com/kisielk/errcheck   github.com/davidrjenni/reftools/cmd/fillstruct   github.com/mdempsky/gocode   github.com/stamblerre/gocode   github.com/rogpeppe/godef   github.com/zmb3/gogetdoc   golang.org/x/tools/cmd/goimports   golang.org/x/lint/golint   github.com/alecthomas/gometalinter    github.com/fatih/gomodifytags   golang.org/x/tools/cmd/gorename   github.com/jstemmer/gotags   golang.org/x/tools/cmd/guru   github.com/josharian/impl   honnef.co/go/tools/cmd/keyify   github.com/fatih/motion   github.com/koron/iferr
+go get github.com/golang/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp
+go get -d
+go get -v github.com/govau/sdget
+go build -o alertmanager-devops-toolkit .
+go build -ldflags '-w -s' -o /gogo-protobuf-out/protoc-gen-gogotypes ./protoc-gen-gogotypes
+go get -u github.com/betterplace/go-init
+go build ./cmd/nuclei
+go get -u github.com/onsi/gomega
+go get -v dockerwall
+go env -w GO111MODULE=off
+go get -u -v github.com/lixiangyun/benchmark
+go build -tags netgo -a -v -o gladius-edged -i cmd/gladius-edged/main.go
+go get -d -u github.com/golang/protobuf/protoc-gen-go
+go get -v github.com/idoall/gocryptotrader
+go build -o $NAME .
+go build -o librebread
+go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint
+go get github.com/govau/sdget
+go get -u github.com/notnil/chessimg github.com/notnil/chess
+go get -u github.com/go-sql-driver/mysql github.com/gorilla/mux
+go build -o /bin/alertmanager-devops-toolkit .
+go build ../cmd/mkbundle
+go install github.com/zchrykng/gocaster/cmd/caster
+go install -ldflags="-s -w"
+go build -o main -trimpath     -ldflags "-X main.version=$(git describe --tags --dirty --always)"
+go get github.com/mattn/go-sqlite3
+go install -ldflags '-w -extldflags "-static"' github.com/sigmonsays/paste/...
+go env -w GOPROXY=https://goproxy.io,direct
+go build contrib/environment-to-ini/environment-to-ini.go
+go install ./protoc-gen-go
+go build -i -o instagraph
+go get github.com/nats-io/gnatsd
+go build -o $GOBIN/gorename golang.org/x/tools/cmd/gorename
+go build -o /go/bin/deckhand
+go get github.com/OWASP/Amass; exit 0
+go get -u github.com/fatih/structs
+go get -u github.com/warpfork/go-wish
+go build cmd/solarium/main.go
+go build -o /out github.com/arbourd/concourse-slack-alert-resource/out
+go get github.com/kataras/iris
+go get -u github.com/mdempsky/gocode
+go get github.com/0daysimpson/gotty
+go get github.com/aloxc/gobanner
+go test ./... -test.v -race -test.coverprofile=atomic .
+go get -u github.com/tomnomnom/assetfinder
+go install golang.org/x/lint/golint@${GOLINT_VERSION}
+go build -o akamai .
+go get -v -d github.com/cbeneke/hcloud-fip-controller
+go get github.com/wata727/tflint
+go install -v ./...
+go build -o /usr/bin/mediasummon
+go get github.com/rakyll/statik
+go get github.com/garyburd/redigo/redis
+go get -v github.com/abiosoft/parent
+go get -u github.com/onsi/ginkgo
+go get golang.org/x/tools/cmd/gorename
+go install -v -ldflags "-s -w" github.com/minio/kes/cmd/kes
+go get -u github.com/gobuffalo/packr/packr/v2
+go install github.com/revel/cmd/revel
+go clean -cache
+go get -v git.torproject.org/pluggable-transports/obfs4.git/obfs4proxy
+go get -u github.com/pvr1/anypay
+go get go.etcd.io/bbolt/...
+go get -u github.com/golang/protobuf/proto
+go build github.com/cbeneke/hcloud-fip-controller
+go install -v github.com/hpcloud/tail/cmd/gotail
+go get github.com/axw/gocov/gocov
+go mod vendor
+go get -u github.com/ngdinhtoan/glide-cleanup
+go get -u -v github.com/josharian/impl
+go build -ldflags "-s -w" main.go
+go get github.com/urfave/negroni
+go get github.com/spf13/hugo
+go generate
+go build -o /go/bin/velero-plugin-for-aws ./velero-plugin-for-aws
+go get github.com/ffuf/ffuf
+go build -a --installsuffix cgo --ldflags="-s" -o /informer
+go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/,https://goproxy.cn,https://goproxy.io,direct
+go get -v github.com/m-lab/prometheus-bigquery-exporter/cmd/bigquery_exporter
+go get github.com/pomerium/pomerium || true
+go get -v -d github.com/minio/mc
+go build -v -o /gm
+go get -u github.com/fatih/motion
+go get github.com/json-iterator/go
+go install -v github.com/linki/chaoskube
+go get golang.org/x/lint/golint     github.com/aws/aws-sdk-go     github.com/aws/aws-dax-go     github.com/antlr/antlr4/runtime/Go/antlr     github.com/aws/aws-lambda-go/lambda     github.com/awslabs/aws-lambda-go-api-proxy/handlerfunc     github.com/aws/aws-xray-sdk-go/...     github.com/stretchr/testify     github.com/gusaul/go-dynamock     go.uber.org/zap     github.com/satori/go.uuid     github.com/asaskevich/govalidator     github.com/gomodule/redigo/redis     github.com/rafaeljusto/redigomock     github.com/hubcash/cards     github.com/newrelic/go-agent     github.com/reddotpay/awskms     github.com/reddotpay/redis     github.com/reddotpay/logger     github.com/reddotpay/api     github.com/reddotpay/retry     github.com/reddotpay/currency     github.com/reddotpay/metrics     github.com/gorilla/schema     github.com/pariz/gountries     golang.org/x/net/context/ctxhttp     github.com/hashicorp/go-retryablehttp     github.com/gianebao/n36     golang.org/x/oauth2/clientcredentials     github.com/jinzhu/copier     github.com/google/go-querystring/query     golang.org/x/text/encoding     golang.org/x/text/encoding/charmap     golang.org/x/text/encoding/htmlindex     golang.org/x/text/transform     gopkg.in/go-playground/validator.v9     gopkg.in/square/go-jose.v2
+go get github.com/stamblerre/gocode
+go get -v -d ./...
+go build -o $GOBIN/gocode github.com/mdempsky/gocode
+go build -ldflags "-static --strip-all -X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan
+go get -u github.com/haccer/subjack
+go build -o ghrc
+go get -u github.com/eclipse/paho.mqtt.golang
+go get -v github.com/m-lab/pusher
+go install -v github.com/uudashr/gopkgs/cmd/gopkgs@v2
+go install -v -ldflags '-s -w' --tags extended
+go get github.com/go-chi/docgen
+go build -o /usr/local/bin/get-ssl
+go get golang.org/x/crypto/ssh/terminal
+go get -v github.com/micro/micro
+go build -o /usr/bin/ghbackup github.com/qvl/ghbackup
+go build -a -installsuffix cgo -o swagger .
+go get -v github.com/googlecloudplatform/gcsfuse
+go build ./cmd/...
+go get -tags "v0.13.7" -u -v github.com/gobuffalo/buffalo/buffalo
+go get ./...
+go install github.com/elves/elvish
+go build -o /bin/app
+go get -d -v k8s.io/client-go/...
+go get github.com/petrpulc/gdrive
+go install github.com/chrismellard/docker-credential-acr-env
+go build     -o miniflux     -ldflags="-s -w -X 'miniflux.app/version.Version=`git describe --tags --abbrev=0`' -X 'miniflux.app/version.Commit=`git rev-parse --short HEAD`' -X 'miniflux.app/version.BuildDate=`date +%FT%T%z`'"     main.go
+go get -v github.com/uber/jaeger-client-go
+go build -v -ldflags "-s -w" -o /frpc ./cmd/frpc
+go get -u github.com/go-chi/render
+go build adminio-api/src/main.go
+go get github.com/ahmetb/govvv
+go install -v github.com/onsi/ginkgo/v2/ginkgo@v${GINKGO_VERSION}
+go get github.com/subfinder/subfinder
+go install -v std
+go get github.com/zchrykng/caster
+go get -u github.com/1ndianl33t/urlprobe
+go build -mod=vendor -o /go/bin/irma_bot
+go get github.com/anacrolix/envpprof
+go run make.go -v -arch=$goarch -arm=5
+go build -o /go/src/akamai-ip-range/akamai2aws /go/src/akamai-ip-range/app.go
+go run main.go --version
+go run build.go -no-upgrade build syncthing
+go get -d -v . ;  rm -f main.go /tmp/go.tgz
+go test --parallel=1 ./...
+go get github.com/davidrjenni/reftools/cmd/fillstruct
+go build  -o /go/bin/czds-dl cmd/czds-dl.go
+go build -ldflags "-s -w -X main.Version=v$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/info
+go get github.com/hakluke/hakcheckurl
+go install -ldflags '-w -s' -tags netgo -v ${GOSS2}
+go build -ldflags "-s -w -X main.Version=v$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan
+go get github.com/tomnomnom/hacks/kxss
+go get github.com/mholt/caddy
+go get github.com/rogpeppe/godef
+go get -d -v github.com/shadowsocks/v2ray-plugin
+go build -ldflags "-s -w -X main.Version=$(cat VERSION) -X main.BuildTime=$(date -u +%Y%m%d)" -o /bin/avscan
+go get github.com/acroca/go-symbols@v0.1.1
+go install -v github.com/attic-labs/noms/cmd/noms
+go build -o /go/bin/server
+go get -u github.com/zmb3/gogetdoc
+go get github.com/micro/micro
+go build -o $GOBIN/asmfmt github.com/klauspost/asmfmt/cmd/asmfmt
+go build -v -o outputs/out out/out.go
+go install ./cmd/prototool
+go get github.com/tools/godep
+go vet .
+go build -o /go/bin/user admin/user.go
+go build rotate.go
+go install github.com/timescale/timescaledb-tune/cmd/timescaledb-tune@latest
+go install github.com/bonde-redirect
+go get -u github.com/gopherdata/gophernotes
+go run cmd/download_ui/download_ui.go
+go test -v github.com/hpcloud/tail
+go get -u -v github.com/stamblerre/gocode
+go build
+go get github.com/justjanne/powerline-go
+go get -u -v -d github.com/cbeneke/hcloud-fip-controller
+go build -a -o ${GOPATH}/bin/prism -ldflags="-s -w -h -X main.Version=${PRISM_VERSION}"
+go get github.com/go-chi/chi
+go build -o /bin/temporal-lens     ./cmd/temporal-lens
+go get -v -u -d github.com/kisielk/errcheck
+go get github.com/tomnomnom/waybackurls
+go build -o $GOBIN/gometalinter github.com/alecthomas/gometalinter
+go get -u -v github.com/fatih/motion
+go install -race -tags netgo std
+go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs@v2
+go get github.com/Sirupsen/logrus
+go build -o /bin/go-microservice
+go get github.com/pusher/oauth2_proxy || true
+go install $APP
+go get github.com/G-Node/gin-core/gin
+go build -o $GOBIN/gogetdoc github.com/zmb3/gogetdoc
+go build -o /tmp/anchore-image-validator ./cmd
+go install -ldflags="-s -w -X main.version=${VERSION} -X main.commit=${COMMIT} -X main.date=${DATE}"
+go get -tags netgo 		github.com/fzipp/gocyclo 		golang.org/x/lint/golint 		github.com/kisielk/errcheck 		github.com/client9/misspell/cmd/misspell
+go get github.com/nats-io/gnatsd;     go get github.com/nats-io/go-nats
+go get github.com/alash3al/redix
+go get -u github.com/jaeles-project/gospider
+go install -v github.com/ramya-rao-a/go-outline@latest
+go get github.com/lc/otxurls
+go install -v ./cmd/...
+go get github.com/go-chi/render
+go build -ldflags "-X main.Version=`git rev-parse --short HEAD`" -o /pagespeed_exporter pagespeed_exporter.go
+go build -trimpath -ldflags="-s -w" -o /out/sleep ./cmd/sleep
+go get -d -v github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+go get github.com/kellegous/go || true
+go build -o $GOBIN/golint golang.org/x/lint/golint
+go vet $PROJECT_PATH/local
+go install -v github.com/go-delve/delve/cmd/dlv@latest
+go get -d ./...
+go test -v ./chaoskube ./util
+go get github.com/andreimarcu/linx-server
+go get github.com/tmrts/boilr
+go build -mod vendor -o target/nebula-importer
+go get -u github.com/lucas-clemente/quic-clients
+go get -v github.com/golang/protobuf/proto
+go get -v -u -d github.com/koron/iferr
+go build -o egtsreceiver ./cmd/egtsreceiver
+go get -u github.com/nsf/gocode
+go get -tags "v0.13.6" -u -v github.com/gobuffalo/buffalo/buffalo
+go get -d -v github.com/czerwonk/bioject/cmd/bioject
+go build -a -o cloudreve -ldflags " -X 'github.com/HFO4/cloudreve/pkg/conf.BackendVersion=$CLOUDREVE_VERSION' -X 'github.com/HFO4/cloudreve/pkg/conf.LastCommit=$COMMIT_SHA'"
+go get -v -u -d golang.org/x/tools/cmd/guru
+go get github.com/hakluke/hakrevdns
+go get -u golang.org/x/tools/cmd/guru
+go get -v github.com/idoall/TokenExchangeCommon
+go build -o xlog -installsuffix cgo ./cmd/xlog
+go build -v -o /xray -trimpath -ldflags "$LDFLAGS" ./main
+go get github.com/gosuri/uiprogress
+go get -v -u -d golang.org/x/tools/cmd/gopls
+go build -o /lg
+go get github.com/githubnemo/CompileDaemon
+go test -v check/check_test.go
+go install -v
+go build -o giflichess
+go install Astral
+go get -u sigs.k8s.io/kind
+go test -v models_test.go
+go get     -v     -ldflags "-X github.com/m-lab/go/prometheusx.GitShortCommit=$(git log -1 --format=%h)"     github.com/m-lab/reboot-service
+go get -d github.com/nats-io/nats.go/
+go build -o sops ./cmd/sops
+go mod edit -require github.com/caddyserver/caddy@v${CADDY_VERSION}
+go build -o /go/bin/ofelia .
+go get -u github.com/openSUSE/portusctl
+go get github.com/neubot/dash/cmd/dash-client
+go get github.com/xtaci/kcptun/client
+go get -v -u github.com/alecthomas/gometalinter
+go build -v -o /build/seabird ./cmd/seabird
+go build -o backend/main .
+go get -u github.com/lc/gau
+go vet ./...
+go build -ldflags="-s -w"
+go install github.com/esrrhs/pingtunnel

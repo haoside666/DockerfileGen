@@ -1,0 +1,8 @@
+{
+    "filename": "open-unmix-pytorch###4318fb278e1863f4cf8556b513987faf14a15832.txt",
+    "command_length": 7,
+    "processing_time": 0.0028285980224609375,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'pip'}\"]"
+}

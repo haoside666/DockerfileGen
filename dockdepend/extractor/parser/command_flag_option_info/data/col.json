@@ -1,0 +1,39 @@
+{
+    "flag": [
+        [
+            "-b",
+            "--no-backspaces"
+        ],
+        [
+            "-f",
+            "--fine"
+        ],
+        [
+            "-h",
+            "--tabs"
+        ],
+        [
+            "-p",
+            "--pass"
+        ],
+        [
+            "-x",
+            "--spaces"
+        ],
+        [
+            "-V",
+            "--version"
+        ],
+        [
+            "-H",
+            "--help"
+        ]
+    ],
+    "option": [
+        [
+            "-l",
+            "--lines",
+            "num"
+        ]
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "filename": "virtualagc###a09b085e1a1d3988c7db17c9ed6e6269373bfff3.txt",
+    "command_length": 6,
+    "processing_time": 0.0019316673278808594,
+    "dependency_count": 10,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (2, 4), (2, 5), (3, 4), (3, 5), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'have shell io intersection,because common path /virtualagc', 'have shell io intersection,because common path /virtualagc', 'exist file or directory dependency,because common path /virtualagc', 'exist file or directory dependency,because common path /virtualagc', \"have shell pkg intersection,because exist intersection {'make'}\"]"
+}

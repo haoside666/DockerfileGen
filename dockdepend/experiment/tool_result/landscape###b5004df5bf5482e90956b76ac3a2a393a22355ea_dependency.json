@@ -1,0 +1,37 @@
+[
+    {
+        "before_instruct": "FROM node:16",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16",
+        "after_instruct": "EXPOSE 8001",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16",
+        "after_instruct": "CMD node server.js",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY . .",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    }
+]

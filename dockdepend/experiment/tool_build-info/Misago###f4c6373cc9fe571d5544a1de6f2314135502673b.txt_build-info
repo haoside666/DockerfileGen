@@ -1,0 +1,8 @@
+{
+    "filename": "Misago###f4c6373cc9fe571d5544a1de6f2314135502673b.txt",
+    "command_length": 13,
+    "processing_time": 0.003086090087890625,
+    "dependency_count": 16,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (5, 10), (6, 9), (8, 9), (8, 10)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /app/dev', 'exist file or directory dependency,because common path /app/requirements.txt', 'exist file or directory dependency,because RUN instruct use /app/', 'exist file or directory dependency,because RUN instruct use /app/']"
+}

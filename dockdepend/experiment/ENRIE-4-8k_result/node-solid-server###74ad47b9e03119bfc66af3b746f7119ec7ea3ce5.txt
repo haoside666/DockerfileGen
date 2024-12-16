@@ -1,0 +1,14 @@
+```
+[(0, 1),  # RUN mkdir -p /usr/src/app 依赖于 FROM node:lts
+ (1, 2),  # WORKDIR /usr/src/app 依赖于 RUN mkdir -p /usr/src/app
+ (2, 3),  # COPY package.json /usr/src/app/ 依赖于 WORKDIR /usr/src/app
+ (2, 4),  # COPY package-lock.json /usr/src/app/ 依赖于 WORKDIR /usr/src/app
+ (3, 5),  # RUN npm install 依赖于 COPY package.json /usr/src/app/
+ (4, 5),  # RUN npm install 也依赖于 COPY package-lock.json /usr/src/app/
+ (2, 6),  # COPY . /usr/src/app 依赖于 WORKDIR /usr/src/app
+ (5, 7),  # EXPOSE 8443 依赖于 RUN npm install
+ (2, 8),  # COPY config.json-default config.json 依赖于 WORKDIR /usr/src/app
+ (8, 9),  # RUN openssl req ... 依赖于 COPY config.json-default config.json
+ (5, 10), # CMD npm run solid start 依赖于 RUN npm install
+ ]
+```

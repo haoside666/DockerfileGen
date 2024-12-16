@@ -1,0 +1,13 @@
+```
+[(0, 1),  # LABEL依赖于FROM，因为需要知道基础镜像
+ (0, 2),  # RUN apk add依赖于FROM，因为要安装到基础镜像上
+ (0, 3),  # COPY package.json依赖于FROM，因为要复制到镜像的某个位置
+ (3, 4),  # RUN cd /www; npm install依赖于COPY package.json，因为需要先有package.json文件
+ (0, 5),  # COPY .依赖于FROM，表示复制当前上下文到镜像的某个位置
+ (4, 6),  # WORKDIR /www依赖于RUN cd /www; npm install，因为工作目录通常在安装完应用后设置
+ (5, 6),  # WORKDIR /www也依赖于COPY .，因为可能在复制的文件中需要用到这个工作目录
+ (6, 7),  # ENV PORT依赖于WORKDIR，因为环境变量可能与应用的工作目录有关
+ (6, 8),  # EXPOSE依赖于WORKDIR，因为开放端口通常是基于应用的工作目录和配置
+ (7, 9),  # CMD依赖于ENV PORT，因为启动命令可能使用了定义的环境变量
+ (8, 9)]  # CMD也依赖于EXPOSE，因为启动命令通常与开放的端口有关
+```

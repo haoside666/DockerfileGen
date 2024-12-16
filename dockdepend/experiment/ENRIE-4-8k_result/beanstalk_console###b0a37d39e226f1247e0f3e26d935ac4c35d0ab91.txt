@@ -1,0 +1,15 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (0, 2),  # ENV依赖于FROM
+ (0, 3),  # RUN apt-get update依赖于FROM
+ (3, 4),  # RUN apt-get -y upgrade依赖于RUN apt-get update
+ (4, 5),  # RUN docker-php-ext-install依赖于RUN apt-get -y upgrade
+ (0, 6),  # ADD apache_vhost依赖于FROM
+ (0, 7),  # ADD php.ini依赖于FROM
+ (0, 8),  # ADD docker-entrypoint.sh依赖于FROM
+ (8, 9),  # RUN chmod +x依赖于ADD docker-entrypoint.sh
+ (0, 10), # CMD依赖于FROM
+ (2, 11), # WORKDIR依赖于ENV设置的APACHE_DOCROOT变量
+ (11, 12) # ADD .依赖于WORKDIR设置的工作目录
+]
+```

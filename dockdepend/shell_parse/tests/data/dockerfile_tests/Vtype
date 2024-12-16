@@ -1,0 +1,22 @@
+#"Normal": "",
+#"Minus": "-",
+#"Plus": "+",
+#"Question": "?",
+#"Assign": "=",
+#"TrimR": "%",
+#"TrimRMax": "%%",
+#"TrimL": "#",
+#"TrimLMax": "##",
+#"Length": "#"
+
+aaa=$1
+aaa=${parameter:-word}
+aaa=${parameter:+word}
+aaa=${parameter:?word}
+aaa=${parameter:=word}
+
+aaa=${str%aa*}
+aaa=${str%%aa*}
+aaa=${str#*aaa}
+aaa=${str##*aaa}
+aaa=${#arr}

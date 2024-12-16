@@ -1,0 +1,21 @@
+ARG LIME_VERSION=latest
+FROM openfl/lime:${LIME_VERSION}
+COPY . /opt/openfl/
+COPY assets/templates/bin/openfl.sh /usr/local/bin/openfl
+RUN haxelib dev openfl /opt/openfl/
+RUN openfl rebuild tools
+CMD [ "openfl" ]
+
+[
+	(0, 1),	# environment variable dependencies
+	(1, 2),	# Image dependency
+	(1, 3),	# Image dependency
+	(1, 4),	# Image dependency
+	(1, 5),	# Image dependency
+	(1, 6),	# Image dependency
+	(2, 4),	# 文件依赖
+    (3, 5),	# 文件依赖
+]
+
+
+所用时间：22.67

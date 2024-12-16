@@ -1,0 +1,170 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get install -y libpq-dev",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get install -y python3-dev",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get clean",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN python3 -m pip install --upgrade pip",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN python3 -m pip install --upgrade pillow",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "WORKDIR /saythanks",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "COPY ./requirements.txt .",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN python3 -m pip install -r requirements.txt",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "EXPOSE 5000",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "CMD python3 t.py",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y libpq-dev",
+        "edge": "(1, 2)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3-dev",
+        "edge": "(1, 3)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(1, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get clean",
+        "edge": "(1, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y libpq-dev",
+        "after_instruct": "RUN apt-get install -y python3-dev",
+        "edge": "(2, 3)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y libpq-dev",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(2, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-dev",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(3, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "WORKDIR /saythanks",
+        "after_instruct": "COPY ./requirements.txt .",
+        "edge": "(8, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /saythanks",
+        "after_instruct": "RUN python3 -m pip install -r requirements.txt",
+        "edge": "(8, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /saythanks"
+    },
+    {
+        "before_instruct": "WORKDIR /saythanks",
+        "after_instruct": "COPY . .",
+        "edge": "(8, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY ./requirements.txt .",
+        "after_instruct": "RUN python3 -m pip install -r requirements.txt",
+        "edge": "(9, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /saythanks"
+    }
+]

@@ -1,0 +1,8 @@
+{
+    "filename": "filepizza###e4fb3431fb5f3b3e5593e44df3837017ffc10f86.txt",
+    "command_length": 7,
+    "processing_time": 0.0011768341064453125,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (2, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /']"
+}

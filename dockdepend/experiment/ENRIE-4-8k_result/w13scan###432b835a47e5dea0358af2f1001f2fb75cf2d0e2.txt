@@ -1,0 +1,9 @@
+```
+[(0, 1),  # 第二个RUN指令依赖于FROM指令，用于设置基础镜像
+ (1, 2),  # 第三个RUN指令依赖于第二个RUN指令，用于更新apk仓库并安装软件包
+ (2, 3),  # ADD requirements.txt指令依赖于第三个RUN指令，用于添加文件到镜像
+ (3, 4),  # 第四个RUN指令依赖于ADD requirements.txt指令，用于安装Python依赖
+ (4, 5),  # ADD .指令依赖于第四个RUN指令，用于添加当前目录到镜像
+ (5, 6),  # WORKDIR指令依赖于ADD .指令，用于设置工作目录
+ (6, 7)]  # ENTRYPOINT指令依赖于WORKDIR指令，用于设置容器入口点
+```

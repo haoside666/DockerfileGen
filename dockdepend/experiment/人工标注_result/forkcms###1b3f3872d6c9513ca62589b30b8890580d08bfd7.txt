@@ -1,0 +1,67 @@
+FROM php:7.4-apache
+LABEL maintainer="Fork CMS <info@fork-cms.com>"
+RUN a2enmod rewrite
+RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades libfreetype6-dev libjpeg62-turbo-dev libonig-dev libz-dev zlib1g-dev libpng-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd && rm -rf /var/lib/apt/lists/*
+RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install mbstring
+RUN apt-get update && apt-get install -y libzip-dev unzip && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends g++ libicu-dev zlib1g-dev && docker-php-ext-configure intl && docker-php-ext-install intl && rm -rf /var/lib/apt/lists/*
+COPY var/docker/php/php.ini ${PHP_INI_DIR}/php.ini
+RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug && rm -rf /tmp/pear
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+WORKDIR /var/www/html
+COPY composer.json ./
+COPY composer.lock ./
+RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache
+COPY . /var/www/html
+RUN composer dump-autoload --optimize --classmap-authoritative --no-dev
+RUN chown -R www-data:www-data /var/www/html
+EXPOSE 80 443
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(0, 17),	# Image dependency
+	(0, 18),	# Image dependency
+    (2, 4),	# docker-php-ext-install依赖于rewrite模块
+    (2, 5),	# docker-php-ext-install依赖于rewrite模块
+    (2, 6),	# docker-php-ext-install依赖于rewrite模块
+    (2, 9),	# docker-php-ext-install依赖于rewrite模块
+	(4, 10),	# php依赖
+	(5, 10),	# php依赖
+	(6, 10),	# php依赖
+	(8, 10),	# 文件依赖
+    (9, 10),	# php依赖
+	(11, 12),	# WORKDIR目录依赖
+	(11, 13),	# WORKDIR目录依赖
+	(11, 14),	# WORKDIR目录依赖
+	(11, 15),	# WORKDIR目录依赖
+	(11, 16),	# WORKDIR目录依赖
+	(11, 17),	# WORKDIR目录依赖
+	(12, 14),	# 文件依赖
+	(12, 16),	# 文件依赖
+	(12, 17),	# 文件依赖
+	(13, 14),	# 文件依赖
+	(13, 16),	# 文件依赖
+	(13, 17),	# 文件依赖
+	(14, 16),	# composer顺序依赖
+	(15, 16),	# 文件依赖
+	(15, 17),	# 目录依赖
+]
+
+所用时间：460.42

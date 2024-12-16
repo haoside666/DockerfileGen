@@ -1,0 +1,28 @@
+-a
+-c <path>|<file>
+-n
+-d foo[=bar]
+-e
+-f <file>
+-h
+-i
+-l
+-m
+-r <code>
+-B <begin_code>
+-R <code>
+-F <file>
+-E <end_code>
+-H
+-S <addr>:<port>
+-t <docroot>
+-s
+-v
+-w
+-z <file>
+--ini
+--rf <name>
+--rc <name>
+--re <name>
+--rz <name>
+--ri <name>

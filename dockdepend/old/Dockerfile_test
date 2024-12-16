@@ -1,0 +1,11 @@
+FROM alpine
+COPY . /app
+COPY etc/lighttpd/* /etc/lighttpd/
+WORKDIR /app
+VOLUME /app/project
+RUN apk add --update --no-cache nodejs npm git curl lighttpd lighttpd-mod_auth
+RUN rm -rf /var/cache/apk/*
+RUN npm i -g npm@latest
+RUN npm i -g ionic cordova
+EXPOSE 80 8100 35729
+CMD ["sh", "start.sh"]

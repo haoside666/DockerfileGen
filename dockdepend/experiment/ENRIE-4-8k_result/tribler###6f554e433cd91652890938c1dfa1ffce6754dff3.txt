@@ -1,0 +1,16 @@
+```
+[(0, 1),  # RUN apt update依赖于FROM triblercore/libtorrent基础镜像
+ (1, 2),  # RUN apt install依赖于RUN apt update更新软件包列表
+ (1, 3),  # RUN useradd依赖于RUN apt update（确保系统更新后再添加用户）
+ (2, 4),  # USER user依赖于RUN apt install（确保安装了必要的软件包后再切换用户）
+ (3, 5),  # WORKDIR /home/user依赖于RUN useradd（确保用户已创建）
+ (4, 6),  # RUN mkdir requirements依赖于USER user（以特定用户身份执行）
+ (5, 7),  # COPY ./requirements-core.txt依赖于WORKDIR /home/user（设置工作目录）
+ (6, 8),  # RUN pip3 install依赖于RUN mkdir requirements（确保目录存在）
+ (7, 8),  # RUN pip3 install同时依赖于COPY ./requirements-core.txt（确保文件已复制）
+ (5, 9),  # COPY ./tribler依赖于WORKDIR /home/user（在特定目录下复制文件）
+ (8, 10), # WORKDIR /home/user/tribler依赖于RUN pip3 install（安装完依赖后切换工作目录）
+ (10, 11), # ENV CORE_API_PORT=20100依赖于WORKDIR（设置环境变量前确保工作目录正确）
+ (11, 12), # EXPOSE 20100依赖于ENV CORE_API_PORT（暴露的端口基于环境变量）
+ (12, 13)] # CMD ["./src/tribler.sh", "--core"]依赖于EXPOSE（确保端口已暴露后执行命令）
+```

@@ -1,0 +1,7 @@
+{ ls ; echo foo ; }>/dev/null
+
+mv /tmp/foo /tmp/bar &
+
+(echo -e "\t")
+
+! grep "pattern" file.txt

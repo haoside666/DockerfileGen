@@ -1,0 +1,114 @@
+[
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "MAINTAINER orvice<orvice@orx.me>",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "ENV SSPANEL_VERSION=4.0.0",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "WORKDIR /var/www/html",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "COPY . /var/www/html",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/local/bin --filename composer",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "RUN cd /var/www/html && composer install --no-scripts",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "COPY docker-entrypoint.sh /entrypoint.sh",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "RUN chmod -R 777 storage",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "EXPOSE 80",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "ENTRYPOINT /entrypoint.sh",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM orvice/apache-base",
+        "after_instruct": "CMD apache2-foreground",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "COPY . /var/www/html",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "RUN cd /var/www/html && composer install --no-scripts",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /var/www/html"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "RUN chmod -R 777 storage",
+        "edge": "(3, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /var/www/html"
+    },
+    {
+        "before_instruct": "COPY . /var/www/html",
+        "after_instruct": "RUN cd /var/www/html && composer install --no-scripts",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY . /var/www/html",
+        "after_instruct": "RUN chmod -R 777 storage",
+        "edge": "(4, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    }
+]

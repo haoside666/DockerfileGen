@@ -1,0 +1,39 @@
+-am,--also-make
+-amd,--also-make-dependents
+-B,--batch-mode
+-b,--builder <arg>
+-C,--strict-checksums
+-c,--lax-checksums
+--color <arg>
+-cpu,--check-plugin-updates
+-D,--define <arg>
+-e,--errors
+-emp,--encrypt-master-password <arg>
+-ep,--encrypt-password <arg>
+-f,--file <arg>
+-fae,--fail-at-end
+-ff,--fail-fast
+-fn,--fail-never
+-gs,--global-settings <arg>
+-gt,--global-toolchains <arg>
+-h,--help
+-l,--log-file <arg>
+-llr,--legacy-local-repository
+-N,--non-recursive
+-npr,--no-plugin-registry
+-npu,--no-plugin-updates
+-nsu,--no-snapshot-updates
+-ntp,--no-transfer-progress
+-o,--offline
+-P,--activate-profiles<arg>
+-pl,--projects <arg>
+-q,--quiet
+-rf,--resume-from <arg>
+-s,--settings <arg>
+-t,--toolchains <arg>
+-T,--threads <arg>
+-U,--update-snapshots
+-up,--update-plugins
+-v,--version
+-V,--show-version
+-X,--debug

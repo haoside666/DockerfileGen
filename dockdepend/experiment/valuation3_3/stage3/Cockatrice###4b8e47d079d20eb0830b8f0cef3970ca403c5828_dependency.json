@@ -1,0 +1,114 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "MAINTAINER Zach Halpern <zahalpern+github@gmail.com>",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "RUN apt-get update && apt-get install -y build-essential cmake git libprotobuf-dev libqt5sql5-mysql libmysqlclient-dev libqt5websockets5-dev protobuf-compiler qt5-default qtbase5-dev qttools5-dev-tools qttools5-dev",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "COPY . /home/servatrice/code/",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "WORKDIR /home/servatrice/code",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "WORKDIR /home/servatrice/code/build",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "WORKDIR /home/servatrice",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "EXPOSE 4747",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:bionic",
+        "after_instruct": "ENTRYPOINT servatrice --log-to-console",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y build-essential cmake git libprotobuf-dev libqt5sql5-mysql libmysqlclient-dev libqt5websockets5-dev protobuf-compiler qt5-default qtbase5-dev qttools5-dev-tools qttools5-dev",
+        "after_instruct": "WORKDIR /home/servatrice/code/build",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y build-essential cmake git libprotobuf-dev libqt5sql5-mysql libmysqlclient-dev libqt5websockets5-dev protobuf-compiler qt5-default qtbase5-dev qttools5-dev-tools qttools5-dev",
+        "after_instruct": "RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install",
+        "edge": "(2, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'cmake'}"
+    },
+    {
+        "before_instruct": "COPY . /home/servatrice/code/",
+        "after_instruct": "WORKDIR /home/servatrice/code/build",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY . /home/servatrice/code/",
+        "after_instruct": "RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /home/servatrice/code"
+    },
+    {
+        "before_instruct": "WORKDIR /home/servatrice/code/build",
+        "after_instruct": "RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /"
+    },
+    {
+        "before_instruct": "RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install",
+        "after_instruct": "WORKDIR /home/servatrice",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /home/servatrice"
+    },
+    {
+        "before_instruct": "WORKDIR /home/servatrice/code",
+        "after_instruct": "WORKDIR /home/servatrice",
+        "edge": "(4, 7)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    }
+]

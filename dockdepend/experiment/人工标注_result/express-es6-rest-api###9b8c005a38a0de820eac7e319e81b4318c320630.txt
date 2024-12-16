@@ -1,0 +1,25 @@
+FROM alpine:3.4
+LABEL authors="Zouhir Chahoud <zouhir@zouhir.org>"
+RUN apk add --update nodejs bash git
+COPY package.json /www/package.json
+RUN cd /www; npm install
+COPY . /www
+WORKDIR /www
+ENV PORT 8080
+EXPOSE  8080
+CMD ["npm", "start"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(3, 4),	# 文件依赖
+]
+
+所用时间：28.04

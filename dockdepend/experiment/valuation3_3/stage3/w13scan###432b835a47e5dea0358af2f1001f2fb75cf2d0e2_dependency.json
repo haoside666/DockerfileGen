@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "RUN apk update && apk --no-cache add git build-base libffi-dev libxml2-dev libxslt-dev libressl-dev gcc",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "ADD requirements.txt /requirements.txt",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "RUN pip install -r /requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "ADD . /w13scan/",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "WORKDIR /w13scan/W13SCAN",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.5-alpine",
+        "after_instruct": "ENTRYPOINT /bin/ash",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories",
+        "after_instruct": "RUN apk update && apk --no-cache add git build-base libffi-dev libxml2-dev libxslt-dev libressl-dev gcc",
+        "edge": "(1, 2)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "ADD requirements.txt /requirements.txt",
+        "after_instruct": "RUN pip install -r /requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /requirements.txt"
+    },
+    {
+        "before_instruct": "ADD requirements.txt /requirements.txt",
+        "after_instruct": "WORKDIR /w13scan/W13SCAN",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "ADD . /w13scan/",
+        "after_instruct": "WORKDIR /w13scan/W13SCAN",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    }
+]

@@ -1,0 +1,744 @@
+adduser -u 1000 -S bitlbee
+adduser -D tftp
+adduser --system --quiet jenkins --firstuid 2000
+adduser --system --uid 1883 --group mosquitto
+adduser -S george -G george; export FLASK_ENV=production apk add --no-cache bash
+adduser --home /nukkit --disabled-password --gecos '' nukkit
+adduser -S ocaml -G ocaml -u 1000 -D
+adduser -S -D -G docker-bench -h /opt/docker-bench-security docker-bench
+adduser node node
+adduser -D -g '' elf
+adduser nodejs
+adduser -S -D -H -s /bin/false -g "${USER} service"            -u ${UID} -G ${GROUP} ${USER}
+adduser -S -D -G wgui wgui
+adduser -u 500 -h /var/lib/go-agent -H -S -G go -G docker go
+adduser -D user -u ${TIME_UID}
+adduser -S jottauser -G jottagroup
+adduser -u 1021 -D -S -h /usr/lib/openldap -s /sbin/nologin -g 'OpenLDAP User' -G ldap ldap
+adduser --shell /bin/bash --home /var/lib/go-server --no-create-home --uid 500 -g go go
+adduser -S -D -h /app -u 1001 -G app app
+adduser -u 32769 -m -U dokku
+adduser -S rrshare -G rrshare -D -H
+adduser -DH couchpotato
+adduser pking sudo
+adduser e2user sudo
+adduser --uid 911 --system --disabled-password --ingroup xs --home /config --shell /bin/false xs
+adduser --disabled-password         --gecos '' $USER
+adduser -D -g bench bench
+adduser -S redis-commander
+adduser -S -D -H -h /opt/logstash -s /sbin/nologin -G logstash                 -g 'Logstash User' logstash
+adduser -s /bin/false -D -H -G git -u $UID git
+adduser -u ${PUID} -G syncserver -h /data -s /bin/sh -D syncserver
+adduser -S -G sshuser sshuser
+adduser --disabled-password --gecos '' node-dev
+adduser --disabled-password --gecos "" ${user}
+adduser -S -D -u 1000 -g 1000 -s /sbin/nologin qbittorrent
+adduser -s /bin/false -D -H -G syncthing -u $UID syncthing
+adduser -D anyone
+adduser -D -u $EUID ng-user
+adduser -D learnflask
+adduser --uid 1000 --system ${PIVX_USER}
+adduser -S bender -G bender
+adduser -u 500 -h /var/lib/go-server -H -S -G go go
+adduser -DHG users syncthing
+adduser -D packager
+adduser -D -S -h /pgadmin -s /sbin/nologin -u 1000 -G pgadmin pgadmin
+adduser -S -G helm-exporter helm-exporter
+adduser brooklyn sudo
+adduser -S -G "${ELASTALERT_SYSTEM_GROUP}" "${ELASTALERT_SYSTEM_USER}"
+adduser --home /home/example --shell /bin/bash --disabled-password --gecos "" example
+adduser -gid 1000 -uid 1000 cerebro
+adduser tgproxy -u 10000 -D
+adduser -D -u 1000 mailhog
+adduser --disabled-password --gecos '' theia
+adduser -D nginx
+adduser -s /bin/false -SDH -G tor tor
+adduser -S -H -s /usr/sbin/nologin -u ${NETDATA_GID} -h /etc/netdata -G "${DOCKER_GRP}" "${DOCKER_USR}"
+adduser --disabled-password --gecos '' --home /minecraft --shell /bin/bash minecraft
+adduser root -h /root -u 0
+adduser --system --home /liquibase --disabled-password --group liquibase
+adduser -D -s /bin/bash mintel
+adduser -S restic
+adduser -h /var/airsonic -D -u 504 -g airsonic -G airsonic -s /sbin/nologin airsonic
+adduser -h /tmp -s /sbin/nologin -S -D -H shadowsocks
+adduser -u 1004 -S bob -G appgroup
+adduser     --disabled-password     --gecos ""     --home "/nonexistent"     --shell "/sbin/nologin"     --no-create-home     --uid "${UID}"     "${USER}"
+adduser --disabled-password         --gecos ''         --ingroup app         --home /app         --uid 10001         app
+adduser -u 82 -D -S -h /var/cache/nginx -s -G nginx nginx
+adduser --system --home /odoo --quiet --group odoo
+adduser -D -G laradock -u ${PUID} laradock
+adduser --disabled-password --gecos "" ${HUBOT_USER}
+adduser -D anchore-image-validator
+adduser -D -s /bin/bash golang
+adduser -D -g "" -s /bin/sh -G go-dnsmasq go-dnsmasq
+adduser 	--disabled-login 	--shell /bin/bash 	--gecos "" 	steam
+adduser --system --no-create-home --home "${NEO4J_HOME}" --ingroup neo4j neo4j
+adduser --gecos '&' --shell /bin/bash --ingroup elasticsearch --system elasticsearch
+adduser -u $UID -S updater -G iomirea
+adduser homo sudo
+adduser -S -u $EGO_UI_UID $EGO_UI_USER
+adduser  -u 1023 -D -H -k /sbin/nologin http
+adduser --system --uid 1001 digabi
+adduser ambassador -u 8888 -G root -D -H -s /bin/false
+adduser     -S -H -D     -h /data/git     -s /bin/bash     -u 1001     -G git     git
+adduser cameraevents sudo
+adduser -S -D -u 8062 -H sockd
+adduser -S -g app app
+adduser --disabled-password ansible
+adduser -S -u 1883 -D -H -h /var/empty -s /sbin/nologin -G mosquitto -g mosquitto mosquitto 2>/dev/null
+adduser --home /home/docker --ingroup staff --shell /bin/bash --disabled-password --gecos ,,,, docker
+adduser -D -H -h /opt/elasticsearch -u 1000 -G elasticsearch elasticsearch
+adduser --disabled-password --gecos '' --shell /bin/bash user
+adduser -S -G probesrv probesrv
+adduser -h ${APP_DIR} -s /bin/bash -D appuser
+adduser -D -u $VAULT_USERID $VAULT_USERNAME
+adduser -u 1000 -h /opt/proto-registry -s /bin/false -D protoregistry
+adduser tester
+adduser -h /home/snops -u 1000 -s /bin/bash snops -D
+adduser -h /home/runner -s /bin/bash -G runner -D runner
+adduser -u ${PUID} -G jls -h /data -s /bin/bash -D jls
+adduser         --uid 101         --gid 101         --shell /bin/false         --system         app
+adduser -S rclone
+adduser -D -g '' putiuser
+adduser -h /var/libresonic -D -u 504 -g libresonic -G libresonic -s /sbin/nologin libresonic
+adduser -D -u 1500 -G apps app
+adduser -D -g "" -s /bin/sh -G consul-template consul-template
+adduser -D pyuser
+adduser -h /etc/bind -D -u 505 -g named -G named -s /sbin/nologin named
+adduser -G admin -h /mnt admin
+adduser --disabled-password --gecos '' docker
+adduser minecraft-user -D
+adduser --disabled-password --gecos '' $USERNAME
+adduser -u $UID -D localuser
+adduser -D userbot
+adduser --disabled-password --gecos "noname" --uid 1000 noname
+adduser $SERVICEUSER -h /redis-commander -S
+adduser -D -g user user
+adduser -Sg hugo -u 1000 -h /src hugo
+adduser -D nodeuser
+adduser -S -G node -u 998 node
+adduser --home $HOME --group --uid 1000 --gid 1000 qbittorrent
+adduser -s /bin/false -D -H -G github -u $UID github
+adduser -h $_root -g "MySQL" -u 900 -G mysql -D mysql
+adduser -D -H -u 19857 algo
+adduser -S -u 1001 tell-me-a-secret
+adduser -u ${UID} -D -S -G bitlbee bitlbee
+adduser hsapp sudo
+adduser -s /bin/true -u 1000 -D -h $APP_DIR $APP_USER
+adduser -h /app -D web
+adduser $NBUSER
+adduser mogile --system --disabled-password
+adduser -s /bin/false -G telegraf -S -D telegraf
+adduser -s /bin/false actor
+adduser test sudo
+adduser -S -g chaoskube chaoskube
+adduser --system --group --disabled-password monero
+adduser -DHs /sbin/nologin minecraft
+adduser -D learningflask
+adduser --disabled-password --gecos '' builder
+adduser lep;   usermod -p $(echo secret | openssl passwd -1 -stdin) lep
+adduser -D -g azi azi
+adduser -D -g "" -u ${user_uid} -G ${USER} ${USER}
+adduser --disabled-password --gecos "" --uid ${user_uid} --gid ${user_gid} ${USER}
+adduser --disabled-password --ingroup root nix
+adduser -D -h /home/${DEVELOP_USER} -u ${UID} -s /bin/bash ${DEVELOP_USER}
+adduser -D minecraft
+adduser -s /bin/bash -u $NB_UID -D $NB_USER
+adduser -h /var/lib/transmission -D -u 502 -g transmission -G transmission -s /sbin/nologin transmission
+adduser --home /srv --no-create-home --system --uid 1000 --group app
+adduser --disabled-password --gecos "" renderer
+adduser -S userSW -G SWgroup
+adduser -D -u 10151 anaconda -G anaconda
+adduser --no-create-home --disabled-password --gecos "" --uid 1001 sslyze
+adduser --disabled-login --uid 500 --gid 500 --gecos 'Firefox User' firefox
+adduser -D badcapt
+adduser --system --no-create-home --disabled-login --disabled-password --group nginx
+adduser ${LUSER} sudo
+adduser --system --group node
+adduser -D static
+adduser -S app -G app --disabled-password
+adduser   --system   --home /nonexistent   --shell /bin/false   --no-create-home   --disabled-login   --disabled-password   --gecos "nginx user"   --group   nginx
+adduser -u 1001 -G users media
+adduser --home /home/builder --uid 1000 --ingroup builder         --disabled-password --shell /bin/bash builder
+adduser -u 1000 -D user-defined-in-image
+adduser -D app
+adduser -S -G probeit probeit
+adduser www-data praktomat
+adduser app adm
+adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 32548 nginx
+adduser --disabled-password --gecos '' lorean
+adduser --uid 1001 -S -g pptruser pptruser
+adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G www-data www-data
+adduser --uid ${UID} --system bitcoin --ingroup bitcoin
+adduser -D -g '' ympd
+adduser -s /bin/sh -D errbot
+adduser -u 82 -D -h /DATA -S -G www-data www-data -s /bin/bash
+adduser -S -u $NGINX_USER_ID $NGINX_USER
+adduser -D -h ${HOME} -s /bin/ash -g "${USER} service"            -u ${UID} -G ${GROUP} ${USER}
+adduser -D -u ${UID} -g '' -G ${GID} sensoroni
+adduser -h /var/lib/mysql -g "MySQL" -u 900 -G mysql -D mysql
+adduser -u 1000 -G ${USER} -s /bin/sh -D ${USER}
+adduser syncthing
+adduser -G torrent -D -u ${PUID} torrent
+adduser -S -g pptruser pptruser
+adduser -S datahub -G datahub
+adduser -S anon
+adduser --home /home/vulhub --shell /bin/bash --disabled-password --gecos "" vulhub
+adduser -S -G redis redis
+adduser --disabled-password --gecos '' wdias
+adduser -S iomirea
+adduser -S slappd
+adduser -h /home/tfansible -u 1000 -s /bin/bash tfansible -D
+adduser ${SERVICE_USER} -h ${HOME} -G root -S -u 1000
+adduser -S pg -G pg
+adduser  -S skirmish -G skirmish
+adduser nixbld$i nixbld; done
+adduser     --disabled-password     --gecos ""     --ingroup "eventstore"     --no-create-home     --uid ${UID}     "eventstore"
+adduser -S media -G media
+adduser -D -g '' sensoroni
+adduser --disabled-password --gecos '' appuser
+adduser -S -H -D -u 100 -s /sbin/nologin haproxy haproxy
+adduser -u 4551 -S ngrok -G ngrok -h /home/ngrok -s /bin/ash
+adduser -h /kafka -G kafka -S -H -s /sbin/nologin kafka
+adduser -D -g "" putiuser
+adduser -D -h /var/www/anonaddy -u ${PUID} -G anonaddy -s /bin/sh -D anonaddy
+adduser -s /bin/bash -D hubot
+adduser -D -u 1000 -G lega lega
+adduser --system --no-create-home --disabled-password django
+adduser --shell /bin/bash --home /var/lib/go-server --no-create-home --uid ${GO_USER_ID} -g go go
+adduser -h "$DEPLOYER_HOME" -u ${uid} -G ${group} -s /bin/bash -D ${user}
+adduser -D csplogger-agent
+adduser -S -G pwgen pwgen
+adduser -h /opt/openfire -H -D -u 1000 openfire
+adduser -D ${DEVELOP_USER}
+adduser -u 1000 -h /app -G app -S app
+adduser -S jottauser -G 1003
+adduser -D -g yaml-crypt yaml-crypt
+adduser -D -g '' mppinger
+adduser --uid 1000 --gid 1000 --home-dir /usr/share/retdec --no-create-home retdec
+adduser -D gitleaks
+adduser -DH -u $EUID ng-user
+adduser mural sudo
+adduser -H -D yopass
+adduser -D -u ${PUID} -G mattermost -h /mattermost -D mattermost
+adduser -D -h /home/${DEVELOP_USER} -s /bin/bash -G abuild ${DEVELOP_USER}
+adduser -S tordocker -G tordocker
+adduser -q --system --no-create-home --disabled-login -gid 1000 -uid 1000 cerebro
+adduser -h /home/elm -g "" -s /bin/sh -G elm -S -D -u 1000 elm
+adduser -D -g 'flashfeed' flashfeed
+adduser -D -u ${VAULT_USERID} ${VAULT_USERNAME}
+adduser --uid ${USER_ID} --ingroup ${GROUP_NAME} --home /home/${USER_NAME}   --shell /bin/bash --disabled-password --gecos "" ${USER_NAME}
+adduser -S -G dav -h /data dav
+adduser --uid 1000 --ingroup lazyrecon_user --home /home/lazyrecon_user --shell /bin/bash --disabled-password --gecos "" lazyrecon_user
+adduser -D nonroot
+adduser -S -h /dav -G dav dav
+adduser     -S -H -D     -h /data/git     -s /bin/bash     -u 1000     -G git     git
+adduser -u 1000 -h /var/lib/go-server -H -S -G go go
+adduser --system --ingroup vernemq --home /vernemq --disabled-password vernemq
+adduser -D thermostat_mqtt
+adduser -S -D -H -h /php node
+adduser --disabled-password --gecos "" jsreport
+adduser         --uid 1000         --gid 1000         --shell /bin/false         --no-create-home         --system         app
+adduser -G theia -s /bin/sh -D theia;
+adduser -Ss /bin/false -u 1000 -G minecraft -h /home/minecraft minecraft
+adduser -u 1001 -S media -G users
+adduser -S -u 100 -G elog elog
+adduser -u $PUID -S laradock -G laradock
+adduser -D -h /home/${DEVELOP_USER} -s /bin/bash ${DEVELOP_USER}
+adduser -D "$USER";     mkdir -p "$DATA_LOG_DIR" "$DATA_DIR" "$CONF_DIR";     chown "$USER:$USER" "$DATA_LOG_DIR" "$DATA_DIR" "$CONF_DIR"
+adduser -h /wpscan -g WPScan -D wpscan
+adduser -h /var/subsonic -D -u 504 -g subsonic -G subsonic -s /sbin/nologin subsonic
+adduser -u 1000 -G proxy -H proxy -S
+adduser -D -u 1000 -h /var/lib/imago imago
+adduser -D -u ${USER_UID} ${GO_PROJECT}
+adduser -D -g "" -s /bin/sh -G consul consul
+adduser --home $HOME --shell --uid 1000 --gid 1000 qbittorrent
+adduser --gecos theprimeagen --uid 1000 --gid 1000 --disabled-password theprimeagen
+adduser -D -h /home/feedforwarder feedforwarder
+adduser --quiet --disabled-password qtuser
+adduser -S uwsgi
+adduser -D -s /bin/bash -h /home/node -u 1000 node
+adduser     --disabled-password     --gecos ""     --ingroup "$USER"     --no-create-home     --uid "$UID"     "$USER"
+adduser --system --shell /bin/bash --uid 777 --group --disabled-password --home /home/git git
+adduser -h /var/lib/transmission -D -u 504 -g transmission -G transmission -s /sbin/nologin transmission
+adduser -S biodocker -G biodocker
+adduser prosody sasl
+adduser -q --system --home /cctvdvr -uid 3001 --no-create-home --disabled-password cctvdvr
+adduser -S -G redis -u 999 redis
+adduser -S -H -G blackfire -u 999 blackfire
+adduser -D -G deadman -u 1001 deadman
+adduser -S -u $PUID nonroot -G nonroot
+adduser -D -u 1000 netlify
+adduser --disabled-password codebreaker-cv
+adduser --home $HOME --uid 1000 --gid 1000 qbittorrent
+adduser -D autocluster # -D = no password
+adduser -D -S -s /sbin/nologin -G caddy caddy
+adduser -u 82 -D -S -h /var/cache/php-fpm -s /sbin/nologin -G www-data www-data
+adduser     --disabled-login     --no-create-home     --gecos 'Tengine_Http_User'     nginx_http_user
+adduser -DH lazy
+adduser -D dockmirror -G dockmirror
+adduser ${username} sudo
+adduser -D microblog
+adduser -D -S -h /var/frp -s /sbin/nologin -G frp frp
+adduser unbound tty
+adduser -D -u 1000 -h /home/user user
+adduser noip-user -D -h /home/noip/ -s /bin/sh -u 2000
+adduser -S -G jsreport jsreport
+adduser dev -u 1000 -DG abuild
+adduser     --disabled-password     --home /output     builder
+adduser -D -u ${USER} -G jenkins jenkins
+adduser -S -G dummy -u ${DUMMY_UID} dummy
+adduser -Du 2345  unpriv
+adduser -D -G app -u 1000 app
+adduser -D -h /app/ stringer
+adduser -D netdiag
+adduser -S app -G appgroup
+adduser -D virtual
+adduser -s /bin/bash -S bastion
+adduser -D -h /home/jenkins -s /bin/bash -u 1000 -G jenkins jenkins
+adduser -S george -G george; export FLASK_ENV=production apk update
+adduser -D redmine
+adduser -g "Terraform User" -D -s /usr/sbin/nologin terraform
+adduser -u $UID -G foundry -s /bin/sh -D foundry
+adduser -D -h /home/${DEVELOP_USER} -u ${UID} ${DEVELOP_USER}
+adduser -h /OLAINDEX -s /bin/sh -G olaindex -u 900 -S olaindex
+adduser -D -u 1000 -g 'www' www
+adduser  -G alpine -s /bin/sh -D alpine
+adduser -D -s /bin/ash sickp
+adduser -D -G devdock -u ${PUID} devdock
+adduser -S jenkins -G jenkins
+adduser -s /bin/false -D -H radicale
+adduser         --uid 64198         --gid 64198         --create-home         --system         app
+adduser --disabled-login --no-create-home --gecos "" deluge
+adduser -D cocoproject_web
+adduser -DHs /sbin/nologin mumble
+adduser --disabled-password --gecos '' vivado
+adduser -S user -h $HOME
+adduser --system --uid 999 postgres --home /var/lib/postgresql
+adduser -D -h /home/container container
+adduser -D tomcat
+adduser -S gns3_proxy
+adduser --disabled-login --gecos "" tester
+adduser devops -D -h /home/devops
+adduser -D -S -G www-data -u ${UID} www-data -h /data
+adduser -D -u 1002 -s /bin/bash bookie
+adduser -D -u "$UID" -G "$GID" -g '' sensoroni
+adduser -u 9000 -D app
+adduser -u 1000 -D jenkins
+adduser -D -H -u ${PUID} -G rtorrent -s /bin/sh rtorrent
+adduser -S -u $EGO_UI_UID -G $EGO_UI_GID $EGO_UI_USER
+adduser -D -h /feedforbot feedforbot
+adduser -G laravel -g laravel -s /bin/sh -D laravel
+adduser wdias sudo
+adduser -D -u 1000 -s bash golang
+adduser --disabled-password --gecos '' work
+adduser tpcuser
+adduser -Dh /home/gollum -G users -u $uid gollum
+adduser -D -G docker -h /home/docker -s /bin/false docker
+adduser -G nextcloud -D -u 1000 nextcloud
+adduser -G ${HUGO_USER} -D ${HUGO_USER}
+adduser -D jwt-to-rbac
+adduser -S cloudflared;     apk add --no-cache ca-certificates bind-tools libcap tzdata;     rm -rf /var/cache/apk/*;
+adduser -SG hugo -u 1000 -h /src hugo
+adduser -h $JENKINS_HOME -u 1000 -G jenkins -s /bin/bash -D jenkins
+adduser --uid $UID --disabled-password localuser
+adduser -h ${NIFI_HOME} -s /bin/bash -G nifi -u 1000 -D -H nifi
+adduser -Dh /api amivapi
+adduser --system --home $HOME --shell --uid 1000 --gid 1000 qbittorrent
+adduser android -D -G android -h /opt/android-sdk-linux -u 1000
+adduser --disabled-password --home $HOME --shell /bin/bash --gecos '' opam
+adduser xs users
+adduser -q --disabled-password --uid ${PUID} --gid ${PGID} --gecos "" --home /mattermost mattermost
+adduser -D -h $IPFS_PATH -u 1000 -G users ipfs
+adduser --shell /bin/false --disabled-password --gecos "TurtleCoin User" --home "${TRTL_HOME}" "${TRTL_USER}"
+adduser -D train_sensor
+adduser -D -h /home/dev -s /bin/bash -u 1000 -G dev dev
+adduser --uid 1000 -D -S -h /home/radicale -s /sbin/nologin -G radicale radicale
+adduser -D -h /shiori -g '' -G shiori -u 1000 shiori
+adduser -S -u 1001 -G ethercalc -G node ethercalc
+adduser kubectl -Du 2342 -h /config
+adduser -S laisky
+adduser -S nextjs -u 1001
+adduser -S tester
+adduser -S -D -G celery -u 500 celery
+adduser -S appuser -G appgroup
+adduser gameboy sudo
+adduser privatebin -DH
+adduser -S -D -u 6006 -G premiumizer -s /bin/sh premiumizer
+adduser -h /var/subsonic -D subsonic
+adduser --system --quiet --uid ${uid} --group --disabled-login ${user}
+adduser django django
+adduser --disabled-password --gecos '' praktomat
+adduser -D -h /home/jenkins -s /bin/bash -u 1001 -G dev jenkins
+adduser --uid 1000 --gid 1000       --home-dir /usr/share/retdec --no-create-home       retdec
+adduser --disabled-password --gecos "Pleroma" --home "$HOME" --ingroup pleroma --uid "$UID" pleroma
+adduser -D -u "$UID" -G "$GID" sensoroni
+adduser -u 82 -D -S -G www-data www-data
+adduser -D -S -s /usr/bin/git-shell -h /home/git -g git git
+adduser -D user
+adduser --ui 501 --ingroup www-data --shell /bin/bash --home /home/builder builder
+adduser www-data video
+adduser -S -u ${UID} -G dnscrypt -h /dnscrypt dnscrypt
+adduser --system --disabled-password --disabled-login mosquitto
+adduser -S user -G user_group -u 2001
+adduser -u 1000 -S notifier -G notifier
+adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx -u $NGINX_ID nginx
+adduser -h /home/qemu -s /bin/bash -G qemu -D qemu
+adduser     --disabled-password     --gecos ""     --ingroup "$GROUP"     --no-create-home     --uid "$UID"     "$USER"
+adduser -u $UID -G app -s /bin/sh -D app
+adduser -S dockeruser -G dockeruser
+adduser conan sudo
+adduser --disabled-password --gecos "" tv
+adduser --system --shell /bin/bash --uid 777 --gid 65534 --disabled-password --home /home/git git
+adduser -S -H -G activemq -h $ACTIVEMQ_HOME activemq
+adduser -u 1000 -G node -s /bin/sh -D node
+adduser         --uid 101         --gid 101         --shell /bin/false         --no-create-home         --system         app
+adduser -h $HOME -u ${uid} -G ${group} -D ${user}
+adduser --disabled-password --gecos "User" --uid 1000 user
+adduser --disabled-password --gecos "" ident
+adduser hab hab -H -D
+adduser root sudo
+adduser -h /home -u 1000 -s /bin/bash snops -D
+adduser -D -g '' bridge
+adduser user -D
+adduser --disabled-password --gecos '' ${USER}
+adduser -h /tmp -s /sbin/nologin -S -D -H kcptun
+adduser -S -g fluent fluent
+adduser -D -S -u ${UID} ${USER} ${GROUP}
+adduser 	--disabled-login 	--shell /bin/bash 	--gecos "" 	terraria
+adduser -D -u "$UID" -G sensoroni -g '' sensoroni
+adduser -S -G sonarqube sonarqube
+adduser -u 1000 -G lua -S lua
+adduser -g "Ansible User" -D -s /usr/sbin/nologin ansible
+adduser -D -H -u ${PUID} -G matomo -h /var/www/matomo  -s /bin/sh matomo
+adduser -D myuser
+adduser -S $NON_ROOT_USER -G $NON_ROOT_GROUP
+adduser -Dh /config -G users searx
+adduser --disabled-password -S ghidra -G ghidra
+adduser     --disabled-password     --gecos ""     --home "/tmp/$USER"     --ingroup "$USER"     --no-create-home     --uid "$PUID"     "$USER"
+adduser -S abc -G abc -u 1000
+adduser     -D `#Dont assign a password`     -H `#Dont create home directory`     -u 1001 `#User id`    thanos
+adduser ${USER} sudo
+adduser -s /bin/false -D -H node_exporter
+adduser -g mock mockbuild
+adduser --shell /bin/bash --disabled-password ezgo
+adduser -G wheel -D -h /mnt -s /bin/bash admin
+adduser --system node
+adduser -h ${APP_HOME} -D -u ${USER_UID} ${GO_PROJECT}
+adduser -Dh /config -G users -u $uid deluge
+adduser theia sudo
+adduser -S gcalcli
+adduser -D -s /bin/false -H -u $BUILD_UID -G radicale radicale
+adduser --uid 1000 --gid 1000 radarr
+adduser -u 80 -G www-data -s /bin/bash -D www-data -h /data
+adduser -SDH -u 1000 -s /bin/false rclone -G rclone
+adduser -s /bin/false -G root -S -D telegraf
+adduser userbot sudo
+adduser --uid 1000 --gid 1000 qbittorrent
+adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx
+adduser -h /opt/teamspeak -S -D teamspeak
+adduser -G abuild -D builder
+adduser -DHs /sbin/nologin transmission
+adduser --disabled-password --gecos '' --home /app --shell /bin/bash humdrummy
+adduser "${SERVICE_USER}" -h "${HOME}" -G root -S -u 10000
+adduser module2builder --ingroup module2builder --disabled-password --system
+adduser -S -D -H -h /var/empty -s /bin/false -G pdns -g pdns pdns 2>/dev/null
+adduser -S -s /bin/bash -u 1001 -G root www-data
+adduser ${LOCAL_USER} sudo
+adduser train sudo
+adduser -D -h /opt/flarum -u ${PUID} -G flarum -s /bin/sh -D flarum
+adduser -h ${OPENFIRE_HOME} -H -D -u 1000 openfire
+adduser -D -u ${CONSUL_USERID} ${CONSUL_USERNAME}
+adduser -S grpcui -G grpcui
+adduser -D -u 5001 -s /sbin/nologin -h /var/www nginx
+adduser -SG cap -u 1000 -h /src cap
+adduser -D -g "" -s /bin/sh -G node node
+adduser --home ${STEAM_HOME} --uid ${STEAM_UID} --gid ${STEAM_GID} --disabled-login --shell /bin/bash --gecos "" ${STEAM_USER}
+adduser -D -g '' $APPLICATION_USER
+adduser -D -h $HOME_PATH -u 1000 -G users lotus
+adduser -s /bin/false -D -H prometheus
+adduser  --uid 10000 --system --ingroup nonroot --home /home/nonroot nonroot
+adduser --uid 100 --system -g consul consul
+adduser -S rrshare -G rrshare -D -H -u $PUID
+adduser docker sudo
+adduser -D -u $UID -G $GID -g '' sensoroni
+adduser -u 1001 -SHG mc mc
+adduser --system datahub --ingroup datahub
+adduser -g ${GID} -u ${UID} --disabled-password --gecos "" nextcloud
+adduser --system snmpsim
+adduser -DH nodeuser
+adduser -D -H -u 1000 -G netdata netdata
+adduser -D gforth
+adduser --no-create-home --disabled-password --uid 9999 --gid 9999 debates
+adduser -uid $UID --ingroup app --shell /bin/sh app
+adduser --disabled-password --gecos "" $systemUser
+adduser --uid 100 --system -g $BIN_NAME $BIN_NAME
+adduser -G wheel -G wam -D -h /mnt -s /bin/bash admin
+adduser -S -D -H -h /usr/lib/emby-server -s /sbin/nologin -G emby                 -g 'Emby User' emby
+adduser -D chrome
+adduser --disabled-password opam
+adduser -h /usr/src/node-red -D -H node-red
+adduser -S spring -G spring
+adduser --home /home/catmandu --uid 1000 --disabled-password --gecos "" catmandu
+adduser -u "$PUID" -G xteve -D xteve
+adduser -S -D -G docker -h /opt/docker-bench-security docker
+adduser --ingroup vmail --uid 5000 --home /var/vmail --shell /bin/false --disabled-password --gecos "" vmail
+adduser --system --quiet --uid 2222 --group --disabled-login jenkins
+adduser --gecos '' --disabled-password coder
+adduser klippy dialout
+adduser -S app -G app --disabled-password --no-create-home
+adduser -S gocron
+adduser cocoapods
+adduser --uid 10000 --system --ingroup vernemq --home /vernemq --disabled-password vernemq
+adduser -D -g storybook-branches storybook-branches
+adduser -S -D -u 6006 -G premiumizer premiumizer
+adduser --disabled-password --gecos "" node
+adduser -u 1000 -S cloudsdk -G cloudsdk
+adduser status sudo
+adduser -S -D -G zabbix -h /var/lib/zabbix/ zabbix
+adduser -D -S -h /pgadmin -s /sbin/nologin -u ${UID} -G pgadmin pgadmin
+adduser  -u 994 -D -H -k /sbin/nologin httpyss
+adduser -D -H -G grpy grpy
+adduser -D -u 1000 awsh
+adduser -S -u ${UID} -G user user
+adduser --system --ingroup app app
+adduser -s /bin/sh -u 1001 -G root -h ${HOME} -S -D default
+adduser -u 1000 -G $USER -s $SHELL -D $USER
+adduser -ms /bin/bash jukebox
+adduser -D -u 6006 -S -h /home/gcs -s /sbin/nologin -G gcs gcs
+adduser -D -h / -u 5001 rtorrent
+adduser -Dh /config -G users -u $uid qbittorrent
+adduser -s /bin/bash -S bastion --uid 1024 --ingroup users
+adduser -S -u 8888 -D -H caddy
+adduser --disabled-password --gecos "" syzoj
+adduser -u 1000 -D -S -G www-data www-data
+adduser --uid "$UID"     --disabled-password     --gecos ""     --ingroup "$GROUP"     "$USER"
+adduser -S kgenprog
+adduser -D -h /home/${DEVELOP_USER} -u ${UID} -s /bin/bash -G abuild ${DEVELOP_USER}
+adduser --disabled-password --gecos "" www
+adduser -S cgatepro -h /var/CommuniGate -G mail
+adduser -S -H -h /var/empty -s /sbin/nologin -D -G mosquitto mosquitto
+adduser -S terraform -G terraform
+adduser -S -u 1001 -G root -h ${HOME} -s /sbin/nologin -g "Default Application User" default
+adduser -S -D -H -u 82 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx
+adduser -u $PUID -G xteve -D xteve
+adduser -DHs /sbin/nologin youtube-dl
+adduser -S -G fluent fluent
+adduser -u 1000 -S mintel -G mintel
+adduser -D notifier
+adduser --ingroup ranger ranger -S
+adduser -D ${PHAB_PHD_USER}
+adduser -h /app -u 1000 -s /bin/sh -D papercupsuser
+adduser -D module_plus
+adduser         --uid 64198         --gid 64198         --shell /bin/false         --system         app
+adduser -s /bin/false dora
+adduser -S -D -H -h /xmrig miner
+adduser -S xteve -G xteve
+adduser www www
+adduser --gecos --disabled-login --no-create-home --uid 1000 --ingroup www www
+adduser -S nodejs
+adduser $USERNAME sudo
+adduser -u 1005 -S al -G appgroup
+adduser --uid 1001 --ingroup docker --home /home/docker --shell /bin/sh --disabled-password --gecos "" docker
+adduser --uid 666 --home /home/browsh --ingroup browsh browsh
+adduser -u 1000 -G $USER -s /bin/sh -D $USER
+adduser -u 1000 -S las2peer -G las2peer
+adduser -g msfconsole -D $MSF_USER
+adduser --uid 1000 -D nnao45
+adduser -h ${HOME} -D -s /bin/bash -G weechat weechat
+adduser -D --gecos "olefy scanner" --ingroup olefy olefy 2>/dev/null
+adduser -D -g '' aria2
+adduser -u 5678 --disabled-password --gecos "" appuser
+adduser -D dockeruser
+adduser -D -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver;     cd / ;     if [[ "x$SOFTETHER_VERSION" == "xlatest" ]]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi;     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+adduser ${SERVICE_USER} -h ${HOME} -S
+adduser -D -g "" -G users $APP_USER
+adduser -DH -s /sbin/nologin kafka
+adduser -D -S -u ${UID} lighttpd lighttpd
+adduser developer sudo
+adduser --uid 1000 --system ${ULX3S_USER}
+adduser -D -h /home/librenms -u ${PUID} -G librenms -s /bin/sh -D librenms
+adduser ci sudo
+adduser work sudo
+adduser -S -G appuser appuser
+adduser -h ${SHORTY_DATA} -D -u ${USER_UID} ${GO_PROJECT}
+adduser --ingroup minecraft -H -D minecraft
+adduser -S mintel -G mintel
+adduser -D -u 1000 -G paperless -h /usr/src/paperless paperless
+adduser -S -D -u 1000 -g 1000 qbittorrent
+adduser -S -G $BIN_NAME $BIN_NAME
+adduser userbot --disabled-password --home /home/userbot
+adduser --disabled-password --gecos '' hsapp
+adduser -u 500 -h /var/lib/go-agent -H -D -s /bin/bash -G go go
+adduser -S adb -G adb
+adduser --disabled-password --gecos '' --uid 20454 pking
+adduser -D -u "$UID" -G sensoroni sensoroni
+adduser -S pg -G pg  --uid 1000
+adduser node-dev sudo
+adduser -S axway-user -G axway-group
+adduser -u 1001 -D user
+adduser -D -S ghidra -G ghidra
+adduser --uid 1000 --ingroup llvm-user --home /home/llvm-user --shell /bin/sh --disabled-password --gecos "" llvm-user
+adduser --shell /bin/bash --home /home/marid --gecos "" --disabled-password marid
+adduser -uid $UID --ingroup app --shell /bin/sh --system app
+adduser $PASSWORD sudo
+adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx
+adduser $NB_USER
+adduser -D -g '' appuser
+adduser 	--disabled-login 	--shell /bin/bash 	--gecos "" 	gta
+adduser -S -G bender bender
+adduser -G admin,users -h /mnt admin
+adduser -D -u 1000 -G exporter exporter
+adduser -G bitcoin -H -S bitcoin
+adduser -S -G app app
+adduser -D -G hass -s /bin/sh -u ${UID} hass
+adduser -u 500 -h /var/lib/go-agent -H -S -G go go
+adduser app sudo
+adduser -G wheel -D -h /mnt admin
+adduser --home /site --uid 1000 --gecos "" --disabled-password --shell /bin/bash web
+adduser -D -G cerebro -u 1000 cerebro
+adduser -D -u $CONSUL_USERID $CONSUL_USERNAME
+adduser dw --disabled-password
+adduser -Ds /bin/sh domain_stats
+adduser --system --group app
+adduser ghidra sudo
+adduser -D -G $PGROUP -u $PUID $PUSER
+adduser -D somebody
+adduser -S -D -H -h /app appuser
+adduser -S jenkins -u 1000 -G jenkins
+adduser -S user -h /home/user -s /bin/bash -G root -u 1000
+adduser -D -u 1000 user
+adduser -g vmail -u 5000 vmail -h /var/vmail -s /bin/false -D
+adduser -s /bin/false -D -G github -u $UID github
+adduser app lp
+adduser -H -D nullmail
+adduser -D -u 1000  -s /bin/zsh -h /home/$USER $USER
+adduser -D www-data
+adduser userbot wheel
+adduser worker sudo
+adduser -D -g "" -u ${user_uid} -G ${a4c_user} ${a4c_user}
+adduser www
+adduser -u 1000 -S putiuser -G putiuser
+adduser --system --ingroup gradle --uid 1000 --shell /bin/ash gradle
+adduser -S jovyan
+adduser -S --ingroup tester --uid 1001 tester
+adduser -S dockeruser -G dockergroup
+adduser --system --group user
+adduser -h /home/${user} -D -u ${uid} -G ${user} -s /bin/zsh ${user}
+adduser -h /var/lib/go-server -H -S -G go go
+adduser -S -D -H -h /app user
+adduser -H -D -h ${HOME} -u 10001 vernemq
+adduser -m roger
+adduser --system --home $HOME --uid 1000 --group qbittorrent
+adduser centos
+adduser --system --ingroup dockremap dockremap
+adduser --disabled-password     --gecos "Default user"     --uid ${NB_UID}     ${NB_USER}
+adduser --system --shell /bin/bash --group --disabled-password --home /home/git git
+adduser --no-create-home --gecos FALSE --disabled-password finger
+adduser -S -D -H -h /opt/kibana -s /sbin/nologin -G kibana -g 'Kibana User'                kibana
+adduser -D -u 1000 -G holiday holiday
+adduser ${HUGO_USER} -D
+adduser -D -h /usr/local/kafka -u 7001 kafka
+adduser smuflbuilder --ingroup smuflbuilder --disabled-password --system
+adduser -DS -g "" -G rabbitmq -s /bin/sh -h /var/lib/rabbitmq rabbitmq
+adduser -D -s /bin/ash afrojas
+adduser app sys
+adduser -D -s /bin/false -H -u $UID -G radicale radicale
+adduser -D -g '' daniel
+adduser -S -h /var/lib/rspamd --ingroup rspamd rspamd
+adduser -u 666 -SHG sonarr sonarr
+adduser -s /bin/ash -D rsyslog rsyslog
+adduser -S -G jf_agent jf_agent
+adduser -u 1000 -G cloudflared -s /sbin/nologin -D cloudflared
+adduser -u 19001 -G $TOR_USER -S $TOR_USER
+adduser -g '&' -s /bin/bash -G elasticsearch -S elasticsearch
+adduser -S -G consul consul
+adduser -D -u 1000 golang
+adduser -S -g node node
+adduser --home /qbittorrent --uid 1000 --gid 1000 qbittorrent
+adduser --uid 1993 --gid 1993 deno
+adduser -D ${PHAB_DIFFUSION_SSH_USER}
+adduser mobsf --shell /bin/false -u 9901 --ingroup mobsf --gecos "" --disabled-password
+adduser -D -G users -H -g 'Samba User' -h /tmp smbuser
+adduser -u 1000 -S mpt -G mpt
+adduser -u 19001 -G tord -S tord
+adduser -u 1000 -D -G maniaplanet maniaplanet
+adduser -h "$JENKINS_HOME" -u ${uid} -G ${group} -s /bin/bash -D ${user}
+adduser -D -s /sbin/nologin gglsbl
+adduser -u 1000 -S resilio -G resilio
+adduser -G alpine -s /bin/sh -D alpine
+adduser -u 666 -SHG radarr radarr
+adduser -DH headphones
+adduser -S -D -H -h /app runuser
+adduser ncc
+adduser --system --disabled-login --ingroup nginx --no-create-home --home /nonexistent --gecos "nginx user" --shell /bin/false --uid 101 nginx
+adduser -S george -G george; apk update
+adduser -s /sbin/nologin -h /home/samba -H -D $USER
+adduser -D -H -u 1000 -s /bin/bash www-data
+adduser --disabled-password     --gecos "Non-root user"     --uid $UID     --home $HOME     $USER
+adduser -D -h /home/user -G user -u 1000 user
+adduser         --uid 64198         --ingroup=app         --system         app
+adduser -S -D -H -u 101 -h /usr/local/nginx   -s /sbin/nologin -G www-data -g www-data www-data
+adduser -S -H -s /bin/ash -u 2000 -D -g 2000 adbhoney
+adduser --disabled-password kiwi
+adduser backupuser -D -h /backup --shell "/bin/bash"
+adduser -S user -G user_group -u 1000
+adduser -h /home/syncthing -DG users -u $uid syncthing
+adduser     --disabled-password     --gecos ""     --home /home/lhci     --ingroup lhci     lhci
+adduser -D -g '' app-user
+adduser -DH user
+adduser --home-dir /home/container container
+adduser -D -u 10000 daniel
+adduser emundo sudo
+adduser lorean sudo
+adduser -D -g $DOCKER_USERID -u $DOCKER_USERID $DOCKER_USER
+adduser -u $UID -S api -G iomirea
+adduser         --uid 64198         --gid 64198         --shell /bin/false         --create-home         --system         app
+adduser --disabled-login --gecos "" custodian
+adduser -D -g apimtpl apimtpl
+adduser -D -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver;     cd / ;     if [[ "x$SOFTETHER_VERSION" == "xlatest" ]]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi;     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+adduser app -S -G app
+adduser -D -s /bin/false -H -u $PUID -G radicale radicale
+adduser 1001 -g 1000 -D
+adduser -ms /bin/bash admin
+adduser admin sudo echo 'admin:admin' | chpasswd
+adduser -D -u ${PUID} ${AWSH_USER}
+adduser devbase --disabled-password --gecos "" --uid 1000
+adduser --system --uid 1000 --group qbittorrent
+adduser -S dockeruser -G dockergroup -h /code
+adduser -D "$FX_USER"
+adduser --system --home /hasuracli --disabled-password --group hasuracli
+adduser --disabled-password --gecos "" --force-badname --ingroup 1024 docker_user
+adduser mememastero
+adduser -D -u 9999 -G mycroft mycroft
+adduser --quiet --disabled-password --gecos "CLIF user" --shell /bin/bash clif
+adduser -S -D -H -u 32548 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx
+adduser -h "$GITBUCKET_HOME" -u 1000 -G gitbucket -s /bin/bash -D gitbucket
+adduser     --uid ${JENKINS_UID}     --ingroup ${JENKINS_GROUP}     --home ${JENKINS_HOME}     --shell /bin/bash     --disabled-password     -c "Jenkins Account"     --gecos ""     ${JENKINS_USER}
+adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G www-data -g www-data www-data
+adduser --system omnidb --ingroup omnidb
+adduser -u $PUID -G xteve xteve
+adduser -S george -G george; export FLASK_ENV=production
+adduser -D -H -S django django
+adduser -u 666 -SHG nzbget nzbget
+adduser -S ocaml -G ocaml
+adduser -H -h "${WILDFLY_HOME}" -g "Wildfly User"       -s /bin/sh -D ${WILDFLY_USER}
+adduser --system --uid ${UID} --gid ${GID} --home /dnscrypt dnscrypt
+adduser gitpod nixbld
+adduser -D cutsolver
+adduser -DH -s /sbin/nologin elasticsearch
+adduser -S -u 9999 nginxuser
+adduser -S mememastero -G appgroup
+adduser -H -h "${WILDFLY_HOME}" -g "Wildfly User" -s /bin/sh -D wildfly
+adduser -S verysobot -G verysobot
+adduser -D rtl_433
+adduser ${SERVICE_USER} -h ${HOME} -G root -S
+adduser -D mafApi
+adduser --disabled-password --gecos "" uropauser
+adduser -S -u $EGO_UI_UID -G $EGO_UI_USER $EGO_UI_USER
+adduser -D devpi
+adduser         --uid 64198         --gid 64198         --system         app
+adduser -D -u 1003 -G jottagrp jottagrp
+adduser -S ipfs
+adduser -h /cctvdvr -u 3001 -D cctvdvr
+adduser -G ${HUGO_USER} -D ${HUGO_USER} -s /bin/sh

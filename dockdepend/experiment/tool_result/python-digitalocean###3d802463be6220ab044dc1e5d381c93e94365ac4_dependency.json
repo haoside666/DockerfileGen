@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "MAINTAINER Lorenzo Setale <lorenzo@setale.me>",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "RUN pip3 install -U python-digitalocean pytest",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "WORKDIR /root/python-digitalocean",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "ADD requirements.txt requirements.txt",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "RUN pip3 install -U -r requirements.txt",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "ADD . /root/python-digitalocean",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:alpine",
+        "after_instruct": "CMD python3 -m pytest",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /root/python-digitalocean",
+        "after_instruct": "ADD requirements.txt requirements.txt",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /root/python-digitalocean",
+        "after_instruct": "RUN pip3 install -U -r requirements.txt",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /root/python-digitalocean"
+    },
+    {
+        "before_instruct": "WORKDIR /root/python-digitalocean",
+        "after_instruct": "ADD . /root/python-digitalocean",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "ADD requirements.txt requirements.txt",
+        "after_instruct": "RUN pip3 install -U -r requirements.txt",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /root/python-digitalocean/requirements.txt"
+    }
+]

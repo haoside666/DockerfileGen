@@ -1,0 +1,58 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "WORKDIR /kubez-ansible",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt install -y git python3-pip ansible && pip3 install /kubez-ansible && apt remove -y git python3-pip && apt-get clean",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /kubez-ansible",
+        "after_instruct": "COPY . .",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /kubez-ansible",
+        "after_instruct": "RUN apt install -y git python3-pip ansible && pip3 install /kubez-ansible && apt remove -y git python3-pip && apt-get clean",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /kubez-ansible"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN apt install -y git python3-pip ansible && pip3 install /kubez-ansible && apt remove -y git python3-pip && apt-get clean",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /kubez-ansible"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt install -y git python3-pip ansible && pip3 install /kubez-ansible && apt remove -y git python3-pip && apt-get clean",
+        "edge": "(3, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt', 'apt-get'}"
+    }
+]

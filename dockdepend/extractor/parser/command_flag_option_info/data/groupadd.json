@@ -1,0 +1,47 @@
+{
+    "flag": [
+        [
+            "-f",
+            "--force"
+        ],
+        [
+            "-h",
+            "--help"
+        ],
+        [
+            "-o",
+            "--non-unique"
+        ],
+        [
+            "-r",
+            "--system"
+        ]
+    ],
+    "option": [
+        [
+            "-g",
+            "--gid",
+            "GID"
+        ],
+        [
+            "-K",
+            "--key",
+            "KEY=VALUE"
+        ],
+        [
+            "-p",
+            "--password",
+            "PASSWORD"
+        ],
+        [
+            "-R",
+            "--root",
+            ["DIR","CONFIG_INPUT"]
+        ],
+        [
+            "-P",
+            "--prefix",
+            ["DIR","CONFIG_INPUT"]
+        ]
+    ]
+}

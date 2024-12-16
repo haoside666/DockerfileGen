@@ -1,0 +1,86 @@
+[
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "ENV PYPI_URL=https://pypi.tuna.tsinghua.edu.cn",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "ENV PYPI_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "RUN set -x && mkdir -p /usr/lib/python3 && ln -s /usr/local/lib/python3.7/site-packages /usr/lib/python3/dist-packages && apt-get update && apt-get install -y --no-install-recommends binutils python3-gi libgtk-3-dev libappindicator3-dev upx git",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "RUN mkdir -p /root/.pip && echo \"[global]\" > /root/.pip/pip.conf && echo \"index = https://pypi.tuna.tsinghua.edu.cn\" >> /root/.pip/pip.conf && echo \"index-url = https://pypi.tuna.tsinghua.edu.cn/simple\" >> /root/.pip/pip.conf && echo \"trusted-host = $(echo https://pypi.tuna.tsinghua.edu.cn | perl -pe 's|^.*?://(.*?)(:.*?)?/.*$|$1|')\" >> /root/.pip/pip.conf && pip install pyinstaller && mkdir /src/ && echo \\#\\!/bin/bash -i >> /entrypoint.sh && echo >> /entrypoint.sh && echo \"set -e\" >> /entrypoint.sh && echo \"cd /src\" >> /entrypoint.sh && echo \"echo \\\"\\$@\\\"\" >> /entrypoint.sh && echo \"sh -c \\\"\\$@\\\"\" >> /entrypoint.sh && chmod +x /entrypoint.sh",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "VOLUME /src/",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "WORKDIR /src/",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "SHELL /bin/bash -i -c",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim-buster",
+        "after_instruct": "ENTRYPOINT /entrypoint.sh",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV PYPI_URL=https://pypi.tuna.tsinghua.edu.cn",
+        "after_instruct": "RUN mkdir -p /root/.pip && echo \"[global]\" > /root/.pip/pip.conf && echo \"index = https://pypi.tuna.tsinghua.edu.cn\" >> /root/.pip/pip.conf && echo \"index-url = https://pypi.tuna.tsinghua.edu.cn/simple\" >> /root/.pip/pip.conf && echo \"trusted-host = $(echo https://pypi.tuna.tsinghua.edu.cn | perl -pe 's|^.*?://(.*?)(:.*?)?/.*$|$1|')\" >> /root/.pip/pip.conf && pip install pyinstaller && mkdir /src/ && echo \\#\\!/bin/bash -i >> /entrypoint.sh && echo >> /entrypoint.sh && echo \"set -e\" >> /entrypoint.sh && echo \"cd /src\" >> /entrypoint.sh && echo \"echo \\\"\\$@\\\"\" >> /entrypoint.sh && echo \"sh -c \\\"\\$@\\\"\" >> /entrypoint.sh && chmod +x /entrypoint.sh",
+        "edge": "(1, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV PYPI_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple",
+        "after_instruct": "RUN mkdir -p /root/.pip && echo \"[global]\" > /root/.pip/pip.conf && echo \"index = https://pypi.tuna.tsinghua.edu.cn\" >> /root/.pip/pip.conf && echo \"index-url = https://pypi.tuna.tsinghua.edu.cn/simple\" >> /root/.pip/pip.conf && echo \"trusted-host = $(echo https://pypi.tuna.tsinghua.edu.cn | perl -pe 's|^.*?://(.*?)(:.*?)?/.*$|$1|')\" >> /root/.pip/pip.conf && pip install pyinstaller && mkdir /src/ && echo \\#\\!/bin/bash -i >> /entrypoint.sh && echo >> /entrypoint.sh && echo \"set -e\" >> /entrypoint.sh && echo \"cd /src\" >> /entrypoint.sh && echo \"echo \\\"\\$@\\\"\" >> /entrypoint.sh && echo \"sh -c \\\"\\$@\\\"\" >> /entrypoint.sh && chmod +x /entrypoint.sh",
+        "edge": "(2, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN set -x && mkdir -p /usr/lib/python3 && ln -s /usr/local/lib/python3.7/site-packages /usr/lib/python3/dist-packages && apt-get update && apt-get install -y --no-install-recommends binutils python3-gi libgtk-3-dev libappindicator3-dev upx git",
+        "after_instruct": "RUN mkdir -p /root/.pip && echo \"[global]\" > /root/.pip/pip.conf && echo \"index = https://pypi.tuna.tsinghua.edu.cn\" >> /root/.pip/pip.conf && echo \"index-url = https://pypi.tuna.tsinghua.edu.cn/simple\" >> /root/.pip/pip.conf && echo \"trusted-host = $(echo https://pypi.tuna.tsinghua.edu.cn | perl -pe 's|^.*?://(.*?)(:.*?)?/.*$|$1|')\" >> /root/.pip/pip.conf && pip install pyinstaller && mkdir /src/ && echo \\#\\!/bin/bash -i >> /entrypoint.sh && echo >> /entrypoint.sh && echo \"set -e\" >> /entrypoint.sh && echo \"cd /src\" >> /entrypoint.sh && echo \"echo \\\"\\$@\\\"\" >> /entrypoint.sh && echo \"sh -c \\\"\\$@\\\"\" >> /entrypoint.sh && chmod +x /entrypoint.sh",
+        "edge": "(3, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /root/.pip && echo \"[global]\" > /root/.pip/pip.conf && echo \"index = https://pypi.tuna.tsinghua.edu.cn\" >> /root/.pip/pip.conf && echo \"index-url = https://pypi.tuna.tsinghua.edu.cn/simple\" >> /root/.pip/pip.conf && echo \"trusted-host = $(echo https://pypi.tuna.tsinghua.edu.cn | perl -pe 's|^.*?://(.*?)(:.*?)?/.*$|$1|')\" >> /root/.pip/pip.conf && pip install pyinstaller && mkdir /src/ && echo \\#\\!/bin/bash -i >> /entrypoint.sh && echo >> /entrypoint.sh && echo \"set -e\" >> /entrypoint.sh && echo \"cd /src\" >> /entrypoint.sh && echo \"echo \\\"\\$@\\\"\" >> /entrypoint.sh && echo \"sh -c \\\"\\$@\\\"\" >> /entrypoint.sh && chmod +x /entrypoint.sh",
+        "after_instruct": "WORKDIR /src/",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /src/"
+    }
+]

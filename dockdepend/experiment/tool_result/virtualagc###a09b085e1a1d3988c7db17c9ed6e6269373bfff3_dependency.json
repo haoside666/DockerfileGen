@@ -1,0 +1,72 @@
+[
+    {
+        "before_instruct": "FROM jlawton/virtualagc",
+        "after_instruct": "MAINTAINER Jim Lawton",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM jlawton/virtualagc",
+        "after_instruct": "RUN mkdir /virtualagc",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM jlawton/virtualagc",
+        "after_instruct": "COPY . /virtualagc",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM jlawton/virtualagc",
+        "after_instruct": "RUN cd virtualagc && make clean",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM jlawton/virtualagc",
+        "after_instruct": "RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir /virtualagc",
+        "after_instruct": "RUN cd virtualagc && make clean",
+        "edge": "(2, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /virtualagc"
+    },
+    {
+        "before_instruct": "RUN mkdir /virtualagc",
+        "after_instruct": "RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs",
+        "edge": "(2, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /virtualagc"
+    },
+    {
+        "before_instruct": "COPY . /virtualagc",
+        "after_instruct": "RUN cd virtualagc && make clean",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /virtualagc"
+    },
+    {
+        "before_instruct": "COPY . /virtualagc",
+        "after_instruct": "RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /virtualagc"
+    },
+    {
+        "before_instruct": "RUN cd virtualagc && make clean",
+        "after_instruct": "RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'make'}"
+    }
+]

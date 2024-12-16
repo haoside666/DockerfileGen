@@ -1,0 +1,10 @@
+FROM alpine:3.4
+LABEL authors="Zouhir Chahoud <zouhir@zouhir.org>"
+RUN apk add --update nodejs bash git
+COPY package.json /www/package.json
+RUN cd /www; npm install
+COPY . /www
+WORKDIR /www
+ENV PORT 8080
+EXPOSE  8080
+CMD ["npm", "start"]

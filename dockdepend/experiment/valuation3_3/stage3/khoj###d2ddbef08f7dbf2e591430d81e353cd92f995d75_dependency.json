@@ -1,0 +1,135 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "LABEL org.opencontainers.image.source https://github.com/khoj-ai/khoj",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN apt update -y && apt -y install python3-pip git",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "COPY pyproject.toml .",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "COPY README.md .",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN sed -i 's/dynamic = \\[\"version\"\\]/version = \"0.0.0\"/' pyproject.toml && pip install --no-cache-dir .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ENV PYTHONPATH=/app/src:$PYTHONPATH",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ARG PORT=\"\"",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "EXPOSE ${PORT}",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ENTRYPOINT python3 src/khoj/main.py",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt update -y && apt -y install python3-pip git",
+        "after_instruct": "RUN sed -i 's/dynamic = \\[\"version\"\\]/version = \"0.0.0\"/' pyproject.toml && pip install --no-cache-dir .",
+        "edge": "(2, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY pyproject.toml .",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY README.md .",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN sed -i 's/dynamic = \\[\"version\"\\]/version = \"0.0.0\"/' pyproject.toml && pip install --no-cache-dir .",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . .",
+        "edge": "(3, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY pyproject.toml .",
+        "after_instruct": "RUN sed -i 's/dynamic = \\[\"version\"\\]/version = \"0.0.0\"/' pyproject.toml && pip install --no-cache-dir .",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY README.md .",
+        "after_instruct": "RUN sed -i 's/dynamic = \\[\"version\"\\]/version = \"0.0.0\"/' pyproject.toml && pip install --no-cache-dir .",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ARG PORT=\"\"",
+        "after_instruct": "EXPOSE ${PORT}",
+        "edge": "(9, 10)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    }
+]

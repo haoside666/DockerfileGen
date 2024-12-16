@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN apk --no-cache add ca-certificates curl bash jq py3-pip && pip install awscli",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "COPY ecs-deploy /usr/local/bin/ecs-deploy",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN chmod a+x /usr/local/bin/ecs-deploy",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN ln -s /usr/local/bin/ecs-deploy /ecs-deploy",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "COPY test.bats /test.bats",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "COPY run-tests.sh /run-tests.sh",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN chmod a+x /run-tests.sh",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "ENTRYPOINT ecs-deploy",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY ecs-deploy /usr/local/bin/ecs-deploy",
+        "after_instruct": "RUN chmod a+x /usr/local/bin/ecs-deploy",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/local/bin/ecs-deploy"
+    },
+    {
+        "before_instruct": "COPY ecs-deploy /usr/local/bin/ecs-deploy",
+        "after_instruct": "RUN ln -s /usr/local/bin/ecs-deploy /ecs-deploy",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/local/bin/ecs-deploy"
+    },
+    {
+        "before_instruct": "COPY run-tests.sh /run-tests.sh",
+        "after_instruct": "RUN chmod a+x /run-tests.sh",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /run-tests.sh"
+    }
+]

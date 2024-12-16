@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "WORKDIR /home/v2rss",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "COPY requirements.txt ./",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "RUN apt update -y && apt install -y wget ffmpeg",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm ./google-chrome-stable_current_amd64.deb",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10-slim as builder",
+        "after_instruct": "COPY src ./",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /home/v2rss",
+        "after_instruct": "COPY requirements.txt ./",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /home/v2rss",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /home/v2rss"
+    },
+    {
+        "before_instruct": "WORKDIR /home/v2rss",
+        "after_instruct": "RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm ./google-chrome-stable_current_amd64.deb",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /home/v2rss"
+    },
+    {
+        "before_instruct": "WORKDIR /home/v2rss",
+        "after_instruct": "COPY src ./",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY requirements.txt ./",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /home/v2rss"
+    },
+    {
+        "before_instruct": "COPY requirements.txt ./",
+        "after_instruct": "RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm ./google-chrome-stable_current_amd64.deb",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /home/v2rss"
+    },
+    {
+        "before_instruct": "RUN apt update -y && apt install -y wget ffmpeg",
+        "after_instruct": "RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install -y ./google-chrome-stable_current_amd64.deb && rm ./google-chrome-stable_current_amd64.deb",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt', 'wget'}"
+    }
+]

@@ -1,0 +1,10 @@
+```
+[(0, 1),  # RUN依赖于FROM，用于安装软件包
+ (1, 2),  # COPY ecs-deploy依赖于RUN，复制文件到镜像中
+ (2, 3),  # RUN chmod依赖于COPY ecs-deploy，修改文件权限
+ (3, 4),  # RUN ln依赖于RUN chmod，创建符号链接
+ (4, 5),  # COPY test.bats依赖于RUN ln，复制测试文件
+ (5, 6),  # COPY run-tests.sh依赖于COPY test.bats，复制运行测试的脚本
+ (6, 7),  # RUN chmod a+x /run-tests.sh依赖于COPY run-tests.sh，修改脚本执行权限
+ (7, 8)]  # ENTRYPOINT依赖于RUN chmod，设置容器启动命令
+```

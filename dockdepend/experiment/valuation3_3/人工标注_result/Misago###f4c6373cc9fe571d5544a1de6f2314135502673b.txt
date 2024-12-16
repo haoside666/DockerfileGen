@@ -1,0 +1,34 @@
+FROM python:3.12
+ENV PYTHONUNBUFFERED 1
+ENV IN_MISAGO_DOCKER 1
+ENV MISAGO_PLUGINS "/app/plugins"
+RUN apt-get update && apt-get install -y vim libffi-dev libssl-dev sqlite3 libjpeg-dev libopenjp2-7-dev locales cron postgresql-client-15 gettext
+ADD dev /app/dev
+ADD requirements.txt /app/requirements.txt
+ADD plugins /app/plugins
+WORKDIR /app/
+RUN pip install --upgrade pip && pip install -r /app/requirements.txt && pip install pip-tools
+RUN ./dev bootstrap_plugins
+EXPOSE 8000
+CMD python manage.py runserver 0.0.0.0:8000 --noreload
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(5, 10),	# 文件依赖
+	(6, 9),	# 文件依赖
+	(8, 9),	# WORKDIR目录依赖
+	(8, 10),	# WORKDIR目录依赖
+]
+
+所用时间：130.61

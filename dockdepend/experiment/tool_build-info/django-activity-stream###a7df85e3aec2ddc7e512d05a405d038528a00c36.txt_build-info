@@ -1,0 +1,8 @@
+{
+    "filename": "django-activity-stream###a7df85e3aec2ddc7e512d05a405d038528a00c36.txt",
+    "command_length": 9,
+    "processing_time": 0.023375988006591797,
+    "dependency_count": 11,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (3, 4), (3, 5), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /app', 'exist file or directory dependency,because common path /app']"
+}

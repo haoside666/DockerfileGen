@@ -1,0 +1,8 @@
+{
+    "filename": "express-es6-rest-api###9b8c005a38a0de820eac7e319e81b4318c320630.txt",
+    "command_length": 10,
+    "processing_time": 0.0017998218536376953,
+    "dependency_count": 10,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /www/package.json']"
+}

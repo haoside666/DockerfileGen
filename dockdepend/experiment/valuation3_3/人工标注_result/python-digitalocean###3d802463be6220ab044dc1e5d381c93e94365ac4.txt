@@ -1,0 +1,24 @@
+FROM python:alpine
+MAINTAINER Lorenzo Setale <lorenzo@setale.me>
+RUN pip3 install -U python-digitalocean pytest
+WORKDIR /root/python-digitalocean
+ADD requirements.txt requirements.txt
+RUN pip3 install -U -r requirements.txt
+ADD . /root/python-digitalocean
+CMD python3 -m pytest
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(3, 4),	# WORKDIR目录依赖
+	(3, 5),	# WORKDIR目录依赖
+	(3, 6),	# WORKDIR目录依赖
+	(4, 5),	# 文件依赖
+]
+
+所用时间：20.49

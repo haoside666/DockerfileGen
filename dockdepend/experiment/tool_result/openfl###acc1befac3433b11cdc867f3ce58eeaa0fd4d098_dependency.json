@@ -1,0 +1,51 @@
+[
+    {
+        "before_instruct": "ARG LIME_VERSION=latest",
+        "after_instruct": "FROM openfl/lime:latest",
+        "edge": "(0, 1)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "FROM openfl/lime:latest",
+        "after_instruct": "COPY . /opt/openfl/",
+        "edge": "(1, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM openfl/lime:latest",
+        "after_instruct": "COPY assets/templates/bin/openfl.sh /usr/local/bin/openfl",
+        "edge": "(1, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM openfl/lime:latest",
+        "after_instruct": "RUN haxelib dev openfl /opt/openfl/",
+        "edge": "(1, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM openfl/lime:latest",
+        "after_instruct": "RUN openfl rebuild tools",
+        "edge": "(1, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM openfl/lime:latest",
+        "after_instruct": "CMD openfl",
+        "edge": "(1, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY . /opt/openfl/",
+        "after_instruct": "RUN haxelib dev openfl /opt/openfl/",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /opt/openfl"
+    }
+]

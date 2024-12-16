@@ -1,0 +1,29 @@
+FROM python:3.7-slim
+RUN mkdir /app
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+COPY . /app
+ENV MODE server
+MAINTAINER DoubleThunder <sfyc23@gmail.com>
+ENTRYPOINT ["python", "run.py"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+    (1, 2),	# 目录依赖
+	(1, 4),	# 目录间接依赖
+	(2, 3),	# WORKDIR目录依赖
+	(2, 4),	# WORKDIR目录依赖
+	(2, 5),	# WORKDIR目录依赖
+	(3, 4),	# 文件依赖
+]
+
+
+所用时间：71.16

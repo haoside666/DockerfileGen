@@ -1,0 +1,10 @@
+以下是Dockerfile的所有指令行之间的依赖关系列表：
+
+(0, 1) # ENV PYTHONUNBUFFERED 1 依赖于 FROM python:3.9，设置环境变量基于基础镜像  
+(1, 2) # ENV LC_ALL=C.UTF-8 依赖于 ENV PYTHONUNBUFFERED 1，多个环境变量按顺序设置  
+(2, 3) # WORKDIR /app 依赖于 ENV LC_ALL=C.UTF-8，更改工作目录在环境变量设置后  
+(3, 4) # ADD runtests/requirements.txt /app/ 依赖于 WORKDIR /app，添加文件基于当前工作目录  
+(4, 5) # RUN pip install -r requirements.txt 依赖于 ADD runtests/requirements.txt /app/，安装依赖需先添加requirements.txt文件  
+(5, 6) # ENV DJANGO_SETTINGS_MODULE settings 依赖于 RUN pip install -r requirements.txt，设置Django环境变量在安装依赖后  
+(6, 7) # EXPOSE 8000 依赖于 ENV DJANGO_SETTINGS_MODULE settings，暴露端口在配置Django设置模块后  
+(7, 8) # CMD ["/app/manage.py", "runserver", "0.0.0.0:8000"] 依赖于 EXPOSE 8000，定义容器启动命令在暴露端口后

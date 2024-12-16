@@ -1,0 +1,65 @@
+[
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "WORKDIR /app/website",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "EXPOSE 3000 35729",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "COPY ./docs /app/docs",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "COPY ./website /app/website",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "RUN yarn install",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:lts",
+        "after_instruct": "CMD yarn start",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app/website",
+        "after_instruct": "COPY ./website /app/website",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app/website",
+        "after_instruct": "RUN yarn install",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app/website"
+    },
+    {
+        "before_instruct": "COPY ./website /app/website",
+        "after_instruct": "RUN yarn install",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app/website"
+    }
+]

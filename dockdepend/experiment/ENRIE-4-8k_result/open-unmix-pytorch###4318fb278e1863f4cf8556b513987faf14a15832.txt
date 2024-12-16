@@ -1,0 +1,8 @@
+```
+[(0, 1),  # RUN依赖于FROM，用于在基础镜像上执行命令
+ (1, 2),  # WORKDIR依赖于上一个RUN，设置工作目录
+ (2, 3),  # RUN依赖于WORKDIR，在工作目录中安装ffmpeg
+ (3, 4),  # RUN依赖于上一个RUN，安装musdb
+ (4, 5),  # RUN依赖于上一个RUN，安装openunmix
+ (5, 6)]  # ENTRYPOINT依赖于上一个RUN，设置容器启动命令
+```

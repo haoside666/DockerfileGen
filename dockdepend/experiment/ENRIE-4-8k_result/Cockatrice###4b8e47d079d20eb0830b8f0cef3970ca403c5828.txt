@@ -1,0 +1,11 @@
+```
+(0, 1) # MAINTAINER 依赖于 FROM，设置维护者基于基础镜像
+(1, 2) # RUN 依赖于 MAINTAINER，安装软件包在维护者设置后
+(2, 3) # COPY 依赖于 RUN，复制文件需在软件包安装后
+(3, 4) # WORKDIR 依赖于 COPY，更改目录为操作复制的文件
+(4, 5) # WORKDIR 依赖于前一个 WORKDIR，连续更改工作目录
+(5, 6) # RUN(cmake) 依赖于 WORKDIR，在特定目录执行构建
+(6, 7) # WORKDIR 依赖于 RUN(cmake)，更改目录为运行应用准备
+(7, 8) # EXPOSE 依赖于 WORKDIR，通常在配置目录后暴露端口
+(8, 9) # ENTRYPOINT 依赖于 EXPOSE，定义启动命令在所有配置后
+```

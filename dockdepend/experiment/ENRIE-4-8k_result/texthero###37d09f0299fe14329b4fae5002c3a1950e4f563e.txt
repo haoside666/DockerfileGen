@@ -1,0 +1,27 @@
+答案中有一些依赖关系的描述可能需要调整，因为Dockerfile中的指令并不总是严格依赖于前一个指令。例如，`EXPOSE`指令通常不依赖于`WORKDIR`，它们是独立的设置。同样，`COPY`指令不一定依赖于`EXPOSE`或其他非`COPY`指令，除非有明确的上下文依赖。
+
+考虑到这一点，以下是修正后的依赖关系列表，其中注释描述了指令之间更合理的依赖逻辑：
+
+```
+(0, 1) # WORKDIR依赖于FROM，因为需要在选定的基础镜像上设置工作目录
+(1, 2) # EXPOSE不直接依赖于WORKDIR，它声明容器运行时应该监听的端口
+(1, 3) # COPY ./docs依赖于WORKDIR，因为它将文件复制到WORKDIR指定的目录中
+(3, 4) # COPY ./website依赖于前一个COPY指令（如果考虑执行顺序），或者依赖于WORKDIR（如果考虑文件复制的目的地）
+(4, 5) # RUN yarn install依赖于COPY指令，因为它需要在复制了必要的文件之后执行安装命令
+(5, 6) # CMD依赖于RUN yarn install，因为它定义的容器启动命令需要在依赖安装完成后才能执行
+```
+
+请注意，这个列表中的依赖关系更多地是基于指令执行的逻辑顺序，而不是Dockerfile语法上的严格依赖。在Dockerfile的实际执行过程中，某些指令（如`ENV`或`LABEL`）可能完全不依赖于其他指令。
+
+如果按照原题目的要求，仅根据指令行的编号顺序来确定依赖关系，不考虑实际的逻辑依赖，那么答案将是：
+
+```
+(0, 1) # WORKDIR依赖于FROM（编号顺序）
+(1, 2) # EXPOSE依赖于WORKDIR（编号顺序）
+(2, 3) # COPY ./docs依赖于EXPOSE（编号顺序）
+(3, 4) # COPY ./website依赖于COPY ./docs（编号顺序）
+(4, 5) # RUN yarn install依赖于COPY ./website（编号顺序）
+(5, 6) # CMD依赖于RUN yarn install（编号顺序）
+```
+
+这个列表仅反映了指令在Dockerfile中出现的顺序。

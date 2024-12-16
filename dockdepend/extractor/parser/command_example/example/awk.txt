@@ -1,0 +1,12 @@
+awk '/^P:nginx$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk '/^P:mariadb$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk '/^P:qbittorrent-nox$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk '/^P:openssh-server-pam$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk         '/centos-sclo-rh-source/{f=1} f>6{f=0} f{f++; $0="# " $0} 1'         /etc/yum.repos.d/CentOS-SCLo-scl-rh.repo > repo.patch
+awk '{ if($0=="enabled=1"){print "enabled=0";} else{print $0;} }' /etc/yum/pluginconf.d/fastestmirror.conf.bak > /etc/yum/pluginconf.d/fastestmirror.conf
+awk '{ sub("\r$", ""); print }' testping.yml > hcipingtest.yml
+awk '/^P:deluge$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk '/^P:transmission$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');   fi
+awk '$1 == "#define"
+awk '{ sub("\r$", ""); print }' /hci/testping.yml > hcipingtest.yml
+awk '{ sub("\r$", ""); print }' /hci/testping.yml > /hci/hcipingtest.yml

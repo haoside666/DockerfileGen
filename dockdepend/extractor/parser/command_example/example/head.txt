@@ -1,0 +1,4 @@
+head -n -2 /etc/bash.bashrc > /etc/bash.bashrc
+head -c 5 /dev/random > random_bytes
+head -c 5 /dev/random > random_bytes2
+head -n $(grep -n RULES /etc/rsyslog.conf | cut -d':' -f1) /etc/rsyslog.conf > /etc/rsyslog.conf.new

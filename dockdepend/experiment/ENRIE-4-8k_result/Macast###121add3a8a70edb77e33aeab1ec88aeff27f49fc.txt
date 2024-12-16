@@ -1,0 +1,18 @@
+```
+[(0, 1),  # 第一个ENV指令依赖于FROM指令
+ (0, 2),  # 第二个ENV指令依赖于FROM指令
+ (0, 3),  # 第一个RUN指令依赖于FROM指令
+ (1, 3),  # 第一个RUN指令依赖于第一个ENV指令（使用了PYPI_URL变量）
+ (2, 3),  # 第一个RUN指令依赖于第二个ENV指令（使用了PYPI_INDEX_URL变量）
+ (0, 4),  # 第二个RUN指令依赖于FROM指令
+ (1, 4),  # 第二个RUN指令依赖于第一个ENV指令（使用了PYPI_URL变量）
+ (2, 4),  # 第二个RUN指令依赖于第二个ENV指令（使用了PYPI_INDEX_URL变量）
+ (3, 4),  # 第二个RUN指令依赖于第一个RUN指令（存在顺序依赖）
+ (0, 5),  # VOLUME指令依赖于FROM指令
+ (0, 6),  # WORKDIR指令依赖于FROM指令
+ (5, 6),  # WORKDIR指令依赖于VOLUME指令（挂载点与工作目录相关）
+ (0, 7),  # SHELL指令依赖于FROM指令
+ (6, 7),  # SHELL指令依赖于WORKDIR指令（工作目录变更可能影响shell行为）
+ (0, 8),  # ENTRYPOINT指令依赖于FROM指令
+ (7, 8)]  # ENTRYPOINT指令依赖于SHELL指令（shell形式可能影响入口点行为）
+```

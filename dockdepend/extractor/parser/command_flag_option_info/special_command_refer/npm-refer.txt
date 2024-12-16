@@ -1,0 +1,74 @@
+-a --all
+--access <restricted public>
+--allow-same-version
+--audit-level <info low moderate high critical none>
+--auth-type <legacy web>
+--cache <cache>
+-c --call <call>
+--cidr <cidr>
+--color --no-color --color always
+--depth <depth>
+--diff-dst-prefix <path>
+--diff-ignore-all-space
+--diff-name-only
+--diff-no-prefix
+--diff <package-spec>
+--diff-src-prefix <path>
+--diff-text
+--diff-unified <number>
+--dry-run
+--editor <editor>
+-E --save-exact
+-f --force
+--foreground-scripts
+-g --global
+--global-style
+--if-present
+--ignore-scripts
+--include-workspace-root
+--install-links
+--install-strategy <hoisted nested shallow linked>
+--json
+--legacy-bundling
+--link
+-L --location <global user project>
+-l --long
+--no-audit
+--no-bin-links
+--no-browser --browser <browser>
+--no-commit-hooks
+--no-description
+--no-fund
+--no-git-tag-version
+--no-package-lock
+--no-save
+--no-unicode
+--no-workspaces-update
+--offline
+--omit <dev optional peer>
+--otp <otp>
+--package-lock-only
+--package <package-spec>
+--pack-destination <pack-destination>
+-p --parseable
+--prefer-dedupe
+--prefer-offline
+--prefer-online
+--preid prerelease-id
+--provenance --provenance-file <file>
+--read-only
+--registry <registry>
+--scope <@scope>
+--script-shell <script-shell>
+--searchexclude <searchexclude>
+--searchopts <searchopts>
+--shell <shell>
+--sign-git-tag
+-S --save --save-prod --save-dev --save-optional --save-peer --save-bundle
+--strict-peer-deps
+--tag <tag>
+--viewer <viewer>
+--which <fundingSourceNumber>
+-ws --workspaces
+-w --workspace <workspace-name>
+-y --yes

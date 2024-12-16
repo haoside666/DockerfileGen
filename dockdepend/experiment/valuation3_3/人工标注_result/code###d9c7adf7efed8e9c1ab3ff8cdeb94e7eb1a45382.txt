@@ -1,0 +1,64 @@
+FROM ubuntu:14.04
+MAINTAINER Dongweiming "ciici123@gmail.com"
+ENV DEBIAN_FRONTEND noninteractive
+ENV CODE_ENV "unset"
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install curl python -yq
+RUN curl -O https://raw.githubusercontent.com/douban/code/master/scripts/install_code.sh
+RUN /bin/bash install_code.sh
+RUN rm -rf install_code.sh
+EXPOSE 8000
+WORKDIR /code
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(0, 17),	# Image dependency
+	(0, 18),	# Image dependency
+	(0, 19),	# Image dependency
+	(0, 20),	# Image dependency
+	(2, 14),	# apt依赖于 DEBIAN_FRONTEND
+	(2, 15),	# apt依赖于 DEBIAN_FRONTEND
+	(4, 14),	# apt源文件依赖
+	(5, 14),	# apt源文件依赖
+	(6, 14),	# apt源文件依赖
+	(7, 14),	# apt源文件依赖
+	(8, 14),	# apt源文件依赖
+	(9, 14),	# apt源文件依赖
+	(10, 14),	# apt源文件依赖
+	(11, 14),	# apt源文件依赖
+	(12, 14),	# apt源文件依赖
+	(13, 14),	# apt源文件依赖
+	(14, 15),	# install依赖于update
+	(15, 16),	# curl
+    (16, 17),	# 文件依赖
+	(16, 18),	# 文件依赖
+]
+
+
+所用时间：62.27

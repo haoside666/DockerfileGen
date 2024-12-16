@@ -1,0 +1,163 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ARG USER_ID=\"\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ARG GROUP_ID=\"\"",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN pip install pyyaml",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then RUN addgroup --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then  RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then USER inav; fi",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "RUN git config --global --add safe.directory /src",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "VOLUME /src",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "WORKDIR /src/build",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:jammy",
+        "after_instruct": "ENTRYPOINT /src/cmake/docker.sh",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ARG USER_ID=\"\"",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then RUN addgroup --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(1, 6)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_ID=\"\"",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then  RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(1, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG USER_ID=\"\"",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then USER inav; fi",
+        "edge": "(1, 8)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG GROUP_ID=\"\"",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then RUN addgroup --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(2, 6)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG GROUP_ID=\"\"",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then  RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(2, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb",
+        "edge": "(3, 4)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb",
+        "after_instruct": "RUN pip install pyyaml",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb",
+        "after_instruct": "RUN git config --global --add safe.directory /src",
+        "edge": "(4, 9)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'git'}"
+    },
+    {
+        "before_instruct": "RUN if [ -n \"${USER_ID}\" ]; then RUN addgroup --gid ${GROUP_ID} inav; exit 0; fi",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then  RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} inav; exit 0; fi",
+        "edge": "(6, 7)",
+        "type": "RUN_OTHER",
+        "dependency_description": "have shell other intersection,because exist intersection {'${GROUP_ID}', '0', 'inav'}"
+    },
+    {
+        "before_instruct": "RUN if [ -n \"${USER_ID}\" ]; then RUN addgroup --gid ${GROUP_ID} inav; exit 0; fi",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then USER inav; fi",
+        "edge": "(6, 8)",
+        "type": "RUN_OTHER",
+        "dependency_description": "have shell other intersection,because exist intersection {'inav'}"
+    },
+    {
+        "before_instruct": "RUN if [ -n \"${USER_ID}\" ]; then  RUN adduser --disabled-password --gecos '' --uid ${USER_ID} --gid ${GROUP_ID} inav; exit 0; fi",
+        "after_instruct": "RUN if [ -n \"${USER_ID}\" ]; then USER inav; fi",
+        "edge": "(7, 8)",
+        "type": "RUN_OTHER",
+        "dependency_description": "have shell other intersection,because exist intersection {'inav'}"
+    }
+]

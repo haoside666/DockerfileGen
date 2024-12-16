@@ -1,0 +1,16 @@
+```
+[(0, 1),  # ENV PYTHONUNBUFFERED 1 依赖于 FROM python:3.12
+ (0, 2),  # ENV IN_MISAGO_DOCKER 1 依赖于 FROM python:3.12
+ (0, 3),  # ENV MISAGO_PLUGINS "/app/plugins" 依赖于 FROM python:3.12
+ (0, 4),  # RUN apt-get update... 依赖于 FROM python:3.12
+ (0, 5),  # ADD dev /app/dev 依赖于 FROM python:3.12
+ (0, 6),  # ADD requirements.txt /app/requirements.txt 依赖于 FROM python:3.12
+ (0, 7),  # ADD plugins /app/plugins 依赖于 FROM python:3.12
+ (0, 8),  # WORKDIR /app/ 依赖于 FROM python:3.12
+ (8, 9),  # RUN pip install... 依赖于 WORKDIR /app/
+ (8, 10), # RUN ./dev bootstrap_plugins 依赖于 WORKDIR /app/
+ (0, 11), # EXPOSE 8000 依赖于 FROM python:3.12
+ (0, 12)] # CMD python manage.py... 依赖于 FROM python:3.12
+```
+
+注：在Dockerfile中，大部分指令都直接或间接依赖于基础镜像（FROM指令），因为它们需要在该镜像提供的文件系统中执行。例如，ENV设置环境变量、RUN执行命令、ADD添加文件等都依赖于基础镜像。而WORKDIR指令会改变后续指令的工作目录，所以后续的RUN指令会依赖于WORKDIR指令。EXPOSE和CMD指令通常不依赖于其他指令，它们只是声明容器运行时的行为和属性，但仍然是在基础镜像的上下文中执行的，因此也可以视为依赖于FROM指令。

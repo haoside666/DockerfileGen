@@ -1,0 +1,36 @@
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install --no-install-recommends --no-install-suggests -y mingw-w64 zip build-essential perl python3 xml2 pkg-config automake libtool autotools-dev make g++ git ruby wget libssl-dev
+WORKDIR /opt
+RUN git clone https://github.com/TheWover/donut.git
+WORKDIR /opt/donut
+RUN make -f Makefile
+WORKDIR /workdir
+RUN chmod ugo+wrx /workdir
+RUN ls /opt/donut
+ENTRYPOINT ["/opt/donut/donut"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(1, 2),	# install 依赖于 update
+	(2, 4),	# git依赖
+	(2, 6),	# make依赖
+	(4, 5),	# 目录依赖
+	(4, 6),	# 文件间接依赖
+	(4, 7),	# 顺序有关依赖
+	(5, 6),	# WORKDIR目录依赖
+	(6, 7),	# 顺序有关依赖
+	(7, 8),	# WORKDIR目录依赖
+]
+
+所用时间：160.29

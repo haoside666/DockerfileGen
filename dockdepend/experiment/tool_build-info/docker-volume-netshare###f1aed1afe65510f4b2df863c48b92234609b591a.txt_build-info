@@ -1,0 +1,8 @@
+{
+    "filename": "docker-volume-netshare###f1aed1afe65510f4b2df863c48b92234609b591a.txt",
+    "command_length": 4,
+    "processing_time": 0.0010838508605957031,
+    "dependency_count": 4,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (1, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /go/src/github.com/ContainX/docker-volume-netshare']"
+}

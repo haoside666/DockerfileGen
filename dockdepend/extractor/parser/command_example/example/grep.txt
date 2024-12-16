@@ -1,0 +1,65 @@
+grep -qxF 'clear_env = no' /etc/php82/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php82/php-fpm.d/www.conf
+grep " bitcoin-${BITCOIN_VERSION}-${TARGETPLATFORM}.tar.gz\$" SHA256SUMS.asc | sha256sum -c -
+grep -rl "/var/www/webtrees" /etc | xargs sed -i 's|/var/www/webtrees|/data/webtrees|g'
+grep docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip docker-base_${DOCKER_BASE_VERSION}_SHA256SUMS | sha256sum -c
+grep " node-v$NODE_VERSION-linux-$ARCH.tar.xz\$" SHASUMS256.txt | sha256sum -c -
+grep -v "# -pedantic" makefile > makefile2
+grep prometheus-${PROMETHEUS_VERSION}.linux-amd64.tar.gz sha256sums.txt | sha256sum -c --
+grep -v -E "@ git\+https" /home/viper/.viper/modules/requirements.txt > /tmp/requirements.txt
+grep ^github_download ./bootstrap.sh
+grep " bitcoin-${BITCOIN_VERSION}.tar.gz\$" SHA256SUMS.asc | sha256sum -c -
+grep -q jessie /etc/os-release; then 	rm /etc/apt/sources.list
+grep 'Missing module' /var/log/install-module-windows-server.log | exit $(wc -l);
+grep -F "source /opt/ros/${ROS_DISTRO}/setup.bash" /home/ubuntu/.bashrc || echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/ubuntu/.bashrc
+grep -rl "/app/data" /app | xargs sed -i 's|/app/data|/config/addons_config/mealie_data|g'
+grep ${NODE_VERSION}-${ARCHITECTURE}.tar.gz SHASUMS256.txt.asc | shasum -a 256 -c -
+grep -q '^gpgcheck=1' /etc/yum.repos.d/corretto.repo
+grep -q "${GRAPHVIZ_VERSION}" graphviz_version.h
+grep vault_${VAULT_VERSION}_linux_${ARCH}.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c
+grep -q ${EXPAT_VERSION} expat_config.h
+grep consul_${VERSION}_linux_${consulArch}.zip consul_${VERSION}_SHA256SUMS | sha256sum -c
+grep -v 'secure_path' /etc/sudoers > /etc/sudoers
+grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c -
+grep -q Trusty /etc/os-release; then     echo "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
+grep " bitcoin-${BITCOIN_VERSION}.tar.gz\$" SHA256SUMS | sha256sum -c -
+grep -q "export LD_LIBRARY_PATH=/usr/local/cuda/lib64" ~/.bashrc || echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> ~/.bashrc
+grep -v -E "(@ git\+https|lief==)" /home/viper/.viper/modules/requirements.txt > /tmp/requirements.txt
+grep -q xenial /etc/os-release; then 		sudo apt-get update
+grep " bitcoin-${BITCOIN_VERSION}-${TARGETPLATFORM}.tar.gz" SHA256SUMS.asc | sha256sum -c -
+grep -v InstallMedia ./Launch.sh > ./Launch-nopicker.sh
+grep " node-v%%NODEJS_CANONICAL%%-linux-x64-musl.tar.xz\$" SHASUMS256.txt | sha256sum -c -
+grep 'Missing module\|Completed with errors' /var/log/install-module-${mod}.log | exit $(wc -l);       fi     done
+grep " node-v$NODE_VERSION-linux-x64.tar.xz\$" SHASUMS256.txt | sha256sum -c -
+grep consul_${CONSUL_VERSION}_linux_${consulArch}.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c
+grep piaware /VERSIONS | cut -d " " -f 2 > /IMAGE_VERSION
+grep 'Failed to install\|Error while installing an editor\|Completed with errors' /var/log/install-editor.log | exit $(wc -l)
+grep -rl '/var/lib/mysql' /etc | xargs sed -i 's|/var/lib/mysql|/config/addons_config/zoneminder/mysql|g'
+grep '/var/run/postgresql' src/include/pg_config_manual.h.new
+grep " node-v$NODE_VERSION.tar.xz\$" SHASUMS256.txt | sha256sum -c -
+grep "$(cat ~/file_name)" sha256sums > sha256sums_min
+grep '^[$<?]' /var/www/html/config.default.php > /var/www/html/config.php
+grep consul_${CONSUL_VERSION}_linux_amd64.zip consul_${CONSUL_VERSION}_SHA256SUMS | sha256sum -c
+grep " bitcoin-${BITCOIN_VERSION}-x86_64-linux-gnu.tar.gz\$" SHA256SUMS.asc | sha256sum -c -
+grep " bitcoin-${BITCOIN_VERSION}-${TARGETPLATFORM}.tar.gz" SHA256SUMS | sha256sum -c -
+grep -q "export PATH=.*/usr/local/cuda/bin" /etc/skel/.bashrc || echo "export PATH=/usr/local/cuda/bin:$PATH">>/etc/skel/.bashrc
+grep "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt | sha256sum -c -
+grep GENOMETOOLS_PATH ${BASHRC} || bash -c "echo; echo 'export GENOMETOOLS_PATH=\"/usr/bin/gt\"'; echo" >> ${BASHRC}
+grep -q jessie /etc/os-release; then     echo "deb http://http.us.debian.org/debian/ jessie-backports main" | sudo tee -a /etc/apt/sources.list
+grep 'Missing module' /var/log/install-module-linux-server.log | exit $(wc -l);
+grep -q "export LD_LIBRARY_PATH=/usr/local/cuda/lib64" /etc/skel/.bashrc || echo "export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH" >> /etc/skel/.bashrc
+grep vault_${VAULT_VERSION}_linux_amd64.zip vault_${VAULT_VERSION}_SHA256SUMS | sha256sum -c
+grep " node-$NODE_VERSION-$ARCHITECTURE.tar.xz\$" SHASUMS256.txt.asc | sha256sum -c -
+grep -q stretch /etc/os-release; then 		echo 'deb http://deb.debian.org/debian stretch-backports main' | sudo tee -a /etc/apt/sources.list.d/stretch-backports.list; 	elif grep -q Ubuntu /etc/os-release
+grep -F "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" /home/ubuntu/.bashrc || echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /home/ubuntu/.bashrc
+grep " node-v%%NODEJS_CANONICAL%%.tar.xz\$" SHASUMS256.txt | sha256sum -c -
+grep " bitcoin-${BITCOIN_VERSION}-linux64.tar.gz\$" SHA256SUMS.asc | sha256sum -c -
+grep " node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt | sha256sum -c -
+grep -qxF 'clear_env = no' /etc/php81/php-fpm.d/www.conf || echo 'clear_env = no' >> /etc/php81/php-fpm.d/www.conf
+grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt | sha256sum -c -
+grep -l '#!/usr/bin/env ruby' /rails/bin/* | xargs sed -i '/^#!/aDir.chdir File.expand_path("..", __dir__)'
+grep "$DECRED_ARCHIVE" /tmp/$MANIFEST | sha256sum -c -
+grep ${DOCKER_BASE_VERSION}_linux_amd64.zip docker-base_${DOCKER_BASE_VERSION}_SHA256SUMS | sha256sum -c
+grep -q jessie /etc/os-release; then     echo "deb http://archive.debian.org/debian/ jessie-backports main" | sudo tee -a /etc/apt/sources.list
+grep '^Package: ' "$tempDir/Packages"
+grep -q "export PATH=.*/usr/local/cuda/bin" ~/.bashrc || echo "export PATH=/usr/local/cuda/bin:$PATH">>~/.bashrc
+grep $BITCOIN_TARBALL bitcoin | tee SHA256SUMS

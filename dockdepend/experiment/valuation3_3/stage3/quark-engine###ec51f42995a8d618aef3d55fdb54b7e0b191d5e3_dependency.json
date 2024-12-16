@@ -1,0 +1,107 @@
+[
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "COPY . /app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "RUN apt-get update && apt-get install --no-install-recommends -y git graphviz && apt-get clean && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "RUN pip install pipenv && pipenv install --skip-lock",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "RUN pipenv run freshquark",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "WORKDIR /app/quark",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.8-slim",
+        "after_instruct": "ENTRYPOINT pipenv run",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "RUN pip install pipenv && pipenv install --skip-lock",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "RUN pipenv run freshquark",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "WORKDIR /app/quark",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip install pipenv && pipenv install --skip-lock",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pipenv run freshquark",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "RUN pip install pipenv && pipenv install --skip-lock",
+        "after_instruct": "RUN pipenv run freshquark",
+        "edge": "(4, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pipenv'}"
+    },
+    {
+        "before_instruct": "RUN pip install pipenv && pipenv install --skip-lock",
+        "after_instruct": "WORKDIR /app/quark",
+        "edge": "(4, 6)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    },
+    {
+        "before_instruct": "RUN pipenv run freshquark",
+        "after_instruct": "WORKDIR /app/quark",
+        "edge": "(5, 6)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    }
+]

@@ -1,0 +1,338 @@
+[
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "ENV VIRTUAL_ENV=/app/.venv",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "RUN python -m venv /app/.venv",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "ENV PATH=/app/.venv/bin:$PATH",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "COPY pyproject.toml .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "COPY MANIFEST.in .",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "COPY README.md .",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "COPY src ./src",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "USER 5000",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "ENTRYPOINT sqlfluff",
+        "edge": "(0, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim-bullseye",
+        "after_instruct": "CMD --help",
+        "edge": "(0, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY pyproject.toml .",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "edge": "(1, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "edge": "(1, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY MANIFEST.in .",
+        "edge": "(1, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY README.md .",
+        "edge": "(1, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY src ./src",
+        "edge": "(1, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(1, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "ENV VIRTUAL_ENV=/app/.venv",
+        "after_instruct": "RUN python -m venv /app/.venv",
+        "edge": "(2, 3)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ENV VIRTUAL_ENV=/app/.venv",
+        "after_instruct": "ENV PATH=/app/.venv/bin:$PATH",
+        "edge": "(2, 4)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN python -m venv /app/.venv",
+        "after_instruct": "USER 5000",
+        "edge": "(3, 13)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "edge": "(5, 8)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(5, 12)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools",
+        "after_instruct": "USER 5000",
+        "edge": "(5, 13)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "COPY pyproject.toml .",
+        "after_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY pyproject.toml .",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "edge": "(6, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY pyproject.toml .",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(6, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY pyproject.toml .",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(6, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "after_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "edge": "(7, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /app/requirements.txt"
+    },
+    {
+        "before_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(7, 12)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /app"
+    },
+    {
+        "before_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "after_instruct": "USER 5000",
+        "edge": "(7, 13)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(8, 12)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip'}"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "after_instruct": "USER 5000",
+        "edge": "(8, 13)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "COPY MANIFEST.in .",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(9, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY MANIFEST.in .",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(9, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY README.md .",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(10, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY README.md .",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(10, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY src ./src",
+        "after_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "edge": "(11, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "COPY src ./src",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(11, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "after_instruct": "USER 5000",
+        "edge": "(12, 13)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(7, 14)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --upgrade -r requirements.txt",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(8, 14)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    },
+    {
+        "before_instruct": "RUN pip install --no-cache-dir --no-dependencies .",
+        "after_instruct": "WORKDIR /sql",
+        "edge": "(12, 14)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    }
+]

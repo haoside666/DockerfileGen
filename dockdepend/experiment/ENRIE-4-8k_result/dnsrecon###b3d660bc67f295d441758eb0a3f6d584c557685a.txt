@@ -1,0 +1,25 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM，设置工作目录需要在基础镜像之后
+ (0, 2),  # COPY依赖于FROM，复制文件到容器内需要在基础镜像之后
+ (1, 2),  # COPY依赖于WORKDIR，复制文件到指定的工作目录
+ (0, 3),  # RUN apk add依赖于FROM，安装软件包需要在基础镜像之后
+ (1, 3),  # RUN apk add依赖于WORKDIR，虽然不直接操作目录，但通常在工作目录设置后进行
+ (2, 3),  # RUN apk add可能依赖于COPY，如果COPY包含了需要安装的软件包信息（如requirements.txt）
+ (0, 4),  # RUN pip install升级依赖于FROM，需要在Python环境准备好之后
+ (1, 4),  # RUN pip install升级依赖于WORKDIR，通常在设置好工作目录后进行
+ (3, 4),  # RUN pip install升级可能依赖于RUN apk add，如果apk add安装了pip所需的依赖
+ (0, 5),  # RUN python --version依赖于FROM，需要在Python环境准备好之后
+ (1, 5),  # RUN python --version依赖于WORKDIR，虽然不直接操作，但遵循工作目录设置后的常规
+ (0, 6),  # RUN pip3 install依赖于FROM，安装Python包需要在Python环境准备好之后
+ (1, 6),  # RUN pip3 install依赖于WORKDIR，通常在设置好工作目录后进行
+ (3, 6),  # RUN pip3 install可能依赖于RUN apk add，如果apk add安装了pip或相关依赖
+ (4, 6),  # RUN pip3 install可能依赖于RUN pip install升级，确保使用最新pip进行安装
+ (2, 6),  # RUN pip3 install依赖于COPY，因为需要requirements.txt文件
+ (0, 7),  # RUN chmod +x依赖于FROM，修改文件权限需要在文件系统准备好之后
+ (1, 7),  # RUN chmod +x依赖于WORKDIR，修改指定工作目录下文件的权限
+ (2, 7),  # RUN chmod +x依赖于COPY，需要文件被复制到容器内才能修改权限
+ (0, 8),  # ENTRYPOINT依赖于FROM，设置入口点需要在容器环境准备好之后
+ (1, 8)]  # ENTRYPOINT依赖于WORKDIR，通常入口点设置在工作目录相关的文件上
+```
+
+注：这个依赖关系列表是基于Dockerfile指令的常见逻辑和最佳实践推断出来的。在实际情况下，某些依赖可能不是严格必需的，特别是当指令之间没有直接的数据或状态传递时。然而，为了构建可靠和可预测的Docker镜像，通常建议按照这些依赖关系来组织Dockerfile中的指令。

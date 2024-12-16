@@ -1,0 +1,38 @@
+FROM ubuntu:jammy
+ARG USER_ID
+ARG GROUP_ID
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb
+RUN pip install pyyaml
+RUN if [ -n "$USER_ID" ]; then RUN addgroup --gid $GROUP_ID inav; exit 0; fi
+RUN if [ -n "$USER_ID" ]; then  RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID inav; exit 0; fi
+RUN if [ -n "$USER_ID" ]; then USER inav; fi
+RUN git config --global --add safe.directory /src
+VOLUME /src
+WORKDIR /src/build
+ENTRYPOINT ["/src/cmake/docker.sh"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(1, 6),	# environment variable dependencies
+	(1, 7),	# environment variable dependencies
+	(1, 8),	# environment variable dependencies
+	(2, 6),	# environment variable dependencies
+	(2, 7),	# environment variable dependencies
+	(3, 4),	# apt-get 依赖于 DEBIAN_FRONTEND
+	(4, 5),	# pip依赖
+	(4, 9),	# git依赖
+]
+
+所用时间：140.92

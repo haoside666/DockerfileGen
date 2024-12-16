@@ -1,0 +1,67 @@
+FROM ruby:3.2-alpine
+WORKDIR /app
+ADD _config.yml /app/
+ADD _config_prod.yml /app/
+ADD Gemfile /app/
+ADD Gemfile.lock /app/
+ADD package.json /app/
+ADD pnpm-lock.yaml /app/
+ADD gulpfile.js /app/
+RUN apk add --virtual build-dependencies build-base npm
+RUN apk upgrade
+RUN npm i -g pnpm
+RUN pnpm install
+RUN bundle config --global silence_root_warning 1 && bundler install --verbose
+EXPOSE 3000
+EXPOSE 3001
+ENTRYPOINT [ "pnpm", "run", "start-plugins" ]
+
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(1, 2),	# WORKDIR目录依赖
+	(1, 3),	# WORKDIR目录依赖
+	(1, 4),	# WORKDIR目录依赖
+	(1, 5),	# WORKDIR目录依赖
+	(1, 6),	# WORKDIR目录依赖
+	(1, 7),	# WORKDIR目录依赖
+	(1, 8),	# WORKDIR目录依赖
+	(1, 11),	# WORKDIR目录依赖
+	(1, 12),	# WORKDIR目录依赖
+	(1, 13),	# WORKDIR目录依赖
+	(2, 12),	# 文件依赖
+	(2, 13),	# 文件依赖
+	(3, 12),	# 文件依赖
+	(3, 13),	# 文件依赖
+	(4, 12),	# 文件依赖
+	(4, 13),	# 文件依赖
+	(5, 12),	# 文件依赖
+	(5, 13),	# 文件依赖
+	(6, 12),	# 文件依赖
+	(6, 13),	# 文件依赖
+	(7, 12),	# 文件依赖
+	(7, 13),	# 文件依赖
+	(8, 12),	# 文件依赖
+	(8, 13),	# 文件依赖
+	(9, 11),	# npm依赖
+	(11, 12),	# pnpm依赖
+]
+
+
+所用时间：280.11

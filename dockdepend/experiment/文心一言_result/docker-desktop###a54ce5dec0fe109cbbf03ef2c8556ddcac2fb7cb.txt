@@ -1,0 +1,43 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM ubuntu:16.04
+MAINTAINER Roberto G. Hashioka "roberto_hashioka@hotmail.com"
+RUN apt-get update -y
+RUN apt-get upgrade -y
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo
+RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
+RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
+RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
+RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd
+RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl
+RUN apt-get -y install fuse  || :
+RUN rm -rf /var/lib/dpkg/info/fuse.postinst
+RUN apt-get -y install fuse
+RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm
+RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
+ADD . /src
+EXPOSE 22
+CMD ["/bin/bash", "/src/startup.sh"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # MAINTAINER指令依赖于FROM指令，因为维护者信息基于基础镜像  
+ (2, 1),  # 第一个RUN指令依赖于MAINTAINER指令，因为需要在基础镜像上执行更新操作  
+ (3, 2),  # 第二个RUN指令依赖于第一个RUN指令，因为升级操作通常在更新后进行  
+ (4, 3),  # ENV指令依赖于第二个RUN指令，因为环境变量的设置可能基于之前的系统更新和升级  
+ (5, 4),  # 第三个RUN指令依赖于ENV指令，因为软件包的安装可能受到环境变量的影响  
+ (6, 5),  # 第四个RUN指令依赖于第三个RUN指令，因为需要修改配置文件，这通常在安装软件包之后进行  
+ (7, 6),  # 第五个RUN指令依赖于第四个RUN指令，因为需要修改访问控制文件  
+ (8, 7),  # 第六个RUN指令依赖于第五个RUN指令，因为需要修改SSH配置以允许X11转发  
+ (9, 8),  # 第七个RUN指令依赖于第六个RUN指令，因为需要修改PAM配置  
+ (10, 9), # 第八个RUN指令依赖于第七个RUN指令，因为需要处理initctl的问题  
+ (11, 10),# 第九个RUN指令依赖于第八个RUN指令，因为需要安装fuse软件包  
+ (12, 11),# 第十个RUN指令依赖于第九个RUN指令，因为需要处理fuse软件包安装后的清理工作  
+ (13, 12),# 第十一个RUN指令依赖于第十个RUN指令，因为需要重新安装fuse软件包  
+ (14, 13),# 第十二个RUN指令依赖于第十一个RUN指令，因为需要安装多个软件包  
+ (15, 14),# 第十三个RUN指令依赖于第十二个RUN指令，因为需要定义新的locale  
+ (16, 15),# ADD指令依赖于第十三个RUN指令，因为需要在所有配置和软件安装完成后添加文件  
+ (17, 16),# EXPOSE指令依赖于ADD指令，因为端口暴露通常是在应用代码和配置准备好之后  
+ (18, 17)]# CMD指令依赖于EXPOSE指令，因为容器启动的命令应在端口暴露和其他设置完成之后执行

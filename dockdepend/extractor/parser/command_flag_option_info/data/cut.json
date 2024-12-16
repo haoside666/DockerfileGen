@@ -1,0 +1,50 @@
+{
+    "flag": [
+        [
+            "-n"
+        ],
+        [
+            "--complement"
+        ],
+        [
+            "-s",
+            "--only-delimited"
+        ],
+        [
+            "-z",
+            "--zero-terminated"
+        ],
+        [
+            "--help"
+        ],
+        [
+            "--version"
+        ]
+    ],
+    "option": [
+        [
+            "-b",
+            "--bytes",
+            "LIST"
+        ],
+        [
+            "-c",
+            "--characters",
+            "LIST"
+        ],
+        [
+            "-d",
+            "--delimiter",
+            "DELIM"
+        ],
+        [
+            "-f",
+            "--fields",
+            "LIST"
+        ],
+        [
+            "--output-delimiter",
+            "STRING"
+        ]
+    ]
+}

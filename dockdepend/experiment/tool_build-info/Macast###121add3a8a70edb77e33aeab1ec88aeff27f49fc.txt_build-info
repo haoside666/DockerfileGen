@@ -1,0 +1,8 @@
+{
+    "filename": "Macast###121add3a8a70edb77e33aeab1ec88aeff27f49fc.txt",
+    "command_length": 9,
+    "processing_time": 0.005903005599975586,
+    "dependency_count": 12,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (1, 4), (2, 4), (3, 4), (4, 6)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', 'environment variable dependencies', \"have shell pkg intersection,because exist intersection {'pip'}\", 'exist file or directory dependency,because RUN instruct create /src/']"
+}

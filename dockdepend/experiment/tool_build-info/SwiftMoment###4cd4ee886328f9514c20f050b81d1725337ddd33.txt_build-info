@@ -1,0 +1,8 @@
+{
+    "filename": "SwiftMoment###4cd4ee886328f9514c20f050b81d1725337ddd33.txt",
+    "command_length": 6,
+    "processing_time": 0.002489328384399414,
+    "dependency_count": 11,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /package', 'exist file or directory dependency,because RUN instruct use /package', 'exist file or directory dependency,because common path /package', 'exist file or directory dependency,because common path /package', \"have shell pkg intersection,because exist intersection {'swift'}\"]"
+}

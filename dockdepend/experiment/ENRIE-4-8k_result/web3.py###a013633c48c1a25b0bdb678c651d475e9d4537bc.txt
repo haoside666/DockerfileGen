@@ -1,0 +1,12 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM
+ (1, 2),  # RUN apt-get依赖于WORKDIR
+ (2, 3),  # COPY web3依赖于RUN apt-get
+ (3, 4),  # COPY tests依赖于COPY web3
+ (4, 5),  # COPY ens依赖于COPY tests
+ (5, 6),  # COPY ethpm依赖于COPY ens
+ (6, 7),  # COPY setup.py依赖于COPY ethpm
+ (7, 8),  # COPY README.md依赖于COPY setup.py
+ (8, 9),  # RUN pip install依赖于COPY README.md
+ (9, 10)]  # WORKDIR /code依赖于RUN pip install
+```

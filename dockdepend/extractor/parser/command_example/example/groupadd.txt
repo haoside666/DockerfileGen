@@ -1,0 +1,312 @@
+groupadd --gid 1000 octoprint
+groupadd ergatis
+groupadd -g 600 shiny
+groupadd --system --gid 1000 gopher
+groupadd -g 12574 ubuntu
+groupadd -r ${LOCAL_USER}
+groupadd -f conan-1001 -g 1001
+groupadd -r heilung
+groupadd socorrista
+groupadd --gid 1000 node
+groupadd -g $GROUPID $NEWUSER
+groupadd omnicore
+groupadd --system ${JAVASCRIPT_USER}
+groupadd -g ${GROUP_ID} ${USER}
+groupadd -r postgres --gid=999
+groupadd -g ${GROUP_ID} radium
+groupadd -r firefox
+groupadd -r logstash
+groupadd -g ${GROUP} jenkins
+groupadd         --system         --gid=64198         app
+groupadd -g 5001 $NEWUSER
+groupadd -r ${APP_USER}
+groupadd -r -g 999 warfork
+groupadd -g 402 dovenull
+groupadd -f conan-999 -g 999
+groupadd -r node
+groupadd --system ${EP_GID:+--gid "${EP_GID}" --non-unique} etherpad
+groupadd -g "${GID}" misskey
+groupadd -g 1000 ubuntu
+groupadd --gid 1000 ${ELASTIC_PRODUCT}
+groupadd apachewsgi
+groupadd --gid ${GID} bitcoin
+groupadd --system nightmare
+groupadd apache-www-volume -g 1000
+groupadd -g 513 docker
+groupadd -g ${GID} c2
+groupadd peanuts
+groupadd -r znc
+groupadd -g 999 unturned
+groupadd -g 1000 yoctouser
+groupadd -o -g 99 nobody
+groupadd -r -g 1000 cowrie
+groupadd --gid 2000 node;     useradd --uid 2000 --gid node --shell /bin/bash --create-home node;     curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz";     curl -SLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt";     grep "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt | sha256sum -c -;     tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 --no-same-owner;     rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt;     ln -s /usr/local/bin/node /usr/local/bin/nodejs;     npm install apidoc -g;
+groupadd --gid 205 docs
+groupadd -g $gid $user || true
+groupadd -r pwuser
+groupadd -g $group_id $group
+groupadd --system tester
+groupadd _999 -g 999
+groupadd -r previewservice
+groupadd -r www-data
+groupadd docker-data
+groupadd -g $GID craftslab
+groupadd -r artemis
+groupadd -g ${GID} minifi
+groupadd -r couchdb
+groupadd -r ${LUSER} -g 901
+groupadd --gid 2000 node
+groupadd ftpgroup
+groupadd -g 911 app
+groupadd -g 8080 nginx
+groupadd -g 1000 syslog-grp
+groupadd -r wildfly --gid=1111
+groupadd -r obpuser
+groupadd -g 1999 unturned
+groupadd nginx ;    groupmod -g 2011 nginx ;    useradd -u 2011 -s /bin/false -d /bin/null -c "nginx user" -g nginx nginx
+groupadd -g 1000 minecraft
+groupadd -f -g ${GROUP_ID} iraf
+groupadd --force -g $WWWGROUP octane
+groupadd -r drone
+groupadd -r flask
+groupadd -r pmixer
+groupadd -f envoygroup
+groupadd -g 1000 sampleuser
+groupadd -g ${GROUPID} ${GROUP}
+groupadd -r dummy
+groupadd -g 1000 qbittorrent
+groupadd --gid $USER_GID $USERNAME
+groupadd -r nodejs
+groupadd -r nginx
+groupadd --gid ${GID} steam
+groupadd --gid 1010 oinstall
+groupadd app
+groupadd -g 42 build-user
+groupadd -g "$SINUS_GROUP" sinusbot
+groupadd -r caido
+groupadd -r -g 1000 ubuntu
+groupadd -r build
+groupadd -r -g $PGID $PUSR
+groupadd -g 20000 domainusers
+groupadd -g 1000 dockerbot
+groupadd         --system         --gid=101         app
+groupadd android
+groupadd -r wildfly --gid=1023
+groupadd mock
+groupadd -g ${GID} nifi
+groupadd --system ${EXECUTING_USER}
+groupadd -g ${GID} ${MINIFI_C2_USER}
+groupadd pcap
+groupadd -g 2000 kafka
+groupadd fuse
+groupadd -g ${DEVICE_GID} ${DEVICE_GROUP}
+groupadd -g 998 docker
+groupadd joinmarket
+groupadd -r webdriver
+groupadd -r robo -g 901
+groupadd _1001 -g 1001
+groupadd -g 510 jenkins
+groupadd -g 1000 jenkins
+groupadd dockremap
+groupadd -o -g $GID wechat
+groupadd -fr atlas
+groupadd -r sonarqube --gid=999
+groupadd -r timetable
+groupadd --gid $GID user
+groupadd -r jboss -g 1000
+groupadd -r radium
+groupadd -r mysql
+groupadd -g 2000 vmail
+groupadd api-group
+groupadd -r emby
+groupadd -g $GID $USR
+groupadd -r user
+groupadd -g 1000 tor
+groupadd -r openslides
+groupadd wheel -g 11
+groupadd brooklyn
+groupadd -g ${GROUP_ID} bitcoin
+groupadd -f -g ${GID} ${GRP}
+groupadd -r obp
+groupadd -g ${PGID} devdock
+groupadd www
+groupadd -d /home/radium -r radium
+groupadd -r mongodb --gid=999
+groupadd -r captureuser
+groupadd -g 54322 dba
+groupadd --gid ${GO_GROUP_ID} go
+groupadd -r --gid=990 slurm
+groupadd -r cameraevents
+groupadd -g $GID -r bot
+groupadd cartography
+groupadd --gid 1000 rpmbuild
+groupadd --gid 1000 qpid
+groupadd -r prerender
+groupadd -r dockeruser
+groupadd  nginx
+groupadd seluser          --gid 1201
+groupadd --gid 1000 qbittorrent
+groupadd -g ${gid} ${group}
+groupadd --system --gid 32548 nginx
+groupadd         --system         --gid ${EXECUTING_GROUP_ID}         ${EXECUTING_GROUP}
+groupadd -g 401 dovecot
+groupadd --gid 500 go
+groupadd -r ase -g 901
+groupadd -g ${PGID} weechat
+groupadd -r gforth
+groupadd -r -g 999 redis
+groupadd --gid 3434 circleci
+groupadd -r -g 500 openldap
+groupadd --gid 2000 app
+groupadd -g 1000 debian
+groupadd -r qpid
+groupadd -r pptruser
+groupadd jovyan
+groupadd mural
+groupadd -g 1020 ubuntu
+groupadd -g 1000 user
+groupadd -r nonroot
+groupadd -r sonarqube
+groupadd -g ${PGID} cobalto
+groupadd --gid 1000 retdec
+groupadd -r fluent
+groupadd -r kibana
+groupadd -g 1000 kusanagi
+groupadd -r viper
+groupadd -g ${SHARED_GROUP_ID} ${SHARED_GROUP_NAME}
+groupadd --gid $GID $USER
+groupadd -g 500 zope-www
+groupadd mockbuild
+groupadd -r snappass
+groupadd wheel
+groupadd -g ${PGID} laradock
+groupadd -g 999 i2p
+groupadd -g 1001 www
+groupadd -r app
+groupadd --gid 2200 sftpaccess
+groupadd --gid 1000 oracle
+groupadd --gid 999 docker
+groupadd -g 1001 modeemintternet
+groupadd -r activemq -g 433
+groupadd -g 1000 www
+groupadd -r openldap --gid=1021
+groupadd -g 1244 product-record-ingestor
+groupadd -f -g $GID rails
+groupadd --gid 1000 easy-mock
+groupadd -g 500 centos
+groupadd eqemu
+groupadd -r luser
+groupadd --gid $hostgid --force build
+groupadd consul
+groupadd -r retdec
+groupadd -g 2001 rundeck
+groupadd -r backend
+groupadd docker
+groupadd -r docker
+groupadd -r ijinspector
+groupadd --system --gid 101 nginx
+groupadd zookeeper;     useradd zookeeper -g zookeeper
+groupadd         --system         --gid=1000         app
+groupadd -r ost
+groupadd uwu
+groupadd builder
+groupadd -g ${GROUP_ID} appuser
+groupadd -g $NB_GID da
+groupadd --gid $GROUP_ID sbtuser
+groupadd -g ${DOCKER_GID} docker
+groupadd -g 1004 jenkins
+groupadd -g 1000 oracle
+groupadd mysql
+groupadd $BIN_NAME
+groupadd ssessner
+groupadd -f conan-2000 -g 2000
+groupadd -g $GID -o $UNAME
+groupadd -r uwsgi
+groupadd sudo
+groupadd --gid 2000 media
+groupadd -g 502 debian-transmission
+groupadd -g 5001 go
+groupadd -r -g 1000 cloudsdk
+groupadd -r $JIRA_GROUP
+groupadd --gid 1007 dockerrunner
+groupadd -g 998 build-user
+groupadd -g 999 docker
+groupadd -r -g 1000 ${COWRIE_GROUP}
+groupadd -r gruppe
+groupadd --system --gid 1000 gradle
+groupadd -r -g $GROUP_ID $GROUP_NAME
+groupadd -r -g 2000 status
+groupadd buildgroup
+groupadd --system --gid 1000 qpid
+groupadd --system --gid 999 mqm
+groupadd -g 1001 pmdagroup
+groupadd debian-tor
+groupadd --gid 1000 patchwork
+groupadd _1000 -g 1000
+groupadd -r celeryuser
+groupadd --gid ${USER_GID} ${USER}
+groupadd -g 1111 bkup
+groupadd -r --gid 1007 dockerrunner
+groupadd -r slurm
+groupadd cowrie
+groupadd -r nomachine -g 433
+groupadd -g $gid $user
+groupadd -f conan-1000 -g 1000
+groupadd -r -g 666 plex
+groupadd -o -g $GID qq
+groupadd -r "${POSTGRES_GROUP}" --gid=999
+groupadd -r mongodb
+groupadd -g 999 docker2
+groupadd nginx
+groupadd -r ubiquiti -g 1000
+groupadd -g 1337 mapproxy
+groupadd -g 500 go
+groupadd supertokens
+groupadd -g 999 appuser
+groupadd -g 1000 frappe
+groupadd -r malice
+groupadd -g 1000 docker
+groupadd -r puppeteer
+groupadd -g 500 rust
+groupadd user
+groupadd -g 99999 -r rocketchat
+groupadd -g 65533 -r rocketchat
+groupadd -r rocketchat
+groupadd _2000 -g 2000
+groupadd -g 9901 mobsf
+groupadd -g 1000 appuser
+groupadd --gid ${GID} ${DEVELOP_GROUP}
+groupadd -g ${CUSTOM_GID} ${CUSTOM_USER_NAME}
+groupadd appuser
+groupadd -r mediagoblin
+groupadd -g 999 notebookuser
+groupadd -g 10001 runner
+groupadd -g ${ansible_gid} ${ansible_group}
+groupadd -g ${PGID} nodedock
+groupadd -g 1000 centos
+groupadd -r mitmproxy
+groupadd -g ${GID} ${GROUP_NAME}
+groupadd -r thug
+groupadd -g 500 ssl-cert
+groupadd ${USER}
+groupadd -r chromium
+groupadd -r admin
+groupadd supergroup
+groupadd -g 901 biodocker
+groupadd -g 1000 couchbase
+groupadd -g ${GID} ${MINIFI_USER}
+groupadd -r chrome
+groupadd --gid 1000 captain
+groupadd -g ${MY_GID} ${MY_GROUP}
+groupadd --gid 1000 adrien
+groupadd -r knarr
+groupadd -g ${GID} nifi || groupmod -n nifi `getent group ${GID} | cut -d: -f1`
+groupadd -g 5000 vmail
+groupadd -g 1001 supervisor
+groupadd -r -g 999 app
+groupadd -g ${PGID} videos
+groupadd -g 1001 app
+groupadd -r $DECRED_GROUP
+groupadd u
+groupadd --system hunnor
+groupadd -r -g $PGID webgroup

@@ -1,0 +1,8 @@
+{
+    "filename": "kubez-ansible###4a0acd72e14792af4341242b9a9f00e826af0a6f.txt",
+    "command_length": 5,
+    "processing_time": 0.002137422561645508,
+    "dependency_count": 8,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 4), (2, 4), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /kubez-ansible', 'exist file or directory dependency,because common path /kubez-ansible', \"have shell pkg intersection,because exist intersection {'apt', 'apt-get'}\"]"
+}

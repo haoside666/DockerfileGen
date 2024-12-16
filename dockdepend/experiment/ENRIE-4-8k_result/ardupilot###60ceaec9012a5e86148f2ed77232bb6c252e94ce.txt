@@ -1,0 +1,41 @@
+```
+[(0, 2),  # BASE_IMAGE arg is used in FROM
+ (1, 2),  # TAG arg is used in FROM
+ (2, None),  # FROM creates the base layer, no direct dependency on other instructions
+ (3, None),  # WORKDIR sets the working directory, no direct dependency
+ (4, 19),  # DEBIAN_FRONTEND arg is used in RUN apt-get install
+ (5, 12),  # USER_NAME arg is used in RUN groupadd
+ (5, 13),  # USER_NAME arg is used in RUN useradd
+ (5, 18),  # USER_NAME arg is used in ENV USER
+ (5, 22),  # USER_NAME arg is used in RUN chown
+ (5, 23),  # USER_NAME arg is used in USER instruction
+ (5, 25),  # USER_NAME arg is used in RUN Tools/environment_install/install-prereqs-ubuntu.sh
+ (5, 26),  # USER_NAME arg is used in RUN echo "alias waf=...
+ (5, 27),  # USER_NAME arg is used in RUN export ARDUPILOT_ENTRYPOINT=...
+ (6, 13),  # USER_UID arg is used in RUN useradd
+ (7, 12),  # USER_GID arg is used in RUN groupadd
+ (7, 13),  # USER_GID arg is used in RUN useradd
+ (8, 30),  # SKIP_AP_EXT_ENV arg is used in ENV SKIP_AP_EXT_ENV
+ (9, 30),  # SKIP_AP_GRAPHIC_ENV arg is used in ENV SKIP_AP_GRAPHIC_ENV
+ (10, 30),  # SKIP_AP_COV_ENV arg is used in ENV SKIP_AP_COV_ENV
+ (11, 30),  # SKIP_AP_GIT_CHECK arg is used in ENV SKIP_AP_GIT_CHECK
+ (12, 13),  # RUN groupadd is required before RUN useradd
+ (13, None),  # RUN useradd creates a user, no direct dependency on other RUN instructions
+ (14, None),  # RUN apt-get update && apt-get install installs packages, no direct dependency
+ (15, None),  # COPY Tools/environment_install/install-prereqs-ubuntu.sh copies a file, no direct dependency
+ (16, None),  # COPY Tools/completion copies a directory, no direct dependency
+ (17, None),  # ENV USER sets an environment variable, no direct dependency
+ (18, None),  # RUN echo "ardupilot ALL=(ALL) NOPASSWD:ALL" configures sudo, no direct dependency
+ (19, None),  # RUN chmod 0440 /etc/sudoers.d/${USER_NAME} sets permissions, no direct dependency
+ (20, None),  # RUN chown -R ${USER_NAME}:${USER_NAME} /${USER_NAME} changes ownership, no direct dependency
+ (21, None),  # USER ${USER_NAME} switches to the new user, no direct dependency
+ (22, None),  # ENV SKIP_* sets environment variables, no direct dependency
+ (23, None),  # RUN Tools/environment_install/install-prereqs-ubuntu.sh runs a script, no direct dependency
+ (24, None),  # RUN echo "alias waf=... sets an alias, no direct dependency
+ (25, None),  # RUN export ARDUPILOT_ENTRYPOINT=... sets up an entrypoint, no direct dependency
+ (26, None),  # ENV BUILDLOGS sets an environment variable, no direct dependency
+ (27, None),  # RUN sudo apt-get clean cleans up apt cache, no direct dependency
+ (28, None),  # ENV CCACHE_MAXSIZE sets an environment variable, no direct dependency
+ (29, None),  # ENTRYPOINT sets the container entrypoint, no direct dependency
+ (30, None)]  # CMD sets the default command to run, no direct dependency
+```

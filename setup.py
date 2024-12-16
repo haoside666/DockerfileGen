@@ -1,0 +1,33 @@
+# from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
+
+from pathlib import Path
+
+long_description = (Path(__file__).parent / "README.md").read_text()
+
+# for item in find_packages(exclude=['dockdepend.graph', 'dockdepend.test', '*.old*', '*.tests', 'dockdepend.extractor.parser.*']):
+#     print(item)
+
+##
+## TODO: Rename the package names (and the name of the whole library)
+##
+setup(
+    name='DockDepend',
+    version='1.0.0',
+    py_modules=['dockdepend.util',
+                'dockdepend.cli'],
+    packages=find_packages(
+        exclude=['dockdepend.graph', 'dockdepend.test', '*.old*', '*.tests',
+                 'dockdepend.extractor.parser.*'],
+    ),
+    include_package_data=True,
+    ## Necessary for the markdown to be properly rendered
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    python_requires='>=3.8',
+    install_requires=['dockerfile'],
+    entry_points={
+        'console_scripts': [
+            'dockdepend=dockdepend.cli:main']
+    },
+)

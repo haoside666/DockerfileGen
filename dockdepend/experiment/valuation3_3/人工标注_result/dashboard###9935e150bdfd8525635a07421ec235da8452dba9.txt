@@ -1,0 +1,28 @@
+FROM node:alpine
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+ENV NODE_ENV production
+COPY package.json yarn.lock /usr/src/app/
+RUN yarn --pure-lockfile && yarn cache clean
+COPY . /usr/src/app
+EXPOSE 3000
+CMD [ "yarn", "start" ]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+    (1, 4),	# 目录依赖
+	(1, 5),	# 文件间接依赖
+	(2, 4),	# 目录依赖
+	(2, 5),	# WORKDIR目录依赖
+	(2, 6),	# WORKDIR目录依赖
+	(4, 5),	# 文件依赖
+]
+
+所用时间：47.54

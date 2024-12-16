@@ -1,0 +1,8 @@
+{
+    "filename": "python-digitalocean###3d802463be6220ab044dc1e5d381c93e94365ac4.txt",
+    "command_length": 8,
+    "processing_time": 0.0019941329956054688,
+    "dependency_count": 11,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (3, 4), (3, 5), (3, 6), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /root/python-digitalocean', 'exist file or directory dependency', 'exist file or directory dependency,because common path /root/python-digitalocean/requirements.txt']"
+}

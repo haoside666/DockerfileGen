@@ -1,0 +1,40 @@
+{
+    "flag": [
+        [
+            "--group"
+        ],
+        [
+            "--help"
+        ],
+        [
+            "--quiet"
+        ],
+        [
+            "--system"
+        ],
+        [
+            "--only-if-empty"
+        ],
+        [
+            "--backup"
+        ],
+        [
+            "--backup-to"
+        ],
+        [
+            "--remove-home"
+        ],
+        [
+            "--remove-all-files"
+        ],
+        [
+            "--version"
+        ]
+    ],
+    "option": [
+        [
+            "--conf",
+            ["FILE","CONFIG_INPUT"]
+        ]
+    ]
+}

@@ -1,0 +1,27 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM ubuntu:latest
+WORKDIR /opt/workdir
+ENV PATH="$PATH:/home/workuser/.cargo/bin"
+ENV PATH="$PATH:/home/workuser/.local/bin"
+RUN apt-get update
+RUN apt-get install -y autopoint bash binutils bison cmake coreutils curl expat flex gcc gettext git gperf groff gzip help2man libgmp-dev m4 make mercurial meson mtools nasm openssl patch perl python3 python3-mako python3-pip rsync subversion tar texinfo wget xcb-proto xorriso xsltproc xz-utils
+RUN useradd -m workuser
+USER workuser
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN python3 -m pip install requests xbstrap
+ENTRYPOINT python3 aero.py --no-run
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # WORKDIR依赖于FROM，设置工作目录需要在基础镜像之上  
+ (2, 0),  # 第一个ENV依赖于FROM，设置环境变量需要基于基础镜像  
+ (3, 0),  # 第二个ENV依赖于FROM，追加环境变量需要基于基础镜像  
+ (4, 0),  # RUN apt-get update依赖于FROM，更新软件包列表需要基于基础镜像  
+ (5, 0),  # RUN apt-get install依赖于FROM，安装软件包需要基于基础镜像  
+ (6, 0),  # RUN useradd依赖于FROM，添加用户需要基于基础镜像  
+ (7, 0),  # USER依赖于FROM以及之前的设置，切换用户执行需要确保环境配置正确  
+ (8, 7),  # RUN curl依赖于USER，因为用户环境可能影响curl命令的执行  
+ (9, 7),  # RUN python3 -m pip install依赖于USER，因为用户环境可能影响pip命令的执行  
+ (10, 7)] # ENTRYPOINT依赖于USER，因为入口点需要以特定用户身份执行

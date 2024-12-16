@@ -1,0 +1,16 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (0, 2),  # RUN apt update依赖于FROM
+ (2, 3),  # WORKDIR依赖于RUN apt update（确保目录在安装软件包后存在）
+ (3, 4),  # COPY pyproject.toml依赖于WORKDIR（设置工作目录）
+ (3, 5),  # COPY README.md依赖于WORKDIR（设置工作目录）
+ (4, 6),  # RUN sed -i依赖于COPY pyproject.toml（文件被复制后才能修改）
+ (5, 6),  # RUN sed -i同时依赖于COPY README.md（虽然不直接相关，但确保在之前的步骤中工作目录已准备好）
+ (3, 7),  # COPY .依赖于WORKDIR（设置工作目录）
+ (7, 8),  # ENV PYTHONPATH依赖于COPY .（文件被复制后设置环境变量）
+ (8, 9),  # ARG PORT依赖于ENV PYTHONPATH（虽然不直接依赖，但逻辑上在环境变量设置后定义参数）
+ (9, 10), # EXPOSE依赖于ARG PORT（端口参数定义后才能暴露端口）
+ (10, 11)] # ENTRYPOINT依赖于EXPOSE（端口暴露后设置入口点）
+```
+
+注意：这里的依赖关系主要是基于Dockerfile指令的执行顺序和逻辑上的依赖。例如，`COPY`指令通常依赖于`WORKDIR`指令，因为你需要先设置工作目录，然后才能复制文件到该目录。同样，`RUN`指令可能依赖于先前的`RUN`或`COPY`指令，因为它可能需要操作或执行先前步骤中安装或复制的文件。在某些情况下，依赖关系可能不那么直接，如`ARG`和`ENV`指令，它们设置的值可能会在后续的指令中使用。

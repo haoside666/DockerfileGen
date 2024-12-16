@@ -1,0 +1,8 @@
+{
+    "filename": "octosuite###342a54caf1e01dde5cf8361e8c44452a4af3f115.txt",
+    "command_length": 5,
+    "processing_time": 0.0016772747039794922,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 3), (2, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /app', 'exist file or directory dependency,because common path /app']"
+}

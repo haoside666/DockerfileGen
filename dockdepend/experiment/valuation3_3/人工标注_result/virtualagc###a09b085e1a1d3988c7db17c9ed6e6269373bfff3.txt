@@ -1,0 +1,21 @@
+FROM jlawton/virtualagc
+MAINTAINER Jim Lawton
+RUN mkdir /virtualagc
+COPY . /virtualagc
+RUN cd virtualagc && make clean
+RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+    (2, 3),	# 目录依赖
+	(3, 4),	# 文件依赖
+	(3, 5),	# 文件依赖
+    (4, 5),	# make顺序依赖
+]
+
+所用时间：11.20

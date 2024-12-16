@@ -1,0 +1,17 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM python:3.9-slim as base
+RUN mkdir /autocut
+COPY ./ /autocut
+WORKDIR /autocut
+RUN apt update && apt install -y git && apt install -y ffmpeg
+RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install .
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # RUN mkdir /autocut 依赖于 FROM python:3.9-slim as base，因为需要在基础镜像上创建目录  
+ (2, 1),  # COPY ./ /autocut 依赖于 RUN mkdir /autocut，因为需要将文件复制到已创建的目录中  
+ (3, 2),  # WORKDIR /autocut 依赖于 COPY ./ /autocut，因为需要改变工作目录到已复制文件的目录  
+ (4, 3),  # RUN apt update && apt install -y git && apt install -y ffmpeg 依赖于 WORKDIR /autocut，因为需要在工作目录中安装软件和更新系统  
+ (5, 4)] # RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install . 依赖于上一行安装ffmpeg和git的RUN指令，因为需要在已安装依赖的环境中安装Python包

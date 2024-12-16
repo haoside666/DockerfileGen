@@ -1,0 +1,22 @@
+FROM node:12.18.3
+WORKDIR /app/website
+EXPOSE 3000 35729
+COPY ./docs /app/docs
+COPY ./website /app/website
+RUN yarn install
+CMD ["yarn", "start"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(1, 4),	# WORKDIR目录依赖
+	(1, 5),	# WORKDIR
+	(4, 5),	# 文件依赖
+]
+
+所用时间：13.56

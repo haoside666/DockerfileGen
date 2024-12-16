@@ -1,0 +1,359 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "MAINTAINER Roberto G. Hashioka \"roberto_hashioka@hotmail.com\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get update -y",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get upgrade -y",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN echo X11Forwarding yes >> /etc/ssh/ssh_config",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN rm -rf /var/lib/dpkg/info/fuse.postinst",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :",
+        "edge": "(0, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "ADD . /src",
+        "edge": "(0, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "EXPOSE 22",
+        "edge": "(0, 17)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:16.04",
+        "after_instruct": "CMD /bin/bash /src/startup.sh",
+        "edge": "(0, 18)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN apt-get upgrade -y",
+        "edge": "(2, 3)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "edge": "(2, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "edge": "(2, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "edge": "(2, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "edge": "(2, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(2, 11)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(2, 13)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update -y",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(2, 14)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "edge": "(4, 5)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(4, 11)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(4, 13)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(4, 14)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "edge": "(5, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "edge": "(5, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "edge": "(5, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(5, 11)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(5, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(5, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(6, 11)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(6, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(6, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(7, 11)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(7, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i '/#any host/c\\*' /etc/X11/xdm/Xaccess",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(7, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN echo X11Forwarding yes >> /etc/ssh/ssh_config",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(8, 11)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN echo X11Forwarding yes >> /etc/ssh/ssh_config",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(8, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN echo X11Forwarding yes >> /etc/ssh/ssh_config",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(8, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "after_instruct": "RUN apt-get -y install fuse  || :",
+        "edge": "(9, 11)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(9, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(9, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get -y install fuse  || :",
+        "after_instruct": "RUN apt-get -y install fuse",
+        "edge": "(11, 13)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get -y install fuse  || :",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(11, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get -y install fuse",
+        "after_instruct": "RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm",
+        "edge": "(13, 14)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    }
+]

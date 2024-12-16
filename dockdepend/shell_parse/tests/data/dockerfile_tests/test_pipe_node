@@ -1,0 +1,34 @@
+cat ${IN}/${IN_NAME}|while read s_line;
+  do
+    sample=$(echo $s_line |cut -d " " -f 2);
+
+    echo 'Processing Sample '${IN}/input/$sample' ';
+
+    samtools view -H "${IN}/input/$sample".bam | sed -e 's/SN:\([0-9XY]\)/SN:chr\1/' -e 's/SN:MT/SN:chrM/' \
+      | samtools reheader - "${IN}/input/$sample".bam > "${OUT}/$sample"_corrected.bam ;
+
+    samtools index -b "${OUT}/$sample"_corrected.bam ;
+
+    cut -f 2 ./Gene_locs.txt |sort |uniq |while read chr;
+      do
+        echo 'Isolating Chromosome '$chr' from sample '${OUT}/$sample',  ';
+        samtools view -b "${OUT}/$sample"_corrected.bam chr"$chr" > "${OUT}/$pop"_"$sample"_"$chr".bam ;
+        echo 'Indexing Sample '$pop'_'${OUT}/$sample' ';
+        samtools index -b "${OUT}/$pop"_"$sample"_"$chr".bam;
+      done;
+  done;
+
+tail -f 1.txt | while read n; do echo $((n+1)); sleep 1; done | tee -a 1.txt
+
+foo | bar | baz | quux
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
+wget -O cmake.sh https://github.com/`wget -q -O- https://github.com/Kitware/CMake/releases/latest | grep download | grep Linux | grep \.sh | cut -d '"' -f 2`
+
+curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose && \
+    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+
+netstat -na|grep 3002 && netstat -na|grep 3003 && netstat -na|grep 3005 && netstat -na|grep 4713 ||exit 1
+
+cat "$IN" | tee "$s2" "$aux1" "$aux2" | tail +2 | paste "$s2" - > "$OUT" &
+

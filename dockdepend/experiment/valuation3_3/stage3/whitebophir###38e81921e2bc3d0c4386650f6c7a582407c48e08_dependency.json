@@ -1,0 +1,149 @@
+[
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "WORKDIR /opt/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "RUN chown -R 1000:1000 /opt/app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "RUN apk update && apk add libcap",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "RUN setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/node",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "USER 1000:1000",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "COPY package.json package-lock.json ./",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "RUN npm ci --production",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "COPY --chown=1000:1000 . .",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "ENV PORT=80",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "EXPOSE 80",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "VOLUME /opt/app/server-data",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:20-alpine3.17",
+        "after_instruct": "CMD /usr/local/bin/node server/server.js",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "RUN chown -R 1000:1000 /opt/app",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /opt/app"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "COPY package.json package-lock.json ./",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "RUN npm ci --production",
+        "edge": "(1, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /opt/app"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "COPY --chown=1000:1000 . .",
+        "edge": "(1, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN chown -R 1000:1000 /opt/app",
+        "after_instruct": "USER 1000:1000",
+        "edge": "(2, 5)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apk update && apk add libcap",
+        "after_instruct": "USER 1000:1000",
+        "edge": "(3, 5)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/node",
+        "after_instruct": "USER 1000:1000",
+        "edge": "(4, 5)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "USER 1000:1000",
+        "after_instruct": "RUN npm ci --production",
+        "edge": "(5, 7)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "COPY package.json package-lock.json ./",
+        "after_instruct": "RUN npm ci --production",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /opt/app/package.json"
+    }
+]

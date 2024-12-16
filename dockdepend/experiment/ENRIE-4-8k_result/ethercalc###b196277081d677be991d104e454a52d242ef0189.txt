@@ -1,0 +1,8 @@
+```
+[(0, 1),  # RUN useradd 依赖于 FROM node:4.8
+ (1, 2),  # RUN npm install 依赖于 RUN useradd
+ (2, 3),  # RUN rm -rf 依赖于 RUN npm install
+ (3, 4),  # USER ethercalc 依赖于 RUN rm -rf
+ (4, 5),  # EXPOSE 8000 依赖于 USER ethercalc
+ (5, 6)]  # CMD ["sh", "-c", ...] 依赖于 EXPOSE 8000
+```

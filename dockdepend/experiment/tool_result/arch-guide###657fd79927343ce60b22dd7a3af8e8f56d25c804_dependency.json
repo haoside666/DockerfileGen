@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN apk add --no-cache git && npm install -g pnpm && npm cache clean --force",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY . /app",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN pnpm i && rm -rf /root/.npm && pnpm store prune",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "EXPOSE 5173",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "CMD pnpm docs:dev --host",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN apk add --no-cache git && npm install -g pnpm && npm cache clean --force",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . /app",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pnpm i && rm -rf /root/.npm && pnpm store prune",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "RUN apk add --no-cache git && npm install -g pnpm && npm cache clean --force",
+        "after_instruct": "RUN pnpm i && rm -rf /root/.npm && pnpm store prune",
+        "edge": "(2, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pnpm'}"
+    },
+    {
+        "before_instruct": "COPY . /app",
+        "after_instruct": "RUN pnpm i && rm -rf /root/.npm && pnpm store prune",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    }
+]

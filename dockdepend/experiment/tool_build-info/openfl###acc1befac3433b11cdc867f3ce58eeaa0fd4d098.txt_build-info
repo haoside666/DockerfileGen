@@ -1,0 +1,8 @@
+{
+    "filename": "openfl###acc1befac3433b11cdc867f3ce58eeaa0fd4d098.txt",
+    "command_length": 7,
+    "processing_time": 0.0018024444580078125,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (2, 4)]",
+    "dependency_description": "['environment variable dependencies', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /opt/openfl']"
+}

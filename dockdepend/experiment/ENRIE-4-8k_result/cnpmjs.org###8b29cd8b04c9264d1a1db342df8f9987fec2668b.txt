@@ -1,0 +1,15 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM
+ (0, 2),  # ENV依赖于FROM
+ (2, 3),  # RUN mkdir依赖于ENV（使用了ENV中定义的变量）
+ (2, 4),  # WORKDIR依赖于ENV
+ (2, 6),  # 第一个RUN npm依赖于ENV
+ (4, 5),  # COPY package.json依赖于WORKDIR
+ (4, 8),  # COPY .依赖于WORKDIR
+ (4, 9),  # COPY docs/dockerize/config.js依赖于WORKDIR
+ (2, 10), # EXPOSE依赖于ENV（虽然不直接使用变量，但逻辑上属于服务配置，依赖于环境初始化）
+ (2, 11), # VOLUME依赖于ENV（数据卷的设置依赖于环境变量的数据目录）
+ (2, 12)] # CMD依赖于ENV（启动命令依赖于环境和工作目录的准备好）
+```
+
+注：这里的依赖关系是基于指令执行顺序和它们可能使用到的上下文（如环境变量、工作目录等）来推断的。Docker在构建镜像时会按顺序执行这些指令，并且每个指令可能会依赖于前面指令所创建或设置的环境。例如，`WORKDIR`指令会改变后续指令的工作目录，而`ENV`指令设置的环境变量可能会在后续的`RUN`、`COPY`等指令中被用到。

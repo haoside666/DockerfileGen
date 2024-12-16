@@ -1,0 +1,13 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (1, 2),  # WORKDIR依赖于LABEL
+ (2, 3),  # ENV NGINX_PROXY_HEADER_Host依赖于WORKDIR
+ (3, 4),  # ENV NGINX_LISTEN_PORT依赖于ENV NGINX_PROXY_HEADER_Host
+ (4, 5),  # ENV SHOW_CATALOG_NB_TAGS依赖于ENV NGINX_LISTEN_PORT
+ (5, 6),  # COPY nginx/default.conf依赖于ENV SHOW_CATALOG_NB_TAGS
+ (6, 7),  # COPY bin/90-docker-registry-ui.sh依赖于COPY nginx/default.conf
+ (7, 8),  # COPY dist/依赖于COPY bin/90-docker-registry-ui.sh
+ (8, 9),  # COPY favicon.ico依赖于COPY dist/
+ (9, 10)  # RUN chown依赖于COPY favicon.ico
+]
+```

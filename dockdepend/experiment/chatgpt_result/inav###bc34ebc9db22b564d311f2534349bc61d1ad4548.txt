@@ -1,0 +1,33 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+0 FROM ubuntu:jammy
+1 ARG USER_ID
+2 ARG GROUP_ID
+3 ENV DEBIAN_FRONTEND noninteractive
+4 RUN apt-get update && apt-get install -y git cmake make ruby gcc python3 python3-pip gcc-arm-none-eabi ninja-build gdb
+5 RUN pip install pyyaml
+6 RUN if [ -n "$USER_ID" ]; then RUN addgroup --gid $GROUP_ID inav; exit 0; fi
+7 RUN if [ -n "$USER_ID" ]; then  RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID inav; exit 0; fi
+8 RUN if [ -n "$USER_ID" ]; then USER inav; fi
+9 RUN git config --global --add safe.directory /src
+10 VOLUME /src
+11 WORKDIR /src/build
+12 ENTRYPOINT ["/src/cmake/docker.sh"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+注意不是只判断前后两条指令行间的依赖关系，存在(1,3)这种情况，且前后两条指令不一定有依赖关系，依赖关系定义是即不可交换的偏序关系，交换后会导致原镜像构建失败。
+
+[
+    (0, 1),  # 基础镜像需要在 ARG 定义之前完成
+    (1, 2),  # USER_ID 和 GROUP_ID 的定义需要在设置非交互式环境之前完成
+    (3, 4),  # 设置非交互式环境需要在更新和安装软件包之前完成
+    (4, 5),  # 安装软件包需要在安装 Python 包之前完成
+    (5, 6),  # 安装 Python 包需要在添加用户组之前完成
+    (1, 6),  # USER_ID 存在的情况下，添加用户组需要在 ARG 之后完成
+    (1, 7),  # USER_ID 存在的情况下，添加用户需要在 ARG 之后完成
+    (7, 8),  # 添加用户成功后需要在设置用户之前完成
+    (4, 9),  # 在安装软件包后，需要设置 git 配置
+    (10, 11), # 定义 VOLUME 需要在设置工作目录之前完成
+    (11, 12)  # 设置工作目录需要在定义 ENTRYPOINT 之前完成
+]

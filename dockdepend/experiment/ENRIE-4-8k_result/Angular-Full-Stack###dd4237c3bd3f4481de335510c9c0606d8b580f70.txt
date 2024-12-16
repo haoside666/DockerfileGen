@@ -1,0 +1,10 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM，设置工作目录需要基于基础镜像
+ (1, 2),  # COPY package*.json依赖于WORKDIR，复制文件到工作目录
+ (2, 3),  # RUN npm ci依赖于COPY package*.json，安装npm包需要先复制package.json
+ (3, 4),  # COPY . .依赖于RUN npm ci，复制全部文件需要在npm包安装后
+ (4, 5),  # ENV MONGODB_URI依赖于COPY . .，设置环境变量可能依赖于应用配置文件
+ (5, 6),  # RUN npm run build依赖于ENV MONGODB_URI，构建应用可能依赖于环境变量
+ (6, 7),  # EXPOSE 3000依赖于RUN npm run build，暴露端口需要在应用构建后
+ (7, 8)]  # CMD [ "npm", "start" ]依赖于EXPOSE 3000，设置容器启动命令需要在端口暴露后
+```

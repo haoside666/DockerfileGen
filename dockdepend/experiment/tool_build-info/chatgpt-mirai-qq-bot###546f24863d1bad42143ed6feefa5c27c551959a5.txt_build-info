@@ -1,0 +1,8 @@
+{
+    "filename": "chatgpt-mirai-qq-bot###546f24863d1bad42143ed6feefa5c27c551959a5.txt",
+    "command_length": 12,
+    "processing_time": 0.00507664680480957,
+    "dependency_count": 21,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (1, 3), (1, 9), (2, 6), (3, 9), (5, 6), (5, 8), (6, 7), (6, 8), (6, 10), (7, 8)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'system level environment variable dependencies(implicit)', 'system level environment variable dependencies(implicit)', 'exist file or directory dependency', \"have shell pkg intersection,because exist intersection {'apt-get'}\", 'exist file or directory dependency,because RUN instruct create /app', 'have shell io intersection,because common path /app', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /app', 'exist file or directory dependency', 'exist file or directory dependency,because common path /app']"
+}

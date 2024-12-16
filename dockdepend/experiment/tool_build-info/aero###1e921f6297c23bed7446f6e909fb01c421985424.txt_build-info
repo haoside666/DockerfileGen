@@ -1,0 +1,8 @@
+{
+    "filename": "aero###1e921f6297c23bed7446f6e909fb01c421985424.txt",
+    "command_length": 11,
+    "processing_time": 0.005436420440673828,
+    "dependency_count": 22,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (2, 3), (4, 5), (4, 7), (4, 8), (5, 7), (5, 8), (5, 9), (6, 7), (6, 8), (7, 8), (7, 9), (8, 9)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', \"have shell pkg intersection,because exist intersection {'apt-get'}\", 'shell command user is different from the USER instruction', \"Because latter instruction contain side effect command: {'sh'}\", 'shell command user is different from the USER instruction', \"Because latter instruction contain side effect command: {'sh'}\", \"have shell pkg intersection,because exist intersection {'python3'}\", 'shell command user is different from the USER instruction', \"Because latter instruction contain side effect command: {'sh'}\", 'User dependency', 'User dependency', \"Because previous instruction contain side effect command: {'sh'}\"]"
+}

@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install mysqli",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install pdo",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install pdo_mysql",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev libpng-dev",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install zip",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install gd",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install bcmath",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN a2enmod headers",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN service apache2 restart",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "COPY ./lhc_web /var/www/html",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "WORKDIR /var/www/html",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "EXPOSE 80",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev libpng-dev",
+        "after_instruct": "RUN docker-php-ext-install gd",
+        "edge": "(4, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    }
+]

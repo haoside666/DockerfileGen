@@ -1,0 +1,23 @@
+FROM python:3.10.5-alpine
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+RUN apk update && apk --no-cache add git build-base libffi-dev libxml2-dev libxslt-dev libressl-dev gcc
+ADD requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+ADD . /w13scan/
+WORKDIR /w13scan/W13SCAN
+ENTRYPOINT ["/bin/ash"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(1, 2),	# apk源依赖
+	(3, 4),	# 文件依赖
+]
+
+所用时间：40.15

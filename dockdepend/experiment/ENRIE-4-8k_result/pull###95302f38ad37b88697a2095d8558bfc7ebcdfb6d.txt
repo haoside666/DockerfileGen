@@ -1,0 +1,13 @@
+```
+[(0, 1),  # LABEL依赖于FROM，因为标签是添加到由FROM指定的基础镜像上的
+ (0, 2),  # ENV依赖于FROM，因为环境变量是设置在由FROM创建的容器环境中的
+ (0, 3),  # WORKDIR依赖于FROM，因为工作目录是在由FROM指定的镜像文件系统内设置的
+ (3, 4),  # COPY依赖于WORKDIR，因为COPY是将文件复制到WORKDIR指定的工作目录
+ (3, 6),  # 第二个COPY同样依赖于WORKDIR
+ (4, 5),  # RUN依赖于COPY，因为RUN通常执行基于已复制文件的命令
+ (3, 7),  # EXPOSE依赖于WORKDIR，因为暴露的端口是关联到WORKDIR中的应用程序的
+ (3, 8),  # CMD依赖于WORKDIR，因为CMD设置的默认执行命令是相对于WORKDIR的
+ (0, 9),  # ARG指令不直接依赖其他指令，但它定义的变量可在后续的指令中使用，这里假设它依赖于FROM
+ (0, 10), # 第二个LABEL依赖于FROM，并使用了ARG定义的变量
+ (9, 10)] # 第二个LABEL还依赖于ARG，因为它使用了ARG定义的变量
+```

@@ -1,0 +1,8 @@
+{
+    "filename": "testlink-code###0e4b6a4ac3e5cb0c572fef86b7845b11259c687e.txt",
+    "command_length": 5,
+    "processing_time": 0.0015752315521240234,
+    "dependency_count": 6,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'have shell io intersection,because common path /etc', 'exist file or directory dependency']"
+}

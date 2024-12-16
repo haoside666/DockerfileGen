@@ -1,0 +1,17 @@
+FROM python:3.6.8-stretch
+RUN pip3 install fiber
+ADD . /work/
+RUN cd /work && pip3 install -e .[test]
+RUN cd /work && pip3 install -e .
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(2, 3),	# 文件依赖
+	(2, 4),	# 文件依赖
+]
+
+所用时间：9.24

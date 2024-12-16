@@ -1,0 +1,16 @@
+FROM node:16
+WORKDIR /usr/src/app
+COPY . .
+EXPOSE 8001
+CMD [ "node", "server.js" ]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(1, 2),	# WORKDIR目录依赖
+]
+
+所用时间：8.68

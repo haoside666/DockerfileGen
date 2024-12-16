@@ -1,0 +1,121 @@
+[
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "LABEL org.opencontainers.image.source https://github.com/gbdev/rgbds",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "ARG version=0.6.1",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "WORKDIR /rgbds",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "RUN apt-get update && apt-get install sudo make cmake gcc build-essential -y",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "RUN ./.github/scripts/install_deps.sh ubuntu-20.04",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "RUN make -j WARNFLAGS=\"-Wall -Wextra -pedantic  -static\" PKG_CONFIG=\"pkg-config --static\" Q=",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:11-slim",
+        "after_instruct": "RUN tar caf rgbds-0.6.1-linux-x86_64.tar.xz --transform 's#.*/##' rgbasm rgblink rgbfix rgbgfx man/* .github/scripts/install.sh",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ARG version=0.6.1",
+        "after_instruct": "RUN tar caf rgbds-0.6.1-linux-x86_64.tar.xz --transform 's#.*/##' rgbasm rgblink rgbfix rgbgfx man/* .github/scripts/install.sh",
+        "edge": "(2, 8)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "WORKDIR /rgbds",
+        "after_instruct": "COPY . .",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /rgbds",
+        "after_instruct": "RUN ./.github/scripts/install_deps.sh ubuntu-20.04",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /rgbds"
+    },
+    {
+        "before_instruct": "WORKDIR /rgbds",
+        "after_instruct": "RUN make -j WARNFLAGS=\"-Wall -Wextra -pedantic  -static\" PKG_CONFIG=\"pkg-config --static\" Q=",
+        "edge": "(3, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /rgbds"
+    },
+    {
+        "before_instruct": "WORKDIR /rgbds",
+        "after_instruct": "RUN tar caf rgbds-0.6.1-linux-x86_64.tar.xz --transform 's#.*/##' rgbasm rgblink rgbfix rgbgfx man/* .github/scripts/install.sh",
+        "edge": "(3, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /rgbds"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN ./.github/scripts/install_deps.sh ubuntu-20.04",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /rgbds"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN make -j WARNFLAGS=\"-Wall -Wextra -pedantic  -static\" PKG_CONFIG=\"pkg-config --static\" Q=",
+        "edge": "(4, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /rgbds"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN tar caf rgbds-0.6.1-linux-x86_64.tar.xz --transform 's#.*/##' rgbasm rgblink rgbfix rgbgfx man/* .github/scripts/install.sh",
+        "edge": "(4, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /rgbds"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install sudo make cmake gcc build-essential -y",
+        "after_instruct": "RUN make -j WARNFLAGS=\"-Wall -Wextra -pedantic  -static\" PKG_CONFIG=\"pkg-config --static\" Q=",
+        "edge": "(5, 7)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'make'}"
+    }
+]

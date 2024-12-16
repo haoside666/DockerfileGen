@@ -1,0 +1,7 @@
+from node:alpine
+ARG dir=/blockchain-demo
+WORKDIR $(dir)
+COPY package.json $(dir)
+NPM install
+COPY . $(dir)
+CMD ["node", "bin/www"]

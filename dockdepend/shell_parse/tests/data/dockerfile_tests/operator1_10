@@ -1,0 +1,29 @@
+# NCMD ncmd			# a simple command
+printf %s\\n foobar\|\&\;\<\>\(\)\$\`\\\"\'\ \?\*\[\
+
+#NPIPE npipe			# a pipeline
+foo | bar | baz | quux
+
+#NREDIR nredir			# redirection (of a complex command)
+{ ls ; echo foo ; }>/dev/null
+
+#NBACKGND nredir			# run command in background
+mv /tmp/foo /tmp/bar &
+
+#NSUBSHELL nredir		# run command in a subshell
+(echo -e "\t")
+
+#NAND nbinary			# the && operator
+cd ~ && mkdir aaa && echo "123">aaa/1.txt
+
+#NOR nbinary			# the || operator
+wget -q -P /para/lib/ https://oss.sonatype.org/service/local/repositories/releases/content/com/erudika/para-search-lucene/1.34.1/para-search-lucene-1.34.1-shaded.jar || exit 2
+
+#NSEMI nbinary			# two commands separated by a semicolon
+rm -r ngrok.zip ; mv ngrok Server/ngrok ;echo "finish"
+
+#NIF nif				# the if statement.  Elif clauses are handled
+if [ -x some_file ]; then maybe; elif [ -d some_dir ]; then otherwise; fi
+
+#NWHILE nbinary			# the while statement.  First child is the test
+while false; do cmd1; done

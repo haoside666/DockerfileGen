@@ -1,0 +1,10 @@
+```
+[(0, 1),  # ENV依赖于FROM，设置环境变量需要在基础镜像之后
+ (1, 2),  # WORKDIR依赖于ENV，设置工作目录需要在环境变量之后
+ (2, 3),  # RUN安装软件依赖于WORKDIR，设置工作目录后才能在该目录下执行命令
+ (3, 4),  # ADD requirements.txt依赖于RUN安装软件，需要先安装软件再添加文件
+ (4, 5),  # RUN pip install依赖于ADD requirements.txt，需要先添加依赖文件再安装Python包
+ (5, 6),  # ADD .依赖于RUN pip install，需要先安装Python包再添加项目文件
+ (6, 7),  # RUN chmod +x依赖于ADD .，需要先添加文件再修改文件权限
+ (7, 8)]  # ENTRYPOINT依赖于RUN chmod +x，需要先确保脚本有执行权限再设置容器启动命令
+```

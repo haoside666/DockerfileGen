@@ -1,0 +1,26 @@
+FROM julia:1.8.2
+EXPOSE 1234
+RUN apt-get update -y && apt-get upgrade -y
+RUN useradd -ms /bin/bash pluto
+WORKDIR /home/pluto
+USER pluto
+COPY --chown=pluto . ${HOME}
+RUN julia --project=${HOME}/pluto-deployment-environment -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
+CMD ["julia", "--project=/home/pluto/pluto-deployment-environment", "-e", "import PlutoSliderServer; PlutoSliderServer.run_directory(\".\"; SliderServer_port=1234 , SliderServer_host=\"0.0.0.0\")"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+    (3, 5),	# pluto用户依赖
+	(4, 7),	# 文件依赖
+	(5, 7),	# user dependency
+]
+
+所用时间：45.58

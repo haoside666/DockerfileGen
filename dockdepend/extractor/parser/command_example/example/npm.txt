@@ -1,0 +1,1660 @@
+npm install fs-extra
+npm cache --force clean
+npm install -g ssb-room@0.0.8
+npm install --quiet --production false
+npm link ../pxt
+npm install -g "cypress@11.0.1"
+npm install -g "cypress@9.5.0"
+npm install --no-cache -g mapshaper@0.4.144
+npm install -g less less-plugin-clean-css
+npm install -g elm@0.18.0 elm-github-install elm-format newman npm
+npm -g install less
+npm install --global npm gulp-cli pug-cli bower yarn
+npm --no-cache install --ignore-scripts --omit=dev                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-config-standard                 eslint-plugin-import                 eslint-plugin-jest                 eslint-plugin-node                 eslint-plugin-prettier                 eslint-plugin-promise                 eslint-plugin-vue                 @babel/core                 @babel/eslint-parser                 @microsoft/eslint-formatter-sarif
+npm install -g heroku@"${HEROKU_CLI_VERSION}"
+npm install -g bootprint
+npm run start
+npm config list
+npm install cranlike@0.3.1
+npm install --only=dev
+npm install  --silent
+npm install -g npm
+npm install gulp -g
+npm install -g ssb-room@0.0.4
+npm install ezs@9.3.1
+npm run build-app
+npm install react-scripts -g --silent
+npm i -g jpegtran-bin@4.0.0
+npm install -g ts-rpa@0.1.0 moment mathjs
+npm ci --quiet --only=production
+npm install -g messer
+npm install --save cypress@3.4.0 start-server-and-test
+npm install hexo-symbols-count-time --save
+npm config set "//npm.fontawesome.com/:_authToken" ${FONTAWESOME_PRO_KEY}
+npm install ebook-convert
+npm install -g --production node-pre-gyp
+npm i -g gulp
+npm install -g wscat
+npm install pm2@next -g
+npm i --production;   npm pack;   npm i -g palantir-*.tgz;   rm palantir-*.tgz
+npm install hexo-filter-mathjax --save
+npm install -g n --force; n 0.12.0
+npm install -g "cypress@7.0.1"
+npm install -g -f yarn@latest
+npm install -g jshint
+npm install shelljs
+npm i -g yarn@latest npm@latest
+npm -g i gulp polymer-cli
+npm install -g n; n 0.12.0
+npm run config
+npm install -g "cypress@9.3.0"
+npm --no-cache install --ignore-scripts --omit=dev                 v8r
+npm install -g ts-node typescript -registry=https://registry.npm.taobao.org
+npm install -g stylelint stylelint-config-standard
+npm install --silent -g @angular/cli findup-sync typescript >> /dev/null 2>>/dev/null
+npm install -g cordova @ionic/cli${VERSION+@$VERSION}
+npm install -g protractor@5.4.3 minimist@1.2.0
+npm i ws@${WS_VERSION} -g
+npm i -g webpack@3.11.0
+npm install -g -s --no-progress bower polymer-cli --unsafe-perm
+npm i -g cypress@3.5.0 sonarqube-scanner
+npm ci --unsafe-perm
+npm install --quiet --global @vue/cli-service-global
+npm install --cache /tmp/empty-cache -g @azure/static-web-apps-cli"
+npm install --global imagemin-cli
+npm run setup
+npm install -g "cypress@10.3.0"
+npm install -g elm elm-test elm-github-install newman
+npm config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
+npm install cranlike@0.1.1
+npm install -g @angular/cli@7.3.6     npm install --save-dev @angular-devkit/build-angular
+npm ci --omit=dev
+npm install -g protractor@4.0.14 minimist@1.2.0
+npm i --no-optional
+npm install -g "cypress@8.6.0"
+npm install -g ts-rpa@0.1.4 moment mathjs
+npm install --production -s
+npm run server
+npm i puppeteer-har
+npm install -g ts-rpa@0.1.11 moment mathjs
+npm install -g es6-promise
+npm i -g pnpm@7
+npm install nodemon -g --quiet
+npm install -g grpc@${GRPC_NODE_VERSION} grpc-tools@${GRPC_NODE_VERSION}
+npm install --global gitbook-cli
+npm install --quiet --production false --no-audit
+npm run ${BUILD_CMD}
+npm run css-compile
+npm ci
+npm install -g firebase-tools@7.2.1
+npm install -g semantic-release@15.13.18     @semantic-release/commit-analyzer@6.2.0     @semantic-release/release-notes-generator@7.2.1     @semantic-release/github@5.4.2     @semantic-release/npm@5.1.13     @semantic-release/exec@3.3.5     @semantic-release/changelog@3.0.4     @semantic-release/git@7.0.16     rdaniels6813/gitlab#master
+npm install -g @infracost/compost
+npm install --global eslint prettier typescript typescript-language-server dockerfile-language-server-nodejs         vscode-html-languageserver-bin
+npm install -g         npm 	babel-cli'
+npm i -g lhci --unsafe-perm=true
+npm install -g github-indexer@latest
+npm install cranlike@latest
+npm install --save-dev -g -f grunt
+npm i -g nodemon ts-node typescript
+npm install -g hubot@$HUBOT_VERSION coffee-script
+npm install ezs-basics@3.6.2
+npm install --quiet > /dev/null
+npm ci;   npm run build
+npm init -y
+npm i -g serve@10.1.1
+npm install -g purescript@0.12
+npm install -g moment
+npm update --global
+npm install -g yapi-cli --registry https://registry.npm.taobao.org
+npm i -g cypress@3.4.1 sonarqube-scanner
+npm install lint-staged
+npm config set fetch-retry-factor ${NPM_FETCH_RETRY_FACTOR}
+npm install --global caniuse-lite
+npm install -g npm@6.1.0
+npm install better-sqlite3 USER container
+npm install -g kinesalite@3.3.0
+npm i -g typescript vale
+npm install sqlite3
+npm -g i yarn firebase-tools
+npm i serve
+npm install workbox-cli -g
+npm install -g gamedig
+npm install --save axios
+npm install -g firebase-tools@7.13.1
+npm install -g aws-cdk
+npm --global config set user node
+npm install ezs-lodex@1.1.1
+npm install opencv4nodejs@$NODE_OPENCV_VERSION
+npm run ${TEST_TARGET}
+npm i screeps
+npm set node_inspector_cdnurl https://cdn.npmmirror.com/binaries/node-inspector
+npm i -g --unsafe-perm cordova@${CORDOVA_VERSION}
+npm install dynalite@$DYNALITE_VERSION --no-save
+npm install -g cordova@${CORDOVA_VERSION} @ionic/cli@${IONIC_VERSION}
+npm completion >> ~/.bashrc
+npm install -g yo generator-hubot
+npm install -g ts-rpa@0.1.12 moment mathjs
+npm install -g ts-rpa-0.0.1.tgz
+npm install -g   truffle@${TRUFFLE_VERSION}   web3@${WEB3_VERSION}   mocha@${MOCHA_VERSION}   mocha-junit-reporter@${MOCHA_JUNIT_VERSION}   mocha-multi-reporters@${MOCHA_MULTI_VERSION}   dapp-utils@${DAPP_UTILS_VERSION}   faker@${FAKER_VERSION}
+npm uninstall node-gyp -g
+npm install -g n; n 7.0.0
+npm i $PROD_FLAG
+npm i ng2-completer --save
+npm install --registry=https://registry.npmmirror.com
+npm install -g @angular/cli@8.0.0-beta.9
+npm install --save-dev gulp@3.9.1
+npm install screwdriver-queue-worker@$VERSION
+npm install --global awesome-lint
+npm install --save opencv4nodejs@$NODE_OPENCV_VERSION
+npm install cranlike@0.1.0
+npm install -g node-gyp
+npm install ezs@8.0.2
+npm install -g ts-protoc-gen@0.10.0
+npm install -g typescript angular-cli
+npm ci --no-optional --ignore-scripts
+npm install --global gulp
+npm install -g "cypress@8.4.0"
+npm install --global --unsafe-perm node-sass
+npm install -g yarn@latest
+npm install --global yarn@1.22.5
+npm i -g -q big-cli
+npm install -g fis3 fis3-server-php fis3-smarty fis3-server-smarty fis-optimizer-minify-html
+npm install -g mapshaper@0.4.106 geojson-polygon-labels@1.2.1 csv2geojson
+npm run-script build:en --prod
+npm install -g ts-rpa@0.0.8-rc.3 moment mathjs
+npm install graphql-yoga
+npm install -g aws-cdk@1.10.1
+npm install ezs@5.8.5
+npm install -g "cypress@10.1.0"
+npm install sfdx-cli --global
+npm install express valid-url --save
+npm install -g grpc@${GRPC_NODE_VERSION}
+npm install -g firebase-tools firebase-bolt typescript@^2
+npm install --production --unsafe-perm
+npm install -g "cypress@8.5.0"
+npm install --no-cache -g mapshaper@0.4.150
+npm install ezs@8.0.3
+npm install semantic-release
+npm config set save-exact true
+npm i --silent
+npm ci --production
+npm run build-prod
+npm i -g ts-node
+npm install --save cypress@3.4.1 start-server-and-test @percy/cypress
+npm config set cache /tmp/npm-cache"
+npm install -g quasar-cli
+npm install ezs@7.1.2
+npm install -g "cypress@7.0.0"
+npm --verbose install
+npm install -g yarn@1.12.1
+npm install -g "cypress@10.3.1"
+npm run buildprod
+npm install -g aws-cdk@1.0.0
+npm install -g dynalite
+npm install -g @angular/cli@9.0.2
+npm install ezs-analytics@1.3.2
+npm install --global eslint prettier
+npm install -g newman@latest
+npm install -g stylus
+npm -g i gulp polymer-cli yarn
+npm install -g yarn@1.3.2
+npm install theme-next/theme-next-calendar --save
+npm i chrome-har
+npm install --quiet --only=development
+npm install --global mermaid svgexport
+npm -s run build
+npm install -g ionic cordova
+npm install react-scripts@3.0.1 -g
+npm install -g semantic-release@17.0.7   @semantic-release/commit-analyzer@8.0.1   @semantic-release/release-notes-generator@9.0.1   @semantic-release/github@7.0.5   @semantic-release/npm@7.0.5   @semantic-release/exec@5.0.0   @semantic-release/changelog@5.0.1   @semantic-release/git@9.0.0   @semantic-release/gitlab@6.0.4
+npm install cranlike@0.2.0
+npm audit fix
+npm install -g ezs@5.3.1
+npm config set strict-ssl true
+npm install -g webdriver-manager@12.1.4
+npm i puppeteer@1.1.1
+npm config set user root
+npm install -g yarn@1.19.1
+npm install --unsafe-perm --production
+npm install -g http-server yarn
+npm install -g       typescript       @vue/cli
+npm install screwdriver-store@$VERSION
+npm config --global set update-notifier false
+npm install -g pkg ts-protoc-gen@${PROTOC_GEN_TS_VERSION}
+npm install -g heroku@${HEROKU_CLI_VERSION}
+npm install --global gitbook-plugin-mermaid mermaid svgexport gitbook-plugin-hide-published-with
+npm install -g grunt-cli
+npm install -g markdownlint-cli
+npm install cp-translations@"$DEP_VERSION"
+npm i -g firebase-tools
+npm install -g fs jtest babel-cli babel-preset-env supertest superagent
+npm -g i polymer-cli yarn
+npm install -g eslint
+npm install -g "cypress@4.1.0"
+npm install --only=production
+npm install --global --unsafe-perm editly@${EDITLY_VERSION}
+npm install -g ssb-room@1.1.1
+npm test
+npm install -registry=https://registry.npm.taobao.org
+npm run cleanbuild
+npm install express --save
+npm install -g gulp grunt-cli bower browser-sync
+npm i -g bit-bin
+npm install -g firebase-tools@^6.0.0 firebase-bolt@^0.8.0 typescript@^3.0.0 tslint@^5.0.0
+npm install -g /opt/rpc
+npm install -g "cypress@9.3.1"
+npm install -g webdriver-manager@12.1.5
+npm i -g npm@6.10.3 yarn@1.17.3
+npm install -g "cypress@10.10.0"
+npm install bcrypt
+npm run buildProd
+npm install --quiet -g gulp bower yo mocha karma-cli pm2
+npm i -g gulp polymer-cli
+npm run purs:test
+npm install -g bower gulp-cli
+npm install oracledb
+npm install jest
+npm run bower install --production
+npm install -g npm-cache
+npm install theme-next/hexo-next-coauthor --save
+npm install -g serverless
+npm install -g greenkeeper-lockfile@$GREENKEEPER_LOCKFILE_VERSION
+npm i -g pnpm
+npm install -g sass
+npm install --unsafe-perm=true
+npm i lighthouse@5.0.0 -g
+npm config set registry https://registry.npm.taobao.org -g
+npm run test:clean
+npm i puppeteer
+npm install serve"
+npm install --no-save
+npm install --only=prod -g apidoc
+npm install hexo-generator-searchdb --save
+npm install hexo-footnotes --save
+npm install -g elm@0.18.0 elm-github-install newman
+npm link
+npm -g install phonegap@~8
+npm install -g @angular/cli@8.3.15
+npm install -g         npm 	pm2 	babel-core 	webpack 	nodemon
+npm install --global --unsafe-perm=true esbuild@$ESBUILD_VERSION
+npm install --global newman@${NEWMAN_VERSION}
+npm install -g markdownlint-cli@${MARKDOWNLINT_CLI_VERSION}
+npm install -g 	babel-cli'
+npm install cranlike@0.2.1
+npm install @semantic-release/commit-analyzer
+npm install --loglevel=warn -g @angular/cli findup-sync typescript
+npm install -g doctoc
+npm install --global phantomjs-prebuilt --unsafe-perm --phantomjs_cdnurl=$PHANTOMJS_URL
+npm install -g "cypress@4.5.0"
+npm install -g firebase-tools@7.11.0
+npm i -g npm@${NPM_VERSION}
+npm install -g -s --no-progress private-bower --unsafe-perm
+npm run build -- --env.SW_KILL=${SW_KILL}
+npm --no-cache install --ignore-scripts --omit=dev                 @prantlf/jsonlint
+npm install uglify-js@2 -g
+npm install --global typescript
+npm run test:coveralls
+npm i -g npm@^6 yarn
+npm i -g aws-cdk@v1.16.2
+npm install --quiet
+npm config set "//npm.fontawesome.com/:_authToken" $faToken
+npm i -g coin-hive-stratum --unsafe-perm=true --allow-root
+npm install --global npm
+npm install -g webpack webpack-cli
+npm ci --only=prod
+npm install pm2 express -g
+npm install tedious
+npm install -g grunt-cli nodemon bower node-gyp migrate
+npm install -g ezs@5.4.3
+npm install -g "cypress@5.0.0"
+npm install --quiet -g         bower         cordova         eslint         gulp-cli         @ionic/cli         jshint         karma-cli         mocha         node-gyp         npm-check-updates         @react-native-community/cli > /dev/null
+npm install -g htmlhint
+npm i -g lighthouse
+npm run build --prod
+npm install --global npm gulp-cli pug-cli yarn
+npm install @ezs/core@1.1.7
+npm install node-opus
+npm install -g "cypress@10.5.0"
+npm ci --silent; exit 0
+npm set unsafe-perm true
+npm install -g carto
+npm install -g npm@latest
+npm install forever -g --unsafe-perm
+npm install -g @angular/cli@8.1.3
+npm install -g @angular/cli@8.1.2     npm install --save-dev @angular-devkit/build-angular
+npm install @discordjs/uws
+npm install -g @quasar/cli
+npm install --global nodemon knex
+npm config set fetch-retries ${NPM_FETCH_RETRIES}
+npm install cranlike@0.2.2
+npm install -g ssb-room@0.0.12
+npm install --global --force yarn@1.22.10
+npm install -g firebase-tools@7.8.1
+npm install -g @angular/cli@8.3.5
+npm install -g galenframework-cli@$GALEN_VERSION
+npm i -g -q @bigcommerce/stencil-cli
+npm install gulp-run-command
+npm install -g neon-cli
+npm run build -- --output-path=./dist/out --configuration $configuration
+npm install better-sqlite3
+npm install npm@6.4.0 -g
+npm install -g sails
+npm install -g @angular/cli@8.3.21
+npm run gulp
+npm install     npm rebuild node-sass
+npm prune --production
+npm i caprover -g
+npm install -g yarn@$YARN_VERSION
+npm install -g redis-commander@0.4.5
+npm set chromedriver_cdnurl https://cdn.npmmirror.com/binaries/chromedriver
+npm install -g protobufjs@6.8.8
+npm install --global gulp preact@8.2.7 preact-compat preact-cli
+npm i -g gifsicle@4.0.1 --unsafe-perm=true
+npm install -g webdriver-manager@13.0.0
+npm install -g ts-rpa@0.0.8-rc.4 moment mathjs fs node-fetch form-data
+npm uninstall gulp-cli
+npm shrinkwrap
+npm config set registry ${NPM_REGISTRY} ;fi
+npm install -g spago --unsafe-perm
+npm install -g showdown
+npm install gulp-clean-css@4.2.0
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 prettier
+npm install --unsafe -g  dockerfile-language-server-nodejs
+npm install -g gulp bower vue-cli     ;fi
+npm install gulp-cli -g
+npm install -g ssb-mirror@0.0.6
+npm install ezs@9.3.0
+npm install ezs@5.4.7
+npm --no-cache install --ignore-scripts --omit=dev                 markdown-table-formatter
+npm i -g npm; npm i -g typings typescript tslint mocha bunyan
+npm link bp-components
+npm i cloudscraper@4 jsdom@15 request@2 --registry=https://registry.npm.taobao.org
+npm install puppeteer
+npm -g install typescript tslint eslint prettier
+npm install -g configurable-http-proxy
+npm install -g firebase-tools@7.6.2
+npm install 10
+npm install --unsafe-perm -g /node-red-contrib-orion
+npm ci .
+npm install n -g
+npm install dynalite@$DYNALITE_VERSION --no-save --production
+npm install -g express --save COPY . .
+npm install ezs-mapreduce@1.0.0
+npm -g install grunt-cli
+npm install -g protractor@5.4.2 minimist@1.2.0
+npm i -g typescript ts-node
+npm install sfdx-cli prettier prettier-plugin-apex --global
+npm i -g puppeteer --unsafe-perm=true
+npm install -g forever babel-loader node-babel
+npm install node-red-dashboard
+npm install -g --unsafe-perm reason-cli@3.2.0-linux serve
+npm install passport
+npm --no-cache install --ignore-scripts --omit=dev                 eslint                 eslint-plugin-react                 eslint-plugin-jsx-a11y                 @microsoft/eslint-formatter-sarif
+npm install --no-cache -g mapshaper@0.4.143
+npm install -g elm --unsafe-perm=true
+npm install --silent -g @angular/cli findup-sync typescript >>/dev/null 2>>/dev/null
+npm install webpack webpack-cli -g
+npm set registry http://frontend.tutu.pro
+npm -g config set user root
+npm run ng build --prod --output-path=dist --no-cache
+npm install -g serve
+npm -g install phonegap@~9
+npm install cranlike@0.2.5
+npm install -g "typescript@3.3.3333"
+npm install -g ssb-room@1.1.0
+npm run lint
+npm install -g bittorrent-tracker
+npm config set registry https://artifact.swissre.com/api/npm/npm
+npm dedupe
+npm install -g firebase-tools@7.16.2
+npm run build:style
+npm install --silent --progress=false
+npm install --global sinopia2
+npm install -g coffeescript
+npm update -g
+npm install -g screeps
+npm -s test
+npm install gitbook -g
+npm install -g ts-node typescript
+npm install -g gulp-cli grunt-cli bower
+npm install ghost-storage-adapter-s3
+npm install --global postcss-cssnext
+npm i -g fsevents@1.2.4 --unsafe-perm=true
+npm install -g grunt-cli nodemon bower pm2 forever
+npm install -g npm@6.14.1
+npm install -g "cypress@10.11.0"
+npm install https://github.com/LLK/scratch-gui.git#develop
+npm install mongo-express@$MONGO_EXPRESS
+npm i -g cypress sonarqube-scanner
+npm install -g require-self moment
+npm install --no-cache -g mapshaper@0.4.141
+npm install coinbase-pro
+npm run --prefix ui build
+npm install npm-programmatic
+npm install )
+npm install --global elm-test
+npm install google-assistant -g ---unsafe-perm
+npm install -g cypress --unsafe-perm
+npm install npm --global
+npm install cypress@3.1.5 start-server-and-test@^1.10.2 @percy/cypress puppeteer --unsafe-perm=true
+npm i -g yarn lerna gatsby
+npm run build --omit=dev
+npm i -g cypress@3.8.1 sonarqube-scanner
+npm install -g markdownlint-cli@${MARKDOWNLINT_VERSION}
+npm install --global pm2
+npm install --save cypress start-server-and-test
+npm -g install webpack@1.13.0
+npm install -g --production node-gyp
+npm run ng build --output-path=dist --no-cache
+npm install -g @lhci/cli@0.3.12
+npm install -g "cypress@6.7.0"
+npm i -g @testim/testim-cli
+npm -g install bower
+npm config set python python2.7
+npm run build;
+npm install -g minimatch
+npm install -g "cypress@9.5.2"
+npm install -g forever babel-loader node-babel yarn
+npm ci --loglevel error
+npm install -g firebase-tools typescript@^2
+npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+npm install datatables.net-bs
+npm --prefix frontend install
+npm install cranlike@0.1.4
+npm install --production --silent
+npm install -g npm@4.6.1
+npm i -g cwebp-bin@3.2.0 --unsafe-perm=true
+npm install express express-graphql graphql --save
+npm --no-cache install --ignore-scripts --omit=dev                 graphql                 graphql-schema-linter
+npm install --no-cache -g mapshaper@0.4.140
+npm run doc
+npm install -g ezs@5.4.0
+npm install -g 	@angular/cli@${ANGULAR_CLI_VERSION}
+npm install -g @awearsolutions/redis-commander@0.4.5-rc.5
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-config-standard                 eslint-plugin-import                 eslint-plugin-jest                 eslint-plugin-node                 eslint-plugin-prettier                 eslint-plugin-promise                 @babel/eslint-parser                 prettier                 prettyjson                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser                 @microsoft/eslint-formatter-sarif
+npm install -g wizzy
+npm ci install --production
+npm i -g firebase-tools@7.11.0
+npm run ng build -- --configuration=dev --output-path=dist
+npm install -g ts-rpa@0.1.5 moment mathjs
+npm run build -- --env.GITHUB_TOKEN=${GITHUB_TOKEN}
+npm i -g yarn@latest
+npm --no-cache install --ignore-scripts --omit=dev                 npm-groovy-lint
+npm install --global eslint prettier typescript typescript-language-server
+npm install theme-next/hexo-next-title --save
+npm install --silent
+npm install @ui5/uiveri5 -g --no-optional
+npm install --no-progress --ignore-optional
+npm i --only=prod
+npm i -g npm@^6
+npm install -g bash-language-server typescript-language-server vim-language-server dockerfile-language-server-nodejs vscode-json-languageserver-bin
+npm install $VISUALTEST_REPO#$VISUALTEST_VERSION -g --no-optional
+npm run build-rpm
+npm install -g npm@latest newman@latest
+npm install -g aws-cdk@0.36.2
+npm install -g "cypress@${CYPRESS_VERSION}"
+npm run cp
+npm install -g "cypress@12.0.1"
+npm --no-cache install --ignore-scripts --omit=dev                 eslint                 eslint-plugin-jsonc                 @microsoft/eslint-formatter-sarif
+npm install markdown-cli --global
+npm install -g @angular/cli
+npm install -g webpack-cli webpack
+npm --force cache clean
+npm tsc
+npm install --prefix=assets
+npm install -g grunt npm@latest
+npm install --no-cache -g mapshaper@0.4.137
+npm install -g pkg grunt grunt-cli
+npm run babel
+npm install -g mbt --unsafe-perm=true --allow-root
+npm run bundle:standalone
+npm install -g protractor
+npm run webpack
+npm install natives@1.1.6
+npm -v
+npm install cypress@3.1.3
+npm install -g npm@6.13.7
+npm install --production --quiet
+npm install ezs-analytics@1.0.1
+npm i -g aws-cdk
+npm i -g  jsdom jsdom-global
+npm install -g pulp
+npm install typescript@^3.5.3
+npm install -g bids-validator
+npm install -g aws-cdk@1.3.0
+npm install trifid -g
+npm install pg@6.4.1
+npm install playwright -registry=https://registry.npm.taobao.org
+npm run prepare
+npm install -g firebase-tools@7.16.1
+npm install -g ssb-mirror@0.0.5
+npm install -g cordova ionic@${IONIC_VERSION}
+npm install -g eslint pino-pretty
+npm --quiet install --production false
+npm run copy-h5p-standalone
+npm run build:dll
+npm install -g ezs-basics@3.6.2
+npm install pm2@latest -g
+npm install --global textlint textlint-rule-preset-ja-technical-writing textlint-spellcheck-tech-word
+npm i -g -q @bigcommerce/stencil-cli 2>&1 | grep -v WARN
+npm install --force -g     embark     @trailofbits/embark-contract-info     n
+npm run production
+npm install -g npm@2.5.1
+npm cache clear --force
+npm install -g hubot coffee-script yo generator-hubot
+npm install gulp preact@8.2.7 preact-compat
+npm install --global --unsafe-perm tardis-machine@$VERSION_ARG
+npm install --unsafe-perm --silent
+npm install -g @angular/cli@7.3.8
+npm install cranlike@0.1.3
+npm install -g "cypress@7.5.0"
+npm i -g node-sass@4.10.0
+npm cache clean -f;     npm install -g n;     n stable;     node -v
+npm install -g ezs-lodex@1.0.0
+npm install -g http-server
+npm install --no-dev
+npm install -g @lhci/cli@0.3.8
+npm install hexo-filter-optimize --save
+npm install -g npm-lazy-mirror
+npm install -g @angular/cli findup-sync typescript
+npm install markdown-table-formatter -g
+npm i -g --unsafe-perm ionic@${IONIC_VERSION}
+npm config set user 0
+npm run build -- --profile
+npm install -g localtunnel
+npm i --save ethers
+npm install chromedriver
+npm install -g svgo
+npm install -g "cypress@4.12.1"
+npm install -g @angular/cli@6.2.2
+npm install --legacy-peer-deps
+npm install -g nodemon
+npm install -g serve --silent
+npm install -g ssb-mirror@latest
+npm ci install
+npm install -g ionic cordova appcenter-cli
+npm install aurelia-cli -g
+npm i -g npm@6
+npm install --global cross-env
+npm install -g gulp
+npm install downloadjs
+npm i -g cwebp-bin@3.2.0
+npm install -g ssb-room@0.0.10
+npm install dredd
+npm i socket.io@${SOCKET_IO_VERSION} -g
+npm install --global eslint prettier typescript typescript-language-server dockerfile-language-server-nodejs
+npm install -g gm
+npm install -g create-react-app
+npm install -g "cypress@7.6.0"
+npm install -g uglifycss uglify-js less
+npm install -g npm-check-updates
+npm install -g aws-cdk@0.34.0
+npm install -g   truffle@${TRUFFLE_VERSION}   web3@${WEB3_VERSION}   mocha@${MOCHA_VERSION}   mocha-junit-reporter@${MOCHA_JUNIT_VERSION}   mocha-multi-reporters@${MOCHA_MULTI_VERSION}
+npm install -g start-server-and-test@^1.10.2 @percy/cypress percy --unsafe-perm=true
+npm install -g express --save
+npm install hexo-generator-seo-friendly-sitemap --save
+npm i -dd
+npm install -g firebase-tools@7.12.1
+npm install --save-dev -g grunt-cli
+npm install -g "tyscan@${TYSCAN_VERSION}"
+npm set strict-ssl false
+npm install --verbose
+npm run build -- -c ${configuration} --output-path dist
+npm run build:${APP_ENVIRONMENT}
+npm install gulp gulp-cli -g
+npm install -g ember-cli@${EMBERVERSION}
+npm install -g typescript vale
+npm install -g bootprint-opendxl
+npm i -g screenshoteer
+npm run build-server
+npm install --global bower
+npm i --production
+npm install -g @angular/cli@9.1.0
+npm run ci
+npm cache clean --force
+npm cache clear
+npm rebuild
+npm install ffmpeg
+npm install github-webhook-handler
+npm install sodium
+npm install https://github.com/oracle/node-oracledb/releases/download/v3.0.0/oracledb-src-3.0.0.tgz
+npm run unit-test
+npm install -g "cypress@10.7.0"
+npm install -g json-server
+npm install cypress@3.8.3 start-server-and-test@^1.10.6 @percy/cypress puppeteer --unsafe-perm=true
+npm install -g typescript angular-cli || true
+npm --no-cache install --ignore-scripts --omit=dev                 sfdx-cli                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 @prantlf/jsonlint                 eslint                 eslint-plugin-jsonc                 @microsoft/eslint-formatter-sarif                 v8r                 prettier                 npm-package-json-lint                 npm-package-json-lint-config-default                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 @stoplight/spectral-cli                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 tekton-lint
+npm config get proxy
+npm install --global newman@${NEWMAN_VERSION};
+npm install @vue/cli@3.7.0 -g
+npm install -g @lhci/cli@0.3.x
+npm --global install verdaccio@3.7.0
+npm install --save-dev -g -f grunt-cli
+npm run build:main
+npm config set prefix /home/elm/.local
+npm --no-cache install --ignore-scripts --omit=dev                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss
+npm install gulp-uglify@3.0.2
+npm install @semantic-release/git
+npm install -g ezs@5.4.2
+npm install -g "cypress@5.1.0"
+npm install -g "cypress@3.8.3"
+npm install -g ts-rpa@0.1.14 moment mathjs
+npm run-script build:i18n --prod
+npm install --only=prod
+npm i node-sass@latest
+npm i -g npm; npm i -g typings typescript tslint bunyan mocha
+npm install --no-optional --only=production
+npm install -g jake typings
+npm install pm2-gui -g
+npm install gitbook -g;
+npm install gulp preact@8.2.7 preact-compat preact-cli preact-material-components webpack react
+npm install ezs-lodex@1.1.2
+npm install -g firebase-tools@7.10.0
+npm start >> /var/log/cron.log 2>&1           \n' > /tmp/crontab
+npm install -g "cypress@12.1.0"
+npm install ndb 0x whistle vtop
+npm install theme-next/hexo-next-utteranc --save
+npm install --omit=dev
+npm install socket.io --save
+npm cache clean --force > /dev/null
+npm i -g @alethio/cms-plugin-tool@^1.0.0-beta.4
+npm install ezs@5.4.6
+npm run build --verbose
+npm install --unsafe-perms --allow-root
+npm install -g hapify-cli@0.5.6
+npm install -g polymer-cli --unsafe-perm
+npm run build -- --prod --build-optimizer --env=prod
+npm install -g @angular/cli@8.1.0
+npm i tjanczuk/edge
+npm install -g "cypress@4.11.0"
+npm install -g puppeteer
+npm install -g redis-commander
+npm run ng build --output-path=dist
+npm install -g npm@latest npx@latest node-gyp --force --verbose
+npm install --global gulp-cli
+npm run build-locale
+npm install --global npm@6.9.0
+npm set disturl https://npmmirror.com/package/dist
+npm install ezs-istex@5.0.0
+npm install forever -g
+npm install --global gulp-util
+npm config set @sap:registry "https://npm.sap.com" -g
+npm install --global textlint textlint-rule-preset-ja-technical-writing textlint-rule-spellcheck-tech-word
+npm install cranlike@0.2.4
+npm install --no-progress --silent
+npm install -g hapify-cli
+npm link gulp
+npm install node-gyp
+npm install grpc
+npm install --global --save-exact prettier
+npm cache clean'
+npm install react-scripts@3.0.1 -g --silent
+npm install cp-translations@$DEP_VERSION
+npm rebuild node-sass --force
+npm install -g cordova@${CORDOVA_VERSION} ionic@${IONIC_VERSION}
+npm install --global                  npx                                 tldr                                fkill                               vtop                                eslint                              prettier
+npm install node-gyp -g
+npm install --global http-server --unsafe-perm exp
+npm install discord.js
+npm install -g cross-env
+npm install -g selenium-side-runner
+npm config set prefix /usr/local
+npm install -g
+npm install hexo-generator-indexed --save
+npm run build -- --output-path=./dist/out
+npm install -g angular-cli
+npm install --global gulp preact@8.2.7 preact-compat
+npm i -g optipng-bin@5.0.0 --unsafe-perm=true
+npm i zeppelin-highcharts-spline
+npm install -g ssb-room@0.1.1
+npm install -g "cypress@9.1.0"
+npm install pm2 yarn http-server cnpm express connect-history-api-fallback -g
+npm i -g @alethio/cms-plugin-tool
+npm install --unsafe-perm -g node-sass
+npm install serverless -g
+npm i -g lighthouse --unsafe-perm=true
+npm install -g webdriver-manager@12.1.7
+npm install node-media-server
+npm install -g --unsafe-perm         node-red         node-red-admin         node-red-dashboard         node-red-node-email         node-red-node-feedparser         node-red-node-pi-gpio         node-red-node-sentiment         node-red-node-twitter
+npm config set fetch-retry-mintimeout ${NPM_FETCH_RETRY_MINTIMEOUT}
+npm install -g "cypress@4.0.1"
+npm install -g pm2 babel-cli babel-preset-es2015 babel-preset-stage-3
+npm install cranlike@0.0.8
+npm i -g serve@9.6.0
+npm run build -- --prod
+npm i -g Brosec
+npm install -g "cypress@10.0.1"
+npm install -g pm2 babel-cli babel-preset-es2015
+npm run build -- --host 0.0.0.0 --port 80
+npm run build -- --env.GITHUB_TOKEN=${GITHUB_TOKEN} --env.SW_KILL=${SW_KILL}
+npm install -g "cypress@9.4.1"
+npm install --build-from-source=hummus
+npm install -g pxt
+npm install 8
+npm i -g fsevents@1.2.4
+npm install -g bower gulp
+npm run build -- --prod --output-path ./dist/out
+npm run mine-data:build
+npm install typescript@4.7.4 ts-node@10.9.1
+npm install -g bids-validator@${BIDS_VALIDATOR_VERSION}
+npm install -g ajv-cli
+npm install -g firebase-tools@7.2.3
+npm install --save-dev
+npm install -g corepack
+npm install -g "cypress@4.7.0"
+npm run build --prefix=assets
+npm install supervisor -g
+npm i -g phantomjs-prebuilt@2.1.16 --unsafe-perm=true
+npm install gtop -g
+npm install -g "cypress@6.3.0"
+npm install ezs-basics@3.6.7
+npm install -g ssb-mirror@0.0.11
+npm --quiet install
+npm install serialport
+npm install --registry=${NODE_REGISTRY}
+npm install ezs-istex@4.6.0
+npm install -g yarn@1.22.0 --force
+npm ci --no-optional
+npm i gritty@${GRITTY_VERSION} socket.io@${SOCKET_IO_VERSION}
+npm ci --quiet
+npm install --production redis@0.10.0 talib@1.0.2 tulind@0.8.7 pg
+npm install -g newman@${NEWMAN_VERSION}
+npm install -g swagger
+npm install -g ts-rpa@0.1.13 moment mathjs
+npm install -g yapi-cli --registry ${NPM_REGISTRY}
+npm install serve -g --silent
+npm install -g "cypress@9.2.0"
+npm install -f
+npm i -g puppeteer@1.13.0 --unsafe-perm=true
+npm install -g "cypress@4.0.2"
+npm install -g laravel-echo-server
+npm install --only=production -g gm
+npm build
+npm install ezs@5.8.2
+npm install --loglevel=error
+npm install --only=production --no-optional
+npm install dynalite@1.2.0 --no-save
+npm run postversion
+npm install -g --loglevel error node-gyp@6.1.0 grunt-cli underscore jsdoc
+npm i -g serverless@3.x
+npm install -g @vivliostyle/cli
+npm install -g grunt-cli nodemon bower node-gyp
+npm -s install -g /tmp/cathive-concourse-chartmuseum-resource.tgz
+npm install -g git-cache-http-server
+npm i -g --unsafe webtorrent-hybrid
+npm install -g firebase-tools@7.2.0
+npm install -g "cypress@10.9.0"
+npm install -g "cypress@7.4.0"
+npm install -g "cypress@6.0.1"
+npm install gulp gulp-htmlclean gulp-htmlmin gulp-minify-css --save
+npm install -g pm2@latest
+npm install -g elm elm-test elm-github-install elm-format newman
+npm install -g http-server-spa
+npm install -g fs swagger2-postman2-converter
+npm install @angular/cli
+npm install -g bower polymer-cli
+npm run build:production
+npm install -g "cypress@6.8.0"
+npm install bufferutil
+npm install -g "cypress@11.1.0"
+npm install -g yarn@1.10.1
+npm uninstall -g grunt-cli
+npm install --silent amqp
+npm i cloudcmd@${CLOUDCMD_VERSION} socket.io@${SOCKET_IO_VERSION} -g
+npm install -g firebase-tools@${FIREBASE_TOOLS}
+npm install -g kinesalite
+npm install -g react-native-cli@1.0.0
+npm install -g rollup
+npm i --quiet
+npm install -g ijavascript
+npm install ezs-analytics@1.8.1
+npm run build:aot
+npm i puppeteer express
+npm install gitbook-cli -g;
+npm run ng build -- --output-path=dist
+npm run build -- --minify
+npm install -g "cypress@8.4.1"
+npm config set fetch-retry-maxtimeout ${NPM_FETCH_RETRY_MAXTIMEOUT}
+npm install chromedriver -g
+npm install -g 		configurable-http-proxy@3.1.1
+npm install -g "cypress@4.0.0"
+npm i screepsmod-auth
+npm i -g npm
+npm install -g npm@${NPM_VERSION}
+npm install pm2 -g
+npm install -g vsce
+npm install --global phantomjs
+npm install -g         npm'
+npm --install prefix "usr/local/bin"
+npm install hubot-slack --save
+npm i -g --unsafe-perm=true --allow-root truffle
+npm install node-red-node-base64
+npm i -g firebase-tools@6.9.2
+npm install gulp preact preact-compat
+npm install gitbook-cli -g
+npm install --unsafe-perm -g localtunnel
+npm prune
+npm install --prod
+npm install -g "cypress@5.3.0"
+npm install --no-cache -g mapshaper@0.4.152
+npm install -g   truffle@${TRUFFLE_VERSION}
+npm run sass-build
+npm run ng build --prod
+npm install -g --unsafe-perm=true gulp hugulp firebase-tools
+npm run prepublish
+npm --no-cache install --ignore-scripts --omit=dev                 @coffeelint/cli
+npm install --no-cache -g mapshaper@0.4.151
+npm install -g github-release-cli
+npm install --global fs-extra
+npm install --global pnpm@7.30.5
+npm install --omit=dev --unsafe-perm
+npm i gitbook-cli -g
+npm i -g nodemon ts-node typescript lerna
+npm i puppeteer@1.3.0
+npm install --global gulp-postcss
+npm install --global gatsby-cli
+npm install -g ssb-mirror@0.0.1
+npm install -g     neovim
+npm install -g typescript yarn pnpm node-gyp"
+npm install -g ssb-room@0.1.0
+npm install -g firebase-tools@7.7.0
+npm install -g --force yarn
+npm install -g "cypress@8.3.0"
+npm install -g parcel-bundler
+npm install node-gitlab-webhook
+npm install -g elm elm-github-install newman
+npm install -g "cypress@9.2.1"
+npm install -g "cypress@10.0.2"
+npm i -g firebase-tools@6.9.1
+npm install cnpm -g --registry=https://registry.npm.taobao.org
+npm install -g "cypress@4.12.0"
+npm install     	express@4.17.1     	sqlite3@5.0.0     	body-parser@1.19.0     	moment@2.29.1
+npm set progress false
+npm install -g ts-rpa@0.1.1-rc.1 moment mathjs
+npm install -g ap-npm
+npm install npm@latest -g
+npm install ezs-istex@4.4.1
+npm install -g ssb-room@0.0.2
+npm install -g "cypress@9.5.1"
+npm -g install phonegap
+npm update npm
+npm install -g --production
+npm install -g node-red
+npm install --production -g         @angular/cli         cloudcmd         gritty
+npm install puppeteer express
+npm install --global caniuse-lite ADD package.json /var/tmp/package.json
+npm i -g pm2
+npm uninstall -g api2html
+npm install --silent; exit 0
+npm install ezs@9.4.1
+npm install -g "cypress@4.6.0"
+npm run js-minify
+npm i caprover
+npm install sqlite3 --build-from-source
+npm install webpack -g
+npm install -g ssb-room@0.0.9
+npm install -g @luminati-io/luminati-proxy
+npm i lighthouse@4.0.0 -g
+npm --quiet install --silent --allow-root install
+npm run build:$build_config
+npm set puppeteer_download_host https://registry.npmmirror.com/binary.html
+npm cache clean --force || true
+npm install -g doctoc urchin eclint dockerfile_lint
+npm install elasticdump@${ES_DUMP_VER} -g
+npm install -g generator-polymer-init-custom-build
+npm install mefs-http-client
+npm i -g @angular/cli
+npm i -g semantic-release @semantic-release/changelog @semantic-release/exec @semantic-release/git
+npm install -g "cypress@11.0.0"
+npm install terraunit  rm package*.json
+npm --unsafe-perm install
+npm install gulp-cli@2.2.0
+npm install --global @oclif/config @oclif/plugin-help @oclif/command bundle-outdated-formatter
+npm install grunt-contrib-compass --save-dev
+npm install hexo-pangu --save
+npm install -g firebase-tools@7.15.0
+npm install --production
+npm install -g serverless@${SERVERLESS_VERSION}
+npm --version
+npm i ffbinaries -g
+npm install -g firebase-tools firebase-bolt
+npm i -g check-dependencies
+npm install -g "cypress@7.2.0"
+npm cache verify
+npm install -g         npm 	pm2 	babel-core 	webpack 	nodemon'
+npm install --loglevel verbose
+npm install cranlike@0.2.7
+npm install     blessed@0.1.7     blessed-contrib@2.3.1     xml2js@0.4.9
+npm install --silent --no-cache
+npm install hexo-filter-github-emojis --save
+npm install hexo-cake-moon-menu --save
+npm set registry https://registry.npmmirror.com/
+npm install -g firebase-tools@7.1.1
+npm install --save-dev -g grunt
+npm install -g "cypress@6.0.0"
+npm run build:$APP_ENVIRONMENT
+npm i -g npm@^$NPM_VERSION
+npm install -g ts-rpa@0.1.6 moment mathjs
+npm install cast-web-api -g
+npm i -g typescript
+npm i -g puppeteer@1.10.0 --unsafe-perm=true
+npm install 1v9/hexo-next-nightmode --save
+npm i -g optipng-bin@5.0.0
+npm install nodemon -g
+npm install -g ssb-room@0.1.3
+npm --no-cache install --ignore-scripts --omit=dev                 markdownlint-cli@0.33.0
+npm install ezs@5.4.9
+npm install --unsafe-perm;
+npm i $TESTVAR
+npm install hexo-generator-index-pin-top --save
+npm install -g firebase-tools@7.0.1
+npm link graphy
+npm install --unsafe-perm -g @angular/cli findup-sync typescript
+npm install react-scripts -g
+npm install -g firebase-tools@7.6.0
+npm install -g aws-cdk@1.6.1
+npm -g install npm@latest
+npm install --global   eslint                  jest                    eslint-config-breki
+npm install -g @lhci/cli@0.3.7
+npm install datatables.net
+npm run build:staging
+npm --no-cache install --ignore-scripts --omit=dev                 cspell
+npm audit fix --force
+npm install --quiet -g gulp bower
+npm install ezs-istex@5.0.4
+npm run build)
+npm install --global @angular/cli
+npm run postinstall
+npm install -g local-web-server
+npm install -g @angular/cli@latest
+npm install ezs-lodex@1.0.0
+npm install ezs-istex@5.0.1
+npm install -g "cypress@9.6.1"
+npm install -g yarn@1.9.4
+npm install -g firebase-tools@7.3.0
+npm install -g firebase-tools@7.14.0
+npm install -g "cypress@9.7.0"
+npm i --omit=dev --ignore-scripts
+npm install -g bower
+npm install gogs-webhook-handler
+npm install --no-cache -g mapshaper@0.4.148
+npm run resetDB
+npm install -g "cypress@12.2.0"
+npm install -g --prefix=/usr/local
+npm run deploy
+npm install global
+npm --no-cache install --ignore-scripts --omit=dev                 npm-package-json-lint                 npm-package-json-lint-config-default
+npm set electron_mirror https://registry.npmmirror.com/binary.html?path=electron/
+npm install -g http-server @vue/cli @vue/cli-service-global"
+npm i yarn
+npm install -D @swc/cli @swc/core
+npm install -g gulp-cli gulp
+npm install -g stylelint stylelint-config-recommended
+npm run serve -- --port 80
+npm uninstall hexo-renderer-marked --save
+npm install -g   jsdoc   prettier   rollup   rollup-plugin-terser
+npm install --global pug-cli bower postcss-cli autoprefixer uglify-js
+npm uninstall hexo-generator-index --save
+npm -s pack
+npm install yarn --global
+npm install --save firebase
+npm install ezs@9.0.0
+npm -g install pm2
+npm install -g yarn@1.13
+npm install express
+npm run vscode:prepublish
+npm install -g "cypress@7.3.0"
+npm i -g npm@latest jest-cli
+npm install --no-cache -g mapshaper@0.4.149
+npm i --progress=false
+npm install -g prettier eslint typescript
+npm install --silent --global pm2
+npm install -g luminati-io/luminati-proxy
+npm install cranlike@0.2.9
+npm update -g npm --registry=http://registry.npm.taobao.org
+npm i puppeteer@${PUPPETEER_VERSION}
+npm i -g firebase-tools@7.0.1
+npm install chrome -g
+npm config set registry http://registry.npmjs.org/
+npm install -g npm@6.9.0
+npm install -g mapshaper@0.4.60 geojson-polygon-labels@1.2.1
+npm ls
+npm i -g serverless@1.49.1 typescript
+npm install bower -g
+npm install -g svgo     ;fi;fi
+npm install ezs-analytics@1.4.0
+npm i -g lerna
+npm install npm@latest
+npm i frontail -g
+npm install --force -g yarn@latest
+npm run dev
+npm install -g bower grunt-cli gulp
+npm install --global gulp-plumber
+npm install -g ts-rpa@0.1.1-rc.5 moment mathjs
+npm --no-cache install --ignore-scripts --omit=dev                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 @prantlf/jsonlint                 eslint                 eslint-plugin-jsonc                 @microsoft/eslint-formatter-sarif                 v8r                 prettier                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 @stoplight/spectral-cli                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 tekton-lint
+npm install -g "cypress@9.0.0"
+npm link ../pxt-common-packages
+npm --no-cache install --ignore-scripts --omit=dev                 sfdx-cli                 typescript                 @coffeelint/cli                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 gherkin-lint                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-config-standard                 eslint-plugin-import                 eslint-plugin-jest                 eslint-plugin-node                 eslint-plugin-prettier                 eslint-plugin-promise                 eslint-plugin-vue                 @babel/core                 @babel/eslint-parser                 @microsoft/eslint-formatter-sarif                 standard                 prettier                 @prantlf/jsonlint                 eslint-plugin-jsonc                 v8r                 npm-package-json-lint                 npm-package-json-lint-config-default                 eslint-plugin-react                 eslint-plugin-jsx-a11y                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 @stoplight/spectral-cli                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 tekton-lint                 prettyjson                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser
+npm install -g newman-reporter-htmlextra
+npm install -g egg-scripts
+npm install dynalite --no-save
+npm i --production --registry=https://registry.npm.taobao.org
+npm install --unsafe-perm -g node-red
+npm install -g typescript typings angular-cli || true
+npm install terraunit
+npm install -g gatsby
+npm install -g "cypress@10.8.0"
+npm install --save-dev cypress
+npm install --global --unsafe-perm exp
+npm install typescript
+npm install mongoose
+npm install .
+npm run build-frontend
+npm install --no-cache -g mapshaper@0.4.142
+npm install --no-cache -g mapshaper@0.4.138
+npm install -g npm@6.4.1
+npm install cypress@3.4.1
+npm install -g ezs-analytics@1.0.1
+npm install -g yarn@1.15.2
+npm run --prefix frontend build
+npm install -g pown
+npm install --production --no-optional
+npm install @ui5/uiveri5
+npm i -g cypress@3.7.0 sonarqube-scanner
+npm install -g pg
+npm install webpack@4.20.0 -g webpack-cli@3.1.2 -g
+npm install --unsafe-perm
+npm install cypress@4.0.2 start-server-and-test@^1.10.8 @percy/cypress puppeteer --unsafe-perm=true
+npm uninstall gulp
+npm install nan
+npm install ezs-basics@3.6.4
+npm install gulp
+npm config set https-proxy http://10.16.11.25:9090
+npm install -g pm2
+npm run ng build --prod --output-path=dist --no-cache npm run build
+npm install -g firebase-tools@7.3.1
+npm install -g verdaccio@$VERDACCIO_VERSION
+npm ci --omit=dev --ignore-scripts
+npm install ezs@7.1.1
+npm install -q
+npm cache verif
+npm install -g elm@0.18.0 elm-github-install newman npm
+npm install -g grunt
+npm -g install bower grunt-cli
+npm install -g @adobe/jsonschema2md
+npm install http-server -g
+npm install hexo-filter-emoji --save
+npm install cranlike@0.2.8
+npm  run build
+npm install -g /node-red-contrib-orion
+npm install synzen/discord.rss#dev
+npm install -g firebase-tools firebase-bolt typescript tslint
+npm run test:all
+npm cache clean -f
+npm config set @sap:registry https://npm.sap.com
+npm install -g aws-azure-login --unsafe-perm
+npm i -g --unsafe-perms --allow-root node-gyp
+npm i cloudcmd@${CLOUDCMD_VERSION} -g
+npm install --production --registry https://registry.npm.taobao.org
+npm install apollo-upload-server
+npm install -y
+npm install dabby mysql express --save
+npm install -g "cypress@12.0.0"
+npm install -g ts-rpa@0.1.2 moment mathjs
+npm i -g mocha
+npm install aws-sdk
+npm install -g grpc_tools_node_protoc_ts@2.5.4 grpc-tools@1.8.0 --unsafe-perm
+npm i -g nodemon
+npm install --loglevel=warn
+npm install --global gitbook-plugin-mermaid mermaid svgexport
+npm install ezs@7.1.5
+npm set progress=false
+npm install -g "cypress@6.2.1"
+npm i -g serve --registry=https://registry.npm.taobao.org
+npm --no-cache install --ignore-scripts --omit=dev                 tekton-lint
+npm install -g "cypress@6.4.0"
+npm install -g @angular/cli@9.0.1
+npm install --production --registry ${NPM_REGISTRY}
+npm install verdaccio
+npm install -g gulp-cli
+npm install -g 	pm2 	webpack 	webpack-dev-server'
+npm --no-cache install --ignore-scripts --omit=dev                 jscpd                 npm-groovy-lint                 @prantlf/jsonlint                 eslint                 eslint-plugin-jsonc                 @microsoft/eslint-formatter-sarif                 v8r                 prettier                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif
+npm install --global npm@9.5
+npm update -g npm
+npm run compile
+npm install -g npm@6.10.0
+npm install -g "cypress@4.8.0"
+npm install -g bats
+npm set operadriver_cdnurl https://cdn.npmmirror.com/binaries/operadriver
+npm install -g firebase-tools@7.13.0
+npm install -g ionic cordova@8.0.0
+npm install -g pxt sub
+npm i -g forever
+npm install yarn prettier npm -g
+npm install -g "cypress@10.0.0"
+npm install -g "cypress@6.1.0"
+npm install -g firebase-tools@7.3.2
+npm set selenium_cdnurl https://cdn.npmmirror.com/binaries/selenium
+npm install -g n
+npm i $PRODFLAG
+npm install --global npm gulp-cli pug-cli bower postcss-cli autoprefixer uglify-js
+npm install -g node-rpa-0.0.1.tgz
+npm install -g ezs@5.4.6
+npm config --global set cache /tmp/npm-cache
+npm install -g @angular/cli@7.3.9
+npm install react-scripts@1.1.1 -g --silent
+npm config get https-proxy
+npm install gulp preact@8.2.7 preact-compat preact-cli preact-material-components@1.5.2 webpack react gulp-cli
+npm install keystone@4.0.0 --save
+npm ci -s
+npm install --global textlint textlint-rule-preset-ja-technical-writing textlint-rule=spellcheck-tech-word
+npm install -g @angular/cli@8.3.1
+npm install -g tslint prettier eslint typescript
+npm i -g node-sass@4.10.0 --unsafe-perm=true
+npm i -D tap-junit@3.0.0
+npm install -g "cypress@4.9.0"
+npm run gulp prepare
+npm i -g serverless
+npm install -g ssb-room@0.1.2
+npm config set registry https://registry.npmjs.org/
+npm ci --only=production
+npm install -g lighthouse
+npm config set strict-ssl false
+npm -s install
+npm install theme-next/hexo-next-share --save
+npm install -g "cypress@4.10.0"
+npm run build -- -c ${NG_BUILD_CONFIG_NAME} --output-path dist
+npm install -g prettier@${PRETTIER_VERSION}
+npm install -g ssb-room@1.0.0
+npm install -g "cypress@8.1.0"
+npm run generate:key
+npm install --global npm gulp-cli pug-cli bower
+npm install -g screeps @screeps/storage @screeps/backend @screeps/common @screeps/engine @screeps/driver
+npm remove node-gyp
+npm install @commitlint/cli
+npm install'
+npm i gritty
+npm i -g http-server aurelia-cli
+npm install -g jake typings serialport
+npm i screeps --silent
+npm --no-cache install --ignore-scripts --omit=dev                 sfdx-cli
+npm install --no-progress
+npm --no-cache install --ignore-scripts --omit=dev                 htmlhint
+npm install -g ssb-mirror@0.0.10
+npm cache clean
+npm install -g ts-rpa@0.1.1-rc.4 moment mathjs
+npm install -g yuglify less
+npm install -g prettier@${MODULE_VERSION}
+npm run build:avivator
+npm install -g @angular/cli@${ANGULAR_CLI_VERSION}
+npm install amqp
+npm install --quiet -g npm > /dev/null
+npm install -g grunt-cli nodemon bower pm2 node-gyp
+npm --prefix ./code install ./code
+npm install express-gateway@$VERSION
+npm --no-cache install --ignore-scripts --omit=dev                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 gherkin-lint                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 @prantlf/jsonlint                 eslint                 eslint-plugin-jsonc                 @microsoft/eslint-formatter-sarif                 v8r                 prettier                 npm-package-json-lint                 npm-package-json-lint-config-default                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 @stoplight/spectral-cli                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 tekton-lint
+npm run-script updatedb
+npm install -g gulp bower polymer-cli
+npm ci --prod
+npm run ng build --prod=false --output-path=dist
+npm install -g "cypress@12.0.2"
+npm run build:prod -- --output-path=./dist/out
+npm install ezs-istex@4.3.3
+npm run build:prod
+npm install -g ssb-mirror@0.0.2
+npm install castv2-client
+npm install ezs@5.5.0
+npm i -g @lhci/cli@0.3.x --unsafe-perm=true
+npm install --ignore-scripts
+npm install pm2 experss -g
+npm install @semantic-release/changelog
+npm run package
+npm install -g npm@6.10.2
+npm install cranlike@0.3.0
+npm -g cache clean --force
+npm install eslint@5.16.0
+npm install -g         npm 	pm2 	babel-cli 	webpack 	nodemon'
+npm install -g @vue/cli
+npm install -g "cypress@5.5.0"
+npm link webpack
+npm uninstall gulp-clean-css
+npm install -g firebase-tools@7.0.2
+npm install -g ts-rpa@0.1.1-rc.3 moment mathjs
+npm --no-cache install --ignore-scripts --omit=dev                 gherkin-lint
+npm i -g
+npm  --version
+npm install -g gulp bower polymer-cli --unsafe-perm
+npm run-script test
+npm config set depth 0
+npm i -g phantomjs-prebuilt@2.1.16
+npm i -g jpegtran-bin@4.0.0 --unsafe-perm=true
+npm install -g wait-on@$WAIT_ON_VERSION
+npm cp -R ./node_modules ./ng-app
+npm install apidoc -g
+npm run gulp build
+npm i -g npm@6.1.0
+npm install --global ebook-convert
+npm install -g coffee-script yo generator-hubot
+npm i -g http-server
+npm install gulp preact@8.2.7 preact-compat preact-cli preact-material-components webpack react gulp-cli
+npm install -g forever
+npm install google-assistant -g --unsafe-perm
+npm install -g "cypress@9.6.0"
+npm i -g     typings     typescript@'3.3.3333'     tslint     bunyan     mocha
+npm config set registry https://registry.npmjs.org
+npm install -g pkg
+npm install cranlike@0.2.3
+npm install -g yaml-language-server typings pug-lint js-yaml stylelint js-beautify jsonlint neovim
+npm install -g ts-rpa@0.1.7 moment mathjs
+npm install -g @angular/cli@8.3.12
+npm run dist
+npm install -g     neovim     fd-find
+npm install -g @lhci/cli@0.3.9
+npm uninstall gulp-uglify
+npm install ezs@6.1.0
+npm ci --quiet --production false --no-audit
+npm install -g @angular/cli@1.7.1
+npm run tsc
+npm i
+npm install -g gen-http-proxy
+npm install --save-dev -g webpack
+npm install -g ezs@5.4.5
+npm install -g heroku
+npm install -g ssb-mirror@0.0.9
+npm install --global gulp preact@8.2.7 preact-compat preact-cli preact-material-components webpack react gulp-cli
+npm config set proxy http://10.16.11.25:9090
+npm i -g npm     go get -tags "v0.12.6" -u -v github.com/gobuffalo/buffalo/buffalo
+npm install -g @angular/cli@
+npm i -g  @testing-library/dom
+npm install -g mapshaper@0.4.106 geojson-polygon-labels@1.2.1 csv2geojson algolia-csv
+npm install git -g --no-optional
+npm install --unsafe -g bash-language-server dockerfile-language-server-nodejs
+npm set loglevel warn
+npm install -g yarn forever
+npm install -g "cypress@4.4.0"
+npm resetDB
+npm run prod
+npm install gulp preact@8.2.7 preact-compat preact-cli
+npm install -g "cypress@5.2.0"
+npm i -g @testing-library/dom
+npm install -g firebase-tools@7.9.0
+npm install strapi@alpha -g
+npm --no-cache install --ignore-scripts --omit=dev                 jscpd
+npm i npm@latest -g
+npm config set strict-ssl false -g
+npm install -g yapi-cli
+npm install cast-web-api -g --unsafe-perm
+npm run opdatering:build
+npm i -g     bunyan     mocha     node-gyp     tslint     typings     typescript
+npm install typescript -g
+npm install npm@6.3.0 -g
+npm i -g gulpjs/gulp#4.0
+npm install -g uglify-es clean-css-cli
+npm i @types/node
+npm ls -gp --depth=0 | awk -F/ '/node_modules/
+npm install svgexport -g
+npm i -g yarn --registry=http://registry.npm.taobao.org
+npm i ng2-smart-table --save
+npm config set unsafe-perm true
+npm init -f
+npm install --global --save-exact yarn
+npm i -g gulp-cli
+npm install --no-cache
+npm install --global phantomjs-prebuilt
+npm config set registry https://registry.npm.taobao.org
+npm install -g "cypress@10.6.0"
+npm run build --production
+npm install ezs@7.1.4
+npm start
+npm install --global nodemon
+npm install cranlike@0.0.7
+npm i -g @github/query-selector
+npm install -g "cypress@9.5.4"
+npm install --global windows-build-tools
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-plugin-jest                 eslint-plugin-prettier                 eslint-plugin-react                 @babel/eslint-parser                 prettier                 prettyjson                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser                 @microsoft/eslint-formatter-sarif
+npm i --loglevel error
+npm install -g "cypress@8.7.0"
+npm install -g webdriver-manager
+npm --no-cache install --ignore-scripts --omit=dev                 sql-lint
+npm install -g yarn
+npm i -g @vue/cli
+npm i -g @alethio/cms-plugin-tool@^1.0.0-beta.5
+npm install -g firebase-tools@7.2.4
+npm install -g tiddlywiki
+npm install;
+npm install -D
+npm install -g prisma
+npm i -g serve@10.1.2
+npm install -g eslint babel-eslint       eslint-config-airbnb eslint-plugin-jest eslint-plugin-flowtype       eslint-plugin-babel eslint-plugin-import eslint-plugin-lodash-fp       eslint-plugin-jsx-a11y eslint-plugin-react eslint-config-airbnb-base
+npm install --no-cache -g mapshaper@0.4.145
+npm install -g truffle@${TRUFFLE_VERSION}
+npm install -g spago
+npm install -g "cypress@4.4.1"
+npm i -g mup
+npm run build-front
+npm uninstall gulp-angular-templatecache
+npm install -g ssb-room@0.1.4
+npm i ts-node@${TS_NODE_VERSION}
+npm --global install verdaccio@3.11.6
+npm install -g ssb-spot@0.0.1
+npm install -g homebridge                       homebridge-homeassistant
+npm i -g yarn firebase-tools
+npm run test
+npm install -g 	pm2 	webpack 	nodemon'
+npm install -g "cypress@7.1.0"
+npm install --production -g         @angular/cli         cloudcmd
+npm --no-cache install --ignore-scripts --omit=dev                 markdown-link-check
+npm install -g "cypress@8.2.0"
+npm install --global gulp-cli pug-cli bower postcss-cli autoprefixer uglify-js
+npm i -g npm@latest
+npm install -g bit-bin
+npm install gulp-angular-templatecache@2.2.7
+npm run export:prod
+npm install -g npm@latest npx@latest --force
+npm --no-cache install --ignore-scripts --omit=dev                 prettier
+npm i -g cypress@3.6.0 sonarqube-scanner
+npm run build .env.production --production
+npm i -g npm-check-updates
+npm run-script build
+npm install -g "cypress@8.3.1"
+npm install 12
+npm install -g gulp bower
+npm install -g markdownlint-cli@${MODULE_VERSION}
+npm install --no-cache -g mapshaper@0.4.139
+npm i -g green-tunnel
+npm install --global eslint jest eslint-config-breki
+npm install -g yarn CMD apachectl -D FOREGROUND
+npm install -g "cypress@9.1.1"
+npm install -g heroku-cli
+npm install npm -g
+npm config set prefix '/home/dockeruser/.npm-global'
+npm install -g gulp hugulp firebase-tools
+npm run bower install
+npm install -g "cypress@5.4.0"
+npm install -g ts-rpa moment
+npm run export
+npm install theme-next/theme-next-tag --save
+npm install -g typescript
+npm install -g @angular/cli@${VERSION}
+npm run coveralls
+npm install -g purescript --unsafe-perm spago
+npm install -g firebase-tools@7.2.2
+npm install -g ezs-analytics@1.0.1     npm install -g ezs-lodex@1.0.0
+npm install -g ember-cli
+npm install -g nodemon yarn
+npm install --save express
+npm install -g apiconnect
+npm install cast-web-api
+npm install husky
+npm install -g newman@beta
+npm install -g "cypress@${CYPRESS_VERSION} percy"
+npm install --save-dev -g -f webpack
+npm run build-deb
+npm install -g newman
+npm install -g ssb-room@0.0.7
+npm install -g "cypress@7.7.0"
+npm install -g yarn@1.16.0
+npm install hexo-generator-feed --save
+npm rebuild --build-from-source
+npm install -g jest@25.1.0
+npm install -g ssb-room@0.0.1
+npm install hexo-filter-flowchart --save
+npm install hexo-generator-sitemap --save
+npm install --global eslint
+npm install -g prisma@1.32
+npm install ezs@8.1.0
+npm run build > /dev/null
+npm run ng build
+npm run build --target=production
+npm i -g gifsicle@4.0.1
+npm install --prefix "$HOME/.nvm/"'
+npm install -g ssb-mirror@0.0.3
+npm install -g node-sass
+npm install -g cfn-create-or-update${VERSION+@$VERSION}
+npm install -g firebase-tools@7.6.1
+npm install -g 	pm2 	babel-core 	webpack 	nodemon
+npm install screwdriver-buildcluster-queue-worker@$VERSION
+npm run build --prod -base-href http://modev.de:4200
+npm install ezs-istex@5.0.2
+npm install -g express-generator
+npm install junit-viewer -g
+npm install -g "cypress@9.5.3"
+npm install -g cnpm --registry=https://registry.npmmirror.com
+npm install node-rdkafka
+npm install -g @angular/cli@7.3.8     npm install --save-dev @angular-devkit/build-angular
+npm install discord.js node-opus opusscript
+npm uninstall gulp-eslint
+npm install --save hubot-$HUBOT_ADAPTER                           htmlparser                           moment                           querystring                           soupselect                           underscore                           underscore.string                           url
+npm i -g $(awk -F \" '{if($2=="NeteaseCloudMusicApi") print $2"@"$4}' /usr/local/lib/package.json)
+npm install ${HUBOT_NPM_SCRIPTS} --save
+npm install puppeteer-core@1.10.0 --silent
+npm --global config set user root
+npm run build
+npm ci --ignore-scripts --only=production
+npm install --global
+npm -g i pnpm
+npm install -g grunt-idra3
+npm install -g "cypress@4.2.0"
+npm i -g jest jest-dom
+npm install ezs@9.1.0
+npm install ezs@6.3.0
+npm install cranlike@0.0.3
+npm install -g @angular/cli@7.3.7
+npm install --global minimist
+npm install -g ts-rpa@0.0.9 moment mathjs
+npm install -g ts-rpa@0.1.1-rc.2 moment mathjs
+npm install -g eslint babel-eslint       eslint-config-airbnb eslint-plugin-jest eslint-plugin-flowtype       eslint-plugin-babel eslint-plugin-import eslint-plugin-lodash-fp       eslint-plugin-jsx-a11y eslint-plugin-react
+npm i --production || :
+npm install -g pm2 pm2-docker typescript@2.6.1
+npm install node-red
+npm run build-ts
+npm install --global @nestjs/cli
+npm install --global node-sass
+npm run bower cache clean
+npm install -g observatory-cli
+npm audit
+npm install -g @angular/cli@9.0.7
+npm install sharp
+npm install ezs-lodex@1.1.0
+npm ci --only=production;   npm pack;   npm i -g palantir-*.tgz;   rm palantir-*.tgz
+npm install hexo-tag-aplayer --save
+npm install apollo-server
+npm install -g ssb-mirror@0.0.4
+npm install theme-next/hexo-next-exif --save
+npm install -g heroku@$HEROKU_VERSION
+npm i screepsmod-auth --silent
+npm install --silent -g @angular/cli findup-sync typescript
+npm install @semantic-release/release-notes-generator
+npm install svgexport -g --unsafe-perm
+npm install -g cnpm
+npm install -g "cypress@5.6.0"
+npm list -g --depth=0. | awk -F ' ' '{print $2}' | awk -F '@' '{print $1}'  | xargs npm remove -g
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 standard                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser
+npm install cranlike@0.1.2
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm install -g mbt
+npm install --global --unsafe-perm gulp-sass
+npm i -g @codeurs/php-bin-linux64 ncp
+npm --no-cache install --ignore-scripts --omit=dev                 remark-cli                 remark-preset-lint-recommended
+npm install -g typescript@3.5.2
+npm i -D tap-junit@2.1.0
+npm set sass_binary_site https://cdn.npmmirror.com/binaries/node-sass
+npm install -g "cypress@12.3.0"
+npm install --production -g         tslint typescript         @angular/cli         cloudcmd         gritty
+npm install -g jest@25.1.0 puppeteer@2.0.0
+npm install @sitespeed.io/throttle -g
+npm install -g tslint prettier eslint typescript nodemon
+npm install --global gulp preact preact-compat
+npm --global install verdaccio@3.10.2
+npm install -g strapi@alpha
+npm install -g'
+npm run build:docker
+npm install -g "cypress@6.5.0"
+npm install -g github-indexer --save
+npm install -g firebase-tools@7.1.0
+npm install -g --force npm@2.5.1
+npm install -g ssb-room@0.0.11
+npm install -g npm@6.14.5
+npm run spago:build
+npm run purs:build
+npm install --global gulp-sass
+npm install hexo-tag-dplayer --save
+npm install --no-optional
+npm install --global markdownlint-cli
+npm install ezs@8.1.2
+npm install -g yarn@1.17.3
+npm i -g aws-cdk@v1.26.0
+npm install cranlike@0.0.9
+npm install yarn prettier -g
+npm install -g /opt/rpc/package.json
+npm install -g firebase-tools@7.5.0
+npm i cloudcmd -g
+npm install hexo-cli -g
+npm install ezs@9.4.2
+npm install -g ghost-storage-adapter-s3
+npm i -g ts-node@${TS_NODE_VERSION}
+npm install cranlike@0.0.5
+npm install -g ssb-room@0.0.5
+npm install serverless@$SERVERLESS_VERSION -g
+npm install -g npm@"$NPM_VERSION"
+npm install cors --save
+npm install --production --save-exact
+npm i gritty@${GRITTY_VERSION}
+npm install -g markdown-pdf
+npm install bower
+npm run assets
+npm config set registry https://registry.npm.taobao.org/
+npm install --global @ui5/cli
+npm -g install chromedriver
+npm install --global npm tsc-watch ntypescript typescript gulp-cli @angular/cli tslint
+npm --no-cache install --ignore-scripts --omit=dev                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif
+npm install -g       eslint       stylelint       typescript       @vue/cli
+npm install -g @angular/cli@8.0.0
+npm install -g yarn@${YARN_VERSION} --force
+npm run build-zh-Hans
+npm install -g rtlcss
+npm install -g ts-rpa@0.1.3 moment mathjs
+npm install -g pxt webusb
+npm i -g yarn lerna
+npm install -g less${VERSION+@$VERSION}
+npm install -g typescript typings @angular/cli || true
+npm install npm-run-all
+npm install screwdriver-queue-service@$VERSION
+npm clean-install
+npm install react-scripts@3.4.1 -g --silent
+npm install -g bytenode
+npm install -g ts-rpa@0.1.1 moment mathjs
+npm install serve
+npm install yarn -g
+npm install -g react-native-cli@0.1.7
+npm install parcel-bundler@^1.12.3
+npm --global install verdaccio@3.1.1
+npm install -g firebase-tools
+npm install -g ssb-room@0.0.6
+npm install -g "cypress@10.2.0"
+npm install https://github.com/apigee-127/sway.git#94ba34f --save
+npm install --quiet --production
+npm --prefix ui install
+npm install -g purescript
+npm install --no-cache -g mapshaper@0.4.147
+npm --no-cache install --ignore-scripts --omit=dev                 standard
+npm install -g "cypress@8.0.0"
+npm run webpack-build
+npm config -g set user $(whoami)
+npm i -g chai chai-dom
+npm install -g npm-run-all
+npm install -g   truffle@${TRUFFLE_VERSION}   web3@${WEB3_VERSION}   mocha@${MOCHA_VERSION}   mocha-junit-reporter@${MOCHA_JUNIT_VERSION}   mocha-multi-reporters@${MOCHA_MULTI_VERSION}   dapp-utils@${DAPP_UTILS_VERSION}
+npm i -g aws-cdk@v1.8.0
+npm install hammerandchisel/erlpack
+npm install node-red-node-feedparser
+npm i -g jsdom jsdom-global
+npm install --global yarn
+npm install -g "cypress@11.2.0"
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-config-standard                 eslint-plugin-import                 eslint-plugin-jest                 eslint-plugin-node                 eslint-plugin-prettier                 eslint-plugin-promise                 eslint-plugin-vue                 @babel/core                 @babel/eslint-parser                 @microsoft/eslint-formatter-sarif                 standard                 prettier                 @prantlf/jsonlint                 eslint-plugin-jsonc                 v8r                 npm-package-json-lint                 npm-package-json-lint-config-default                 eslint-plugin-react                 eslint-plugin-jsx-a11y                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 prettyjson                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser
+npm install -g firebase-tools@7.8.0
+npm install -g firebase-tools@7.4.0
+npm install --global gulp preact@8.2.7 preact-compat preact-cli preact-material-components webpack react
+npm babel
+npm install https://github.com/LLK/scratch-vm.git#develop
+npm install hexo-renderer-markdown-it --save
+npm i -g lighthouse@5.6.0 --unsafe-perm=true
+npm run ng build -- --prod --output-path=dist
+npm install -g 		bower 		polymer-cli
+npm uninstall -g npm
+npm install gulp-eslint@6.0.0
+npm install --prefix /app
+npm install -g @angular/cli@7.3.6
+npm install -g webpack webpack-cli --save-dev
+npm config set cafile ./npm-chain.pem
+npm install -g     markdownlint-cli@0.16.0     markdownlint@0.15.0
+npm install -g "cypress@10.0.3"
+npm update  -g
+npm install ezs@6.0.0
+npm install -g crunchy
+npm install -g gulp bower polymer-cli generator-polymer-init-custom-build
+npm i rxjs-compat --save
+npm install cypress@3.8.1 start-server-and-test@^1.10.6 @percy/cypress puppeteer --unsafe-perm=true
+npm install -g "cypress@4.3.0"
+npm install @commitlint/config-conventional
+npm install -g ssb-room@0.0.3
+npm install --global verdaccio
+npm install --global gulp preact@8.2.7 preact-compat preact-cli preact-material-components@1.5.2 webpack react gulp-cli
+npm i --only=production
+npm install node-sass
+npm --no-cache install --ignore-scripts --omit=dev                 typescript                 @coffeelint/cli                 jscpd                 stylelint                 stylelint-config-standard                 stylelint-config-sass-guidelines                 stylelint-scss                 graphql                 graphql-schema-linter                 npm-groovy-lint                 htmlhint                 eslint                 eslint-config-airbnb                 eslint-config-prettier                 eslint-config-standard                 eslint-plugin-import                 eslint-plugin-jest                 eslint-plugin-node                 eslint-plugin-prettier                 eslint-plugin-promise                 eslint-plugin-vue                 @babel/core                 @babel/eslint-parser                 @microsoft/eslint-formatter-sarif                 standard                 prettier                 @prantlf/jsonlint                 eslint-plugin-jsonc                 v8r                 npm-package-json-lint                 npm-package-json-lint-config-default                 eslint-plugin-react                 eslint-plugin-jsx-a11y                 markdownlint-cli@0.33.0                 markdown-link-check                 markdown-table-formatter                 @stoplight/spectral-cli                 secretlint                 @secretlint/secretlint-rule-preset-recommend                 @secretlint/secretlint-formatter-sarif                 cspell                 sql-lint                 tekton-lint                 prettyjson                 @typescript-eslint/eslint-plugin                 @typescript-eslint/parser
+npm install -g local-web-server dotenv-cli
+npm install -g less
+npm install --no-audit
+npm install -g yarn@latest --force
+npm install -g aws-azure-login@2.1.0 --unsafe-perm
+npm install -g yo gulp-cli generator-angular-fullstack
+npm i -g yarn
+npm install sqlite3 USER container
+npm install grunt
+npm install --global postcss
+npm -g install webpack
+npm install -g n; n 5.0.0
+npm install --quiet --global @vue/cli
+npm --no-cache install --ignore-scripts --omit=dev                 @stoplight/spectral-cli
+npm install -g ts-rpa moment mathjs
+npm install -g "cypress@10.4.0"
+npm install -g "cypress@6.2.0"
+npm install -g hapify-cli@0.5.4
+npm install -g "cypress@6.6.0"
+npm install -g webdriver-manager@12.1.2
+npm install --no-cache -g mapshaper@0.4.146
+npm link @angular/cli
+npm install -g @angular/cli@9.0.4
+npm install -g yaml-language-server typings pug-lint js-yaml js-beautify jsonlint neovim
+npm i -g ionic cordova
+npm --quiet install grunt-cli
+npm install discord.js node-opus
+npm set phantomjs_cdnurl https://cdn.npmmirror.com/binaries/phantomjs
+npm install -g newman@4.3.1
+npm -g i gulp@next polymer-cli yarn
+npm install node-schedule
+npm -g install typescript eslint
+npm i -g puppeteer
+npm run env
+npm install -g "cypress@6.7.1"
+npm ci --no-audit
+npm  i
+npm install ioredis --save
+npm config set loglevel error
+npm install --omit=optional
+npm install -g ts-node
+npm install -g pulp bower
+npm install --global                  npx                                 tldr                                fkill                               eslint                              eslint-config-breki                 prettier
+npm install screeps
+npm update
+npm install
+npm install -g vue-cli
+npm i || :
+npm install pnpm -g
+npm install --only=production --no-package-lock
+npm install -g ezs-basics@3.6.0
+npm i -g webpack@4.42.0
+npm install --save
+npm config set registry "http://registry.npm.taobao.org"
+npm install -g ts-rpa@0.1.10 moment mathjs
+npm run snyk:protect
+npm install -g --only=production

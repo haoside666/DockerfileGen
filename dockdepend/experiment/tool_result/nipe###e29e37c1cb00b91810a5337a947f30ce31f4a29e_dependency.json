@@ -1,0 +1,44 @@
+[
+    {
+        "before_instruct": "FROM perl:5.38",
+        "after_instruct": "COPY . /usr/src/nipe",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM perl:5.38",
+        "after_instruct": "WORKDIR /usr/src/nipe",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM perl:5.38",
+        "after_instruct": "RUN cpanm --installdeps .",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM perl:5.38",
+        "after_instruct": "ENTRYPOINT perl ./nipe.pl",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY . /usr/src/nipe",
+        "after_instruct": "RUN cpanm --installdeps .",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/nipe"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/nipe",
+        "after_instruct": "RUN cpanm --installdeps .",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/nipe"
+    }
+]

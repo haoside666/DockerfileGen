@@ -1,0 +1,9 @@
+FROM python:3.9
+ENV PYTHONUNBUFFERED 1
+ENV LC_ALL=C.UTF-8
+WORKDIR /app
+ADD runtests/requirements.txt /app/
+RUN pip install -r requirements.txt
+ENV DJANGO_SETTINGS_MODULE settings
+EXPOSE 8000
+CMD ["/app/manage.py", "runserver", "0.0.0.0:8000"]

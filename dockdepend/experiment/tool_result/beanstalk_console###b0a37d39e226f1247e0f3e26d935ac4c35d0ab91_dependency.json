@@ -1,0 +1,142 @@
+[
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "LABEL maintainer \"Rion Dooley <dooley@tacc.utexas.edu>\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "ENV APACHE_DOCROOT=/var/www",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "RUN apt-get -y upgrade",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "RUN docker-php-ext-install mbstring && a2enmod rewrite",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "ADD docker/apache_vhost /etc/apache2/sites-available/000-default.conf",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "ADD docker/php.ini /usr/local/etc/php",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "ADD docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "RUN chmod +x /usr/local/bin/docker-entrypoint",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "CMD /usr/local/bin/docker-entrypoint",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.1-apache",
+        "after_instruct": "ADD . ./",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV APACHE_DOCROOT=/var/www",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(2, 11)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get -y upgrade",
+        "edge": "(3, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(3, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /"
+    },
+    {
+        "before_instruct": "ADD docker/apache_vhost /etc/apache2/sites-available/000-default.conf",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(6, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "ADD docker/php.ini /usr/local/etc/php",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(7, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "ADD docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint",
+        "after_instruct": "RUN chmod +x /usr/local/bin/docker-entrypoint",
+        "edge": "(8, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/local/bin/docker-entrypoint"
+    },
+    {
+        "before_instruct": "ADD docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint",
+        "after_instruct": "WORKDIR /\"/var/www\"",
+        "edge": "(8, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /\"/var/www\"",
+        "after_instruct": "ADD . ./",
+        "edge": "(11, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    }
+]

@@ -1,0 +1,427 @@
+-0
+-1 --base
+-2 --ours
+-3  --3way  --no-3way
+-4  --ipv4
+-6  --ipv6
+-9
+-a  --all  --append  --text
+--abbrev-commit
+--abbrev length
+--abbrev-ref (strict|loose)
+--abort
+--absolute-git-dir
+--add
+--after date
+--all-match
+--allow-binary-replacement
+--allow-empty
+--allow-empty-message
+--allow-unrelated-histories
+--alternate-refs
+--always
+--ancestry-path
+--anchored text
+--apply
+--author-date-order
+--author pattern
+--autostash
+--bare
+--basic-regexp
+-b --branch branch
+--before date
+--binary
+--bisect
+--blob blob
+-B new_branch
+--boundary
+--branches pattern
+--broken mark
+--build-fake-ancestor file
+--cached
+--candidates n
+--cc
+--check
+--checkout
+--cherry
+--cherry-mark
+--cherry-pick
+--children
+--cleanup mode
+-c namevalue
+--color-moved mode
+--color-moved-ws modes
+--color when
+--color-words regex
+--column options
+--combined-all-paths
+--commit
+--committer-date-is-author-date
+--committer pattern
+--compact-summary
+--config key value
+--conflict style
+--contains commit
+--continue
+-C path
+--create-reflog
+--cumulative
+--date format
+--date-order
+-d  --delete
+--debug
+--decorate-refs-exclude pattern
+--decorate-refs pattern
+--decorate short|full|auto|no
+--deepen depth
+--default value
+--dense
+--depth depth
+--detach
+--diff-algorithm {patience|minimal|histogram|myers}
+--diff-filter (A|C|D|M|R|T|U|X|B)
+--directory dir
+--directory root
+-D  --irreversible-delete
+--dirstat-by-file param1
+--dirstat param
+--dirty mark
+--disambiguate prefix
+--dissociate
+--do-walk
+--dry-run
+--dst-prefix prefix
+--edit-description
+-e --edit --no-edit
+-E  --extended-regexp
+--encoding encoding
+--exact-match
+--exclude path
+--exclude pattern
+--exec git-upload-archive
+--exec-path path
+--exit-code
+--expand-tabs
+--expand-tabs n
+--ext-diff
+--ff
+-f --file config-file
+-F  --fixed-strings
+--ff-only
+--files
+--find-copies-harder
+--find-copies n
+--find-object object-id
+--find-renames n
+--first-parent
+--flags
+--follow
+--fork-point
+--format format
+--full-diff
+--full-history
+--full-index
+--get
+--get-all
+--get-regexp
+--git-common-dir
+--git-dir path
+--git-path path
+--global
+--glob pattern
+--gpg-sign keyid
+--graph
+-G regex
+--grep pattern
+--grep-reflog pattern
+--guess
+-g  --walk-reflogs
+--hard
+--help
+--histogram
+--html-path
+--ignore-blank-lines
+--ignore-cr-at-eol
+--ignore-date
+--ignore-missing
+--ignore-other-worktrees
+--ignore-skip-worktree-bits
+--ignore-space-at-eol
+--ignore-space-change
+--ignore-submodules when
+--ignore-whitespace
+-i  --ignore-case  --interactive
+--inaccurate-eof
+--include path
+--include path-pattern
+--indent-heuristic
+--independent
+--index
+--info-path
+--init
+--intent-to-add
+--inter-hunk-context lines
+--invert-grep
+--is-ancestor
+--is-bare-repository
+--is-inside-git-dir
+--is-inside-work-tree
+--is-shallow-repository
+--ita-invisible-in-index
+-j --jobs n
+--keep-dashdash
+--keep-non-patch
+--keep-redundant-commits
+-k  --keep
+--left-only
+--left-right
+--line-prefix prefix
+-l  --list  --local
+-l num
+--local
+--local-env-vars
+--log n
+--log-size
+--long
+-L start-end
+-M
+--mainline parent-number
+--man-path
+--match pattern
+--max-parents number
+--merge
+--merged commit
+--merges
+--minimal
+--min-parents number
+--mirror
+-m  --merge  --message-id
+-M n
+--move
+--multiple
+-n
+--name
+--name-only
+--namespace name
+--name-status
+--negotiation-tip commit|glob
+-N  --no-fetch
+--no-abbrev
+--no-abbrev-commit
+--no-add
+--no-auto-gc
+--no-autostash
+--no-checkout
+--no-color
+--no-color-moved
+--no-color-moved-ws
+--no-column
+--no-commit
+--no-contains commit
+--no-decorate
+--no-expand-tabs
+--no-ext-diff
+--no-ff
+--no-flags
+--no-guess
+--no-hardlinks
+--no-includes
+--no-indent-heuristic
+--no-keep-cr
+--no-log
+--no-max-parents
+--no-merged commit
+--no-merges
+--no-message-id
+--no-min-parents
+--no-notes
+--no-overlay
+--no-overwrite-ignore
+--no-pager
+--no-prefix
+--no-progress
+--no-rebase
+--no-recommend-shallow
+--no-recurse-submodules
+--no-recurse-submodules yes|on-demand|no
+--no-remote-submodules
+--no-rename-empty
+--no-renames
+--no-replace-objects
+--no-rerere-autoupdate
+--no-revs
+--no-scissors
+--shallow-submodules
+--no-shallow-submodules
+--remote-submodules
+--no-show-forced-updates
+--no-signoff
+--no-single-branch
+--no-squash
+--no-stat
+--no-summary
+--not
+--no-tags
+--notes ref
+--no-textconv
+--no-track
+--no-type
+--no-use-mailmap
+--no-utf8
+--no-verify
+--no-verify-signatures
+--no-walk (sorted|unsorted)
+--no-write-commit-graph
+--numstat
+--octopus
+--oneline
+-O orderfile
+-o  --origin name
+--orphan new_branch
+--ours  --theirs
+--output file
+--output-indicator-context char
+--output-indicator-new char
+--output-indicator-old char
+--overlay
+--overwrite-ignore
+-P
+--paginate
+--parents
+--parseopt
+--patch-format
+--patch-with-raw
+--patch-with-stat
+--pathspec-file-nul
+--pathspec-from-file file
+--patience
+--perl-regexp
+--pickaxe-all
+--pickaxe-regex
+--points-at object
+-p  --prune
+--prefix arg
+--prefix prefix
+--pretty format
+--progress
+--prune-tags
+-q  --quiet  --no-quiet
+--quit
+-r
+--raw
+--rebase
+--rebase false|true|merges|preserve|interactive
+--recount
+--recurse-submodules
+--recurse-submodules-default yes|on-demand
+--recurse-submodules yes|on-demand|no
+--recursive
+--reference-if-able repository
+--reference repository
+--reflog
+--refmap refspec
+--regexp-ignore-case
+--reject
+--relative-date
+--relative path
+--remote repo
+--remotes pattern
+--remove-empty
+--rename-section
+--replace-all
+--rerere-autoupdate
+--resolved
+--resolve-git-dir path
+--resolvemsg msg
+--reverse
+--revs-only
+--right-only
+-r  --remotes
+-R  --reverse
+--scissors
+--separate-git-dir git dir
+--server-option option
+--set-upstream
+--set-upstream-to upstream
+--shallow-exclude revision
+--shallow-since date
+--shared (false|true|umask|group|all|world|everybody|0xxx)
+--shared-index-path
+--short
+--shortstat
+--show-cdup
+--show-current
+--show-current-patch
+--show-forced-updates
+--show-linear-break barrier
+--show-notes ref
+--show-object-format (storage|input|output)
+--show-origin
+--show-prefix
+--show-signature
+--show-superproject-working-tree
+--show-toplevel
+--signoff
+--simplify-by-decoration
+--simplify-merges
+--since date
+--single-branch
+--single-worktree
+-S keyid
+--sort key
+--source
+--sparse
+--sq
+--sq-quote
+--squash
+--src-prefix prefix
+-S string
+--stat
+--stat width
+--stdin
+--stop-at-non-option
+--strategy-option option
+--strategy strategy
+--stuck-long
+--submodule format
+--submodule-prefix path
+--summary
+--summary-limit
+--super-prefix path
+--symbolic
+--symbolic-full-name
+--system
+--tags pattern
+--template template_directory
+--textconv
+--topo-order
+-t --tag branch
+--type type
+--unidiff-zero
+--unsafe-paths
+--unset
+--unset-all
+--unset-upstream
+--unshallow
+--until date
+-u  --patch
+--update-shallow
+--upload-pack upload-pack
+-U --unified n
+--verify
+--verify-signatures
+--version
+-v  -vv  --verbose
+-W  --function-context
+--whitespace action
+--whitespace option
+-w  --ignore-all-space
+--word-diff mode
+--word-diff-regex regex
+--worktree
+--worktree-attributes
+--work-tree path
+--ws-error-highlight kind
+-x
+-X option
+-z  --null

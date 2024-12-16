@@ -1,0 +1,7 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM
+ (1, 2),  # COPY依赖于WORKDIR
+ (2, 3),  # 第一个RUN依赖于COPY
+ (3, 4),  # 第二个RUN依赖于第一个RUN
+ (4, 5)]  # CMD依赖于第二个RUN
+```

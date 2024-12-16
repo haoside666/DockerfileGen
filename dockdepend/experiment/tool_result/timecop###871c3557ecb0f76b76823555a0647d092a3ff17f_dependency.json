@@ -1,0 +1,107 @@
+[
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "WORKDIR /timecop",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "COPY Gemfile .",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "COPY timecop.gemspec .",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "COPY lib/timecop/version.rb lib/timecop/version.rb",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "RUN bundle -j 4",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby",
+        "after_instruct": "CMD bin/console",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /timecop",
+        "after_instruct": "COPY Gemfile .",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /timecop",
+        "after_instruct": "COPY timecop.gemspec .",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /timecop",
+        "after_instruct": "COPY lib/timecop/version.rb lib/timecop/version.rb",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /timecop",
+        "after_instruct": "RUN bundle -j 4",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /timecop"
+    },
+    {
+        "before_instruct": "WORKDIR /timecop",
+        "after_instruct": "COPY . .",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY Gemfile .",
+        "after_instruct": "RUN bundle -j 4",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /timecop"
+    },
+    {
+        "before_instruct": "COPY timecop.gemspec .",
+        "after_instruct": "RUN bundle -j 4",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /timecop"
+    },
+    {
+        "before_instruct": "COPY lib/timecop/version.rb lib/timecop/version.rb",
+        "after_instruct": "RUN bundle -j 4",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /timecop"
+    }
+]

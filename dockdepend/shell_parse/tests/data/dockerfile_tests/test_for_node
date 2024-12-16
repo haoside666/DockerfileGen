@@ -1,0 +1,9 @@
+for key in 48F8E69F6390C9F25CFEDCD268248959359E722B A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243
+do
+    gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key";
+done
+
+for input in $(ls ${IN} | head -n ${ENTRIES})
+do
+    cat $IN/$input | sed 's/ly$/-ly/g' | sed 's/ .*//g' | sort | uniq -c > ${OUT}/${input}.out
+done

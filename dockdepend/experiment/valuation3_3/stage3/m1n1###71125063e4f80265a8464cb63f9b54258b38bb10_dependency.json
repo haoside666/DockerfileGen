@@ -1,0 +1,58 @@
+[
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "RUN apt-get update && apt-get install -y build-essential bash git locales gcc-aarch64-linux-gnu libc6-dev-arm64-cross device-tree-compiler && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "ENV LANG=en_US.utf8",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "WORKDIR /m1n1",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM debian:buster-slim",
+        "after_instruct": "CMD /bin/bash",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get update && apt-get install -y build-essential bash git locales gcc-aarch64-linux-gnu libc6-dev-arm64-cross device-tree-compiler && rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8",
+        "edge": "(1, 2)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "WORKDIR /m1n1",
+        "after_instruct": "COPY . .",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    }
+]

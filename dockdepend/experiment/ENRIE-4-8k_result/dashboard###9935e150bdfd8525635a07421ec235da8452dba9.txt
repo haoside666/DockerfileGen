@@ -1,0 +1,10 @@
+```
+[(0, 1),  # RUN mkdir -p /usr/src/app 依赖于 FROM node:alpine
+ (1, 2),  # WORKDIR /usr/src/app 依赖于 RUN mkdir -p /usr/src/app
+ (2, 3),  # ENV NODE_ENV production 依赖于 WORKDIR /usr/src/app
+ (3, 4),  # COPY package.json yarn.lock /usr/src/app/ 依赖于 ENV NODE_ENV production
+ (4, 5),  # RUN yarn --pure-lockfile && yarn cache clean 依赖于 COPY package.json yarn.lock /usr/src/app/
+ (5, 6),  # COPY . /usr/src/app 依赖于 RUN yarn --pure-lockfile && yarn cache clean
+ (6, 7),  # EXPOSE 3000 依赖于 COPY . /usr/src/app
+ (7, 8)]  # CMD [ "yarn", "start" ] 依赖于 EXPOSE 3000
+```

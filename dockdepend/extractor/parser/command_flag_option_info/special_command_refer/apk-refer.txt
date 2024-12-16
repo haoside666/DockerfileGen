@@ -1,0 +1,55 @@
+-a, --available
+--add-dependencies
+--allow-untrusted
+--arch ARCH
+--cache-dir CACHEDIR
+--cache-max-age AGE
+--clean-protected
+-d, --depends
+--directory-permissions
+-f, --force
+--force-binary-stdout
+--force-broken-world
+--force-missing-repositories
+--force-non-repository
+--force-old-apk
+--force-overwrite
+--force-refresh
+--ignore
+--ignore-conflict
+-i, --interactive
+--initdb
+--initramfs-diskless-boot
+--keys-dir KEYSDIR
+-l, --latest
+--no-cache
+--no-check-certificate
+--no-chown
+--no-commit-hooks
+--no-interactive
+--no-network
+--no-progress
+--no-scripts
+--no-self-upgrade
+--overlay-from-stdin
+--print-arch
+--progress
+--progress-fd FD
+-p, --root ROOT
+--prune
+--purge
+-q, --quiet
+--repositories-file REPOFILE
+-r, --rdepends
+-r, --reinstall
+--self-upgrade-only
+-s, --simulate
+--timeout TIME
+-t, --virtual NAME
+-U, --update-cache
+-u, --upgrade
+-v, --verbose
+-V, --version
+--wait TIME
+-X, --repository REPO
+-x, --xattr

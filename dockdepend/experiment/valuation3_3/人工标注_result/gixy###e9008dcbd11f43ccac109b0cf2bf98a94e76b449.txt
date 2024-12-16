@@ -1,0 +1,16 @@
+FROM python:alpine
+ADD . /src
+WORKDIR /src
+RUN python3 setup.py install
+ENTRYPOINT ["gixy"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(1, 3),	# 文件间接依赖
+	(2, 3),	# WORKDIR目录依赖
+]
+
+所用时间：7.73

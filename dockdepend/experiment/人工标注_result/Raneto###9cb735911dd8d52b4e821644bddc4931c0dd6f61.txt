@@ -1,0 +1,23 @@
+FROM node:18.17.0-alpine
+EXPOSE 3000
+ENV HOST 0.0.0.0
+ENV PORT 3000
+WORKDIR /opt/raneto
+COPY . /opt/raneto
+RUN npm install --omit=dev
+CMD ["npm", "start"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(4, 5),	# WORKDIR目录依赖
+	(4, 6),	# WORKDIR目录依赖
+	(5, 6),	# 文件依赖
+]
+
+所用时间：18.79

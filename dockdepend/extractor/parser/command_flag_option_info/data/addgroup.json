@@ -1,0 +1,54 @@
+{
+    "flag": [
+        [
+            "--debug"
+        ],
+        [
+            "--extrausers"
+        ],
+        [
+            "--force-badname"
+        ],
+        [
+            "-h",
+            "--help"
+        ],
+        [
+            "-q",
+            "--quiet"
+        ],
+        [
+            "--system"
+        ],
+        [
+            "-S"
+        ],
+        [
+            "--verbose"
+        ],
+        [
+            "-v",
+            "--version"
+        ]
+    ],
+    "option": [
+        [
+            "-c",
+            "--conf",
+            ["FILE","CONFIG_INPUT"]
+        ],
+        [
+            "--firstgid",
+            "id"
+        ],
+        [
+            "-g",
+            "--gid",
+            "ID"
+        ],
+        [
+            "--lastgid",
+            "id"
+        ]
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "filename": "pulsar###c16743e2c43a885c199077547635e59a56a8d7f5.txt",
+    "command_length": 7,
+    "processing_time": 0.0021979808807373047,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'npm'}\"]"
+}

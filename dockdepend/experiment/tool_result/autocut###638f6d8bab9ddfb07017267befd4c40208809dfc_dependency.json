@@ -1,0 +1,65 @@
+[
+    {
+        "before_instruct": "FROM python:3.9-slim as base",
+        "after_instruct": "RUN mkdir /autocut",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim as base",
+        "after_instruct": "COPY ./ /autocut",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim as base",
+        "after_instruct": "WORKDIR /autocut",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim as base",
+        "after_instruct": "RUN apt update && apt install -y git && apt install -y ffmpeg",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.9-slim as base",
+        "after_instruct": "RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install .",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir /autocut",
+        "after_instruct": "WORKDIR /autocut",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /autocut"
+    },
+    {
+        "before_instruct": "RUN mkdir /autocut",
+        "after_instruct": "RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install .",
+        "edge": "(1, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /autocut"
+    },
+    {
+        "before_instruct": "COPY ./ /autocut",
+        "after_instruct": "RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install .",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /autocut"
+    },
+    {
+        "before_instruct": "WORKDIR /autocut",
+        "after_instruct": "RUN pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu && pip install .",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /autocut"
+    }
+]

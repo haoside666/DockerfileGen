@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "WORKDIR /mockbin",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "RUN npm ci --only production",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "ENV MOCKBIN_REDIS=redis://redis:6379",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "EXPOSE 8080",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "CMD npm start",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /mockbin",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /mockbin",
+        "after_instruct": "RUN npm ci --only production",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /mockbin"
+    },
+    {
+        "before_instruct": "WORKDIR /mockbin",
+        "after_instruct": "COPY . .",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY package*.json ./",
+        "after_instruct": "RUN npm ci --only production",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /mockbin"
+    }
+]

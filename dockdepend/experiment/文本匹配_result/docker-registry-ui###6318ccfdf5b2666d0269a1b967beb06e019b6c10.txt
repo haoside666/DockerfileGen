@@ -1,0 +1,17 @@
+[
+	(0, 1),	# certain dependency
+	(0, 2),	# certain dependency
+	(0, 3),	# certain dependency
+	(0, 4),	# certain dependency
+	(0, 5),	# certain dependency
+	(0, 6),	# certain dependency
+	(0, 7),	# certain dependency
+	(0, 8),	# certain dependency
+	(0, 9),	# certain dependency
+	(0, 10),	# certain dependency
+	(2, 8),	# exist at the intersection
+	(2, 9),	# exist at the intersection
+	(2, 10),	# exist at the intersection
+	(8, 10),	# exist at the intersection
+	(9, 10),	# exist at the intersection
+]

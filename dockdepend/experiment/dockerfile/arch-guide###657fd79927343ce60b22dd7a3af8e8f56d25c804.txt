@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR /app
+RUN apk add --no-cache git && npm install -g pnpm && npm cache clean --force
+COPY . /app
+RUN pnpm i && rm -rf /root/.npm && pnpm store prune
+EXPOSE 5173
+CMD ["pnpm", "docs:dev", "--host"]

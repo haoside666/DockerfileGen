@@ -1,0 +1,52 @@
+-4
+-6
+--advisory ADVISORY, --advisories ADVISORY
+--allowerasing
+--assumeno
+-b, --best
+--bugfix
+--bz BUGZILLA, --bzs BUGZILLA
+-C, --cacheonly
+-c [config_file], --config [config_file]
+--color COLOR
+--comment COMMENT
+--cve CVES, --cves CVES
+-d [debug_level], --debuglevel [debug_level]
+--debugsolver
+--destdir DESTDIR, --downloaddir DESTDIR
+--disable
+--disableexcludes [repo], --disableexcludepkgs [repo]
+--disableplugin [plugin]
+--disablerepo [repo]
+--downloadonly
+-e ERRORLEVEL, --errorlevel ERRORLEVEL
+--enable
+--enableplugin [plugin]
+--enablerepo [repo]
+--enhancement
+--forcearch ARCH
+-h, --help, --help-cmd
+--installroot [path]
+--newpackage
+--noautoremove
+--nobest
+--nodocs
+--nogpgcheck
+--noplugins
+--obsoletes
+-q, --quiet
+--refresh
+--releasever RELEASEVER
+--repofrompath [repo,path]
+--repo [repo], --repoid [repo]
+-R [minutes], --randomwait [minutes]
+--rpmverbosity [debug_level]
+--sec-severity LEVEL, --secseverity LEVEL
+--security
+--setopt SETOPTS
+--showduplicates
+--skip-broken
+--version
+-v, --verbose
+-x [package], --exclude [package], --excludepkgs [package]
+-y, --assumeyes

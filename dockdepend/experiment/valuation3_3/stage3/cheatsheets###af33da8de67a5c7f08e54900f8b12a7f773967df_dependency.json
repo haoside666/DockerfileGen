@@ -1,0 +1,86 @@
+[
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "RUN echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "RUN apt-get update -qq && apt-get install -qq --no-install-recommends nodejs yarn && apt-get clean && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "RUN mkdir -p /app",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:2.7.1",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -",
+        "after_instruct": "RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -",
+        "edge": "(1, 2)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'bash'}"
+    },
+    {
+        "before_instruct": "RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -",
+        "after_instruct": "RUN echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list",
+        "edge": "(1, 3)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'bash'}"
+    },
+    {
+        "before_instruct": "RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -",
+        "after_instruct": "RUN apt-get update -qq && apt-get install -qq --no-install-recommends nodejs yarn && apt-get clean && rm -rf /var/lib/apt/lists/*",
+        "edge": "(1, 4)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'bash'}"
+    },
+    {
+        "before_instruct": "RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -",
+        "after_instruct": "RUN mkdir -p /app",
+        "edge": "(1, 5)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'bash'}"
+    },
+    {
+        "before_instruct": "RUN echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | tee /etc/apt/sources.list.d/yarn.list",
+        "after_instruct": "RUN apt-get update -qq && apt-get install -qq --no-install-recommends nodejs yarn && apt-get clean && rm -rf /var/lib/apt/lists/*",
+        "edge": "(3, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /app",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /app"
+    }
+]

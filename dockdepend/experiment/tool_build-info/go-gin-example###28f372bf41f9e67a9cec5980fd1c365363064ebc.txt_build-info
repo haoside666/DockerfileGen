@@ -1,0 +1,8 @@
+{
+    "filename": "go-gin-example###28f372bf41f9e67a9cec5980fd1c365363064ebc.txt",
+    "command_length": 7,
+    "processing_time": 0.015168190002441406,
+    "dependency_count": 9,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (2, 3), (2, 4), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use $GOPATH/src/github.com/EDDYCJY/go-gin-example', 'exist file or directory dependency,because common path $GOPATH/src/github.com/EDDYCJY/go-gin-example']"
+}

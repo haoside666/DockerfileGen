@@ -1,0 +1,303 @@
+[
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "LABEL maintainer \"Fork CMS <info@fork-cms.com>\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN a2enmod rewrite",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades libfreetype6-dev libjpeg62-turbo-dev libonig-dev libz-dev zlib1g-dev libpng-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install pdo_mysql",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN docker-php-ext-install mbstring",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN apt-get update && apt-get install -y libzip-dev unzip && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends g++ libicu-dev zlib1g-dev && docker-php-ext-configure intl && docker-php-ext-install intl && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "COPY src_dir=['var/docker/php/php.ini'] dst_dir=$PHP_INI_DIR/php.ini",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug && rm -rf /tmp/pear",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "WORKDIR /var/www/html",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "COPY composer.json ./",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "COPY composer.lock ./",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "COPY . /var/www/html",
+        "edge": "(0, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(0, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "RUN chown -R www-data:www-data /var/www/html",
+        "edge": "(0, 17)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM php:7.4-apache",
+        "after_instruct": "EXPOSE 80 443",
+        "edge": "(0, 18)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades libfreetype6-dev libjpeg62-turbo-dev libonig-dev libz-dev zlib1g-dev libpng-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN apt-get update && apt-get install -y libzip-dev unzip && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*",
+        "edge": "(3, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades libfreetype6-dev libjpeg62-turbo-dev libonig-dev libz-dev zlib1g-dev libpng-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends g++ libicu-dev zlib1g-dev && docker-php-ext-configure intl && docker-php-ext-install intl && rm -rf /var/lib/apt/lists/*",
+        "edge": "(3, 7)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends --allow-downgrades libfreetype6-dev libjpeg62-turbo-dev libonig-dev libz-dev zlib1g-dev libpng-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install -j$(nproc) gd && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(3, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "RUN docker-php-ext-install pdo_mysql",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(4, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "RUN docker-php-ext-install mbstring",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(5, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y libzip-dev unzip && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends g++ libicu-dev zlib1g-dev && docker-php-ext-configure intl && docker-php-ext-install intl && rm -rf /var/lib/apt/lists/*",
+        "edge": "(6, 7)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y libzip-dev unzip && docker-php-ext-install zip && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(6, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends g++ libicu-dev zlib1g-dev && docker-php-ext-configure intl && docker-php-ext-install intl && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(7, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "COPY src_dir=['var/docker/php/php.ini'] dst_dir=$PHP_INI_DIR/php.ini",
+        "after_instruct": "WORKDIR /var/www/html",
+        "edge": "(8, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug && rm -rf /tmp/pear",
+        "after_instruct": "RUN curl -sS https://getcomposer.org/installer | php -- --install-dir /usr/bin/ --filename composer",
+        "edge": "(9, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'php'}"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "COPY composer.json ./",
+        "edge": "(11, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "COPY composer.lock ./",
+        "edge": "(11, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache",
+        "edge": "(11, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /var/www/html"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "COPY . /var/www/html",
+        "edge": "(11, 15)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(11, 16)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /var/www/html"
+    },
+    {
+        "before_instruct": "WORKDIR /var/www/html",
+        "after_instruct": "RUN chown -R www-data:www-data /var/www/html",
+        "edge": "(11, 17)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.json ./",
+        "after_instruct": "RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache",
+        "edge": "(12, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.json ./",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(12, 16)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.json ./",
+        "after_instruct": "RUN chown -R www-data:www-data /var/www/html",
+        "edge": "(12, 17)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.lock ./",
+        "after_instruct": "RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache",
+        "edge": "(13, 14)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.lock ./",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(13, 16)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY composer.lock ./",
+        "after_instruct": "RUN chown -R www-data:www-data /var/www/html",
+        "edge": "(13, 17)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "RUN composer install --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress && composer clear-cache",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(14, 16)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'composer'}"
+    },
+    {
+        "before_instruct": "COPY . /var/www/html",
+        "after_instruct": "RUN composer dump-autoload --optimize --classmap-authoritative --no-dev",
+        "edge": "(15, 16)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    },
+    {
+        "before_instruct": "COPY . /var/www/html",
+        "after_instruct": "RUN chown -R www-data:www-data /var/www/html",
+        "edge": "(15, 17)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /var/www/html"
+    }
+]

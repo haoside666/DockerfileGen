@@ -1,0 +1,8 @@
+{
+    "filename": "rgbds###1402615bc0635a7629ef029f3ded3665c4e3a056.txt",
+    "command_length": 9,
+    "processing_time": 0.003749847412109375,
+    "dependency_count": 17,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (2, 8), (3, 4), (3, 6), (3, 7), (3, 8), (4, 6), (4, 7), (4, 8), (5, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /rgbds', 'exist file or directory dependency,because RUN instruct use /rgbds', 'exist file or directory dependency,because RUN instruct use /rgbds', 'exist file or directory dependency,because common path /rgbds', 'exist file or directory dependency,because common path /rgbds', 'exist file or directory dependency,because common path /rgbds', \"have shell pkg intersection,because exist intersection {'make'}\"]"
+}

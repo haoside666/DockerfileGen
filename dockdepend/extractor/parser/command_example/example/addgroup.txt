@@ -1,0 +1,316 @@
+addgroup admin wam
+addgroup dockmirror
+addgroup -S www-data -g ${GID}
+addgroup -g 9999 mycroft
+addgroup -g 82 -S nginx
+addgroup --gid 1000 llvm-user
+addgroup --system --gid 1000 gradle
+addgroup --gid 1101 rancher
+addgroup -S -g 1000 redis
+addgroup -g ${PGID} jls
+addgroup -S tor
+addgroup -g 1000 gitbucket
+addgroup -g 1001 -S mc
+addgroup kiwi
+addgroup -S caddy
+addgroup -g ${GID} dnscrypt
+addgroup go
+addgroup -S ocaml
+addgroup --system --gid 1883 mosquitto
+addgroup -g 80 www-data
+addgroup consul-template nginx
+addgroup -S biodocker
+addgroup -g $PGID $USER
+addgroup go-dnsmasq
+addgroup -S app
+addgroup -g $GUID foundry
+addgroup --gid 9999 debates
+addgroup -gid $GID app
+addgroup --system dockremap
+addgroup -S dav
+addgroup --gid 1000 qbittorrent
+addgroup -g 1000 $USER
+addgroup --gid ${GROUP_ID} ${GROUP_NAME}
+addgroup -g 6006 -S gcs
+addgroup -S tordocker
+addgroup -S -g 2000 user_group
+addgroup -g 504 subsonic
+addgroup -S ocaml -g 1000
+addgroup --system datahub
+addgroup $NON_ROOT_USER wheel
+addgroup -g 1000 paperless
+addgroup -S probeit
+addgroup -S rrshare
+addgroup -S elog
+addgroup -S dockergroup
+addgroup -g $PGID -S laradock
+addgroup -S redis
+addgroup -g 1000 lega
+addgroup -S rrshare -g $PGID
+addgroup -S -g 8888 caddy
+addgroup -g $(stat -c %g /dev/kvm) kvm
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver; ln -s /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config      if [ "$SOFTETHER_VERSION" = "latest"]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+addgroup theia
+addgroup --gid "$GID" "$GROUP"
+addgroup -g $PGID radicale
+addgroup -g ${GID} -S pgadmin
+addgroup -g 500 celery
+addgroup -S verysobot
+addgroup -g $GROUPID nconf;adduser -D -h $HOME -u $USERID -G nconf nconf
+addgroup --system user
+addgroup weechat
+addgroup -S probesrv
+addgroup -S sshuser
+addgroup -g 900 mysql
+addgroup -g ${PGID} laradock
+addgroup -Sg 1000 hugo
+addgroup -S mememastero
+addgroup -g 4551 -S ngrok
+addgroup -g ${GROUP} jenkins
+addgroup ranger
+addgroup -g 82  -S www-data
+addgroup "${ELASTALERT_SYSTEM_GROUP}"
+addgroup -S activemq
+addgroup -g $GID app
+addgroup qemu
+addgroup -S wgui
+addgroup node
+addgroup --gid 1000 radarr
+addgroup -S ghidra
+addgroup -g $GID -S iomirea
+addgroup -g 30000 -S nixbld
+addgroup -g 1000 user
+addgroup consul
+addgroup -g 1000 maniaplanet
+addgroup -S pptruser
+addgroup --system omnidb
+addgroup -g ${gid} ${group}
+addgroup --system neo4j
+addgroup -S -g ${GID} ${GROUP}
+addgroup -g 500 go
+addgroup alpine
+addgroup -g $GID syncthing
+addgroup -g ${PGID} syncserver
+addgroup -S dummy
+addgroup --gid 1993 deno
+addgroup -g 1000 -S mintel
+addgroup --gid 1000 theprimeagen
+addgroup $USERNAME
+addgroup -S vpn
+addgroup -S node -g 998
+addgroup -S -g ${GID} user
+addgroup -g ${GID} abuild
+addgroup -S logstash
+addgroup -g 1000 laravel
+addgroup -S bender
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver; ln -s /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config ;     if [ "$SOFTETHER_VERSION" = "latest"]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi;     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+addgroup -g 1000 elasticsearch
+addgroup -g 504 airsonic
+addgroup -S bitcoin
+addgroup -g $GID git
+addgroup -g 504 transmission
+addgroup -g 1000 node
+addgroup -g ${gid} ${user}
+addgroup -g 101 -S www-data
+addgroup -g 505 named
+addgroup -g "$PGID" xteve
+addgroup -S SWgroup
+addgroup -S adb
+addgroup -g 1000 -S resilio
+addgroup --gid ${user_gid} ${USER}
+addgroup -S pdns 2>/dev/null
+addgroup -g 1000 app
+addgroup grpy
+addgroup -S abc -g 1000
+addgroup dev docker
+addgroup --gid 10001 app
+addgroup -S media
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver; ln -s /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config      if [ "$SOFTETHER_VERSION" = "latest"]; then
+addgroup -g 50 -S pgadmin
+addgroup -S jottagroup -G 1003
+addgroup -g 1000 -S elm
+addgroup -g 1000 holiday
+addgroup -S jenkins -g 1000
+addgroup -g 1000 -S notifier
+addgroup -S sonarqube
+addgroup -S -g 101 haproxy
+addgroup git
+addgroup -S kafka
+addgroup -S www-data
+addgroup $BIN_NAME
+addgroup -S appgroup
+addgroup --gid 1000 lazyrecon_user
+addgroup -g 19001 -S $TOR_USER
+addgroup -S anaconda
+addgroup -g 50000 group-defined-in-image
+addgroup -gid 1000 cerebro
+addgroup -g ${user_gid} -S ${a4c_user}
+addgroup -g ${GID} -S bitlbee
+addgroup -S kibana
+addgroup -S -g $NGINX_ID nginx
+addgroup -g ${PGID} devdock
+addgroup -g ${PGID} librenms
+addgroup -g ${PGID} torrent
+addgroup -g 1000 -S lua
+addgroup marid sudo
+addgroup --system elasticsearch
+addgroup vernemq
+addgroup --gid $GID sonarscanner
+addgroup --gid 5000 vmail
+addgroup --gid 10001 --system nonroot
+addgroup rabbitmq
+addgroup -g 1001 -S tester
+addgroup --system --gid 101 nginx
+addgroup ${DEVELOP_USER} abuild
+addgroup -g 500 apps
+addgroup -g ${NETDATA_GID} -S "${DOCKER_GRP}"
+addgroup -S $NON_ROOT_GROUP
+addgroup -g 666 -S sonarr
+addgroup -S datahub
+addgroup --system nixbld
+addgroup s6
+addgroup -S mosquitto
+addgroup -gid ${PGID} mattermost
+addgroup -S pg
+addgroup mysql mysql
+addgroup -S emby
+addgroup -S -g 1000 user_group
+addgroup -g 1003 jottagrp
+addgroup -g ${PGID} rtorrent
+addgroup consul-template s6
+addgroup -S jenkins
+addgroup -S frp
+addgroup -g 1000 cloudflared
+addgroup lhci
+addgroup --system app
+addgroup olefy 2>/dev/null
+addgroup -g 1001 deadman
+addgroup -g 1000 netdata
+addgroup -g 19001 -S tord
+addgroup -g ${PGID} matomo
+addgroup dockremap
+addgroup -g $PGID $PGROUP
+addgroup -S lighttpd -g ${GID}
+addgroup telegraf
+addgroup nobody --system
+addgroup smuflbuilder
+addgroup -g 1001 -S appgroup
+addgroup -S -g $EGO_UI_GID $EGO_UI_USER
+addgroup --system --gid 32548 nginx
+addgroup -S django
+addgroup -g 900 -S olaindex
+addgroup     -S -g 1000     git
+addgroup -g 82 -S www-data
+addgroup -S spring
+addgroup --gid 500 firefox
+addgroup         --system         --gid=64198         app
+addgroup module2builder
+addgroup -S dockeruser
+addgroup -g $EGID ng-group
+addgroup --gid ${GID} dnscrypt
+addgroup --gid 666 browsh
+addgroup -g 502 transmission
+addgroup --gid "$GID" pleroma
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver; ln -s /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config ;     cd / ;     if [ "$SOFTETHER_VERSION" = "latest"]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi;     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+addgroup -g $BUILD_GID radicale
+addgroup nginx root
+addgroup -g 1000 -S las2peer
+addgroup --gid ${GID} "eventstore"
+addgroup -S fluent
+addgroup -S -g $PGID nonroot
+addgroup runner
+addgroup www
+addgroup -g 1000 minecraft
+addgroup -g 1000 cerebro
+addgroup user-defined-in-image group-defined-in-image
+addgroup -g 666 -S radarr
+addgroup -g $GID radicale
+addgroup -S -g 1883 mosquitto 2>/dev/null
+addgroup rstudio staff
+addgroup -S -g 1001 app
+addgroup -g ${PGID} anonaddy
+addgroup     -S -g 1001     git
+addgroup -S jsreport
+addgroup -g 1000 -S cloudsdk
+addgroup -g 1021 -S ldap
+addgroup -g 101 -S nginx
+addgroup -g 1000 go
+addgroup -Sg 1000 cap
+addgroup -g ${GUID} hass
+addgroup -S helm-exporter
+addgroup -S nginx
+addgroup consul s6
+addgroup -S axway-group
+addgroup -g 1000 exporter
+addgroup -g 2000 adbhoney
+addgroup --system docker
+addgroup -S node
+addgroup -S pwgen
+addgroup -S jottagroup -g 1003
+addgroup -g 1000 dev
+addgroup -g 1000 rclone
+addgroup -S mintel
+addgroup -g 1000 ${USER}
+addgroup -S appuser
+addgroup --gid 1024 docker_group
+addgroup -g 504 libresonic
+addgroup zabbix
+addgroup -S blackfire
+addgroup -S ${GROUP} -g ${GID}
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver;     cd / ;     if [ "$SOFTETHER_VERSION" = "latest"]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi;     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+addgroup chrome-remote-desktop
+addgroup --gid 999 aws
+addgroup -g 1000 nextcloud
+addgroup -g 32548 -S nginx
+addgroup --gid 10000 vernemq
+addgroup --gid 911 --system xs
+addgroup -S chaoskube
+addgroup bitcoin --gid ${GID} --system
+addgroup anonaddy mail
+addgroup -g 1000 -S www-data
+addgroup wam
+addgroup -S xteve
+addgroup -g $GID github
+addgroup -g 666 -S nzbget
+addgroup android
+addgroup minecraft
+addgroup -g 1000 jenkins
+addgroup docker staff
+addgroup --system node
+addgroup -S softether ; adduser -D -H softether -g softether -G softether -s /sbin/nologin ;     yum install -y curl make gcc;     mkdir -p /etc/vpnserver /var/log/vpnserver; ln -s /etc/vpnserver/vpn_server.config /usr/vpnserver/vpn_server.config ;     if [ "$SOFTETHER_VERSION" = "latest"]; then         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | head -n 1 | cut -d '"' -f 4);     else         curl -L -o vpnserver.tar.gz $(curl -s https://api.github.com/repos/SoftEtherVPN/SoftEtherVPN_Stable/releases | grep browser_download_url | grep softether-vpnserver | grep linux-x64-64bit | grep "$SOFTETHER_VERSION" | cut -d '"' -f 4);     fi     tar zxvf vpnserver.tar.gz;     rm -rf vpnserver.tar.gz;     cd vpnserver/ ;     make i_read_and_agree_the_license_agreement;     chown -R softether:softether /vpnserver;     setcap 'cap_net_bind_service=+ep' /vpnserver/vpnserver
+addgroup -g 1000 shiori
+addgroup --gid 1000 builder
+addgroup --gid 1101 docker
+addgroup -g 1000 -S putiuser
+addgroup -g 1001 -S nodejs
+addgroup -g ${PGID} mattermost
+addgroup -S -g 6006 premiumizer
+addgroup -g 1000 proxy
+addgroup     --gid ${JENKINS_GID}     ${JENKINS_GROUP}
+addgroup -g ${user_gid} -S ${USER}
+addgroup -S grpcui
+addgroup -S rspamd
+addgroup -S jf_agent
+addgroup packager abuild
+addgroup --gid 1000 -S radicale
+addgroup -S -g 1001 ethercalc
+addgroup --home /qbittorrent --gid 1000 qbittorrent
+addgroup -g 1000 nifi
+addgroup opsgenie sudo
+addgroup --gid "$GID" sensoroni
+addgroup --gid ${STEAM_GID} ${STEAM_USER}
+addgroup django
+addgroup docker-bench
+addgroup -g ${PGID} flarum
+addgroup subversion
+addgroup -S elasticsearch
+addgroup --gid 1001 docker
+addgroup docker
+addgroup -g 1000 -S mpt
+addgroup -S skirmish
+addgroup ${HUGO_USER}
+addgroup -S terraform
+addgroup -g 1000 -S bitlbee
+addgroup -g 513 docker
+addgroup consul-template
+addgroup -g $PGID xteve

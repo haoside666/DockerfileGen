@@ -1,0 +1,14 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM，因为需要先确定基础镜像
+ (0, 2),  # COPY Gemfile .依赖于FROM，因为复制文件需要在镜像的上下文中进行
+ (0, 3),  # COPY timecop.gemspec .依赖于FROM，同上
+ (0, 4),  # COPY lib/timecop/version.rb lib/timecop/version.rb依赖于FROM，同上
+ (0, 5),  # RUN bundle -j 4依赖于FROM，因为执行命令需要在镜像的上下文中进行
+ (0, 6),  # COPY . .依赖于FROM，因为复制当前上下文所有文件到镜像中需要在镜像的上下文中进行
+ (1, 2),  # COPY Gemfile .依赖于WORKDIR，因为需要先切换到工作目录
+ (1, 3),  # COPY timecop.gemspec .依赖于WORKDIR，同上
+ (1, 4),  # COPY lib/timecop/version.rb lib/timecop/version.rb依赖于WORKDIR，同上
+ (1, 5),  # RUN bundle -j 4依赖于WORKDIR，因为bundle命令需要在特定的工作目录中执行
+ (1, 6),  # COPY . .依赖于WORKDIR，因为复制文件到当前工作目录需要先有该目录
+ (5, 6)]  # COPY . .依赖于RUN bundle -j 4，通常先安装依赖再复制应用代码
+```

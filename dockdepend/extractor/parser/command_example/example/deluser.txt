@@ -1,0 +1,9 @@
+deluser ldap
+deluser named
+deluser node     $$ groupdel node
+deluser www-data
+deluser --remove-home node
+deluser node node     $$ groupdel node
+deluser transmission
+deluser vmail
+deluser node

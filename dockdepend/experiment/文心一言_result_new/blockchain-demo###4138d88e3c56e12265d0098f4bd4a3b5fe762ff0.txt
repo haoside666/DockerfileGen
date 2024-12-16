@@ -1,0 +1,21 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM       node:alpine
+MAINTAINER https://github.com/anders94/blockchain-demo
+EXPOSE     3000
+WORKDIR    /blockchain-demo
+COPY       package.json /blockchain-demo
+RUN        npm install
+COPY       . /blockchain-demo
+CMD        ["node", "bin/www"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(0, 1),  # MAINTAINER依赖于FROM，因为维护者信息是基于基础镜像的  
+ (0, 2),  # EXPOSE不依赖于其他指令，因为它仅仅是声明端口  
+ (0, 3),  # WORKDIR不依赖于其他指令，因为它只是设置工作目录  
+ (3, 4),  # COPY package.json依赖于WORKDIR，因为文件被复制到设置的工作目录中  
+ (4, 5),  # RUN npm install依赖于COPY package.json，因为需要先有package.json文件才能安装依赖  
+ (5, 6),  # COPY .依赖于RUN npm install，因为通常在安装依赖后复制源代码，以确保运行时环境正确  
+ (6, 7)]  # CMD依赖于COPY .，因为CMD指定了容器启动时运行的命令，这通常是在所有文件都已准备好之后

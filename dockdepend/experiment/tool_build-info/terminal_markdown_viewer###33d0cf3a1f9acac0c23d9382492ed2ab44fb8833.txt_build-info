@@ -1,0 +1,8 @@
+{
+    "filename": "terminal_markdown_viewer###33d0cf3a1f9acac0c23d9382492ed2ab44fb8833.txt",
+    "command_length": 5,
+    "processing_time": 0.0008990764617919922,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 2), (1, 3), (2, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /', 'exist file or directory dependency,because common path /mdv']"
+}

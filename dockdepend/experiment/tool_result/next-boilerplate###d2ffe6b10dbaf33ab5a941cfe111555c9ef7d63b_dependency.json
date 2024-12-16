@@ -1,0 +1,107 @@
+[
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "WORKDIR /opt/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "ENV NODE_ENV=production",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "RUN npm ci",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "COPY . /opt/app",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "RUN npm install --dev && npm run build",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:10-alpine",
+        "after_instruct": "CMD npm start",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "RUN npm ci",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /opt/app"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "COPY . /opt/app",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /opt/app",
+        "after_instruct": "RUN npm install --dev && npm run build",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /opt/app"
+    },
+    {
+        "before_instruct": "COPY package*.json ./",
+        "after_instruct": "RUN npm ci",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /opt/app"
+    },
+    {
+        "before_instruct": "COPY package*.json ./",
+        "after_instruct": "RUN npm install --dev && npm run build",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /opt/app"
+    },
+    {
+        "before_instruct": "RUN npm ci",
+        "after_instruct": "RUN npm install --dev && npm run build",
+        "edge": "(4, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'npm'}"
+    },
+    {
+        "before_instruct": "COPY . /opt/app",
+        "after_instruct": "RUN npm install --dev && npm run build",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /opt/app"
+    }
+]

@@ -1,0 +1,33 @@
+while read s_line; do
+    sample=$(echo $s_line |cut -d " " -f 2);
+
+    samtools view -H "${IN}/input/$sample".bam | sed -e 's/SN:\([0-9XY]\)/SN:chr\1/' -e 's/SN:MT/SN:chrM/' \
+      | samtools reheader - "${IN}/input/$sample".bam > "${OUT}/$sample"_corrected.bam
+
+    cut -f 2 ./Gene_locs.txt |sort |uniq |while read chr; do
+        echo 'Isolating Chromosome '$chr' from sample '${OUT}/$sample',  ';
+    done;
+done;
+
+
+while false; do cmd1; done
+
+while true; do
+    let "1"
+done
+
+while a || b; do
+    let "1"
+done
+
+while [ $counter -lt 10 ] || [ $counter -gt 5 ]; do
+    echo "Counter: $counter"
+    ((counter++))
+done
+
+while read chr; do
+    echo 'Isolating Chromosome '$chr' from sample '${OUT}/$sample',  ';
+    samtools view -b "${OUT}/$sample"_corrected.bam chr"$chr" > "${OUT}/$pop"_"$sample"_"$chr".bam ;
+    echo 'Indexing Sample '$pop'_'${OUT}/$sample' ';
+    samtools index -b "${OUT}/$pop"_"$sample"_"$chr".bam;
+done;

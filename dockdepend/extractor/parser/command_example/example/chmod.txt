@@ -1,0 +1,4080 @@
+chmod +x /bin/k3s
+chmod +x kustomize_${KUSTOMIZE_VERSION}_linux_amd64
+chmod +x /le/le.sh
+chmod +x /root/adblock.sh
+chmod +x /app/getlogs.sh
+chmod 777 configure
+chmod +x /usr/bin/server_linux_amd64
+chmod -c 755 /install.sh /on-start.sh /peer-finder
+chmod 755 /home/bastion/servers.sh
+chmod +x meta
+chmod +x autoproxy
+chmod 777 /tmp /opt/Xilinx
+chmod +x rustup-init.sh
+chmod +x /tmp/cs
+chmod +x /bin/cpanm
+chmod 711 /root
+chmod +x ossutil
+chmod 755 /opt/entrypoint.sh
+chmod +x /usr/local/bin/forego
+chmod 0700 /usr/local/bin/pproxy.sh
+chmod 755 phpcs.phar
+chmod -R a+w /dev/stdin
+chmod +x /torrentmonitor/run.sh /torrentmonitor/clean-iconv-ignores.sh
+chmod +x /usr/bin/kong_add_route_to_service
+chmod -v +x /usr/local/bin/tor-router
+chmod +x ./enable-ssh.sh
+chmod a+w $config_dir
+chmod 755 *.sh
+chmod 640  /etc/default/celeryd
+chmod +x /entrypoint.sh     chmod +x /start.sh
+chmod o+t -R /home/qbittorrent /home/qbittorrent/Downloads
+chmod +x /shadowsocks2
+chmod +x "/usr/local/bin/go-replace"
+chmod 0770 /feedback
+chmod g+rwxs $RUST_HOME
+chmod -R 777 /
+chmod +x $NVM_DIR/nvm.sh
+chmod +x /bin/script.sh
+chmod 777 /apache-jmeter/lib
+chmod +x /usr/bin/composer
+chmod +x /srv/slate/slate.sh
+chmod +x /usr/local/bin/devpi-entrypoint
+chmod 644 /etc/essbase/essbase-version-info
+chmod a+x npm_install.sh
+chmod +x /usr/bin/md2drive
+chmod +x "${BICEP_EXE}"
+chmod +x ./api
+chmod 2777 -R /qbittorrent /Downloads /Downloads/temp /qbittorrent
+chmod 644 /opt/dist//usr/local/lib/libpaho-mqtt3c.so.1.3
+chmod +x jq-linux64
+chmod +x ${TMP_INSTALL_DIR}/*.sh
+chmod 755 /opt/scripts/wrapper.sh
+chmod 755 *.py
+chmod 0644 /etc/cron.d/observium
+chmod 700 /home/arm/configure_instance.sh
+chmod -R 777 /usr/local/go
+chmod 755 ./entrypoint.sh
+chmod +x /ds/manage.py
+chmod a+xr /u01/oracle/container-scripts/*.*
+chmod +x /usr/local/bin/v2ray /usr/local/bin/v2ctl
+chmod 751 /root
+chmod g+s tmp
+chmod 600 acme.json
+chmod 640 /usr/src/wordpress/wp-secrets.php
+chmod +x /usr/bin/kong_add_upstream
+chmod +x /create_studentlist.py
+chmod -R 777 /go/pkg/mod/cache
+chmod a+s /neurodocker
+chmod +x /etc/init.d/nvidia-docker
+chmod -R a+rwx /usr/share/applications/
+chmod +x interact
+chmod -R 0755 /opt/oracle-mgmtagent-staging/
+chmod +x /usr/bin/cadvisor
+chmod +x /entrypont.sh
+chmod +x /usr/local/bin/* /etc/s6.d/*/*
+chmod +x /usr/bin/run-sonar
+chmod 755 /simpleweb/index.wsgi
+chmod a+x /usr/src/exakat/exakat.*
+chmod +x /scripts/migrate-settings
+chmod +x ./dotnet-install.sh
+chmod 775 /run
+chmod +x /etc/entrypoint.sh
+chmod +x env.sh
+chmod 755 /opt/selenium/chromedriver-$CD_VERSION
+chmod a+x /etc/cron.weekly/renew_certs
+chmod +x /datahub/datahub-mce-consumer/scripts/start.sh
+chmod 2777 /var/run/postgresql
+chmod +x /etc/services.d/*/run
+chmod 777 /var/www/html/config/jwt
+chmod 777 /var/www/html/ergatis/cgi/ergatis.ini
+chmod -R 700           "${BITBUCKET_INSTALL}/temp"
+chmod +s /sbin/capsh
+chmod a+x /usr/local/bin/go-deb
+chmod ugo+rwx /inout
+chmod /777 blacklists
+chmod -R 755 $FILEBOTDIR /config /data/television /data/film /log /scripts
+chmod +x /usr/bin/start-nginx-ci-project
+chmod a+rx /accept-eula.sh
+chmod 755 "$SCRIPT_DIR"/*
+chmod 755 FastQC/fastqc
+chmod +x /usr/local/bin/setup
+chmod a+x /usr/bin/moroz
+chmod +x /usr/local/bin/helmfile
+chmod 755 /app/webscrapper.py /app/wind_tracker.py /app/telegram_bot.py /app/consts.py /app/windInfo.py
+chmod +x /usr/local/bin/start-headphones.sh
+chmod 0644 /etc/tor/torrc
+chmod -R 777 $GOPATH
+chmod 644 authorized_keys
+chmod +x ${NAGIOS_HOME}/libexec/check_ncpa.py
+chmod 0644 /etc/cron.d/crontab
+chmod +x /usr/local/bin/genss
+chmod 744 /docker-entrypoint.sh
+chmod +x /tmp/prepconfig.sh
+chmod +x "/usr/local/bin/update-geoip.sh" "/usr/local/bin/healthcheck.sh"
+chmod -R g+rw /config     || true
+chmod 755 atlassian-jira-software-7.2.7-x64.bin
+chmod +x /usr/local/sbin/printsizediff.py
+chmod +x /opt/entrypoint.sh /usr/local/bin/jenkins-client
+chmod -R 777 /go
+chmod +x phpunit.phar
+chmod +x /opt/rcon-cli
+chmod +x bin/phantomjs
+chmod 775 $ANDROID_HOME $ANDROID_NDK_ROOT/../
+chmod a+x ${work}/*.sh
+chmod a+x /root/server_linux_amd64
+chmod u+s /usr/bin/fping6
+chmod +x /bin/hlds_run.sh
+chmod +x gobanner
+chmod +x codecept.phar
+chmod -R 777 jobs
+chmod 700 /home/arm/ssh-keys.tar
+chmod dnsbl.sh
+chmod -R 777 /scripts /start.sh
+chmod 777 /home/appionuser
+chmod +x -R /etc/cron.d/
+chmod +x /usr/local/bin/php-fpm-healthcheck; echo "INSTALLING FONTS..........................:"; apt-get -y install fonts-liberation; echo "INSTALLING COMPOSER..........................:"; curl -sS https://getcomposer.org/installer | php --       --filename=composer       --install-dir=/usr/local/bin
+chmod 777 /home/steam/run.sh
+chmod 0440 /etc/sudoers.d/developer
+chmod a+x /usr/local/bin/zerotier-one
+chmod +x /bin/autoscale.sh
+chmod +x /usr/bin/proxy
+chmod 755 /root/bin/run.sh
+chmod 700 /backup/*.sh
+chmod 777 -R /ts3server /ts3temp
+chmod 700 /home/arm/properties-editor.zip
+chmod 722 /etc/crontab
+chmod +x /usr/local/bin/fix-permissions
+chmod +x run_strix.sh
+chmod 777 /docker-entrypoint-initdb.d/*.sh
+chmod +x /tmp/binmerge
+chmod 555 /usr/bin/firefox
+chmod +x /manage.py
+chmod +x /usr/bin/docker/run
+chmod +x /usr/bin/v2ray
+chmod -R og-rwx $HOME/.ssh
+chmod 0440 /etc/sudoers.d/idol
+chmod 666 /var/log/cron.log
+chmod -R 755 /var/www
+chmod -R g+w /var/cache/nginx/
+chmod 666 "$SCRIPT_DIR"/*.rsp
+chmod +x ${start_scripts_path}/05_run_app_update.sh
+chmod 777 /liquibase
+chmod +x /var/lib/hexo/deploy.sh /entrypoint.sh
+chmod -R 775 ${USER_PROJECTS_DIR}
+chmod -R g+rwX /etc/v2ray
+chmod 0755 /usr/local/sbin/gitolite-run
+chmod +x /usr/bin/sonar-scanner
+chmod +x /trade.js
+chmod --verbose -R 0775 /downloads /downloads/temp
+chmod +x /deps.sh||/deps.sh||rm /deps.sh
+chmod +x theHarvester.py
+chmod -R 755 /etc/init.d
+chmod u+x /opt/supervisor/mysql_supervisor
+chmod +x /usr/bin/easy-add
+chmod +x /opt/apache2/run.sh
+chmod a+x /usr/local/bin/entrypoint
+chmod +x /mywechat
+chmod 2777 -R /qbittorrent /Downloads /Downloads/temp
+chmod 755 /entrypoint
+chmod +x ./start.sh
+chmod +x ganttproject
+chmod -R a+rwx /var/run/apache2
+chmod 775 /root/run.sh
+chmod 300 logs
+chmod +x /usr/bin/rcon
+chmod +x /alidata/bin/*
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/community/stop-community.sh
+chmod g-w /etc/cron.d/librenms
+chmod +x /nodeos.sh
+chmod +x kubeseal
+chmod 4777 -R /home/qbittorrent /home/qbittorrent/Downloads /qbittorrent/Downloads/temp
+chmod +x ssh-chat
+chmod +x /usr/local/bin/healthcheck.sh
+chmod 644 /etc/apache2/sites-available/nextcloud.conf
+chmod +x /app/run.sh
+chmod 440 /etc/sudoers.d/vagrant
+chmod u+s,g+s     /bin/ping     /bin/ping6     /usr/lib/monitoring-plugins/check_icmp
+chmod +rx /tini
+chmod +x /usr/local/bin/goreleaser
+chmod 755 $INSTALL_SCRIPTS/*.sh
+chmod 755 -R /opt/observium
+chmod a+x smartdns/etc/init.d/smartdns )
+chmod a+x /bin/run_with_env.sh
+chmod 777 /var/www/storage
+chmod +x /usr/bin/radio
+chmod a+x certbot-auto
+chmod -R g=u /app
+chmod --recursive 777 "${HOME}"
+chmod +x /usr/local/bin/googler
+chmod +rw -R ${PHP_LOG_DIR}
+chmod g+rwx /var/cache/nginx /var/run /var/log/nginx
+chmod +x /openvpn/run.sh
+chmod 0555 /entrypoint.sh
+chmod -R 771 www
+chmod g+rwx /var/run/nginx.pid
+chmod 0770 /bin/go-ssrshare
+chmod +x electron
+chmod +x ./n98-magerun2.phar
+chmod +x /usr/bin/p4web
+chmod 0777 -R /qbittorrent /downloads /downloads/temp
+chmod 777 /entrypoint.sh
+chmod ug+r ${HOME}/config/*.json
+chmod 0555 /var/empty
+chmod 0644 /etc/cron.d/application-cron
+chmod -R 0750 ${FRX_MAIL_DIR}
+chmod -R g=u /etc/nginx/conf.d
+chmod +x /etc/init.d/crond ;    chkconfig crond --add ;    chkconfig crond on
+chmod o+t -R /qbittorrent/Downloads/temp
+chmod +x olefy.py
+chmod 755 /powershell-server/powershell-server.ps1
+chmod -R 777 /var/www/application/logs
+chmod 755 /usr/local/bin/swan.sh
+chmod a+x /opt/vmware/VMware-Workstation-Full-14.0.0-6661328.x86_64.bundle
+chmod +x /scrypt/aws-cleaner.sh
+chmod +x ./ManiaPlanetServer
+chmod u+x src/main.py
+chmod +x /usr/local/bin/wordpress.sql
+chmod 600 "${GNUPGHOME}"
+chmod +x /usr/local/bin/run.sh
+chmod -R 2775 /Downloads /home/qBittorrent/.*
+chmod 2777 -R /Downloads
+chmod +x /work/google-cloud-sdk/platform/google_appengine/{goapp,appcfg.py}
+chmod +x /terraria-server/TerrariaServer.bin.x86_64
+chmod 666 ./kube
+chmod a+xr /u01/oracle/dockertools/*.*
+chmod +x /app/startup.sh
+chmod +x /opt/sd/bin/hab
+chmod +x /start_dnsmasq.sh
+chmod +x /go/src/github.com/maliceio/malice-bitdefender/bd_fix.sh
+chmod +x /usr/local/bin/codecept
+chmod 755 /opt/scripts/create_prok_pipeline_config.pl
+chmod +x "/usr/local/bin/update-geoip.sh"
+chmod +x /opt/davinci/bin/docker-entrypoint.sh
+chmod +x /usr/local/bin/oci_autocomplete.sh
+chmod 775 /usr/local/log
+chmod +x /usr/local/bin/spruce
+chmod +x /postgres_ready.py
+chmod +x /usr/bin/pfastq-dump
+chmod -R 700 /config /data
+chmod +w /var/www/html/*.php
+chmod +x /opt/xppaut/xppaut
+chmod +x /opt/docker/bin/*
+chmod 755 /root/start_jupyterlab.sh
+chmod +x /usr/local/bin/kubectl     pip install --upgrade pip
+chmod -R 750 /opt/shibboleth-idp/bin
+chmod +x ${APP_PATH}/postgres_ready.py
+chmod 0644 /etc/cron.d/cronfile
+chmod 755 /usr/bin/entrypoint /app/gitea/gitea /usr/local/bin/gitea /usr/local/bin/environment-to-ini
+chmod +x protected/yii
+chmod +x joomscan.pl
+chmod 755 /usr/bin/letsencrypt-setup
+chmod 777 /opt/workflow/server-conf
+chmod +x /etc/init.d/startup.sh
+chmod -R u+x ${HOME}/bin
+chmod g+wx /usr/local/lib/R/site-library
+chmod +x /usr/local/ntripcaster/sbin/ntripdaemon
+chmod 755 /config/ping_script.sh /config/speedtest_output.sh /entry.sh
+chmod +x /usr/bin/frps
+chmod +x /usr/share/applications/netdata.desktop
+chmod +x /usr/local/bin/startup ;      chown ${UID}:${GID} -R /etc/supervisor.d /postfixadmin
+chmod -v +x /usr/local/bin/new-ip
+chmod +x /etc/rc.d/rc.local
+chmod a+x /runit/entrypoint.sh
+chmod a+w /dev/stderr
+chmod a+x /root/.terraform.d/plugins/linux_amd64/terraform-provider-cloudfoundry
+chmod +x ./payload.sh
+chmod 777 /opt/scripts/*
+chmod -R g=u /var/run
+chmod 500 /usr/bin/nohup
+chmod +x winetricks
+chmod +x any2fasta
+chmod +x /tmp/credhub
+chmod 4777 -R /Downloads/temp
+chmod +x /zap/zap-baseline-custom.py
+chmod +x /app/run_wapt.sh
+chmod +x /usr/local/bin/protoc-gen-twirp_python
+chmod +x ./wait-for-it.sh
+chmod +x initctl_faker
+chmod -R a+rw $RUSTUP_HOME $CARGO_HOME
+chmod g+rwx /config /root
+chmod +x symfony
+chmod +x /usr/local/bin/uclust
+chmod +x /home/openttd/start.sh
+chmod +x /etc/periodic/daily/backup-plugins
+chmod +x /conf-custom/start.sh
+chmod +x .start.sh
+chmod +x /opt/restic
+chmod +x openkore.pl & chmod +x start.sh & chmod -R 777 ./control
+chmod 744 $TARGET_DIR/composer-installer.sh
+chmod a+x /startup.sh
+chmod 755 /usr/local/bin/terraform
+chmod 1777 /transmission
+chmod +x /sbin/entrypoint.sh
+chmod +x /usr/bin/release
+chmod -R 0775 /qbittorrent /Downloads /Downloads/temp
+chmod a+x ./klipper/install-ubuntu-18.04.shexecute permission
+chmod +x /ckan-init.sh
+chmod a+w /dev/stdout
+chmod +x $BINPATH/rmta.sh
+chmod a+x /klipper/install-ubuntu-18.04.sh
+chmod 777 /var/log/unturned.log
+chmod +x /srv/cleanup-*.sh
+chmod +x /usr/local/bin/kubectl
+chmod +x cmake.sh
+chmod +x nvm.sh
+chmod -R 0700 ${MYSQL_DATA_DIR}
+chmod 664 .vimrc
+chmod a+rx /usr/local/bin/fix-permissions
+chmod +x /usr/bin/tini /usr/bin/telemetry
+chmod +x /usr/local/bin/ntripcaster/bin/ntripcaster
+chmod +x /opt/resource/in
+chmod +x /usr/local/kubebuilder/bin/kustomize
+chmod -R 777 /.npm
+chmod 644 /etc/crontab
+chmod +x /usr/local/bin/* /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
+chmod 755 /opt/geckodriver-$GECKODRIVER_VERSION
+chmod -R 777 /composer
+chmod g+rw /home
+chmod -R a+r /usr/share/nginx/www
+chmod +x resource.py
+chmod 700 /home/borg/.ssh
+chmod +x /usr/local/bin/fly
+chmod +x /opt/run.sh
+chmod +x /usr/local/bin/docker-entrypoint.sh
+chmod +x /start_galera
+chmod u=rx,g=rx,o-rwx /var/empty
+chmod +x /tmp/tf_info.sh
+chmod 664 /etc/nginx
+chmod +x /app/server
+chmod -R 777 /home/work/crontab/checkExpressVPNStatus.sh
+chmod 755 ${STEAMDIR}/entrypoint.sh
+chmod +x /usr/local/bin/build.py /usr/local/bin/diff.py /usr/local/bin/helm-install.py
+chmod -R 4775 /qbittorrent /Downloads /Downloads/temp
+chmod +rx /usr/bin/repo
+chmod a+x /opt/spacewalk.sh
+chmod -R +xw weblogic-deploy/lib/python
+chmod a+x /etc/periodic/daily/update_openssl
+chmod +x /home/yoctouser/docker-ep.sh
+chmod +x ${AIRFLOW_HOME}/entrypoint.sh
+chmod +x ./docker-entrypoint.sh
+chmod +x ./kafka-setup.sh
+chmod +x /usr/bin/webproc
+chmod 0700 /home/ansible/.ssh
+chmod +x /usr/local/bin/addcluster
+chmod +x ./configure
+chmod +x /mysql.sh
+chmod a+x /oscar
+chmod 775 PASApipeline/scripts/process_GMAP_alignments_gff3_chimeras_ok.pl
+chmod 644 /etc/ssh/ssh_known_hosts
+chmod a+x brook
+chmod a+x /usr/local/bin/svcat
+chmod 0664 /opt/graphite/storage/graphite.db
+chmod -R 777 ./logs
+chmod +x /restart.sh
+chmod +x /wechat-index
+chmod +x /usr/local/sbin/poly
+chmod 755 /usr/bin/phantomjs
+chmod +x /getpaperserver.sh
+chmod -v o+x /usr/local/bin/cephfs_provisioner
+chmod -R 777 /var/www/moodledata
+chmod +x ./entrypoint.sh ./celery-worker-entrypoint.sh ./worker-on-demand-entrypoint.sh
+chmod +x /usr/bin/gomplate
+chmod 775 repository/Meta_logstats.sh
+chmod 777 /var/run/mysqld
+chmod -R 777 .jupyter
+chmod 777 "$tempDir"
+chmod 755 /usr/local/bin/kubedog
+chmod +x install-agent.sh
+chmod u+x /backup.sh
+chmod ug+r,o-rwx ${HOME}/config/*.json
+chmod 755 /home/biodocker/bin/MSAmanda_Standalone_LinuxMac_1.0.0.5243/MSAmanda.exe
+chmod u=rwx /go/src/fmpwebserver/fmpwebserver
+chmod 777 /automatic_packages.sh
+chmod +x /iptables.sh
+chmod u+x nvim.appimage
+chmod 644 /etc/logrotate.d/nginx
+chmod +x /usr/local/bin/wp ;fi
+chmod 554 /usr/local/bin/start.sh
+chmod +x /usr/local/sbin/composer
+chmod 755 /app/wait-for-it.sh
+chmod 777 .
+chmod 777  /root/prinseq-lite-0.20.4/prinseq-lite.pl
+chmod 771 /opt/license_accepter.sh
+chmod +x /usr/bin/terragrunt
+chmod +x /script/create-certs.sh /script/entrypoint.sh
+chmod -v +x /entrypoint.sh
+chmod -R 777 /var/www/html/storage
+chmod 755 /opt/selenium/msedgedriver-$EDGE_DRIVER_VERSION
+chmod +x ./terraform-provider-aiven-linux_amd64
+chmod 777 /opt/lidarr -R
+chmod +x /opt/webApp/wait-for
+chmod +x /usr/bin/dep
+chmod 0666 /etc/apache2/apache2.conf
+chmod -R 777 /var/www/html
+chmod 777 storage/db.sqlite
+chmod +x /usr/bin/chrome-system-check
+chmod +x ${start_scripts_path}/03_set_a2port.sh
+chmod +x /usr/local/bin/start-subsonic.sh
+chmod 0755 /usr/libexec/netdata/plugins.d/*.plugin
+chmod +x /usr/local/bin/ha
+chmod a+x composer
+chmod +x /usr/bin/pmd/bin/run.sh
+chmod +x $STACK_DIR/stack
+chmod a+xr /usr/local/bin/init.sh
+chmod 755 /opt/chromedriver-$CHROME_DRIVER_VERSION
+chmod 600 *
+chmod +x configureAndMine.sh
+chmod 0644 /etc/cron.d/dbface
+chmod +x /usr/local/bin/cloud-torrent
+chmod +x /usr/local/bin/slowloris
+chmod +x $_BIN_DUPLICACY_WEB
+chmod 755 Cray1/run.sh
+chmod +x /opt/$ZK_DIST/*
+chmod 750 /init.sh
+chmod +x /kubectl_config.sh
+chmod a+rwx /usr/local/bin/start-singleuser.sh
+chmod +x /wait-for-php.sh
+chmod +x /var/init_laravel.sh
+chmod +x /opt/particl/bin/*
+chmod 700 /var/cache/nginx/*
+chmod +x ~/miniconda.sh
+chmod u+rwx,g+rx,o+rx /var/www
+chmod 755 sinusbot
+chmod +x /installation/ubuntu.sh
+chmod +x /usr/local/bin/live555MediaServer
+chmod 440 /home/soekir/.kirana/pocket/sudoers
+chmod +x /tmp/install-mariadb.sh
+chmod +x /usr/local/bin/acme.sh
+chmod +x /sbin/setuser
+chmod +x /app/build/infracost
+chmod -R 777 /var/run /var/log /etc/passwd /etc/group
+chmod g+s www
+chmod +x /tmp/cupti_helper.sh
+chmod 755 /usr/local/bin/env.sh
+chmod 400 $HOME/.ssh/id_rsa
+chmod +x /opt/selenium/startVisualTest.sh
+chmod +x nodesource_setup.sh
+chmod 755 -R /docker-exec
+chmod 0777 -R /qbittorrent /downloads /downloads/temp /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chmod +x /usr/local/sbin/simple-container-benchmarks
+chmod 0755 "$(which gp-vncsession)"
+chmod +x /etc/init.d/php-fpm ;    chkconfig php-fpm --add ;    chkconfig php-fpm on
+chmod 755 /config/ping_script.sh /config/speedtest.sh /entry.sh
+chmod a+xr -R /u01/oracle/*.*
+chmod +x /usr/local/bin/kops /usr/local/bin/kubectl
+chmod 777 /root/.local
+chmod 550 -R /app
+chmod +x /root/start.sh
+chmod +x ${PACKAGE_DIR}/sambamba-0.7.0/sambamba-0.7.0
+chmod +x /daemon/*
+chmod 755 /etc/cron.daily/*
+chmod 700 $HOME/.ssh
+chmod +x /cronjob.sh
+chmod +x /usr/local/bin/geckodriver
+chmod a+x /etc/cron.monthly/renew_certificates
+chmod +x ./tools//bin/sdkmanager
+chmod +x /usr/local/lib/node_modules/yarn/bin/yarn.js
+chmod +x /usr/bin/sc
+chmod 700 /vol/xml/hdfs-site.xml
+chmod 755 /root/bin/adduser.sh
+chmod 755 /usr/local/bin/redis-server-foreground
+chmod 777 /KiiConf/tmp
+chmod -x /wait-for.sh
+chmod +x /home/work/_src/jira.bin
+chmod +x /run_test.sh
+chmod 700 ~root/.ssh/
+chmod -R 750 /home/ctf
+chmod u+x /opt/sqlcipher
+chmod +x /supervisor-healthcheck.sh
+chmod +x /usr/local/bin/helm3
+chmod 777 /var/www/nosh/storage
+chmod 755 Praktomat/src/checker/compiler/Builder.py
+chmod 666 /var/www/html/*.php
+chmod +x /usr/local/bin/letsencrypt-setup /usr/local/bin/letsencrypt-renew
+chmod +x /docker/download.sh
+chmod -R go+rx $CONDA_DIR/share/jupyter
+chmod 755 /usr/bin/speedtest
+chmod +x /build/*.sh
+chmod +x /usr/bin/kcpraw_client_linux_amd64
+chmod 0755 /tini /docker-entrypoint.sh
+chmod +x /work/google-cloud-sdk/platform/google_appengine/appcfg.py
+chmod +x /opt/kafka-server
+chmod +x /snapshot.sh
+chmod -R u+rwx /tmp
+chmod +x /opt/spm${SPM_VERSION}/spm${SPM_VERSION}
+chmod u+x /srv/run.sh
+chmod +x -R $SCRIPTS
+chmod u+x /tmp/xc32-installer
+chmod a+x gman
+chmod a+x /usr/local/bin/composer
+chmod 755 /etc/init.d/selenium
+chmod +x /opt/conda/lib/python3.8/site-packages/QUANTAXIS/QAUtil/QASetting.py
+chmod +x /usr/bin/aria2c
+chmod a+rw -R /etc /usr
+chmod +x ./wait-for-postgres.sh
+chmod -R ugo-x,u+rwX,go+rX,go-w /usr/src/watchdog
+chmod +x /usr/bin/udppm
+chmod +x /bin/rclone
+chmod +x unglue.phar
+chmod 755 /opt/geckodriver-$GK_VERSION
+chmod 755 exonerate-2.2.0-x86_64/
+chmod 777 /opt
+chmod +x php-cs-fixer
+chmod a+s /opt/kaspersky/kav4fs/bin/kav4fs-control
+chmod +x /usr/local/bin/om
+chmod -R 755 /data/www/user-view
+chmod +x /opt/spm${SPM_VERSION}/run_spm12.sh
+chmod +x /usr/local/bin/*
+chmod +x /chrome-remote-desktop.sh
+chmod +x /usr/bin/dighosts
+chmod +x "${A4C_INSTALL_PATH}/${A4C_INSTALL_DIR}/alien4cloud.sh"
+chmod -R 4777 /Downloads/temp
+chmod 755 /opt/docker/*.sh
+chmod 755 /usr/bin/merge-xml-coverage.py
+chmod a+r /etc/fuse.conf # make it readable by anybody, it is not the default on Ubuntu
+chmod +x /usr/local/bin/pack
+chmod +x /usr/local/bin/minicron
+chmod -R +x ${MINIFI_BASE_DIR}/scripts/*.sh
+chmod 0777 main
+chmod +x /usr/bin/start-container
+chmod 755 /etc/cron.minutely/*
+chmod +x sec/setup-http-proxy-sec.sh
+chmod -R 777 /go /.cache
+chmod +x /download_datasets.sh
+chmod +x /app/main
+chmod +x /blackvuesync.sh
+chmod +x /cloudlare/*.sh
+chmod +x /etc/nginx/conf.d/test.sh
+chmod +x /usr/local/bin/entry.sh
+chmod +x /supervisor.sh
+chmod 600 /var/lib/transmission/.config/transmission-daemon/settings.json)
+chmod +x /usr/local/bin/kompose
+chmod +x ganttproject.sh
+chmod a+x $INSTALL_EXTRA_TOOLS_LOCATION
+chmod +x /bin/entrypoint.sh
+chmod +x /usr/local/bin/create_wordpress.sh
+chmod a+xr /u01/oracle/*.*
+chmod +x /usr/local/bin/docker* ;fi
+chmod 755 /root/bin/servers.sh
+chmod u+x /*.bash
+chmod +x /home/appliance/starter.sh
+chmod +x /rpxdown.sh
+chmod +x /usr/local/bin/dep ;fi
+chmod a+rw /home/graf
+chmod +x /usr/bin/consul-template
+chmod u+s /usr/lib32/libvglfaker.so
+chmod -R 0775 /Downloads /home/qbittorrent
+chmod 666 "${CKAN_CONFIG}/topics.json"
+chmod +x kops-linux-amd64
+chmod +x ./cloudreve
+chmod +x /tmp/entrypoint
+chmod -R 771 html/public
+chmod 755 /root/servers.sh
+chmod +x /usr/local/bin/kube-apiserver
+chmod +x /usr/local/bin/dumb-init
+chmod +x /scripts/start_archiving.sh
+chmod +x /usr/local/bin/ntripcaster/bin/casterwatch
+chmod 770 "/usr/local/bin/autosetup.sh"
+chmod -R go+rx /usr/local/share/jupyter
+chmod u+x /opt/supervisor/rundeck
+chmod +x /sd/setup.sh
+chmod +x /usr/local/bin/variant
+chmod +x /v2ray/v2ray /v2ray/v2ctl
+chmod a+x /usr/local/bin/aws
+chmod 777 /home/jenkins
+chmod 777 -R /var/www/
+chmod +x skesa
+chmod +x roonserver-installer-linuxx64-docker.sh
+chmod a+rx /usr/local/bin/youtube-dl
+chmod u+rw /var/lib/i2pd
+chmod +x /root/test.sh
+chmod +x /usr/local/hadoop/etc/hadoop/*-env.sh
+chmod 755 /usr/local/bin/sdget
+chmod 1777 /var/www/docker.d/sessions
+chmod +x /home/vagrant/run.sh
+chmod +x /app/xteve_beta
+chmod 0755 /var/www/html/artisan
+chmod +x /cloudflare/*.sh
+chmod 555 /opt/AdGuardHome/config
+chmod 777 /app/entrypoint.sh
+chmod +x "${MMS_HOME}/files/mongodb-mms-automation-agent"
+chmod +x /usr/bin/vpn-close
+chmod +x /*.bash
+chmod ug+s /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chmod +x msisensor2
+chmod -v +x /usr/local/bin/stop-tor-router
+chmod +x /usr/local/bin/mill
+chmod 555 /usr/local/bin/entrypoint.sh
+chmod +x exec
+chmod +x /usr/local/bin/docker-java-home
+chmod 666 licensekey.dat
+chmod +x  /opt/bin/* ;    chmod u+s /sbin/capsh ;     chmod u+s /bin/netstat;     chmod u+s /usr/sbin/iptraf-ng
+chmod 0440 "/etc/sudoers.d/${UNAME}"
+chmod +x ./entrypoint.sh ./worker-entrypoint.sh ./worker-on-demand-entrypoint.sh
+chmod +x /usr/local/bin/aircast
+chmod +x /usr/bin/rancher-helm /usr/bin/rancher-tiller
+chmod 0775 "${MMS_LOG_DIR}"
+chmod +x /usr/src/app/update.sh
+chmod 666 $SCRIPT_DIR/$REVERSE_ZONE_FILE
+chmod -R 777 /opt/airprint
+chmod +x /home/biodocker/bin/partitionfinder2/*.py
+chmod +x /tmp/docker/build
+chmod 777 /sw/grigorieff/ctffind4/ctffind-4.1.5
+chmod +x /opt/joomscan.sh
+chmod ugo+rw /var/log/mongodb-mms-automation/readiness.log
+chmod u+s /usr/lib/libvglfaker.so
+chmod +x /start_bitcoind.sh
+chmod +x "/usr/local/bin/entrypoint.sh" "/usr/local/bin/healthcheck.sh"
+chmod 755 /usr/bin/docker
+chmod 600 /var/log/btmp
+chmod +x /etc/local.d/init_monit.start
+chmod ug+x $ORACLE_BASE/*.sh $ORACLE_BASE/scripts/extensions/setup/*.sh $ORACLE_BASE/*.py
+chmod 740 /home/ctf/flag
+chmod +x cuda_*_linux.run
+chmod +x /run-lsyncd.sh
+chmod -R +x *
+chmod +x ep-linux
+chmod +x docker-entrypoint.sh ; sync;
+chmod +x $HADOOP_HOME/sbin/start-dfs.sh
+chmod +x /usr/local/bin/wait-for
+chmod 777 /volume
+chmod +x tini
+chmod -R 777 /etc/cloud-print-connector
+chmod +x ./kubectl
+chmod 755 -R /usr/local/lib/
+chmod +x /root/.sdkman/bin/sdkman-init.sh
+chmod +x /usr/local/bin/entrypoint.sh
+chmod +X /root/bash/run.sh
+chmod +x mcrcon
+chmod 0700 /etc/monitrc
+chmod +x /u01/container-scripts/*.sh
+chmod 666 /etc/mysql/mysql.conf.d/mysqld.cnf
+chmod 775 /usr/local/bin/lorean_docker
+chmod 755 run_crond.sh
+chmod +x $BINPATH/Hisat2-Cuffcompare-Cuffmerge.sh
+chmod +x ${BASE_PATH}/entrypoint.sh
+chmod a+rwx /usr/local/bin/start.sh
+chmod 755 /do.sh
+chmod 0664 /var/www/sites/default/services.yml
+chmod +x /agqr.sh
+chmod +x ./get_docker_com.sh
+chmod a+rx /usr/local/bin/ipfs-add
+chmod 755 /*.sh echo "<?php phpinfo();" >> /var/www/index.php; service apache2 restart; chown -R www-data:www-data /var/www ;
+chmod +x commix.py
+chmod 750 /usr/local/mysql/mysql-files
+chmod a+s /usr/sbin/useradd /usr/sbin/groupadd /usr/sbin/gosu /usr/sbin/usermod
+chmod 0777 /zbp-app-validator/docker-scripts/*
+chmod +x /opt/bin/start.sh
+chmod 0544 /opt/oracle-mgmtagent-bootstrap/scripts/init-agent.sh
+chmod -R 777 logs/
+chmod -R o+rX /app
+chmod +x cloudflair.py
+chmod +x whatweb
+chmod 755 /mysql.sh
+chmod 755 /home/biodocker/bin/tandem-linux-17-02-01-4/bin/tandem.exe
+chmod +x /server-monitor.py
+chmod 777 /usr/local/bin/sigproxy
+chmod +x /usr/sbin/start-server.sh
+chmod +x /etc/init.d/dbus.sh
+chmod -R 777 RepeatMasker/
+chmod +x /usr/bin/mc
+chmod +x /datahub/datahub-mae-consumer/scripts/start.sh
+chmod +x /bin/isbg.py
+chmod +x bootstrap.sh
+chmod +x /usr/local/bin/slack-release-notifier
+chmod +x coursier
+chmod +x BacPipe.v1.7.unix.run
+chmod g+rwx /root /root/.config /root/.config/configstore
+chmod -x ./build.sh
+chmod u+x /opt/f-prot/fpupdate
+chmod a+x /pytest.sh
+chmod 755 /home/worker/.ssh
+chmod 755 /otrs_install.sh
+chmod +x /var/opt/installComposer.sh
+chmod +x test-stack@python.sh
+chmod +x /usr/local/bin/infcloud
+chmod a+x /icy/wrapper.py
+chmod 750 /usr/local/ircstack
+chmod +x /var/www/html/vendor/drush/drush/drush
+chmod +x /harvest_fetch_and_gather.sh
+chmod 755 /ricopili/dependencies/
+chmod +x /opt/zookeeper/bin/*.sh
+chmod 4755 /usr/lib64/squid/pinger
+chmod -R 770 /data
+chmod 0644 /etc/ld.so.conf.d/python-2.6.conf
+chmod 755 /root/install_bastion.sh
+chmod 0666 /etc/mysql/mysql.conf.d/mysqld.cnf
+chmod 777 /root
+chmod 755 /root/run
+chmod +x ./jq
+chmod 700 /home/arm/update_hosts.sh
+chmod -x /scripts/godaddy-ddns.sh
+chmod a+rwx -R /entrypoint.sh
+chmod +x /docker-entrypoint.sh /usr/local/bin/aria2c
+chmod g-w /etc/cron.d/observium
+chmod 700 /root/bin/run.sh
+chmod +x ./crontab.sh
+chmod +x /opt/v2ray-manager/bin/*
+chmod a+x /tmp/vmware-ovftool.bundle
+chmod +x $DST/snpeff
+chmod 755 /minecraft/docker-start.sh
+chmod 777 /jellyfin /media /cache
+chmod +x /mydnshost-entrypoint.sh
+chmod +x /struts2/exploit.sh
+chmod +x kma
+chmod a+x hugo
+chmod -R -x ${DYCAST_APP_PATH}/tests
+chmod 700 /home/arm/aws-cli.tar
+chmod 755 /sbin/entrypoint.sh
+chmod 777 /opt/acestream/acestream.sh
+chmod +x /usr/local/bin/start-squid.sh
+chmod -R 700           "${BITBUCKET_INSTALL}/logs"
+chmod -R u=rX,g=rX /app
+chmod 755 trace_processor
+chmod a+rx /clang_tidy_all_the_things.sh
+chmod +x /home/hugo
+chmod +x /opt/scripts/scraper
+chmod +x /usr/local/bin/docker-compose /bin/hcd
+chmod 755 /usr/local/bin/rawhelm
+chmod -R 750 /var/www/letsencrypt/.well-known
+chmod 644 /opt/dist//usr/local/lib/libpaho-mqtt3as.so.1.3
+chmod -R 755 /scripts /start.sh
+chmod ug=rx,o= /usr/local/bin/autoexecute
+chmod +x /datahub/datahub-gms/scripts/start.sh
+chmod 755 create-indices.sh
+chmod +x /opt/print-logo
+chmod -R g=u /opt/gluu/jetty
+chmod -R +x /var/www/kivitendo-erp/
+chmod -R 0751 ${HOME_DIR}
+chmod +x /usr/local/bin/amicontained
+chmod a+x geckodriver
+chmod +x /opt/butler/getbutler.sh
+chmod +x /opt/ldap_notifier.py
+chmod +x samclip
+chmod +x /tmp/pyenv-installer
+chmod +x /start-webkubectl.sh
+chmod +x /opt/wine_ida_wrap.sh
+chmod 777 /home/notebookuser/java/*.sh #
+chmod 755 /opt/magnus/magnus
+chmod +x /opt/jetty-home/bin/jetty.sh
+chmod +x /usr/local/bin/start-couchpotato.sh
+chmod 0755 /start.sh
+chmod 755 /etc/essbase
+chmod +x /usr/local/bin/bee
+chmod +x /usr/local/bin/info
+chmod +x docker-compose
+chmod -R a+rw ${ORACLE_INSTANTCLIENT}
+chmod +x main.pl
+chmod 664 *.service
+chmod +x /usr/bin/run.sh
+chmod -R 755 /home/node
+chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/*.init /etc/openvpn/*.sh
+chmod -R g+rwX /usr/bin/frps
+chmod --recursive g+w /mapcache
+chmod u=rx,go= /usr/local/bin/autoexecute
+chmod -R a+rwx /usr/local/bin
+chmod -R a+rwx /.aws/cli/cache
+chmod a+x /usr/bin/sonar-scanner
+chmod 777 /usr/local/scratch/ergatis/archival
+chmod +x $GOPATH/bin/dep
+chmod 755 /ENTRYPOINT.sh
+chmod +x /opt/license_accepter.sh
+chmod 00755 /tini
+chmod -R -w /opt/gcc-arm-none-eabi-8-2018-q4-major
+chmod -R 755 /usr/local/bin
+chmod +x /portainer
+chmod -R 644 /etc/mysql/conf.d/my.cnf
+chmod +x /bin/jupyter-apricot
+chmod +x /server.js
+chmod a+x /opt/finalspeed/start_finalspeed
+chmod +x /wechat-db
+chmod a+x /usr/local/bin/blastn-script
+chmod 755 /docker-entrypoint.sh
+chmod o+rwx /run /var/lib/nginx /var/lib/nginx/tmp
+chmod +777 /root/portfoliohandler
+chmod +x /usr/bin/fwatchdog
+chmod 600 /root/.gnupg/dirmngr.conf
+chmod a+x /wrapper/aws
+chmod a+x /entry.sh
+chmod a+x docker_run
+chmod +xw /u01/oracle/*.sh
+chmod +x faas-cli
+chmod +x trimmomatic
+chmod +x /etc/periodic/weekly/croncert.sh
+chmod -R 777 /var/log/ /run/php/
+chmod +x /wealth-manager/start.sh
+chmod 770 -R /var/www/html/templates_c/
+chmod 644 /etc/AdGuardHome
+chmod 554 /usr/local/bin/startup.sh
+chmod +x /mytrojan/trojan
+chmod 755 /usr/local/bin/build.sh
+chmod +x /usr/bin/configure-laravel
+chmod +x /usr/local/bin/up.sh
+chmod 644 /consul/config/config.json
+chmod +x /*.sh
+chmod +x /usr/src/start.sh
+chmod a+x /start.sh
+chmod +rx /usr/bin/multirun
+chmod 777 /var/www/public
+chmod 755 htslib-1.10
+chmod +x setup.py
+chmod 750 /opt/jre-home/bin/java
+chmod a+x /tmp/install-dep.sh
+chmod +x /agent/mongodb-agent
+chmod g+rwx /var/cache /var/run /var/log
+chmod 0555 /usr/local/sbin/*
+chmod +x /usr/local/bin/jenkins-slave
+chmod -R 777 /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper
+chmod 777 database/db.sqlite
+chmod u+s /sbin/capsh
+chmod +x /drespstart.sh
+chmod 0777 /usr/local/bin/mitmdump /usr/local/bin/mitmproxy /usr/local/bin/mitmweb
+chmod +x /usr/local/bin/php-fpm-healthcheck
+chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+chmod +x /etc/init.d/nginx
+chmod +x /usr/bin/dr*
+chmod +x /gortal
+chmod +x pact*
+chmod a+x /usr/bin/arm-ttk
+chmod 755 /root/servers.conf
+chmod -R 755 /home/biodocker/bin/pwiz/*
+chmod +x /opt/DF-Nagios-Plugins/check_jenkins/check_jenkins
+chmod -R 0775 "${MMS_HOME}/tmp"
+chmod 666 "${SCRIPT_DIR}"/*.rsp
+chmod 0700 /root/.ssh
+chmod +x /usr/local/bin/tcping
+chmod +x $OTB
+chmod +x ./install.sh
+chmod u+x /tmp/icinga2_init
+chmod 0700 /config/pproxy.sh
+chmod +x ~/run-wordcount.sh
+chmod +x /opt/sources/rabbitci/rabbit-ssh/bin/controller.ssh.entrypoint.sh
+chmod 755 /sbin/docker-entrypoint.sh
+chmod +x /client.sh
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/agentstore/start-agentstore.sh
+chmod +x /var/www/html/env.sh
+chmod +rx -R ./function
+chmod +x danpos-2.2.2/*.py
+chmod a+x /app/docker/*.sh
+chmod +x /tmp/h2o/docker-init.sh
+chmod 700 /home/sshuser/.ssh
+chmod a+r /var/lib/mongodb-enterprise-operator/version_manifest.json
+chmod -R 777 /tmp/poetry-cache
+chmod +x ${start_scripts_path}/02_auto_update.sh
+chmod -R +x /u01/Disk1/install/*
+chmod ugo+x /entrypoint.sh
+chmod +x /storage/entrypoint.sh
+chmod 755 /init.sh
+chmod +x /opt/google/chrome/google-chrome
+chmod a+rwx /usr/bin/clean-layer.sh
+chmod +x /build/test.sh
+chmod 500 entrypoint.sh
+chmod 700 /usr/local/bin/update-certificates.sh
+chmod +x /tmp/test/run.sh
+chmod +x /CeWL/cewl.rb
+chmod +x /nxfilter/bin/update-sh.sh
+chmod o+t -R /Downloads/temp
+chmod +x /wealth-manager-master/start.sh
+chmod -R 0775 Praktomat/
+chmod go+rwx -R /home/qbittorrent /home/qbittorrent/Downloads
+chmod +x oc
+chmod 755 /root/run.sh
+chmod 777 /home/share
+chmod 777 /root/bastion/* -R
+chmod +x change-user.sh run-endless.sh
+chmod go+r /etc/bash_completion.d/artisan-bash-prompt /etc/bash_completion.d/composer-bash-prompt
+chmod a+x /locale.sh
+chmod 755 build.rb
+chmod 777 /var/www/html/application/db/data.sqlite
+chmod -R 777 /tmp/pip-cache
+chmod -R 0775 /qbittorrent /Downloads /Downloads-temp
+chmod 755 sbt/bin/sbt
+chmod +x /usr/bin/PCREPlugin.ld.so
+chmod +x /praktomat_entrypoint.sh
+chmod +x /usr/bin/cpulimit
+chmod +x /docker-entrypoint.sh /healthcheck.sh /usr/local/bin/aria2c
+chmod 755 /usr/local/bin/kubectx
+chmod 644 /etc/profile.d/gitea_bash_autocomplete.sh
+chmod a+x /scripts/entrypoint.sh
+chmod +x /opt/wp-cli/wp-cli.phar; ln -s /opt/wp-cli/wp-cli.phar /usr/local/bin/wp; )
+chmod 755 /poll-complete.sh
+chmod u+x /usr/bin/fme-install
+chmod -R 777 /root
+chmod +x bazel-*.sh
+chmod 755 /usr/local/nagios/libexec/check_mem.pl
+chmod +x /usr/bin/icqpr
+chmod 755 /opt/selenium/chromedriver-$CHROMEDRIVER_VERSION_FULL
+chmod 755 /root/install_novnc.sh
+chmod 700 /*.php
+chmod +x api-tester.py
+chmod -R 0755 /var/www/html/
+chmod 777 /usr/bin/startzm.sh
+chmod +x /usr/local/bin/control-tower
+chmod +x /usr/bin/openvpn.sh
+chmod u-w ${SUDOFILE}
+chmod 755 /usr/bin/winetricks
+chmod +x ./bee
+chmod +x /usr/local/bin/myaws
+chmod 664 .vimrc .tmux.conf
+chmod 755 /bin/mail
+chmod +x /opt/zeek/entrypoint.sh
+chmod 700 /home/hidetomo/.ssh
+chmod +x /usr/local/bin/oc
+chmod +x /tmp/install.sh
+chmod +x /tmp/kubedog
+chmod +x /etc/service/enigma-bbs/run
+chmod 644 /usr/share/jenkins/slave.jar
+chmod +x main.sh
+chmod -R +x /opt/tools/
+chmod +x /wechat-index /wechat-db
+chmod +x configure
+chmod 700 /root/.ssh/
+chmod a+x /entrypoint.sh
+chmod +x /usr/bin/jellyfin_start.sh
+chmod -R 0777 /var/www/site/application/cache
+chmod a+w $HOME/.cargo
+chmod +x /cartography/docker-entrypoint.sh
+chmod +x php-snif
+chmod +x /memgator
+chmod 755 /usr/local/sbin/entrypoint.sh
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/agentstore/stop-agentstore.sh
+chmod a+x /usr/local/tomcat/bin/*.sh
+chmod a+x /usr/local/sbin/kcptunConsole /usr/local/sbin/shadowsocks2Console
+chmod -R g=u /etc/certs
+chmod +x /etc/nginx/start.sh
+chmod 755 -R /home/centos/scripts
+chmod +x /confd
+chmod +x ./starter.sh
+chmod 600 /etc/slurm/slurmdbd.conf
+chmod +xr /u01/oracle/*.sh
+chmod 755 /bootstrap/start.sh
+chmod +x /bin/start-consul.sh
+chmod +x /etc/init.d/celery*
+chmod +x /var/init_laravel_1stinstall_framework7.sh
+chmod -R 0775 "/var/lib/mongodb-mms-automation/downloads"
+chmod 777 /usr/local/scratch/workflow/id_repository
+chmod +x /home/idol/docker-entrypoint.sh
+chmod 755 /opt/zato/zato_start_server               /opt/zato/zato_from_config_create_server
+chmod 777 /usr/local/tomcat/webapps/simflofy-admin.war
+chmod +x /root/dockerEntry.sh
+chmod +x sd-step
+chmod 777 /usr/local/bin/infinityTerm
+chmod -R a+w /dev/stderr
+chmod 755 /opt/airprint/airprint-generate.py
+chmod 775 /usr/local/bin/lorean_singularity
+chmod +x ./celery-worker-entrypoint.sh
+chmod 777 /var/cache/myami/redux/
+chmod 755 /etc/cron.hourly/*
+chmod -R 777 .local
+chmod 644 /opt/dist/etc/nginx/cert.crt
+chmod +x stern_linux_amd64
+chmod -R 2775 /qbittorrent /Downloads
+chmod 755 /var/cache/salt /var/cache/salt/master /var/cache/salt/master/jobs /var/run/salt /var/run/salt/master  /etc/salt/master.d
+chmod +x /usr/bin/megalinter_exec
+chmod -Rv 700 /var/cache/apt/archives/partial/
+chmod +x /bin/pagespeed_exporter
+chmod 755 ${WILDFLY_HOME}/bin/run-wildfly
+chmod -R g+rwX /v2ray
+chmod -R 777 /usr/
+chmod +x /src/docker_entrypoint.sh
+chmod +x /giddyup
+chmod 755 ./Miniconda3-latest-Linux-x86_64.sh
+chmod 777 -R /var/www/html/bootstrap/cache
+chmod +x /usr/local/bin/kind
+chmod +x /usr/local/bin/drupal ;fi
+chmod +x /scripts/runsync.sh
+chmod +x /bin/genpass
+chmod 755 $INSTALL_DIR/install/$FIXUP_PREQ_FILE
+chmod -R 777 /tmp
+chmod 774 /opt/HewlettPackardEnterprise/EductionSDK_11.4.0/bin/stop-eductionserver.sh
+chmod 700 /sbin/init-systemd.sh
+chmod 755 /wait-for
+chmod -R 700            "${CONF_HOME}"
+chmod 777 /blacklists
+chmod 755 /home/kusanagi
+chmod 644 /tmp/index.html
+chmod -R 777 /var/www/html/ojs/cache
+chmod 0755 /var/run/sshd
+chmod +x /app/pact-stub-server
+chmod +x /usr/local/bin/docker-entrypoint.sh /usr/local/bin/get-ssl.py
+chmod +x /usr/local/bin/ntripcaster/sbin/ntripdaemon
+chmod +x /usr/local/bin/gen*
+chmod 755 -R /var/www/public
+chmod a+x install-ubuntu.sh
+chmod +x /root/bin/usearch
+chmod +x $CLIENT_PATH/perl/*.*
+chmod +x /usr/bin/*
+chmod a+x /home/jellyfin/jellyfin-tizen/expect.sh
+chmod +x /bin/confd
+chmod 777 /cvmfs-cache  /cvmfs
+chmod 755 /usr/bin/"$INITSH"
+chmod 755 /usr/wd/urgency_predictor/daemon.sh /usr/wd/urgency_predictor/entry.sh
+chmod +x /usr/local/bin/stern
+chmod +x HiddenEye.py
+chmod +x sshrc
+chmod -R 777 ./
+chmod 554 /usr/local/bin/setup.sh
+chmod +x /usr/bin/ldti-start.sh
+chmod 755 /usr/local/bin/cron-foreground
+chmod -R a+rwx /usr/local/go/pkg
+chmod -R 777 /home/rustnode
+chmod +x /usr/bin/systemctl
+chmod 700 /vol/runscript.sh
+chmod +x ${start_scripts_path}/01_user_config.sh
+chmod +x ${PACKAGE_DIR}/FastQC-0.11.8/fastqc
+chmod -R 777 /var/www/config/
+chmod -R a+xwr $CUSTOM_DOMAIN_HOME
+chmod -R 771 html
+chmod a+x /bin/*
+chmod +x /opt/VFB/robot
+chmod ug+r,o-rwx "${HOME}"/config/*.json
+chmod 777 /app/target/hana-release.jar
+chmod -R 777 "$GOPATH";
+chmod +x /opt/nagiosgraph/etc/fix-nagiosgraph-multiple-selection.sh
+chmod +x /usr/bin/goctl
+chmod 700 /home/arm/shadow-service.zip
+chmod -R g+rw /var/run     || true
+chmod -R u+x /ambassador
+chmod a+x app
+chmod +x /tmp/bin/*
+chmod +x /usr/bin/xmrig
+chmod +x /usr/local/bin/phantomjs
+chmod 755 $SCRIPT_DIR/*.sh
+chmod +x /usr/local/bin/dind /usr/local/bin/docker-compose
+chmod +x BookStack
+chmod 755 /root/bashrc
+chmod +x /usr/sbin/wait-for-it.sh
+chmod -R 4777 ~/.config/qBittorrent
+chmod 775 /entrypoint.sh
+chmod 775 /opt/entrypoint.sh
+chmod 644 /consul/config.json
+chmod 700 /root/bin/new_client.sh
+chmod +x /usr/local/bin/phpstan
+chmod +x /usr/sbin/run.sh
+chmod -R a+rwx /.aws
+chmod +x /bin/phpenv
+chmod +x /tmp/install-crossover.bin
+chmod +x –R ./../BacPipe/
+chmod a+x /spark_env.sh
+chmod 700 /usr/local/bin/start-sabnzbd.sh
+chmod 700 ~/gameboy/cli/cli
+chmod +x /runsync.sh
+chmod +x bin/*.py
+chmod -R 777 ${ANDROID_INSTALL_LOCATION}
+chmod 777 /work
+chmod 755 /liquibase
+chmod 400 data/query*
+chmod -R 777 /logs
+chmod 777 ~/.kube/config
+chmod 550 -R /usr/local/bin/syncthing /usr/local/bin/entrypoint.sh
+chmod +x /var/init_laravellumen.sh
+chmod +x /etc/ssh/runscript.sh
+chmod 755 entrypoint.sh
+chmod a+x vault
+chmod +x /composer.sh
+chmod 500 /entrypoint.sh
+chmod -R a+w /dev/stdout
+chmod 775 /usr/sbin/nagios
+chmod -R 777 /var/www/html/cache
+chmod -R g=u /etc/passwd /run /var/lock/apache2 /var/log/apache2 /var/www/html
+chmod -R +x /app/laravel-docker/.docker-rootless/s6
+chmod 0640 /etc/odoo/odoo.conf
+chmod 777 /usr/local/bin/entrypoint.sh
+chmod 0775 /journal
+chmod 755 /endpoint.sh
+chmod -R 777 /var/www/html/config/jwt
+chmod 600 /root/.ssh/authorized_keys
+chmod uga+x /usr/local/bin/install-php-extensions
+chmod a+x ./bin/rtlamr*
+chmod +x /usr/local/bin/ghbackup.sh
+chmod u+s /usr/lib/i386-linux-gnu/libdlfaker.so
+chmod +x /tmp/cf
+chmod +x /usr/local/bin/startup /usr/local/bin/setup ;      chown ${UID}:${GID} -R /etc/supervisor.d /postfixadmin
+chmod +x /usr/bin/kcpraw_client_linux_amd64_pprof
+chmod a+x /dmx-node-entry.sh
+chmod -R 755 /home/biodocker/bin/ssaha2/*
+chmod +x ./letsencrypt_renew.sh
+chmod 777 /var/www/html/uploads
+chmod -R 777 /home/node
+chmod +x /opt/rclone
+chmod -R 777 /var/www/html/.composer
+chmod +xr /u01/oracle/startSample.sh
+chmod 600 .ssh/authorized_keys
+chmod 755 /scripts/wpt_cron_call.sh
+chmod a+rx /usr/local/bin/start.sh
+chmod 777 /home/steam/user.sh
+chmod 755 /usr/local/bin/ena-dl
+chmod 777 -R /data
+chmod -R 777 /etc/update-motd.d/
+chmod -R 777 scripts/ ##
+chmod +x /usr/bin/xdg-icon-resource
+chmod 777 cmake-3.13.3-Linux-x86_64.sh
+chmod 600 /tmp/simba_odbc.zip
+chmod +x po-lint
+chmod 700 /.gnupg
+chmod go-w /usr/share/${ELASTIC_PRODUCT}/${ELASTIC_PRODUCT}.yml
+chmod +x /run_v2ray.sh /run_caddy.sh
+chmod o+x /var/lib/nginx
+chmod +x /go/src/github.com/malice-plugins/bitdefender/bd_fix.sh
+chmod +x /dotdotpwn/run.sh
+chmod 755 -R /srv/shiny-server
+chmod +x /setup.sh
+chmod -R 771 html/plugins
+chmod +x /usr/local/bin/gcsproxy
+chmod +x vols2hdf5.py train.py train_on_hdf5.py
+chmod g+w ${HOME}
+chmod +x /usr/sbin/wait-for-it.sh ADD package.json package-lock.json /
+chmod -R ug+rwX,o-rwx "$path"
+chmod +x /usr/local/bin/s3curl.pl
+chmod 700 /vol/hadoop-env.sh
+chmod -R 644 /etc/cron.d
+chmod 755 /etc/supervisord.conf
+chmod 755 /OLAINDEX/storage
+chmod 755 /var/www/Praktomat/src/checker/compiler/Builder.py
+chmod a+x /usr/local/bin/chaos
+chmod +x /startapp.sh
+chmod +x /usr/bin/gotty
+chmod 0600 /home/git/.ssh/authorized_keys
+chmod +x /opt/TheFatRat/fatrat
+chmod 775 -R $USR_LOCAL
+chmod -R 777 /app
+chmod 644 /root/.ssh/authorized_keys /root/.ssh/id_rsa.pub
+chmod +x /usr/local/bin/startup.sh
+chmod 755 /etc/services.d/php_fpm/run
+chmod go+rwx -R /home/qbittorrent /Downloads
+chmod +x /entrypoint.sh /usr/local/bin/checkstyle
+chmod -R ug+rwX /usr/share/elasticsearch
+chmod +x argo-linux-amd64
+chmod +x /usr/bin/kong_install_consumer_with_api
+chmod 777 cache
+chmod +x /bin/chromedriver
+chmod 0755 /usr/local/bin/update_config.py
+chmod +x /usr/bin/docker/configure
+chmod +x /root/bash/run.sh
+chmod a+x /usr/local/sbin/docker-entrypoint.sh
+chmod 774 /opt/HewlettPackardEnterprise/EductionSDK_11.4.0/bin/start-eductionserver.sh
+chmod 755 /opt/ossutil64
+chmod +x /nomad
+chmod -R g+rws /svn
+chmod 4755 /usr/bin/mysecureshell
+chmod 755 /usr/share/powershell/pwsh
+chmod -R 777 /scripts
+chmod 0644 /etc/cron.d/sentinel
+chmod 755 /usr/bin/nextflow
+chmod +x /app/usr/sbin/run.sh
+chmod 0755 /usr/local/bin/chromedriver
+chmod a+x /data/*.sh
+chmod 777 /usr/local/lib/mecab/dic
+chmod 755 /usr/bin/wkhtmltopdf
+chmod 777 entrypoint.sh
+chmod +x /usr/local/bin/bosh
+chmod +x /usr/local/bin/uaa
+chmod +s /usr/local/bin/rtl_*
+chmod -R 777 /tmp/npm-cache
+chmod 777 /var/www/html/wp-content/uploads
+chmod 0755 $LEIN_INSTALL/lein
+chmod 755 /opt/scripts/apache2_test.sh
+chmod -R 777 /var/www/user
+chmod +x /var/init_laravel_cleartemplate.sh
+chmod +x /usr/local/sbin/simple-container-benchmarks-init
+chmod a+x /usr/local/sbin/kcptunConsole /usr/local/sbin/shadowsocksConsole
+chmod +rx /bin/circle-android
+chmod 666 /var/log/service-runner.log
+chmod 644 /etc/mysql/my.cnf
+chmod +x /etc/service/nginx/run
+chmod -R 755 /app/*
+chmod +x /tmp/linux-install-1.10.3.1029.sh
+chmod +x skaffold-linux-amd64
+chmod +x phantomjs
+chmod +x docker-entrypoint
+chmod +x /tmp/patch_release.sh
+chmod +x /usr/bin/bash-exec
+chmod +x pywhois/setup.py
+chmod -R a+rwx $WORKSPACE_HOME
+chmod +x /run.sh /caddy/caddy
+chmod 755 /entrypoint.sh
+chmod +x /usr/bin/cpanm
+chmod +x ./strapi.sh
+chmod 2777 -R /qbittorrent /Downloads /Downloads/temp /qbittorrent/.config/qBittorrent
+chmod +x /usr/local/bin/start-sabnzbd.sh
+chmod 444 /etc/pki/tls/certs/novnc.pem
+chmod +x cachetool.phar
+chmod 777 /usr/share/nginx/html
+chmod a+x /main.sh
+chmod -R a+rx /opt/AdGuardHome/config
+chmod +x /opt/sdkman-install.sh
+chmod +x /root/version
+chmod -R u=rwx,go-rwx ${JIRA_HOME}
+chmod 644 install_sdk.sh
+chmod +x tbl2asn
+chmod +x /usr/bin/vpn-open
+chmod u+x /bin/slack-counter
+chmod 777 /tmp
+chmod +x /usr/local/bin/bazel
+chmod +x /opt/resource/days_left.sh
+chmod -R 755 $SPAGO_DIR
+chmod --verbose -R 2777 /downloads /downloads/temp
+chmod 777 /var/run/gammu-deb
+chmod +x launch
+chmod +x /usr/local/bin/regenpasswd.sh
+chmod 777 /opt/DVBLink/
+chmod a+x /bin/upx
+chmod 700 /home/www-data
+chmod -R 777 /var/www/html/public
+chmod +x /app/hiking-api.jar
+chmod -R g=u /etc/gluu
+chmod +x /usr/local/bin/livezilla-*
+chmod 777 ./assets/temp
+chmod +x /usr/bin/minio
+chmod 775 /etc/init.d/monit
+chmod +x /authhook.sh
+chmod 755 /bin/entrypoint.sh
+chmod 755 /usr/local/bin/openfoam.sh
+chmod 666 $SCRIPT_DIR/*.rsp
+chmod -R g+w /dokuwiki/
+chmod 777 /python37/bin/deactivate
+chmod +x /opt/entrypoint-demoter
+chmod u+x /tmp/xc8-installer
+chmod 755 "$INSTALL_SCRIPTS"/*.sh
+chmod +x /scripts/wait.sh
+chmod u+s /usr/bin/ping
+chmod 774 /opt/HewlettPackardEnterprise/Find/stop-find.sh
+chmod -R 777 /var/www/html/clustercontrol/app/tmp
+chmod +x /usr/local/sbin/simple-container-benchmarks
+chmod +x /app/entrypoint.sh   /app/wait-for-postgres.sh
+chmod +x /nginxLogRotate.sh
+chmod +x /tmp/curl-http3.sh; /tmp/curl-http3.sh;
+chmod -R 777 /.config
+chmod +x /opt/GeoLite2xtables/xt_build.sh /opt/GeoLite2xtables/download_geolite2.sh
+chmod 700 /root/bastion/
+chmod +x /usr/local/bin/gocron;     adduser -S gocron
+chmod +x /usr/bin/kong_add_jwt_and_acl_plugins
+chmod a+x /usr/local/bin/start.sh
+chmod +x kagbeta-linux32-dedicated/dedicatedserver.sh
+chmod -R 777  /migrations
+chmod +x /work/google-cloud-sdk/platform/google_appengine/goapp
+chmod +x /init.sh /setip.py /httpserver.sh
+chmod a+x entrypoint.sh
+chmod +x calibrino
+chmod +x /opt/tini
+chmod 0600 /home/jenkins/.ssh/config
+chmod +x /etc/hitronReboot/hitronReboot.sh
+chmod -R 4777 /Downloads
+chmod +x /usr/bin/startup_container
+chmod 0755 $BOOT_INSTALL/boot
+chmod +x dedicatedserver.sh
+chmod +x /usr/local/bin/gopass
+chmod 755 /usr/local/bin/init_all
+chmod +x vault
+chmod ugo+rwx /bin/composer
+chmod 777 run.sh
+chmod -R 700 /opt/webkubectl
+chmod +x /usr/local/bin/myscript.sh
+chmod +x /vpncheck.sh /entrypoint.sh
+chmod u+x /usr/local/bin/docker-entrypoint.sh
+chmod a+x *Console
+chmod 0600 /etc/crontabs/$PUSER
+chmod 755 /BacPipe/SPAdes-3.13.0-Linux/bin/*
+chmod +x ./create-self-signed-certs.sh
+chmod +x /home/biodocker/bin/spectra-cluster-cli
+chmod +x linux-install-1.10.0.442.sh
+chmod -R 777 /tmp/yarn-cache
+chmod +x /root/init.sh
+chmod 0777 /usr/local/bin/entrypoint.sh
+chmod +x ./boot.sh
+chmod 644 /etc/openssh/sshd_config
+chmod -R g=u /usr/share/${ELASTIC_PRODUCT}
+chmod 777 /usr/bin/nginx-entrypoint.sh
+chmod -R 4777 ~/
+chmod 644 ${COMPOSER_HOME}/config.json
+chmod 777 /data
+chmod -R 2777 /opt/Radarr
+chmod 755 /opt/scripts/output_test.sh
+chmod +x /usr/local/bin/cpm
+chmod +x /usr/sbin/wait-for-it.sh      echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
+chmod +x calicoctl
+chmod -R 755 /opt/unity/editors/$version/Editor/Data/PlaybackEngines
+chmod +x /opt/elastalert/run.sh
+chmod -R 770 ${VOLUME_DIR}
+chmod 0777 -R results
+chmod 755 /usr/bin/push
+chmod 775 /var/www/ -R
+chmod +x /usr/local/bin/launch-blackfire
+chmod +x /apollo-portal/scripts/startup.sh
+chmod +x /u01/oracle/jolt_runme.sh
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocks2Console     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole     /usr/local/sbin/shadowsocksLibevConsole
+chmod +x /usr/local/bin/kontemplate
+chmod -R 755 $GOPATH
+chmod 755 /var/www/Praktomat/src/settings/local.py
+chmod 777 /cvmfs-cache
+chmod +x /home/single-dl.sh
+chmod +x /opt/eosio/nodeosd.sh
+chmod 777 /usr/local/bin/shell.sh
+chmod 755 $DEPLOYER_HOME/bin/aws-ssm-env
+chmod 755 /etc/services.d/queue/run
+chmod 755 ./cert
+chmod +x /run/entrypoint.sh
+chmod +x /bin/devspace
+chmod +x configure.sh
+chmod +x /home/biodocker/bin/SearchGUI
+chmod +x /etc/warp/entrypoint.d/qwantify.sh
+chmod -R 775 /exec
+chmod 755 /root/bastion/servers.conf
+chmod 0664 /var/www/sites/default/settings.php
+chmod ug+rwx $PATCH_INSTALL_DIR
+chmod 777 /var/www/html/web/assets
+chmod +x /crunchy.sh
+chmod -R 755 bin
+chmod +x /usr/local/bin/docker-healthcheck
+chmod -R 2777 /qbittorrent /Downloads /Downloads/temp
+chmod +x /usr/local/bin/jet
+chmod u+x /usr/local/bin/composer
+chmod 777 /root/.local/bin
+chmod -R 777 /var/log/nginx /var/cache/nginx /var/run
+chmod 777 /workspace
+chmod +x /usr/local/bin/cert-check; chmod +x /tmp/curl-http3.sh; /tmp/curl-http3.sh; chmod +x /tmp/lsquic.sh; /tmp/lsquic.sh; go get -u github.com/cloudflare/cfssl/cmd/cfssl-certinfo; ln -s /go/bin/cfssl-certinfo /usr/local/bin/certinfo; go get -u github.com/cloudflare/cfssl/cmd/cfssl-scan; ln -s /go/bin/cfssl-scan /usr/local/bin/certscan
+chmod +x htbenum.sh
+chmod -R 700            "${CONF_INSTALL}/temp"
+chmod +x /sbin/dumb-init
+chmod +x phpunit-7.0.2.phar
+chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
+chmod +x /usr/bin/vault
+chmod +x /usr/local/bin/chdman
+chmod +x /usr/bin/jq
+chmod +x /test.sh
+chmod +x /usr/local/bin/xdebug
+chmod +x imapsync oauth2.py
+chmod a+x /run.sh /utils/*
+chmod +x sd-cmd
+chmod +x /opt/glpi-start.sh
+chmod u+x bin/magento
+chmod 700 /home/appionuser/.vnc/xstartup
+chmod u+x /usr/local/bin/oz-start
+chmod 0755 /usr/local/bin/exa
+chmod u+x /opt/supervisor/mysql_supervisor /opt/supervisor/icinga2_supervisor /opt/supervisor/apache2_supervisor /opt/run
+chmod 777 /opt/apache-tomcat-8.5.11/bin/catalina.sh
+chmod +x qt-opensource-linux-x64-5.12.6.run
+chmod +x start_bitcoind.sh
+chmod +x /usr/bin/terraform_${VERSION}
+chmod 700 /root/.ssh
+chmod 777 easybotsvc
+chmod -R /etc /usr
+chmod +x /xteve/xteve
+chmod +x /usr/bin/mcrcon
+chmod +x bucket_finder.rb
+chmod 770 su-exec
+chmod 0600 /etc/vncskel/.vnc/passwd
+chmod +x /usr/src/ebitools/*.*
+chmod +x ./kafka-topic-workers.sh
+chmod +x /app/*
+chmod +x Launch_custom.sh
+chmod +x /usr/local/bin/cpanm
+chmod a+x ./fedml/edge-client-server.sh
+chmod --recursive g+w /var/log/apache2 /var/run/apache2
+chmod  777 -R /app-data
+chmod -R 777 /opt/lidarr /start.sh
+chmod 1777 /certs /certs/client
+chmod 755 /*.sh
+chmod +x /cmd.shset -x
+chmod -R 755 "${GOPATH}"
+chmod 777 "$GEM_HOME"
+chmod +x /snap/bin/snapcraft
+chmod -R g=u /home/theia
+chmod +x /app/configure_wapt.sh
+chmod +x /opt/gearman/bin/*
+chmod +x /generate_ssl_certificate.sh
+chmod 0666 /etc/php/5.6/cli/php.ini
+chmod +x /powerdns-admin/docker/PowerDNS-Admin/entrypoint.sh
+chmod -R 777 /vault
+chmod +x /usr/local/bin/goofys
+chmod +x /dehydrated/hooks/dehydrated.default.sh
+chmod +x /init /index
+chmod +x /usr/local/bin/wp
+chmod +x /home/weechat/start.sh
+chmod -R 644 /opt/openethereumpool
+chmod +x /usr/bin/bazel
+chmod a+x /usr/local/sbin/kcptunConsole /usr/local/sbin/shadowsocksConsole /usr/local/sbin/shadowsocks2Console
+chmod 755 /etc/init.d/squid3
+chmod a+x /usr/bin/run-lnmpa
+chmod +r /var/lib/nginx
+chmod +x /check.sh
+chmod 4777 /dist/.
+chmod 777 /run.sh
+chmod +x /usr/bin/kong_update_or_add_cert_where_any_snis_match
+chmod 700 /vol/sudoers.txt
+chmod 0644 /usr/share/ant/lib/xsddoc.jar
+chmod -R 4777 /qbittorrent/.config
+chmod a+x /opt/scripts/*
+chmod +x /var/interlegis/capacita/start.sh
+chmod a+rw /home/graf/configuration
+chmod -R 777 /home/snmpsim
+chmod +x TorrServer
+chmod +x /usr/local/bin/ams
+chmod +x /usr/local/bin/run.sh /etc/periodic/15min/selfoss /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
+chmod 640  /etc/default/nginx
+chmod g=u /var/run/nginx.pid
+chmod +x ProfitTrailer.jar
+chmod +x /usr/local/bin/gitlab-ci-lint
+chmod u+x /entry.sh
+chmod -R a+rw ${INSTALL_DIR}
+chmod 600 ~/.vnc/passwd
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/licenseserver/start-licenseserver.sh
+chmod +x /usr/local/bin/etcdctl
+chmod +x /root/start-cups.sh
+chmod 644 /usr/local/etc/php/php.ini-*
+chmod +x /portainer 	chmod +x /iptables.sh
+chmod +x /app/*.py
+chmod +x /usr/local/sbin/simple-container-benchmarks.sh
+chmod 0750 /build
+chmod +x "$SUPERCRONIC"
+chmod +x /opt/kubeconfig-app/kubectl
+chmod 755 /run_tests.sh
+chmod +x /openvas-check-setup
+chmod a+x "$JLS_PATH/bin/license-server.sh"
+chmod 755 /usr/local/bin/redis-server-foregroud
+chmod +x /usr/bin/vpn-open & chmod +x /usr/bin/vpn-close
+chmod +x /dehydrated/dehydrated
+chmod +x fake_initctl
+chmod 775 MoCaSeq.sh
+chmod +x /usr/local/demo-app/sourceguard-cli
+chmod 777 /opt/ergatis/global_id_repository
+chmod 755 /start-web.sh
+chmod -R 0755 ${MYSQL__DIR}
+chmod -R a+rwx /mutpanning/Hg19
+chmod -R 777 /var/www/html/clustercontrol/app/upload
+chmod +x test-stack@node.sh
+chmod -R g+rwX /var/cache/nginx
+chmod 755 /opt/selenium/chromedriver
+chmod 755 /home/script/linux_cleaning.sh
+chmod +x phpunit-5.6.0.phar
+chmod 755 Praktomat/src/manage-local.py
+chmod +x /bin/tini
+chmod +x /bin/wait-for-it.sh
+chmod 755 /usr/local/bin/nhwave.sh
+chmod +x /usr/bin/install_php
+chmod a+w /opt/
+chmod 777 /.kube/config
+chmod +x /etc/nginx/generate-ssl.sh
+chmod 755 /usr/local/bin/kubectl
+chmod -R 755 /home/biodocker/bin/Aliscore
+chmod +x /opt/firstrun.sh
+chmod +x /var/www/user-interface/env.sh
+chmod -R 2775 /Downloads /home/qBittorrent/*
+chmod 550 /usr/local/bin/docker-entrypoint.sh
+chmod -R a+r $ORACLE_HOME/properties
+chmod +x  /root/start.sh
+chmod -R a+rx /channels/
+chmod +x /root/wait_for_it.sh;    tar xvf go1.15.6.linux-amd64.tar.gz ;    chown -R root:root ./go ;    mv go /usr/lib/go-1.15;    go env -w GOPROXY=https://goproxy.cn;    go get -u github.com/gopherdata/gophernotes;    cp /root/go/bin/gophernotes /usr/local/bin/ ;    mkdir -p /root/.local/share/jupyter/kernels/gophernotes ;    cd /root/.local/share/jupyter/kernels/gophernotes;    wget https://raw.githubusercontent.com/gopherdata/gophernotes/master/kernel/kernel.json ;    wget https://raw.githubusercontent.com/gopherdata/gophernotes/master/kernel/logo-32x32.png ;    wget https://raw.githubusercontent.com/gopherdata/gophernotes/master/kernel/logo-64x64.png ;    cargo install evcxr_jupyter --force;     evcxr_jupyter --install;
+chmod +x init.sh
+chmod +x sc_serv
+chmod +x /kerio-restore.sh
+chmod 750 /opt/firefox
+chmod +x composer.phar
+chmod u+x /opt/supervisor/fatalservicelistener
+chmod +x /scripts/beets_import.sh
+chmod -R 777 /var/lib/php/session
+chmod +x /root/install.sh
+chmod +x /openvpn_init.sh
+chmod +x /etc/init.d/xvfb
+chmod +x /frp/entrypoint.sh
+chmod +x /etc/my_init.d/start_nginx.sh
+chmod u+x /srv/*.sh
+chmod +x /root/${BIN_FILE}
+chmod +x /init.sh
+chmod 740 /etc/zm/zm.conf
+chmod -R 777 /.local
+chmod +x INSTALL/ubuntu.sh
+chmod 755 ./mlst.py
+chmod +x /opt/entrypoint.sh
+chmod +x fnm
+chmod +x /pg-backup/docker-entrypoint.sh
+chmod o+r /opt/oracle/product/18c/dbhomeXE/network/admin/listener.ora /opt/oracle/product/18c/dbhomeXE/network/admin/tnsnames.ora
+chmod +x /usr/local/bin/start.sh
+chmod +x /usr/bin/rcindex
+chmod a+r /usr/share/fonts/win/simsun.ttc
+chmod 777 /etc/zookeeper/conf
+chmod +x s247_setup.sh
+chmod 777 /dev/dri/renderD128
+chmod 755 /usr/local/bin/composer
+chmod 775 /var/local/nedi/html/log/
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole     /usr/local/sbin/trojanConsole     /usr/local/sbin/shadowsocksLibevConsole     /usr/local/sbin/trojanClientConsole
+chmod ug+x $INSTALL_DIR/*.sh
+chmod 755 /go/src/fmpwebserver/fmpwebserver
+chmod +x /usr/sbin/go-dnsmasq
+chmod +x /install.sh
+chmod +t /var/run/mysqld
+chmod 711 /sbin/start.sh
+chmod +x /etc/periodic/daily/daily-0
+chmod a+x /etc/dnscrypt-proxy/start.sh
+chmod a+x /root/startup.sh
+chmod a+rwx /music/ /ices_conf/ /log/
+chmod +x /kube-hunter/kube-hunter.py
+chmod +x /build.sh
+chmod +x /usr/local/bin/ctn/entrypoint.sh
+chmod +x /home/work/_src/confluence.bin
+chmod +x ${SONAR_HOME}/bin/run.sh
+chmod 755 /var/log/lighttpd
+chmod +x /app/kcp/server_linux_amd64
+chmod +x geckodriver
+chmod 755 /ping_script.sh /entry.sh
+chmod -R 755 /scripts
+chmod +x /usr/bin/stream.sh
+chmod 755 /etc/s6/init/init-stage2
+chmod +x /tmp/trivy/trivy
+chmod 755 -R /opt/cmsysbot/
+chmod -R 755 /bin
+chmod 644 *.pub
+chmod +x /tmp/run_cmd
+chmod a+x /usr/bin/osquery*
+chmod +x roonserver-installer-linuxx64–docker.sh
+chmod a+x download_datasets.sh
+chmod 755 /opt/jboss
+chmod +x linux_amd64_yamlsort
+chmod +x kustomize
+chmod a+xr ${BASE_DIR}
+chmod -R 755 /tmp/*
+chmod -R -x ${ZIKAST_APP_PATH}/tests
+chmod 755 wigToBigWig)
+chmod +x /launch.sh
+chmod a+x /micromdm
+chmod 400 /var/run/sshd
+chmod +x /usr/src/app/docker-entrypoint.sh
+chmod -R a+rwx /var/run/apache
+chmod 777 /emg/sw/grigorieff/ctffind4/ctffind-4.1.5
+chmod 4755 /bin/ping
+chmod +x /checking/*.sh
+chmod -R 775 ${CONTAINER_DIR}
+chmod 777 /usr/local/bin/diamond
+chmod +x /microscanner
+chmod 700 /root/start_services.sh
+chmod -R 777 /opt/zookeeper/
+chmod 700 /root/bin/new_cert.sh
+chmod +x /usr/local/bin/bbr
+chmod ugo+rx /run.sh
+chmod +x /tmp/setupCron.sh
+chmod -R 777 /opt/lidarr /starts.sh
+chmod 755 -f "$YTDL_BIN"
+chmod +x /config/provision.sh
+chmod +x backup.sh
+chmod +x /opt/scripts/entrypoint.sh
+chmod +x docker-entrypoint.sh
+chmod 755 /usr/local/bin/docker-entrypoint.sh /etc/crontabs/beets /scripts/beets_import.sh
+chmod +x /k3p-server.sh
+chmod +x /app/updatessl.sh
+chmod +w /etc/apache2/apache2.conf
+chmod +x /opt/backup-loop.sh
+chmod a+x /usr/local/bin/acme_tiny.py
+chmod 755 -R /ricopili/dependencies/
+chmod -R 755 /opt/kubectl_aliases
+chmod 766 /etc/passwd
+chmod u+x /run.sh
+chmod +775 /opt/gradle
+chmod +x /usr/bin/docker
+chmod 755 /etc/s6/gitea/* /etc/s6/openssh/* /etc/s6/.s6-svscan/*
+chmod +x /opt/acestream/acestream.sh
+chmod -R u+x /opt/obp-boostrap-user
+chmod 700 ./startup/start.py
+chmod 755 /var/www/html/nconf
+chmod -R 777 /usr/etc/cups
+chmod 777 /main
+chmod a+x /home/git/repositories/*.sh
+chmod +x /opt/zookeeper/bin/
+chmod a+x /root/udp2raw_amd64
+chmod -R 4777 /qbittorrent/.config/qBittorrent
+chmod 00755 /docker-entrypoint.sh
+chmod a+x /usr/local/v2ray/entrypoint.sh
+chmod -R 755 /opt/*
+chmod +x /usr/local/bin/checksec.sh
+chmod a+x /usr/local/bin/codecept
+chmod -R 2775 \
+chmod 777 /home/work/_script/jira-init.sh
+chmod +x /root/download.sh
+chmod -R +x ${SALT_TIME_DIR}
+chmod 600 /etc/crontabs/$PUSER
+chmod a+x fsls-${FSECURE_VERSION}
+chmod +x /app/ombi/Ombi
+chmod a+x bazelisk-linux-amd64
+chmod -R 777 ./bin/activate
+chmod +x /usr/src/renew.sh
+chmod -R u+w,g+w /var/www/kivitendo-erp/users                      /var/www/kivitendo-erp/spool                      /var/www/kivitendo-erp/templates                      /var/www/kivitendo-erp/kivi_documents                      /var/www/kivitendo-erp/webdav
+chmod -R 600 /etc/ssl/certs/*
+chmod +x /usr/local/bin/languagetool
+chmod 755 .
+chmod +x /wrapper.sh
+chmod +x /usr/local/bin/run.sh /etc/s6.d/*/*
+chmod +x /serverfiles/server
+chmod 4755         /usr/libexec/netdata/plugins.d/cgroup-network         /usr/libexec/netdata/plugins.d/apps.plugin         /usr/libexec/netdata/plugins.d/debugfs.plugin
+chmod 755 /diurnal
+chmod +x /letsencrypt_webroot.sh
+chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/healthcheck.sh
+chmod 4755 /bin/busybox
+chmod -R g=u /deploy
+chmod 0775 /opt/graphite/storage /opt/graphite/storage/whisper
+chmod -R 777 /var/log/v2ray
+chmod +x $NGROK/ngrokd
+chmod +x /usr/bin/kustomize
+chmod 775 /etc/unbound
+chmod +x ./chartmuseum
+chmod +x lein
+chmod a+x /docker-entrypoint.sh
+chmod +x /tmp/prepare.sh /tmp/cleanup.sh /openttd.sh
+chmod 644 start.sh
+chmod +x /usr/local/sbin/backup.sh
+chmod +x /run.sh /opendkim.sh
+chmod 755 /root/bastion/ -R
+chmod 755 /home/biodocker/bin/comet/*.exe
+chmod -R 775 "$FX_PATH"
+chmod +x /usr/local/bin/luya
+chmod -R 777 /opt/jackett /config /start.sh
+chmod 555 $HOME/startup.sh
+chmod 755 /etc/init.d/squid
+chmod +x firebase
+chmod +x /src/texp/TeXP.sh /src/texp/TeXP_batch.sh; 	ln -s /src/texp/TeXP.sh /usr/bin/TeXP; 	ln -s /src/texp/TeXP.sh /usr/bin/TeXP.sh; 	ls -s /src/texp/TeXP_batch.sh /usr/bin/TeXP_batch;
+chmod 700 /etc/squid/ssl_cert
+chmod +x /usr/local/bin/lj-releng
+chmod -R 0666 /etc/mysql/mysql.conf.d/
+chmod +x meta-cli
+chmod 777 /.vault-token
+chmod 755 "$SCRIPT_DIR"/*.sh
+chmod +s /bin/busybox
+chmod 755 -R /ricopili/rp_dep/
+chmod -R g+w /opt/TinyTeX
+chmod +x /usr/local/bin/bicep
+chmod 775 /usr/local/bin/fastqToFa
+chmod +x deployment/octane/entrypoint.sh
+chmod +x /script.sh
+chmod -R +r /var/lib/automation/config
+chmod 755 /opt/scripts/virome_454_fasta_unassembled_run_pipeline.pl
+chmod -R 777 /premiumizer
+chmod +x /tmp/term_root.sh /tmp/term_user.sh /tmp/create_user.sh
+chmod 777 /var/run/supervisor.sock
+chmod 600 /root/.gnupg/gpg.conf
+chmod 755 /otrs.sh
+chmod -R g=u ftp/ frontend/dist/ logs/ data/ i18n/
+chmod 755 /tmp/nodejs_setup; sync
+chmod +x /usr/local/bin/phpmetrics
+chmod -R 755 /var/www/html/joomla
+chmod 664 /external_jars/.classpath.txt
+chmod +x /tmp/tests/run-test.sh
+chmod +x /usr/local/bin/start_postgresdb.sh
+chmod +x /usr/sbin/vsftpd.sh
+chmod +x /root/scripts/init.sh
+chmod +x /etc/my_init.d/torrentmonitor_init.sh
+chmod 700 /*.sh
+chmod +x findomain
+chmod -R 755 /noshdocuments
+chmod +x /u01/oracle/simpapp_runme.sh
+chmod +x /opt/sonar/sonar-scanner-3.3.0.1492-linux/bin/sonar-scanner
+chmod +x /dir.sh
+chmod +x /usr/local/bin/phpdox
+chmod 755 /opt/src/run.sh
+chmod 777 /etc/entrypoint.sh
+chmod +x /usr/local/ntripcaster/bin/casterwatch
+chmod +x /root/runpy.sh
+chmod -R 770 ${USER_PROJECTS_DIR}
+chmod +x /tmp/docker/docker
+chmod +x /usr/local/bin/packer
+chmod 2777 -R /qbittorrent-full /Downloads /Downloads/temp
+chmod 777 -R /opt/DVBLink/
+chmod -R 777 /script/*
+chmod +x /etc/v2ray/v2ray /etc/v2ray/v2ctl
+chmod u+x /usr/local/bin/start
+chmod 777 /var/www/html/cache
+chmod +x moda-app/install.sh
+chmod 0777 entrypoint.sh
+chmod +x recon-ng
+chmod +x go.sh
+chmod 0755 /usr/local/bin/bazelisk
+chmod 666 /.kube
+chmod 755 /home/fedora/run_tempest.sh
+chmod a+x /docker.sh /plex-db-sync
+chmod 644 /etc/powerdns/pdns.d/pdns.*
+chmod 750 /var/run/clamav
+chmod 777 /etc/php/7.1/apache2/conf.d/00-ioncube.ini
+chmod +x /cctvdvr/cctvdvr.sh
+chmod 0700 /tmp/goinstall.sh; /tmp/goinstall.sh
+chmod +x /usr/bin/python /usr/bin/easy_install /usr/bin/pip /usr/bin/pyinstaller /usr/bin/pyupdater
+chmod -R 777 /etc/motd
+chmod 0750 /var/lib/odoo
+chmod +x /usr/bin/thermostat_mqtt.sh
+chmod -R 755 /home/biodocker/bin/MSGFPlus/*
+chmod +x /usr/local/bin/hap-ibd
+chmod +x delete_cache.sh
+chmod 755 /usr/share/jenkins
+chmod -R 640 /opt
+chmod +x ioxclient_1.8.1.0_linux_amd64/ioxclient
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/content/stop-content.sh
+chmod 0777 /etc/kaspersky/license.key
+chmod -R 700 $DECRED_HOME
+chmod 644 /usr/local/bin/s3-sync.sh
+chmod 755 -R /var/www
+chmod -R 777 /cache /lock
+chmod +x ./scripts/*.sh
+chmod 755 /usr/bin/reduxd
+chmod a+x php-cs-fixer
+chmod 755 /powerdns-admin/entrypoint.sh
+chmod a+x ${KAFKA_HOME}/bin/zookeeper-server-start.sh
+chmod +x /usr/local/start.sh
+chmod 755 /etc/cron.monthly/*
+chmod 755 /filebot /config /data/music /log /scripts
+chmod +x /apache-jmeter/bin/PluginsManagerCMD.sh
+chmod +x $NGROK/start.sh
+chmod a+x /icy/run.sh
+chmod 700 /run.sh
+chmod +x /opt/IPGeoLocation/ipgeolocation.py
+chmod 777 /usr/local/scratch/workflow/scripts
+chmod +x /opt/glpi.sh
+chmod a+x /usr/local/bin/eclipse
+chmod +x /installation/start.sh
+chmod +x dotnet-install.sh
+chmod +x /build/prepare-system.sh
+chmod a+rwX /var/run/mysqld
+chmod 0755 /usr/local/bin/start-tor.sh
+chmod -R 2775 /Downloads /home/qBittorrent/
+chmod +x /opt/opencanary/scripts/startcanary.sh
+chmod +x /usr/bin/hyperctl
+chmod +x wxmp
+chmod a+x /usr/local/bin/phpunit
+chmod +x /home/biodocker/bin/PeptideShaker
+chmod -R g+rwX /var/run
+chmod 0750 /usr/share/${ELASTIC_PRODUCT}/${ELASTIC_PRODUCT}
+chmod +x /usr/bin/3proxy
+chmod a+rx /rsyncd.sh
+chmod +x /opt/DF-Nagios-Plugins/check_sql/check_sql
+chmod +x /usr/local/bin/plum
+chmod 755 "${CKAN_CONFIG}" -R
+chmod u+x /bin/slack-count
+chmod +x /usr/bin/confd
+chmod +x /app/moni
+chmod a+x ${KEYCLOAK_HOME}/bin/standalone.sh
+chmod +x /usr/bin/3proxy.cfg
+chmod +x /data/leanote/bin/run.sh
+chmod 700 /vol/xml/core-site.xml
+chmod a+x /run.sh
+chmod +x *.py
+chmod 755 $HOME/.ssh
+chmod +x /etc/periodic/hourly/hourly
+chmod +x /app/fip-controller
+chmod 600 .ssh/id_rsa
+chmod u+x /usr/local/bin/*.sh
+chmod +x $PROJECT_DIR/start.sh
+chmod a+x /opt/bazelisk/bazelisk-linux-amd64
+chmod -R u+rwx /usr/local
+chmod a+x nodesource_setup.sh
+chmod 777 /opt/kimai/var/logs
+chmod +x  ~/multi_robot_SLAM_separators/ros_ws/src/multi_robot_separators/scripts/find_separators.py
+chmod +x start.sh
+chmod -R ug+rw storage
+chmod a+x /auto-start.sh
+chmod u+s ${NAGIOS_HOME}/libexec/check_icmp
+chmod +x /usr/local/bin/start-couchpotato.sh /usr/local/bin/healthcheck.sh
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/category/start-category.sh
+chmod +x /tmp/geckodriver
+chmod +x /root/run.sh
+chmod +x $INSTALL_PATH/MCMA2_Linux_x86_64
+chmod -R 777 /root/myrast/
+chmod 0 /etc/cron.d/dovecot-purge.disabled
+chmod +x /wait-for-it.sh
+chmod 755 /opt/resource/check
+chmod +x /app/kcp/client_linux_amd64
+chmod 755 /datahub-frontend
+chmod 777 /.cache
+chmod ugo-x $APP_DIR/bin/*;     chmod +x $APP_DIR/bin/app.pl;     mkdir -p $APP_DIR/log $APP_DIR/tmp;     addgroup -S mydocker;     adduser -S -g mydocker mydocker ;     rm -f $APP_DIR/log/* $APP_DIR/tmp/*;
+chmod 600 /root/.ssh/id_rsa
+chmod 666 /var/log/emoncms.log
+chmod +x /healthcheck
+chmod -R 755 $STACK_DIR
+chmod a+x ./brook
+chmod +x /bootstrap/start.sh
+chmod +x microsocks
+chmod a+rx /start_agh.sh
+chmod 777 /Main/MutantHuntWGS/Code/MutantHuntWGS.sh
+chmod  777 -R  /k8s_production_mon
+chmod 600 -R /root
+chmod a+w /dev/pts/0
+chmod 755 /sbin/apt-install
+chmod -R 771 html/cache
+chmod +x /speedtest-cli
+chmod +x /var/lib/hexo/deploy.sh /entrypoint.sh /nginxLogRotate.sh
+chmod -R a+xwr $DOMAIN_ROOT/..
+chmod +x docker-compose-Linux-x86_64
+chmod +x sambamba-0.6.8-linux-static
+chmod +x ${CONFLUENCE_INSTALL}/startup.sh
+chmod 755 /usr/local/bin/gomplate
+chmod +x $APP_DIR/bin/*.pl;     mkdir -p $APP_DIR/log $APP_DIR/tmp;     addgroup -S mydocker;     adduser -S -g mydocker mydocker ;     rm -f $APP_DIR/log/* $APP_DIR/tmp/*;
+chmod 0755 /usr/local/bin/certbot-auto
+chmod +x ./static/py/topic_model.py
+chmod +x /usr/local/sbin/simple-container-benchmarks-init.sh
+chmod 755 /root/bastion/ -r
+chmod +x /usr/bin/mycrypt
+chmod +x docker/startup-script.sh
+chmod +x run_endpoint.sh
+chmod a+x /home/jellyfin/web-cli_Tizen_Studio_4.6_ubuntu-64.bin
+chmod +x /usr/sbin/policy-rc.d
+chmod +x /cmd.sh
+chmod 0755 centos_python.sh
+chmod a+x boot.sh
+chmod 700 monit-config/monitrc
+chmod a+x ./cmake-$version-Linux-x86_64.sh
+chmod 0644 /etc/cron.d/magento2-cron
+chmod 755 /usr/local/bin/init_genpipes
+chmod g+wx /usr/lib/R/site-library
+chmod +x /usr/local/bin/wkhtmltopdf
+chmod -R 755 /home/biodocker/bin/TranscriptClean-${ZIP:1}/*
+chmod -R 0775 /home/qbittorrent/.config/ /home/qbittorrent/.local/ /home/qbittorrent/Downloads/ /home/qbittorrent/Downloads-temp/
+chmod -R 777 /etc/cloud-print-connector COPY cloud-print-connector.sh /etc/init.d/cloud-print-connector
+chmod 755 /sbin/start.sh
+chmod +x /usr/bin/chromedriver-compatibility-matrix.php
+chmod +x /usr/local/bin/summon
+chmod +x /start.sh
+chmod -v +x /usr/local/bin/start-tor-router
+chmod 775 /etc/db_init.sh
+chmod 7777 -R /entrypoint.sh
+chmod +x bin/hcfg
+chmod -R 777 /var/www/html/ojs/public
+chmod ug+x $ORACLE_BASE/scripts/extensions/startup/*.sh
+chmod +x /etc/periodic/daily/backup.sh
+chmod -R g=u /var/opt/mssql /etc/passwd
+chmod a+x ktlint
+chmod +x artisan
+chmod +x /usr/local/bin/phpmd
+chmod u+s /usr/lib32/libdlfaker.so
+chmod 755 ${HOME}/.vnc/xstartup
+chmod +x /usr/sbin/keygen /usr/sbin/signzone
+chmod a+x ./install.sh
+chmod 777 /home
+chmod +x /usr/bin/iptables.sh
+chmod +x /usr/bin/health_check.sh
+chmod -v +x /script.sh
+chmod 0644 /etc/cron.d/hitronreboot
+chmod +x /usr/bin/update-domains.sh
+chmod 755 /sbin/starter.sh
+chmod +x /usr/bin/kong_delete_all_certs
+chmod +x /torrserver/TorrServer
+chmod 755 /opt/exec-python
+chmod 755 /mnt/scheduler/bin/run_scheduler
+chmod +x /klipper/install-ubuntu-18.04.sh
+chmod a+x *.sh
+chmod 775 /opt/audit/entrypoint.sh
+chmod 755 /srv/run.sh
+chmod -R 755 $CLIENT_PATH/*
+chmod +x /neubiaswg5-utilities/bin/*
+chmod -R 700 /bin/start.sh
+chmod 777 /var/www/html/uploadfiles
+chmod 755 /etc/default
+chmod -R a+rwx /home/patchwork
+chmod 700 ${CONFLUENCE_INSTALL}/bin/bootstrap.sh
+chmod a+x /opt/ibm/docker/docker-server
+chmod -R 700            "${JIRA_INSTALL}/work"
+chmod -R a+rw ${PHP_LOG_DIR}
+chmod +xr /u01/oracle/jms-wlst-online-config.sh
+chmod +x /u01/oracle/init.sh
+chmod +x /usr/sbin/gosu
+chmod +x phpmd.phar
+chmod +x /usr/local/bin/entrypoint
+chmod +x /usr/local/bin/removemail.sh
+chmod u+s /usr/sbin/useradd
+chmod +x /usr/bin/smtpp
+chmod a+x /htpasswd-updater.sh
+chmod +x /start
+chmod a+x cmake-$CMAKE_VERSION-Linux-x86_64.sh
+chmod 600 /etc/sudoers.d/oracle
+chmod +x llvm.sh
+chmod -R g=u /usr/share/nginx/html
+chmod -R 777 $HOME
+chmod +x /opt/VFB/*.sh
+chmod +r /docker-entrypoint-initdb.d/postgis.sh
+chmod +x /opt/resource/out
+chmod +x /usr/local/bin/start-nginx.sh /usr/local/bin/healthcheck.sh
+chmod +x copyAssets.sh
+chmod +x /tini
+chmod u+x /usr/local/bin/start_iris.sh
+chmod +x amicontained-linux-amd64
+chmod -R 700                       "${CONFLUENCE_INSTALL}/temp"
+chmod 755 /opt
+chmod +x doh_capture.py
+chmod -R 755 /etc/cont-init.d
+chmod +x /usr/local/bin/kubedog
+chmod 400 /root/.ssh/config
+chmod 755 /usr/local/bin/akamai
+chmod +x microscanner
+chmod +x /usr/local/bin/gitversion
+chmod 777 /usr/bin/xvfb-chromium
+chmod +x /root/startup.sh
+chmod 2777 -R /qbittorrent/.config
+chmod o=rwx -R /home/work/_app/php7.1.9/session
+chmod a+x /root/kcps64_170120
+chmod a+x /opt/f-prot/fpscan
+chmod a+x /usr/local/bin/restic
+chmod +x  /opt/bin/* ;    chmod u+s /sbin/capsh
+chmod -R 755 /config /data/music /log /scripts
+chmod 544 /entrypoint.sh
+chmod 755 /usr/bin/$INITSH
+chmod +x /usr/local/bin/php-snif
+chmod +x /usr/src/app/run
+chmod +x wp-cli.phar
+chmod 700 /home/arm/pelion-bridge.zip
+chmod 777 /home/gta/start.sh
+chmod 666 "${CKAN_CONFIG}/theme_to_group.ini"
+chmod a+rwx /usr/local/bin/start-notebook.sh
+chmod 777 /apache-jmeter/lib/ext
+chmod +x -R /usr/share/docker-entrypoint.pre
+chmod +x skynet/skynet
+chmod gu+s /usr/sbin/cron
+chmod a+x /scripts/*
+chmod -R 777 /emg/
+chmod +x /backup.sh /restore.sh
+chmod +x /bin/run.sh
+chmod +x /tfansboot/start
+chmod +x /init-kubectl.sh
+chmod +x /usr/local/bin/docker-entrypoint
+chmod 755 /root/bin/install_bastion.sh
+chmod g+s /var/www/tmp
+chmod 777 /sw/grigorieff/ctffind3/ctffind3_mp.exe
+chmod +x ${BASE_FOLDER}/postgres_ready.py
+chmod +x scan.rb
+chmod +x /code/djangoblog/bin/docker_start.sh
+chmod ug+rwx /bin/composer
+chmod +x /usr/local/bin/np
+chmod +x ./get-node.sh
+chmod +x $DST/picard
+chmod 755 /var/www/html
+chmod a+x start.sh
+chmod 777 /usr/local/tomcat/webapps/tsearch.war
+chmod 644 /opt/dist//usr/local/lib64/libpaho-mqtt3a.so.1.3
+chmod +x /apollo-configservice/scripts/startup.sh
+chmod +x /altv/altv-server
+chmod +x /docker-entrypoint-initdb.d/script.sh
+chmod +x /scripts/rtl2mqtt.sh
+chmod +x /home/biodocker/bin/novor
+chmod +x chromedriver
+chmod 600 /opt/syzoj/config/*
+chmod 4777 -R /entrypoint.sh
+chmod -R 755 /home/biodocker/bin/DIA-Umpire/
+chmod +x /init.sh /setIP.py
+chmod +x /etc/init.d/redis
+chmod +x /usr/local/bin/sync-nextcloud.sh /usr/local/bin/healthcheck.sh
+chmod 500 /dockerentry
+chmod a+x ${SERVER_HOME}/bin/catalina.sh
+chmod +x /usr/local/bin/sdasm
+chmod +x /usr/config/entrypoint.sh
+chmod 755 /var/www
+chmod +x /src/texp/TeXP.sh /src/texp/TeXP_batch.sh; 	ln -s /src/texp/TeXP.sh /usr/bin/TeXP; 	ln -s /src/texp/TeXP.sh /usr/bin/TeXP.sh; 	ln -s /src/texp/TeXP_batch.sh /usr/bin/TeXP_batch;
+chmod +x /usr/local/bin/configure_chef.sh
+chmod +x /usr/local/bin/producer
+chmod 755 /script.sh
+chmod +x /bin/vault
+chmod 0744 /usr/local/sbin/entrypoint.sh
+chmod +x /etc/dnscrypt-proxy/start.sh
+chmod a+x mongod
+chmod 755 -R /docker/exec
+chmod +x /app/gns3-proxy.py
+chmod 0644 /etc/cron.d/diffengine-cron
+chmod 644 /etc/redis/redis.conf
+chmod +x /scripts/*.sh /scripts/*.py
+chmod 755 /var/www/Praktomat/src/checker/compiler/CBuilder.py
+chmod +x ./awscli-bundle/install
+chmod +x /opt/ecr-repo
+chmod +x /usr/bin/grpc-health-probe
+chmod +x /start-session.sh
+chmod +x caddy_install.sh
+chmod a+x /app/start.sh
+chmod 544 /install.sh
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocks2Console     /usr/local/sbin/shadowsocksRConsole
+chmod 777 /home/notebookuser/java/*.sh
+chmod 755 $INSTALL_DIR/install/*.sh
+chmod u+x /mplabx_install.bash
+chmod 0644 /etc/cron.d/simple-cron
+chmod +x /usr/bin/semaphore
+chmod +x /root/env/*.sh
+chmod 775 /usr/local/bin/createUser.sh
+chmod -R 700           "${BITBUCKET_HOME}"
+chmod +t /tmp
+chmod 777 -R /var/lib/postgres/data
+chmod +x ./validate
+chmod a+x /tmp/vmware-workstation.bundle
+chmod 777 /apache-jmeter
+chmod +x test-stack@dotnet.sh
+chmod 777 /var/www/nosh/vendor
+chmod +x /usr/bin/entrypoint.sh
+chmod +x ./netDiag/Server/boot.sh
+chmod 777 /jellyfin /media
+chmod +x /usr/app/src/run.sh
+chmod +x /usr/local/bin/loopdoor
+chmod u+s /usr/lib/libdlfaker.so
+chmod +x /browser
+chmod 777 /home/appionuser /home/appionuser/.vnc
+chmod a+w /var/www/html/sites/default ; mkdir /var/www/html/sites/default/files ; chown -R www-data:www-data /var/www/html/
+chmod u+x /opt/supervisor/nexus_supervisor
+chmod +x /apps/init_mysql.sh
+chmod 644 .ssh/known_hosts
+chmod 744 /etc/rtorrent.conf
+chmod g=u /etc/passwd
+chmod +x /usr/bin/kubebox
+chmod -R 777 /home/app/python
+chmod 644 /var/www/html/.htaccess
+chmod +x kompose-linux-amd64
+chmod +x netdata-installer.sh
+chmod o+r /etc/zm/zm.conf
+chmod +x /bin/setup.sh
+chmod -R g=u /etc/passwd /run /var/lock/apache2 /var/log/apache2
+chmod u+s /usr/bin/fping
+chmod +x /app/xteve
+chmod 0440 /etc/sudoers.d/sudo-group
+chmod -R 777 /usr/bin/cn-composer
+chmod -R a+r /usr/local/bundle
+chmod +x /backup/cql-exporter.sh
+chmod +x /usr/local/bin/bosh-init
+chmod a+rx /etc/AdGuardHome
+chmod 0600 .ssh/config
+chmod +x /usr/bin/xdg-desktop-menu
+chmod +x /bin/entrypoint
+chmod +x php-cs
+chmod +x /run.py
+chmod +xw /u01/oracle/*.py
+chmod -R 755 /home/biodocker/bin/TALON-${ZIP:1}/*
+chmod 0644 /etc/cron.d/my-cron-job
+chmod -R 777 /root/zfile/bin
+chmod +x /u01/WLS_SPB_12.2.1.4.220418/tools/spbat/generic/SPBAT/spbat.sh
+chmod 755 phpcbf.phar
+chmod +x protected/yii.bat
+chmod -R 777 /var/cache/nginx
+chmod +x /usr/local/bin/websocat
+chmod +x /usr/local/bin/mvn-entrypoint.sh
+chmod -R 777 /.cache $GOPATH
+chmod -R 755 /var/www/html
+chmod +x /usr/local/bin/busyscript
+chmod -R a+rwx $GOPATH
+chmod -R ug+rwx ${HOME}/.ansible
+chmod 755 /opt/selenium/chromedriver-$CHROME_DRIVER_VERSION
+chmod +x /build_test.sh
+chmod +x /usr/local/nscan/latest/nscan.py
+chmod +x /usr/local/bin/kubectl /usr/local/bin/aws-iam-authenticator /usr/local/bin/ecs-cli /usr/local/bin/eksctl
+chmod 0440 /etc/sudoers.d/$USER
+chmod +x /fs/tfansboot/start
+chmod u+x /opt/supervisor/mysql_supervisor /opt/supervisor/icinga2_supervisor /opt/supervisor/apache2_supervisor
+chmod +x /usr/local/bin/NFservices
+chmod +x /app/run.py
+chmod +x /docker-entrypoint.sh /usr/bin/rcron
+chmod +x docker-setup.sh
+chmod 777 /blacklist-hosts
+chmod +x xmrig
+chmod +x /usr/local/bin/php-cs-fixer
+chmod 755 deno
+chmod +x /run
+chmod +x startup.sh
+chmod 4770 /usr/sbin/fping
+chmod +x /opt/Grpc.Tools.${GRPC_CSHARP_VERSION}/tools/linux_x64/*
+chmod -R 700                       "${CONFLUENCE_HOME}"
+chmod a+x /usr/local/bin/gh-md-toc
+chmod +x /configureAndMine.sh
+chmod 555 /usr/local/bin/*
+chmod +x phantomjs-1.9.8-linux-x86_64/bin/phantomjs
+chmod 755 /bin/deno
+chmod -R 0775 "${MMS_HOME}"
+chmod +x test-os.sh
+chmod u+x FTBInstall.sh ServerStart.sh CheckEula.sh
+chmod 777 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/curl-ca-bundle.crt
+chmod +x /usr/src/app/scripts/itemIconsUpdate.sh
+chmod +x ./terraria-server/TerrariaServer.bin.x86_64
+chmod +x /usr/bin/ftppr
+chmod 777 uchime4.2.40_i86linux32
+chmod 777 -R var/  web/uploads/
+chmod 777 /var/lib/jenkins/workspace
+chmod +x install-tagger.sh
+chmod +x /usr/bin/dumb-init
+chmod +x /usr/sbin/entrypoint.sh
+chmod u+x ${CONFLUENCE_INSTALL}/bin/bootstrap.sh
+chmod -R 755 /run/php
+chmod a+x /src/redis-commander/docker/entrypoint.sh
+chmod 0777 -R work
+chmod +x /tmp/tf_build.sh
+chmod +x start_webserver.sh
+chmod a+x /etc/entrypoint.sh
+chmod 0440 /etc/sudoers.d/wheel
+chmod -R 777 /opt/selenium /opt/selenium/assets /var/run/supervisor /var/log/supervisor /etc/passwd
+chmod -R 2775 /Downloads /home/qbittorrent
+chmod 0755 /usr/local/bin/start_ipfs
+chmod +x /le.sh
+chmod 777 /usr/local/bin/setup-env-tools.sh #
+chmod 755 /usr/bin/composer
+chmod u+x /opt/run
+chmod 755 /root/*.sh
+chmod +x /opt/DF-Nagios-Plugins/check_vpn/check_vpn
+chmod +x $BINPATH/osg-rmta.sh
+chmod 0755 /usr/local/bin/diff-so-fancy
+chmod +x /usr/local/bin/protoc
+chmod -R a+w /var/www/html/itop
+chmod +x /init.py
+chmod +x /factorio/bin/x64/factorio
+chmod a+x /usr/local/bin/kubectl /usr/local/bin/dumb-init
+chmod +x mock-kms-plugin
+chmod +x photon.py
+chmod 777 ./upload_to_aws.sh
+chmod 755 /root/main.sh
+chmod -R g+rwX /mytrojan
+chmod +x /deploy.py
+chmod +x /home/admin/*.sh
+chmod +x /usr/local/bin/protoc-gen-swagger
+chmod +x $DST/fastqc
+chmod 755 -R /ark
+chmod u+x /usr/local/bin/run-lab
+chmod 755 /var/www/bl-content
+chmod +x ${KIBANA_HOME}/bin/entrypoint.sh
+chmod +x /bin/docker-entrypoint.sh
+chmod +x AdbeRdr9.5.5-1_i486linux_enu.bin
+chmod 744 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/curl-ca-bundle.crt
+chmod +x fop-2.1/fop
+chmod 644 /opt/dist//usr/local/lib64/libpaho-mqtt3as.so.1.3
+chmod a+x /data/leanote/bin/run.sh
+chmod 771 -R /app
+chmod -R 777 "$FX_PATH"
+chmod +x ./bin/lcp.js
+chmod 777 $HHOME/*.sh
+chmod +x /docker_start.sh
+chmod +x /opt/linuxdeployqt
+chmod +x gradlew
+chmod 755 /sbin/init
+chmod u+x /backup.sh /run.sh
+chmod +x /var/init_laravel_quasar.sh
+chmod +x phpunit-5.7.phar
+chmod -Rv 755 /var/www/site
+chmod -R a+w $RUSTUP_HOME $CARGO_HOME
+chmod 755 /opt/CommuniGate/helper_DKIM_verify.pl
+chmod +x /kibana/setup_configs.sh
+chmod 544 /usr/local/bin/setup.sh
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/cfs/start-cfs.sh
+chmod 755 /opt/CommuniGate/helper_DKIM_sign.pl
+chmod g+sw /certs
+chmod +x telegraf/*
+chmod +x KAGdedi
+chmod -R 0775 "${MMS_HOME}/mongodb-releases"
+chmod +x run_tests.sh
+chmod -R 0777 "${MMS_CONF_FILE}"
+chmod 777 /code/run.sh
+chmod +x /bin/timezone
+chmod +x /opt/cr-rotate/scripts/entrypoint.sh
+chmod +x /opt/bin/entry_point.sh
+chmod 755 /root/warmup_sitemaps/main.py
+chmod 755 -R /config /data/music /log /scripts
+chmod 755 /app/init
+chmod a+rwx /var/log/xdebug.log
+chmod 755 /opt/geckodriver
+chmod 755 /root/install_custom.sh
+chmod +x /opt/WL-Nagios-Plugins/check*
+chmod +x *.py *.pl *.jar
+chmod 0644 /etc/cron.d/backup-cron
+chmod -R 0700 /var/lib/postgres
+chmod 770 "/usr/local/bin/automaticsetup.sh"
+chmod 755 -R /$FILEBOTDIR /config /data/television /data/film /log /scripts
+chmod -R 755 /var/www/site
+chmod +x rakkess-amd64-linux
+chmod +x /praktomat_grading.py
+chmod 666 ${WORKINGDIR}
+chmod 0440 "/etc/sudoers.d/${user}"
+chmod +x /usr/local/bin/drupaldb;     chmod +x /usr/local/bin/drupaldbdump;     chmod +x /usr/local/bin/startsupervisor.sh
+chmod -R 775 /usr/local/bin/
+chmod 755 /tmp/app_kubernetes-cka-exam
+chmod +x /xteve/umask.sh
+chmod -R g+rwX /v2conf
+chmod +x ./roonserver-installer-linuxx64-docker.sh
+chmod 755 /home/dev
+chmod a+x /usr/local/bin/docker-entrypoint.sh
+chmod 750 /u01/config /u01/data /u01/tmp
+chmod 0755 /usr/local/bin/docker-*.sh
+chmod -R 755 /app
+chmod a+x /etc/init.d/xvfb
+chmod +x /etc/varnish/start.sh
+chmod +x /usr/local/bin/jfrog
+chmod 600 .bash_profile
+chmod +x /usr/local/bin/reg
+chmod 0440 /etc/sudoers.d/$USERNAME
+chmod -R 755 /tmp
+chmod u+x /usr/local/bin/oz-sslmanager
+chmod +x /minecraft/update.sh /entrypoint.sh
+chmod +x /start.sh /usr/local/bin/supervisord
+chmod +x /usr/bin/change-nodetemplate-owner.sh
+chmod +x /home/admin/bin/*.sh
+chmod +x /usr/local/bin/run.sh /services/*/run /services/.s6-svscan/*
+chmod 755 /var/log/icinga2
+chmod 400 /etc/apache2/ssl/localhost.pem /etc/apache2/ssl/localhost-key.pem
+chmod +x /root/kitesetup.exp
+chmod 644 /etc/cron.d/*
+chmod a+rwx /usr/bin/node
+chmod -R 777 /start.sh /config
+chmod +xw weblogic-deploy/bin/*.sh
+chmod 644 /etc/grafana/provisioning
+chmod +x download_datasets.sh
+chmod +x run-task.sh
+chmod 777 v2ctl
+chmod +x /root/setcron.sh
+chmod +x /root/scripts/*.sh
+chmod +x ~/mambaforge.sh
+chmod +x /root/kite.sh
+chmod +x /usr/local/bin/install-sampledata
+chmod +x launch.sh
+chmod 0777 -R /qbittorrent /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chmod a+w /var/www/sites/default ; mkdir /var/www/sites/default/files ; chown -R www-data:www-data /var/www/
+chmod -R 755 /opt/kubectl-aliases
+chmod u+x helm tiller
+chmod -R o+w /opt/texlive/texdir/texmf-var
+chmod +x /usr/sbin/keygen              /usr/sbin/signzone              /usr/sbin/ds-records              /usr/sbin/startup
+chmod +x /usr/bin/rmauth
+chmod u+x /usr/local/mpush/bin/*.sh
+chmod +x gitleaks
+chmod -R 0777 "${MMS_TMP_DIR}"
+chmod -R 0775 /home/qbittorrent/.config/ /home/qbittorrent/.local/
+chmod 775 /run/nginx
+chmod +x /usr/bin/kustomize.sh
+chmod -R 771 tmp
+chmod +x /usr/local/bin
+chmod 777 /var/www/html/application/logs
+chmod +x /bin/dumb-init
+chmod -R 0644 /home/work/crontab/crontab
+chmod +x /etc/periodic/weekly/renew
+chmod a+rwx /home/jenkins
+chmod +x ./bin/portal
+chmod +x /etc/service/dockerlog/run
+chmod +x /app/encodenotify.sh
+chmod +x /usr/bin/client_linux_amd64
+chmod +x /startStack.sh
+chmod +w /etc/php/5.6/cli/php.ini
+chmod 777 housekeeping/startup.sh
+chmod a+x /opt/IBM_Cloud_CLI/kubectl
+chmod +x /opt/eosio/bin/nodeosd.sh
+chmod 755 fastqc
+chmod 0644 /etc/cron.d/cron_sync
+chmod 755 BacPipe/SPAdes-3.13.0-Linux/bin/*
+chmod +x  /tmp/start.sh
+chmod a+x /root
+chmod +x /scripts/entry.sh
+chmod +x /opt/selenium/generate_config
+chmod 755 nextflow
+chmod +x /usr/src/app/src/main/resources/saml/update-certifcate.sh
+chmod +x /localWebserver
+chmod 755 /tmp/BitDefender-Antivirus-Scanner-${BDVERSION}-linux-amd64.deb.run
+chmod 2777 -R /qbittorrent/.config/qBittorrent
+chmod +x /usr/local/bin/jira-release-updater
+chmod 755 start_tss.sh
+chmod +x /usr/lib/php7/modules/geoip.so
+chmod 644 /opt/dist//usr/local/lib/libpaho-mqtt3a.so.1.3
+chmod 700 "/usr/local/bin/update-certificates.sh"
+chmod 750 /usr/local/bin/run-jetty.sh /usr/local/bin/init-idp.sh
+chmod +x index.js
+chmod +x /root/server_linux_amd64
+chmod ug+x ./entrypoint.sh
+chmod g+w ${HOME}/config
+chmod +x setup.sh
+chmod +x /usr/local/bin/rslsync
+chmod -R +x /docker-entrypoint.sh /rclone.sh
+chmod -R ug+rwx bootstrap/cache
+chmod 0600 /root/.ssh/authorized_keys
+chmod 600 /home/vagrant/.ssh/authorized_keys
+chmod u+x /usr/local/bin/entrypoint.sh
+chmod +x $SONARQUBE_HOME/bin/run.sh
+chmod +x /root/dainstInit.sh
+chmod +x ./scripts/*.sh /usr/bin/rcon
+chmod +x /usr/local/bin/*.sh
+chmod u+x /wait-for-it.sh
+chmod 755 /hooks /usr/src/_jira/* /home/work/_script/*
+chmod +x /run_test.sh"
+chmod +x /go/bin/gcsfuse
+chmod +x /usr/local/bin/okta-aws
+chmod -R g=u /var/cache/nginx
+chmod u+x /init/start.sh
+chmod 777 /kaniko"]
+chmod +x /wait-for-manager.sh
+chmod +x /var/interlegis/capacita/busy-wait.sh
+chmod +xw ${SCRIPT_HOME}/*.sh
+chmod -R 700           "${BITBUCKET_INSTALL}/conf"
+chmod +x /struts2/exploit_auto.sh
+chmod 666 /home/ctf/dev/*
+chmod -R 0777 "${MMS_LOG_DIR}"
+chmod +x /usr/sbin/bastion
+chmod +x /opt/startapp.sh
+chmod 660 /etc/shadow
+chmod +x /usr/local/bin/upload.sh
+chmod a+rwx /usr/bin/kubectl
+chmod +x ./entrypoint.sh
+chmod a+x /home/theia/entrypoint
+chmod 644 /opt/dist//usr/local/lib64/libpaho-mqtt3cs.so.1.3
+chmod 755 /ricopili/rp_bin/
+chmod 0644 /usr/local/src/admin.pub
+chmod g+w /etc/services.d/nginx/supervise/control
+chmod -R 777 /var/www/go-figure
+chmod +x /usr/bin/jenkins-slave.sh
+chmod +x /var/frp/*.sh
+chmod 666 $SCRIPT_DIR/*.ora
+chmod 600 config/*
+chmod +x /pproxy.sh
+chmod 777 /etc/authbind/byport/80
+chmod u+s /usr/sbin/groupadd
+chmod 0644 /etc/cron.d/timeragent-cron
+chmod 666 $SCRIPT_DIR/$NAMED_SAMPLE_FILE
+chmod 0644 /etc/cron.d/dbface-cron
+chmod +x /etc/v2ray/v2ray
+chmod +x bazel-0.13.0-installer-linux-x86_64.sh
+chmod +x "/usr/local/bin/dockerize"
+chmod +x /var/init_laravel_quasar_setup.sh
+chmod 777 /var/run/nginx.pid
+chmod +x /usr/bin/gpt
+chmod 0755 /usr/local/bin/iptables-exporter
+chmod +x /usr/bin/addauth
+chmod 777 /usr/hdp/3.1.0.0-78/zookeeper/conf/zoo.cfg
+chmod 0644 /etc/cron.d/ddbgo-cron
+chmod +x /usr/local/bin/sops
+chmod 777 /start_dnsmasq.sh
+chmod +x /usr/local/bin/tini
+chmod a+x nvim.appimage
+chmod 555 /root/run.sh
+chmod 755 /etc/periodic/*/*
+chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+chmod +x /usr/local/bin/delcluster
+chmod a+w /var/cache/distfiles
+chmod +x /usr/local/bin/*.py
+chmod +x mc
+chmod 755 /usr/local/bin/docker-entrypoint.sh /scripts/filebot_artwork.sh /scripts/filebot_import.sh /etc/crontabs/filebot
+chmod +x /usr/src/unixbench/Run
+chmod 644 /usr/local/share/ca-certificates/ca-certificate.crt
+chmod +x /app/v2ray/v2ray
+chmod 777 /root/.local/bin/cutadapt
+chmod 600 ~/.ssh/authorized_keys
+chmod 0777 dat
+chmod -R 0755 ${MYSQL_LOG_DIR}
+chmod +x /app/composer /app/bin/check
+chmod +x /usr/local/bin/helm /usr/local/bin/kubectl /usr/local/bin/yq
+chmod +x kubectl
+chmod a+x /home/cc-proyecto/docker_run
+chmod 777 /data/start.sh
+chmod -R g+rwX /etc/nginx
+chmod 0500 /etc/cron.weekly/wm_maintenance
+chmod -R 771 generic/texture
+chmod 777 /var/www/config/
+chmod 2777 -R /Downloads/temp
+chmod u=rwx /data/mariadb/bin/mariadb-start.sh
+chmod 0644 /etc/cron.d/speedtest-cron
+chmod +x /init_start.sh
+chmod -R 777 "${NEO4J_HOME}"
+chmod -R 0775 /qbittorrent
+chmod 0600 /matrix/cronjob
+chmod +x ./heptio-authenticator-aws
+chmod +x /bin/lab
+chmod +x download_models.sh
+chmod 755 /*.sh echo "<?php phpinfo();" >> /var/www/index.php; service apache2 restart; chown -R www-data:www-data /var/www ; cd / wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1+xenial_all.deb; dpkg -i zabbix-release_4.2-1+xenial_all.deb; apt-get update; apt-get install -y zabbix-server-mysql zabbix-frontend-php;
+chmod +x /tmp/download.sh
+chmod 755 /etc/apache2/foreground.sh;     mkdir /workspace
+chmod -R 0775 /etc/systemd/system/radarr.service
+chmod +x /usr/local/bin/start-headphones.sh /usr/local/bin/healthcheck.sh
+chmod g=u $HOME
+chmod 755 samtools-0.1.19
+chmod +x /u01/oracle/perfpack_runme.sh
+chmod 0700 /data
+chmod +x /usr/bin/semaphore-startup.sh
+chmod go-w /usr/share/${ELASTIC_PRODUCT}/modules.d/system.yml
+chmod +x /usr/bin/qemu-aarch64-static
+chmod +x miniconda.sh
+chmod -R go+rx "${CONDA_DIR}/share/jupyter"
+chmod +x /opt/tyk/entrypoint.sh
+chmod -R g=u /home/webgoat
+chmod a+x /usr/local/bin/linenum /usr/local/bin/linux-exploit-suggester /usr/local/bin/cfssl /usr/local/bin/hadolint /usr/local/bin/conftest         /usr/local/bin/postenum /usr/local/bin/gitleaks /usr/local/bin/kubectl /usr/local/bin/amicontained /usr/local/bin/kubeaudit /usr/local/bin/popeye /usr/local/bin/kubeletctl
+chmod -R 775 /opt/LoReAn
+chmod 700 /certs
+chmod +x /usr/local/bin/send_lucky_number.sh
+chmod 777 /usr/local/bin/v2ray
+chmod +x /etc/foreground.sh
+chmod 755 /root/bin/BackupUsers.sh
+chmod +x /usr/bin/TransparentPlugin.ld.so
+chmod 777 -R /emg
+chmod 744 /code/entrypoint.sh
+chmod u+x /usr/bin/fme-upgrade
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/category/stop-category.sh
+chmod +x /bin/start
+chmod +x *.sh
+chmod +x /opt/start-elastalert.sh
+chmod 755 /root/entrypoint.sh
+chmod a+x start.ssh
+chmod 640 /etc/pam_radius.conf
+chmod +x /usr/bin/pwsh
+chmod -v +x /run-httpd.sh
+chmod g+s ojsfiles
+chmod +x /opt/printScannerConfig.sh
+chmod +x /opt/docker-entrypoint.sh
+chmod 700 /etc/monitrc
+chmod 644 /usr/share/jenkins/agent.jar
+chmod -R a+xwr $CUSTOM_DOMAIN_ROOT
+chmod -R g+rwX /v2raybin
+chmod -R 755 /var/www/user
+chmod u+x /home/noip/noip-update.sh
+chmod u+x,g+x /app/target/universal/stage/bin/tell-me-a-secret
+chmod +rx /usr/local/bin/update-postgis.sh
+chmod +x -R ~/src/
+chmod 755 /bin/run.sh
+chmod -R 2775 \*
+chmod 755 init.sh
+chmod 755 /home/biodocker/bin/zorro
+chmod a+w /var/www/sites/default -R
+chmod +xr $SCRIPT_FILE
+chmod go-w /opt/app-root/etc /opt/app-root /opt
+chmod 755 /app/webscrapper.py /app/wind_tracker.py /app/telegram_bot.py /app/consts.py /app/windInfo.py /app/run.sh
+chmod go-w $HOME
+chmod a+x /init.sh
+chmod +x buildifier
+chmod 755 /home/ezgo/xmind-installer.sh
+chmod +x /usr/local/bin/protoc-gen-grpc-web
+chmod a+rx /usr/local/bin/*
+chmod 666 /etc/php/5.6/cli/php.ini
+chmod 700 /home/arm/mosquitto.tar
+chmod 777 /tmp/
+chmod 777 /usr/share/nginx/html/ /etc/nginx/conf.d/ /etc/nginx/conf.d/default.conf /var/cache/nginx/ /var/run/
+chmod 644 /etc/nginx/conf.d/default.conf
+chmod o+r /etc/amavisd.conf
+chmod 400 ~/.ssh/config
+chmod +x dl.sh
+chmod +x /usr/local/bin/net_speeder
+chmod +x /go/src/app/app
+chmod +x linux-install-${CLOJURE_CLI_VERSION}.sh
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/view/stop-view.sh
+chmod --verbose -R 0775 /qbittorrent
+chmod 600 /root/.gnupg
+chmod +x /root/${BIN_FILE} \n
+chmod +x /etc/sv/apache/run
+chmod +x /usr/local/bin/metaeuk
+chmod 755 /etc/services.d/cron/run
+chmod a+x /etc/cron.monthly/renew_certs
+chmod +x /root/download_gecko_and_mono.sh
+chmod 777 /tmp/pipelines_building
+chmod -R 777 /etc/letsencrypt
+chmod -R 777 /var/www/html/limesurvey/tmp/ /var/www/html/limesurvey/upload/ /var/www/html/limesurvey/applicaton/config/
+chmod +x /u01/oracle/wsapp_runme.sh
+chmod +x /app/wait-for-it.sh
+chmod +x /usr/local/bin/gosu
+chmod +x /entrypoint
+chmod -R 777 var
+chmod +x /etc/my_init.d/10_enigma_config.sh
+chmod 0775 /data
+chmod +x /opt/mellon_create_metadata.sh
+chmod +x /u01/oracle/ws_svr_runme.sh
+chmod 777 /app/storage
+chmod +x phive.phar
+chmod 755 /opt/cloud-print-connector/gcp*
+chmod 755 /entry.sh
+chmod 0750 /var/log/odoo
+chmod +x /v2ray/bin/v2ray /v2ray/bin/v2ctl
+chmod 755 Praktomat/src/settings/defaults.py
+chmod 755 /home/jenkins
+chmod 770 "/automaticsetup.sh"
+chmod +x start_doh_capture.sh
+chmod 755 /home/centos/run_tempest.sh
+chmod 744 /etc/ssl/certs/ca-certificates.crt
+chmod 0755 -R startscripts *
+chmod -v +x /usr/local/bin/set_env
+chmod 0755 /main.sh
+chmod +x /usr/config/configure-db.sh
+chmod 777 /httrack.sh
+chmod -R 0775 /radarr.service
+chmod 0600 /var/spool/cron/crontabs/node
+chmod +x /config/init.sh
+chmod +x /usr/sbin/run-vsftpd.sh
+chmod 700 ./cli/cli
+chmod 644 -R /usr/share/fonts/noto/
+chmod +x lowvoicebot.py
+chmod 755 /srv/praktomat/mailsign/createkey.py
+chmod +x /usr/local/bin/kops
+chmod +x /srv/exec.sh
+chmod -R 700            "${CONF_INSTALL}/logs"
+chmod +x ./test.sh
+chmod 777 /usr/local/bin/v2ctl
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole     /usr/local/sbin/shadowsocksLibevConsole
+chmod +x /rpxup.sh
+chmod 0444 /etc/mysql/mysql.conf.d/mysqld.cnf
+chmod a+x /usr/local/bin/*
+chmod a+x /usr/local/bin/bosh
+chmod 600 /var/spool/cron/crontabs/root
+chmod 700 /usr/local/bin/youtube-dl
+chmod +x /usr/bin/unglue.phar
+chmod +x /app/addcluster.sh
+chmod -R 2775 /qbittorrent /Downloads /Downloads/temp
+chmod +x /usr/local/bin/apktool*
+chmod 666 /opt/test.idx
+chmod 777 /opt/docker-entrypoint.sh
+chmod 755 check-reachability.sh run-chainweb-node.sh initialize-db.sh
+chmod +x wg-ui
+chmod +x /wait
+chmod +x /usr/local/bin/setup-backend.sh
+chmod +x /usr/bin/winetricks
+chmod +x /home/service-manager
+chmod 777 restore.sh
+chmod -R 700                       "${CONFLUENCE_INSTALL}/work"
+chmod 777 "/run"
+chmod -R 700            "${JIRA_INSTALL}/conf"
+chmod +x /linux-${TARGETARCH}/helm
+chmod g+s html/plugins
+chmod +x /usr/src/app/start.sh
+chmod 777 /src
+chmod +x /bin/load-aws-secrets
+chmod a=rx /usr/local/bin/ipfs-daemon
+chmod 400 /root/.ssh/id_rsa
+chmod a+x /usr/bin/run-server.sh
+chmod 755 ./plasmidfinder.py;
+chmod 0775 -R /qbittorrent /downloads
+chmod +x /etc/nginx/vhost.sh
+chmod a+x /home/build/startup.sh
+chmod 755 /scripts/*
+chmod +x /bin/aircast-$ARCH_VAR
+chmod +x generate-sslcert.sh; sync
+chmod +x /bin/wait_for_it.sh
+chmod +x /home/bender/.start.sh
+chmod g+w /etc/services.d/consul-template/supervise/control /etc/services.d/consul-template
+chmod +x /v2ray
+chmod u+x /root/.sdkman/bin/sdkman-init.sh
+chmod +sx /etc/nginx/sites-enabled/hook_detached_process
+chmod 777 -R /usr/local/bin/dvblink/
+chmod +x /app/client
+chmod 0755 /usr/local/bin/caddy
+chmod +x /usr/local/bin/sambamba
+chmod 777 -R ${HOME}
+chmod 755 -R /etc/arkmanager
+chmod -R 777 /icy/data
+chmod +x /opt/wp-cli/wp-cli.phar;     ln -s /opt/wp-cli/wp-cli.phar /usr/local/bin/wp; )
+chmod +x /root/scripts/docker-entrypoint.sh
+chmod +x jwt_tool.py
+chmod 777 $COMPOSER_HOME/cache
+chmod +x /interact.sh
+chmod +x /ckan-entrypoint.sh
+chmod 2777 -R /qbittorrent-full /downloads /downloads/temp
+chmod -x entrypoint.sh
+chmod 0440 /etc/sudoers.d/unis
+chmod +x /etc/openvpn/down.sh
+chmod +x /usr/local/bin/terratest_log_parser
+chmod +x /home/biodocker/bin/MSGFPlus
+chmod +x ./csgo.sh
+chmod -R 777 "/var/log/supervisor"
+chmod +x /usr/bin/socks
+chmod 777 /db
+chmod +x /usr/local/bin/wp-cli
+chmod +x /usr/local/bin/cloud-plan-migrate
+chmod +x /usr/bin/set-target-branch.sh
+chmod +x cmd.sh
+chmod 755 /home/biodocker/bin/tandem
+chmod 640 /crt/*
+chmod +x /usr/local/bin/composer
+chmod -v +x /etc/cont-init.d/* /etc/services.d/*/run
+chmod 700 /root/.gnupg
+chmod +x $DST/GenomeAnalysisTK
+chmod +x /etc/init.d/kerio-connect
+chmod +x /opt/k8s-handle/k8s-handle.py
+chmod 755 $SCRIPT_DIR/*.expect
+chmod 755 /*.sh echo "<?php phpinfo();" >> /var/www/index.php; service apache2 restart; chown -R www-data:www-data /var/www ; cd / wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-1+xenial_all.deb; dpkg -i zabbix-release_4.2-1+xenial_all.deb; apt update;
+chmod 0777 /opt/db
+chmod +x /usr/local/bin/startup /etc/periodic/15min/selfoss
+chmod +x /etc/sv/nagios/run
+chmod +x /bin/run-vault.sh /bin/vault
+chmod 755 v2ctl
+chmod +x /usr/local/bin/drupal
+chmod +x /sbin/startup.sh
+chmod +x /usr/local/bin/put
+chmod u+x,g+x /app/bin/tell-me-a-secret
+chmod 700 /entrypoint.sh
+chmod +x /opt/scheduler.py
+chmod -R a+rwX /var/cache/nginx /etc/nginx/conf.d
+chmod +x /init
+chmod 777 -R /var/www/moodledata
+chmod +x /u01/oracle/stop_server.sh
+chmod +x /etc/init/uwsgi.conf
+chmod +x /app/bin/app
+chmod +x /var/interlegis/capacita/gunicorn_start.sh
+chmod +x /sw/tomoctf/bin/*
+chmod -R 777 ./hackable/ ./external//
+chmod ug+x $ORACLE_BASE/scripts/extensions/setup/*.sh
+chmod +x /tmp/vault
+chmod +x "${a4c_install_path}/${a4c_install_dir}/${a4c_sh_name}"
+chmod -R 777 "${GOPATH}"
+chmod -R 400 *
+chmod +x /enigma-bbs/misc/enigma_config.sh
+chmod 755 /go/bin/settings
+chmod +x wrapper.sh
+chmod 755 /usr/local/bin/redis-cli
+chmod 755 ./daemon/redsPushServerd.sh
+chmod -R a+rwx /usr/local/bin/
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/licenseserver/stop-licenseserver.sh
+chmod a+x /usr/local/bin/entrypoint.rb
+chmod +x /usr/bin/composer-setup.sh
+chmod +x /var/lib/webhook/deploy.sh /entrypoint.sh
+chmod +x share/genbuild.sh
+chmod 777 /etc/services.d/*/*
+chmod a+x /android_build/bin/repo
+chmod 755 /opt/scripts/execute_pipeline_test.sh
+chmod 777 -R /var/www/html/storage
+chmod a+rx /usr/bin/youtube-dl
+chmod 777 v2ray
+chmod -R 777 /var/www/application/cache
+chmod +x /app/docker/install_composer.sh
+chmod -R 777 /cache /lock /rss/feed-icons
+chmod +x /ghidra/ghidraRun
+chmod +x /endpoint-start.sh
+chmod +x /start*
+chmod -R 750 /var/spool/asterisk
+chmod +x /usr/local/bin/build-all
+chmod a+x /usr/sbin/healthcheck
+chmod a+x ./fedml/runner.sh
+chmod 775 /usr/local/bin/createUser.py
+chmod 700 /usr/bin/py_filter
+chmod a+r -R /usr/share/auth0/auth0_login
+chmod +x /usr/local/bin/install-magento
+chmod 0755 /usr/local/bin
+chmod 755 /usr/bin/petstore-cli
+chmod 0777 -R /entrypoint.sh
+chmod 755 /root
+chmod 777 /app/target/madhack-release.jar
+chmod 755 /tmp/terraform
+chmod -R 4777 .config/qBittorrent
+chmod a+rx /usr/local/bin/php*
+chmod +x ./target/appassembler/bin/kabara
+chmod +x /etc/periodic/hourly/blocklist-update
+chmod -R 777 /home/gta
+chmod +x /bin/supw
+chmod +x /usr/bin/pop3p
+chmod 0755 "/usr/sbin/install_packages"
+chmod 755 /scripts/*.sh
+chmod -R +x ${NIFI_TOOLKIT_BASE_DIR}/scripts/*.sh
+chmod +x keylogger.sh
+chmod +x /root/entrypoint.sh
+chmod +x /usr/local/bin/plantuml
+chmod +x /app/launch.sh
+chmod +x restore.sh
+chmod 755 /ricopili/rp_dep/
+chmod +x /usr/local/bin/sync-nextcloud.sh
+chmod +x ./kops
+chmod 0700 cipherscan
+chmod 755 /etc/services.d/nginx/run
+chmod +x /docker-entrypoint.sh /bin/wait-for-it.sh
+chmod -R 777 /home
+chmod +x /nxfilter/bin/startup.sh
+chmod -Rf g+w ${HOME}
+chmod +x /app/gns3_proxy.py
+chmod +x -R /root/src/
+chmod 755 /usr/local/bin/lf-update-java-alternatives
+chmod +x /usr/src/app/startup.sh
+chmod -R 777 /opt/cloud-print-connector
+chmod 644 install_base.sh
+chmod 0440 /etc/sudoers.d/jenkinsnosudo)
+chmod 600 -R /etc/apache2/ssl
+chmod +x /usr/local/bin/phploc
+chmod g-w /app
+chmod a+x /usr/local/sbin/kcptunConsole /usr/local/sbin/shadowsocksConsole /usr/local/sbin/shadowsocks2Console /usr/local/sbin/shadowsocksLibevConsole
+chmod +rx /var/lib/nginx
+chmod +x /usr/local/bin/phpunit
+chmod +x /u01/data/bankapp/start.sh
+chmod +x /opt/flink-server
+chmod +x ~/ctpbee/examples/run.py
+chmod +x /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver
+chmod +x /usr/local/bin/dind
+chmod 777 /usr/local/projects/temmel
+chmod +rx boot.sh
+chmod -R 755 /home/biodocker/bin/shotmap/*
+chmod 775 /etc/apache2/sites-enabled/ganglia.conf
+chmod a+x docker.sh
+chmod +x /usr/share/applications/ungit.desktop
+chmod +x /usr/local/bin/terraform-inventory
+chmod +x /etc/my_init.d/*
+chmod -R 755 /var/cache/squid
+chmod ug+x /opt/kafka/start.sh
+chmod +x /usr/local/bin/supervisord_startup.sh
+chmod +x /root/setup.sh
+chmod +x /scripts/start-ssh
+chmod +x /usr/local/bin/doctum
+chmod +x run.sh
+chmod +x cmake-*.sh
+chmod a+x -R /docker-entrypoint-initdb.d
+chmod +x /usr/local/bin/cp_resources
+chmod +x /deemix-server
+chmod a+x /usr/local/bin/symfony
+chmod +x adobe-air.sh
+chmod +x /usr/share/nginx/html/entrypoint.sh
+chmod +x /tmp/restic
+chmod +x lse.sh
+chmod -R a+rwx $RESOURCES_PATH
+chmod 666 idol_11.4.0.tar.gz
+chmod +x /bin/airupnp-$ARCH_VAR
+chmod +x /bootstrap.sh
+chmod -R +x ${NIFI_BASE_DIR}/scripts/*.sh
+chmod 0770 /usr/share/${ELASTIC_PRODUCT}/data /usr/share/${ELASTIC_PRODUCT}/logs
+chmod a+x /usr/bin/packer
+chmod 777 /deployments/webapps
+chmod 755 -R /opt/librenms
+chmod +x /usr/local/sbin/simple-container-benchmarks-init
+chmod -R 775 html
+chmod a+xr $SITES_CONTAINER_SCRIPTS/*.*
+chmod +x /usr/local/bin/dep
+chmod -R a+rwx /etc/apache2
+chmod 0644 /etc/cron.d/logparser-cron
+chmod -R 700            "${CONF_INSTALL}/work"
+chmod +x /usr/local/bin/pickle
+chmod ug+s /usr/sbin/fping
+chmod +x /app/deletemanifests.sh
+chmod 755 /opt/koko/init-kubectl.sh
+chmod -R 400 /.gnupg/*
+chmod 755 /usr/local/bin/docker-php-entrypoint
+chmod -R 777 /fiduswriter /data
+chmod 777 .vnc
+chmod 777 "$PGDATA" # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
+chmod a+x /bin/composer
+chmod 1777 /tmp
+chmod 755 outputs/*
+chmod 755 /usr/bin/pull
+chmod +x butler
+chmod +x /opt/airprint/printer-update.sh
+chmod +x ./bin/corsyusha.js
+chmod +s /usr/bin/nnp-test
+chmod 775 /root/db_init.sh
+chmod +x /usr/local/bin/upload
+chmod +x /opt/docker-elastalert.sh
+chmod -R 777 /TranslocationFinder
+chmod +x /opt/efak/bin/ke.sh
+chmod 777 /wait-for-it.sh
+chmod a+rx /docker-bin/*.sh
+chmod +x boot.sh
+chmod 755 /GoPAN/GoPAN
+chmod a+rx entrypoint.sh
+chmod +x /usr/local/bin/start-sabnzbd.sh /usr/local/bin/healthcheck.sh
+chmod -R g=u /etc/passwd /run /var/run/apache2 /var/lock/apache2 /var/log/apache2
+chmod +x /tmp/mta_plugin_linux_amd64
+chmod +x /out/usr/local/bin/docker-entrypoint.sh              /out/usr/local/bin/detect-external-ip.sh
+chmod +x run_jupyter.sh
+chmod +x /usr/local/bin/jq-1.5-linux64
+chmod +x /opt/resource/out /opt/resource/in /opt/resource/check
+chmod +x scripts/*
+chmod a+rwx -R /home/qbittorrent /home/qbittorrent/Downloads
+chmod a+s /opt/kaspersky/kav4fs/bin/kav4fs-setup.pl
+chmod +x ${SCRIPTS_DIR}/timezone
+chmod +x /etc/v2ray/v2ctl
+chmod +x /usr/local/bin/calicoctl
+chmod +x /usr/local/bin/install_docker
+chmod +x /usr/bin/vpn_close
+chmod +x rakkess
+chmod +x n
+chmod +x /scripts/build-tools-ci.sh
+chmod +x ~/start_notebook.sh
+chmod -R 700 ${DOCKER_DIR}
+chmod +x wait-for-it.sh
+chmod -R 0775 .
+chmod +x /etc/init.d/php-fpm
+chmod u+x entrypoint.sh
+chmod 755 /usr/bin/rclone
+chmod +x /usr/local/bin/custom-entrypoint.sh
+chmod g+s .
+chmod +x /usr/bin/kong_update_cert_where_any_snis_match
+chmod a+x,o-w ${PS_INSTALL_FOLDER}/pwsh
+chmod +x deploy.sh
+chmod 755 /sbin/setup-acf
+chmod +x ./gateway_linux_x64
+chmod +x /usr/bin/distro
+chmod 0755 /usr/local/bin/sops
+chmod +x "/usr/bin/composer"
+chmod +x /vuepress-webhook.sh
+chmod +x /bin/yq
+chmod 644 /etc/logrotate.d/resker
+chmod +x /postfix.sh
+chmod g-w /etc/cron.d/librenms.nonroot.cron
+chmod +x ansible_convenience_script.sh
+chmod 777 /usr/local/projects
+chmod +x /usr/local/bin/ctop
+chmod +x ./plugins/yangster/extension/server/bin/yang-language-server
+chmod a+x /build/*.sh
+chmod +x /tmp/bosh
+chmod +x /usr/bin/haproxy.sh
+chmod 755 /opt/scripts/execute_pipeline.sh
+chmod +x /var/jdownloader2/java/JDownloader.jar
+chmod +x /root/run
+chmod +x /root/startscript.sh
+chmod -R 700            "${JIRA_INSTALL}/logs"
+chmod a+rx /clang_format_all_the_things.sh
+chmod -R 775 /external_jars
+chmod 777 -R /opt/conda/
+chmod +x /usr/local/bin/facedetect
+chmod +x /usr/local/bin/bosh2
+chmod 755 /usr/local/bin/cron-foregroud
+chmod +x /opt/bin/*
+chmod 755 /tmp
+chmod +x /tmp/strap.sh
+chmod +x /opt/check/exec.sh /entrypoint.sh
+chmod +x /docker-entrypoint.sh /usr/bin/check_wwwdata /usr/bin/check_folder
+chmod 777 /opt/jackett -R
+chmod g+rw /etc/passwd
+chmod +x /usr/local/bin/wait-for-it.sh
+chmod +x pilon-1.22.jar
+chmod +x /usr/local/bin/youtube-dl
+chmod 555  /usr/local/bin/*
+chmod +x /usr/bin/v2ray/v2ray
+chmod +x /usr/local/bin/docker
+chmod -R 755 /home/biodocker/bin/Comet/*
+chmod +x /tmp/ojsInstall.exp
+chmod +x /usr/local/bin/duplicacy
+chmod +x /init.sh /setIP.py /httpserver.sh
+chmod 644 /etc/php/7.1/apache2/php.ini
+chmod 755 -R /docker/exec /docker/config
+chmod a+x ./entrypoint.sh
+chmod +x /shadowsocks-server
+chmod +x xampp-linux-installer.run
+chmod g+s html/public
+chmod a+x /usr/bin/start.sh
+chmod +x $PRESTO_HOME/bin/presto-cli
+chmod 4755 /start.sh
+chmod a+x /opt/vmware/VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle
+chmod 0644 /etc/cron.d/jks_sync
+chmod 775 /opt/flake/entrypoint.sh
+chmod +x ./aws-iam-authenticator
+chmod +x /scripts/rtl2mqtt_hass.sh
+chmod +x /home/server
+chmod 0700 /var/tmp/runtime-root
+chmod -R 700 /root/.ssh
+chmod +x linuxgsm.sh
+chmod 777 /var/www/as/vendor
+chmod a+rw /etc/passwd
+chmod +x /usr/local/bin/plantuml.py
+chmod -R g+rwx /etc/nginx
+chmod 755 /usr/bin/opam
+chmod +x /moda-app/install.sh
+chmod a+x Predict
+chmod +x /usr/local/bin/getlogs
+chmod +x ttyd_linux.x86_64
+chmod 755 /usr/bin/hadolint
+chmod 0755 /docker-entrypoint.sh
+chmod +x /nps/npsconf/start.sh
+chmod +x ./build.sh
+chmod u+s,g+s      /bin/ping      /bin/ping6      /usr/lib/nagios/plugins/check_icmp
+chmod +x /root/scripts/startup.sh
+chmod 755 /usr/local/bin/funwave-tvd.sh
+chmod +x /usr/sbin/run-lamp.sh
+chmod +x ph-snif
+chmod 600 /usr/share/jenkins/ref/.ssh/config.override
+chmod -R 777 /var/maven/
+chmod +x /usr/bin/StringsPlugin.ld.so
+chmod +x /usr/local/bin/assume_role
+chmod -R 777 /opt
+chmod 777 /scripts/run.sh
+chmod +x generate_env.sh
+chmod +x /prepare.sh
+chmod +x start-branehub.sh
+chmod 777 /usr/local/scratch
+chmod 777 /grid/hadoop/zookeeper/data
+chmod a+x /tmp/VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle
+chmod 400 /entrypoint.sh
+chmod +x /usr/bin/helm
+chmod g=u -R $HOME
+chmod +x /tinit
+chmod +x /sd/hyper-runner.sh
+chmod 775 /var/nedi/html/log/
+chmod a+rw /usr/local/bin/ices
+chmod 700 /vol/sshd_config.txt
+chmod 755 /start.sh
+chmod a+rwx $WORKSPACE_HOME
+chmod a+x bin/*.R
+chmod 600 /root/.vnc/passwd
+chmod 777 /app/main.py
+chmod 755 /hooks /src/lede
+chmod 444 /apk-pre.d/*
+chmod -R 755 /usr/hdp/3.1.0.0-78/zookeeper/conf
+chmod +x /usr/local/bin/rclone
+chmod +x /app/install.sh
+chmod +x /usr/bin/docker_helloworld
+chmod +x /scripts/beet_import.sh
+chmod +x /bin/composer
+chmod a+x /root/entrypoint.sh
+chmod 777 /etc/monit/monitrc
+chmod +x /conf-copy/start.sh
+chmod a+x /usr/local/bin/plantuml
+chmod +x /usr/local/bin/helm
+chmod +x /usr/local/bin/presto-cli
+chmod a+x buildx-${BUILDX_VERSION}.linux-amd64
+chmod +x /usr/bin/kong_test
+chmod +x /etc/init.d/rflinkproxy
+chmod +x AdobeAIRInstaller.bin
+chmod +x heartbeat.sh
+chmod +x test-sbt.sh
+chmod +x $DST/snpsift
+chmod +x /etc/skel/bin/*
+chmod +x /pocketbase
+chmod -R u=rwx,go-rwx ${JIRA_INSTALL}
+chmod +x /tfansboot/*
+chmod +x test-stack@golang.sh
+chmod +x /caddy/caddy
+chmod +x /usr/bin/ddclient.sh
+chmod +x start-h2o-docker.sh
+chmod u+x /toolchain_install.bash
+chmod -R 0640 /etc/letsencrypt/live/ebcert/*.pem
+chmod a+x run test
+chmod 755 "TeamSpeak3-Client-linux_amd64-$TS3_VERSION.run"
+chmod +x robust_build.sh
+chmod 755 /configure.sh
+chmod 700 /etc/bootstrap.sh
+chmod +x /compile.sh
+chmod +x /sd/install_docker.sh
+chmod +x ./scripts/run_targets.sh
+chmod u+s,g+s         /bin/ping         /bin/ping6         /usr/lib/nagios/plugins/check_icmp
+chmod +x $YB_BIN_PATH/bin/*
+chmod 0644 /etc/cron.d/update-cron
+chmod 755 /$FILEBOTDIR /config /data/music /log /scripts
+chmod 755 /usr/bin/unity-editor
+chmod a+x /usr/local/bin/blastn
+chmod 777 /usr/bin/ping.sh
+chmod +x /usr/bin/docker-compose
+chmod +x /usr/sbin/keygen              /usr/sbin/signzone              /usr/sbin/ds-records
+chmod +x /usr/bin/mhsendmail
+chmod a+x /home/appuser/bin/repo
+chmod +x /home/gcs/instructions.sh
+chmod -v +x /etc/service/*/run
+chmod +x /usr/src/influxdb-*/*
+chmod 755 /start.sh /etc/apache2/foreground.sh
+chmod 775 .
+chmod u+x config.sh
+chmod +x /s3bucketstats.py
+chmod 4755 /usr/local/bin/fusermount
+chmod 755 /usr/local/bin/hdf5.sh
+chmod +x ./helmfile_linux_amd64
+chmod +x /bin/restic
+chmod 755 /usr/local/bin/*
+chmod +x /etc/v2ray/v2ray v2ctl
+chmod a+x $APPDIR/start.sh
+chmod +x lan-play-linux
+chmod -R 777 /neurodocker
+chmod g+s html/cache
+chmod 0440 /etc/sudoers.d/admin
+chmod +x run
+chmod +x /usr/bin/tcppm
+chmod +x /usr/local/bin/user.sh
+chmod -R g+w /var/www/my-workspace
+chmod 777 /var/www/config/dbface.db
+chmod +x /opt/mdbook/run.sh
+chmod +x /usr/bin/ttyd
+chmod +x ${SCRIPT_DIR}/*.sh
+chmod gu+rw /var/run
+chmod g+w "${HOME}"
+chmod 600 /etc/ssh/$SSHD_USER
+chmod +x /usr/bin/semaphore-wrapper
+chmod +x /usr/local/bin/gomplate
+chmod 755 /rss/config.php
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/cfs/stop-cfs.sh
+chmod 777 backup.sh
+chmod 777 entrypoint.sh ENTRYPOINT ["./entrypoint.sh"]
+chmod 777 /home/notebookuser/*.sh #
+chmod 777 /opt/scripts/bootstrap.sh
+chmod +x /terraria-server/TerrariaServer
+chmod g+s html
+chmod +w /etc/mysql/mysql.conf.d/mysqld.cnf
+chmod +x /home/biodocker/bin/denovogui
+chmod -R u+rwx /home
+chmod 500 /tini
+chmod 755 /scripts/beets_import.sh
+chmod 4755 /usr/local/bin/fixuid
+chmod -R 777 /init
+chmod +x /usr/local/bin/clean
+chmod +x Miniconda2-latest-Linux-x86_64.sh
+chmod -R g+s /home/qbittorrent/.config/ /home/qbittorrent/.local/ /home/qbittorrent/Downloads/ /home/qbittorrent/Downloads-temp/
+chmod +xr /u01/oracle/wlserver/samples/server/*.sh
+chmod 700 ~/.ssh
+chmod a+x /wrapper/with-assume-role
+chmod +x /usr/local/bin/tk
+chmod +x /usr/local/bin/duplicacy_web
+chmod 775 /mplab_start.sh'
+chmod +x /config/lan-play-linux
+chmod +x phpunit-6.5.phar
+chmod -R +r /usr/local/include/google ;fi
+chmod a+rwx $HYDROSERVER_HOME
+chmod a+x /usr/local/bin/repo
+chmod -R 0775 /opt/Radarr
+chmod a+x ./rtlamr*
+chmod +x /etc/urbackup/backupfolder
+chmod +x /usr/local/bin/supw
+chmod +x dotdotpwn.pl
+chmod 700 /home/vagrant/.ssh
+chmod 700 /var/lib/pgsql/9.6
+chmod 0444 /etc/mysql/conf.d/my.cnf
+chmod +rx /usr/local/sbin/simple-container-benchmarks-init
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocks2Console     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole
+chmod +x /u01/data/bankapp/stop_server.sh
+chmod a+x /usr/local/bin/supercronic
+chmod +x /scripts/upload
+chmod +x /usr/local/bin/wrapdocker
+chmod +x /entrypoint.sh /gencert.sh
+chmod 755 $eqemu_server_directory/server/*.pl
+chmod +x /root/runner.sh
+chmod +x /usr/local/share/docker-init.sh;     fi
+chmod o+x /home/wine/.finalize_installation.sh
+chmod +x /etc/scripts/*.sh
+chmod 0755 /algo/algo-docker.sh
+chmod +x "/workdir/cryptobot.sh"
+chmod +x install_plugin-manager.sh /docker-entrypoint.sh
+chmod g+w "${HOME}/config"
+chmod +x /usr/bin/sops
+chmod +x /tmp/terminal.sh
+chmod -R 777 /root/zfile/*
+chmod 755 /fritzdump.sh
+chmod +x /usr/local/bin/start-openvpn.sh /usr/local/bin/set-posttunnelrules.sh
+chmod 755 Praktomat/src/configuration/models.py
+chmod u+x /backup.sh /restore.sh
+chmod u+x /entrypoint.sh
+chmod +x /usr/bin/kong_delete_all_routes_apart_from_one
+chmod a+rwx /root/.ros
+chmod +x /codimd/apply-growi-agent.sh
+chmod 777 -R /var/log/
+chmod 755 "${INSTALL_SCRIPTS}"/*.sh
+chmod +x /opt/bin/start_bosun.sh
+chmod 4777 -R /qbittorrent/Downloads/temp
+chmod +x generate-sslcert.sh;   sync;   ./generate-sslcert.sh
+chmod 0700 monit-config/monitrc
+chmod 755 /usr/local/bin/docker-entrypoint.sh /etc/rtorrent.conf
+chmod +x .local/bin/convox
+chmod g+w /etc/sysconfig/oracle-xe-18c.conf
+chmod +x /tmp/s6-overlay-amd64-installer
+chmod -R 777 /home/jenkins/.cache $GOPATH
+chmod go+rx /usr/local/bin/protoc
+chmod +x /usr/bin/qemu-system-arm
+chmod 0644 /etc/cron.d/cron
+chmod 500 /etc/authbind/byport/80
+chmod -R 777 /var/www/html/limesurvey/tmp/ /var/www/html/limesurvey/upload/ /var/www/html/limesurvey/application/config/
+chmod +x bin/*
+chmod 777 .kube/config
+chmod 755 Praktomat/src/settings/local.py
+chmod a+x /home/browsh/bin/browsh
+chmod ug+x $PATCH_INSTALL_DIR/*.sh
+chmod +x /etc/periodic/daily/script-daily-0
+chmod -R 777 /server/
+chmod +x /usr/bin/qshell
+chmod -R 777 /usr/bin/start
+chmod +x /usr/local/bin/digdag
+chmod 755 /etc/init.d/cloud-print-connector
+chmod 755 /etc/service/*/run
+chmod 644 /etc/default/plexmediaserver
+chmod +x /etc/cron.d/dir.sh
+chmod -R g+w weblogic-deploy/lib
+chmod +x ./Launch.sh
+chmod +x /docker-entrypoint.sh /usr/bin/check_wwwdata
+chmod 744 /entrypoint.sh
+chmod -R g+w /var/www/html
+chmod -R 777 /var/www/html/var
+chmod a+rx /${PETA__FILE}
+chmod +x /tmp/go.sh
+chmod +x /start.sh /usr/local/bin/aria2c
+chmod +x /home/ocaml/*
+chmod -R 771 /var/www/tmp
+chmod +x terragrunt_${TERRAGT_VERSION}_linux_amd64
+chmod +rx -R /app
+chmod 600 /etc/crontab
+chmod +x /etc/init.d/mongod
+chmod +x /usr/local/bin/cfssl /usr/local/bin/cfssljson /usr/local/bin/kubectl
+chmod +x kickthemout.py
+chmod a+x /usr/local/bin/assumerole
+chmod 755 /startup.sh
+chmod +x /etc/sv/rsyslog/run
+chmod 777 /work /output
+chmod 755 /home/bastion/servers.conf
+chmod -R 777  /var/lib
+chmod 2777 -R /qbittorrent /Downloads /Downloads/temp /config
+chmod -R 777 "$GOPATH"
+chmod +x /usr/local/bin/wp /run.sh
+chmod +x /app/app-docker-entrypoint.sh
+chmod +x /usr/local/bin/mc
+chmod -R 777 /var/www/plugins/ide/data
+chmod +x /usr/local/bin/mc ;fi
+chmod +x occ
+chmod +x ./main
+chmod 755 $WWWHOME/nconf
+chmod +x /usr/local/bin/terraform
+chmod 755 /var/www/Praktomat/src/manage-local.py
+chmod 666 /opt/connectors.tar.gz
+chmod 755 ghi
+chmod +x /usr/local/bin/startup /usr/local/bin/setup
+chmod -x /docker-entrypoint.sh
+chmod 4777 -R /home/qbittorrent /home/qbittorrent/Downloads
+chmod +x /tmp/setup/start-zookeeper.sh
+chmod +x /usr/local/bin/backup-volume;     chmod +x /usr/local/bin/restore-volume
+chmod 755 /usr/bin/check-quality-gate.sh
+chmod 777 /var/www/nosh/public
+chmod 0700 /entrypoint.sh
+chmod 755 /bin/hcd
+chmod +x /home/gitpod/.bashrc.d/110-dotnet
+chmod +x /home/scrapydweb/start.sh
+chmod +x main
+chmod 666 /data/opencanary.log
+chmod 755 /etc/apache2/foreground.sh
+chmod a+x /marathon/bin/marathon
+chmod a+x /usr/local/bin/acme_tiny
+chmod +x trid
+chmod a+x /usr/bin/protoc
+chmod -R 777 /etc/v2ray
+chmod +x /bin/upload
+chmod -R ug+rwx    bootstrap/cache
+chmod +x /usr/bin/google-chrome
+chmod 400 /home/$systemUser/.ssh/id_rsa
+chmod a+r /rsyncd.password
+chmod -R 777 /root/.local
+chmod g+w /var/log
+chmod +x /usr/local/bin/fd
+chmod 755 /usr/local/bin/entrypoint.sh
+chmod a+rwx ${APORTSDIR} ${REPODIR} ${LOGDIR} ${SRCDIR}
+chmod 700 /start.sh
+chmod a+r -R .
+chmod 666 $SCRIPT_DIR/$EXPORTFILE
+chmod +x /opt/selenium/start.sh
+chmod 640 /usr/local/ircstack/*
+chmod a+xr /u01
+chmod +x /bin/go-dnsmasq
+chmod 0777 /sessions
+chmod u+x /tmp/xc16-installer
+chmod +x /usr/bin/TrafficPlugin.ld.so
+chmod -R g=u .
+chmod +x /usr/src/app/poney.sh
+chmod ug+x $ORACLE_BASE/$_FILE $ORACLE_BASE/$_FILE.$EXTENSION_NAME $ORACLE_BASE/scripts/sharding/*.sh $ORACLE_BASE/scripts/sharding/*.py
+chmod u+x kubectl
+chmod go+rwx -R $HOME /entrypoint.sh
+chmod 0600 ~/.ssh/authorized_keys
+chmod 755 filefetcher.py
+chmod +x SW_VAR_DENS_MODEL-master/TESTS/run_tests.sh
+chmod -R 0775 /entrypoint.sh
+chmod u+s /usr/lib/i386-linux-gnu/libvglfaker.so
+chmod 777 /usr/bin/commit
+chmod +x /usr/local/bin/aws-iam-authenticator
+chmod +x /usr/bin/rotator
+chmod 0700 /home/ansible/.gnupg
+chmod 600 /etc/monit/monitrc
+chmod -R 0775 "${MMS_HOME}/jdk"
+chmod +x /usr/local/bin/kubectl /usr/local/bin/aws-iam-authenticator /usr/local/bin/ecs-cli
+chmod +x /usr/local/startup.sh
+chmod +x /usr/local/bin/yq
+chmod +x get_helm.sh
+chmod 0755 /tmp/start-tor.sh
+chmod +x BugBountyAutomator.sh
+chmod 777 /home/notebookuser/*.sh
+chmod +x phpcs.phar
+chmod a+x /usr/local/bin/init.sh
+chmod +x /entrypoint.sh /fill-template.sh /refresh-certificate.sh
+chmod -R 500 ts3server lib sql
+chmod +x /bin/fandogh.bash
+chmod +x /usr/bin/yq
+chmod 775 /var/tmp/nginx
+chmod +x node_modules/screenshoteer/docker-entrypoint.sh
+chmod +x /usr/local/bin/wp; mkdir -p /app/public; cd /var/www/html
+chmod 755 -R /config
+chmod -R 755 /opt/kubectx
+chmod +x -R /run/
+chmod 755 /ping/ping-test.py /bandwidth/*-speed.py
+chmod -R g+w $COMPOSER_HOME
+chmod +x guard-linux-amd64
+chmod -c 755 /install.sh /peer-finder
+chmod u+s $(which docker)
+chmod a+x ${HOME}/run_nvim.sh
+chmod -R g+rw /var/www /usr/share/nginx/cache /var/cache/nginx /var/lib/nginx/ /etc/php7/php-fpm.d storage
+chmod 755 kubectl
+chmod +x /usr/local/bin/apache2-foreground
+chmod +x /usr/local/bin/sonar-scanner-entrypoint
+chmod 700 data data/ts3server.sqlitedb
+chmod a+x /check.sh
+chmod a+x ./klipper/install-ubuntu-18.04.sh
+chmod 755 /usr/local/bin/hypre.sh
+chmod +x /home/atlantis/infracost_atlantis_diff.sh
+chmod a+x /usr/local/bin/*.sh
+chmod -R 777 /var/tmp/
+chmod +x /usr/bin/do-exclusively
+chmod a+x /usr/local/bin/magento /usr/local/bin/xmagento /usr/local/bin/n98magerun2 /usr/local/bin/xn98magerun2
+chmod a+x /pytest_standalone.sh
+chmod -R 755 /vol/web
+chmod +x dnsenum.pl
+chmod -R 700           "${BITBUCKET_INSTALL}/work"
+chmod +x install-cljstyle
+chmod +x /etc/init.d/pidremove.sh
+chmod +x /usr/local/bin/app
+chmod a+x /usr/local/bin/kubectl
+chmod +x gunicorn.sh
+chmod 775 /opt/nedi/html/log/
+chmod 777 /usr/local/scratch/workflow/runtime
+chmod +x pact-stub-server
+chmod -R 777 /usr/include/google
+chmod 777 -R /opt/android
+chmod +x /app/docker/entrypoint.sh
+chmod a+x ./VMware-Workstation-Full-14.0.0-6661328.x86_64.bundle
+chmod +x /app/claim-parser
+chmod +x $TBX
+chmod 755 /usr/local/bin/mpich.sh
+chmod +x /usr/local/bin/protoc-gen-grpc-gateway
+chmod +x /root/startup_vnc.sh
+chmod 777 /migrate-and-start-web-server.sh
+chmod +x autogen.sh
+chmod 755 *.jar
+chmod 755 /hooks /home/work/_script/*
+chmod -R g+rwX /var/log/nginx
+chmod +x /usr/local/bin/rancher-compose
+chmod ug+x $ORACLE_BASE/*.sh
+chmod -v a+x ./tsproxy.py
+chmod +x $_BIN_DUPLICACY
+chmod a+rwx /usr/bin/npm
+chmod +x /bin/logger.sh
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole     /usr/local/sbin/trojanConsole     /usr/local/sbin/shadowsocksLibevConsole     /usr/local/sbin/shadowsocksLibevLocalConsole
+chmod a+xr $PRE_DOMAIN_HOME
+chmod -R 777 /fiduswriter
+chmod u+w package.json npm-shrinkwrap.json
+chmod 440 /etc/sudoers.d/root
+chmod +x /bin/notary
+chmod 0777 -R /home/qbittorrent /home/qbittorrent/Downloads /home/qbittorrent/Downloads-temp
+chmod +x /start.sh /tini
+chmod 777 /home/user
+chmod 777 /var/www/as/public
+chmod +x /root/docker-entrypoint.sh
+chmod -R 755 $PS_DIR
+chmod -R a+x /root/eclipse
+chmod 755 /tmp/setup.sh
+chmod 755 /plex.sh
+chmod +x drush
+chmod -R 777 /usr/bin/zec
+chmod +x /usr/local//start.sh
+chmod 777 /usr/sbin/crond
+chmod u+x ${CONFLUENCE_INSTALL}/startup.sh
+chmod +x -R /BacPipe/
+chmod +x /tmp/bin/dep
+chmod a+x /root/phantomjs/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+chmod +x /etc/init.d/zeppelin
+chmod 755 /etc/selkies-gstreamer-entrypoint.sh
+chmod o=rwx -R /home/work/_app/php$PHP_VERSION/session
+chmod +x /usr/local/bin/update-config
+chmod +x /cps_bot/cps_bot.py
+chmod +x /ts3temp/Install_Script.sh
+chmod +x /usr/local/bin/credhub
+chmod 755 /usr/local/bin/init_parrot
+chmod +x /main.sh
+chmod -R 500 ts3server entrypoint.sh lib sql
+chmod +x ./hey-yo.sh
+chmod +x /www/webhook_auth.py
+chmod -R 755 /usr/share/sbt
+chmod g+s plugins
+chmod -R ug+rwx /var/www/html/storage /var/www/html/bootstrap/cache
+chmod +x /tmp/anaconda/miniconda.sh
+chmod -R 777 ./usr
+chmod +x /odoo/entrypoint.sh
+chmod 644 /usr/lib/apache2/modules/mod_remoteip.so
+chmod 600 /root/.ssh/config
+chmod +x /usr/local/bin/protoc-gen-twirp
+chmod 666 /etc/apache2/apache2.conf
+chmod 755 src/leveldb/build_detect_platform
+chmod a+x /mdmctl
+chmod 755 /root/install_conda_package.sh
+chmod +x cmseek.py
+chmod 777 /wait-for-postgres.sh
+chmod -R a+rwx /var/log/apache2
+chmod +x "$GOPATH/bin/dep"
+chmod +x /home/fedora/run_tempest.sh
+chmod +x /usr/bin/chromedriver
+chmod 777 "$CONDA_DIR/locks"
+chmod +x /opt/viewer-server
+chmod +x /u01/oracle/container-scripts/*
+chmod 0775 /entrypoint
+chmod a+x /usr/local/bin/deploy
+chmod a+x /etc/profile.d/eduldap.sh
+chmod a+rw /
+chmod -R a+xwr $DOMAIN_HOME/..
+chmod 0755 /etc/cron.daily/youtube-dl-update
+chmod 666 /etc/unbound/root.key
+chmod 755 /etc/entrypoint.sh
+chmod 755 /hooks
+chmod a+rwx /bin/kubectl
+chmod 755 /usr/bin/letsencrypt-renew
+chmod -R u+w /var/www/html/application/db
+chmod +x drush.phar
+chmod +x phpunit
+chmod 777 /opt/apache-tomcat-*/bin/catalina.sh
+chmod +x jmeter jmeter-server
+chmod 777 /cache /config
+chmod 700 /usr/local/bin/entrypoint.sh
+chmod +x /opt/check/scripts/exec.sh /entrypoint
+chmod +x /entrypoint.sh
+chmod 0775 -R /qbittorrent /downloads /downloads/temp
+chmod a=rx /entrypoint.sh
+chmod 755 gpspull.py
+chmod 777 $LOG_STREAM
+chmod 700 /codecov
+chmod 777 /home/gta/run.sh
+chmod 777 /nodeapp/config.json
+chmod +x /root/udp2raw_amd64
+chmod a+x /usr/local/bin/mdmctl
+chmod +x /root/ojsInit.sh
+chmod 0755 /usr/bin/caddy
+chmod u+s,g+s     /bin/ping     /bin/ping6     /usr/lib/nagios/plugins/check_icmp
+chmod 775 manualPack/*.war
+chmod +x xsstrike.py
+chmod 777 /usr/local/bin/supervisor-watcher
+chmod 777 /var/www/vendor
+chmod +x /usr/bin/rconcli
+chmod +x resin-xbuild
+chmod +x /opt/start.sh
+chmod 755 "$DART_SDK" "$DART_SDK/bin"
+chmod 777 /var/log/looking-glass.log
+chmod a+rwx /srv/mapproxy/cache_data
+chmod +x /pan-toolbox/*.py
+chmod 644 /etc/init/plexmediaserver.override
+chmod 755 /var/www/Praktomat/src/settings/defaults.py
+chmod -R g+rw     /usr/local/lib/couchdb /usr/local/etc/couchdb     /usr/local/var/lib/couchdb /usr/local/var/log/couchdb /usr/local/var/run/couchdb
+chmod +x /root/docker_start_script
+chmod -R g+w /var/www/user-interface
+chmod -R a+xr ${PATCHES_BASE_DIR}
+chmod +x /app/docker-entrypoint.sh
+chmod 777 /usr/local/scratch/ergatis
+chmod +x /usr/bin/kong_install_service_and_route
+chmod -R a+xr ${BASE_DIR}
+chmod 0755 /usr/local/bin/sbt
+chmod +x install-clj-kondo
+chmod -R g+w /usr/share/${ELASTIC_PRODUCT}
+chmod +x /usr/local/bin/kms
+chmod -R 777 /var/opt/mssql-extensibility
+chmod +x /usr/local/bin/jp
+chmod 700 .vnc/xstartup
+chmod -R 755 /usr/local/review_site
+chmod +x /app/*.sh
+chmod +x /docker-entrypoint.composer
+chmod -R g=u /root
+chmod +x usr/local/bin/docker-entrypoint.sh
+chmod +x ./wait-for
+chmod -R g+w openstreetmap-carto/
+chmod 0644 /etc/cron.d/canarieapi-cron
+chmod +x /opt/particl-${PARTICL_VERSION}/bin/*
+chmod 666 *.service
+chmod g+w /etc/passwd /etc/group
+chmod +x /usr/local/bin/install-php-extensions
+chmod 744 /usr/local/bin/composer
+chmod +x /usr/share/applications/glances.desktop
+chmod 755 /data/stock/jobs/run_*
+chmod +x /v2raybin/v2ray /v2raybin/v2ctl
+chmod -R g+rw ${JBOSS_HOME}
+chmod +x /etc/periodic/friday/friday-0
+chmod +x /usr/bin/v2ray/v2ctl
+chmod +x $HOME/rustup.sh
+chmod +s /usr/local/bin/nnp
+chmod 777 /var/www/as/storage
+chmod +x cuda_*_linux_64.run
+chmod 666 /project/kube
+chmod +x /usr/local/bin/workshop-manager
+chmod 777 /emg/sw/grigorieff/ctffind3/ctffind3_mp.exe
+chmod 700 /home/devops/.ssh /home/devops/.aws/ /home/devops/.config/yandex-cloud/ /home/devops/.kube/
+chmod -R 770 $DOMAIN_PARENT
+chmod +x /etc/init.d/kerio-connect.sh
+chmod -R 755 /tmp/setup
+chmod +x katoolin.py
+chmod u+x /build/slack-counter
+chmod a+x /usr/local/bin/dep
+chmod -R u=rX,g=rX /app/target/universal/stage
+chmod 700 get_helm.sh
+chmod +x TerrariaServer     TerrariaServer.bin.x86     TerrariaServer.bin.x86_64
+chmod +x bash/run-prod.sh
+chmod +x /exec/bash-env
+chmod a+rwx /usr/local/bin/entrypoint.sh /usr/local/bin/v2ray /usr/local/bin/v2ctl
+chmod +x /usr/bin/merge-request.sh
+chmod +x entrypoint
+chmod a+x /usr/bin/calicoctl
+chmod +x /root/*.sh
+chmod -R 755 /etc/cont-init.d || printf '%s\n' "${MODULES}" >/MODULESFILE
+chmod 777 deno
+chmod +x ./entrypoint.sh ./worker-on-demand-entrypoint.sh
+chmod +x /usr/bin/eksctl
+chmod 600 .vnc/passwd
+chmod a+x /run/startup.sh
+chmod -R g=u /ambassador /etc/passwd
+chmod +x nvim.appimage
+chmod 0600 /var/www/ssl
+chmod -R 755 /opt/fzf
+chmod 600 /usr/lib/jvm/java-1.8-openjdk/jre/lib/management/jmxremote.password
+chmod +x /usr/local/bin/printsizediff.py
+chmod -R 777 /opt/$ZK_DIST
+chmod +x /work/google-cloud-sdk/platform/google_appengine/goapp /work/google-cloud-sdk/platform/google_appengine/appcfg.py
+chmod +x /opt/check/scripts/exec.sh /entrypoint.sh
+chmod +x ./gradlew
+chmod 777 /usr/local/scratch/workflow
+chmod +x /root/kcptun/server_linux_amd64
+chmod -R 700 /bin
+chmod 644 *
+chmod +x ./init.sh
+chmod +x /usr/local/bin/boltbrowser
+chmod +x /tmp/curl-http3.sh; /tmp/curl-http3.sh; chmod +x /tmp/lsquic.sh; /tmp/lsquic.sh; go get -u github.com/cloudflare/cfssl/cmd/cfssl-certinfo; ln -s /go/bin/cfssl-certinfo /usr/local/bin/certinfo
+chmod +x /usr/local/bin/startup
+chmod +x /scripts/godaddy-ddns.sh
+chmod 600 /home/hidetomo/.ssh/authorized_keys
+chmod 744 /root/bin/servers.conf-sample
+chmod a+x ${WILDFLY_HOME}/bin/standalone.sh
+chmod +x elm
+chmod -R a+x $DOMAIN_HOME/bin/*.sh
+chmod g+w /mapcache /tiles
+chmod -R 6775 /home/qbittorrent/Downloads/ /home/qbittorrent/Downloads-temp/
+chmod a+xr /u01/oracle/${PATCH_FILE}
+chmod +x /usr/local/ntripcaster/bin/ntripcaster
+chmod +x dart-sdk/bin/dart*
+chmod 755 /usr/local/bin/supervisord.sh
+chmod +x ./choosenim.sh
+chmod 775 -R $ANDROID_HOME
+chmod +x /usr/bin/tini
+chmod +x /root/ojsInstall.exp
+chmod -R 777 /usr/bin/e
+chmod +x /opt/GeoLite2xtables/xt_build.sh
+chmod a+x /etc/periodic/15min/update_openssl
+chmod -R 700            "${CONF_INSTALL}/conf"
+chmod 0644 /usr/share/ant/lib/closure-compiler.jar
+chmod a+x /root/init.sh
+chmod a+x /start_i2pd.sh
+chmod ug+x $ORDS_HOME/*.sh
+chmod 755 /usr/local/bin/safe-docker
+chmod u+rwx run.sh
+chmod a+x ~/bin/repo
+chmod 777 start_server.sh
+chmod +x /usr/local/bin/cert-check.sh; chmod +x /tmp/curl-http3.sh; /tmp/curl-http3.sh; chmod +x /tmp/lsquic.sh; /tmp/lsquic.sh; go get -u github.com/cloudflare/cfssl/cmd/cfssl-certinfo; ln -s /go/bin/cfssl-certinfo /usr/local/bin/certinfo
+chmod 755 /usr/local/bin/kubens
+chmod +x /usr/local/bin/timezone
+chmod 555 /usr/local/bin/docker-entrypoint.sh
+chmod 755 /root/install_try.sh
+chmod 777 /deployments/conf
+chmod g=u -R .
+chmod a+w /var/log/mongodb.log
+chmod -R 777  /var/lib/zookeeper
+chmod 777 /var/log/liquidsoap/sustainer.log
+chmod +x /go/bin/dep
+chmod a+x /start_agh.sh
+chmod -R 755 /usr/share/scala
+chmod +x qshell
+chmod 700 /root/.ssh /root/.aws/ /root/.config/yandex-cloud/ /root/.kube/
+chmod +x /opt/otree/entrypoint.sh
+chmod 755 -R /ricopili/bin/
+chmod +x /run.sh
+chmod -R 770 /var/www/nextcloud
+chmod +x -v ./novnc/utils/*.sh
+chmod +x datasources.sh
+chmod +x /etc/apache2/foreground.sh
+chmod +x /usr/local/bin/easy-add
+chmod +x /var/www/html/tests/setup/dependency.sh
+chmod 400 /etc/lighttpd/ssl/localhost.pem
+chmod +x /etc/cron.daily/blocklist-update
+chmod 777 /python37/bin/activate
+chmod +x /usr/bin/lazystream
+chmod 755 /usr/local/bin/docker-entrypoint.sh
+chmod +x /opt/jdownloader2/run-jd2.sh
+chmod -R 0777 /var/www/.cache/
+chmod 0600 wuvt/config.py
+chmod 755 /root/install_others.sh
+chmod +x /app/applycluster.sh
+chmod 700 movie.sh
+chmod a+x /etc/init.d/renderd
+chmod a+x /ctf/linux_server /ctf/linux_server64
+chmod -R 775 "$FX_PATH_DATA"
+chmod +x /root/build.sh
+chmod 700 startup.sh
+chmod +x /app
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/content/start-content.sh
+chmod -R +x /data/www /data/logs
+chmod +x start_coturn.sh
+chmod +x /opt/JE-Nagios-Plugins/check_mem/check_mem.pl
+chmod g+w /var/log/nginx
+chmod +x "${A4C_INSTALL_PATH}/${A4C_INSTALL_DIR}/${A4C_SH_NAME}"
+chmod u+w ${SUDOFILE}
+chmod +x ~/.pg_ctl/bin/*
+chmod 600 /root/.ssh/authorized_keys ;
+chmod +x /usr/bin/dtunnel_lite
+chmod a+x /usr/local/sbin/kcptunConsole     /usr/local/sbin/shadowsocksRConsole     /usr/local/sbin/brookConsole     /usr/local/sbin/trojanConsole     /usr/local/sbin/shadowsocksLibevConsole
+chmod +x phpbrew
+chmod +x /tmp/curl-http3.sh; /tmp/curl-http3.sh; chmod +x /tmp/lsquic.sh; /tmp/lsquic.sh
+chmod -R +x ${NIFI_REGISTRY_BASE_DIR}/scripts/*.sh
+chmod +x /action.sh
+chmod +x ./main.sh
+chmod +x ./install/run.sh
+chmod a+x /build.sh
+chmod 755 /usr/local/bin/chromedriver
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/community/start-community.sh
+chmod u+x composer.phar
+chmod +x isbg.py
+chmod 755 /root/bastion/install_bastion.sh
+chmod 0755 /usr/local/bin/hasura
+chmod a+x ./llvm.sh
+chmod +x /usr/bin/kured
+chmod -R 700 /app
+chmod +x /usr/local/bin/runny
+chmod +x /usr/local/bin/terragrunt
+chmod +x /app/entry.sh
+chmod g+s /home/qbittorrent/Downloads /home/qbittorrent/Downloads-temp
+chmod +x fix-permissions
+chmod +x /hab/bin/hab
+chmod +rx /docker-entrypoint-initdb.d/postgis.sh /usr/local/bin/update-postgis.sh
+chmod 0555 /gw /usr/local/bin/*
+chmod 775 entrypoint.sh
+chmod 755 camfetcher.py
+chmod 777 -R -v /ts3server /ts3temp /ts3temp/inifiles /ts3temp/serverfiles
+chmod 777 /home/appionuser/.vnc
+chmod +x /get_installer.sh
+chmod +x /tmp/qt/installer.run
+chmod -R +x /data/www /data/sites_conf /data/ssl
+chmod +x /entrypoint.sh /stats.sh /import_certs.sh
+chmod 777 /usr/local/bin/start-unprivileged.sh     /usr/local/bin/docker-entrypoint.sh
+chmod 500 /entrypoint.sh /cleanup.sh
+chmod +x start_galera
+chmod 640 /opt/dist/etc/nginx/cert.key
+chmod 755 /root/bin/RestoreUsers.sh
+chmod -R ugo+rw /home/node
+chmod 400 /home/worker/.ssh/id_rsa
+chmod 777 /app
+chmod +x findomain-linux
+chmod -R g+w /usr/lib/jvm/default-jvm/jre/lib/security/cacerts
+chmod 774 /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/view/start-view.sh
+chmod +x /usr/local/bin/rush
+chmod +x /var/www/my-workspace/env.sh
+chmod +x /usr/bin/xdg-mime
+chmod +x /tmp/mta_plugin_static_linux_amd64
+chmod 400 /etc/apache2/ssl/server.key
+chmod +x /tmp/linux-amd64/helm
+chmod g+w /etc/passwd
+chmod -R 777 /tmp/
+chmod +x /usr/sbin/fping6
+chmod +x apktool.jar
+chmod +x scripts/microservice/*
+chmod +x /home/biodocker/bin/MSAmanda
+chmod +x /usr/local/bin/kustomize
+chmod +x /etc/periodic/daily/daily
+chmod 500 $APP_DIR/post-install.sh
+chmod +x /usr/bin/xteve
+chmod 755 "${CKAN_LOG_DIR}" -R
+chmod a+x /home/graf/*.sh
+chmod +x kompose
+chmod +x /usr/bin/guide2go
+chmod 4777 -R /qbittorrent /Downloads
+chmod +x /usr/local/bin/build
+chmod +x /v2raybin/v2ray
+chmod +x /bin/notebook
+chmod +x /usr/local/bin/drupaldb;     chmod +x /usr/local/bin/drupaldbdump
+chmod -R 700            ${CONFLUENCE_VAR}            ${CONFLUENCE_OPT}/conf            ${CONFLUENCE_OPT}/temp            ${CONFLUENCE_OPT}/logs            ${CONFLUENCE_OPT}/work
+chmod +x LinEnum.sh
+chmod 755 ${STEAMAPPDIR}/entry.sh
+chmod +x ./clean_src.sh ;     ./clean_src.sh
+chmod 777 -R /var/www/html/database
+chmod +x $CLIENT_PATH/python/*.*
+chmod a+x /usr/bin/ha
+chmod a+x ./upx
+chmod -R g+rwX /usr/share/nginx/html
+chmod 777 /.fastlane
+chmod -R 777 $SONARQUBE_HOME
+chmod a+x -R $ANDROID_HOME
+chmod 0600 /root/.ssh
+chmod ugo+rwx /pmx/pmx/scripts/cli.py
+chmod -R 755 /home/biodocker/bin/SAINT/*
+chmod +x papermc.sh
+chmod -R 700 /
+chmod +x /usr/local/bin/docker)
+chmod 750 /build/system_services.sh
+chmod 600 /etc/monitrc
+chmod -R a+rwx /home/jenkins
+chmod +x /usr/local/bin/dockerd-entrypoint.sh
+chmod 0775 -R /entrypoint.sh
+chmod +x /usr/local/bin/omping
+chmod 755 /var/www/html/wp-content/uploads
+chmod +x /dind
+chmod a+x /usr/local/sbin/kcptunConsole /usr/local/sbin/shadowsocks2Console /usr/local/sbin/shadowsocksRConsole
+chmod +x /torrentmonitor/run.sh
+chmod -R 4777 /
+chmod +x /scripts/*.sh
+chmod a+x execute_file.sh
+chmod +x $PROJECT_DIR/ManiaPlanetServer
+chmod a+x /tmp/VMware-Workstation-Full-14.0.0-6661328.x86_64.bundle
+chmod +x gophish
+chmod a+x /usr/local/bin/symfony ;fi
+chmod 640 /usr/src/wordpress/wp-config.php
+chmod +x /usr/bin/kong_delete_service
+chmod -R a+rwX "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"
+chmod 755 /usr/local/bin/start.sh
+chmod 755 /hooks /usr/src/_confluence/* /home/work/_script/*
+chmod +x update.sh
+chmod +x dirsearch.py
+chmod -R 4777 ~/.config
+chmod +x ./run.sh
+chmod +x ./daemon/redsPushServerd.sh
+chmod +x /usr/local/bin/run
+chmod +x colorid
+chmod a+x ./repo
+chmod 444 /var/www/html/info.php
+chmod 777 /usr/local/bin/start-unprivileged.sh
+chmod 755 "${CKAN_STORAGE_PATH}" -R
+chmod +x /usr/local/bin/jq
+chmod -R 4777 /qbittorrent
+chmod +x /usr/local/bin/createPackageRepository.sh
+chmod +x /tmp/sqlplus_12_2.tar.gz
+chmod 664 /etc/nginx/nginx.conf
+chmod o+x /usr/bin/protoc
+chmod 755 /start-worker.sh
+chmod 666 $SCRIPT_DIR/$ZONEFILE
+chmod +x /usr/local/bin/gocron
+chmod 777 /usr/local/lib/pgmodeler/plugins
+chmod +x install.sh
+chmod 755 /home/biodocker/bin/comet/comet_binaries_2016012/*.exe
+chmod +x /bin/cmake-ppc
+chmod 755 $eqemu_server_directory/server/*.sh
+chmod a+x /tmp/*.sh
+chmod +x /usr/bin/aws-iam-authenticator
+chmod a+rw /usr/lib/jvm/default-jvm/jre/lib/security/cacerts
+chmod a+x /usr/local/bin/add_mw_extension
+chmod 755 /run.sh
+chmod -R go-rwx /home/www-data
+chmod -R 700 /usr/local/go/
+chmod +x mdltest
+chmod u+x /create_user.bash
+chmod +x /usr/local/bin/amm-2.13
+chmod +x linux-install-$CLOJURE_VERSION.sh
+chmod 755 /usr/local/bin/credhub
+chmod a+x /usr/local/bin/movekeys.sh
+chmod a+x /usr/bin/composer.phar
+chmod a+x /opt/vmware/VMware-ovftool-4.3.0-12320924-lin.x86_64.bundle
+chmod u+x /usr/local/bin/twit
+chmod 777 /opt/ergatis/software.config
+chmod +x /usr/bin/openvpn_healthcheck.sh
+chmod -R 755 /home/biodocker/bin/*
+chmod +x /deluge_start.sh
+chmod 0775 -R /qbittorrent
+chmod +x /usr/local/bin/nvm
+chmod +x /opt/zookeeper/bin/*
+chmod -R g=u ${HOME} /etc/passwd
+chmod 0444 /var/syncthing/config
+chmod 777 ../var/data
+chmod 755 /usr/local/bin/ena-dl /usr/local/bin/ena-ascp.sh
+chmod +x /usr/local/bin/testssl.sh)
+chmod 777 /opt/ergatis/global_saved_templates
+chmod -R 700            "${JIRA_HOME}"
+chmod 755 /root/
+chmod 755 v2ray
+chmod +x /etc/ca-certificates/update.d/docker-openjdk
+chmod +x $USER_HOME/bin/runpia.sh
+chmod 0544 /opt/oracle-mgmtagent-bootstrap/scripts/*.sh
+chmod +x $HOME/.terraform.d/plugins/*
+chmod 777 root
+chmod 2777 -R /qbittorrent /downloads /downloads/temp
+chmod -R 777 /usr/hdp/3.1.0.0-78/zookeeper
+chmod +x /usr/local/bin/dotnet-install.sh
+chmod 555 /container-entrypoint.sh
+chmod 777 /start.sh
+chmod -R 777 ./hackable/ ./external/
+chmod 755 composer.phar
+chmod -R a+xwr $DOMAIN_PARENT
+chmod -R 0777 "${MMS_PROP_FILE}"
+chmod 0755 /startup.sh
+chmod 700 /var/lib/tor
+chmod +x SocialFish.py
+chmod +x /mindoc/start.sh
+chmod -R 777 /data /fiduswriter
+chmod +x /usr/bin/docker-entrypoint.sh
+chmod 666 connectors.tar.gz
+chmod +x /usr/local/bin/start-openvpn.sh /usr/local/bin/healthcheck.sh
+chmod 755 /scripts/filebot_import.sh
+chmod 755 ${STEAMAPPDIR}/entrypoint.sh
+chmod 774 /opt/HewlettPackardEnterprise/Find/start-find.sh
+chmod g+rwx /root/
+chmod 777 "$PGDATA"
+chmod +x cql-exporter.sh
+chmod +x /tmp/autopilot-linux
+chmod 644 /etc/logrotate.d/tomcat7
+chmod 600 .ssh/config
+chmod -R g+rwX /v2ray /caddy
+chmod +x /etc/init.d/crond
+chmod 2777 -R /qbittorrent
+chmod +x k9s
+chmod +x /var/run/run_stubby.sh
+chmod -R 777 ${COMPOSER_HOME}/.terminus
+chmod +x runsync.sh
+chmod -R g=u /usr/share/nginx
+chmod +x /tmp/docker-compose
+chmod u+x /start.sh
+chmod 777 /whitelists
+chmod 755 ${WILDFLY_HOME}/bin/run-jboss-cli
+chmod +x /etc/service/apache2/run
+chmod 777 $BP_ROOT/biblepay/share/genbuild.sh $BP_ROOT/biblepay/autogen.sh
+chmod 0777 logs
+chmod +x /upload.sh
+chmod +rx /usr/local/sbin/simple-container-benchmarks
+chmod +x /usr/local/bin/jq /opt/resource/out /opt/resource/in /opt/resource/check
+chmod -R a+rw /opt
+chmod +x /usr/bin/caddy entrypoint.sh
+chmod a+x /usr/local/bin/php-cs-fixer
+chmod +x /dev/shm
+chmod 0440 /etc/sudoers.d/user
+chmod a+x ./script/kcptunConsole ./script/shadowsocksConsole ./script/init_monit.start
+chmod +x apktool
+chmod +xr /u01/oracle/container-scripts/*.*
+chmod 660 /var/log
+chmod 0700 /config/*.sh
+chmod -R a+rwx /var/lib/php/session
+chmod a+s /opt
+chmod u+x setup.sh
+chmod 775 /usr/local/bin/lorean
+chmod a+x /usr/local/bin/bazel
+chmod +x before_install.sh
+chmod +x mhsendmail_linux_amd64
+chmod -R 6775 /home/qbittorrent/
+chmod +x logservice
+chmod 775 /start_dnsmasq.sh
+chmod 00555 /docker-entrypoint.sh
+chmod +x ${SCRIPT_MAIN}
+chmod 755 /usr/local/bin/wisp
+chmod +x /bin/genlang
+chmod +x /tmp/fly
+chmod 2777 -R /home/qbittorrent /home/qbittorrent/Downloads /home/qbittorrent/Downloads-temp
+chmod +x /opt/logicaldoc/start-logicaldoc.sh
+chmod a+x /usr/local/tpp/bin/*
+chmod u+x /start.sh /sickupdate
+chmod +x $HOME/v2raybin/v2ray
+chmod +x -v /ts3temp/Install_Script.sh
+chmod -R o+r /usr/lib/swift
+chmod +x /usr/local/bin/version
+chmod +x /usr/local/bin/helm2
+chmod 755 /root/bastion/* -R
+chmod +x /usr/bin/docker-machine
+chmod +x /usr/local/bin/webproc
+chmod 755 /home/snmpsim
+chmod 0700 /var/lib/netdata/cloud.d
+chmod 775 /usr/local/bin/docker-php-entrypoint-drupal
+chmod +x /usr/local/bin/start_nagios
+chmod +x /opt/minecraft/docker-entrypoint.sh
+chmod +x /opt/sd/bin/sd-step
+chmod o= /feedback
+chmod -R 771 ojsfiles
+chmod +x /usr/local/bin/praktomat_grading.py
+chmod 755 /app/slacks/slacks.py
+chmod -R 2775 \.*
+chmod -R g=rwx /opt/ol/wlp/output/defaultServer/
+chmod 755 helpers/startup.sh
+chmod 700 "$APP_DIR" "$DATA_DIR" "$CONF_DIR"
+chmod 755 /opt/scripts/run_prok_pipeline.pl
+chmod a+w /var/log/selenium/
+chmod +x /usr/bin/dusk-versions-check.php
+chmod 0755 /app/gitea/gitea
+chmod +x /opt/h2o/docker-init.sh
+chmod 755 *.py *.sh
+chmod +x solc-static-linux
+chmod +x fluxctl_linux_amd64
+chmod +x /bin/kubectl
+chmod +x websocat
+chmod 755 /usr/local/bin/helm
+chmod +x /nginxBlocksIP.sh
+chmod +x /home/gitpod/.bashrc.d/100-yugabyedb-launch
+chmod +x /usr/local/bin/drush
+chmod +x /etc/nginx/conf.d/script.sh
+chmod 600 /etc/crontabs/nginx
+chmod 755 check-reachability.sh run-chainweb-node.sh initialize-db.sh check-health.sh
+chmod +x ${CONVOX}
+chmod a+r /etc/localtime
+chmod 777 $ARTEMIS_WORKDIR
+chmod +x /usr/bin/jiode
+chmod +x /root/bin/superblat
+chmod -R g+w $DOMAIN_HOME
+chmod -R 777 /opt/myrast
+chmod -R 777  /python37
+chmod -R ug+rwX "$path"
+chmod +x /sbin/start.sh
+chmod +x /app/scripts/entrypoint.sh
+chmod 770 -R /opt/frp/
+chmod 777 -R /var/www/html/
+chmod 777 /usr/local/bin/setup-env-tools.sh
+chmod +x /certbot.sh
+chmod 775 ${HOME}/.vnc/xstartup
+chmod +x /usr/local/bin/run.sh /etc/s6.d/*/* /etc/s6.d/.s6-svscan/*
+chmod +x /app/delcluster.sh
+chmod +x /sbin/tini
+chmod -R 777 /var/log/php-fpm
+chmod 755 wp
+chmod +x /root/ak-mpulse-annotator/run.sh
+chmod +x $HADOOP_HOME/sbin/start-yarn.sh
+chmod +x –R /NGStools/BacPipe/BacPipe/BacPipe/
+chmod +x /bin/wait-for
+chmod 600 /etc/stunnel/stunnel.conf; 	chmod 600 /etc/pki/tls/certs/*; 	chmod 600 /etc/pki/tls/private/*;
+chmod 755 $HOME/main.sh
+chmod +x /usr/bin/unity-hub
+chmod 644 /opt/dist//usr/local/lib/libpaho-mqtt3cs.so.1.3
+chmod -R g+rwX /consul
+chmod +x /usr/local/bin/start-subsonic.sh /usr/local/bin/healthcheck.sh
+chmod a+x /usr/local/bin/main.sh /usr/local/bin/setup.sh /usr/local/bin/backup.sh
+chmod u+x /testLoop.sh
+chmod 755 /home/biodocker/bin/FastTree
+chmod -R 755 .
+chmod 544 /usr/local/bin/configure.sh
+chmod 755 /entrypoint /etc/service/*/run
+chmod +x /app/entrypoint.sh
+chmod +x /opt/stop.sh
+chmod a+rw /home/graf/configuration.json
+chmod -R a+rwx /icy
+chmod +x ./docker/bothub-nlp/entrypoint.sh
+chmod -R 755 /usr/src/rpd-purs
+chmod 777 /.nextflow
+chmod 0777 /code/bin/*
+chmod +x ./qt-opensource-linux-x64-5.7.1.run
+chmod +x /usr/bin/supercronic
+chmod +x start-kvlite.sh
+chmod --verbose -R 0777 /qbittorrent
+chmod +x /nxfilter/bin/shutdown.sh
+chmod +x /opt/resource/*
+chmod u+rw /etc/bash_completion.d/artisan-bash-prompt /etc/bash_completion.d/composer-bash-prompt
+chmod 755 -R /tshock /terraria /etc/terraria.sh
+chmod +x /startup.sh
+chmod +x /home/shadowsocks-go.sh
+chmod 0622 /var/spool/nullmailer/trigger
+chmod +x /usr/local/bin/envsubst; fi;
+chmod 777 /home/work/_script/walle-web-init.sh
+chmod +rx /bin/remco
+chmod 755 /opt/bin/akamai
+chmod a+x /usr/local/mpi/bin/mpirun
+chmod -R 700            "${JIRA_INSTALL}/temp"
+chmod +x ./*
+chmod 644 /var/www/html/derbynet/local/config-roles.inc
+chmod 4777 -R /opt/Radarr
+chmod 775 scripts/process_GMAP_alignments_gff3_chimeras_ok.pl
+chmod +x *
+chmod 755 Praktomat/docker-image/Dockerfile
+chmod g+s generic/texture
+chmod +x gunthy-*
+chmod u+s /bin/ping
+chmod 755 /config /data/music /log /scripts
+chmod 0755 /bin/helmfile
+chmod -R 4775 /home/qbittorrent/Downloads/ /home/qbittorrent/Downloads-temp/
+chmod +x gowitness
+chmod -R 777 /.platformio
+chmod a+x /speedtest.py
+chmod -R 0666 /var/www/html
+chmod -R ug+rwx storage bootstrap/cache
+chmod 755 /home/ngphylo/startup.sh
+chmod +x /fixture/src/main/resources/provision/installsmb.sh
+chmod 644 /etc/apache2/sites-available/ttrss.conf
+chmod +x /nginxBlocksIP.sh /nginxLogRotate.sh
+chmod ug=rx,o= /usr/bin/autoexecute
+chmod 755 msfinstall
+chmod +x /*.bash /*.py
+chmod +x /usr/local/bin/infcloud /usr/local/bin/cache_update
+chmod 777 /usr/local/scratch/workflow/runtime/pipeline
+chmod 600 /etc/transmission-daemon/settings.json)
+chmod +x /usr/local/bin/start-openvpn.sh
+chmod g+w /var/log/supervisor
+chmod u+x /run.sh /rethinkdb-probe
+chmod 0777 /go/pkg
+chmod 755 /opt/CommuniGate/cgpav
+chmod 700 /home/arm/start_instance.sh
+chmod a+rw /etc/group
+chmod -R 777 VIBRANT
+chmod +x /usr/local/bin/stolon-keeper /usr/local/bin/stolon-sentinel /usr/local/bin/stolon-proxy /usr/local/bin/stolonctl
+chmod +x terraformer-linux-amd64
+chmod +x ${start_scripts_path}/04_run_occ_commands.sh
+chmod +x bucketeer.sh
+chmod +x /usr/local/bin/ma-ue
+chmod 755 /tmp/app_kubernetes-ckad
+chmod +x /usr/bin/vpn_open
+chmod +x /usr/bin/envsubst; fi;     if [ "$(cat /etc/apk/arch)" = "x86_64" ]; then     curl -sL https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-Linux-x86_64 -o /usr/local/bin/envsubst
+chmod +x "$HOME/.ghcup/bin/ghcup"
+chmod +x /usr/bin/stern
+chmod 755 /root/do.sh
+chmod +x /minecraft/start.sh
+chmod u+w *.json
+chmod +x ${SCRIPTS_DIR}/update-pw
+chmod a+x /snap/bin/snapcraft
+chmod +x ~/start-hadoop.sh
+chmod 0700 ~/.ssh
+chmod 0755 TeamSpeak3-Client-linux_amd64-3.0.19.4.run
+chmod 600 ${HOME}/.vnc/passwd
+chmod +x /opt/apkinjector/apkinjector
+chmod -R g=u /opt/selenium ${HOME} /opt/selenium/assets /var/run/supervisor /var/log/supervisor
+chmod a+xr viper-cli viper-web
+chmod +x /etc/init.d/dvblink.sh
+chmod 0775 /var/lib/mongodb-mms-automation
+chmod a+x install.sh
+chmod a+x /etc/cron.daily/renew_certs
+chmod -R 777 /data
+chmod a+x /usr/local/bin/micromdm
+chmod -R 777 /tmp/pnpm-cache
+chmod u+x /opt/bin/*
+chmod -R g=u /var/spool/mcrouter /var/mcrouter
+chmod +x /usr/local/bin/deletemanifests
+chmod a+rwx /usr/bin/fix-permissions.sh
+chmod 4755 $GRID_HOME/bin/$DOCKERORACLEINIT
+chmod +x /init_entry.sh
+chmod +x /linuxgsm.sh
+chmod +x ./terraria-server/TerrariaServer
+chmod +x /init /index /search
+chmod -R 755 /data
+chmod 757 {backups,lib,plugins,test,tmp}
+chmod +x pilon
+chmod +x node_modules/messer/index.js
+chmod +x /usr/bin/phpstan
+chmod +x /opt/jpmens-mqtt/check-mqtt.py
+chmod +x /usr/bin/docker_service_remove_non_live
+chmod --recursive 777 "$HOME"
+chmod 600 /home/appionuser/.vnc/passwd
+chmod +x /jukebox/start.sh
+chmod -R 2775 /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chmod +x /bootstrap-sogo.sh   /usr/local/sbin/stop-supervisor.sh
+chmod 600 "${PGDATA}/pg_hba.conf" "${PGDATA}/postgresql.conf"
+chmod +x entrypoint.sh
+chmod +x /opt/entrypoint.sh /usr/local/bin/jenkins-slave
+chmod +x /etc/sv/postfix/run
+chmod +x /usr/local/bin/php-cs
+chmod 700 /tmp/get_helm.sh
+chmod +x /ckan-harvest.sh
+chmod 777 /cache /config /media
+chmod +x /app/cutnotify.sh
+chmod a+xr ${SCRIPT_DIR}/*
+chmod +x /usr/local/bin/n98-magerun2
+chmod +x /bin/gost
+chmod a+x tests.sh
+chmod +x /app/start.sh
+chmod a+x script/*
+chmod +x /opt/rdod/launch.sh
+chmod -R 4777 .config
+chmod 755 /tmp/app_kubernetes-cka
+chmod 777 /var/www/html/var/cache/prod/
+chmod +x /tmp/install-vim-plugins
+chmod a+rx /iwyu.sh
+chmod +x /opt/print-logo /opt/hbase-server /opt/flink-server /opt/kafka-server /opt/viewer-server
+chmod 0644 -R /etc/cron.d/
+chmod 777 /usr/bin/init
+chmod 500 /etc/authbind/byport/443
+chmod -R 0775 "${MMS_HOME}/conf"
+chmod +x kubectx kubens
+chmod 755 /home/bastion/install_bastion.sh
+chmod +x /usr/bin/multirun
+chmod o+t -R /qbittorrent /Downloads
+chmod +x /usr/local/bin/log-shipper
+chmod +x /usr/local/bin/dind /usr/local/bin/docker-buildx
+chmod +x /usr/local/bin/applycluster
+chmod -R 777 /tmp/setup
+chmod +x /tmp/setcron.sh
+chmod +x /usr/local/bin/confd
+chmod +x apache2
+chmod +x run-endless.sh
+chmod +x /etc/periodic/daily/backup
+chmod +x /cloudreve/cloudreve-main
+chmod +x /usr/local/bin/rke
+chmod -R g+wx /opt/TinyTeX/bin
+chmod +x /etc/startup-cpre
+chmod 777 /usr/local/bin/docker-entrypoint.sh
+chmod +x /apollo-adminservice/scripts/startup.sh
+chmod +x  /usr/local/bin/*
+chmod a+x /venv/*
+chmod +x /app/xware/portal
+chmod u+x scripts/debug/debug-env-setup.sh
+chmod +x /usr/src/garie-sentry-metrics/docker-entrypoint.sh
+chmod a+rwx /music/ /ices_conf/ /log/ices/
+chmod -R ug+rwx ${HOME}
+chmod -R +x /app/scripts/
+chmod +x /tmp/kubectl
+chmod +x /srv/run.sh
+chmod -R 771 plugins
+chmod u=rwX,g=,o= -R $NVM_DIR
+chmod 711 /
+chmod -R 700                       "${CONFLUENCE_INSTALL}/logs"
+chmod -R 0775 $ANDROID_HOME
+chmod -R 755 $NODE_DIR
+chmod +x /usr/bin/run-scanner
+chmod +x store-cli
+chmod +x /usr/bin/elm-make-rts
+chmod +x /usr/local/bin/phpcpd
+chmod a+x script/kcptunConsole script/shadowsocksConsole script/init_monit.start
+chmod 0700 /srv/git
+chmod +x webui.js mineos_console.js service.js
+chmod 0755 /usr/bin/catfs
+chmod +x /docker_entrypoint.sh
+chmod 755 cpu_deamon.sh
+chmod -R 755 /project
+chmod 644 /etc/supervisor/conf.d/supervisord.conf
+chmod 755 Praktomat/src/checker/compiler/CBuilder.py
+chmod +x /usr/bin/local/acme.sh
+chmod +x /usr/bin/kubectl
+chmod -R 777 ./usr/
+chmod 644 /opt/dist//usr/local/lib64/libpaho-mqtt3c.so.1.3
+chmod +x /u01/patches/apply-patches.sh
+chmod +x /usr/local/bin/wsl-php-ext-enable.sh
+chmod +x /bin/helm
+chmod +x /root/env.sh
+chmod +x     /entrypoint.sh     /bin/gosu
+chmod -R +wr /var/log/mongodb-mms-automation/
+chmod +x /usr/bin/run_rancher.sh
+chmod +x /bin/dnsbl
+chmod u+x /home/wurstuser/.wurst/grill
+chmod +x /usr/local/bin/n98-magerun
+chmod -R 0777 /entrypoint.sh
+chmod +x /usr/bin/dropbox.py
+chmod +x /usr/local/bin/gocron;     adduser -S gocron;     apk add ca-certificates
+chmod +x /usr/bin/versions
+chmod 744 /etc/bastion/servers.conf
+chmod +x samtools
+chmod +x code-server1.408-vsc1.32.0-linux-x64/code-server
+chmod +x /altv/start_server.sh
+chmod +x /docker-entrypoint.d/*.sh
+chmod 4750 /home/re
+chmod 700 /etc/openssh /var/run/openssh
+chmod -R 640 /opt/shib-jetty-base
+chmod -R 777 /var/www
+chmod +x /usr/local/bin/pqueue
+chmod +x /usr/local/bin/restic
+chmod +x 7cmd.sh
+chmod +x /semantic-release/release.sh
+chmod +x /bin/systemctl /usr/bin/gosu /usr/bin/tini
+chmod 755 "${CKAN_HOME}" -R
+chmod +x /etc/init.d/supervisord
+chmod o-r /var/log/mysqld{1,2,3,4}.log
+chmod +x /root/prseto-server-317/bin/presto-cli
+chmod 755 /etc/profile.d/go.sh
+chmod +x /theia-app/run_theia.sh
+chmod +x Trimmomatic-0.38/trimmomatic-0.38.jar
+chmod a+rwx $SSL_RESOURCES_PATH
+chmod +x /usr/local/bin/docker-compose
+chmod +x /opt/selenium/startSeleniumServer.sh
+chmod 700 ~/.aws
+chmod -R 0775 "${MMS_LOG_DIR}"
+chmod +X "/automaticsetup.sh"
+chmod +x /var/facedetect/facedetect
+chmod 0644 /etc/cron.d/backupcron
+chmod 777 /__w
+chmod -R 777 /app/data
+chmod 777 /var/atlasdata
+chmod +x /root/elixir-ls/language_server.sh
+chmod +x /opt/hbase-server
+chmod 0600 /etc/sssd/sssd.conf /etc/pam.d/common*
+chmod a+rwx $RESOURCES_PATH
+chmod 600 ~/.ssh/known_hosts
+chmod 0777 -R /mnt ${MINGW}
+chmod -R g=u /opt/obp-boostrap-user /etc/passwd
+chmod 755 -R /data
+chmod 775 /tmp/overviewer/client.jar
+chmod 775 PASApipeline/scripts/process_GMAP_alignments_gff3_chimeras_ok
+chmod a+x /root/install_extra_tools.sh
+chmod +x /usr/share/gitbucket/gitbucket.sh
+chmod 755 /app/entrypoint.sh
+chmod +x /root/wait_for_it.sh;    tar xvf go1.15.6.linux-amd64.tar.gz ;    chown -R root:root ./go ;    mv go /usr/lib/go-1.15;    go env -w GOPROXY=https://goproxy.cn;    go get -u github.com/gopherdata/gophernotes;    cp /root/go/bin/gophernotes /usr/local/bin/ ;    mkdir -p /root/.local/share/jupyter/kernels/gophernotes ;    cd /root/.local/share/jupyter/kernels/gophernotes;    wget https://raw.fastgit.org/gopherdata/gophernotes/master/kernel/kernel.json ;    wget https://raw.fastgit.org/gopherdata/gophernotes/master/kernel/logo-32x32.png ;    wget https://raw.fastgit.org/gopherdata/gophernotes/master/kernel/logo-64x64.png ;    cargo install evcxr_jupyter --force;     evcxr_jupyter --install;
+chmod -R 700                       "${CONFLUENCE_INSTALL}/conf"
+chmod a+x /usr/sbin/wait-for-signal
+chmod -x /home/godaddy-ddns.sh
+chmod +x /usr/local/bin/mariadb.sh
+chmod -R 777 /usr/bin/en-composer
+chmod 700 /home/arm/restart.sh
+chmod a+x run.sh
+chmod +x ./supervisor.sh;./supervisor.sh
+chmod +x /docker-entrypoint.sh
+chmod +x /bin/run-server.sh
+chmod +x /opt/microsoft/powershell/7-preview/pwsh
+chmod 500 /docker-entrypoint.sh
+chmod +x /configure.sh
+chmod +x shfmt
+chmod +x /usr/src/ebi-webservice-clients/*.*
+chmod +x wrapper.py
+chmod -R g+rwX $HOME/v2raybin
+chmod -R 777 /opt/zookeeper
+chmod +x phpcs
+chmod +x /usr/bin/server_info
+chmod 700 .ssh
+chmod 777 -R /.npm
+chmod 777 /xshok-fix.sh
+chmod 750 /crt
+chmod a+rwx /var/run/kubernetes
+chmod +x /opt/teeworlds/run.sh
+chmod +x ./Launch-nopicker.sh
+chmod -R g=u /home/mydocker $APP_DIR/log $APP_DIR/tmp
+chmod +x /usr/local/bin/jenkins.sh /usr/local/bin/install-plugins.sh
+chmod ug+x $PATCH_DIR/*.sh
+chmod -R 777 /usr/bin/hshared
+chmod +x /usr/local/repo/bin/repo
+chmod 777 /var/run/zm
+chmod +x /docker-entrypoint.sh /healthcheck.sh /update.sh /usr/local/bin/aria2c
+chmod -R +w /tmp/iso
+chmod 755 /hardening.sh
+chmod 755 /root/bastion/servers.sh

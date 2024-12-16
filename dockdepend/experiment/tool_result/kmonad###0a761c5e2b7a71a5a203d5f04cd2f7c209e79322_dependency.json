@@ -1,0 +1,156 @@
+[
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "WORKDIR /usr/src/kmonad/",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "RUN apk --no-cache add git",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "RUN stack update",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "COPY ./kmonad.cabal ./",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "COPY ./static/stack.yaml ./static/",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "COPY ./stack.yaml ./",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check -j8 build --only-dependencies",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "COPY ./ ./",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM lierdakil/alpine-haskell:8.10.7",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "COPY ./kmonad.cabal ./",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "COPY ./static/stack.yaml ./static/",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "COPY ./stack.yaml ./",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check -j8 build --only-dependencies",
+        "edge": "(1, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/kmonad/"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "COPY ./ ./",
+        "edge": "(1, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/kmonad/",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(1, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/kmonad/"
+    },
+    {
+        "before_instruct": "COPY ./kmonad.cabal ./",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check -j8 build --only-dependencies",
+        "edge": "(4, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad"
+    },
+    {
+        "before_instruct": "COPY ./kmonad.cabal ./",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(4, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad"
+    },
+    {
+        "before_instruct": "COPY ./static/stack.yaml ./static/",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check -j8 build --only-dependencies",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad/static"
+    },
+    {
+        "before_instruct": "COPY ./static/stack.yaml ./static/",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(5, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad/static"
+    },
+    {
+        "before_instruct": "COPY ./stack.yaml ./",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check -j8 build --only-dependencies",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad"
+    },
+    {
+        "before_instruct": "COPY ./stack.yaml ./",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(6, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad"
+    },
+    {
+        "before_instruct": "COPY ./ ./",
+        "after_instruct": "RUN cat ./static/stack.yaml >> stack.yaml && stack --no-install-ghc --system-ghc --skip-ghc-check install --ghc-options -j",
+        "edge": "(8, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/kmonad"
+    }
+]

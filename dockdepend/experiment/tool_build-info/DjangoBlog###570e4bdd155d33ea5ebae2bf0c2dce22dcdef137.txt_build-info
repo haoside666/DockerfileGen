@@ -1,0 +1,8 @@
+{
+    "filename": "DjangoBlog###570e4bdd155d33ea5ebae2bf0c2dce22dcdef137.txt",
+    "command_length": 9,
+    "processing_time": 0.0031986236572265625,
+    "dependency_count": 14,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (2, 4), (2, 5), (2, 6), (2, 7), (4, 5), (6, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /code/djangoblog/', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /code/djangoblog/', 'exist file or directory dependency,because common path /code/djangoblog/requirements.txt', 'exist file or directory dependency,because common path /code/djangoblog']"
+}

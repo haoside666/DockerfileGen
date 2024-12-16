@@ -1,0 +1,23 @@
+FROM ubuntu:16.04
+RUN apt-get update && apt-get install -y software-properties-common build-essential python curl git zlib1g-dev openjdk-8-jre-headless
+RUN curl -Ls http://s3.voneicken.com/xtensa-lx106-elf-20160330.tgx | tar Jxf -
+RUN curl -Ls http://s3.voneicken.com/esp_iot_sdk_v2.1.0.tgx | tar -Jxf -
+ENV XTENSA_TOOLS_ROOT /xtensa-lx106-elf/bin/
+VOLUME /esp-link
+WORKDIR /esp-link
+CMD make
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(1, 2),	# curl 依赖
+	(1, 3),	# curl 依赖
+]
+
+
+所用时间：34.70

@@ -1,0 +1,345 @@
+[
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD _config.yml /app/",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD _config_prod.yml /app/",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD Gemfile /app/",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD Gemfile.lock /app/",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD package.json /app/",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD pnpm-lock.yaml /app/",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ADD gulpfile.js /app/",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "RUN apk add --virtual build-dependencies build-base npm",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "RUN apk upgrade",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "EXPOSE 3000",
+        "edge": "(0, 14)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "EXPOSE 3001",
+        "edge": "(0, 15)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ruby:3.2-alpine",
+        "after_instruct": "ENTRYPOINT pnpm run start-plugins",
+        "edge": "(0, 16)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD _config.yml /app/",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD _config_prod.yml /app/",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD Gemfile /app/",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD Gemfile.lock /app/",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD package.json /app/",
+        "edge": "(1, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD pnpm-lock.yaml /app/",
+        "edge": "(1, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "ADD gulpfile.js /app/",
+        "edge": "(1, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(1, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(1, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(1, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "ADD _config.yml /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(2, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD _config.yml /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(2, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD _config.yml /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(2, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD _config_prod.yml /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(3, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD _config_prod.yml /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(3, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD _config_prod.yml /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(3, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(4, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(4, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(4, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile.lock /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(5, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile.lock /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(5, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD Gemfile.lock /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(5, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD package.json /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(6, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD package.json /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(6, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD package.json /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(6, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD pnpm-lock.yaml /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(7, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD pnpm-lock.yaml /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(7, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD pnpm-lock.yaml /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(7, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD gulpfile.js /app/",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(8, 11)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD gulpfile.js /app/",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(8, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ADD gulpfile.js /app/",
+        "after_instruct": "RUN bundle config --global silence_root_warning 1 && bundler install --verbose",
+        "edge": "(8, 13)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "RUN apk add --virtual build-dependencies build-base npm",
+        "after_instruct": "RUN npm i -g pnpm",
+        "edge": "(9, 11)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'npm'}"
+    },
+    {
+        "before_instruct": "RUN npm i -g pnpm",
+        "after_instruct": "RUN pnpm install",
+        "edge": "(11, 12)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pnpm'}"
+    }
+]

@@ -1,0 +1,270 @@
+python manage.py collectestatic
+python manage.py syncdb
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_snowflake_ref}#egg=dbt-snowflake"
+python uwsgiconfig.py --build core
+python /usr/src/app/manage.py migrate
+python /opt/info/trid/tridupdate.py
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_bigquery_ref}#egg=dbt-bigquery"
+python -m venv $VENV_PATH
+python accomplist.py
+python ./build/tools/make_standalone_toolchain.py     --arch arm64     --api ${PLATFORM_MIN_API_x64_VERSION}     --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}     --force
+python -m pip install -r ${AWSH_PYTHON_EXTRAS} --disable-pip-version-check
+python -m pip install --no-cache-dir yara-python
+python setup.py install_var
+python manage.py migrate
+python -m pip --no-cache-dir install -r requirements.txt --no-use-pep51
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_bigquery_ref}#egg=dbt-bigquery"
+python --version
+python /var/www/html/app.py' > /usr/bin/run.sh
+python -m unittest discover -s /musclex_test/tests -p '*_test.py'
+python ./x.py build
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_snowflake_ref}#egg=dbt-snowflake"
+python ./setup.py bdist_wheel
+python ./manage.py migrate
+python -m pip install --upgrade pip==19.3.1
+python setup.py install --no DLIB_USE_CUDA --yes USE_AVX_INSTRUCTIONS
+python manage.py collectstatic --no-input
+python -m pip install --upgrade pip --user
+python -v
+python /usr/src/grr/setup.py sdist --dist-dir="/sdists/core" --no-make-docs
+python setupGenomicData.py --hg19
+python src/API/manage.py runserver 0.0.0.0:8080
+python -m nltk.downloader -d ./usr/local/nltk_data punkt
+python model.py
+python -m pip install wheel
+python setup.py build_ext -L /usr/lib -I /usr/include
+python ./build/tools/make_standalone_toolchain.py 	       --arch x86 	       --api ${PLATFORM_MIN_API_VERSION} 	       --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION} 	       --force
+python -m spacy download en_core_web_sm
+python /biocat_modules/setup.py build_ext --inplace
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_core_ref}#egg=dbt-core&subdirectory=core"
+python ./build/tools/make_standalone_toolchain.py 	       --arch arm64 	       --api ${PLATFORM_MIN_API_x64_VERSION} 	       --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION} 	       --force
+python setup.py sdist --formats=zip --dist-dir=/sdists --no-make-docs
+python -m venv --system-site-packages /opt/venv
+python /tmp/collect_tests.py > /app/test_index
+python -m pip install -I fiona --no-binary fiona
+python test.py
+python -m pip uninstall torchtext -y
+python -m pip install --no-cache-dir "${dbt_third_party}"
+python $DEEMIX_HOME/server.py
+python /tmp/s3cmd/setup.py install
+python -m pip install --user .
+python manage.py makemigrations
+python -m pip install .
+python build/gen.py --no-sysroot
+python setup.py bdist_wheel -d /deps
+python -m pip install --upgrade pip wheel setuptools==57.5.0
+python setup.py sdist install
+python setup.py build_sphinx
+python -m pip --no-cache-dir install -r requirements.txt
+python -m pip install pyinstaller wheel
+python setup.py install
+python get.py
+python -m pip install black
+python /usr/src/app/manage.py collectstatic --noinput
+python /usr/src/grr/setup.py sdist --dist-dir="/sdists/core" --no-make-docs --no-sync-artifacts
+python -m venv /opt/venv
+python -m pip install -U pip
+python ./Pipeline.py unix
+python -m pip install --no-cache-dir torchserve torch-model-archiver torch-workflow-archiver
+python /emg/sw/myami/pyami/fft/fftwsetup.py 2 4096 4096
+python -m pip install         cython         shapely[vectorized]
+python msfHelper.py -h
+python -m pip install --upgrade pip setuptools black pytest mypy
+python
+python -m pip wheel --no-deps --wheel-dir /tmp/dist         Pillow-SIMD  # ==${PILLOW_SIMD_VERSION}
+python -m gnuplot_kernel install
+python -m pip install -U -r /app/requirements.txt
+python /opt/fileinfo/trid/tridupdate.py
+python setupGenomicData.py --hg38
+python setup.py develop
+python createkey.py
+python -m unittest discover -s /musclex/tests -p '*_test.py'
+python /sslyze/setup.py install
+python -m ipykernel.kernelspec
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_redshift_ref}#egg=dbt-redshift"
+python setup.py install_provisions
+python sample_data.py
+python -m nltk.downloader averaged_perceptron_tagger
+python -c "import fedml"
+python evemain.py
+python -m deeppavlov install ner_ontonotes_bert_mult
+python setup.py test
+python gff3toembl/setup.py install
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_postgres_ref}#egg=dbt-postgres&subdirectory=plugins/postgres"
+python -m venv /opt/{{ cookiecutter.__package_name_kebab_case }}-env
+python -m virtualenv env
+python uwsgiconfig.py --plugin plugins/gevent core
+python ./build/tools/make_standalone_toolchain.py     --arch x86     --api ${PLATFORM_MIN_API_VERSION}     --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}     --force
+python omnidb-server.py --dropuser=admin
+python -m venv venv
+python -m pip install -U -r https://raw.githubusercontent.com/IlfirinPL/robot-install/master/data/packages.txt
+python -m pip install grpcio-tools
+python -m pip install -r requirements.txt
+python setup.py install --quiet
+python -m pip install grpcio
+python -V
+python create.py
+python check-dependencies.py
+python -m pip install -e /content/stablediffusion
+python uwsgiconfig.py --plugin plugins/http
+python -m nltk.downloader stopwords
+python -m pip install requests mediapipe safetensors lark Pillow==9.0.0 wget webdataset open_clip_torch opencv-python==4.5.5.64 pandas matplotlib fvcore ipywidgets==7.7.1 transformers==4.19.2 omegaconf einops "pytorch_lightning>1.4.1,<=1.7.7" scikit-image opencv-python ai-tools cognitive-face zprint kornia==0.5.0 lpips keras datetime timm prettytable basicsr fairscale
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_redshift_ref}#egg=dbt-redshift"
+python -m pip wheel --no-deps --wheel-dir /tmp/dist         --index-url ${PYTORCH_INDEX_URL}         torch==${PYTORCH_VERSION}
+python manage.py createcachetable
+python -m nltk.downloader -d ./usr/local/nltk_data averaged_perceptron_tagger
+python setup.py install; fi
+python -m spacy download pt_core_news_sm
+python -m pip install --no-cache-dir -U setuptools wheel
+python text_analysis/manage.py collectstatic --noinput
+python -m pip install --force-reinstall --upgrade pip
+python clientsgenerator.py python,perl,java
+python uwsgiconfig.py --build wuvt
+python /opt/examples/python/setup.py install
+python uwsgiconfig.py --plugin plugins/http core
+python /opt/examples/python/tools/setup.py install
+python setup.py build_ext
+python -m pip install --upgrade -r /tmp/install/requirements.txt
+python -m pip install --upgrade -r /tmp/requirements.txt
+python -m pip install --force-reinstall --no-deps /tmp/dist/*
+python ./scripts/trim_sdk.py
+python contrib/cmake/bootstrap.py create
+python makefile.py
+python -m pip install -U git+https://github.com/IlfirinPL/robotframework-MarcinKoperski.git
+python -m spacy download en
+python manage.py migrate --settings=mysite.settings.prod
+python /app/docker/generate_production_ini.py
+python setup.py install_docs
+python -m venv /app/venv
+python build.py
+python -c "import torch; torch.__version__"
+python -m nltk.downloader punkt
+python -m pip uninstall -y pip
+python -m pip install --find-links=/tmp nonebot-plugin-pixivbot[mongo]
+python /tmp/get-pip.py
+python /musclex/setup.py install
+python -c "import os, platform; assert platform.python_version() == os.getenv('PYTHON_VERSION')"
+python make-data.py
+python -m pip install --upgrade pip conan
+python -m pip install pip --upgrade
+python -m pip --no-cache-dir install virtualenv
+python setupGenomicData.py --mm10
+python -m spacy download en_core_web_md
+python -m pip install -U pip setuptools wheel
+python manage.py init
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_postgres_ref}#egg=dbt-postgres&subdirectory=plugins/postgres"
+python --version | sed "s/Python //" | xargs -I {} bash -c "if [ {}: -ne $PYTHON_VERSION 5]; then exit 1;"
+python -m pip install /app
+python articles.py
+python setup.py sdist develop
+python setup.py install -n
+python -m pip install entrypoints==0.4 ipython==8.10.0 jupyter_client==7.4.9 jupyter_core==5.2.0 packaging==22.0 tzdata==2022.7 ipykernel --force-reinstall
+python intesis.py
+python get-pip.py --user
+python setup.py sdist --dist-dir="/sdists/server"
+python install.py --all
+python -m pip install numpy
+python manage.py collectstatic
+python -c "import horovod.torch as hvd; hvd.init()"
+python manage.py collectstatic --noinput
+python uwsgiconfig.py --plugin plugins/sse_offload wuvt
+python manage.py migrate --run-syncdb
+python -m pip install torch==2.0.0 torchvision==0.15.1 --index-url https://download.pytorch.org/whl/cu118
+python -m deeppavlov install /usr/local/lib/python3.6/site-packages/deeppavlov/configs/squad/squad.json
+python -m pip install grpcio-tools googleapis-common-protos
+python -m venv /usr/app/venv
+python -m pipx ensurepath
+python setup.py build install
+python lock.py <Pipfile.lock >requirements.txt
+python -c 'from sklearn import svm' # test for function
+python setup.py
+python -m pip install --no-cache-dir "git+https://github.com/dbt-labs/${dbt_spark_ref}#egg=dbt-spark[${dbt_spark_version}]"
+python -m pip wheel --no-deps --wheel-dir /tmp/dist         --index-url ${PYTORCH_INDEX_URL}         torchvision==${TORCHVISION_VERSION}
+python -m pip install --upgrade pip setuptools wheel --no-cache-dir
+python -c "import horovod.mxnet as hvd; hvd.init()"
+python setup.py; fi
+python pip-install.py
+python -m pip install -U pip setuptools
+python omnidb-server.py --init
+python /src/manage.py migrate
+python ./setup.py
+python get-pip.py `grep 'pip==' requirements.pip` --no-cache-dir
+python -m pip install --user -U pip
+python setup.py install --no DLIB_USE_CUDA                             --yes USE_AVX_INSTRUCTIONS
+python -m ensurepip
+python /var/www/html/dolphinnext/scripts/updateDN.py
+python django-remote-auth-ldap/setup.py install
+python -m pip install --upgrade -r /cleaner/requirements.txt
+python ./dist.py
+python ./build/tools/make_standalone_toolchain.py     --arch arm     --api ${PLATFORM_MIN_API_VERSION}     --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}     --force
+python setup.py install --cpp_implementation
+python -m pip install --no-cache-dir --upgrade -r /app/requirements.txt
+python src/API/manage.py runserver" 0.0.0.0:8080
+python setup.py bdist_wheel
+python -m venv $VIRTUAL_ENV
+python -m pip install xformers==0.0.19
+python -m pip install --upgrade -r /bin/requirements.txt
+python ./clean.py
+python setup.py install_scripts
+python -m pip install --no-cache-dir -U pip
+python -m pip install --upgrade setuptools
+python -c "import matplotlib.pyplot"
+python /models-1.9.0/official/wide_deep/data_download.py
+python -m pip install         geopandas         git+https://github.com/pyproj4/pyproj.git@v1.9.6rel         rtree
+python get-pip.py
+python -m pip install --no-cache "git+https://github.com/dbt-labs/${dbt_spark_ref}#egg=dbt-spark[${dbt_spark_version}]"
+python ./x.py install
+python -c "import platform; assert platform.python_version() == os.getenv('PYTHON_VERSION')"
+python setup.py build
+python --version | sed "s/Python //" | xargs -I {} bash -c "if [[ {} -ne '$PYTHON_VERSION' ]]; then exit 1; fi"
+python -m pip install -U pip wheel
+python -u setup.py install
+python ./manage.py loaddata ctrack/fixtures/*.yaml
+python setup.py render_svgs
+python -m pip install -r ${AWSH_PYTHON_DEPS} --disable-pip-version-check
+python setup.py sdist
+python ./build/tools/make_standalone_toolchain.py 	       --arch arm 	       --api ${PLATFORM_MIN_API_VERSION} 	       --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION} 	       --force
+python -c 'import mapnik'
+python -m pip install --upgrade pip setuptools wheel
+python ./Pipeline unix
+python -m pip install --no-cache-dir -r requirements.txt
+python test-app.py
+python -m unittest discover -s /tests -p '*_test.py'
+python ./setup.py develop
+python /source/shodan_info.py'" >> ~/.bashrc
+python manage.py compilemessages
+python uwsgiconfig.py --plugin plugins/php
+python stuff/monitor.py
+python -m pip install --upgrade virtualenv ;fi
+python /sw/myami/pyami/fft/fftwsetup.py 2 4096 4096
+python -m pip install --upgrade jupyter_http_over_ws>=0.0.7
+python ./build/tools/make_standalone_toolchain.py     --arch x86_64     --api ${PLATFORM_MIN_API_x64_VERSION}     --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}     --force
+python download.py
+python -m ensurepip --default-pip
+python ./get-pip.py
+python ./setup.py install
+python -m pip --no-cache-dir install -U pip
+python setup.py --quiet sdist
+python -m ipykernel install --user
+python -m unittest discover
+python setyp.py install
+python -m pip install -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers -e git+https://github.com/openai/CLIP.git@main#egg=clip
+python linux-installer.py
+python -c "import horovod.tensorflow as hvd; hvd.init()"
+python -m pip install -U -r https://raw.githubusercontent.com/IlfirinPL/robotframework-MarcinKoperski/master/requirements.txt
+python -c 'import cv2; print("Python: import cv2 - SUCCESS")'
+python uwsgiconfig.py --plugin plugins/python core
+python ./build/tools/make_standalone_toolchain.py 	       --arch x86_64 	       --api ${PLATFORM_MIN_API_x64_VERSION} 	       --install-dir ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION} 	       --force
+python /awslogs-agent-setup.py -n -r us-west-2 -c /root/awslogs.conf.dummy
+python /usr/src/app/manage.py collectstatic
+python manage.py collectstatic --noinput --link
+python -m deeppavlov download /usr/local/lib/python3.6/site-packages/deeppavlov/configs/squad/squad.json
+python manage.py runserver 0.0.0.0:8000
+python manage.py migrate --run-syncdb --noinput
+python -m pip install --quiet --upgrade pip;     python -m pip install win-unicode-console --quiet --upgrade --force-reinstall --no-cache;     python -m pip install conan==${CONAN_VERSION} --quiet --upgrade --force-reinstall --no-cache;     python -m pip install conan_package_tools --quiet --upgrade --force-reinstall --no-cache
+python -m spacy link pt_core_news_sm pt
+python -m pip install --upgrade pip
+python get-pip.py --no-cache-dir     `grep 'pip==' requirements.pip`     `grep 'setuptools==' requirements.pip`     `grep 'wheel==' requirements.pip`
+python -m nltk.downloader -d ./usr/local/nltk_data stopwords
+python /NGStools/BacPipe/BacPipe/BacPipe/Pipeline.py unix
+python uwsgiconfig.py --plugin plugins/corerouter core

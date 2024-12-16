@@ -1,0 +1,198 @@
+[
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "RUN apt update && apt upgrade -y",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "RUN apt install -y libsodium23 python3-pip git",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "RUN useradd -ms /bin/bash user",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "USER user",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "WORKDIR /home/user",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "RUN mkdir requirements",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "COPY ./requirements-core.txt requirements/core-requirements.txt",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "COPY ./ tribler",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "WORKDIR /home/user/tribler",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "ENV CORE_API_PORT=20100",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "EXPOSE 20100",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM triblercore/libtorrent:1.2.10-x",
+        "after_instruct": "CMD ./src/tribler.sh --core",
+        "edge": "(0, 13)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt update && apt upgrade -y",
+        "after_instruct": "RUN apt install -y libsodium23 python3-pip git",
+        "edge": "(1, 2)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt'}"
+    },
+    {
+        "before_instruct": "RUN apt update && apt upgrade -y",
+        "after_instruct": "USER user",
+        "edge": "(1, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt install -y libsodium23 python3-pip git",
+        "after_instruct": "USER user",
+        "edge": "(2, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN apt install -y libsodium23 python3-pip git",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(2, 8)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip3'}"
+    },
+    {
+        "before_instruct": "RUN useradd -ms /bin/bash user",
+        "after_instruct": "USER user",
+        "edge": "(3, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "USER user",
+        "after_instruct": "RUN mkdir requirements",
+        "edge": "(4, 6)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "USER user",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(4, 8)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /home/user",
+        "after_instruct": "COPY ./requirements-core.txt requirements/core-requirements.txt",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /home/user",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(5, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /home/user"
+    },
+    {
+        "before_instruct": "WORKDIR /home/user",
+        "after_instruct": "COPY ./ tribler",
+        "edge": "(5, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir requirements",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(6, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /home/user/requirements"
+    },
+    {
+        "before_instruct": "COPY ./requirements-core.txt requirements/core-requirements.txt",
+        "after_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "edge": "(7, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /home/user/requirements/core-requirements.txt"
+    },
+    {
+        "before_instruct": "COPY ./requirements-core.txt requirements/core-requirements.txt",
+        "after_instruct": "WORKDIR /home/user/tribler",
+        "edge": "(7, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN pip3 install -r requirements/core-requirements.txt",
+        "after_instruct": "WORKDIR /home/user/tribler",
+        "edge": "(8, 10)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    },
+    {
+        "before_instruct": "COPY ./ tribler",
+        "after_instruct": "WORKDIR /home/user/tribler",
+        "edge": "(9, 10)",
+        "type": "BOOT",
+        "dependency_description": "Boot dependency"
+    }
+]

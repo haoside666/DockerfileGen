@@ -1,0 +1,67 @@
+-a, --all
+--backtrace
+-b, --both
+-B, --bulk-threshold COUNT
+--build-root DIR
+--clear-sources
+--config-file FILE
+--conservative
+-C PATH
+-d, --details
+--debug
+--default
+--development
+--development-all
+--document TYPES
+-E, --env-shebang
+-e, --exact
+--explain
+-f, --force
+--file [FILE]
+--format-executable
+-g
+-h --help
+-I
+--ignore-dependencies
+-i, --install-dir DIR
+-l, --local
+--lock
+--minimal-deps
+-n, --bindir DIR
+-N, --no-document
+--no-env-shebang
+--no-force
+--no-format-executable
+--no-http-proxy
+--no-lock
+--no-minimal-deps
+--no-post-install-message
+--no-prerelease
+--norc
+--no-suggestions
+--no-update-sources
+--no-user-install
+--no-verbose
+--no-wrappers
+-o, --output FILE
+-p, --http-proxy URL
+--platform PLATFORM
+--post-install-message
+--prerelease
+-P, --trust-policy POLICY
+-q, --quiet
+-r, --remote
+--silent
+-s, --source URL
+--strict
+--suggestions
+--system
+--user-install
+-u, --update-sources
+--vendor
+--versions
+-V, --verbose
+-v --version version
+
+--without GROUPS
+-w, --wrappers

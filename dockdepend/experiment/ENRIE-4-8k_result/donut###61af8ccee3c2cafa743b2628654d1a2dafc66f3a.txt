@@ -1,0 +1,12 @@
+根据提供的Dockerfile内容，以下是所有指令行之间的依赖关系列表，包含注释描述：
+
+(0, 1) # RUN apt-get update 依赖于 FROM ubuntu:22.04，基于基础镜像更新软件包列表
+(1, 2) # RUN apt-get install ... 依赖于 RUN apt-get update，安装软件包前需要更新列表
+(2, 3) # WORKDIR /opt 依赖于 RUN apt-get install ...，安装完软件包后切换工作目录
+(3, 4) # RUN git clone ... 依赖于 WORKDIR /opt，在/opt目录下克隆代码库
+(4, 5) # WORKDIR /opt/donut 依赖于 RUN git clone ...，克隆后切换到项目目录
+(5, 6) # RUN make -f Makefile 依赖于 WORKDIR /opt/donut，在项目目录下执行编译
+(6, 7) # WORKDIR /workdir 依赖于 RUN make -f Makefile，编译后切换到新工作目录
+(7, 8) # RUN chmod ugo+wrx /workdir 依赖于 WORKDIR /workdir，在新工作目录下设置权限
+(8, 9) # RUN ls /opt/donut 依赖于 RUN chmod ugo+wrx /workdir，权限设置后列出项目目录内容
+(9, 10) # ENTRYPOINT ["/opt/donut/donut"] 依赖于 RUN ls /opt/donut，所有准备步骤完成后设置入口点

@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "MAINTAINER Snow Wang <admin@farseer.vip>",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "WORKDIR /youxiang",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "COPY requirements.txt requirements.txt",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "COPY . /youxiang",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "ENV TZ=Asia/Shanghai",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone && pip install -r requirements.txt",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.7-slim",
+        "after_instruct": "ENTRYPOINT python /youxiang/main.py",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /youxiang",
+        "after_instruct": "COPY requirements.txt requirements.txt",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /youxiang",
+        "after_instruct": "COPY . /youxiang",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /youxiang",
+        "after_instruct": "RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone && pip install -r requirements.txt",
+        "edge": "(2, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /youxiang"
+    },
+    {
+        "before_instruct": "COPY requirements.txt requirements.txt",
+        "after_instruct": "RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone && pip install -r requirements.txt",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /youxiang/requirements.txt"
+    },
+    {
+        "before_instruct": "COPY . /youxiang",
+        "after_instruct": "RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone && pip install -r requirements.txt",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /youxiang"
+    },
+    {
+        "before_instruct": "ENV TZ=Asia/Shanghai",
+        "after_instruct": "RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone && pip install -r requirements.txt",
+        "edge": "(5, 6)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    }
+]

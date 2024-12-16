@@ -1,0 +1,44 @@
+[
+    {
+        "before_instruct": "FROM python:3.6.8-stretch",
+        "after_instruct": "RUN pip3 install fiber",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.6.8-stretch",
+        "after_instruct": "ADD . /work/",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.6.8-stretch",
+        "after_instruct": "RUN cd /work && pip3 install -e .[test]",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.6.8-stretch",
+        "after_instruct": "RUN cd /work && pip3 install -e .",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ADD . /work/",
+        "after_instruct": "RUN cd /work && pip3 install -e .[test]",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /work"
+    },
+    {
+        "before_instruct": "ADD . /work/",
+        "after_instruct": "RUN cd /work && pip3 install -e .",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /work"
+    }
+]

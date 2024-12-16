@@ -1,0 +1,24 @@
+FROM alpine:3.8
+LABEL maintainer="david <367013672@qq.com>" version="1.0"
+ARG timezone
+ARG app_env=prod
+ENV APP_ENV=${app_env:-"prod"} TIMEZONE=${timezone:-"Asia/Shanghai"} cron="3 */10 * * *"
+RUN set -ex && apk update && apk add --no-cache git tzdata php7 php7-curl php7-dom php7-json php7-mbstring php7-simplexml php7-zip php7-xml && git clone https://gitee.com/ledc/IYUUAutoReseed.git /IYUU && cp /IYUU/config/config.sample.php /IYUU/config/config.php && ln -sf /IYUU/config/config.php /config.php && cp /IYUU/docker/entrypoint.sh /entrypoint.sh && chmod +x /entrypoint.sh && apk del --purge *-dev && rm -rf /var/cache/apk/* /tmp/* /usr/share/man /usr/share/php7 && cd /etc/php7 && { echo "upload_max_filesize=100M"; echo "post_max_size=108M"; echo "memory_limit=1024M"; echo "date.timezone=${TIMEZONE}"; } | tee conf.d/99-overrides.ini && ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo "${TIMEZONE}" > /etc/timezone && echo '2 */5 * * * cd /IYUU && git fetch --all && git reset --hard origin/master' >> /etc/crontabs/root && echo -e "\033[42;37m Build Completed :).\033[0m\n"
+WORKDIR /IYUU
+ENTRYPOINT ["/entrypoint.sh"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(2, 4),	# environment variable dependencies
+	(3, 4),	# environment variable dependencies
+	(4, 5),	# environment variable dependencies
+]
+
+所用时间：15.08

@@ -1,0 +1,72 @@
+[
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "COPY requirements.txt ./",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "RUN apk add build-base",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "COPY token_extractor.py ./",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "CMD python ./token_extractor.py",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY requirements.txt ./",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY token_extractor.py ./",
+        "edge": "(1, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY requirements.txt ./",
+        "after_instruct": "RUN pip3 install --no-cache-dir -r requirements.txt",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/app"
+    }
+]

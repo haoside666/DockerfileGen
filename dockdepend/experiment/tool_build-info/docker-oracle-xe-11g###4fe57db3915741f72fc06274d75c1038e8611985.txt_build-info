@@ -1,0 +1,8 @@
+{
+    "filename": "docker-oracle-xe-11g###4fe57db3915741f72fc06274d75c1038e8611985.txt",
+    "command_length": 7,
+    "processing_time": 0.0006833076477050781,
+    "dependency_count": 7,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (1, 2)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /assets']"
+}

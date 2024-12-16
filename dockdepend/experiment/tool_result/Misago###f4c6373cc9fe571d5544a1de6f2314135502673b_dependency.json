@@ -1,0 +1,114 @@
+[
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ENV PYTHONUNBUFFERED=1",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ENV IN_MISAGO_DOCKER=1",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ENV MISAGO_PLUGINS=/app/plugins",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "RUN apt-get update && apt-get install -y vim libffi-dev libssl-dev sqlite3 libjpeg-dev libopenjp2-7-dev locales cron postgresql-client-15 gettext",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ADD dev /app/dev",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ADD requirements.txt /app/requirements.txt",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "ADD plugins /app/plugins",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "WORKDIR /app/",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "RUN pip install --upgrade pip && pip install -r /app/requirements.txt && pip install pip-tools",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "RUN ./dev bootstrap_plugins",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "EXPOSE 8000",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.12",
+        "after_instruct": "CMD python manage.py runserver 0.0.0.0:8000 --noreload",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ADD dev /app/dev",
+        "after_instruct": "RUN ./dev bootstrap_plugins",
+        "edge": "(5, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app/dev"
+    },
+    {
+        "before_instruct": "ADD requirements.txt /app/requirements.txt",
+        "after_instruct": "RUN pip install --upgrade pip && pip install -r /app/requirements.txt && pip install pip-tools",
+        "edge": "(6, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app/requirements.txt"
+    },
+    {
+        "before_instruct": "WORKDIR /app/",
+        "after_instruct": "RUN pip install --upgrade pip && pip install -r /app/requirements.txt && pip install pip-tools",
+        "edge": "(8, 9)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app/"
+    },
+    {
+        "before_instruct": "WORKDIR /app/",
+        "after_instruct": "RUN ./dev bootstrap_plugins",
+        "edge": "(8, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app/"
+    }
+]

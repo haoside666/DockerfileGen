@@ -1,0 +1,32 @@
+{
+    "flag": [
+        [
+            "-f",
+            "--force"
+        ],
+        [
+            "-h",
+            "--help"
+        ],
+        [
+            "-r",
+            "--remove"
+        ],
+        [
+            "-Z",
+            "--selinux-user"
+        ]
+    ],
+    "option": [
+        [
+            "-R",
+            "--root",
+            ["DIR","CONFIG_INPUT"]
+        ],
+        [
+            "-P",
+            "--prefix",
+            ["DIR","CONFIG_INPUT"]
+        ]
+    ]
+}

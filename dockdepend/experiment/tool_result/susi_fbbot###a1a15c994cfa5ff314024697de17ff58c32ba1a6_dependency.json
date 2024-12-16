@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "RUN mkdir -p /usr/src/app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "COPY package.json /usr/src/app",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "RUN npm install",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "COPY . /usr/src/app",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "EXPOSE 8080",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:boron",
+        "after_instruct": "CMD npm start",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/app",
+        "after_instruct": "WORKDIR /usr/src/app",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /usr/src/app"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/app",
+        "after_instruct": "RUN npm install",
+        "edge": "(1, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /usr/src/app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY package.json /usr/src/app",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "RUN npm install",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/app",
+        "after_instruct": "COPY . /usr/src/app",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY package.json /usr/src/app",
+        "after_instruct": "RUN npm install",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/app"
+    }
+]

@@ -1,0 +1,52 @@
+FROM --platform=${BUILDPLATFORM} node:lts-alpine
+ARG TARGETPLATFORM
+ARG TARGETARCH
+ARG TARGETVARIANT
+RUN printf "I'm building for TARGETPLATFORM=${TARGETPLATFORM}" && printf ", TARGETARCH=${TARGETARCH}" && printf ", TARGETVARIANT=${TARGETVARIANT} \n" && printf "With uname -s : " && uname -s && printf "and  uname -m : " && uname -mm
+RUN apk add --no-cache dumb-init
+WORKDIR /emailengine
+COPY . .
+RUN npm install --omit=dev
+RUN npm run prepare-docker
+RUN chmod +x ./update-info.sh
+RUN ./update-info.sh
+ENV EENGINE_APPDIR=/emailengine
+ENV EENGINE_HOST=0.0.0.0
+ENV EENGINE_API_PROXY=true
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD node ${EENGINE_APPDIR}/server.js
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(1, 4),	# environment variable dependencies
+	(2, 4),	# environment variable dependencies
+	(3, 4),	# environment variable dependencies
+	(6, 7),	# WORKDIR目录依赖
+	(6, 8),	# WORKDIR目录依赖
+	(6, 9),	# WORKDIR目录依赖
+	(6, 10),	# WORKDIR目录依赖
+	(6, 11),	# WORKDIR目录依赖
+	(7, 8),	# package.json 文件依赖
+	(7, 9),	# 文件依赖
+	(7, 10),	# 文件依赖
+	(7, 11),	# 文件依赖
+	(8, 9),	# npm包依赖
+]
+
+
+所用时间：360.41

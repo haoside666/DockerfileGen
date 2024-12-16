@@ -1,0 +1,10 @@
+```
+[(0, 1),  # RUN mkdir -p /usr/src/app 依赖于 FROM node:latest
+ (1, 2),  # WORKDIR /usr/src/app 依赖于 RUN mkdir -p /usr/src/app
+ (2, 3),  # COPY package.json /usr/src/app/ 依赖于 WORKDIR /usr/src/app
+ (3, 4),  # RUN yarn install 依赖于 COPY package.json /usr/src/app/
+ (2, 5),  # COPY . /usr/src/app 依赖于 WORKDIR /usr/src/app，且应在yarn install之后
+ (4, 5),  # 保证先安装依赖再复制其余文件
+ (5, 6),  # EXPOSE 8080 依赖于之前的文件复制等操作
+ (6, 7)]  # CMD [ "npm", "run", "dev" ] 依赖于端口的暴露
+```

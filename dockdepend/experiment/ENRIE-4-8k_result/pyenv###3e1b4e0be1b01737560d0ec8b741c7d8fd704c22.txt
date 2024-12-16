@@ -1,0 +1,10 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (0, 2),  # ENV DEBIAN_FRONTEND依赖于FROM
+ (2, 3),  # RUN apt-get依赖于ENV DEBIAN_FRONTEND
+ (0, 4),  # ENV PYENV_ROOT依赖于FROM
+ (0, 5),  # ENV PATH依赖于FROM，同时隐式依赖于ENV PYENV_ROOT（因为PATH中包含了PYENV_ROOT）
+ (4, 6),  # COPY依赖于ENV PYENV_ROOT（目标目录）
+ (4, 7),  # RUN eval "$(pyenv init -)"依赖于ENV PYENV_ROOT
+ (5, 7)]  # 同时，该RUN指令也依赖于ENV PATH（因为执行pyenv需要正确的PATH）
+```

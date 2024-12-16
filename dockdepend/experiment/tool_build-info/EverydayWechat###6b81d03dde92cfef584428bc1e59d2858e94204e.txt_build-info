@@ -1,0 +1,8 @@
+{
+    "filename": "EverydayWechat###6b81d03dde92cfef584428bc1e59d2858e94204e.txt",
+    "command_length": 9,
+    "processing_time": 0.0016770362854003906,
+    "dependency_count": 14,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (1, 2), (1, 4), (2, 3), (2, 4), (2, 5), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /app', 'have shell io intersection,because common path /app', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /app', 'exist file or directory dependency', 'exist file or directory dependency,because common path /app/requirements.txt']"
+}

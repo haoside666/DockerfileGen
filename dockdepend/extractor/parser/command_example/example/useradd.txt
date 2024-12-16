@@ -1,0 +1,805 @@
+useradd mc
+useradd -m -d /qbittorrent-full qbittorrent
+useradd --uid $UID --gid $GID -m steam
+useradd -g 1000 -l -M -s /bin/false -u 1000 docker
+useradd --uid 3434 --gid circleci --shell /bin/bash --create-home circleci
+useradd -d /home/user user
+useradd -u 1003 -d /home/app_user -m -s /bin/bash -p $(echo P@ssw0rd@123 | openssl passwd -1 -stdin) app_user
+useradd -c 'Emby' -d /usr/lib/emby-server -g emby -m -r emby
+useradd -m --uid 1000 mkdocs
+useradd -ms /bin/bash drupal
+useradd -ms /bin/bash conan -g _1001 -G _1000,_2000,_999
+useradd  -s /sbin/nologin -g nginx nginx
+useradd -s /bin/bash osm
+useradd -m $USER
+useradd -g eqemu -d $eqemu_server_directory eqemu
+useradd -ms /bin/bash $NEWUSER
+useradd -md "$MINTERHOME" -g $USERNAME $USERNAME
+useradd -r -g prerender -d /usr/src/app prerender
+useradd wagtail
+useradd -m --gid ${GID} --uid ${UID} steam
+useradd -m -g 1001 -u 1001 supervisor
+useradd -ms /bin/bash emundo
+useradd -u "$GTRADER_UID" -G www-data -d /gtrader -s /bin/bash -M gtrader
+useradd -r -g cameraevents cameraevents
+useradd -r -m -g warfork -u 999 warfork
+useradd         --system         --create-home          --no-log-init         --uid ${EXECUTING_USER_ID}         --gid ${EXECUTING_USER}         ${EXECUTING_USER}
+useradd -ms /bin/bash builderuser
+useradd --create-home --home-dir $HOME user
+useradd -m ${user_name}
+useradd -d /home/appionuser -g 100 -p 'appion-protomo' -s /bin/bash appionuser
+useradd -c 'Kibana' -d /opt/kibana -g kibana -r kibana
+useradd -U -G supergroup superset
+useradd -r -d ${QPID_WORK_DIR} -m -g qpid qpid
+useradd -u ${PUID} -g videos -d /config -M videos
+useradd -r -g ost ost
+useradd -r -m -g 100 -u 1024 radium
+useradd --no-create-home -g users -u $uid radarr
+useradd rust --user-group --create-home --shell /bin/bash --groups sudo
+useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
+useradd -m -d /home/thug -g thug -s /usr/sbin/nologin -c "Thug User" thug
+useradd --user-group             --no-create-home             --home-dir /data             --shell /usr/sbin/nologin             minecraft
+useradd -d /config -s /bin/sh mdc
+useradd --shell "/bin/zsh" --create-home ntrrg
+useradd -u 1001 -G www-data -d /gtrader -s /bin/bash -M gtrader
+useradd --uid 2000 --gid 2000 --create-home media
+useradd -l -m -s /bin/bash -N -u "${NB_UID}" "${NB_USER}"
+useradd -m -s /bin/bash muzetv
+useradd -r -g user -G audio,video user
+useradd -m warfork
+useradd -m -r -g emby emby
+useradd -m skiddy -s /bin/bash
+useradd -m radarr
+useradd --gid $GROUP_ID --uid $USER_ID sbtuser --shell /bin/bash
+useradd -g envoygroup -m -d /home/envoybuild envoybuild
+useradd -ms /bin/bash --no-log-init --no-user-group -g $WWWGROUP -u $WWWUSER octane
+useradd -m docker
+useradd -m openwrt
+useradd -m radicale
+useradd -d "$JENKINS_HOME" -u 1000 -g 1000 -m -s /bin/bash jenkins
+useradd -u "${GTRADER_UID:-1001}" -G www-data -d /gtrader -s /bin/bash -M gtrader
+useradd -ms /bin/bash steam
+useradd -d /cowrie -m -g cowrie cowrie
+useradd -r --create-home --shell /bin/bash --uid ${uid} --gid ${gid} ${USER_NAME}'
+useradd -u 54321 -d /home/oracle -g dba -m -s /bin/bash oracle
+useradd -b /u01 -d /u01/oracle -m -s /bin/bash oracle
+useradd -U -m superset
+useradd -g joinmarket -s /bin/bash -m joinmarket
+useradd -r -g firefox -G audio,video firefox
+useradd -d /app/workspace -gs /bin/bash cloud9
+useradd -c "Dovecot login user" -d /dev/null -u 402 -g dovenull -s /bin/false dovenull
+useradd -r -d $HOME -u $PUID -g $PGID -s /bin/bash $PUSR
+useradd -ms /bin/bash ducky
+useradd --no-create-home -g users -u $uid media
+useradd $user --uid $uid --gid $gid --home-dir /home/$user
+useradd -ms /bin/bash $USERNAME
+useradd -m -s $SHELL -N -u $NB_UID $NB_USER
+useradd -u 1000 -g 1000 -r minecraft
+useradd -g eqemu -d $EQEMU_HOME eqemu
+useradd -d ${HOME} -m ${USER}
+useradd -u 510 -g 510 -G docker,docker2 -d /var/lib/jenkins jenkins)
+useradd jetty -U -s /bin/false
+useradd -m sudoer
+useradd -ms /bin/bash app
+useradd --user-group -d ${SUPERSET_HOME} -m --no-log-init --shell /bin/bash superset
+useradd -u 1001 apisix
+useradd mc; 	echo "mc:admin" | chpasswd
+useradd -m polar
+useradd -m send
+useradd -s /bin/bash -m borg
+useradd --home /srv/git --system --comment 'gitolite system user' git
+useradd -d /var/lib/couchdb -g couchdb couchdb
+useradd -ms /bin/bash conan -g 1001 -G 1000,2000,999
+useradd --no-log-init -r -M -d ${HOME} vernemq
+useradd -r --no-log-init -u ${USER_ID} -g appuser appuser
+useradd --create-home --shell /bin/bash ${USER}
+useradd -ms /bin/bash elastalert
+useradd $KAFKA_USER
+useradd -m -u 10000 kodi
+useradd --create-home --gid docker unprivilegeduser
+useradd -m -r -u 42 -g build-user build-user
+useradd -h /home/tfansible -u 1000 -s /bin/bash tfansible -D
+useradd -m --uid 1005 --gid 205 docs
+useradd -ms /bin/bash domain_stats
+useradd -ms /bin/bash tor_router
+useradd vagrant
+useradd -m -g 1001 -u 1001 app
+useradd admin
+useradd -g socorrista -d /socorrista -m -s /bin/false socorrista
+useradd --create-home --uid 1000 --shell /bin/bash fedml
+useradd vagrant --create-home --user-group --groups sudo
+useradd gearman
+useradd $user
+useradd -ms /bin/bash flutter
+useradd -d /opt/amp -m amp -s /bin/bash -r
+useradd -r -g webdriver -G audio,video -d /webdriver -m webdriver
+useradd user1 -m -s /bin/bash
+useradd -g staff -m docker
+useradd -s /bin/bash -m -U borg
+useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+useradd --system redmon
+useradd --create-home --home-dir /home/build --uid 1000 --gid 100 --shell /bin/bash build
+useradd -r -g dockerrunner dockerrunner
+useradd -ms /bin/bash jenkins
+useradd -d "$ANSIBLE_HOME" -u ${ansible_uid} -g ${ansible_gid} -m -s /bin/bash ${ansible_user}
+useradd --shell /bin/bash --uid 1020 --gid 1020 --password $(openssl passwd ubuntu)         --create-home --home-dir /home/ubuntu ubuntu
+useradd -g admin admin
+useradd -d /var/jenkins_home/worker -u 1000 -m -s /bin/bash jenkins
+useradd -m -d /qbittorrent qbittorrent
+useradd --system --create-home --uid 1001 --gid 0 tell-me-a-secret
+useradd -u 1000 pg
+useradd --shell /bin/bash -u ${UID} -g ${GID} -m ${MINIFI_USER}
+useradd --uid 1000 --gid 1000 --groups 0 --home-dir /usr/share/${ELASTIC_PRODUCT} --no-create-home ${ELASTIC_PRODUCT}
+useradd -g 1000 -u 1000 -d /qbittorrent qbittorrent
+useradd noroot -u 1000 -s /bin/bash
+useradd --system supervisor
+useradd --uid 1000 --gid rpmbuild --shell /bin/bash --create-home rpmbuild
+useradd -ms /bin/bash user -u 1000 -g 1000
+useradd -ms /bin/bash rustnode
+useradd -m -u 5001 -g $NEWUSER $NEWUSER
+useradd -U -c openttd -d /home/openttd openttd
+useradd --create-home --home-dir /home/${DEVELOP_USER} --shell /bin/bash --uid ${UID} --gid ${GID} ${DEVELOP_USER}
+useradd --uid $userid vagrant --create-home --user-group --groups sudo
+useradd --shell /bin/bash -u ${UID} -g ${GID} -m nifi
+useradd -d /kvroot  -m -s /bin/bash -u 1000 nosql-user
+useradd --no-log-init -r -g knarr knarr
+useradd -m mu
+useradd ${USERNAME} -m -u 1000 -G sudo -s /bin/zsh
+useradd -l -u 33333 -G sudo -md /home/gitpod -s /bin/bash -p gitpod gitpod
+useradd -u 12574 -g 12574 -m -N -s /bin/bash ubuntu
+useradd -m -d /home/nonroot -g nonroot -s /usr/sbin/nologin -c "Nonroot User" nonroot
+useradd --no-log-init -r -m -b /home -g pmixer pmixer
+useradd --create-home --home-dir $HOME fontforge
+useradd -m dev
+useradd -u 600 -g 600 -r -m shiny
+useradd --gid uwu --shell /bin/bash --create-home uwu
+useradd -ms /bin/bash ${user}
+useradd -m -s /usr/bin/mysecureshell -p $pass ${username} -d /data
+useradd -d /ricopili -U -m -s /bin/bash ricopili
+useradd -l -u ${PUID} -g laradock -m laradock -G docker_env
+useradd -d /home/amp -m amp -s /bin/bash
+useradd -r -g app app
+useradd -u 1001 -r -g 0 -s /sbin/nologin default
+useradd -u 502 -g 502 -d /var/lib/transmission-daemon debian-transmission)
+useradd --user-group --create-home --shell /bin/false app
+useradd -ms /bin/bash webgoat
+useradd -ms /bin/bash loopdoor
+useradd rstudio
+useradd -s /bin/bash webmin
+useradd --system --gid nginx --no-create-home --home /nonexistent --comment "nginx user" --shell /bin/false --uid 101 nginx
+useradd --uid 1000 --no-create-home --shell /bin/false pgweb
+useradd -d "${JENKINS_AGENT_HOME}" -u "${uid}" -g "${gid}" -m -s /bin/bash "${user}"
+useradd -ms /bin/bash jukebox
+useradd -ms /bin/bash admin
+useradd -d /app/workspace -s /bin/bash cloud9
+useradd --create-home --shell /bin/bash virome
+useradd -d "$SQLRELAY_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+useradd -m -s /bin/bash -G sudo,chrome-remote-desktop,pulse-access ezgo
+useradd --user-group -m --system --home-dir /home/wekan wekan
+useradd -ms /bin/bash vault
+useradd openslides -g openslides --system
+useradd -m ubuntu -s /bin/bash
+useradd --uid 1000 --gid patchwork --shell /bin/bash --create-home patchwork
+useradd -ms /bin/bash  developer
+useradd -r -g $JIRA_GROUP $JIRA_USER
+useradd coder
+useradd --create-home app
+useradd -u ${USER_ID} -g radium -s /bin/bash -m -d /radium radium
+useradd -m test
+useradd -u 1006 -s /bin/bash -U gitlab-runner -m
+useradd -m lazyrecon_user
+useradd -u 1000 syslog-usr
+useradd -m -r -g nonroot -d /home/nonroot -s /usr/sbin/nologin -c "Nonroot User" nonroot
+useradd --shell /bin/bash --gid 1337 -m mapproxy
+useradd mc;   echo "mc:admin" | chpasswd
+useradd --shell /bin/bash monero
+useradd -u 1106 bunq2ynab
+useradd -s /bin/bash --uid $UID --gid $GID -m $USER
+useradd -ms /bin/sh --uid 1000 jetty
+useradd -M -s /bin/sh -g users -G apache,wheel -p paaGxbNLNTCao user
+useradd --no-create-home -g users -u $uid sabnzbd
+useradd -d /home/flask --no-log-init --create-home -r -g flask flask
+useradd --create-home --home-dir /home/user --uid 1000 -G systemd-journal user
+useradd -r -g malice malice
+useradd -d /home/atom -m atom
+useradd -u $user_id -ms /bin/bash $user
+useradd --create-home redash
+useradd -m steam
+useradd -r -u 999 -g appuser appuser
+useradd -d /home/user -s /bin/bash -ms /bin/bash user
+useradd -ms /usr/bin/zsh dot
+useradd -m -u ${CUSTOM_UID} -g ${CUSTOM_USER_NAME} -G sudo ${CUSTOM_USER_NAME}
+useradd -r -g snappass snappass
+useradd -b /u01 -d /u01/oracle -m -G sudo -s /bin/bash oracle
+useradd -u 1000 golang
+useradd -g app app
+useradd -b ${INSTALL_DIR} -m -s /bin/sh serveradmin
+useradd --home-dir "$HOME"     --uid 1000 --gid 1000     captain
+useradd  --system --no-log-init              --create-home --home-dir ${QPID_WORK}              --uid 1000 --gid qpid qpid
+useradd -u 12002 code
+useradd -ms /bin/bash syncer
+useradd -r -g app -G sudo app
+useradd -m -s /bin/bash -u ${UID} docker
+useradd cgatepro -d /var/CommuniGate -r -g mail
+useradd -u 2000 -g vmail vmail
+useradd -g 1000 -u 1000 -m dockerbot
+useradd -ms /bin/bash container
+useradd -u 8877 lavagna-go
+useradd --system --uid 999 --gid mqm mqm
+useradd -m -g user user
+useradd -ms /bin/bash eg_user
+useradd -r -g dockeruser dockeruser
+useradd -m -g wheel defesti
+useradd --uid 1000 --gid 1000 --create-home -p '*' adrien
+useradd filestash
+useradd -d /home/container -m container
+useradd -u 5000 -U -m -d /var/mail --groups mail vmail
+useradd -u ${USER} -G jenkins jenkins
+useradd --user-group --system --home-dir /home/wekan wekan
+useradd useradd --create-home --home-dir /home/build --uid 1000 --gid 100 --shell /bin/bash build
+useradd --create-home --gid oracle --groups oracle,oinstall         --shell /bin/bash oracle
+useradd -lm --uid 1000 --gid 1000 --home-dir /usr/share/retdec retdec
+useradd -g 1244 -u 1244 -c 'Product Record Ingestor' -d /opt/product-record-ingestor -r -s /bin/false product-record-ingestor
+useradd --no-log-init -r -g ${APP_USER} ${APP_USER}
+useradd --uid 2000 --gid node --shell /bin/bash --create-home node
+useradd -m retdec
+useradd --create-home --home-dir $HOME wireshark
+useradd -d /home/craftslab -ms /bin/bash -g craftslab -u $UID craftslab
+useradd --uid 2001 --gid 2000 --create-home sabnzbd
+useradd nagios
+useradd -d "$POLYMER_CLI_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+useradd  -g      debian -G sudo -m -s /bin/bash debian
+useradd   --groups=sudo,lp,lpadmin   --create-home   --home-dir=/home/print   --shell=/bin/bash   --password=$(mkpasswd print)   print
+useradd user
+useradd -rm -g obp obp
+useradd -m gameboy
+useradd --user-group --system --create-home --no-log-init notebookuser #
+useradd -ms /bin/bash ff
+useradd --shell /bin/bash -u ${UID} -g ${GID} -m minifi
+useradd -D -m -u 5001 -g $NEWUSER $NEWUSER
+useradd -r -g artemis -d /home/artemis -s /sbin/nologin -c "Artemis User" artemis
+useradd --system --gid nginx --no-create-home --home /nonexistent --comment "nginx user" --shell /bin/false --uid 32548 nginx
+useradd -m -d /frontend redash
+useradd gerbera -G sudo
+useradd -d ${SALT_HOME} -ms /bin/bash -U -G root,sudo ${SALT_USER}
+useradd -s /bin/bash -m -u $USERID -g $NEWUSER $NEWUSER
+useradd -m -d /home/rstudio rstudio
+useradd -U -m yoctouser
+useradd rpmbuild
+useradd --create-home --home-dir $HOME spotify
+useradd -ms /bin/bash monero
+useradd -m nodeuser
+useradd --gid $hostgid --uid $hostuid --non-unique build
+useradd -ms /bin/bash cuckoo
+useradd -r -g gforth -d /home/gforth -s /bin/nologin -c "Gforth User" gforth
+useradd -s /bin/bash -u ${uid} ${user}
+useradd -ms /bin/bash ${username}
+useradd -g 1000 -u 1000 -d /home/qbittorrent
+useradd --system --create-home --gid tester --groups audio,video tester --shell /bin/bash
+useradd --no-log-init -r -g gruppe benutzer
+useradd -r -g mongodb mongodb
+useradd -m heroku
+useradd -d /home/bastion admin
+useradd -u 1000 -U -d /data -s /bin/false soulseek
+useradd -d /home/ctf/ -m -p ctf -s /bin/bash ctf
+useradd -r -g pwuser -G audio,video pwuser
+useradd -ms /bin/bash cerebro
+useradd --system ${EP_UID:+--uid "${EP_UID}" --non-unique} --gid etherpad         ${EP_HOME:+--home-dir "${EP_HOME}"} --create-home         ${EP_SHELL:+--shell "${EP_SHELL}"} etherpad
+useradd -ms /bin/bash user
+useradd -m -s /bin/bash lhci
+useradd --create-home poetryuser
+useradd -m jellyfin -s /bin/bash
+useradd -m -r -u 999 -g unturned unturned
+useradd -M -N -s /bin/bash -u ${USERID} -g ${GROUPID} ${USER}
+useradd -s /bin/bash -m zelos
+useradd -r -d /minigrid-server -s /sbin/nologin minigrid-server
+useradd -u ${DEFAULT_UID} -g ${DEFAULT_GID} -s /bin/false jdownloader
+useradd apache-www-volume -u 1000 -g 1000
+useradd -r -g postgres --uid=999 postgres
+useradd train
+useradd -g joinmarket -s /bin/bash -m -d /jm joinmarket
+useradd -M -U -u 1000 batchprocessor
+useradd -u 2000 -g 2000 -m -d /home/status -s /bin/bash status
+useradd -r -s /bin/false -g previewservice previewservice
+useradd -ms /bin/bash jupyserver
+useradd -u 1000 -r -g jboss -m -d /opt/jboss -s /sbin/nologin -c "JBoss user" jboss
+useradd -ms /bin/bash -d /home/centos centos
+useradd -b /opt -s /bin/sh -d ${INSTALL_DIR} serveradmin
+useradd -r -g nginx nginx
+useradd --create-home -d /home/user -g user -u 1000 user
+useradd --create-home user
+useradd ${USERNAME} -m -u 1000 -G sudo
+useradd -m -d /app -s /bin/bash -U cloud9
+useradd -m -d /home/retdec -g retdec -s /usr/sbin/nologin -c "RETDEC User" retdec
+useradd -r -g sonarqube --uid=999 sonarqube
+useradd -b /opt -m -s /bin/sh -d ${INSTALL_DIR} serveradmin
+useradd --system --create-home --gid ${JAVASCRIPT_USER}  ${JAVASCRIPT_USER}
+useradd -r -g openldap --uid=1021 openldap
+useradd -u 911 -g 911 -s /bin/false -m app
+useradd -s /bin/bash golang
+useradd -ms /bin/bash centos
+useradd -g nodejs -s /bin/bash -d /home/nodejs -m nodejs
+useradd -u "$SINUS_USER" -g "$SINUS_GROUP" -d "$SINUS_DIR" sinusbot
+useradd rose-dev
+useradd -m -p pass myuser
+useradd  -g 500 -u 500 -m -s /bin/bash zope-www
+useradd -r -g nginx -s /bin/false -M nginx
+useradd userftp -u 1001 -d /home/FTP-shared -s /bin/false
+useradd -u 1000 -U -m user
+useradd -g vmail -u 5000 vmail -d /var/vmail
+useradd -u 1000 -ms /bin/bash -g www www
+useradd -G sudo science -p scienceMeps
+useradd gerbera
+useradd --no-log-init -r -g malice malice
+useradd -u 1104 bunq2ynab
+useradd -s /bin/bash ezgo
+useradd oziomek --create-home
+useradd -m nodemonit
+useradd uvncrep
+useradd -r --uid 1007 -g dockerrunner dockerrunner
+useradd --system hab
+useradd -r -g wildfly --uid=1111 wildfly
+useradd -l -u "${UID}" -g "${GID}" -m -d /misskey misskey
+useradd -r -g captureuser -G audio,video captureuser
+useradd -g ${PGID} -u ${PUID} -m -s /bin/bash weechat
+useradd -u 431 -r -g nomachine -d /home/nomachine -s /bin/bash -c "NoMachine" nomachine
+useradd -ms /bin/bash -d /home/scummvm -u 2899 -U scummvm
+useradd -r -m -g user user
+useradd -m dockeruser
+useradd -m -u 901 -r -g 901 -s /usr/bin/zsh ${LUSER}
+useradd -r -g slurm slurm
+useradd --create-home --shell /bin/bash $LINUX_USER
+useradd -m stringer
+useradd -b /u01 -m -g oracle -u 1000 -s /bin/bash oracle
+useradd -ms /bin/bash node
+useradd headless
+useradd --create-home --gid $GID --uid $UID user --no-log-init
+useradd -m -s /bin/bash $USERNAME
+useradd -s /usr/sbin/nologin -r -M steve
+useradd -m webApp
+useradd -r -g znc znc
+useradd filebeat
+useradd --uid 1000 --home-dir ${QPID_WORK_DIR} --create-home --gid qpid qpid
+useradd -g 1000 -u 1000 -m -d /home/qbittorrent qbittorrent
+useradd  -s /sbin/nologin uvncrep
+useradd -r -u 999 -g i2p i2p --home /i2p
+useradd -c "Dovecot unprivileged user" -d /dev/null -u 401 -g dovecot -s /bin/false dovecot
+useradd --home $HOME --shell --uid 1000 --gid 1000 qbittorrent
+useradd --system hc
+useradd avoauto
+useradd nodejs
+useradd -ms /bin/bash work
+useradd vsftpd -s /sbin/nologin
+useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sudo,fuse biodocker
+useradd -r -u 1000 -d /cowrie -m -g cowrie cowrie
+useradd -M -s /bin/bash -u 10001 -g 0 mssql
+useradd -m -s /bin/bash -N -u $NB_UID $NB_USER
+useradd -rm -d /home/webdev -s /bin/bash -g root -G sudo -u 1000 webdev
+useradd --no-log-init -r -g apachewsgi apachewsgi
+useradd -d /home/${USER} -m ${USER}
+useradd -r -g pptruser -G audio,video pptruser
+useradd -u 65533 -r -g rocketchat rocketchat
+useradd -u $PUID -m steam
+useradd   --groups=sudo   --create-home   --home-dir=/home/debian   --shell=/bin/bash   debian
+useradd couchbase -u 1000 -g couchbase -M
+useradd ls
+useradd $USER
+useradd ${USER} -m -s /bin/bash
+useradd csgo
+useradd -r -b / -d $HOME -m -u $PUID -g $PGID -s /bin/bash $PUSR
+useradd --create-home --home-dir $HOME pulseaudio
+useradd mqperf -G mqm
+useradd -u 431 -r -g openunison -d /usr/local/openunison -s /sbin/nologin -c "OpenUnison Operator image user" openunison
+useradd -u 911 -U -d /config -s /bin/false abc
+useradd -ms /bin/bash jupyter
+useradd -ms /bin/bash -G sudo admin
+useradd -u 1000 maxwell -d /app
+useradd -ms /bin/bash nvm
+useradd -m -s /bin/bash stegoveritas
+useradd -lm --uid 1000 --gid 1000       --home-dir /usr/share/retdec       retdec
+useradd -u ${USER_ID} -g bitcoin -s /bin/bash -m -d /bitcoin bitcoin
+useradd -m -u 901 -r -g 901 robo
+useradd -u 510 -g 510 -G docker -d /var/lib/jenkins jenkins
+useradd -d /work -u 1000 -s /usr/bin/fish automation
+useradd --home-dir /data --create-home -u 1000 minecraft
+useradd -d "$IRC_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+useradd -m cameraevents
+useradd --create-home --no-log-init --shell /bin/bash admin
+useradd -G www-data -d /gtrader -s /bin/bash -M gtrader
+useradd -d /var/lib/mediagoblin -m -r -g www-data mediagoblin
+useradd -m ${USER} --uid=${UID}
+useradd --uid 2004 --gid 2000 --create-home couchpotato
+useradd elasticsearch
+useradd ubuntu
+useradd -r -m -g $DECRED_GROUP $DECRED_USER
+useradd -g debian-tor -s /bin/bash -m -d /tor debian-tor
+useradd --shell $(which zsh) --create-home -u ${UID} -g ${GRP}         -p $(openssl passwd -1 ${PASSWD}) ${USR}
+useradd -r -g node node
+useradd -r -g mitmproxy mitmproxy
+useradd --create-home --shell /sbin/nologin httprobe
+useradd -u 1107 blitzy
+useradd --create-home --home-dir $HOME skype
+useradd --shell /bin/bash -u ${UID} -g ${GID} -m ${MINIFI_C2_USER}
+useradd $USR -u $UID -m -g $USR -G users,wheel
+useradd -u 14 bss
+useradd -m -s /bin/bash roger     usermod -aG sudo roger
+useradd -r -g slurm --uid=990 slurm
+useradd -d "/home/qq" -m -o -u $UID -g qq -G audio,video qq
+useradd -m pixelfed
+useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME -G pcap -d /build
+useradd -u 911 -U -d /home/abc -s /bin/bash abc
+useradd -ms /bin/bash api-user
+useradd -r -g fluent fluent
+useradd --system --gid hunnor hunnor
+useradd -m homo
+useradd -ms /bin/bash cloud9
+useradd -u 1000 -U golang
+useradd -r -g build build
+useradd -u 12003 spj
+useradd -r -m -g radium radium
+useradd docker -d /home/docker -g users -G sudo -m
+useradd -s /bin/bash -d /home/cartography -m -g cartography cartography
+useradd -r -M -d $ACTIVEMQ_HOME activemq
+useradd -m -s /bin/bash re
+useradd -r -g chrome -G audio,video chrome
+useradd  --system --no-log-init     --create-home --home-dir ${QPID_WORK_DIR}     --uid 1000 --gid qpid qpid
+useradd -b /opt -m -s /bin/sh serveradmin
+useradd -G video -m -s /bin/bash e2user
+useradd headless --shell /bin/bash --create-home
+useradd codebuild-user
+useradd -ms /bin/bash fedora
+useradd ${USER} -m -d ${HOME} -s /bin/bash -g ${USER}
+useradd default -u 1001 -c "Default Application User" -G www-data -d /var/www/html -s /sbin/nologin
+useradd squid -d /var/spool/squid -s /sbin/nologin
+useradd -m user
+useradd -m -r nodejs
+useradd -m -r -u 998 -g build-user build-user
+useradd --system asterisk
+useradd -U -d /config -s /bin/false mediaplayer
+useradd --no-log-init -r -g drone drone
+useradd -m ctf
+useradd -u 8080 -s /bin/bash -o java ;     mkdir -p ~/.pip
+useradd -d "/home/wechat" -m -o -u $UID -g wechat -G audio,video wechat
+useradd -ms /bin/bash idol
+useradd --system --user-group bitcoin
+useradd --gid appuser --shell /bin/bash --create-home appuser
+useradd -m -s /bin/bash -N -u $NB_UID -g $NB_GID $NB_USER
+useradd -rm -d /home/mural -s /bin/bash -g mural -G mural -u 1000 mural
+useradd galen          --shell /bin/bash           --create-home
+useradd -s /bin/bash -m -u 5001 -g $NEWUSER $NEWUSER
+useradd -s /bin/bash -M app
+useradd -ms /bin/bash wurstuser
+useradd -r -u 200 -m -c "nexus role account" -d ${SONATYPE_WORK} -s /bin/false nexus
+useradd arch -p arch
+useradd -r -g mysql mysql
+useradd -b /opt/otrs otrs
+useradd -d /home/cved -s /bin/bash -ms /bin/bash cved
+useradd --no-log-init -m -s /bin/zsh     -g ${LOCAL_USER}     -G audio,video     ${LOCAL_USER}
+useradd -r -g 1000 -d /cowrie -m -g cowrie cowrie
+useradd --create-home --home-dir /home/ubuntu --shell /bin/bash --user-group --groups adm,sudo ubuntu
+useradd -u ${PUID} -g devdock -m devdock
+useradd   --groups=sudo   --create-home   --home-dir=/home/java   --shell=/bin/bash   java
+useradd -ms /bin/bash sqapi
+useradd --user-group --no-log-init --shell /bin/false -m -d ${HOME} ${USER}
+useradd -ms /bin/bash stolon
+useradd -ms /bin/bash david
+useradd --uid 1000 --gid easy-mock --shell /bin/bash --create-home easy-mock
+useradd --uid 2202 --gid 2200 --create-home -p '*' --shell /usr/sbin/nologin lgg4
+useradd --home /home/worker -M worker -K UID_MIN=10000 -K GID_MIN=10000 -s /bin/bash
+useradd -m ghidra
+useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME
+useradd -r -s /bin/false -g heilung heilung
+useradd --shell /bin/bash --uid 1020 --gid 1020 --create-home --home-dir /home/ubuntu ubuntu
+useradd --create-home --home-dir $HOME dev
+useradd -l -u ${USER_ID} -g iraf iraf
+useradd --no-log-init --gid ijinspector --home-dir /home/ijinspector --create-home ijinspector
+useradd -r -g mysql -s /bin/false mysql
+useradd --uid 1000 --gid octoprint -G dialout --shell /bin/bash -m octoprint
+useradd -d /opt/android-sdk-linux -g android -u 1000 android
+useradd --system unbound
+useradd -ms /bin/zsh dot
+useradd -g 1000 -u 1000 -m -d /qbittorrent qbittorrent
+useradd -r -u 1001 user
+useradd -m -U if -G users
+useradd -ms /bin/bash mc
+useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin -c "Default Application User" default
+useradd     --no-log-init --uid $C_UID     --system --gid $C_USER     --create-home --home-dir /$C_USER     --shell /sbin/nologin     --comment "mplabx" $C_USER     ;fi'
+useradd -d /var/lib/www -s /bin/nologin -g www -M -u 1001 httpd
+useradd -u 1000 -g yoctouser -m yoctouser
+useradd -u ${PUID} -g cobalto -m cobalto
+useradd --uid 2201 --gid 2200 --create-home -p '*' --shell /usr/sbin/nologin arq
+useradd -s /usr/sbin/nologin -r -M cloud-print-connector
+useradd -r cgatepro -d /var/CommuniGate -g mail
+useradd -m -s /bin/bash -G chrome-remote-desktop,pulse-access ezgo
+useradd -r app_user
+useradd builduser -m
+useradd jancelin -u 1000 -s /bin/bash
+useradd dev --create-home --shell /bin/bash
+useradd -r -g ubuntu -u 1000 -m ubuntu
+useradd -m -s /bin/bash tcb
+useradd -b ${BASE_DIR} -d ${ORACLE_HOME} -g root -m -s /bin/bash oracle
+useradd -u 2000 elasticsearch
+useradd -Uu 10001 -G users -md /opt/home -s /bin/false runner
+useradd -r -u 1000 -g build build
+useradd -U -s /bin/sh -d /var/lib/bacula bacula
+useradd -m -s /bin/bash linuxbrew
+useradd -s /bin/bash -u 1000 golang
+useradd -ms /bin/bash application
+useradd --system --create-home --gid ${EXECUTING_USER}  ${EXECUTING_USER}
+useradd --system --uid 1000 --home-dir ${QPID_WORK_DIR} --create-home --no-log-init --gid qpid qpid
+useradd -ms /bin/bash developer
+useradd -D -s /bin/bash -m -u 5001 -g 5001 $NEWUSER
+useradd -u 2001 auto
+useradd --no-log-init -r -M -d ${HOME} -u 10001 vernemq
+useradd --uid 2001 --user-group --create-home sabnzbd
+useradd -ms /bin/bash dstserver
+useradd -d /home/ocaml -ms /bin/sh -g root -G sudo -p ocaml ocaml
+useradd -r -u 1000 -m -s /bin/bash -g cloudsdk cloudsdk
+useradd -N -d "$JENKINS_HOME" -u ${uid} -g ${gid} -l -m -s /bin/bash ${user}
+useradd -u 10001 -g 10001 -G users -md /opt/runner -s /bin/false runner
+useradd rancher
+useradd -ms /bin/bash aiarena
+useradd -m -u ${CUSTOM_UID} -g ${CUSTOM_USER_NAME} -G sudo -s /usr/bin/zsh ${CUSTOM_USER_NAME}
+useradd -m -u 901 -r -g 901 ${LUSER}
+useradd --create-home -s /bin/bash vagrant
+useradd -d ${HOME} -g root -m -N -s /sbin/nologin ${USER}
+useradd -m root
+useradd --create-home --shell /usr/sbin/nologin --system --uid 102 --gid 0 $LINUX_USER
+useradd -m -d /root/mydisk -U cgb
+useradd -ms /bin/bash nodeuser
+useradd -ms /bin/bash bob
+useradd -m sparql-proxy
+useradd ${user} -m -s /bin/bash
+useradd -m app
+useradd --no-create-home -g users -u $uid jackett
+useradd -s /sbin/nologin admin
+useradd rails --create-home --shell /bin/bash
+useradd  --system --no-log-init              --create-home --home-dir ${QPID_WORK_DIR}              --uid 1000 --gid qpid qpid
+useradd sampleuser --uid 1000 --gid 1000 --home-dir /home/sampleuser
+useradd -g u -G mock -m -d /u u
+useradd -ms /bin/bash dev
+useradd --no-log-init -r -s /usr/bin/bash -d $WEBUSER_HOME -u $PUID -g $PGID webuser
+useradd tgproxy -u 10000
+useradd -s /bin/bash -u CONTAINER_UID golang
+useradd -r -g chromium -G audio,video chromium
+useradd -u "$WINE_USER_UID" -d /home/wine -m -s /bin/bash wine
+useradd --no-log-init -r -u 1000 -g 1000 ubiquiti
+useradd --system --uid ${USER_UID} --gid ${USER_GID} -M -d / -s /sbin/nologin ${USER}
+useradd --system --gid gopher --uid 1000 --shell /bin/bash --create-home gopher
+useradd -r -g app -u 999 app
+useradd --home "${CKAN_HOME}" --shell /bin/bash ckan
+useradd -r -g www-data www-data
+useradd -m -d /opt/gophish -s /bin/bash app
+useradd -d /opt/amp -ms /bin/bash -r amp
+useradd -r -g wildfly --uid=1023 wildfly
+useradd -m -s /bin/bash vagrant
+useradd -r -s /bin/false varnish
+useradd --create-home locust
+useradd -l -u $user_id -ms /bin/bash $user
+useradd $ZK_USER
+useradd -u 431 -r -g activemq -d /usr/local/activemq -s /sbin/nologin -c "ActiveMQ Docker image user" activemq
+useradd -g dockremap dockremap
+useradd -u $UID -r -s /sbin/nologin -g bot bot
+useradd --shell "/bin/zsh" ntrrg
+useradd -d $SUDOUSER_HOMEDIR -m -u $SUDOUSER_UID -p $SUDOUSER_PASSWORD $SUDOUSER_NAME
+useradd useradd --home-dir /home/build --uid 1000 --gid 100 --shell /bin/bash build
+useradd -g pmdagroup -u 1001 pmdauser
+useradd --no-log-init -u ${PUID} -g videos -d /config -M videos
+useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+useradd -m -s /bin/bash -g supertokens supertokens
+useradd -m developer
+useradd -u1000 -m -d/home/rootless -s/bin/bash rootless
+useradd -b /u01 -m -s /bin/bash oracle
+useradd -u 1111 -g 1111 -d /bkup bkup
+useradd -d /home/container -m container  locale-gen en_US.UTF-8
+useradd --create-home --shell /bin/bash --user-group --uid 1000 --groups sudo biodocker
+useradd -ms /bin/bash -d ${AIRFLOW_USER_HOME} airflow
+useradd -u 510 -g 510 -d /var/lib/jenkins jenkins
+useradd --shell /bin/bash --uid 1020 --gid 1020 --password $(openssl passwd ubuntu) --create-home --home-dir /home/ubuntu ubuntu
+useradd --no-user-group --create-home --shell /bin/bash neuro
+useradd -ms /bin/bash ubuntu
+useradd   --groups=sudo   --create-home   --home-dir=/home/node   --shell=/bin/bash   node
+useradd --home-dir "${HOME}" --uid 1000 --gid 1000 captain
+useradd -m -d /oracle oracle
+useradd -u 20001 -g 20000 -c "rstreet" -d /home/rstreet -s /bin/bash rstreet
+useradd -UMr dashcam
+useradd -d /usr/local/fusionauth -U fusionauth
+useradd -r -u 500 -g openldap openldap
+useradd -r -m -g users radium
+useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -l -m -s /bin/bash ${user}
+useradd -r -m -g 1024 radium
+useradd -Ums /bin/sh hfos
+useradd -r -g logstash logstash
+useradd me
+useradd -r -s /bin/false -g backend backend
+useradd -u 1000 -G users,sudo -d /home/user --shell /bin/bash -m user
+useradd -u ${PUID} -g nodedock -m nodedock -G docker_env
+useradd docker
+useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo,mural -u 1000 mural
+useradd -G sudo science -p ${DB_PASSWORD}
+useradd -r -g mongodb --uid=999 mongodb
+useradd -m model-server
+useradd -g ${GID} -u ${UID} -r -d ${HOME} -s /bin/bash ${USER}
+useradd -g ftpgroup -m ftpuser
+useradd -d ${HOME} -ms /bin/bash ${USER}
+useradd -m -u 901 -g 901 biodocker
+useradd -u 1001 -r -g 0 -s /sbin/nologin default      || true
+useradd -ms /bin/bash klippy
+useradd -r -g dummy dummy -u 1000
+useradd -m minecraft
+useradd -m $JUJU_USER -s /bin/bash
+useradd -r -u 5001
+useradd -m cashstory --uid 1001
+useradd -d /home/jenkins -m -r -u 1004 -g jenkins jenkins
+useradd -ms /bin/bash uwsgi
+useradd -r -u 532 -U fc
+useradd hidetomo
+useradd -u 20007 -g 20000 -c "Microlensing user" -d /home/robouser -s /bin/bash robouser
+useradd -r -g "${POSTGRES_GROUP}" --uid=999 "${POSTGRES_USER}"
+useradd -ms /bin/sh -u ${UID} -g ${GID} ${USER_NAME}
+useradd orcladmin
+useradd -M -s /sbin/nologin ${WWW_USER}
+useradd seluser          --create-home          --gid 1201          --shell /bin/bash          --uid 1200
+useradd --system --create-home --gid nightmare nightmare
+useradd -r -u 666 -g 666 plex
+useradd -r -g uwsgi uwsgi
+useradd --uid 2004 --user-group --create-home couchpotato
+useradd -c "SMTPD Queue" -d /var/empty -s /sbin/nologin _smtpq
+useradd -ms /bin/sh chromium
+useradd -r -u 1000 -d ${COWRIE_HOME} -m -g ${COWRIE_GROUP} ${COWRIE_USER}
+useradd -d $KODI_WORKDIR kodi
+useradd -m -g ssessner -s /bin/bash ssessner
+useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow
+useradd -r -m -g celeryuser celeryuser
+useradd -r -g luser luser
+useradd -ms /bin/bash ci
+useradd   --groups=sudo,lp,lpadmin   --create-home   --home-dir=/home/${cups_user}   --shell=/bin/bash   --password=$(mkpasswd ${cups_password})   ${cups_user}
+useradd -ms /bin/bash hadoop
+useradd -m -s /bin/bash roger
+useradd -d /home/atom -m atom -s /bin/bash
+useradd -u 1001 -g ftpgroup -d /home/ftpusers -s /dev/null ftpuser
+useradd         --uid 64198         --gid 64198         --create-home         --system         app
+useradd -M -U -u 1000 classificationservice
+useradd -u 1000 -b /u01 -M -s /bin/bash oracle
+useradd -r -g nonroot -d /home/nonroot -s /usr/sbin/nologin -c "Nonroot User" nonroot
+useradd -m -d /home/papercut papercut
+useradd --system -U -u 500 bdrreg
+useradd librenms -d /opt/librenms -M -r
+useradd -ms /bin/bash -u ${uid} ${user}
+useradd --user-group --system --create-home --no-log-init notebookuser
+useradd -D -s /bin/bash golang
+useradd virtual -m -d /home/ftp/ -s /sbin/nologin
+useradd --no-log-init -r -m -u 1000 -g 1000 -G sudo frappe
+useradd -r -m work
+useradd -m -g $PGID -u $PUID weechat
+useradd -m --gid $GROUP_ID --uid $USER_ID sbtuser --shell /bin/bash
+useradd -r -g $GROUP_NAME -u $USER_ID -d /var/go $USER_NAME
+useradd -r -m -g ${APP_GROUP} ${APP_USER}
+useradd -c "Jenkins user" -d $HOME -u ${uid} -g ${gid} -m ${user}
+useradd subsonic
+useradd -u ${USER} -g jenkins jenkins
+useradd -u 999 -g notebookuser -G sudo -m -s /bin/bash notebookuser
+useradd -d /home/kusanagi -s /bin/nologin -g kusanagi -G www -u 1000 -m kusanagi
+useradd --system uwsgi
+useradd -D -s /bin/bash -m -u 5001 -g $NEWUSER $NEWUSER
+useradd -g ergatis --shell /bin/bash ergatis
+useradd debian  -s /bin/bash -m -k /etc/skel
+useradd -ms /bin/bash notifier
+useradd --system celery
+useradd -u 1001 -r -g 0 -d ${HOME} -s /sbin/nologin             -c "Default Application User" default
+useradd --home $HOME --uid 1000 --gid 1000 qbittorrent
+useradd -g builder -G mock -m builder
+useradd -u 2001 -g 2001 rundeck
+useradd -ms /bin/bash -r almond-tokenizer
+useradd --shell /bin/bash -u ${UID} -g ${GID} -m c2
+useradd -ms /bin/bash soekir
+useradd -ms /bin/bash test
+useradd -g 1000 -u 1000 -d /home/qbittorrent qbittorrent
+useradd -ms /bin/bash dockeruser
+useradd -d /home/term -m -s /bin/bash term
+useradd brooklyn -s /bin/bash -m -g brooklyn -G brooklyn
+useradd -r -u 999 -g unturned unturned
+useradd --home $HOME -M $USER -K UID_MIN=10000 -K GID_MIN=10000 -s /bin/bash
+useradd --create-home --home-dir $HOME vlc
+useradd --no-log-init -r -m -d $MINTERHOME -g $USERNAME $USERNAME
+useradd —-system hab
+useradd -u 901 -r -g ase -m -d /home/ase -s /sbin/nologin -c "ase user" ase
+useradd --uid 2000 --gid app --shell /bin/bash --create-home app
+useradd -u 12001 compiler
+useradd -u 500 -g 500 -d /var/lib/go-agent --no-create-home -s /bin/bash -G go go
+useradd -s /bin/bash -m borg ; 	mkdir /home/borg/.ssh
+useradd --create-home --shell /bin/bash --groups sudo ubuntu
+useradd -r -g redis -u 999 redis
+useradd --uid 1000 --gid 1000 --create-home -p '*' --shell /bin/bash adrien
+useradd -r -g viper -d /home/viper -s /sbin/nologin -c "Viper Account" viper
+useradd nginx
+useradd -ms /bin/zsh sneivandt
+useradd test          --shell /bin/bash           --create-home
+useradd -r -g sonarqube sonarqube
+useradd arm -m -s /bin/bash
+useradd -ms /bin/bash tor
+useradd --create-home --no-log-init -u ${UID} -g ${GID} bitcoin
+useradd -ms /bin/bash lpic
+useradd -ms /bin/bash pyservices
+useradd -r -g timetable timetable
+useradd -r -g wildfly --uid=1023 -d /opt/wildfly wildfly
+useradd --uid 1000 --shell /bin/bash -m --home-dir /home/ubuntu -g ubuntu -G sudo ubuntu
+useradd -m -u $UID -g $GID -o -s /bin/bash -d $UHOME $UNAME
+useradd jenkins
+useradd -g kiwi kiwi
+useradd -ms /bin/bash docker
+useradd --create-home firefox
+useradd --shell /bin/bash sandbox
+useradd -m -p osm osm
+useradd -u "${PUID}" -m "${USER}"
+useradd -r -u 5001 $NEWUSER
+useradd -U -d /config -s /bin/false plex
+useradd -u 431 -r -g apacheds -d /usr/local/apacheds -s /sbin/nologin -c "ApacheDS image user" apacheds
+useradd -m --shell /bin/bash $USER
+useradd -ms /bin/bash jovyan
+useradd -d "$POLYMER_CLI_HOME" -U -m -s /bin/bash ${user}
+useradd -ms /bin/bash tensorflow
+useradd -r -g obpuser obpuser
+useradd  -g      centos -G wheel -m -s /bin/bash centos
+useradd -m -s /usr/bin/zsh -G sudo ubuntu
+useradd -c 'enum4linux' -m -s /sbin/nologin enum4linux
+useradd -m -s /bin/bash perforce
+useradd -r -u 1000 -g appuser appuser
+useradd -d /work -u 1000 automation
+useradd -m -d /home/ansible -s /bin/bash -G ${MY_GROUP} -g ${MY_GID} -u ${MY_UID} ${MY_USER}
+useradd -MN -g kafka -u 2000 -s /bin/false kafka
+useradd -u 99999 -r -g rocketchat rocketchat
+useradd --create-home sparql-proxy
+useradd kibana
+useradd --system -G sudo -u 1000 -d /home/builder -ms /bin/bash builder
+useradd -u 10001 bunq2ynab
+useradd -m -d /home/container container
+useradd --home-dir "/home/${user}" "${user}"
+useradd -m weechat
+useradd -c 'Logstash' -d /opt/logstash -g logstash -r logstash
+useradd -r -g puppeteer -G audio,video puppeteer
+useradd -r -g gforth -d /home/gforth -s /bin/nologin -c "GForth Image User" gforth
+useradd --no-create-home --shell /sbin/nologin ${SSHD_USER}
+useradd -u 1002 -ms /bin/bash bookie
+useradd --no-create-home      --home-dir /eventz     --uid 2000     eventz
+useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+useradd -r -g kibana kibana
+useradd -ms /bin/bash debugger
+useradd -s /bin/bash -u 1000 {user}
+useradd -m -p FIEyX7IsHWazs -s /bin/bash creep
+useradd -m -s /bin/bash -G chrome-remote-desktop user
+useradd -s /bin/bash -r -M -d /srv/www nextcloud
+useradd -m -d /home/tor -g 1000 tor
+useradd -c "SMTP Daemon" -d /var/empty -s /sbin/nologin _smtpd
+useradd --create-home --shell /bin/bash --gid www www
+useradd --shell "/bin/zsh" --create-home "$NEW_USER"
+useradd --no-log-init -r -g peanuts peanuts
+useradd -m worker
+useradd -u 1000 -g 1000 -m -s /bin/bash jenkins
+useradd 'hab' --system
+useradd -ms /bin/bash chromium
+useradd -u 1001 -g 1001 -d /app modeemintternet
+useradd -m -r -u 1999 -g unturned unturned
+useradd -ms /bin/bash dexcalibur
+useradd --no-create-home $HELPY_USER
+useradd -u 500 -g 500 -m -p centos centos
+useradd -m ngphylo
+useradd --system unbound --home /home/unbound --create-home
+useradd -u $UID -g $GID rails --create-home --shell /bin/bash
+useradd -d /var/lib/nginx -g nginx -G nginx -u 8080 -s /sbin/nologin -m nginx
+useradd -u 510 -g 510 -G docker,docker2 -d /var/lib/jenkins jenkins
+useradd --home-dir /home/jf_agent --shell /bin/bash --user-group jf_agent
+useradd -ms /bin/bash demobot
+useradd --system --gid gradle --uid 1000 --shell /bin/bash --create-home gradle
+useradd -rm -d /home/mural -s /bin/bash -g root -G sudo,mural -u 1000 mural
+useradd -ms /bin/bash ${DEV_USER}
+useradd -ms /bin/bash bookie
+useradd -d /config -u 12000 kodi
+useradd -r -g rocketchat rocketchat
+useradd --no-log-init -m -r -g caido caido
+useradd -ms /bin/bash mum
+useradd --system pdns
+useradd -u ${USER_ID} -g ${USER} -s /bin/bash -m -d ${HOME} ${USER}
+useradd -m $USERNAME
+useradd -ms /bin/bash turing
+useradd --gid 1000 --uid 1000 -d /home/qbittorrent

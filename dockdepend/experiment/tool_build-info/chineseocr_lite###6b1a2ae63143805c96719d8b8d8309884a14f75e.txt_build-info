@@ -1,0 +1,8 @@
+{
+    "filename": "chineseocr_lite###6b1a2ae63143805c96719d8b8d8309884a14f75e.txt",
+    "command_length": 11,
+    "processing_time": 0.0051860809326171875,
+    "dependency_count": 15,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (3, 6), (3, 7), (4, 6), (4, 7), (5, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /data/project', 'exist file or directory dependency,because common path /data/project', 'exist file or directory dependency,because RUN instruct use /data/project/', 'exist file or directory dependency,because RUN instruct use /data/project/', 'have shell io intersection,because common path /root/.bash_profile']"
+}

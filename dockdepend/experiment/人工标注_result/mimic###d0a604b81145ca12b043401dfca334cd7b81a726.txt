@@ -1,0 +1,13 @@
+FROM python:3-alpine
+COPY . /usr/src/mimic
+RUN pip install /usr/src/mimic
+ENTRYPOINT [ "mimic" ]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(1, 2),	# 文件依赖
+]
+
+所用时间：9.20

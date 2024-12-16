@@ -1,0 +1,53 @@
+[
+	(0, 2),	# environment variable dependencies
+	(1, 2),	# environment variable dependencies
+	(2, 3),	# Image dependency
+	(2, 4),	# Image dependency
+	(2, 5),	# Image dependency
+	(2, 6),	# Image dependency
+	(2, 7),	# Image dependency
+	(2, 8),	# Image dependency
+	(2, 9),	# Image dependency
+	(2, 10),	# Image dependency
+	(2, 11),	# Image dependency
+	(2, 12),	# Image dependency
+	(2, 13),	# Image dependency
+	(2, 14),	# Image dependency
+	(2, 15),	# Image dependency
+	(2, 16),	# Image dependency
+	(2, 17),	# Image dependency
+	(2, 18),	# Image dependency
+	(2, 19),	# Image dependency
+	(2, 20),	# Image dependency
+	(2, 21),	# Image dependency
+	(2, 22),	# Image dependency
+	(2, 23),	# Image dependency
+	(2, 24),	# Image dependency
+	(2, 25),	# Image dependency
+	(2, 26),	# Image dependency
+	(2, 27),	# Image dependency
+	(2, 28),	# Image dependency
+	(2, 29),	# Image dependency
+	(2, 30),	# Image dependency
+	(3, 14),	# file or directory dependency
+	(3, 15),	# file or directory dependency
+	(5, 12),	# environment variable dependencies
+	(5, 16),	# environment variable dependencies
+	(5, 17),	# environment variable dependencies
+	(5, 18),	# environment variable dependencies
+	(5, 19),	# environment variable dependencies
+	(5, 20),	# environment variable dependencies
+	(5, 23),	# environment variable dependencies
+	(5, 25),	# environment variable dependencies
+	(6, 12),	# environment variable dependencies
+	(7, 12),	# environment variable dependencies
+	(8, 21),	# environment variable dependencies
+	(9, 21),	# environment variable dependencies
+	(10, 21),	# environment variable dependencies
+	(11, 21),	# environment variable dependencies
+	(20, 22),	# user dependency
+	(20, 23),	# user dependency
+	(20, 24),	# user dependency
+	(20, 25),	# user dependency
+	(20, 27),	# user dependency
+]

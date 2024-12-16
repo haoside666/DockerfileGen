@@ -1,0 +1,28 @@
+FROM python:3.11
+ENV PYTHONUNBUFFERED 1
+WORKDIR /code/djangoblog/
+RUN  apt-get update && apt-get install  default-libmysqlclient-dev gettext -y && rm -rf /var/lib/apt/lists/*
+ADD requirements.txt requirements.txt
+RUN pip install --upgrade pip  && pip install --no-cache-dir -r requirements.txt  && pip install --no-cache-dir gunicorn[gevent] && pip cache purge
+ADD . .
+RUN chmod +x /code/djangoblog/bin/docker_start.sh
+ENTRYPOINT ["/code/djangoblog/bin/docker_start.sh"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(2, 4),	# WORKDIR目录依赖
+	(2, 5),	# WORKDIR目录依赖
+	(2, 6),	# WORKDIR目录依赖
+	(2, 7),	# WORKDIR目录依赖
+	(4, 5),	# 目录依赖
+	(6, 7),	# 文件依赖
+]
+
+所用时间：32.65

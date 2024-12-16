@@ -1,0 +1,8 @@
+{
+    "filename": "Cockatrice###4b8e47d079d20eb0830b8f0cef3970ca403c5828.txt",
+    "command_length": 10,
+    "processing_time": 0.0023636817932128906,
+    "dependency_count": 16,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (2, 5), (2, 6), (3, 5), (3, 6), (5, 6), (6, 7), (4, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /', \"have shell pkg intersection,because exist intersection {'cmake'}\", 'exist file or directory dependency', 'exist file or directory dependency,because common path /home/servatrice/code', 'exist file or directory dependency,because RUN instruct use /', 'exist file or directory dependency,because RUN instruct create /home/servatrice', 'Boot dependency']"
+}

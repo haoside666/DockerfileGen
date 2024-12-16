@@ -1,0 +1,1923 @@
+chown www-data /data/apache2/data/guestbookdb
+chown -R mattermost:mattermost /mattermost /mattermost/data /mattermost/plugins /mattermost/client/plugins
+chown oracle:oracle /u01 $VOLUME_DIR
+chown www-data -R /var/www/html/templates_c/
+chown -Rf www-data:www-data /var/www/html
+chown -R rsyslog:rsyslog *
+chown -R subsonic:subsonic /data)
+chown fc: /var/lib/lotus /var/tmp/filecoin-proof-parameters
+chown -R squid:squid "$config_dir"
+chown www-data:www-data /var/www/app/ -Rf
+chown -R "${SERVICE_USER}" "${HOME}/config"
+chown appuser /home/appuser
+chown -R 1000:1000 /code
+chown 1000:1000 -R /entrypoint.sh
+chown -R transmission:transmission /var/lib/transmission
+chown -R theia:theia /home/go
+chown -R user:user /usr/src/rpd-purs
+chown uwsgi -R /app/static
+chown -R ${CUSTOM_USER_NAME}:${CUSTOM_USER_NAME} /home/${CUSTOM_USER_NAME}/.oh-my-zsh
+chown -R joinmarket /jm/clientserver
+chown www-data:www-data -R ./
+chown node:node /usr/src/app
+chown -R nobody:nobody /.aws/cli/cache
+chown -R postgres:postgres /tempdb
+chown -R rtorrent:rtorrent /downloads /rutorrent /tmp/rtorrent /var/lib/nginx
+chown -r pptruser /tmp/tests
+chown -R www-data. /var/www/
+chown -R ${MYSQL_USER}:${MYSQL_USER} ${MYSQL_DATA_DIR}
+chown -R root:root /app/Jackett
+chown prosody:prosody /var/run/prosody
+chown -R mydocker /home/mydocker $APP_DIR/log $APP_DIR/tmp
+chown -R openunison:openunison /usr/local/openunison
+chown -R ${APACHE__USER}:${APACHE__GROUP} /var/www/html/dolphinnext
+chown -R user:user $HOME /run /tmp
+chown oracle:oracle /u01 /u01/oracle
+chown -R www-data:www-data ../app/cache
+chown -R media:media /data /movies
+chown -R ${user}:${group} /home/${user}/.*
+chown -R conan:1001 /opt/pyenv
+chown -R "$KAFKA_USER:$KAFKA_USER" /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper /opt/$KAFKA_DIST $KAFKA_DATA_DIR
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/dotfiles
+chown -R puppeteer:puppeteer /node_modules
+chown -R appuser:appuser /.kube/config
+chown -R headless:headless /data
+chown -R $NGINX_ID:$NGINX_ID "/etc/nginx"
+chown -R --reference=./autoupdate ./wordpress
+chown -R radicale:radicale /radicale
+chown daemon:daemon     "${JAVA_CACERTS}"
+chown -R media:users /movies/ /downloads/ /tvseries/ /comics/ /nzbget/
+chown openldap: /etc/ldap/private
+chown -R media:users /data /tvseries
+chown -R ${_USER}:${_GROUP}  "${CONFLUENCE_INSTALL}/temp"
+chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+chown -R postgres:postgres "$PGDATA"
+chown -R node:node /tmp
+chown -R 1001:0 /usr/lib/nginx
+chown nginx: /var/shm
+chown -R root.root /var/www/html/rainloop
+chown www-data. /var/www/ -R
+chown -R ${EXECUTING_USER}:${EXECUTING_USER} /data
+chown oracle:oracle -R /u01/data/
+chown www-data:www-data /tmp/php_{exception,notice}.log
+chown -R elasticsearch:elasticsearch data logs config
+chown -R mssql. /var/opt/mssql
+chown -R netdata:netdata /var/lib/netdata/cloud.d
+chown gta -R /data
+chown -R root .
+chown wapt:root /opt/wapt/conf
+chown root:root /root/start_services.sh
+chown -R node:pptruser /home/node
+chown -Rh kibana. /opt/kibana
+chown -R tordocker:tordocker /etc/service/*
+chown -R qbittorrent:qbittorrent /Downloads /Downloads-temp
+chown -R mydocker:0 /home/mydocker $APP_DIR/log $APP_DIR/tmp
+chown -R ${a4c_user}:${a4c_user} "${a4c_install_path}"
+chown -R user:user $PS_DIR
+chown root:root /usr/bin/composer
+chown scummvm:scummvm /home/scummvm/.android
+chown -R www-data:www-data /var/www/go-figure
+chown -Rf www-data:www-data /var/www/app
+chown demobot:demobot serverscanner
+chown -R oracle:root ${OPATCH_PATCH_DIR}
+chown -R node:node $HOME
+chown -R root:root /opt/mssql/bin/launchpadd
+chown nginx:nginx /usr/share/nginx/html
+chown -R jenkins "$JENKINS_HOME" /usr/share/jenkins/ref
+chown -R theia:theia /usr/local/go
+chown $DOCKER_USERID:$DOCKER_USERID app/static/build
+chown -R nobody:nobody /var/cache/nginx/proxy_temp
+chown $PUSER:$PGROUP -R /config /data/music /log /scripts
+chown mysql /var/lib/mysql
+chown stephen /opt/conda
+chown -R ${user}:${group} /etc/supervisor/
+chown -R dot:dot /home/dot
+chown demobot:demobot demobot
+chown -R 1001:0 /usr/share/nginx
+chown odoo:odoo /var/lib/odoo
+chown -R nobody:nogroup ${LIBRENMS_PATH}
+chown tomcat7 /etc/authbind/byport/80
+chown -R www-data:www-data sites modules themes
+chown -R elasticsearch:elasticsearch /var/log/supervisor
+chown -R octane:octane   storage   bootstrap/cache
+chown -R terraria /tshock /terraria /etc/terraria.sh
+chown :pip-global ${PIP_TARGET}
+chown -R grafana:grafana /etc/grafana/data
+chown www-data:www-data /var/www/ -R
+chown -R root:root ./go
+chown postgres:postgres /var/lib/postgresql/data
+chown -Rf apache.apache /var/www/html/clustercontrol/
+chown -R steam:steam ${STEAMAPPDIR}
+chown root:zabbix /usr/sbin/fping
+chown -R papercupsuser:papercupsuser /app
+chown nobody:nogroup /marathon
+chown -R www-data:www-data /var/www/html/storage /var/www/html/public /var/www/html/bootstrap/cache
+chown openslides /app
+chown -R www-data:www-data /var/www/.htpasswd
+chown -R ftp:ftp /home/vsftpd/
+chown -R daemon:daemon "${BITBUCKET_HOME}"
+chown -R nodejs:nodejs /usr/lib/node_modules
+chown -R www-data /var/www/kivitendo-erp/users /var/www/kivitendo-erp/spool /var/www/kivitendo-erp/webdav
+chown oracle:oracle -R /tmp
+chown -R nginx:nginx /var/lib/php7/session
+chown -R app_user /usr/local
+chown -R docker. ~/.npm
+chown root /usr/local/bin/certbot-auto
+chown -R user:user /app
+chown demobot:demobot /mnt/config
+chown -R ${user} "$JENKINS_HOME" /usr/share/jenkins/ref
+chown -R sonarqube.sonarqube "${PGHOME}"
+chown root: /etc/bash_completion.d/artisan-bash-prompt /etc/bash_completion.d/composer-bash-prompt
+chown -R 1001:0 ${INSTALL_DIR}
+chown -R unit:unit /jukebox
+chown mysql:mysql /run/mysqld
+chown -R clamav:clamav /run/clamav/ /var/lib/clamav/ /var/log/clamav/
+chown www-data:www-data wuvt/config.py wuvt.db .
+chown uwsgi:uwsgi /var/lib/uwsgi
+chown -R root.root "${HOME}"
+chown wekan --recursive /home/wekan/.config
+chown -R vernemq:vernemq /vernemq
+chown -R sync_gateway:sync_gateway /etc/sync_gateway
+chown -R daemon:daemon "${BITBUCKET_INSTALL}/logs"
+chown -R www-data storage
+chown -R i2pd:nobody /var/lib/i2pd
+chown www-data:www-data /bin/composer
+chown app. config.json
+chown -R www-data: /var/www/html
+chown -Rh paperless:paperless /usr/src/paperless
+chown -R www-data:www-data /var/lib/php/
+chown root:wireshark /usr/bin/dumpcap
+chown -R www-data:www-data /var/www/site
+chown -R node:node /home/node/uwu
+chown -R 1000:1000 /qbittorrent
+chown -R ijinspector:ijinspector /opt/idea
+chown nobody zookeeper connect kafka
+chown -R appionuser:users /emg/data
+chown -R nginx:nginx /var/lib/nginx/
+chown supervisor:supervisor /var/run/supervisord
+chown -R www-data:www-data /powerdns-admin/
+chown -R root:${group} /usr/local/ircstack/
+chown mopidy:audio -R $HOME /entrypoint.sh
+chown -Rv grafana:grafana /etc/grafana
+chown -R ezgo:ezgo /home/ezgo/.config /home/ezgo/.fluxbox
+chown -R flashfeed: .
+chown -Rh logstash. /etc/logstash /opt/logstash
+chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+chown app: /app/data
+chown -R ${NB_UID} ${HOME}
+chown -R ${UID}:${GID} /steam
+chown 1000:1000 /Downloads/temp
+chown -R ocaml /home/ocaml
+chown root:root /etc/crontab
+chown -R qbittorrent /home/qbittorrent /home/qbittorrent/Downloads
+chown ${USER}:${USER} -R ${INSTALL_DIR}/scripts
+chown -R ${UID}:${GID} /data
+chown -R unifi:unifi     /usr/lib/unifi     /var/run/unifi     /var/lib/unifi     /var/log/unifi
+chown "${UID}":"${GID}" "${UHOME}"
+chown -R "${ELASTALERT_SYSTEM_USER}":"${ELASTALERT_SYSTEM_GROUP}" "${ELASTALERT_HOME}" "${ELASTALERT_PLUGIN_DIRECTORY}" "${ELASTALERT_RULES_DIRECTORY}"
+chown www-data:www-data ../app/data/data.db
+chown  nginxuser /etc/nginx/conf.d/default.conf
+chown -R jenkins /home/jenkins/.conan/
+chown www-data: -R /usr/local/apache2/htdocs/
+chown -R www-data:www-data /var/www
+chown -R www-data:root /var/www/html
+chown -R "$ZK_USER:$ZK_USER" /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper
+chown root:staff /usr/lib/R/site-library
+chown -R airflow: ${AIRFLOW_HOME}
+chown -R daemon:daemon ${HOME_DIR}
+chown -R cerebro:cerebro /opt/cerebro/logs
+chown -R nobody:nobody /.aws
+chown -R pptruser:pptruser /etc/letsencrypt/live/scrapulec.eu
+chown -R odoo /mnt/sas
+chown -R idol /opt/HewlettPackardEnterprise
+chown -R www-data:www-data /var/syncthing
+chown 1000:1000 /Downloads
+chown celery:celery /var/lib/celery
+chown -R caddy ${STEPPATH}
+chown -R $NGINX_USER /run
+chown -R pptruser:pptruser /home/pptruser/node_modules
+chown ${SQUID_USER}:${SQUID_USER} -R ${SQUID_LOG_DIR}
+chown unbound:unbound -R /etc/unbound
+chown -R ngrok:ngrok /home/ngrok
+chown -R idol:idol /home/idol
+chown -R "$APP_USER" "$APP_DIR" "$CONF_DIR"
+chown -R qbittorrent /home/qbittorrent/Downloads /home/qbittorrent/Downloads-temp
+chown -R node-red:node-red /usr/src/node-red
+chown -R ase:ase $EXPLOITDB_HOME/
+chown -R www-data /var/www
+chown -R mongodb:mongodb /data/mongodb /var/log/mongodb
+chown -R appuser /home/appuser
+chown -R ezgo:ezgo /home/ezgo
+chown -R root:staff /usr/local/google-cloud-sdk
+chown -v -R ls:ls /home/ls/gym-metacar
+chown -R $PUSER:$PGROUP /config /data /log /scripts /etc/rtorrent.conf 	chmod 744 /etc/rtorrent.conf
+chown retdec:retdec /usr/share/retdec
+chown -R www-data: /var/www/contao*
+chown -R ${user}:${group} /etc/supervisor/conf.d
+chown -R docker:root /opt/docker-bench-security
+chown -R work:work /home/work/_app/nginx/html
+chown -R skype:skype $HOME
+chown root:root /start.sh
+chown -R uwsgi:uwsgi /var/run/flask /app /etc/uwsgi/conf.d
+chown -R www-data:www-data $TENMA_INSTALL_DIR
+chown -R ${USER_NAME}:${GROUP_NAME} /var/go
+chown -R ezgo:ezgo /home/ezgo/.config
+chown -R ${PUID}:${PGID} /opt/Jackett
+chown ckan:ckan "${CKAN_LOG_DIR}" -R
+chown ${user}:${group} "$IRC_HOME"
+chown airsonic:airsonic /var/airsonic/airsonic.war)
+chown ${USERNAME} /home/${USERNAME}/.minikube
+chown -R redis-commander /home/redis-commander /src/redis-commander
+chown -R kafka:kafka /kafka /data /logs
+chown -R ${JAVASCRIPT_USER}:${JAVASCRIPT_USER} /fiduswriter
+chown -R nobody:nobody /var/cache/nginx/uwsgi_temp
+chown -R steam:steam ${STEAMDIR}
+chown -R weechat:weechat /home/weechat
+chown -R netdata:root         /usr/lib/netdata         /var/cache/netdata         /var/lib/netdata         /var/log/netdata
+chown -R grafana:grafana /etc/grafana/plugins
+chown 1001:0 /usr/share/app
+chown -R sonarqube.sonarqube "${PG}"
+chown root.root /usr/local/src/admin.pub
+chown -R root:root ./almond-tokenizer
+chown resilio:resilio /etc/sync.conf
+chown -R searx:users /config
+chown ganglia:ganglia /var/lib/ganglia/rrds
+chown -R qbittorrent /Downloads /Downloads/temp /qbittorrent/.config/qBittorrent
+chown redis /var/lib/redis
+chown -R 10010:0 /var/tmp/nginx
+chown -R qbittorrent:users /config /data
+chown -R malice:malice /malware
+chown -R minecraft:minecraft /nukkit-1.0-SNAPSHOT.jar
+chown www-data: /mapcache
+chown -R neo4j:neo4j "${NEO4J_HOME}"
+chown -R oracle:root $DOMAIN_HOME/..
+chown -Rf apache.apache /var/www/html/cmonapi/
+chown -R viper:viper /home/viper
+chown -hR gitpod:gitpod /workspace
+chown -R nobody:nobody /var/cache/nginx/scgi_temp
+chown -R jf_agent:jf_agent /home/jf_agent
+chown 1001:0 /usr/share/app/varnish
+chown -R nifi:nifi ${NIFI_TOOLKIT_BASE_DIR}
+chown mysql:mysql /run/mysqld /usr/share/mariadb/mysql_system_tables_data.sql
+chown dw /buildroot
+chown -R ${UID}:${GID} /etc/s6 /run /srv/* /var/lib/nginx /var/www
+chown mpt /app
+chown -R root: /home/runner
+chown -R debian-transmission:debian-transmission /etc/transmission-daemon
+chown -R web:web *
+chown www-data:www-data /music
+chown -R theia:theia /home/project
+chown -R nobody:nobody .
+chown nginx:nginx /var/www/html
+chown -R puppet:puppet /etc/puppetlabs/puppet/
+chown -R root:root jumpserver
+chown apache:apache /otpl
+chown -R qbittorrent /home/qbittorrent
+chown -R serveradmin:serveradmin ${ORACLE_INSTANTCLIENT}
+chown -R couchbase:couchbase /etc/service
+chown -R node:node /usr/local/bin
+chown ckan:ckan "${CKAN_CONFIG}" -R
+chown -R www-data:www-data /app/storage
+chown oracle:oracle -R /u01/
+chown redash /app
+chown syncthing /var/syncthing
+chown -R lazyrecon_user:lazyrecon_user /usr/local/lib/python3.6/dist-packages/tldextract/
+chown -R nodedock:nodedock /home/nodedock/.ssh ;fi
+chown www-data.www-data /var/run/lighttpd
+chown -R minigrid-server:minigrid-server .
+chown -R cameraevents /opt/cameraevents
+chown -R build:build /home/build
+chown timetable.timetable -R /home/timetable
+chown -R :dockerrunner /app
+chown -R superset:superset $SUPERSET_HOME
+chown -R peanuts peanuts
+chown www-data:www-data storage/logs
+chown -R node:node $NODE_DIR
+chown centos:centos /home/centos/run_tempest.sh
+chown "${NB_USER}:${NB_GID}" "${CONDA_DIR}"
+chown wekan --recursive /data
+chown radium:radium /home/radium/.radium
+chown guest:users /go/bin/syncthing
+chown -R weechat:weechat ${HOME}
+chown -R nginx:nginx /var/log/nginx
+chown apache:apache -R /var/www/localhost/htdocs
+chown -R artemis:artemis /opt/hpfeeds
+chown -R www-data:www-data $DATA_DIR
+chown -R www-data /var/www/data
+chown -R couchpotato:users /config /couchpotato
+chown -R couchpotato /data
+chown -R 1000:1000 /opt/gluu/jetty
+chown -R $VAULT_USERNAME /vault
+chown root:root /usr/local/bin/fixuid
+chown sparql-proxy /opt/git
+chown -R default:www-data /var/lib/php/
+chown -R www-data:www-data /data/apache2/log
+chown -R 9000:9000 bootstrap/cache
+chown -R ${_USER}:${_GROUP}  "${CONFLUENCE_INSTALL}/work"
+chown oracle:root -R /u01
+chown -R $NGINX_ID:$NGINX_ID "/var/log/nginx"
+chown -R oracle:root $PROPERTIES_FILE_DIR
+chown -R www-data:www-data storage bootstrap
+chown laravel:laravel /var/www/html
+chown -R ${JENKINS_USER}:${JENKINS_GROUP} ${JENKINS_INSTALL_DIR}/ref
+chown -R mememastero. /var/www/html/memes
+chown node:node /opt/mx-puppet-twitter
+chown -R odoo /mnt/extra-addons
+chown borg:borg /home/borg/.ssh
+chown nobody.nobody /usr/src/wordpress/wp-secrets.php
+chown bitlbee:bitlbee /var/run/bitlbee
+chown -R root:root /root/.ssh
+chown -R www-data:www-data /usr/share/zoneminder/
+chown -R www-data:www-data /var/log/php
+chown -R debian-tor /var/lib/tor
+chown user:user_group /home/user/restore.sh
+chown -R media:users /data /movies /downloads /tvseries /comics
+chown -R gtrader:gtrader /gtrader
+chown -R www-data:www-data ./wordpress
+chown -R jenkins /var/cache/vpp
+chown www-data: /tiles
+chown -R nginx:nginx /app
+chown mogile -R /var/mogdata
+chown -R appionuser:users /home/appionuser /emg/data
+chown syzoj:syzoj /opt/syzoj
+chown 1000 /entrypoint.sh /usr/local/bin/youtube-dl
+chown -R grid:oinstall $INSTALL_DIR/install/$PATCH_NUMBER
+chown -R unbound:unbound /usr/local/etc/unbound/
+chown -R nextcloud.nextcloud /srv/www
+chown -R monero:monero /wallet
+chown -R pptruser:pptruser /codecept
+chown -R mysql /usr/local/mysql
+chown node "$GHOST_INSTALL"
+chown -R chrome:chrome /opt/google/chrome-beta
+chown root:root sbt
+chown $UNAME:root -R /usr/lib/go/
+chown minecraft:minecraft -R /minecraft
+chown -R apachewsgi peanuts
+chown -R devops:devops /home/devops
+chown arch:arch /home/arch
+chown prosody /srv/run.sh
+chown -R nginxuser /run
+chown root:root /usr/local/bin/rawhelm
+chown -R ${USER} /sentinel
+chown mpd:audio -R /var/lib/mpd
+chown -R vault:vault /vault
+chown -R app: /app/data
+chown -R www-data:www-data /usr/src/seat/
+chown node:node -R /usr/local/bin/
+chown -R virome /opt
+chown arm.arm /home/arm
+chown $PUSER:$PGROUP /$FILEBOTDIR /config /data/music /log /scripts
+chown -R ${APP_USER}:${APP_GROUP} /home/${APP_USER}/.bitcoin
+chown -R iomirea /code
+chown go:go /var/log/go-agent
+chown -R wekan:wekan /home/wekan/app /home/wekan/.meteor
+chown 1001:0 $HOME
+chown -R mumble:mumble /etc/mumble /opt/mumble
+chown -R www-data:www-data /opt/kimai /usr/local/etc/php/php.ini
+chown -R mydocker:mydocker /home/mydocker $APP_DIR/log $APP_DIR/tmp
+chown sensoroni:sensoroni /opt/sensoroni/jobs
+chown ipfs $IPFS_PATH
+chown -R airsonic:airsonic /var/airsonic/transcode)
+chown ${_USER}:${_GROUP} ${CONFLUENCE_INSTALL}/bin/bootstrap.sh
+chown ${USERNAME}:root /usr/local/share/copy-kube-config.sh
+chown -R node:node /home/node/monetary-management-backend
+chown root:staff /usr/local/lib/R/site-library
+chown -R oracle:root $DOMAIN_PARENT
+chown -R jenkins /w
+chown -R vdr:vdr /etc/vdr /var/lib/vdr /srv/vdr
+chown -R $EGO_UI_USER /run
+chown -R devdock:devdock /home/devdock/.ssh     ;fi
+chown ansible:ansible /home/ansible/.gnupg
+chown wine:wine /home/wine/.finalize_installation.sh
+chown -R worker:worker /home/worker/.ssh
+chown nodeuser:nodeuser /var/opt/sinopia
+chown -R default /var/run/apache*
+chown hidetomo:hidetomo .ssh
+chown -R root.root ${ANDROID_HOME}
+chown hidetomo:hidetomo works
+chown -R www-data:www-data ${DATA_PATH}
+chown -R root:radius /etc/raddb
+chown steam -R /opt/steamcmd
+chown squid:squid -R /var/cache/squid
+chown -R "$ZK_USER:$ZK_USER" /opt/apache-$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper /usr/bin /opt/zookeeper
+chown -R root:root /usr/local/jdk1.8.0_172/
+chown -R qbittorrent /Downloads /Downloads/temp
+chown -R nobody.nobody /var/lib/nginx/logs
+chown hidetomo:hidetomo /home/hidetomo/.ssh/id_rsa
+chown -R captureuser:captureuser /home/captureuser
+chown -R 1001:0 /etc/nginx
+chown httprobe:httprobe /httprobe
+chown -R jackett:users /opt/Jackett /config
+chown www-data:www-data /var/log/apache2/php-errors.log
+chown notebookuser:notebookuser -R /home/notebookuser #
+chown -R node /app
+chown 1001:0 /usr/share/app/.npm
+chown -R $ZOOKEEPER_USER:$ZOOKEEPER_GROUP /var/log/zookeeper
+chown -R ubiquiti:ubiquiti     /usr/lib/unifi     /var/run/unifi     /var/lib/unifi
+chown prometheus:prometheus /usr/local/bin/prometheus
+chown gitpod /nix
+chown -R nonroot:nonroot /home/nonroot
+chown -R headphones:users /config
+chown -R codebreaker-cv:codebreaker-cv ./
+chown builder:builder .
+chown -R ${PIVX_USER} /home/${PIVX_USER}
+chown -R neo4j:neo4j /data
+chown -R nobody.nobody /usr/local/bin/composer
+chown -R jdownloader:100 /opt/jdownloader2
+chown -R nobody.nobody /usr/src/wordpress
+chown -R www-data:www-data /var/www/*
+chown -R squid:squid "$CONFIGDIR"
+chown -R "${NGINX_USER}":"${NGINX_GROUP}" /assets/install
+chown -R mongodb:mongodb /data/*
+chown -R pptruser:pptruser /etc/letsencrypt
+chown $user:$user /home/$user
+chown -R airsonic:airsonic /data)
+chown -R apache:apache /app
+chown -R www-data:www-data web/sites web/modules web/themes web/tmp
+chown -R filestash:filestash /app/
+chown bitlbee:bitlbee /var/run/bitlbee.pid
+chown node /usr/src/app
+chown -R 1000:1000 /Downloads /home/qbittorrent
+chown hc /data
+chown -R 10000:10000 /vernemq
+chown -R user:user .
+chown -R mysql:mysql /data/mariadb/bin/mariadb-start.sh /data/mariadb/bin/badstore-setup.sql /data/mariadb
+chown -R ${EXECUTING_USER}:${EXECUTING_USER}  /data
+chown -R cocoproject_web:cocoproject_web ./
+chown dockeruser:dockeruser /src/
+chown www-data: /var/www
+chown -R fluent /fluentd
+chown -R admin:admin /.kube
+chown tomcat7 /etc/authbind/byport/443
+chown -R jenkins /var/jenkins_home
+chown www-data.www-data /var/www/html/data
+chown mysql:mysql /etc/my.cnf.d/ /run/mysqld /usr/share/mariadb/mysql_system_tables_data.sql
+chown -R nobody:users /config
+chown root:root /usr/local/sbin
+chown -R nix:root /nix
+chown postgres:postgres /app
+chown www-data:www-data /var/www/html
+chown -R debian-tor:debian-tor /etc/tor/torrc.default
+chown -R mdc /data /config
+chown 33.33 /home/git/.ssh/authorized_keys
+chown ${USER} /home/${USER}/.curlrc
+chown -R root:root /opt/luna
+chown -R laradock:laradock /home/laradock/.composer
+chown -R www /opt/graphite/storage
+chown -R csplogger-agent:csplogger-agent csplogger
+chown qbittorrent .config
+chown -R nobody.nobody /var/www
+chown $PUSER:$PGROUP /config /data/music /log /scripts
+chown openldap: /etc/ldap/slapd.d/cn=config/cn=schema/cn={4}samba.ldif
+chown -R steve:steve /bedrock-server
+chown libresonic:libresonic /var/libresonic/libresonic.war)
+chown -R app:app /opt/webApp/
+chown -R "$KAFKA_USER:$KAFKA_USER"  $KAFKA_DATA_DIR
+chown steam -R /etc/arkmanager
+chown -R qbittorrent:qbittorrent /qbittorrent/Downloads/temp
+chown -R module2builder:module2builder ${MODULE2_BUILD_HOME}
+chown xteve:xteve /tmp/xteve
+chown -R $USERID:$GROUPID $HOME $WWWHOME
+chown -R www:www /var/lib/nginx
+chown -R apacheds:apacheds /var/apacheds
+chown ${USER} ${DL_DIR}
+chown -R ldap:ldap /var/lib/openldap
+chown -R batchprocessor /app
+chown -R obpuser /opt/obp-boostrap-user/*
+chown -R docker:docker .
+chown -R nginx /data
+chown -R kafka:kafka /kafka /conf
+chown -R www-data:www-data /home/www-data/ /var/www/html
+chown -R root:root /usr/local/android-sdk/
+chown -R nonroot:nonroot /home/nonroot/.config
+chown -R root:ctf /home/ctf
+chown -R ${USER}. /home/$USER
+chown root:root /etc/monitrc
+chown -R oracle:oinstall $PATCH_INSTALL_DIR
+chown hidetomo /home/hidetomo/.ssh
+chown -R nobody:users /opt/librenms
+chown -R nobody:nobody /mnt/replica
+chown nobody:nobody -R /var/www
+chown -R jenkins:jenkins /home/jenkins/.ssh
+chown -R "$(id -u)":"$(id -g)" /data/joal
+chown -R nginx:nginx /tmp/nginx.pid
+chown -R caddy:caddy    /srv    /etc/proxy    /etc/proxy.d    /etc/proxy.certs
+chown -R idol /home/idol
+chown rocketchat:rocketchat /app/uploads
+chown -R nginx_http_user /data/www /data/sites_conf /data/ssl
+chown daemon:daemon -R /home/confluence
+chown youtube-dl:youtube-dl /vol/output
+chown -R www-data:www-data skins cache
+chown -R ${SALT_USER}: ${SALT_ROOT_DIR}
+chown www-data:www-data /otpl
+chown -R default /var/lib/php/session
+chown www-data:www-data /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/curl-ca-bundle.crt
+chown -R 1000.1000 /home/firefox/
+chown -R nobody.nobody /var/lib/nginx
+chown -Rc gtrader:gtrader /gtrader
+chown -R www-data:www-data /var/www/html/website
+chown -R axway-user:axway-group /app
+chown -R nosql-user /shared_conf
+chown proxy.proxy -R ${SQUID_LOG_DIR}
+chown radium $HOME/.radium
+chown -R afrojas:afrojas /home/afrojas
+chown oracle  -R /etc/httpd/logs/
+chown oracle:oracle /u01/config /u01/data /u01/tmp
+chown -R --from=root sudoer /home/sudoer
+chown -R ${USER}:${USER} "/home/${USER}"
+chown -R ethercalc:ethercalc .
+chown -R ${_USER}:${_GROUP} /opt/atlassian/bitbucket/
+chown oracle:root ${SCRIPT_DIR}
+chown -R mysql:mysql /etc/mysql/
+chown ${UID}:${GID} /var/log/quarknetdisk.log
+chown -R openfire:openfire /opt/openfire
+chown -R rails:rails db log storage tmp /data /litefs
+chown -R $EGO_UI_UID:$EGO_UI_GID /run
+chown fc: /var/lib/lotus-wallet
+chown eqemu:eqemu $eqemu_server_directory/ -R
+chown -R daemon:daemon  "${CONF_INSTALL}/conf"
+chown -R mysql:root /var/lib/mysql/
+chown named:named /var/cache/bind
+chown --recursive root:www-data /var/log/apache2/ /var/run/apache2
+chown -R oracle:root ${VOLUME_DIR}
+chown ${uid}:${gid} $JENKINS_HOME
+chown -R $APP_USER:users /3dptools /docker_start.sh
+chown eventz: /eventz -R
+chown $USER:$USER $HOME/main.sh
+chown -R mongodb:mongodb /var/lib/mongodb /data/configdb /data/db
+chown -R nginx:nginx /var/cache/nginx
+chown -R ${UID}:${GID} /opt/*
+chown -R privoxy /etc/privoxy
+chown fc: /var/lib/lotus
+chown redis /var/run/redis
+chown qbittorrent ~/.config
+chown worker:worker -R /var/www/
+chown -R 1000 .
+chown qbittorrent ~/
+chown nodejs:nodejs /app
+chown -R www-data.www-data /var/www/ /var/log/nginx/
+chown -R sonarqube:sonarqube sonarqube
+chown -R activemq:activemq /usr/local/activemq
+chown -R jenkins:jenkins /var/lib/jenkins)
+chown -R idol:idol HewlettPackardEnterprise
+chown docker:docker /var/www/html
+chown -R hadoop:hadoop /opt/data
+chown hidetomo:hidetomo /home/hidetomo
+chown $USERNAME:$USERNAME /home/$USERNAME/.elm
+chown -R amavis:amavis /etc/mail/spamassassin
+chown -R go:go /usr/local/go-server-${GO_MAJOR_VERSION}
+chown ${USER}:${USER} -R ${NPM_CONFIG_PREFIX} ${HOME}/.config ${HOME}/.npm
+chown www-data: -R /var/www/
+chown shiny:shiny -R /srv/shiny-server
+chown -R mysql:mysql /etc/mysql
+chown lsadm:lsadm /usr/local/lsws/admin/conf/admin_config.conf
+chown ${OWNER_GROUP} -R $ORACLE_HOME
+chown app:app /opt/webApp/app.jar
+chown hidetomo:hidetomo mongo
+chown -R openwrt:openwrt /home/openwrt/.ssh
+chown -R root:s6 /etc/services.d/nginx/
+chown openttd:openttd /home/openttd -R
+chown -R appuser: /var/www
+chown -R demobot:demobot /home/demobot
+chown -R nginx:nginx /var/www/html
+chown -R root:root /opt/mssql/bin/setnetbr
+chown -R pyservices:pyservices /home/pyservices
+chown -R daemon /daemon
+chown -h qbittorrent:qbittorrent /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chown -R www-data:www-data /var/nedi
+chown -R app:app plugin
+chown -R anon $HOME
+chown -R nifi:nifi ${NIFI_BASE_DIR}
+chown -R headless:headless /opt/selenium
+chown -R www-data:www-data /var/www/.composer ;     sudo -u www-data -H wget https://getcomposer.org/download/1.2.1/composer.phar -O composer.phar ;     sudo -u www-data -H php composer.phar require kamisama/cake-resque:4.1.2 ;     sudo -u www-data -H php composer.phar config vendor-dir Vendor ;     sudo -u www-data -H php composer.phar install ;     sudo phpenmod redis ;     sudo -u www-data -H cp -fa /var/www/MISP/INSTALL/setup/config.php /var/www/MISP/app/Plugin/CakeResque/Config/config.php ;     sudo chown -R www-data:www-data /var/www/MISP ;     sudo chmod -R 750 /var/www/MISP ;     sudo chmod -R g+ws /var/www/MISP/app/tmp ;     sudo chmod -R g+ws /var/www/MISP/app/files ;     sudo chmod -R g+ws /var/www/MISP/app/files/scripts/tmp ;     openssl req -x509 -nodes -days 3650 -newkey rsa:4096 -keyout /etc/ssl/private/misp.key -out /etc/ssl/private/misp.crt -batch ;     echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf ;     echo "ServerName $MISP_FQDN" >> /etc/apache2/sites-available/000-default.conf ;     echo "Redirect permanent / https://$MISP_FQDN" >> /etc/apache2/sites-available/000-default.conf ;     echo "LogLevel warn" >> /etc/apache2/sites-available/000-default.conf ;     echo "ErrorLog /var/log/apache2/misp_error.log" >> /etc/apache2/sites-available/000-default.conf ;     echo "CustomLog /var/log/apache2/misp_access.log combined" >> /etc/apache2/sites-available/000-default.conf ;     echo "ServerSignature Off" >> /etc/apache2/sites-available/000-default.conf ;     echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf ;     echo "<VirtualHost *:443>" > /etc/apache2/sites-available/default-ssl.conf ;     echo "ServerAdmin $MISP_EMAIL" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "ServerName $MISP_FQDN" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "DocumentRoot /var/www/MISP/app/webroot" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "<Directory /var/www/MISP/app/webroot>" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "Options -Indexes" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "AllowOverride all" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "</Directory>" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "SSLEngine On" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "SSLCertificateFile /etc/ssl/private/misp.crt" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "SSLCertificateKeyFile /etc/ssl/private/misp.key" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "#SSLCertificateChainFile /etc/ssl/private/misp-chain.crt" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "LogLevel warn" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "ErrorLog /var/log/apache2/misp_ssl_error.log" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "CustomLog /var/log/apache2/misp_ssl_access.log combined" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "ServerSignature Off" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "</VirtualHost>" >> /etc/apache2/sites-available/default-ssl.conf ;     echo "ServerName localhost" >> /etc/apache2/apache2.conf ;     sudo -u www-data cp -a /var/www/MISP/app/Config/bootstrap.default.php /var/www/MISP/app/Config/bootstrap.php ;     sudo -u www-data cp -a /var/www/MISP/app/Config/database.default.php /var/www/MISP/app/Config/database.php ;     sudo -u www-data cp -a /var/www/MISP/app/Config/core.default.php /var/www/MISP/app/Config/core.php ;     sudo -u www-data cp -a /var/www/MISP/app/Config/config.default.php /var/www/MISP/app/Config/config.php
+chown -R ${user}:${user} /usr/share/dependency-check
+chown -R apache:apache /jukebox
+chown -R -L c2:c2 ${MINIFI_C2_BASE_DIR}
+chown 1001:1000 -R /var/www
+chown scummvm:scummvm /home/scummvm /data/ccache /data/sharedrepo
+chown -R apache:apache /run/apache2
+chown -R 1001:0 /var/lib/nginx
+chown -R "$(id -u)":"$(id -g)" node_modules # fix for https://github.com/npm/cli/issues/5900
+chown -R /homne/jenkins/.npm jenkins:jenkins
+chown -R ${UID}:${GID} $HOME
+chown -R smuflbuilder:smuflbuilder ${SMUFL_BUILD_HOME}
+chown -R libresonic:libresonic /var/libresonic)
+chown -R media:media /opt/nzbToMedia
+chown -R theia:theia /home/project;
+chown -R ${NB_USER} ${HOME}
+chown -R qbittorrent /qbittorrent
+chown -R nobody:www-data /var/lib/nginx/ /var/log/
+chown --recursive captain:captain "${HOME}"
+chown -Rf www-data:www-data /var/www/app /var/log/nginx /var/lib/nginx
+chown -R ${user}:${group} /var/log/mpd/mpd.log
+chown -R node:node /home/node /usr/src/app/
+chown -R oracle:oinstall $SCRIPT_DIR
+chown -R www-data:www-data /home/www-data/
+chown -R sabnzbd /opt/nzbToMedia
+chown -R mosquitto:mosquitto /mosquitto
+chown worker:worker /home/worker/main.sh
+chown -R root:root /usr/lib/node_modules
+chown node:node /opt/mx-puppet-instagram
+chown -R deluge:users /config /data
+chown -R nosql-user /app/
+chown user:user /repository
+chown user1:user1 /home/user1/GITHUB
+chown -R apisix:apisix /usr/local/apisix
+chown unturned:unturned -R /opt
+chown nobody:nobody /var/www/html/wp-content/uploads
+chown root:oinstall $GRID_HOME/bin/$DOCKERORACLEINIT
+chown go:go /docker-entrypoint.sh
+chown apache:apache /run/apache2 /certs
+chown -R ${HUGO_USER}:${HUGO_USER} ${HUGO_SITE}
+chown -r postgres:postgres /var/lib/postgres/data
+chown -R finger:finger /app
+chown -R app_user /data
+chown -R root:root FileGDB_API-RHEL7-64gcc83
+chown nobody: -R /opt/check
+chown -R 1007:1007 /.npm
+chown -v -R ls:ls /home/ls
+chown -R media:media /movies/ /downloads/ /tvseries/ /comics/
+chown rstudio:rstudio /home/rstudio
+chown bind: /etc/bind/rndc.key
+chown -R nonroot:nonroot ./
+chown builder:builder /home/builder/.koji
+chown root:root -R /tmp/tigervnc-1.10.1.x86_64
+chown -R openfire: /opt/openfire
+chown -R uwu:uwu /home/node/uwu
+chown -R appuser:appuser /.kube
+chown ${NAGIOS_USER}:${NAGIOS_GROUP} ${NAGIOS_HOME}/.ssh
+chown sensoroni /opt/sensoroni/logs
+chown app /home/app
+chown ${uid}:${gid} $DEPLOYER_HOME
+chown -R daemon:daemon "${BITBUCKET_INSTALL}/temp"
+chown oracle:oracle -R /run
+chown -R vscode:root /opt/vscode/extensions/ms-python.devicesimulatorexpress
+chown -R $NGINX_USER /var/cache
+chown -R hadoop:hadoop /opt/hadoop-3.2.0
+chown -Rh root. /bin/ff* /usr/lib/emby-server
+chown nobody:nobody /srv/data
+chown -R oracle /var/log/httpd
+chown -R www-data:root /var/lock/apache2 /var/run/apache2 /var/log/apache2 /var/www/html
+chown -R $USERID:$GROUPID /var/lib/mysql /run/mysqld
+chown -R nobody:nobody /app /.npm /data
+chown -R caddy:caddy    /srv    /etc/proxy    /etc/proxy.d
+chown --recursive --from=0:0 $C_USER:$C_USER $C_HOME       ;fi'
+chown -R daemon:daemon  "${JIRA_INSTALL}/temp"
+chown -R ssessner:ssessner /home/ssessner
+chown -R premiumizer:premiumizer /premiumizer
+chown -Rf nginx.nginx /usr/share/nginx/html/
+chown root:root /usr/local/bin/kontemplate
+chown caddy /etc/proxy/Caddyfile
+chown -R sgeadmin:sgeadmin /usr/local/sge
+chown -R domain_stats: /var/log/domain_stats
+chown -R root:root /usr/share/sbt
+chown -R ${LOCAL_USER}:${LOCAL_USER} /home/${LOCAL_USER}
+chown -R nobody.nobody /var/tmp/nginx
+chown nagios.nagios /usr/local/nagios/libexec/check_mem.pl
+chown root:root /usr/local/bin/kubectl /usr/local/bin/helm
+chown -R app_user /data/web-app
+chown -R 1007:1007 "/.npm"
+chown -R node:node *
+chown -R kiwi:kiwi /code
+chown -R re: /home/re
+chown -R qbittorrent:qbittorrent /home/qbittorrent /home/qbittorrent/Downloads
+chown elastalert:elastalert /etc/elastalert
+chown ckan:ckan "${CKAN_STORAGE_PATH}" -R
+chown -Rv _apt:root /var/cache/apt/archives/partial/
+chown -R $APP_USER:users /docker_start.sh /3dptools
+chown qbittorrent .config/qBittorrent
+chown slurm:slurm /etc/slurm/slurmdbd.conf
+chown ${OWNER_GROUP} -R $ORACLE_HOME/temp
+chown packager:packager /__w
+chown sampleuser:sampleuser /home/sampleuser
+chown mysql /var/run/mysqld/
+chown -R qbittorrent /entrypoint.sh
+chown -R maniaplanet:maniaplanet $PROJECT_ROOT
+chown -R www-data:www-data /var/www/MISP /root/.config /root/.git;     sudo -u www-data -H git clone https://github.com/MISP/MISP.git /var/www/MISP ;     sudo -u www-data -H git submodule update --init --recursive ;     sudo -u www-data -H git submodule foreach --recursive git config core.filemode false ;     sudo -u www-data -H git config core.filemode false ;     echo
+chown -R pixelfed /var/run/apache2
+chown lsadm:lsadm /usr/local/lsws/conf/httpd_config.conf
+chown biodocker:biodocker /config
+chown ubuntu /var/lib/shiny-server
+chown -R sabnzbd /data
+chown -R ${NB_USER}: /tmp
+chown -R node:node /home/node/.config
+chown ipfs:users $IPFS_PATH
+chown -R root:renderer openstreetmap-carto/
+chown -R vernemq ${HOME}
+chown -R qbittorrent /downloads /downloads/temp
+chown -R abc:abc /picons
+chown -R clamav:clamav /var/lib/clamav/
+chown -R root:root /usr/share/${ELASTIC_PRODUCT}
+chown -R cgatepro.mail /var/CommuniGate
+chown -R microblog:microblog ./
+chown ${UID}:${GID} /var/log/baidunetdisk.log
+chown -R ubuntu:ubuntu /home/ubuntu/charms
+chown ${USER} /home/${USER}/.local
+chown -R nobody /.composer
+chown -R couchpotato:media /data
+chown pixelfed /var/log/apache2
+chown -R eqemu:eqemu $EQEMU_HOME
+chown nobody:nobody /var/nginx-uploads
+chown -R media:media /data /movies /downloads /tvseries /comics
+chown hidetomo:hidetomo .ssh/authorized_keys
+chown -R 500:500 $BDR_REG_ROOT
+chown -R ${USER} ${HOME}
+chown -R rstudio:rstudio /home/rstudio/.rstudio
+chown -R $USER:$USER $SERVER
+chown nginx:root /var/cache/nginx/*
+chown ${CONTAINER_USERNAME}:${CONTAINER_USERNAME} /home/${CONTAINER_USERNAME}/.ssh/
+chown -R "$APACHE__USER:$APACHE__GROUP" /var/www/html
+chown steam -R  /opt/insurgency
+chown www-data:www-data /var/www
+chown -R 1001:0 /run/nginx
+chown -R consul /consul
+chown postgres /var/run/postgresql
+chown shiny.shiny /
+chown qbittorrent ~/.config/qBittorrent
+chown -R pleroma:root /etc/pleroma
+chown nobody /home/nobody
+chown nodedock:nodedock /home/nodedock/aliases.sh
+chown -R "$ZK_USER:$ZK_USER" /opt/apache-$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper /usr/bin
+chown -R nodeuser:nodeuser /app
+chown -R 6006:6006 /premiumizer
+chown -R prosody: /var/lib/prosody
+chown -R qbittorrent /home/qbittorrent /home/qbittorrent/Downloads /qbittorrent/Downloads/temp
+chown -R www-data:www-data /var/www/public
+chown -R nginx:nginx /app/humhub
+chown deluge:deluge /usr/sbin/rclone
+chown -R root:staff /opt/TinyTeX
+chown -R www-data /var/www/html
+chown -R go:go /usr/local/go-agent-${GO_MAJOR_VERSION}
+chown app_user /app/
+chown -R ${MYSQL_USER}:${MYSQL_USER} ${MYSQL_LOG_DIR}
+chown lighttpd:lighttpd /var/cache/lighttpd/compress
+chown -R 1000:1000 /home/superchain
+chown zookeeper:zookeeper /var/lib/zookeeper
+chown -R root:root ${FLUTTER_HOME}
+chown nagios:adm /var/log/icinga2
+chown www-data:www-data /home/qgis/qgisserverdb
+chown -R minecraft:minecraft /mc
+chown -R awsh: /home/awsh
+chown -R root:root install
+chown -hR tor_router:tor_router /app
+chown -R 1000:1000 /Downloads /home/qbittorrent/.*
+chown -R nobody:nogroup /var/db/assp
+chown -R 33 /var/cache/nginx
+chown wekan:wekan --recursive /home/wekan/.config
+chown -R nobody: /var/www /srv/*
+chown $UID:$GID -R $HOME
+chown -Rh emby. /config /media
+chown -R build ${ANDROID_HOME}
+chown -R chrome:chrome /usr/app/reports
+chown -R radarr:users /config /opt/Radarr
+chown -R virome /var/log/apache2
+chown 501:501 /root/app/lair/bundle/programs/server/app/server/startup.js
+chown media:users /deluge_start.sh
+chown -R sqapi:sqapi    ${WRK_DIR}
+chown -R snappass $APP_DIR
+chown -R nginx:nginx /var/run/nginx.pid
+chown -R airsonic:airsonic /var/airsonic)
+chown -R nobody:users /home
+chown -R pptruser:pptruser ./node_modules
+chown app /var/log/nginx/*
+chown -R node:node /decktape
+chown ${uid}:${gid} -R /home/developer
+chown `id -u` /data/db
+chown -R elasticsearch:elasticsearch ./
+chown node:node -R /usr/local/lib/node_modules/
+chown -R apacheds:apacheds /usr/local/apacheds
+chown radicale /data
+chown -R rtorrent:rtorrent /downloads /rutorrent /tmp/rtorrent /var/lib/nginx /var/tmp/nginx
+chown go:go /var/lib/go-agent
+chown proxy.proxy -R /etc/squid
+chown -R appuser /app
+chown -R apache:apache /var/www/localhost/htdocs/
+chown -R root:s6 /etc/services.d/consul-template
+chown -R webuser:webgroup /var/www/html/
+chown -R theia:theia /home/theia
+chown minecraft:minecraft /data /home/minecraft
+chown "${MEZZANINE_UID}:${MEZZANINE_GID}" /srv/mezzanine /etc/nginx/conf.d/mezzanine.conf
+chown --recursive root:root /var/log/apache2 /var/run/apache2
+chown -R 1000:1000 \*
+chown -R minecraft:minecraft /data
+chown root:root /entrypoint.sh
+chown -R ${USER_UID}:0 ${HOME}
+chown -R qq:qq /TencentFiles
+chown -R jdownloader:jdownloader /opt/jdownloader2
+chown sync_gateway:sync_gateway /var/log/sync_gateway
+chown -R oracle:oracle $DOMAIN_ROOT/..
+chown -R appuser /repo
+chown -R jovyan:jovyan /opt/venv
+chown -R 1001:0 /etc/nginx/nginx.conf
+chown -R work:work /home/work/*
+chown -R user:user $HOME
+chown -R theia:theia /home/go-tools;
+chown nobody:nobody /var/www/html
+chown -R root:users /opt/firefox
+chown fc: /var/lib/lotus-miner
+chown -R builder:www-data /var/www/html
+chown nobody:www-data /run/nginx
+chown -R couchdb:couchdb     /usr/local/lib/couchdb /usr/local/etc/couchdb     /usr/local/var/lib/couchdb /usr/local/var/log/couchdb /usr/local/var/run/couchdb
+chown -R www-data:www-data /app/laravel-docker/public                                   /app/laravel-docker/.docker-rootless/s6
+chown -R unifi:unifi /config /usr/lib/unifi /var/lib/unifi /var/log/unifi /var/run/unifi
+chown -R user:user $SPAGO_DIR
+chown bitlbee:bitlbee /var/lib/bitlbee
+chown -R www-data. /var/www/html
+chown -R ${SERVICE_USER} ${HOME}/config
+chown -R nodejs:nodejs /home/nodejs/app
+chown -R frp:frp /frp
+chown -R updater:iomirea /config
+chown jenkins:jenkins /home/script
+chown squid:squid -R /var/log/squid
+chown -R backend:backend /app
+chown named:named /etc/rndc.key
+chown -R www-data:www-data ../app/logs
+chown 321:321 /myapp/somedir/somefile
+chown -Rf www-data.www-data /usr/share/nginx/html/
+chown rundeck:rundeck /var/lib/rundeck/.ssh
+chown ${_USER}:${_GROUP}     "${CONFLUENCE_HOME}"
+chown www-data:www-data ${PHP_DATA_DIR} -Rf
+chown -R qbittorrent:qbittorrent .
+chown -hR www-data:www-data /var/www/html
+chown -R www-data:www-data /var/www/html
+chown -R jls. /data "$JLS_PATH"
+chown wekan --recursive /home/wekan/.npm /home/wekan/.config /home/wekan/.meteor
+chown -R vagrant:vagrant /home/vagrant/.ssh
+chown -R nginx:nginx /var/lib/php/session
+chown -R node:node /usr/src
+chown 1001:1000 -R /etc/nginx
+chown node:node /.yarn-cache
+chown hidetomo:hidetomo /home/hidetomo/mongo
+chown -R git.git /srv/git
+chown -R consul:consul /consul
+chown -R lep:lep /home/lep
+chown root:root /usr/bin
+chown -R github:github /home/github/.ssh
+chown -R app:app ./
+chown -R media:media /opt/couchpotato
+chown -R www-data:www-data /opt/venv/igames
+chown 123:123 /myapp/somedir
+chown -Rf www-data.www-data /run/php
+chown ${USER} /home/${USER}/.jupyter
+chown nexus.nexus /opt/supervisor/nexus_supervisor
+chown deno:deno /deno-dir/
+chown -Rh emby. /config /media /usr/lib/emby
+chown -Rh bkup:bkup /bkup
+chown -R graylog:graylog /var/log/graylog-server
+chown oracle:root ${PROPS_DIR}
+chown daniel /app/
+chown -R node: .
+chown --recursive node:node /home/node
+chown -R tgproxy:tgproxy /home/tgproxy
+chown -R www-data:www-data ../app/data
+chown -R ${APACHE__USER}:${APACHE__GROUP} /var/www/html/biocorepipe
+chown -R $PUID:$PGID $HOME
+chown kafka:kafka /data
+chown -R chrome:chrome /node_modules
+chown ipfs:users /ipfs /ipns
+chown -R gcalcli $HOME
+chown memcache:memcache /var/run/memcached
+chown -fR sinusbot:sinusbot "$SINUS_DIR"
+chown -R node:node /var/log/nginx
+chown -Rf nginx:nginx /usr/share/nginx/
+chown -R www-data:www-data /KiiConf
+chown prosody:prosody -Rf /etc/prosody
+chown -R 2000:2000 ${FRX_MAIL_DIR}
+chown -R nzbget:nzbget /movies /downloads /comics /tvseries /config /opt/nzbget
+chown -R root:root /opt/conda
+chown -R bind:bind /var/log/bind
+chown cerebro:cerebro /opt/cerebro
+chown nobody:nobody /var/lib/nginx/logs/error.log
+chown -R oracle:oracle ${PROPERTIES_FILE_DIR}
+chown node:node /opt/mx-puppet-slack
+chown -R app:app /server
+chown -R nobody:nobody /etc/prometheus /prometheus
+chown builder:abuild /packages /abuilds
+chown root:bind /etc/bind/named.conf*
+chown -R 33 /etc/nginx/conf.d/default.conf
+chown -R $HELPY_USER $HELPY_HOME
+chown -R monero:monero /home/monero/.bitmonero
+chown -R odoo:odoo /odoo/*
+chown -R 1001:0 /var/log/nginx/access.log
+chown docker:docker /usr/src/app
+chown borg: /home/borg/.ssh ; 	mkdir /run/sshd
+chown -R rancher /var/lib/rancher /var/lib/cattle /usr/local/bin
+chown -R root:root /home/ctf
+chown root:root /root/.ssh/config
+chown ${DEVELOP_USER}:${DEVELOP_USER} /home/${DEVELOP_USER} -R
+chown --recursive www-data: /var/www/Arduino
+chown -R qbittorrent:qbittorrent /qbittorrent /downloads
+chown -R www-data:www-data /composer
+chown -R ${user} "$JENKINS_HOME" "$REF"
+chown -R $USERID:$GROUPID /var/log/apache2 /run/apache2
+chown www-data: /tmp
+chown -R gitpod:gitpod /etc/nginx /var/run/nginx /var/lib/nginx/ /var/log/nginx/
+chown --recursive --from=0:0 $C_USER:$C_USER /home/$C_USER       ;fi'
+chown renderer /var/run/renderd
+chown -R www-data:www-data /run/uwsgi/app/ /var/log/uwsgi
+chown -R oracle:root ${PATCHES_BASE_DIR}
+chown www-data:www-data /db
+chown qbittorrent /Downloads
+chown -R ${USER_NAME}:${GROUP_NAME} /var/lib/go-agent
+chown -R train: /home/train
+chown -R wpscan:wpscan /wpscan
+chown -R csplogger-agent:csplogger-agent ./
+chown notebookuser:notebookuser -R /home/notebookuser
+chown -R www-data /var/www/
+chown -R jenkins:jenkins /home/jenkins/.ssh/
+chown -R subsonic:subsonic /var/subsonic/transcode)
+chown 99:100 -R /ts3server /ts3temp
+chown -R nifi:nifi ${NIFI_REGISTRY_BASE_DIR}
+chown node:node /build
+chown -R mssql /var/opt/mssql
+chown -R stringer:stringer /app
+chown jenkins:jenkins /home/pollen
+chown xteve:xteve /home/xteve/.xteve/backup
+chown -R neo4j:adm /var/lib/neo4j
+chown -R $JUJU_USER:$JUJU_USER $JUJU_REPOSITORY
+chown -R cerebro:cerebro /opt/cerebro
+chown $USER:$USER -R /var/www/
+chown -R putiuser:putiuser /app
+chown -R root:root /opt/*
+chown -R serveradmin:serveradmin /opt
+chown httpd:www /var/lib/php7/session /var/lib/php7/wsdlcache
+chown -R jenkins:jenkins "$JENKINS_HOME"
+chown :pub-cache ${PUB_CACHE}
+chown -R root.root ${RAINLOOP_PATH}
+chown -R nobody:nobody /var/cache/nginx/client_temp
+chown -R libresonic:libresonic /opt/tomcat)
+chown -R privatebin /srv /var/www /var/lib/nginx
+chown -R spotify:spotify $HOME
+chown -R daemon:daemon  "${JIRA_HOME}"
+chown docker:docker /home/docker
+chown csgo:csgo /srv/csgo
+chown -R steam:steam /opt/steam/css
+chown -R chrome:chrome /usr/src/app
+chown -R appuser: /var/log/apache2
+chown -R httpd:www /usr/local/etc
+chown www-data /var/www/ -R
+chown -R 1001:0 ${APP_ROOT}     chown -R 1001:0 /etc/nginx     ln -sf /dev/stdout /var/log/nginx/access.log
+chown -R user:user /vol/
+chown -R ${uid}:${gid} $DEPLOYER_HOME
+chown csgo:csgo /srv/steamcmd
+chown -R nobody.nobody /var/log/nginx
+chown -R www-data:www-data /var/lock/apache2 /var/run/apache2 /var/log/apache2 /var/www/html
+chown jvb:jitsi /var/log/jitsi/jvb.log
+chown go:go /var/log/go-server
+chown -R asterisk:asterisk /etc/asterisk                            /var/*/asterisk                            /usr/*/asterisk
+chown -R www-data.www-data /var/www/html/ICEcoder
+chown -R ubuntu:ubuntu /theia
+chown ${uid}:${gid} -R /home/unis
+chown fedora:fedora /home/fedora/run_tempest.sh
+chown -R xteve:xteve /xteve
+chown -R ${_USER}:${_GROUP}  "${CONFLUENCE_INSTALL}/logs"
+chown -R ${_USER}:${_GROUP} /entrypoint.sh
+chown -RL user: /etc/ssl/private/ /var/log/apache2/ /var/run/apache2/ /usr/local/bin/start.sh
+chown -R developer: /home/developer/
+chown -R radicale /radicale
+chown -R radarr:radarr /opt/radarr /config
+chown ${SERVICE_USER} ${HOME}
+chown -R $NGINX_USER /etc/nginx/conf.d
+chown -R www-data:www-data /var/www/letsencrypt
+chown clamav:clamav /var/run/clamav
+chown -R $USER_UID:$USER_GID /home/$USERNAME;     fi
+chown -R www-data:root /var/lib/nginx /var/cache/nginx /var/run/nginx-cache
+chown mosquitto /mosquitto/log
+chown redmon:redmon /var/log/redmon
+chown -R www-data:www-data ../var
+chown xteve:xteve /data
+chown -R qbittorrent /Downloads /Downloads/temp /qbittorrent
+chown qbittorrent /
+chown -R root.root bin
+chown -R rocketchat:rocketchat /app
+chown -R www-data:www-data /opt/nedi
+chown www-data: /var/www/html/projects
+chown --recursive tester:tester /home/tester
+chown -R sonarqube.sonarqube "${SONAR_HOME}"
+chown root:root /usr/local/lib
+chown -R $USERNAME:$USERNAME /minter
+chown -R node $HOME
+chown -R mattermost:mattermost /mattermost /config.json.save /mattermost/plugins /mattermost/client/plugins
+chown hidetomo:hidetomo /home/hidetomo/works
+chown 1 /var/lib/jottad
+chown root:root /usr/local/bin
+chown -R www-data:www-data /var/www/html/images
+chown -R ${DOCKER_USER}:${DOCKER_USER} /whoogle /var/lib/tor
+chown -R www-data:www-data extensions
+chown -R 1000:1000 \
+chown -RL user: /etc/apache2/ssl/ /var/log/apache2/ /var/run/apache2/ /var/www/app-sec/
+chown headless:headless -R ${HOME}
+chown www /usr/local/bin/composer
+chown -R firefox:firefox /home/firefox/.mozilla
+chown -R node:node $HOME/app
+chown -R mongodb:mongodb /data /var/log/mongodb
+chown xteve:xteve /home/xteve/.xteve
+chown ${USER} ${CONDA_DIR}
+chown -R root:root /opt/app-root
+chown -R ubuntu:ubuntu /usr/local/lib/R/site-library
+chown -R nobody:nobody /var/tmp/nginx
+chown 1000:1000 /qbittorrent/.config/qBittorrent
+chown www-data: /mapcache/wmts-seeding-perimeter.gpkg
+chown probeit:probeit /usr/src/app
+chown -R nodemonit:nodemonit /home/nodemonit/uptime
+chown -R eventstore:eventstore /var/lib/eventstore /var/log/eventstore /etc/eventstore
+chown -R classificationservice /app
+chown -R abc:abc /opt/cloudplow
+chown -R ansible:ansible ~/ansible_lab
+chown -R 1001:0 /opt/app-root
+chown nodejs: /usr/src/app
+chown -R 1000:1000 /deploy
+chown -R awsh: ${AWSH_USER_HOME}
+chown -R 1000:1000 /Downloads /home/qbittorrent/*
+chown -R oracle:oracle $DOMAIN_HOME/..
+chown 1000:1000 -R /minecraft /papyri
+chown 33 /var/run/nginx.pid
+chown $NGINX_ID:$NGINX_ID "/var/run/nginx.pid"
+chown root:root /etc/shadow
+chown -R kafka /usr/local/kafka
+chown -R nobody.nobody /run/supervisord.pid
+chown a+rwx -R /entrypoint.sh
+chown root:root /usr/bin/chromedriver
+chown hidetomo /home/hidetomo/.ssh/authorized_keys
+chown xrootd:xrootd /etc/xrootd/xrootd-third-party-copy.cfg
+chown -R default /etc/apache2
+chown fc: /var/lib/lotus-worker
+chown -R nobody.nobody /run
+chown laradock:laradock /home/laradock/aliases.sh
+chown oracle -R /etc/pki/tls/certs/localhost.crt
+chown -R sonarqube:sonarqube ${SONAR_HOME}
+chown -R sonarqube:sonarqube "${SONAR_HOME}"
+chown -R $EGO_UI_UID:$EGO_UI_GID /etc/nginx/conf.d
+chown -R rails:rails db log storage tmp /data
+chown node:node /slides
+chown -R uwsgi:uwsgi /var/run/flask
+chown -R node:node $APP_DIR/*
+chown jenkins:jenkins $JENKINS_WAR
+chown -R root.root $ANDROID_HOME
+chown -R 1000:1000 /Downloads /home/qbittorrent/
+chown -R www-data:www-data /var/log/apache2
+chown -R oracle:root ${PATCH_DIR}
+chown $USER:$USER $HOME
+chown root.root /root
+chown -R minecraft:minecraft /minecraft
+chown -R mpt /var/run/flask
+chown $SSHD_USER: /etc/ssh/$SSHD_USER
+chown oracle:oracle /u01
+chown -R ngphylo:ngphylo /home/ngphylo
+chown -R www-data:www-data /var/www/html/ttrss
+chown -R elasticsearch:elasticsearch /app
+chown user:user /app
+chown -R jekyll:jekyll /build
+chown -R bind: /run/named
+chown prometheus:prometheus /var/lib/prometheus
+chown -R nobody: /app
+chown -R superset:superset ./*
+chown -R oracle:root ${SCRIPT_DIR}
+chown xteve:xteve /config/backup
+chown -R rtorrent:rtorrent /downloads /rutorrent /tmp/rtorrent
+chown root:www-data /etc/zm/zm.conf
+chown -Rh transmission. $dir
+chown elasticsearch -R "$ES_TMPDIR"
+chown -R api:iomirea /config
+chown -R oracle:root ${PROPERTIES_FILE_DIR}
+chown $UID:$GID -R $UHOME
+chown --recursive emundo:emundo /home/emundo
+chown -R root:root $(ls / | grep -v -e "dev" -e "sys" -e "tmp" -e "proc") || echo
+chown www-data /var/www/kivitendo-erp/templates /var/www/kivitendo-erp/users
+chown nginx:nginx /var/run/nginx.pid
+chown -R domain_stats: /opt/domain_stats2
+chown -R gradle:gradle /home/gradle
+chown superset:superset /home/superset
+chown nobody:nogroup /var/empty
+chown -R web:web /usr/share/GeoIP/*
+chown -R nobody.nobody /var/www/magento2
+chown hidetomo:hidetomo .ssh/id_rsa
+chown -R oracle:oracle $PRE_DOMAIN_HOME
+chown -R pptruser:pptruser /home/pptruser
+chown steam -R /ark
+chown 1000:1000 $(pwd)
+chown -R ${USER}:${USER} "${A4C_INSTALL_PATH}"
+chown -R ${EXECUTING_USER}:${EXECUTING_USER} /fiduswriter
+chown postgres ${INSTALL_DIR}
+chown lotus:users $HOME_PATH $PARAMCACHE_PATH
+chown -R stringer:stringer /app /data
+chown -R netdiag:netdiag ./
+chown -R daemon:daemon  "${JIRA_INSTALL}/conf"
+chown -R $uid:$gid /home/gollum
+chown user:user_group /home/user/backup.sh
+chown -R oracle:root weblogic-deploy
+chown -R oracle:root ${SCRIPT_HOME}
+chown -R media:users /data /movies
+chown -R www-data:www-data /var/www/html/application/db
+chown -R 500:500 /var/local/cdda-spatialite
+chown tor:tor /data
+chown rundeck:rundeck /tmp/rundeck
+chown --recursive --from=0:0 $C_USER:$C_USER /$C_USER       ;fi'
+chown -R daemon:daemon  "${JIRA_INSTALL}/work"
+chown -R www-data:www-data /home/www-data
+chown httpd /etc/ssmtp /etc/ssmtp/ssmtp.conf
+chown -R bdrreg:bdrreg $BDR_REG_ROOT
+chown nodejs:nodejs /usr/local/lib
+chown qbittorrent /Downloads/temp
+chown -R default /var/log/apache2
+chown -R app_user /home/app_user
+chown www-data -R .
+chown -R radarr /radarr.service
+chown prometheus:prometheus /usr/local/bin/promtool
+chown -R syncthing:syncthing /usr/local/bin/syncthing /usr/local/bin/entrypoint.sh
+chown oracle:oracle -R /u01
+chown -R ${MINIFI_USER}:${MINIFI_USER} ${MINIFI_BASE_DIR}
+chown -R root /home/work/crontab
+chown -R node:node /usr/src/app
+chown -R odoo /var/log/odoo
+chown -R yq:yq /workdir
+chown nodeuser:nodeuser /var/opt/verdaccio
+chown ${SQUID_USER}:${SQUID_USER} -R /etc/squid
+chown -R model-server /home/model-server/model-store
+chown --recursive gradle:gradle /home/gradle
+chown root:users /diurnal
+chown -Rh logstash. /opt/logstash
+chown user:user /home/user
+chown wekan --recursive /home/wekan
+chown xteve:xteve /app/xteve_beta
+chown 1000:1000 /qbittorrent/.config
+chown -R ubuntu:ubuntu /home/ubuntu/.local
+chown root: /etc/crontab
+chown 1001:0 /bin/ping
+chown root:unbound /etc/unbound
+chown -R nginx_http_user /data/www /data/logs
+chown -R 1001:0 /var/log/nginx/error.log
+chown qbittorrent /qbittorrent
+chown -R teamspeak /opt/teamspeak
+chown root.root /usr/local/sbin/gitolite-run
+chown -R app $HOME/*
+chown -R module_plus:module_plus ./
+chown user: /usr/src/app
+chown -R praktomat Praktomat/
+chown -R amavis:amavis /etc/mail/spamassassin /var/lib/spamassassin
+chown -R builder:builder /home/builder
+chown -R nobody:nobody /mnt/master
+chown -c -R ${AWSH_USER}:${AWSH_GROUP} ${AWSH_USER_HOME}
+chown 1000:1000 -R /home/qbittorrent /home/qbittorrent/Downloads
+chown node:node /var/cache/openstreetmap-proxy
+chown admin: -R /home/admin
+chown -R qbittorrent /Downloads /Downloads/temp /config
+chown nodejs:nodejs /usr/bin
+chown -R updater:iomirea /code
+chown go:go /etc/default /etc/default/go-agent
+chown radicale /radicale/data
+chown -R radicale:radicale /data
+chown -R librenms:librenms /var/log/apache2
+chown -R couchpotato /opt/couchpotato
+chown -R superset:superset /etc/superset
+chown -R ${NB_UID}:${NB_UID} ${HOME}
+chown www-data:www-data /var/run/lighttpd.pid
+chown root:root /usr/share/ant/lib/xsddoc.jar
+chown -R node:node /usr/local/lib/node_modules
+chown -R rust:rust cervisia-server
+chown -R transmission:users /var/lib/transmission /config /data
+chown -R nobody:users /opt/observium
+chown -R 1001:0 /var/tmp/nginx
+chown debian-tor:debian-tor /var/lib/tor/hidden_service
+chown -R neo4j:neo4j /logs
+chown -R qbittorrent:qbittorrent /Downloads /Downloads/temp
+chown -R go:go /var/lib/go-agent
+chown -R cowrie:cowrie /cowrie
+chown -R radarr /opt/Radarr
+chown -R git:git /home/git
+chown -R daemon:daemon  "${JIRA_INSTALL}/logs"
+chown -R qbittorrent:qbittorrent /entrypoint.sh
+chown -R jenkins:jenkins .
+chown -Rv mumble:mumble /etc/mumble /opt/mumble
+chown -R daemon:daemon "${BITBUCKET_INSTALL}/work"
+chown -R oracle:root /u01
+chown -R cashstory:cashstory /app
+chown -R nginx:nginx /var/lib/nginx
+chown -R root:root /opt/ts3soundboard
+chown -R theia:theia /usr/local/cargo
+chown -R "$ZK_USER:$ZK_USER" /opt/apache-$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper
+chown -R mysql:mysql /run/mysqld /var/lib/mysql
+chown -R flarum. /opt/flarum
+chown ${SQUID_USER}:${SQUID_USER} -R ${SQUID_CACHE_DIR}
+chown -R node-red:node-red /data
+chown -R ${HUBOT_USER} ${HUBOT_PATH}
+chown u:u /u/.koji
+chown -R www-data:www-data /var/nginx/proxy_temp/
+chown -Rh debian-transmission. /var/lib/transmission-daemon
+chown -R work:work /home/work
+chown -R cloud9 /app
+chown -R pleroma:pleroma ${DATA}
+chown -R docker:docker /home/docker
+chown -R 1001:0 .
+chown -R mysql:mysql /var/run/mysqld
+chown -R www-data:www-data storage/framework
+chown -R theia:theia /usr/local/go-packages
+chown -R mc:mc /home/mc
+chown -R $NGINX_ID:$NGINX_ID "/var/cache/nginx"
+chown -R ${SERVICE_USER} ${HOME}
+chown -r postgres:postgres /var/lib/postgres
+chown -R postgres:postgres /docker-entrypoint-initdb.d
+chown -R wechat:wechat /WeChatFiles
+chown root:syslog /var/log
+chown radium:radium $HOME/radium/.radium
+chown -R nginx:nginx .
+chown -R ${USER}:${GROUP}            ${CONFLUENCE_VAR}            ${CONFLUENCE_OPT}/conf            ${CONFLUENCE_OPT}/temp            ${CONFLUENCE_OPT}/logs            ${CONFLUENCE_OPT}/work
+chown bender:bender /tmp
+chown www-data:www-data -R .
+chown -R $EGO_UI_UID:$EGO_UI_GID /var/cache
+chown fc: /var/tmp/filecoin-proof-parameters
+chown $PUSER:$PGROUP -R /$FILEBOTDIR /config /data/television /data/film /log /scripts
+chown oracle:root -R /u01 $VOLUME_DIR
+chown proxy /etc/init.d/squid3
+chown ${CUSTOM_USER_NAME}:${CUSTOM_USER_NAME} /etc/supervisor/supervisord.pid
+chown django /etc/authbind/byport/80
+chown -R root:jetty /opt/shib-jetty-base
+chown user: /home/user/.ssh/
+chown -R user $HOME
+chown nobody /var/log/zookeeper /var/log/kafka
+chown root:root /usr/local/bin/sops
+chown 1000:1000 -R /app
+chown www-data:www-data /var/www/html/derbynet/local/config-roles.inc
+chown -R $PUID:$PGID $DATA_DIR
+chown -R "$ZK_USER:$ZK_USER" /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper /opt/zookeeper
+chown -R golang:golang $GOPATH
+chown -R conan:1001 /opt/conan
+chown debian-tor:debian-tor /etc/tor
+chown -R puppeteer:puppeteer /home/puppeteer
+chown --recursive --from=0:0 $C_USER:$C_USER /$C_USER     ;fi'
+chown ${SERVICE_USER} ${HOME}/config
+chown -R putiuser:putiuser /app /data
+chown qbittorrent /qbittorrent/.config/qBittorrent
+chown zap:zap /zap/zap-baseline-custom.py
+chown -R nginx:www-data /var/lib/nginx
+chown -R nginx:nginx /var/www
+chown etherpad:etherpad "${EP_DIR}"
+chown -R www-data:www-data /var/www/html/
+chown -R probesrv:probesrv /usr/src/app
+chown -Rf $USER $WORKDIR
+chown -R sonarr:sonarr /opt/sonarr /config
+chown oracle:oracle -R /config
+chown -R nobody:nogroup /app
+chown -R root:root $SPARK_HOME
+chown $NGINX_ID:$NGINX_ID "/var/run/nginx.lock"
+chown -R chrome:chrome /usr/app/node_modules
+chown --recursive www-data: /var/www/.arduino15
+chown -R node:node /var/lib/nginx
+chown -R octoprint:octoprint /octoprint
+chown "${NB_USER}" "${JULIA_PKGDIR}"
+chown ubuntu /home/ubuntu
+chown postgres:postgres /var/lib/pgsql/9.6
+chown -R transmission:transmission /etc/transmission-daemon
+chown ${USERNAME}:root /opt/conda
+chown -Rf www-data:www-data /etc/php/7.3
+chown 33.33 -R /home/git
+chown $NB_USER:$NB_GID $CONDA_DIR
+chown -R syncthing:users /config;     fi
+chown -R puppeteer:puppeteer /output
+chown -R $LDAP_USER: 	$LDAP_CONFVOL 	$LDAP_DATAVOL 	$LDAP_DIR 	$LDAP_SEEDDIRa 	$LDAP_SEEDDIR0 	$LDAP_SEEDDIR1
+chown -R api:iomirea /code
+chown -R odoo /var/lib/odoo
+chown www-data: /var/www -R
+chown --recursive hunnor:hunnor /hunnor
+chown -R snmpsim:nogroup /home/snmpsim
+chown roger:roger .vimrc .tmux.conf
+chown activemq:activemq /opt/$ACTIVEMQ -R
+chown gitflow:gitflow /home/gitflow/.ssh/
+chown -Rf /var/www/html
+chown jenkins:jenkins /test-custom-dockerfile
+chown slurm:slurm /var/spool/slurmd         /var/run/slurmd         /var/lib/slurmd         /var/log/slurm
+chown -R retdec:retdec /home/retdec /tmp/files
+chown -R opendkim:postfix ${POSTFIX_SOCK_DIR}/var/run/opendkim
+chown -R $ZOOKEEPER_USER:$ZOOKEEPER_GROUP /tmp/setup
+chown -R www:www /var/www
+chown -hR www-data:www-data /usr/local/apache2/
+chown -R jsreport:jsreport /app
+chown -R www-data:www-data /etc/groupoffice
+chown -R airflow: ${AIRFLOW_USER_HOME}
+chown www-data:www-data /var/www/html/storage/search-indexes
+chown -R node:node /home/node/apex
+chown -R zabbix:root /var/lib/zabbix /var/run/zabbix /var/log/zabbix
+chown -R proxy:proxy /etc/dnscrypt-proxy
+chown -R nginx:www-data /usr/share/nginx
+chown admin:admin /app
+chown -R $APPLICATION_USER /restApiApp
+chown dnscrypt.dnscrypt /dnscrypt/dnscrypt-proxy
+chown -R nextcloud:nextcloud /nextcloud/config
+chown -R $EGO_UI_USER /var/cache
+chown -R sonarqube:sonarqube $SONARQUBE_HOME
+chown -R ${UID}:${GID} /usr/local/lib/python3.6/dist-packages/tldextract/
+chown -R nobody:nogroup /opt/scrapyd
+chown media:media /deluge_start.sh
+chown -R iraf:iraf /home/iraf
+chown -R admin:admin /.kube/config
+chown -R nobody:nobody /var/www/wallabag
+chown -R sqapi:sqapi         ${WRK_DIR}
+chown -R root:staff /usr/local/go
+chown -R www-data:www-data *
+chown $USERNAME:$USERNAME /home/$USERNAME
+chown -R app.app /app/
+chown -R root:root $ANDROID_HOME
+chown biodocker:biodocker /data
+chown -R media:media /data
+chown -R postgres:postgres /var/lib/postgresql
+chown openldap: /etc/ldap/certs
+chown -R tor /home/tor/.tor
+chown clamav:clamav /var/lib/clamav/*.cvd
+chown -R cuckoo:cuckoo .
+chown squid /etc/squid/ssl_cert
+chown thanos /bin/thanos
+chown -hR www-data:www-data /etc/apache2/
+chown -R ${NB_USER}: /home
+chown ubuntu -R /imputeme
+chown -R ${_USER}:${_GROUP} ${INSTALL_DIR}
+chown -R 9000:9000 storage
+chown www-data:www-data /var/log/php
+chown -R jenkins /var/ccache
+chown -R root:staff /opt/R/R-devel/lib/R/library
+chown -R syncserver. /data /opt/syncserver
+chown root:root /usr/local/bin/wisp
+chown -R cloud9:cloud9 /app
+chown -R ${STEAM_USER}:${STEAM_GROUP} ${SERVER_VOLUME}
+chown -R $SERVICEUSER /redis-commander
+chown -R dev:dev $HOME
+chown 1001:0 /usr/share/app/.npm-global
+chown -R daemon:daemon  "${CONF_INSTALL}/work"
+chown syslog:adm /var/log/auth.log
+chown nginx:www-data -R /dokuwiki
+chown nginx:nginx /usr/bin/wp-cli
+chown -R django:django ${BASE_FOLDER}
+chown -R www-data /var/www/html/
+chown -R sabnzbd:media /data
+chown -R www-data:www-data "/media/data"
+chown -R datahub:datahub /etc/datahub
+chown appuser:appuser -R /home/appuser/app
+chown -R ghidra: ${GHIDRA_INSTALL_PATH}/ghidra
+chown -R grid:oinstall $PATCH_INSTALL_DIR
+chown -R ${a4c_user}:${a4c_user} "/home/${a4c_user}"
+chown -R www-data:www-data .
+chown klippy:klippy -R klipper
+chown -R ${_USER}:${_GROUP} /opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.2.jar
+chown prosody /srv/*.sh
+chown -R zabbix:root /etc/zabbix /var/lib/zabbix/
+chown root:root /etc/bootstrap.sh
+chown postgres:postgres /run/postgresql/
+chown -R pwuser:pwuser /home/pwuser
+chown -R node:node /home/node
+chown root:root /install.sh
+chown $APP_USER:root /tmp/
+chown --recursive usr1cv8:grp1cv8 /var/log/1C /home/usr1cv8
+chown -R runner:runner /exec
+chown -R nodeuser:nodeuser /chrome
+chown xteve:xteve /config
+chown -R mum:mum /app
+chown -R $EGO_UI_UID:$EGO_UI_GID /var/log/nginx
+chown -R 1000:1000 ~/.npm
+chown -R ${_USER}:${_GROUP} ${BITBUCKET_INSTALL_DIR}/
+chown -R media:users /data /tvseries /incoming
+chown nobody:nginx -R /var/www
+chown unifi:unifi /usr/lib/unifi/logs
+chown www-data:www-data                                /app/laravel-docker/bootstrap/cache                                /app/laravel-docker/storage/app                                /app/laravel-docker/storage/framework/views
+chown 1001:0 -R $HOME
+chown -R www-data:www-data /var/lib/groupoffice
+chown codimd /files/sqlite
+chown -R probeit:probeit /usr/src/app
+chown -R jenkins:dev /home/jenkins/.ssh
+chown -R iomirea /config
+chown -R mysql:mysql $_etc $_log $_root
+chown -R www-data: /var/www/html/
+chown -R webuser:webgroup $WEBUSER_HOME
+chown -R postgres:postgres /var/lib/postgres/data
+chown -R 1001:0 ${APP_ROOT}
+chown -R thug:thug /home/thug /tmp/thug/logs
+chown -R kafka: /opt/kafka
+chown terraria /tshock /terraria
+chown -R deluge:deluge /config /downloads
+chown unifi:unifi /usr/lib/unifi/run
+chown kodi. -R /config
+chown -R ghidra: ${GHIDRA_REPOS_PATH}
+chown -R media:users /sickgear
+chown www-data:www-data /sessions
+chown -R sonarqube:sonarqube sonarqube-${SONAR_VERSION}
+chown -R -L minifi:minifi ${MINIFI_BASE_DIR}
+chown www-data:www-data /var/lib/groupoffice
+chown slurm:root /var/spool/slurmd         /var/run/slurmd         /var/lib/slurmd         /var/log/slurm
+chown -R node:node node_modules
+chown -R grid:oinstall $PATCH_INSTALL_DIR/*.sh
+chown -R laradock:laradock /home/laradock/.ssh ;fi
+chown gocron /usr/local/bin/gocron
+chown -R idol:idol *
+chown -R ase:ase $NMAP_HOME/
+chown pptruser:pptruser /output
+chown -R sickp:sickp /home/sickp
+chown -R devdock:devdock /home/devdock/.composer
+chown -R yopass /public
+chown daemon:daemon /otpl
+chown -R node:node /var/run/nginx.pid
+chown odoo /etc/odoo/odoo.conf
+chown go:go /var/lib/go-server
+chown -R $HELPY_USER:$HELPY_USER $HELPY_HOME $BUNDLE_PATH
+chown avast:avast /etc/avast/license.avastlic
+chown -R ${user}:${group} /var/lib/mpd
+chown -R ${USER}:users /home/${USER}/.jupyter
+chown -R openfire: ${OPENFIRE_HOME}
+chown 1001:0 -R $HOME/.terraform.d
+chown oracle:root ${SCRIPT_DIR}/*
+chown renderer /var/lib/mod_tile
+chown oracle:oinstall ${OGG_DEPLOY_BASE};             fi;
+chown www-data:www-data /tmp/php_notice.log
+chown -R couchpotato:media /opt/couchpotato
+chown -R 65534:65534 /data
+chown homo:homo -R "/home/homo"
+chown -R media:media /couchpotato
+chown -R 1001:0 ${HOME}
+chown -R syncthing:syncthing /app
+chown xteve:xteve /app/xteve
+chown daemon:daemon     "${CONF_HOME}"
+chown www-data: --recursive /var/www/html
+chown -R ${UID}:${GID} ${INSTALLDIR}
+chown -R ubuntu:ubuntu /home/ubuntu/.local/share/juju
+chown application:application /backend
+chown -R node:node /nightscout
+chown -R datahub:datahub /datahub-frontend
+chown -R ident:ident /home/ident
+chown -R locust /opt/venv
+chown oracle:oinstall ${DOWNLOAD}
+chown -R apache:apache /var/www/html/nconf
+chown devdock:devdock /home/devdock/aliases.sh
+chown -R apt-cacher-ng:apt-cacher-ng /var/run/apt-cacher-ng
+chown -R qbittorrent /Downloads
+chown root:root /bin/start
+chown -R sneivandt:sneivandt /home/sneivandt
+chown root:root /usr/local/bin/chromedriver
+chown -R www-data:www-data /var/www/html/joomla
+chown ${USER}:${USER} -R ${INSTALL_DIR}/scripts /docker-entrypoint.sh
+chown -R sabnzbd:users /config
+chown odoo:odoo /var/log/odoo
+chown ${USER_NAME} ${CONDA_DIR} ${WORK_DIR}
+chown -R mongodb:mongodb /var/lib/mongodb /data/configdb
+chown radium /home/radium/.radium
+chown 80:80 -R /var/lib/nginx
+chown -R redis-commander /home/redis-commander
+chown -R superset:superset ${SUPERSET_HOME}
+chown -R 1000:1000 /entrypoint.sh
+chown -R nexus.nexus /opt/sonatype-work `find /opt -maxdepth 1 -type d -iname "nexus-*"`
+chown debian-tor:debian-tor /var/log/tor
+chown -R user:user $HOME /etc/osquery /var/osquery /usr/share/osquery /var/log/osquery
+chown -R adbhoney:adbhoney /opt/adbhoney
+chown -R daemon:daemon  "${CONF_INSTALL}/logs"
+chown squid -R /var/lib/ssl_db
+chown www-data:www-data /var/run/lighttpd
+chown -R node:node /slides
+chown automation:automation /work
+chown -hR mediagoblin:www-data /var/log/mediagoblin                                       /srv/mediagoblin.example.org
+chown -R pptruser:pptruser /usr/src/app/node_modules
+chown -R sabnzbd:media /opt/nzbToMedia
+chown jancelin -R /home/jancelin
+chown node:node /opt/sources/rabbitci/rabbit-ssh/bin/controller.ssh.entrypoint.sh
+chown -R ${VAULT_USERNAME} /vault
+chown -R www-data:www-data /var/www/html/ICEcoder
+chown -R nobody:nogroup etc/ip-api-proxy /ip-api-proxy
+chown -R root:root /opt/kubectl-aliases/
+chown 1000:1000 /srv
+chown root:rust $RUST_HOME
+chown node:node /home/node/.vuerc
+chown -R postgres:postgres /var/lib/postgres
+chown -R pptruser:pptruser /app
+chown -R ${USER}:${GROUP} .
+chown -R $PUSER:$PGROUP /config /data /log /scripts
+chown -R consul:consul /data/consul
+chown sshuser:sshuser /home/sshuser/.ssh
+chown -R theia:theia /home/theia/.pub-cache/bin
+chown -R slurm:slurm /var/*/slurm*
+chown -R app:app /usr/src/app
+chown 999 /app
+chown -R $NON_ROOT_USER:$NON_ROOT_GROUP $LARAVEL_PATH
+chown -R www-data:www-data var/  web/uploads/
+chown -R root:root /opt/lion
+chown rails:rails /var/lib/nginx /var/log/nginx/*
+chown -R node:node /server
+chown -R activemq:activemq /opt/$ACTIVEMQ
+chown -R rails:rails db log storage tmp
+chown mysql /var/run/mysqld
+chown -R work:work /home/work/* /hooks /src/lede
+chown -R shiny /var/log/shiny-server
+chown -R atlas:atlas /var/atlas-probe
+chown -R rabbitmq:rabbitmq /data/rabbitmq
+chown root: /var/www
+chown oracle -R /etc/pki/tls/private/localhost.key
+chown -R jenkins:jenkins /home/jenkins/.config
+chown -R previewservice:previewservice /app
+chown -R 500:500 $LC_HOME
+chown -R docker. /.npm
+chown -R www-data:www-data web/sites web/modules web/themes
+chown -R 1001:root /app
+chown -R www-data:www-data /var/nginx/client_body_temp/
+chown -R tester:tester /home/tester/bitcoin-testnet-box
+chown -R debian-transmission:debian-transmission /var/lib/transmission-daemon
+chown -R shiny ./var/log/shiny-server
+chown -R app /home/app
+chown -R protoregistry: /data
+chown -R oracle:root ${CONTAINER_DIR}
+chown oracle:oracle -R /u01/oracle
+chown app:app /opt/hsqldb/hsqldb.jar
+chown -R www-data:www-data /var/www/igames
+chown apache:apache -R /run/apache2
+chown -R www-data:root /var/run/nginx.pid /etc/php7/php-fpm.d
+chown -R anaconda /opt
+chown uwsgi -R /var/www
+chown -R node:node /home/node/app
+chown -R nifi:nifi ${NIFI_HOME}
+chown geneweb /usr/local/var/geneweb
+chown ${HUBOT_USER} ${HUBOT_PATH}
+chown -R 65532 logs
+chown pixelfed /var/run/apache2
+chown -R wildfly:wildfly $JBOSS_HOME
+chown -R ezgo:ezgo /home/ezgo/.config /home/ezgo/.fluxbox /var/log/supervisor
+chown -R jekyll:jekyll /srv/wuc.me
+chown -R libresonic:libresonic /data)
+chown -R nobody:users /usr/src/watchdog
+chown -R gforth:gforth $HOME
+chown sensoroni:sensoroni /opt/sensoroni/logs
+chown ${USER} ${IPYNBS_DIR}
+chown -R pptruser:pptruser /webapp
+chown -R chrome:chrome /app
+chown -R root:root "$spdk_repo"
+chown -R $NB_USER:users $HOME
+chown -R mitmproxy:mitmproxy /home/mitmproxy
+chown 99:100 -R -v /ts3server /ts3temp /ts3temp/inifiles /ts3temp/serverfiles
+chown -R uwsgi /app
+chown -v -R ls:ls /home/ls/venv
+chown ${CONTAINER_USERNAME}:${CONTAINER_USERNAME} /home/${CONTAINER_USERNAME}/.ssh/ -R
+chown -R root:root /opt/magnus
+chown kodi. -R $KODI_WORKDIR
+chown root:root /usr/local/bin/diff-so-fancy
+chown -R api-user:api-group /app
+chown -R obp:obp /obp-boostrap-user
+chown ${user}: -R /opt/check
+chown --recursive gopher:gopher /home/gopher
+chown -R pptruser:pptruser /etc/letsencryptCOPY ./ /app/
+chown -R 510:510 /var/lib/jenkins)
+chown ipfs:users /container-init.d
+chown -R chromium:chromium /home/chromium
+chown -R nobody: .
+chown hidetomo:hidetomo mongo/db
+chown -R firefox:firefox /home/firefox
+chown -R mobsf:mobsf /home/mobsf/Mobile-Security-Framework-MobSF
+chown $PUSER:$PGROUP /filebot /config /data/music /log /scripts
+chown -R 1000:1000 \.*
+chown minecraft:minecraft -R /home/minecraft/
+chown developer: /launch.sh
+chown -R www-data:www-data /var/www/moodledata
+chown -R model-server /home/model-server
+chown -R ansible:ansible /ansible_lab
+chown 1000 /entrypoint.sh /usr/local/bin/youtube-dl /.gnupg
+chown gearman /opt/gearman
+chown -R uwu:uwu /home/uwu/uwu
+chown prosody:adm /var/run/prosody
+chown -R oracle:dba $ORDS_HOME
+chown -R www-data:www-data /data
+chown -R "$KAFKA_USER:$KAFKA_USER" /opt/$ZK_DIST $ZK_DATA_DIR $ZK_LOG_DIR $ZK_DATA_LOG_DIR /tmp/zookeeper
+chown -R ${user}:${group} /home/${user}/
+chown -R asterisk: /var/spool/asterisk/fax
+chown -R pwuser:pwuser /app
+chown -R daemon:daemon  "${CONF_INSTALL}/temp"
+chown user /opt/
+chown -R $EGO_UI_USER /etc/nginx/conf.d
+chown mail:root /var/spool/nullmailer/trigger
+chown -R www:www /www
+chown -R www-data:www-data /var/www/nextcloud
+chown -R oracle:oracle         /u01/oracle/sbin         /u01/oracle/instantclient         /u01/oracle/scripts
+chown -R putiuser:putiuser /data /data/puti /app/puti
+chown pyservices:pyservices /var/log/lighttpd
+chown www-data /data/apache2/data/uploads
+chown -R elasticsearch:elasticsearch /elasticsearch
+chown -R awsh: /opt/awsh
+chown -R httpd:www /var/www/html
+chown -R luser.luser /home/luser
+chown 501:501 /root/app/bundle/programs/server/app/server/startup.js
+chown app:app /app/cluster-tests.d /app/output
+chown -R minecraft:minecraft /etc/minecraft /opt/minecraft
+chown wildfly $JBOSS_HOME
+chown $uid:$gid /home/$user
+chown -R 503:503 /data
+chown user /usr/src/app
+chown -R postgres:root /var/lib/postgres
+chown -R icecast2 /etc/icecast2
+chown -R root:jetty /opt
+chown -R nomachine:nomachine /home/nomachine
+chown -R bind:bind /var/log/bind /var/run/named
+chown -R node:node /data/api
+chown $HELPY_USER $HELPY_HOME/public/assets $HELPY_HOME/public/uploads
+chown nobody:nobody /var/tmp/nginx
+chown -R root:root /usr/local/radare2
+chown -R nobody .
+chown -R www-data:www-data /noshdocuments
+chown -R mysql:mysql /var/lib/mysql
+chown -R docker-bench:root /opt/docker-bench-security
+chown node:node /var/log/sshd.log
+chown -R root.root ${HOME}
+chown -R qbittorrent:qbittorrent /qbittorrent
+chown -R ${COWRIE_USER}:${COWRIE_GROUP} ${COWRIE_HOME}
+chown worker:worker /home/worker
+chown -R pulseaudio:pulseaudio $HOME
+chown -R gitpod:gitpod /etc/apache2 /var/run/apache2 /var/lock/apache2 /var/log/apache2
+chown -R pdns:pdns /app
+chown -R ${_USER}:${_GROUP}  "${CONFLUENCE_INSTALL}/conf"
+chown root:root /usr/bin/oauth2_proxy
+chown -R $PUSER:$PGROUP /config /data /log /scripts /etc/rtorrent.conf
+chown -R syncthing: /stdiscosrv
+chown -R mosquitto:mosquitto /mqtt
+chown -R gitpod:gitpod /etc/mysql /var/run/mysqld /var/log/mysql /var/lib/mysql /var/lib/mysql-files /var/lib/mysql-keyring /var/lib/mysql-upgrade
+chown mysql:mysql /var/run/mysqld
+chown -R k8s:k8s /home/k8s/
+chown -R www-data: composer
+chown root.root /var/www/html/rainloop
+chown -R root:staff /usr/local/bazelisk
+chown redis:redis /data
+chown hidetomo:hidetomo /home/hidetomo/mongo/db
+chown -R www-data:www-data /var/run/zm
+chown -R wagtail /code
+chown proxy.proxy -R ${SQUID_CACHE_DIR}
+chown -R "$KAFKA_USER:$KAFKA_USER"  /opt/$KAFKA_DIST
+chown www-data /var/log/looking-glass.log
+chown -R www-data /var/www/html/var
+chown shiny:shiny /var/log/shiny-server
+chown -R qbittorrent ~/
+chown user: /app/fip-controller
+chown nextcloud.nextcloud /run/php
+chown -R learningflask:learningflask ./
+chown prosody:prosody -Rf /etc/prosody /var/run/prosody
+chown ansible:ansible /home/ansible/.ssh
+chown -R $LINUX_USER:$LINUX_USER /usr/local/bin/autoexecute /fme-shared /connection-storage /home/$LINUX_USER
+chown -R redis:redis /data
+chown lsadm:lsadm /usr/local/lsws/conf/vhosts/defdomain/vhconf.conf
+chown app:app -R /home/app
+chown -R root:root /opt/cerebro
+chown -R prometheus:prometheus /etc/prometheus
+chown -R nobody.nobody /run/nginx.pid
+chown -R user:user /torrents
+chown -R node:node /quinoa-server/data
+chown www-data:www-data -R /var/www
+chown -R $JUJU_USER:$JUJU_USER /home/$JUJU_USER/.local
+chown -R media:users /couchpotato
+chown -R appuser:appgroup /.kube
+chown www-data: --recursive /tmp
+chown ${USER} /home/${USER}/${AUDITDIR}/*
+chown :ssl-cert /etc/ldap/private/
+chown $NB_USER $JULIA_PKGDIR
+chown -Rh debian-transmission. $dir
+chown -R pptruser /tmp/tests
+chown radium /home/radium/data/.radium
+chown nvm:nvm -R "home/nvm/.nvm"
+chown -R elasticsearch:elasticsearch /data/elasticsearch /var/log/elasticsearch
+chown -R www-data:www-data /var/www/
+chown daniel /data/
+chown nginx.nginx /etc/nginx/conf.d/default.conf
+chown -R bitlbee:bitlbee /opt/bitlbee-data
+chown -R nginx:nginx /var/www/localhost/htdocs/
+chown -R awsh: ${AWSH_ROOT}
+chown ${user}:${group} /tini
+chown -R chrome:chrome /data
+chown -R wireshark:wireshark $HOME
+chown -R vscode /deno
+chown -Rv www-data:www-data /var/www/site
+chown nobody. /app
+chown celery:celery /var/log/celery
+chown -R app:app /home/app
+chown -R app /app
+chown -R nginx:nginx /var/www;
+chown -R nobody:nogroup etc/crashplan-ffs-puller /crashplan-ffs-puller
+chown -R www-data:www-data ${APP_DIR}
+chown -R node:node /home/node/mcbot
+chown 1003 /var/lib/jottad
+chown -R user:user /home/user
+chown -R gglsbl:gglsbl *
+chown -R nobody.nogroup /var/www
+chown -R ${APP_USER}:${APP_GROUP} ${DATA_DIR}
+chown -R finger:finger /app /var/log/nginx /var/lib/nginx
+chown -R root:root $HADOOP_HOME
+chown -R ocaml:ocaml /home/ocaml
+chown clamav:clamav /run/clamav
+chown -R user:user /usr/local/bin
+chown go:go /etc/go
+chown nobody /app
+chown -R nginx_http_user /etc/nginx
+chown www-data:www-data /tmp/defines_custom.inc.php
+chown -R qbittorrent:qbittorrent /downloads /downloads/temp /qbittorrent/Downloads /qbittorrent/Downloads/temp
+chown libresonic:libresonic /opt/tomcat/webapps/ROOT.war)
+chown eqemu:eqemu $eqemu_server_directory -R
+chown ${PHPLDAPADMIN_UID}:${PHPLDAPADMIN_GID} /usr/share/phpldapadmin/htdocs
+chown -R qbittorrent:qbittorrent /downloads /downloads/temp
+chown -R www-data: /var/www
+chown www-data: /mapcache /tiles
+chown 1000:1000 -R /minecraft
+chown 1000:1000 /app
+chown -R ${USER}:${USER} ${INSTALL_PATH}
+chown -R jenkins:jenkins /home/jenkins
+chown -R mu:mu /opt/MitoFinder/
+chown -R ${user}:${user} /report
+chown -R qbittorrent:qbittorrent /qbittorrent /Downloads
+chown -R oracle:oinstall ${OGG_HOME};             fi;             . /etc/os-release
+chown -R 1001:0 /config
+chown www-data:www-data -R /var/www/html
+chown -R appuser: /var/run/apache2/
+chown -R 1007:1007 ~/.npm
+chown centos:centos /home/centos/scripts
+chown nobody:nogroup -R ${ESHOME}
+chown -R 1000:1000 /home/jenkins
+chown -R 33 /usr/share/nginx/html
+chown -R daemon:daemon "${BITBUCKET_INSTALL}/conf"
+chown supervisor:supervisor /var/log/supervisor
+chown -R www-data:www-data /var/local/nedi
+chown -R radarr /etc/systemd/system/radarr.service
+chown -R qbittorrent /qbittorrent-full
+chown -R ${user}:${user} ${install_path}
+chown www-data:www-data ../var/data/data.db
+chown www-data:www-data /usr/sbin/crond
+chown node:node /var/log/node
+chown -R subsonic:subsonic /var/subsonic)
+chown -R user:user $STACK_DIR
+chown -R ${WEB_GID}:${WEB_UID} /var/www
+chown -R root:www-data /var/www
+chown -R libresonic:libresonic /var/libresonic/transcode)
+chown -R qbittorrent:qbittorrent /Downloads/temp
+chown root:root /usr/share/ant/lib/closure-compiler.jar
+chown -R www-data:root /var/www /usr/share/nginx/cache /var/cache/nginx /var/lib/nginx/
+chown -R ${APP_USER}:${APP_GROUP} ${APP_NAME}
+chown odm:odm /var/www
+chown -h $LDAP_USER: $LDAP_CONFDIR $LDAP_DATADIR
+chown -hR www-data:www-data /var/www/
+chown ${USER}:${USER} /usr/local/bin/docker-entrypoint.sh
+chown -R root:root         /etc/netdata         /usr/share/netdata         /usr/libexec/netdata
+chown -R vlc:vlc $HOME
+chown -R root:root "$path";     done
+chown -R $ZOOKEEPER_USER:$ZOOKEEPER_GROUP /usr/hdp/3.1.0.0-78/zookeeper/conf
+chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+chown 1000:1000 /qbittorrent
+chown -R root:root /usr/share/scala
+chown -R prosody: /usr/lib/prosody/modules-community
+chown debian-transmission:debian-transmission /etc/transmission-daemon/settings.json
+chown 777 /usr/share/nginx/html
+chown -c -R ${AWSH_USER}:${AWSH_GROUP} ${AWSH_ROOT}
+chown www-data:www-data /data
+chown -R jboss:0 ${JBOSS_HOME}
+chown -R mqperf /home/mqperf/mqldt
+chown -R cutsolver:cutsolver ./
+chown -R nobody.nobody /var/www/html
+chown node: /usr/src/app
+chown -R ethercalc:ethercalc ${ETHERCALC_PATH}
+chown -R videos:videos /config
+chown -R nginx:nginx /etc/nginx
+chown nobody.nobody /usr/src/wordpress/wp-config.php
+chown node:node /var/opt/verdaccio
+chown -R 1000:1000 /home/qbittorrent/
+chown -R nobody.nobody /var/www/html /run /var/lib/nginx /var/log/nginx
+chown root:root /usr/bin/dumpcap
+chown -R appuser /data
+chown -R tor /etc/tor
+chown -R prosody: /etc/prosody
+chown -R oracle:root ${BASE_DIR}
+chown wekan --recursive /home/wekan/.meteor
+chown -R cerebro:cerebro /opt/entrypoint.sh
+chown www-data:www-data "$HTTPD_PREFIX"
+chown -R ${UID}:${GID} ${HOME}
+chown -R www-data:subversion /svn
+chown -R verysobot:verysobot /code
+chown -R apache-www-volume:apache-www-volume /var/www
+chown -R $APPLICATION_USER /app
+chown nonroot:nonroot /usr/local/radare2
+chown -R -L ${MINIFI_C2_USER}:${MINIFI_C2_USER} ${MINIFI_C2_BASE_DIR}
+chown qbittorrent /qbittorrent/.config
+chown -R $LDAP_USER: ${LDAP_SEEDDIRa%/*}
+chown -R www-data.www-data /var/www/html/data
+chown www-data:www-data /usr/bin/wp-cli
+chown -R anonaddy. /var/www/anonaddy
+chown -R unprivilegeduser /home/unprivilegeduser
+chown -R www-data /data
+chown -R biodocker:biodocker tpp
+chown -R mysql:mysql /var/lib/mysql /var/run/mysqld
+chown -R $JIRA_USER:$JIRA_GROUP ${JIRA_INSTALL} ${JIRA_HOME}/ ${AGENT_PATH}
+chown www-data:www-data /var/log/qgis
+chown -R nifi:nifi ${NIFI_REGISTRY_HOME}
+chown -R 10010:0 /var/lib/nginx
+chown borg: /home/borg/.ssh
+chown ${USER} /home/${USER}/work
+chown -R radarr /entrypoint.sh
+chown -R ${NB_USER}: /usr/local
+chown www-data:www-data /etc/groupoffice
+chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+chown -R putiuser /data /data/puti /app/puti
+chown -R sonarr:users /config
+chown -R chrome:chrome /home/chrome
+chown root.root /home/soekir/.kirana/pocket/sudoers
+chown -RL user: /etc/apache2/ssl/ /var/log/apache2/ /var/run/apache2/
+chown -R "$APACHE__USER:$APACHE__GROUP" "$dir"; 	done
+chown -R tor /var/lib/tor/.tor
+chown -R $USER:root "$path";     done
+chown oracle:oracle -R /u01/oracle/
+chown nextcloud:nextcloud /home/nextcloud/data
+chown nobody /var/lib/celery
+chown -R nginxuser /var/cache
+chown www-data:mysql /data/apache2/htdocs/backup
+chown minecraft:minecraft /data /config /mods /plugins /home/minecraft
+chown -R $USER:$USER $HOME/.ssh
+chown www-data:www-data ../var/data.db
+chown openldap: /etc/ldap/slapd.d/cn=config/cn=schema/*
+chown -R 1000:1000 /app /tmp
+chown -R ethercalc:ethercalc /opt/ethercalc
+chown root:root /usr/local/sbin/pid1
+chown -R 1001:0 /opt
+chown -R www-data:www-data
+chown -R default:www-data /var/lock/apache2 /var/run/apache2 /var/log/apache2 /var/www/html
+chown root:root /tmp
+chown radium:radium /home/radium/data
+chown -R ${ES_USER}:${ES_GROUP} "$path";     done
+chown root:root /usr/bin/rclone
+chown -R $USR /home/$USR
+chown -R lazy:users /config /LazyLibrarian-master/
+chown -R appionuser:users /home/appionuser
+chown -R lazyrecon_user:lazyrecon_user $HOME
+chown -R syncer:syncer /home/syncer
+chown -R ubuntu:ubuntu /home/ubuntu/.juju
+chown www-data /var/log/munkiwebadmin.log
+chown -R kafka:kafka /opt/kafka
+chown -R node:node /app
+chown www-data:www-data -R /var/www/html/
+chown -R laravel:laravel /var/www/html
+chown -R ${MYSQL_USER}:root ${MYSQL__DIR}
+chown -R virtual:virtual /home/ftp/
+chown -R media:users /movies/ /downloads/ /tvseries/ /comics/
+chown tordocker:tordocker /etc/service
+chown oracle:root ${BASE_DIR}
+chown -R www-data:www-data /app
+chown -R www-data:www-data /var/www/html/pic
+chown -R root /home/work/crontab/crontab
+chown -R rails:rails db log tmp /data
+chown -R www-data:root /var/cache/nginx /var/cache/pagespeed /var/lib/nginx /var/run/nginx-cache /var/www/html
+chown -R radicale /config /data
+chown gerbera:gerbera /home/gerbera
+chown -R www-data:www-data /var/lib/nginx
+chown -R user:user /var/log/supervisor
+chown -R product-record-ingestor:product-record-ingestor /opt/product-record-ingestor
+chown -R nobody:nobody /var/cache/nginx/fastcgi_temp
+chown nvm:nvm -R "cloud9"
+chown xteve:xteve /app
+chown sensoroni /opt/sensoroni/jobs
+chown -R virome /etc/apache2
+chown -h activemq:activemq $ACTIVEMQ_HOME
+chown -R resilio:resilio /mnt/sync/
+chown -R ${USER}:${USER} /opt/mcmyadmin2
+chown -R redis:redis /data/redis
+chown -R mongodb:mongodb /data/db /data/configdb
+chown -R www-data:www-data /var/www/html/var
+chown -R virome /tmp/lock /tmp/run
+chown www-data:www-data /tmp/php_exception.log
+chown -R node:node .
+chown -R node:node /data/app
+chown -R www-data:www-data /config
+chown -R $NON_ROOT_USER:$NON_ROOT_GROUP /etc/crontabs/$NON_ROOT_USER
+chown -R eqemu:eqemu /home/eqemu
+chown ${DEVELOP_USER}:${DEVELOP_GROUP} /home/${DEVELOP_USER} -R
+chown nobody:nobody $tempDir
+chown nodejs:nodejs /usr/local/bin
+chown -R ducky:ducky /var/www/html
+chown -R 1001:0 ${APP_ROOT}     chown -R 1001:0 /etc/nginx
+chown prerender:prerender /usr/src/app
+chown -R "${user}:${user}" "/home/${user}"
+chown -R ${USER}:${USER} /var/log/klipper ${HOME}
+chown -R oracle:root ${USER_PROJECTS_DIR}
+chown osm:osm /var/lib/mod_tile
+chown -R captureuser:captureuser /node_modules
+chown -R postgres:postgres /var/run/postgresql
+chown -R maniaplanet:maniaplanet $TEMPLATE_DIR
+chown -R oracle:oracle $CUSTOM_DOMAIN_ROOT
+chown -R atlas:atlas /var/atlasdata
+chown nobody /builds
+chown -R mysql /var/lib/mysql
+chown root:root /usr/share/${ELASTIC_PRODUCT}/${ELASTIC_PRODUCT}.yml
+chown -R golang:golang /go
+chown -R 1001:0 /var/run
+chown root:root ${NAGIOS_HOME}/libexec/check_icmp
+chown -R nobody.nogroup /var/www/anonaddy
+chown -Rf vernemq ${HOME}
+chown -R nobody $P2POOL_DASH_HOME
+chown www-data:www-data /usr/local/bin/entrypoint.sh
+chown rocketchat.rocketchat /app/uploads
+chown -R root:root /var/opt/mssql-extensibility
+chown www-data:www-data /var/repo
+chown -R developer: /${ECLIPSE_OOMPH_INSTALLER_DIRECTORY}/
+chown -R nobody:nogroup /var/www/docker.d/sessions
+chown nginx:nginx /app
+chown ${DEFAULT_UID}:${DEFAULT_GID} /home/jdownloader/Downloads
+chown -R nobody:nogroup /out/var/lib/coturn/
+chown -R ubuntu:ubuntu /home/ubuntu
+chown nobody:nobody ${tempDir}
+chown -R olaindex:olaindex /OLAINDEX
+chown -R grafana:grafana /etc/grafana/logs
+chown -R apache:apache $WWWHOME/nconf
+chown ckan:ckan "${CKAN_HOME}" -R
+chown -R pptruser:pptruser /node_modules
+chown znc:znc /home/znc
+chown --recursive captain:captain "$HOME"
+chown -R i2p:i2p /i2p
+chown -R couchbase:couchbase                 /etc/service                 /etc/runit/runsvdir/default/couchbase-server/supervise

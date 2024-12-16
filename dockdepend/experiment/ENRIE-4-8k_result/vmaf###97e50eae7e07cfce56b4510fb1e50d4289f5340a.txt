@@ -1,0 +1,24 @@
+```
+[(0, 1),  # ENV依赖于FROM，设置环境变量
+ (0, 2),  # RUN依赖于FROM，执行ln命令设置时区
+ (1, 2),  # RUN依赖于ENV，使用$TZ环境变量
+ (0, 3),  # RUN依赖于FROM，安装软件包
+ (2, 4),  # COPY依赖于之前的RUN，复制文件到/vmaf
+ (0, 4),  # COPY依赖于FROM，文件系统基础
+ (0, 5),  # RUN依赖于FROM，升级pip
+ (4, 5),  # RUN依赖于COPY，pip安装需要/vmaf中的文件
+ (0, 6),  # RUN依赖于FROM，安装其他Python包
+ (5, 6),  # RUN依赖于之前的RUN，依赖pip升级后的环境
+ (0, 7),  # ENV依赖于FROM，设置PATH环境变量
+ (6, 7),  # ENV依赖于之前的RUN，使用/vmaf路径
+ (0, 8),  # RUN依赖于FROM，执行make命令
+ (7, 8),  # RUN依赖于ENV，使用PATH环境变量中的路径
+ (4, 8),  # RUN依赖于COPY，make需要/vmaf中的文件
+ (0, 9),  # RUN依赖于FROM，安装Python依赖
+ (8, 9),  # RUN依赖于之前的RUN，依赖make构建的结果
+ (0, 10), # WORKDIR依赖于FROM，设置工作目录
+ (9, 10), # WORKDIR依赖于之前的RUN，工作目录在/vmaf
+ (0, 11), # ENV依赖于FROM，设置PYTHONPATH环境变量
+ (10, 11), # ENV依赖于WORKDIR，环境变量与工作目录有关
+ (0, 12)] # ENTRYPOINT依赖于FROM，设置容器启动命令
+```

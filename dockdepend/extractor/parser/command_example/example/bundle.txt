@@ -1,0 +1,40 @@
+bundle _1.17.3_ install
+bundle --version
+bundle exec rake gettext:compile
+bundle install --system $BUNDLER_ARGS
+bundle exec rake gitlab:assets:compile
+bundle clean
+bundle exec rake assets:precompile
+bundle install --deployment --without development test
+bundle config set path /srv/vendor
+bundle install --without test
+bundle exec bootsnap precompile app/ lib/
+bundle config set --global path '/bundle'
+bundle exec bootsnap precompile --gemfile
+bundle install --without test development
+bundle install --without development test
+bundle exec jekyll build
+bundle install --retry=3
+bundle config set path vendor
+bundle install --gemfile /srv/jekyll/de4js/Gemfile
+bundle
+bundle install --quiet
+bundle exec htmlproofer ./_site --file-ignore /.git/,./_site/404.html --only-4xx --check-html --allow-hash-href --assume-extension
+bundle install
+bundle install --system
+bundle config --local frozen 1
+bundle config --global path "$GEM_HOME"
+bundle install --deployment --without="development test"
+bundle lock
+bundle install --system --clean --no-cache --gemfile=/wpscan/Gemfile $BUNDLER_ARGS
+bundle config path "$GEM_HOME"
+bundle config --global frozen 1
+bundle install --frozen
+bundle config console pry
+bundle config --global bin "$GEM_HOME/bin"
+bundle config build.nokogiri --use-system-libraries
+bundle exec rake binary
+bundle install -j4 --retry 3
+bundle install --deployment
+bundle install --path vendor/bundle
+bundle config bin "$GEM_HOME/bin"

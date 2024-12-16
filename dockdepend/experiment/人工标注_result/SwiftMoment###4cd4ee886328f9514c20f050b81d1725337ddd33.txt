@@ -1,0 +1,23 @@
+FROM swift:4.1
+WORKDIR /package
+COPY . ./
+RUN swift package resolve
+RUN swift package clean
+CMD swift test --parallel
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(1, 2),	# WORKDIR目录依赖
+	(1, 3),	# WORKDIR目录依赖
+	(1, 4),	# WORKDIR目录依赖
+	(2, 3),	# 目录依赖
+	(2, 4),	# 目录依赖
+	(3, 4),	# swift顺序依赖
+]
+
+所用时间：16.47

@@ -1,0 +1,8 @@
+{
+    "filename": "computational-thinking###8e8e7281cef00aa888175fd0f23a841f17cc1d99.txt",
+    "command_length": 9,
+    "processing_time": 0.0027420520782470703,
+    "dependency_count": 12,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (2, 5), (3, 5), (4, 7), (5, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'shell command user is different from the USER instruction', 'shell command user is different from the USER instruction', 'exist file or directory dependency,because RUN instruct use /home/pluto', 'User dependency']"
+}

@@ -1,0 +1,68 @@
+[
+	(0, 1),	# certain dependency
+	(0, 2),	# certain dependency
+	(0, 3),	# certain dependency
+	(0, 4),	# certain dependency
+	(0, 5),	# certain dependency
+	(0, 6),	# certain dependency
+	(0, 7),	# certain dependency
+	(0, 8),	# certain dependency
+	(0, 9),	# certain dependency
+	(0, 10),	# certain dependency
+	(0, 11),	# certain dependency
+	(0, 12),	# certain dependency
+	(1, 2),	# exist at the intersection
+	(1, 3),	# exist at the intersection
+	(1, 4),	# exist at the intersection
+	(1, 5),	# exist at the intersection
+	(1, 6),	# exist at the intersection
+	(1, 7),	# exist at the intersection
+	(1, 8),	# exist at the intersection
+	(1, 9),	# exist at the intersection
+	(1, 10),	# exist at the intersection
+	(2, 3),	# exist at the intersection
+	(2, 4),	# exist at the intersection
+	(2, 5),	# exist at the intersection
+	(2, 6),	# exist at the intersection
+	(2, 7),	# exist at the intersection
+	(2, 8),	# exist at the intersection
+	(2, 9),	# exist at the intersection
+	(2, 10),	# exist at the intersection
+	(2, 12),	# exist at the intersection
+	(3, 4),	# exist at the intersection
+	(3, 5),	# exist at the intersection
+	(3, 6),	# exist at the intersection
+	(3, 7),	# exist at the intersection
+	(3, 8),	# exist at the intersection
+	(3, 9),	# exist at the intersection
+	(3, 10),	# exist at the intersection
+	(3, 12),	# exist at the intersection
+	(4, 5),	# exist at the intersection
+	(4, 6),	# exist at the intersection
+	(4, 7),	# exist at the intersection
+	(4, 8),	# exist at the intersection
+	(4, 9),	# exist at the intersection
+	(4, 10),	# exist at the intersection
+	(4, 12),	# exist at the intersection
+	(5, 6),	# exist at the intersection
+	(5, 7),	# exist at the intersection
+	(5, 8),	# exist at the intersection
+	(5, 9),	# exist at the intersection
+	(5, 10),	# exist at the intersection
+	(5, 12),	# exist at the intersection
+	(6, 7),	# exist at the intersection
+	(6, 8),	# exist at the intersection
+	(6, 9),	# exist at the intersection
+	(6, 10),	# exist at the intersection
+	(6, 12),	# exist at the intersection
+	(7, 8),	# exist at the intersection
+	(7, 9),	# exist at the intersection
+	(7, 10),	# exist at the intersection
+	(7, 12),	# exist at the intersection
+	(8, 9),	# exist at the intersection
+	(8, 10),	# exist at the intersection
+	(8, 12),	# exist at the intersection
+	(9, 10),	# exist at the intersection
+	(9, 12),	# exist at the intersection
+	(10, 12),	# exist at the intersection
+]

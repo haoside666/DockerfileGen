@@ -1,0 +1,41 @@
+FROM ubuntu:20.04
+RUN apt-get update
+RUN apt-get install -y apt-utils
+RUN apt-get install -y python3.8
+RUN apt-get install -y python3-pip
+RUN apt-get install -y python3.8-dev
+RUN apt-get install python-is-python3
+RUN apt-get install -y default-libmysqlclient-dev build-essential
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config
+COPY requirements.txt /tmp
+RUN pip3 install -r /tmp/requirements.txt
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(1, 2),	# apt顺序依赖
+	(1, 3),	# apt顺序依赖
+	(1, 4),	# apt顺序依赖
+	(1, 5),	# apt顺序依赖
+	(1, 6),	# apt顺序依赖
+	(1, 7),	# apt顺序依赖
+	(1, 8),	# apt顺序依赖
+	(1, 9),	# apt顺序依赖
+	(1, 10),	# apt顺序依赖
+	(4, 12),	# pip3依赖
+	(11, 12),	# 文件依赖
+]
+
+所用时间：49.38

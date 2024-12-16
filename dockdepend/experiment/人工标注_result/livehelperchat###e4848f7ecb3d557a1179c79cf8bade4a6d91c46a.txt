@@ -1,0 +1,32 @@
+FROM php:7.4-apache
+RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install pdo
+RUN docker-php-ext-install pdo_mysql
+RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev libpng-dev
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install bcmath
+RUN a2enmod headers
+RUN service apache2 restart
+COPY ./lhc_web /var/www/html
+WORKDIR /var/www/html
+EXPOSE 80
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(4, 6),	# gd依赖于zip包
+]
+
+所用时间：27.53

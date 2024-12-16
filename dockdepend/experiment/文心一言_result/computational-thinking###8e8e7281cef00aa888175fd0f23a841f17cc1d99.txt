@@ -1,0 +1,23 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM julia:1.8.2
+EXPOSE 1234
+RUN apt-get update -y && apt-get upgrade -y
+RUN useradd -ms /bin/bash pluto
+WORKDIR /home/pluto
+USER pluto
+COPY --chown=pluto . ${HOME}
+RUN julia --project=${HOME}/pluto-deployment-environment -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
+CMD ["julia", "--project=/home/pluto/pluto-deployment-environment", "-e", "import PlutoSliderServer; PlutoSliderServer.run_directory(\".\"; SliderServer_port=1234 , SliderServer_host=\"0.0.0.0\")"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),   # EXPOSE指令依赖于FROM指令，因为需要基于特定的基础镜像来暴露端口  
+ (2, 1),   # 第一个RUN指令依赖于EXPOSE指令，因为可能需要在暴露端口之前更新和升级系统软件包  
+ (3, 2),   # useradd指令依赖于前一个RUN指令，确保在创建用户之前系统是最新的  
+ (4, 3),   # WORKDIR指令依赖于useradd指令，因为需要设置用户的工作目录  
+ (5, 4),   # USER指令依赖于WORKDIR指令，因为需要切换到之前设置的工作目录所属的用户  
+ (6, 5),   # COPY指令依赖于USER指令，确保文件以正确的用户身份复制到容器中  
+ (7, 6),   # 第二个RUN指令依赖于COPY指令，因为需要在文件被复制之后安装和预编译Julia项目依赖  
+ (8, 7)]   # CMD指令依赖于第二个RUN指令，确保所有依赖和环境都准备好之后运行PlutoSliderServer

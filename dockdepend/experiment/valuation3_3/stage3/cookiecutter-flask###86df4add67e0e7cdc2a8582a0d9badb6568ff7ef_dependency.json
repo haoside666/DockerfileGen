@@ -1,0 +1,37 @@
+[
+    {
+        "before_instruct": "FROM python:3.11.4-slim-buster",
+        "after_instruct": "COPY requirements.txt requirements.txt",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.11.4-slim-buster",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.11.4-slim-buster",
+        "after_instruct": "COPY cookiecutter_spec.py /cookiecutter_spec.py",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.11.4-slim-buster",
+        "after_instruct": "ENTRYPOINT python /cookiecutter_spec.py",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY requirements.txt requirements.txt",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /requirements.txt"
+    }
+]

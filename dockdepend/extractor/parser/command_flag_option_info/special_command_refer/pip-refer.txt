@@ -1,0 +1,78 @@
+--abi abi
+--break-system-packages
+--cache-dir dir
+-c, --constraint file
+--cert path
+--check-build-dependencies
+--client-cert path
+--compile
+--config-settings settings
+-d, --dest dir
+--debug
+--disable-pip-version-check
+--dry-run
+-e, --editable path/url
+--exclude-editable
+--exclude package
+--exists-action action
+--extra-index-url url
+-f, --find-links url
+--force-reinstall
+--format list_format
+--global-option options
+-h, --help
+--ignore-requires-python
+-I, --ignore-installed
+-i, --index-url url
+--implementation implementation
+--include-editable
+--install-option options
+--isolated
+-l, --local
+--log path
+--no-binary format_control
+--no-build-isolation
+--no-cache-dir
+--no-clean
+--no-color
+--no-compile
+--no-deps
+--no-index
+--no-input
+--no-python-version-warning
+--not-required
+--no-warn-conflicts
+--no-warn-script-location
+--only-binary format_control
+-o, --outdated
+--path path
+--platform platform
+--pre
+--prefer-binary
+--prefix dir
+--progress-bar progress_bar
+--proxy proxy
+--python python
+--python-version python_version
+-q, --quiet
+--report file
+--require-hashes
+--require-virtualenv
+--retries retries
+--root dir
+--root-user-action root_user_action
+-r, --requirement file
+--src dir
+--timeout sec
+--trusted-host hostname
+-t, --target dir
+--upgrade-strategy upgrade_strategy
+--use-deprecated feature
+--use-feature feature
+--use-pep517
+--user
+-U, --upgrade
+-u, --uptodate
+-v, --verbose
+-V, --version
+-y, --yes

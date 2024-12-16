@@ -1,0 +1,8 @@
+{
+    "filename": "IYUUAutoReseed###945df1a9cbf394549e07ab57b6626946677c498e.txt",
+    "command_length": 8,
+    "processing_time": 0.0055637359619140625,
+    "dependency_count": 11,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (2, 4), (3, 4), (4, 5), (5, 6)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'exist file or directory dependency,because RUN instruct create /IYUU']"
+}

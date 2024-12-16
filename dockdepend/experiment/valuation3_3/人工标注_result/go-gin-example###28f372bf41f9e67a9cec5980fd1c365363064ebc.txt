@@ -1,0 +1,22 @@
+FROM golang:latest
+ENV GOPROXY https://goproxy.cn,direct
+WORKDIR $GOPATH/src/github.com/EDDYCJY/go-gin-example
+COPY . $GOPATH/src/github.com/EDDYCJY/go-gin-example
+RUN go build .
+EXPOSE 8000
+ENTRYPOINT ["./go-gin-example"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(2, 3),	# WORKDIR目录依赖
+	(2, 4),	# WORKDIR目录依赖
+	(3, 4),	# 文件依赖
+]
+
+所用时间：24.19

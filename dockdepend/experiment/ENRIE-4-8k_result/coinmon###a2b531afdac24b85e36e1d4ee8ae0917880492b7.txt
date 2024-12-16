@@ -1,0 +1,7 @@
+```
+[(0, 1),  # LABEL依赖于FROM，因为LABEL指令通常用于为镜像添加元数据，它需要基于一个有效的镜像，此处为node:alpine。
+ (0, 2),  # COPY依赖于FROM，因为COPY指令用于从构建上下文复制文件或目录到镜像的指定路径，必须基于一个镜像进行操作。
+ (2, 3),  # RUN依赖于COPY，因为此处RUN指令执行yarn install命令，该命令需要在COPY指令将文件复制到镜像后执行。
+ (3, 4),  # ENTRYPOINT依赖于RUN，因为ENTRYPOINT指令配置容器启动时的可执行文件，通常依赖于之前RUN指令安装的应用程序或脚本。
+ (4, 5)]  # CMD依赖于ENTRYPOINT，因为CMD指令为容器提供默认的执行命令，通常与ENTRYPOINT一起使用，指定ENTRYPOINT命令的参数。
+```

@@ -1,0 +1,8 @@
+{
+    "filename": "blockchain-demo###4138d88e3c56e12265d0098f4bd4a3b5fe762ff0.txt",
+    "command_length": 8,
+    "processing_time": 0.001134634017944336,
+    "dependency_count": 11,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (3, 4), (3, 5), (3, 6), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /blockchain-demo', 'exist file or directory dependency', 'exist file or directory dependency,because common path /blockchain-demo']"
+}

@@ -1,0 +1,28 @@
+FROM python:alpine3.18
+WORKDIR /app
+COPY . /app
+RUN apk add --no-cache build-base libffi-dev libxml2-dev libxslt-dev
+RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN /usr/local/bin/python --version
+RUN pip3 install --no-cache-dir -r requirements.txt
+RUN chmod +x *.py
+ENTRYPOINT ["/app/dnsrecon.py"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(1, 2),	# WORKDIR目录依赖
+	(1, 6),	# WORKDIR目录依赖
+	(1, 7),	# WORKDIR目录依赖
+	(2, 6),	# 文件依赖
+	(2, 7),	# 文件依赖
+]
+
+所用时间：23.08

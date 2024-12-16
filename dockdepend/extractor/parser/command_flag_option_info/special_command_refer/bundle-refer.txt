@@ -1,0 +1,72 @@
+[--add-platform]
+[--all]
+[--binstubs=DIRECTORY]
+[--branch=BRANCH]
+[--bundler[=VERSION]]
+--ci=github, --ci=gitlab, --ci=circle
+[--clean]
+--coc
+[--conservative]
+[--deployment]
+[--dry-run]
+-e, --edit[=EDITOR]
+--exe -b --bin
+--ext=c, --ext=rust
+[--file=FILE]
+[--filter-major]
+[--filter-minor]
+[--filter-patch]
+[--force]
+[--format=FORMAT]
+[--frozen]
+[--full-index]
+[--gemfile=FILE]
+[--gemspec=FILE]
+[--github=GITHUB] 
+[--git --local_git git-url]
+[--group=GROUP]
+[--groups]
+[--install]
+[--jobs=JOBS]
+[--keep-file-descriptors]
+--linter=rubocop, --linter=standard
+[--local]
+[--lockfile=PATH]
+[--major]
+[--minor]
+--mit
+[--no-cache]
+--no-coc
+--no-color
+--no-exe
+--no-ext
+--no-mit
+[--no-prune]
+[--only-explicit]
+[--optimistic]
+[--parseable --porcelain]
+[--patch]
+[--path PATH]
+[--paths]
+[--pre]
+[--print]
+[--quiet]
+[--redownload]
+[--ref=REF] 
+[--remove-platform]
+[--requirements]
+[--retry=NUMBER]
+[--ruby]
+[--shebang]
+[--skip-install]
+[--source=SOURCE]
+[--standalone[=GROUP]]
+[--strict]
+[--system]
+--test=minitest, --test=rspec, --test=test-unit
+[--trust-policy=POLICY]
+[--update]
+--verbose, -V
+[--version=VERSION] 
+[--with=GROUP]
+[--without=GROUP]

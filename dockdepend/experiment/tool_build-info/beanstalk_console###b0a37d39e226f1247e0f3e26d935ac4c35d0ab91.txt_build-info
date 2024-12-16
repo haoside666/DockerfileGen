@@ -1,0 +1,8 @@
+{
+    "filename": "beanstalk_console###b0a37d39e226f1247e0f3e26d935ac4c35d0ab91.txt",
+    "command_length": 13,
+    "processing_time": 0.002881765365600586,
+    "dependency_count": 20,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (2, 11), (3, 4), (3, 11), (6, 11), (7, 11), (8, 9), (8, 11), (11, 12)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', \"have shell pkg intersection,because exist intersection {'apt-get'}\", 'exist file or directory dependency,because RUN instruct create /', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because common path /usr/local/bin/docker-entrypoint', 'exist file or directory dependency', 'exist file or directory dependency']"
+}

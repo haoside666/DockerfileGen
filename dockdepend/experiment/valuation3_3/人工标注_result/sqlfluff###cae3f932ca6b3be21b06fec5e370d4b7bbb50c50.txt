@@ -1,0 +1,55 @@
+FROM python:3.9-slim-bullseye
+WORKDIR /app
+ENV VIRTUAL_ENV /app/.venv
+RUN python -m venv $VIRTUAL_ENV
+ENV PATH $VIRTUAL_ENV/bin:$PATH
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools
+COPY pyproject.toml .
+RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+COPY MANIFEST.in .
+COPY README.md .
+COPY src ./src
+RUN pip install --no-cache-dir --no-dependencies .
+USER 5000
+WORKDIR /sql
+ENTRYPOINT ["sqlfluff"]
+CMD ["--help"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(1, 6),	# WORKDIR目录依赖
+	(1, 7),	# WORKDIR目录依赖
+	(1, 8),	# WORKDIR目录依赖
+	(1, 9),	# WORKDIR目录依赖
+	(1, 10),	# WORKDIR目录依赖
+	(1, 11),	# WORKDIR目录依赖
+	(1, 12),	# WORKDIR目录依赖
+	(2, 3),	# environment variable dependencies
+	(2, 4),	# environment variable dependencies
+	(5, 8),	# pip依赖
+	(5, 12),	# pip依赖
+	(6, 7),	# 文件依赖
+    (7, 8),	# 文件依赖
+	(9, 12),	# 文件依赖
+	(10, 12),	# 文件依赖
+	(11, 12),	# 文件依赖
+]
+
+
+所用时间：310.95

@@ -1,0 +1,36 @@
+FROM ubuntu:jammy
+LABEL org.opencontainers.image.source https://github.com/khoj-ai/khoj
+RUN apt update -y && apt -y install python3-pip git
+WORKDIR /app
+COPY pyproject.toml .
+COPY README.md .
+RUN sed -i 's/dynamic = \["version"\]/version = "0.0.0"/' pyproject.toml && pip install --no-cache-dir .
+COPY . .
+ENV PYTHONPATH=/app/src:$PYTHONPATH
+ARG PORT
+EXPOSE ${PORT}
+ENTRYPOINT ["python3", "src/khoj/main.py"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(2, 6),	# pip依赖
+	(3, 4),	# WORKDIR目录依赖
+	(3, 5),	# WORKDIR目录依赖
+	(3, 6),	# WORKDIR目录依赖
+	(3, 7),	# WORKDIR目录依赖
+	(4, 6),	# 文件依赖
+	(9, 10),	# environment variable dependencies
+]
+
+
+所用时间：89.83

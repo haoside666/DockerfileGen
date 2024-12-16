@@ -1,0 +1,30 @@
+[
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "COPY . /usr/src/mimic",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "RUN pip install /usr/src/mimic",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3-alpine",
+        "after_instruct": "ENTRYPOINT mimic",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY . /usr/src/mimic",
+        "after_instruct": "RUN pip install /usr/src/mimic",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/mimic"
+    }
+]

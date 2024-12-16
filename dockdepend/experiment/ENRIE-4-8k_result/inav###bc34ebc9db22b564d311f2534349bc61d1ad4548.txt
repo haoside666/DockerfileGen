@@ -1,0 +1,18 @@
+```
+[(0, 1),  # ARG USER_ID 依赖于 FROM ubuntu:jammy
+ (0, 2),  # ARG GROUP_ID 依赖于 FROM ubuntu:jammy
+ (0, 3),  # ENV DEBIAN_FRONTEND noninteractive 依赖于 FROM ubuntu:jammy
+ (0, 4),  # RUN apt-get update 依赖于 FROM ubuntu:jammy
+ (0, 5),  # RUN pip install pyyaml 依赖于 FROM ubuntu:jammy
+ (0, 6),  # 错误的 RUN 嵌套，理论上应依赖于 FROM，但实际编写时应避免这种结构
+ (0, 7),  # 同上，错误的 RUN 嵌套
+ (0, 8),  # RUN if [ -n "$USER_ID" ]; then USER inav; fi 依赖于 FROM ubuntu:jammy
+ (0, 9),  # RUN git config --global --add safe.directory /src 依赖于 FROM ubuntu:jammy
+ (0, 10), # VOLUME /src 依赖于 FROM ubuntu:jammy
+ (0, 11), # WORKDIR /src/build 依赖于 FROM ubuntu:jammy
+ (0, 12)] # ENTRYPOINT ["/src/cmake/docker.sh"] 依赖于 FROM ubuntu:jammy
+```
+
+**注意**：Dockerfile的指令通常不直接依赖于其他指令，而是按照它们在文件中出现的顺序依次执行。这里的“依赖”关系是指指令执行的顺序依赖，即后面的指令在前面的指令执行后才能执行。特别是，`RUN` 指令中的命令是在前一条指令创建的容器状态下执行的。在上面的列表中，编号较大的指令依赖于编号较小的指令，尤其是所有指令都间接或直接依赖于 `FROM` 指令，因为它是构建镜像的基础。
+
+另外，Dockerfile中的第6和第7行存在语法错误，`RUN` 指令内部不应该再嵌套 `RUN`。这在实际编写Dockerfile时需要避免，如果确实需要条件执行多条命令，应该将它们放在同一个 `RUN` 指令中，并使用 shell 的条件语句（如 `if`）来控制。这里为了保持原问题的形式，仍然按照给出的内容列出了“依赖”关系，但在实际应用中应修正这些错误。

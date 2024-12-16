@@ -1,0 +1,8 @@
+{
+    "filename": "node-express-boilerplate###179ae84efec61b14206d0305d941daed6c6d07f9.txt",
+    "command_length": 8,
+    "processing_time": 0.002012014389038086,
+    "dependency_count": 15,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (1, 2), (1, 4), (1, 5), (2, 3), (2, 5), (2, 6), (3, 5), (4, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /usr/src/node-app', 'shell command user is different from the USER instruction', 'have shell io intersection,because common path /usr/src/node-app', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /usr/src/node-app', 'exist file or directory dependency', 'exist file or directory dependency,because common path /usr/src/node-app/yarn.lock', 'User dependency']"
+}

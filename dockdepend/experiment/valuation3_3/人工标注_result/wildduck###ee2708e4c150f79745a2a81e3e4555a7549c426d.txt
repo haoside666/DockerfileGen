@@ -1,0 +1,38 @@
+FROM --platform=${BUILDPLATFORM} node:lts-alpine
+ARG TARGETPLATFORM
+ARG TARGETARCH
+ARG TARGETVARIANT
+RUN printf "I'm building for TARGETPLATFORM=${TARGETPLATFORM}" && printf ", TARGETARCH=${TARGETARCH}" && printf ", TARGETVARIANT=${TARGETVARIANT} \n" && printf "With uname -s : " && uname -s && printf "and  uname -m : " && uname -mm
+RUN apk --no-cache add make git dumb-init openssl
+WORKDIR /wildduck
+COPY package*.json ./
+RUN npm install --production
+COPY . .
+ENV WILDDUCK_APPDIR=/wildduck WILDDUCK_CONFIG=/wildduck/config/default.toml CMD_ARGS=""
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+CMD node ${WILDDUCK_APPDIR}/server.js --config=${WILDDUCK_CONFIG} ${CMD_ARGS}
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(1, 4),	# environment variable dependencies
+	(2, 4),	# environment variable dependencies
+	(3, 4),	# environment variable dependencies
+	(6, 7),	# WORKDIR目录依赖
+	(6, 8),	# WORKDIR目录依赖
+	(6, 9),	# WORKDIR目录依赖
+	(7, 8),	# 文件依赖
+]
+
+所用时间：98.46

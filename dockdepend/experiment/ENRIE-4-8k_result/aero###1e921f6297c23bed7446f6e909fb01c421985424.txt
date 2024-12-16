@@ -1,0 +1,12 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM
+ (1, 2),  # 第一个ENV依赖于WORKDIR
+ (2, 3),  # 第二个ENV依赖于第一个ENV
+ (3, 4),  # 第一个RUN依赖于第二个ENV
+ (4, 5),  # 第二个RUN依赖于第一个RUN
+ (5, 6),  # 第三个RUN依赖于第二个RUN
+ (6, 7),  # USER依赖于第三个RUN
+ (7, 8),  # 第四个RUN依赖于USER
+ (8, 9),  # 第五个RUN依赖于第四个RUN
+ (9, 10)] # ENTRYPOINT依赖于第五个RUN
+```

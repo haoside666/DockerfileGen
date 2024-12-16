@@ -1,0 +1,16 @@
+FROM pensiero/apache-php-mysql:latest
+RUN apt update -q && apt install -yqq --force-yes mysql-server
+RUN /etc/init.d/mysql 'start'
+WORKDIR /var/www/public
+COPY . ./
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+    (2, 3),	# 文件依赖
+	(3, 4),	# WORKDIR目录依赖
+]
+
+所用时间：23.71

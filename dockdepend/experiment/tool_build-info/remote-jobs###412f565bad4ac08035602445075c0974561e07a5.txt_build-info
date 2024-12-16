@@ -1,0 +1,8 @@
+{
+    "filename": "remote-jobs###412f565bad4ac08035602445075c0974561e07a5.txt",
+    "command_length": 6,
+    "processing_time": 0.0014717578887939453,
+    "dependency_count": 9,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 3), (1, 4), (2, 4), (3, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /node/', 'have shell io intersection,because common path /node', 'exist file or directory dependency,because common path /node', 'exist file or directory dependency,because RUN instruct use /node/']"
+}

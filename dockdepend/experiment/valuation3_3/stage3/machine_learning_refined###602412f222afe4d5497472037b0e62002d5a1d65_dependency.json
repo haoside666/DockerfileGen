@@ -1,0 +1,422 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install -y apt-utils",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install -y python3.8",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install -y python3.8-dev",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "COPY requirements.txt /tmp",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:20.04",
+        "after_instruct": "RUN pip3 install -r /tmp/requirements.txt",
+        "edge": "(0, 12)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y apt-utils",
+        "edge": "(1, 2)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3.8",
+        "edge": "(1, 3)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(1, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3.8-dev",
+        "edge": "(1, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(1, 6)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(1, 7)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(1, 8)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(1, 9)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(1, 10)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN apt-get install -y python3.8",
+        "edge": "(2, 3)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(2, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN apt-get install -y python3.8-dev",
+        "edge": "(2, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(2, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(2, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(2, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(2, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y apt-utils",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(2, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN apt-get install -y python3-pip",
+        "edge": "(3, 4)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN apt-get install -y python3.8-dev",
+        "edge": "(3, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(3, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(3, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(3, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(3, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(3, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN apt-get install -y python3.8-dev",
+        "edge": "(4, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(4, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(4, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(4, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(4, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(4, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-pip",
+        "after_instruct": "RUN pip3 install -r /tmp/requirements.txt",
+        "edge": "(4, 12)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip3'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8-dev",
+        "after_instruct": "RUN apt-get install python-is-python3",
+        "edge": "(5, 6)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8-dev",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(5, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8-dev",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(5, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8-dev",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(5, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3.8-dev",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(5, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install python-is-python3",
+        "after_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "edge": "(6, 7)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install python-is-python3",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(6, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install python-is-python3",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(6, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install python-is-python3",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(6, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install python-is-python3",
+        "after_instruct": "RUN pip3 install -r /tmp/requirements.txt",
+        "edge": "(6, 12)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip3'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "edge": "(7, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(7, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y default-libmysqlclient-dev build-essential",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(7, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "edge": "(8, 9)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(8, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg",
+        "after_instruct": "RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config",
+        "edge": "(9, 10)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /etc"
+    },
+    {
+        "before_instruct": "COPY requirements.txt /tmp",
+        "after_instruct": "RUN pip3 install -r /tmp/requirements.txt",
+        "edge": "(11, 12)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /tmp"
+    }
+]

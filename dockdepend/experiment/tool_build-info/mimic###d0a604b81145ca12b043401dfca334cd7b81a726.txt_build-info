@@ -1,0 +1,8 @@
+{
+    "filename": "mimic###d0a604b81145ca12b043401dfca334cd7b81a726.txt",
+    "command_length": 4,
+    "processing_time": 0.0008172988891601562,
+    "dependency_count": 4,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (1, 2)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /usr/src/mimic']"
+}

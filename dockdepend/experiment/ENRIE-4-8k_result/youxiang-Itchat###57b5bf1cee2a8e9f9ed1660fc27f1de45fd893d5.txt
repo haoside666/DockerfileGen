@@ -1,0 +1,9 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM
+ (1, 2),  # WORKDIR依赖于MAINTAINER
+ (2, 3),  # COPY requirements.txt依赖于WORKDIR
+ (2, 4),  # COPY .依赖于WORKDIR
+ (4, 5),  # ENV依赖于COPY .
+ (5, 6),  # RUN依赖于ENV
+ (6, 7)]  # ENTRYPOINT依赖于RUN
+```

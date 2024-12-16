@@ -1,0 +1,11 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (0, 2),  # ARG VERSION依赖于FROM
+ (0, 3),  # ARG PREFIX依赖于FROM
+ (0, 4),  # ARG ARCH依赖于FROM
+ (0, 5),  # WORKDIR依赖于FROM
+ (5, 6),  # COPY依赖于WORKDIR
+ (5, 7)]  # RUN依赖于WORKDIR，同时隐含依赖COPY（因为通常RUN会用到COPY的文件）
+```
+
+注：这里的依赖关系主要是基于Dockerfile指令的执行顺序和上下文。例如，`WORKDIR` 指令会改变后续指令的工作目录，因此任何在`WORKDIR`之后的指令都依赖于它。同样，`COPY` 指令将文件复制到容器中，而`RUN` 指令通常会依赖于这些文件来执行命令，所以`RUN` 指令隐含地依赖于`COPY` 指令。然而，这种隐含依赖并不总是绝对必要的，它取决于具体的`RUN` 指令内容是否确实使用了`COPY` 的文件。在这个特定的例子中，我们假设`RUN make release` 需要用到`COPY . .` 复制的文件。

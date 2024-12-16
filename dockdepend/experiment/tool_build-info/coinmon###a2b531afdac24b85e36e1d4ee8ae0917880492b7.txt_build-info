@@ -1,0 +1,8 @@
+{
+    "filename": "coinmon###a2b531afdac24b85e36e1d4ee8ae0917880492b7.txt",
+    "command_length": 6,
+    "processing_time": 0.0009236335754394531,
+    "dependency_count": 6,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (2, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /']"
+}

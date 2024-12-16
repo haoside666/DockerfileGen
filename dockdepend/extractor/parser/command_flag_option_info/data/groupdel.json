@@ -1,0 +1,20 @@
+{
+    "flag": [
+        [
+            "-h",
+            "--help"
+        ]
+    ],
+    "option": [
+        [
+            "-R",
+            "--root",
+            ["DIR","CONFIG_INPUT"]
+        ],
+        [
+            "-P",
+            "--prefix",
+            ["DIR","CONFIG_INPUT"]
+        ]
+    ]
+}

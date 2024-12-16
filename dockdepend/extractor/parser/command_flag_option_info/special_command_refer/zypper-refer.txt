@@ -1,0 +1,62 @@
+-a -all
+--allow-arch-change
+--allow-downgrade
+--allow-name-change
+--allow-unsigned-rpm
+--allow-vendor-change
+-A    --no-abbrev
+-C    --cache-dir,  <DIR>
+-c    --config,  <FILE>
+--color
+-d, --download-only
+-D    --reposd-dir,  <DIR>
+--debug-solver
+--details
+--disable-repositories
+--disable-system-resolvables
+--download <MODE>
+-f, --force
+--force-resolution
+--from <ALIAS|#|URI>
+--gpg-auto-import-keys
+-h    --help
+-i    --ignore-unknown
+--installroot <DIR>
+-l, --auto-agree-with-licenses
+--name
+-n    --non-interactive
+--no-allow-arch-change
+--no-allow-downgrade
+--no-allow-name-change
+--no-allow-vendor-change
+--no-cd
+--no-check
+--no-color
+--no-gpg-checks
+--non-interactive-include-reboot-patches
+--no-recommends
+--no-refresh
+--no-remote
+--oldpackage
+--pkg-cache-dir <DIR>
+--plus-content <TAG>
+-p    --plus-repo,  <URI>
+--promptids
+-q    --quiet
+--raw-cache-dir <DIR>
+--recommends
+--releasever
+--replacefiles
+-r, --repo <ALIAS|#|URI>
+-R    --root,  <DIR>
+--solv-cache-dir <DIR>
+--solver-focus <MODE>
+-s    --table-style,  <INTEGER>
+-t    --terse
+-u, --clean-deps
+-U, --no-clean-deps
+--userdata <STRING>
+-v    --verbose
+-V    --version
+-x    --xmlout
+-y, --no-confirm

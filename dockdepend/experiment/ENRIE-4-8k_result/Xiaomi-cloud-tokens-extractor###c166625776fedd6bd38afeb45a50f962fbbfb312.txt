@@ -1,0 +1,9 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM，设定工作目录需要在基础镜像之后
+ (1, 2),  # COPY requirements.txt依赖于WORKDIR，复制文件到工作目录
+ (2, 3),  # RUN apk add build-base依赖于COPY requirements.txt，安装构建依赖需要先有文件
+ (2, 4),  # RUN pip3 install依赖于COPY requirements.txt，安装Python包需要先有依赖文件
+ (3, 4),  # RUN pip3 install可能还依赖于RUN apk add build-base，如果Python包需要编译
+ (4, 5),  # COPY token_extractor.py依赖于RUN pip3 install，复制应用文件需要在安装依赖后
+ (5, 6)]  # CMD依赖于COPY token_extractor.py，设置容器启动命令需要在应用文件复制后
+```

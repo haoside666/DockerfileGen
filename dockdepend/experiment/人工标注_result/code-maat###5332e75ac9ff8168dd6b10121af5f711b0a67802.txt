@@ -1,0 +1,40 @@
+FROM clojure:alpine
+VOLUME /data
+LABEL description="code-maat docker image."
+ARG dest=/usr/src/code-maat
+RUN mkdir -p $dest
+WORKDIR $dest
+COPY project.clj $dest
+RUN lein deps
+COPY . $dest
+RUN mv "$(lein uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" app-standalone.jar
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=85.0", "-jar", "app-standalone.jar"]
+CMD []
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(3, 4),	# environment variable dependencies
+	(3, 5),	# environment variable dependencies
+	(3, 6),	# environment variable dependencies
+	(3, 8),	# environment variable dependencies
+    (4, 5),	# 目录依赖
+	(5, 6),	# WORKDIR目录依赖
+	(5, 7),	# 目录间接依赖
+	(5, 8),	# 目录间接依赖
+	(6, 7),	# project.clj文件依赖
+	(6, 9),	# project.clj文件依赖
+	(8, 9),	# 目录依赖
+]
+
+所用时间：75.30

@@ -1,0 +1,23 @@
+FROM alpine:3.13
+LABEL maintainer="peez@stiffi.de"
+RUN apk add --no-cache bash curl
+COPY / /opt/dropbox_uploader
+RUN mkdir -p /config && mkdir -p /workdir
+VOLUME /config /workdir
+WORKDIR /workdir
+ENTRYPOINT ["/opt/dropbox_uploader/dropbox_uploader.sh", "-f", "/config/dropbox_uploader.conf"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+    (4, 5),	# 文件依赖
+    (4, 6),	# 文件依赖
+]
+
+所用时间：51.66

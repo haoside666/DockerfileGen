@@ -1,0 +1,16 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM node:alpine
+LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
+COPY * /
+RUN yarn install
+ENTRYPOINT ["/index.js"]
+CMD []
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),   # LABEL指令依赖于FROM指令，定义了镜像的维护者信息  
+ (2, 1),   # COPY指令依赖于LABEL指令，将当前目录的文件复制到镜像的根目录  
+ (3, 2),   # RUN指令依赖于COPY指令，确保文件已复制后执行yarn install安装依赖  
+ (4, 3)]   # ENTRYPOINT指令依赖于RUN指令，确保依赖安装完成后设置入口点

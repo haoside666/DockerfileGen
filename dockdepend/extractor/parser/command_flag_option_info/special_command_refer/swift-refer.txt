@@ -1,0 +1,184 @@
+-access-notes-path <value>
+-allowable-client <vers>
+-assert-config <value> 
+--auto-index-store
+--build-system <build-system>
+--build-tests
+--cache-path <cache-path>
+-c, --configuration <configuration>
+-clang-build-session-file <value>
+-clang-target <value>
+-color-diagnostics
+--config-path <config-path>
+-continue-building-after-errors
+-coverage-prefix-map <prefix=replacement>
+-cxx-interoperability-mode  <value>
+-debug-info-format  <value>
+-debug-info-store-invocation
+-debug-prefix-map <prefix=replacement>
+--default-registry-url <default-registry-url>
+-diagnostic-style <style>
+-disable-actor-data-race-checks
+-disable-autolinking-runtime-compatibility
+-disable-autolinking-runtime-compatibility-concurrency
+-disable-autolinking-runtime-compatibility-dynamic-replacements
+--disable-automatic-resolution
+--disable-build-manifest-caching
+-disable-clang-target
+--disable-dead-strip
+--disable-dependency-cache
+-disable-incremental-imports
+--disable-index-store
+--disable-netrc
+-disable-only-one-dependency-file
+--disable-prefetching
+--disable-sandbox
+--disable-scm-to-registry-transformation
+--disable-signature-validation
+-disallow-use-new-driver
+-D <value>
+-embed-tbd-for-module <value>
+-emit-module-dependencies-path <path>
+-emit-module-serialize-diagnostics-path <path>
+--emit-swift-module-separately
+-enable-actor-data-race-checks
+-enable-autolinking-runtime-compatibility-bytecode-layouts
+-enable-bare-slash-regex
+--enable-build-manifest-caching
+-enable-builtin-module
+--enable-dead-strip
+--enable-dependency-cache
+-enable-experimental-additive-arithmetic-derivation
+-enable-experimental-concise-pound-file
+-enable-experimental-feature <value>
+-enable-experimental-forward-mode-differentiation
+-enable-incremental-imports
+--enable-index-store
+-enable-library-evolution
+--enable-netrc
+-enable-only-one-dependency-file
+--enable-parseable-module-interfaces
+--enable-prefetching
+--enable-signature-validation
+-enable-upcoming-feature <value>
+-enforce-exclusivity  <enforcement>
+-e <value>
+--experimental-explicit-module-build
+-explain-module-dependency <value>
+--explicit-target-dependency-import-check <explicit-target-dependency-import-check>
+-export-as <value>
+-external-plugin-path <path>
+-file-compilation-dir <path>
+-file-prefix-map <prefix=replacement>
+--force-resolved-versions
+-framework <value>
+-Fsystem <value>
+-F <value>
+-g
+-gdwarf-types
+-gline-tables-only
+-gnone
+-h, -help, --help
+-index-ignore-clang-modules
+-index-include-locals
+-index-store-path <path>
+-index-unit-output-path <path>
+-I <value>
+-j, --jobs <jobs>
+-libc <value>
+-link-objc-runtime
+-load-plugin-executable <path>
+-load-plugin-library <path>
+-locale <locale-code>
+-localization-path <path>
+-l <value>
+-L <value>
+--manifest-cache <manifest-cache>
+-module-abi-name <value>
+-module-alias <alias_name=underlying_name>
+-module-cache-path <value>
+-module-link-name <value>
+-module-name <value>
+--netrc
+--netrc-file <netrc-file>
+-no-color-diagnostics
+--no-static-swift-stdlib
+-nostdimport
+-no-warnings-as-errors
+-num-threads <n>
+-O
+--only-use-versions-from-resolved-file
+-Onone
+-Osize
+-Ounchecked
+-package-name <value>
+--package-path <package-path>
+--pkg-config-path <pkg-config-path>
+-plugin-path <value>
+-prefix-serialized-debugging-options
+-pretty-print
+-print-educational-notes
+--print-manifest-job-graph
+-print-target-info
+--product <product>
+-q, --quiet
+-Rcross-import
+-remove-runtime-asserts
+--replace-scm-with-registry
+--resolver-fingerprint-checking <resolver-fingerprint-checking>
+--resolver-signing-entity-checking <resolver-signing-entity-checking>
+-Rindexing-system-module
+-Rmodule-loading
+-Rpass-missed  <value>
+-Rpass  <value>
+-Rskip-explicit-interface-build
+-runtime-compatibility-version <value>
+--sanitize <sanitize>
+-save-optimization-record
+-save-optimization-record-passes <regex>
+-save-optimization-record-path <value>
+--scratch-path <scratch-path>
+--sdk <sdk>
+-sdk <sdk>
+--security-path <security-path>
+-serialize-diagnostics-path <path>
+--show-bin-path
+--skip-update
+-static-executable
+-static-stdlib
+--static-swift-stdlib
+-strict-concurrency  <value>
+-suppress-remarks
+-suppress-warnings
+-swift-version <vers>
+-target-cpu <value>
+-target-min-inlining-version <value>
+--target <target>
+-target <triple>
+-target-variant <value>
+--toolchain <toolchain>
+--triple <triple>
+--use-integrated-swift-driver
+-use-ld  <value>
+--use-registry-identity-for-scm
+-user-module-version <vers>
+-validate-clang-modules-once
+--version
+-version
+--very-verbose, --vv
+-vfsoverlay <value>
+-visualc-tools-root <root>
+-visualc-tools-version <version>
+-v, --verbose
+-warn-concurrency
+-warn-implicit-overrides
+-warnings-as-errors
+-warn-swift3-objc-inference-complete
+-warn-swift3-objc-inference-minimal
+-windows-sdk-root <root>
+-windows-sdk-version <version>
+-working-directory <path>
+-Xcc <arg>
+-Xcxx <Xcxx>
+-Xlinker <value>
+-Xswiftc <Xswiftc>

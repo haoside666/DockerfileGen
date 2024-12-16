@@ -1,0 +1,149 @@
+[
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "COPY ./fonts/sarasa-mono-sc-regular.ttf /usr/share/fonts/",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "RUN apt-get update && apt install --no-install-recommends xvfb binutils build-essential qtbase5-dev wkhtmltopdf ffmpeg dbus -yq && (strip --remove-section .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5 || true) && apt-get clean && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && rm -rf /var/lib/apt/lists/*",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "RUN export DBUS_SESSION_BUS_ADDRESS=`dbus-daemon --fork --config-file /usr/share/dbus-1/session.conf --print-address`",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "RUN mkdir -p /app",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "COPY requirements.txt /app",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt && pip cache purge",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "RUN apt-get remove --purge -yq binutils",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "COPY . /app",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM python:3.10.13-slim-bullseye",
+        "after_instruct": "CMD /bin/bash /app/docker/start.sh",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get update && apt install --no-install-recommends xvfb binutils build-essential qtbase5-dev wkhtmltopdf ffmpeg dbus -yq && (strip --remove-section .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5 || true) && apt-get clean && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && rm -rf /var/lib/apt/lists/*",
+        "edge": "(1, 3)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "ENV DEBIAN_FRONTEND=noninteractive",
+        "after_instruct": "RUN apt-get remove --purge -yq binutils",
+        "edge": "(1, 9)",
+        "type": "ENV_VAR_IMPLICIT",
+        "dependency_description": "system level environment variable dependencies(implicit)"
+    },
+    {
+        "before_instruct": "COPY ./fonts/sarasa-mono-sc-regular.ttf /usr/share/fonts/",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(2, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt install --no-install-recommends xvfb binutils build-essential qtbase5-dev wkhtmltopdf ffmpeg dbus -yq && (strip --remove-section .note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5 || true) && apt-get clean && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && rm -rf /var/lib/apt/lists/*",
+        "after_instruct": "RUN apt-get remove --purge -yq binutils",
+        "edge": "(3, 9)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /app",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /app"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /app",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt && pip cache purge",
+        "edge": "(5, 8)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY requirements.txt /app",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt && pip cache purge",
+        "edge": "(6, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . /app",
+        "edge": "(6, 10)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY requirements.txt /app",
+        "after_instruct": "RUN pip install --no-cache-dir -r requirements.txt && pip cache purge",
+        "edge": "(7, 8)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    }
+]

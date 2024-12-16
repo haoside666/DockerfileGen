@@ -1,0 +1,13 @@
+```
+[(0, 1),  # RUN mkdir /app 依赖于 FROM python:3.7-slim
+ (1, 2),  # WORKDIR /app 依赖于 RUN mkdir /app
+ (2, 3),  # COPY requirements.txt requirements.txt 依赖于 WORKDIR /app
+ (3, 4),  # RUN pip install -r requirements.txt 依赖于 COPY requirements.txt requirements.txt
+ (2, 5),  # COPY . /app 依赖于 WORKDIR /app，注意这里可以与上一步并行，但逻辑上仍依赖WORKDIR设置的工作目录
+ (4, 6),  # ENV MODE server 依赖于 RUN pip install -r requirements.txt，虽然环境变量设置不严格依赖安装，但通常我们希望在安装依赖后设置环境
+ (5, 7),  # MAINTAINER DoubleThunder <sfyc23@gmail.com> 依赖于上一步的COPY操作，表示维护信息是在代码复制后声明
+ (6, 8),  # ENTRYPOINT ["python", "run.py"] 依赖于 ENV MODE server，因为入口点可能依赖于正确的环境变量设置
+ (7, 8)]  # 虽然MAINTAINER不直接影响ENTRYPOINT，但逻辑上它是Dockerfile的后续步骤，因此有依赖关系
+```
+
+注：这里的依赖关系主要是基于Dockerfile指令的执行顺序和逻辑，某些指令（如ENV）可能不严格依赖于其前面的指令（如COPY或RUN），但在构建镜像的过程中，它们通常被视为顺序执行的一部分，且环境变量的设置往往在应用代码或依赖安装之后进行。同样，MAINTAINER指令主要用于提供元数据，并不直接影响镜像的构建过程，但在这里我们将其视为在COPY操作之后的一个步骤。最后，ENTRYPOINT指令通常依赖于前面的所有步骤，因为它定义了容器启动时要执行的命令。

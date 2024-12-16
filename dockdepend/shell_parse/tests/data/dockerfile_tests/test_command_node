@@ -1,0 +1,26 @@
+IN1=$IN_PRE/1.txt
+unzip -d /bin -j docker-base_${DOCKER_BASE_VERSION}_linux_amd64.zip bin/gosu bin/dumb-init
+
+
+curl -sSL https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub > /etc/apk/keys/sgerrand.rsa.pub
+echo "This will overwrite the file." >| output.txt
+grep "pattern" < input.txt
+grep "pattern" <> io.txt
+echo "123">>1.txt
+cat <& /dev/stdin < input.txt
+echo msg 2>&$x
+
+cat << "123"
+a
+123
+
+cat <<END
+This is a multiline
+text block.
+It can contain multiple lines
+without the need for quoting.
+END
+
+curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey
+export url=$(echo "" | base64 --decode -)
+export RAM="$(("$(head -n1 /proc/meminfo | tr -dc "[:digit:]") / 1000000"))"

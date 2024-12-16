@@ -1,0 +1,26 @@
+FROM python:3.7-slim
+MAINTAINER Snow Wang <admin@farseer.vip>
+WORKDIR /youxiang
+COPY requirements.txt requirements.txt
+COPY . /youxiang
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo '$TZ' > /etc/timezone && pip install -r requirements.txt
+ENTRYPOINT ["python", "/youxiang/main.py"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(2, 3),	# WORKDIR目录依赖
+	(2, 4),	# WORKDIR目录依赖
+	(2, 6),	# WORKDIR目录依赖
+	(3, 6),	# 文件依赖
+	(5, 6),	# environment variable dependencies
+]
+
+
+所用时间：38.51

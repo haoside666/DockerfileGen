@@ -1,0 +1,8 @@
+{
+    "filename": "mosaico###b9cbe42c57cb999201466eecfbdac844790bba2f.txt",
+    "command_length": 11,
+    "processing_time": 0.0035076141357421875,
+    "dependency_count": 16,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (1, 2), (3, 5), (4, 5), (4, 7), (6, 7), (7, 8)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'apk'}\", \"have shell pkg intersection,because exist intersection {'npm'}\", 'exist file or directory dependency,because common path /tmp/package.json', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct create /opt/mosaico', 'exist file or directory dependency']"
+}

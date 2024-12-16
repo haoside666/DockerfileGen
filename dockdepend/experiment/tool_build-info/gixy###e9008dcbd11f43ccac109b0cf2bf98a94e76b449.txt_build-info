@@ -1,0 +1,8 @@
+{
+    "filename": "gixy###e9008dcbd11f43ccac109b0cf2bf98a94e76b449.txt",
+    "command_length": 5,
+    "processing_time": 0.0009164810180664062,
+    "dependency_count": 6,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (1, 3), (2, 3)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /src', 'exist file or directory dependency,because RUN instruct use /src']"
+}

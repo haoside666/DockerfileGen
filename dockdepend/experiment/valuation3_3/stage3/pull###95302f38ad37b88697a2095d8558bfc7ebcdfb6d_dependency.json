@@ -1,0 +1,121 @@
+[
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "LABEL org.opencontainers.image.title \"pull\" org.opencontainers.image.description \"Keep your forks up-to-date via automated PRs\" org.opencontainers.image.url \"https://github.com/wei/pull\" org.opencontainers.image.documentation \"https://github.com/wei/pull#readme\" org.opencontainers.image.source \"https://github.com/wei/pull\" org.opencontainers.image.licenses \"MIT\" org.opencontainers.image.authors \"Wei He <docker@weispot.com>\" maintainer \"Wei He <docker@weispot.com>\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "ENV APP_ID=\"\" WEBHOOK_SECRET=\"\" PRIVATE_KEY=\"\" NODE_ENV=production PORT=3000 LOG_FORMAT=short LOG_LEVEL=info WEBHOOK_PATH=/webhook PULL_INTERVAL=3600 JOB_TIMEOUT=60 MAX_CONCURRENT=10 MAX_IN_QUEUE=1000 CONFIG_FILENAME=pull.yml DEFAULT_MERGE_METHOD=hardreset DISABLE_DELAY=\"\" DISABLE_STATS=\"\" _=\"\"",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "RUN npm ci --production && :",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "EXPOSE 3000",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "CMD npm start",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "ARG VCS_REF=\"\"",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "ARG BUILD_DATE=\"\"",
+        "edge": "(0, 10)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:16-alpine",
+        "after_instruct": "LABEL org.opencontainers.image.ref.name ${VCS_REF} org.opencontainers.image.created ${BUILD_DATE}",
+        "edge": "(0, 11)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY package*.json ./",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN npm ci --production && :",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . .",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY package*.json ./",
+        "after_instruct": "RUN npm ci --production && :",
+        "edge": "(4, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    },
+    {
+        "before_instruct": "ARG VCS_REF=\"\"",
+        "after_instruct": "LABEL org.opencontainers.image.ref.name ${VCS_REF} org.opencontainers.image.created ${BUILD_DATE}",
+        "edge": "(9, 11)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG BUILD_DATE=\"\"",
+        "after_instruct": "LABEL org.opencontainers.image.ref.name ${VCS_REF} org.opencontainers.image.created ${BUILD_DATE}",
+        "edge": "(10, 11)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    }
+]

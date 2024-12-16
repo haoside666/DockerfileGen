@@ -1,0 +1,16 @@
+```
+[(0, 1),  # RUN apt-get update 依赖于 FROM ubuntu:20.04
+ (1, 2),  # RUN apt-get install -y apt-utils 依赖于 RUN apt-get update
+ (1, 3),  # RUN apt-get install -y python3.8 依赖于 RUN apt-get update
+ (1, 4),  # RUN apt-get install -y python3-pip 依赖于 RUN apt-get update
+ (1, 5),  # RUN apt-get install -y python3.8-dev 依赖于 RUN apt-get update
+ (1, 6),  # RUN apt-get install python-is-python3 依赖于 RUN apt-get update
+ (1, 7),  # RUN apt-get install -y default-libmysqlclient-dev build-essential 依赖于 RUN apt-get update
+ (1, 8),  # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libfreetype-dev libfreetype6 libfreetype6-dev 依赖于 RUN apt-get update
+ (1, 9),  # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg 依赖于 RUN apt-get update
+ (1, 10),  # RUN DEBIAN_FRONTEND=noninteractive apt-get install -y pkg-config 依赖于 RUN apt-get update
+ (0, 11),  # COPY requirements.txt /tmp 依赖于 FROM ubuntu:20.04
+ (4, 12)]  # RUN pip3 install -r /tmp/requirements.txt 依赖于 RUN apt-get install -y python3-pip
+```
+
+注：每个RUN、COPY等指令都依赖于它们之前的FROM指令或确保环境已经准备好的RUN指令（如更新apt包列表），以确保基础环境和所需软件包已经安装。特别地，最后一个RUN指令依赖于安装pip的指令，因为它需要使用pip来安装依赖。

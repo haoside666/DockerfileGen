@@ -1,0 +1,65 @@
+[
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "LABEL maintainer \"peez@stiffi.de\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN apk add --no-cache bash curl",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "COPY / /opt/dropbox_uploader",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "RUN mkdir -p /config && mkdir -p /workdir",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "VOLUME /config /workdir",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "WORKDIR /workdir",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.13",
+        "after_instruct": "ENTRYPOINT /opt/dropbox_uploader/dropbox_uploader.sh -f /config/dropbox_uploader.conf",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY / /opt/dropbox_uploader",
+        "after_instruct": "WORKDIR /workdir",
+        "edge": "(3, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /config && mkdir -p /workdir",
+        "after_instruct": "WORKDIR /workdir",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /workdir"
+    }
+]

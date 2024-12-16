@@ -1,0 +1,14 @@
+```
+[(0, 1),  # VOLUME依赖于FROM
+ (1, 2),  # LABEL依赖于VOLUME
+ (2, 3),  # ARG依赖于LABEL
+ (3, 4),  # RUN mkdir -p $dest依赖于ARG
+ (4, 5),  # WORKDIR $dest依赖于RUN mkdir -p $dest
+ (5, 6),  # COPY project.clj $dest依赖于WORKDIR $dest
+ (6, 7),  # RUN lein deps依赖于COPY project.clj $dest
+ (7, 8),  # COPY . $dest依赖于RUN lein deps
+ (8, 9),  # RUN mv "$(lein uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" app-standalone.jar依赖于COPY . $dest
+ (9, 10), # ENTRYPOINT依赖于RUN mv
+ (10, 11) # CMD依赖于ENTRYPOINT
+]
+```

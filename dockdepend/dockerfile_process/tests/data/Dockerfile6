@@ -1,0 +1,37 @@
+ARG BASE_IMAGE_PREFIX=""
+FROM ${BASE_IMAGE_PREFIX}debian:stable-slim
+ARG ARCH=""
+ENV XDG_CONFIG_HOME="/config"
+ENV XDG_DATA_HOME="/config"
+ENV DEBIAN_FRONTEND="noninteractive"
+RUN echo 'Dpkg::Use-Pty "0";' > /etc/apt/apt.conf.d/00usepty
+RUN ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime
+RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update -qq
+RUN apt-get upgrade -qq
+RUN apt-get dist-upgrade -qq
+RUN apt-get autoremove -qq
+RUN apt-get autoclean -qq
+RUN apt-get install -qq -y curl jq libicu63
+RUN mkdir -p /opt/jackett
+RUN set -x
+RUN uname -m
+RUN echo "Arch = ${ARCH}"
+RUN case "${ARCH}" in "arm") JACKETT_ARCH="LinuxARM32"
+RUN echo "JACKETT_ARCH=${JACKETT_ARCH}" ;; "aarch64") JACKETT_ARCH="LinuxARM64"
+RUN echo "JACKETT_ARCH=${JACKETT_ARCH}" ;; "amd64") JACKETT_ARCH="LinuxAMDx64"
+RUN echo "JACKETT_ARCH=${JACKETT_ARCH}" ;; *) echo "Unknown arch: ${ARCH}"
+RUN exit 1 ;; esac
+RUN JACKETT_RELEASE=$(curl -s "https://api.github.com/repos/Jackett/Jackett/releases" | jq -r '.[0] | .tag_name')
+RUN jackett_url=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases/tags/"${JACKETT_RELEASE}" | jq -r '.assets[].browser_download_url' | grep ${JACKETT_ARCH})
+RUN echo "Download ${jackett_url}"
+RUN curl -s -o - -L "${jackett_url}" | tar xz -C /opt/jackett --strip-components=1
+RUN rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+RUN chmod 777 /opt/jackett -R
+RUN mkdir /config
+RUN apt-get purge -qq curl jq
+RUN apt-get autoremove -qq
+RUN apt-get autoclean -qq
+EXPOSE 9117
+VOLUME /config
+CMD ["/opt/jackett/jackett", "--NoUpdates"]

@@ -1,0 +1,12 @@
+```
+[(0, 1),  # RUN apk update 依赖于 FROM node:16-alpine
+ (0, 2),  # RUN apk add bzip2 tar git 依赖于 FROM node:16-alpine
+ (0, 3),  # RUN npm install grunt-cli -g 依赖于 FROM node:16-alpine
+ (0, 4),  # COPY package.json /tmp/package.json 依赖于 FROM node:16-alpine
+ (4, 5),  # RUN cd /tmp && npm install --unsafe-perm 依赖于 COPY package.json /tmp/package.json
+ (5, 6),  # RUN mkdir -p /opt/mosaico && cp -a /tmp/node_modules /opt/mosaico/ && rm -rf /tmp/node_modules 依赖于 RUN cd /tmp && npm install --unsafe-perm
+ (6, 7),  # WORKDIR /opt/mosaico 依赖于 RUN mkdir -p /opt/mosaico && cp -a /tmp/node_modules /opt/mosaico/ && rm -rf /tmp/node_modules
+ (7, 8),  # COPY . /opt/mosaico 依赖于 WORKDIR /opt/mosaico
+ (7, 9),  # EXPOSE 9006 依赖于 WORKDIR /opt/mosaico
+ (7, 10)] # CMD ["grunt", "default"] 依赖于 WORKDIR /opt/mosaico
+```

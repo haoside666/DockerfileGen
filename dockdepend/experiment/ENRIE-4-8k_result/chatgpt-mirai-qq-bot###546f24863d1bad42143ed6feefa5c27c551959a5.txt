@@ -1,0 +1,13 @@
+```
+[(0, 1),  # ENV依赖于FROM，因为设置环境变量需要基于某个基础镜像
+ (1, 2),  # COPY依赖于ENV，因为复制文件可能受到环境变量的影响
+ (2, 3),  # RUN apt-get update依赖于COPY，因为安装软件前需要复制字体文件
+ (3, 4),  # RUN export DBUS_SESSION_BUS_ADDRESS依赖于前一个RUN，因为设置环境变量需要基于已更新的系统
+ (4, 5),  # RUN mkdir -p /app依赖于前一个RUN，因为创建目录可能依赖于前面的环境变量设置
+ (5, 6),  # WORKDIR /app依赖于RUN mkdir -p /app，因为设置工作目录需要目录已存在
+ (6, 7),  # COPY requirements.txt /app依赖于WORKDIR，因为复制文件到指定目录需要目录已设置为工作目录
+ (7, 8),  # RUN pip install依赖于COPY requirements.txt，因为安装Python包需要requirements.txt文件
+ (8, 9),  # RUN apt-get remove依赖于前一个RUN，因为卸载软件可能依赖于已安装的Python包
+ (9, 10), # COPY . /app依赖于前一个RUN，因为复制整个项目目录可能受到前面安装或卸载软件的影响
+ (10, 11)] # CMD依赖于COPY . /app，因为启动命令需要基于已复制的项目文件
+```

@@ -1,0 +1,33 @@
+FROM debian:11-slim
+LABEL org.opencontainers.image.source=https://github.com/gbdev/rgbds
+ARG version=0.6.1
+WORKDIR /rgbds
+COPY . .
+RUN apt-get update && apt-get install sudo make cmake gcc build-essential -y
+RUN ./.github/scripts/install_deps.sh ubuntu-20.04
+RUN make -j WARNFLAGS="-Wall -Wextra -pedantic  -static" PKG_CONFIG="pkg-config --static" Q=
+RUN tar caf rgbds-${version}-linux-x86_64.tar.xz --transform='s#.*/##' rgbasm rgblink rgbfix rgbgfx man/* .github/scripts/install.sh
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(2, 8),	# environment variable dependencies
+	(3, 4),	# WORKDIR目录依赖
+	(3, 6),	# WORKDIR目录依赖
+	(3, 7),	# WORKDIR目录依赖
+	(3, 8),	# WORKDIR目录依赖
+	(4, 6),	# 文件依赖
+	(4, 7),	# 文件依赖
+	(4, 8),	# 文件依赖
+	(5, 7),	# make依赖
+]
+
+
+所用时间：31.73

@@ -1,0 +1,27 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM nginx:alpine-slim
+LABEL maintainer="Jones MAGLOIRE @Joxit"
+WORKDIR /usr/share/nginx/html/
+ENV NGINX_PROXY_HEADER_Host '$http_host'
+ENV NGINX_LISTEN_PORT '80'
+ENV SHOW_CATALOG_NB_TAGS 'false'
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY bin/90-docker-registry-ui.sh /docker-entrypoint.d/90-docker-registry-ui.sh
+COPY dist/ /usr/share/nginx/html/
+COPY favicon.ico /usr/share/nginx/html/
+RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # LABEL指令依赖于FROM指令，因为标签是基于基础镜像添加的  
+ (2, 1),  # WORKDIR指令依赖于LABEL指令，因为工作目录的设定通常是在添加标签之后  
+ (3, 2),  # 第一个ENV指令依赖于WORKDIR指令，因为环境变量的设置通常在工作目录确定之后  
+ (4, 3),  # 第二个ENV指令依赖于第一个ENV指令，因为环境变量之间可能存在依赖关系  
+ (5, 4),  # 第三个ENV指令依赖于第二个ENV指令，同理  
+ (6, 5),  # 第一个COPY指令依赖于第三个ENV指令，因为复制文件之前可能需要设置一些环境变量  
+ (7, 6),  # 第二个COPY指令依赖于第一个COPY指令，因为复制操作通常是顺序执行的  
+ (8, 7),  # 第三个COPY指令依赖于第二个COPY指令，同理  
+ (9, 8),  # 第四个COPY指令依赖于第三个COPY指令，因为文件复制通常是一个连续的过程  
+ (10, 9)] # RUN指令依赖于第四个COPY指令，因为更改文件权限的操作通常发生在文件复制之后

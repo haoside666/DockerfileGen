@@ -1,0 +1,72 @@
+[
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "LABEL authors \"Zouhir Chahoud <zouhir@zouhir.org>\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "RUN apk add --update nodejs bash git",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "COPY package.json /www/package.json",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "RUN cd /www; npm install",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "COPY . /www",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "WORKDIR /www",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "ENV PORT=8080",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "EXPOSE 8080",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM alpine:3.4",
+        "after_instruct": "CMD npm start",
+        "edge": "(0, 9)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "COPY package.json /www/package.json",
+        "after_instruct": "RUN cd /www; npm install",
+        "edge": "(3, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /www/package.json"
+    }
+]

@@ -1,0 +1,107 @@
+[
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "WORKDIR /usr/src/node-app",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY package.json yarn.lock ./",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "USER node",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "RUN yarn install --pure-lockfile",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "COPY --chown=node:node . .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:alpine",
+        "after_instruct": "EXPOSE 3000",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app",
+        "after_instruct": "WORKDIR /usr/src/node-app",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct create /usr/src/node-app"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app",
+        "after_instruct": "USER node",
+        "edge": "(1, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app",
+        "after_instruct": "RUN yarn install --pure-lockfile",
+        "edge": "(1, 5)",
+        "type": "RUN_IO",
+        "dependency_description": "have shell io intersection,because common path /usr/src/node-app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/node-app",
+        "after_instruct": "COPY package.json yarn.lock ./",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/node-app",
+        "after_instruct": "RUN yarn install --pure-lockfile",
+        "edge": "(2, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /usr/src/node-app"
+    },
+    {
+        "before_instruct": "WORKDIR /usr/src/node-app",
+        "after_instruct": "COPY --chown=node:node . .",
+        "edge": "(2, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY package.json yarn.lock ./",
+        "after_instruct": "RUN yarn install --pure-lockfile",
+        "edge": "(3, 5)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /usr/src/node-app/package.json"
+    },
+    {
+        "before_instruct": "USER node",
+        "after_instruct": "RUN yarn install --pure-lockfile",
+        "edge": "(4, 5)",
+        "type": "BASIC_USER",
+        "dependency_description": "User dependency"
+    }
+]

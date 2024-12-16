@@ -1,0 +1,8 @@
+{
+    "filename": "donut###61af8ccee3c2cafa743b2628654d1a2dafc66f3a.txt",
+    "command_length": 11,
+    "processing_time": 0.0044515132904052734,
+    "dependency_count": 20,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (1, 2), (2, 4), (2, 6), (4, 5), (4, 6), (4, 9), (5, 6), (7, 8), (3, 7), (6, 7)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', \"have shell pkg intersection,because exist intersection {'apt-get'}\", \"have shell pkg intersection,because exist intersection {'git'}\", \"have shell pkg intersection,because exist intersection {'make'}\", 'exist file or directory dependency,because RUN instruct create /opt/donut', 'have shell io intersection,because common path /opt/donut', 'have shell io intersection,because common path /opt/donut', 'exist file or directory dependency,because RUN instruct use /opt/donut', 'exist file or directory dependency,because RUN instruct use /workdir', 'Boot dependency', 'Boot dependency']"
+}

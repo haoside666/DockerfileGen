@@ -1,0 +1,8 @@
+{
+    "filename": "fiber###ad6faf02b8e94dee498990e9fd9c588234666725.txt",
+    "command_length": 5,
+    "processing_time": 0.0020856857299804688,
+    "dependency_count": 6,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (2, 3), (2, 4)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because common path /work', 'exist file or directory dependency,because common path /work']"
+}

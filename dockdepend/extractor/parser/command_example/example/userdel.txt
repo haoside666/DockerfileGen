@@ -1,0 +1,3 @@
+userdel -r qbittorrent
+userdel -fr pi
+userdel squeezeboxserver

@@ -1,0 +1,55 @@
+FROM ubuntu:16.04
+MAINTAINER Roberto G. Hashioka "roberto_hashioka@hotmail.com"
+RUN apt-get update -y
+RUN apt-get upgrade -y
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install -y xpra rox-filer openssh-server pwgen xserver-xephyr xdm fluxbox xvfb locales sudo
+RUN sed -i 's/DisplayManager.requestPort/!DisplayManager.requestPort/g' /etc/X11/xdm/xdm-config
+RUN sed -i '/#any host/c\*' /etc/X11/xdm/Xaccess
+RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
+RUN sed -i 's/session    required     pam_loginuid.so/#session    required     pam_loginuid.so/g' /etc/pam.d/sshd
+RUN dpkg-divert --local --rename --add /sbin/initctl && ln -sf /bin/true /sbin/initctl
+RUN apt-get -y install fuse  || :
+RUN rm -rf /var/lib/dpkg/info/fuse.postinst
+RUN apt-get -y install fuse
+RUN apt-get install -y libreoffice-base firefox libreoffice-gtk libreoffice-calc xterm
+RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || :
+ADD . /src
+EXPOSE 22
+CMD ["/bin/bash", "/src/startup.sh"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(0, 14),	# Image dependency
+	(0, 15),	# Image dependency
+	(0, 16),	# Image dependency
+	(0, 17),	# Image dependency
+	(0, 18),	# Image dependency
+	(2, 3),	# apt先后顺序依赖
+	(2, 1),	# apt先后顺序依赖
+    (2, 13),	# install依赖于update
+	(2, 13),	# install依赖于update
+	(2, 14),	# install依赖于update
+	(4, 5),	# apt依赖于 DEBIAN_FRONTEND
+	(4, 11),	# apt依赖于 DEBIAN_FRONTEND
+	(4, 13),	# apt依赖于 DEBIAN_FRONTEND
+	(4, 14),	# apt依赖于 DEBIAN_FRONTEND
+	(5, 9),	# 文件依赖
+    (10, 12),	# 文件依赖
+	(11, 12),	# 文件依赖
+]
+
+所用时间：350.70

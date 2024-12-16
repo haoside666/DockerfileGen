@@ -1,0 +1,19 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM
+ (0, 2),  # RUN mkdir依赖于FROM
+ (1, 2),  # RUN mkdir依赖于MAINTAINER（理论上MAINTAINER不引入依赖，此处为格式统一）
+ (2, 3),  # COPY依赖于RUN mkdir
+ (0, 3),  # COPY依赖于FROM
+ (1, 3),  # COPY依赖于MAINTAINER（理论上MAINTAINER不引入依赖）
+ (2, 4),  # RUN cd virtualagc && make clean依赖于RUN mkdir
+ (3, 4),  # RUN cd virtualagc && make clean依赖于COPY
+ (0, 4),  # RUN cd virtualagc && make clean依赖于FROM
+ (1, 4),  # RUN cd virtualagc && make clean依赖于MAINTAINER
+ (2, 5),  # RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs依赖于RUN mkdir
+ (3, 5),  # RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs依赖于COPY
+ (4, 5),  # RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs依赖于RUN cd virtualagc && make clean
+ (0, 5),  # RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs依赖于FROM
+ (1, 5)]  # RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs依赖于MAINTAINER
+```
+
+注：此处的依赖关系是基于指令行顺序和Dockerfile的常见逻辑构建的。在Docker的实际构建过程中，某些指令（如`MAINTAINER`）可能不引入实际的层依赖，但为了保持格式的一致性，在列表中仍然保留了这些指令的依赖关系。如果需要更精确的依赖关系分析，可能需要考虑Dockerfile的具体语义和执行环境。

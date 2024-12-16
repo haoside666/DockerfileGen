@@ -1,0 +1,18 @@
+```
+[(0, 1),  # WORKDIR依赖于FROM创建的基础镜像
+ (1, 2),  # ENV设置环境变量依赖于WORKDIR创建的目录
+ (2, 3),  # RUN创建虚拟环境依赖于ENV设置的环境变量
+ (3, 4),  # ENV更新PATH依赖于RUN创建的虚拟环境
+ (4, 5),  # RUN安装pip工具依赖于ENV更新的PATH
+ (5, 6),  # COPY文件依赖于RUN安装的工具准备的环境
+ (6, 7),  # RUN编译requirements.txt依赖于COPY的文件
+ (7, 8),  # RUN安装依赖包依赖于RUN编译的requirements.txt
+ (8, 9),  # COPY文件依赖于RUN安装依赖包后的环境
+ (9, 10), # COPY文件依赖于上一步COPY的文件
+ (10, 11),# COPY目录依赖于上一步COPY的文件
+ (11, 12),# RUN安装当前项目依赖于COPY的目录内容
+ (12, 13),# USER切换用户依赖于RUN安装项目后的环境
+ (13, 14),# WORKDIR切换目录依赖于USER设置的用户权限
+ (14, 15),# ENTRYPOINT设置入口点依赖于WORKDIR设置的目录
+ (15, 16)] # CMD设置默认命令依赖于ENTRYPOINT设置的入口点
+```

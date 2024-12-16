@@ -1,0 +1,9 @@
+```
+[(0, 1),  # MAINTAINER依赖于FROM，因为需要先确定基础镜像
+ (0, 2),  # RUN安装pip包依赖于FROM提供的基础环境
+ (0, 3),  # WORKDIR设置工作目录依赖于FROM提供的基础环境
+ (3, 4),  # ADD添加文件依赖于WORKDIR设置的工作目录
+ (0, 5),  # RUN安装requirements.txt中的包依赖于FROM和之前的ADD操作
+ (3, 6),  # ADD当前目录内容依赖于WORKDIR设置的工作目录
+ (0, 7)]  # CMD执行命令依赖于FROM以及之前所有的构建步骤
+```

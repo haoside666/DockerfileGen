@@ -1,0 +1,1676 @@
+cp -r /mnt/Packages /opt/pxe/centos7
+cp -R -p /usr/local/nagios/etc /bk/nagios
+cp -r bin/train /usr/local/bin/
+cp /app/templates /app/bin
+cp -rf $TMPFILES/sbin $TMPFILES/scripts /u01/oracle
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python3.7/dist-packages
+cp ssdb.conf /etc
+cp "$(php-config --extension-dir)/ddtrace.so" /tmp/ddtrace.so
+cp -r /root/libssh-0.8.3 /root/exploit-libssh-0.8.3
+cp -R /etc/icinga-web/* /etc/icinga-web.dist/
+cp .tmux/.tmux.conf .
+cp /odoo/odoo-server/odoo/release.py /odoo/odoo-server/odoo/release_py.backup
+cp /home/tcb/work-image/bash_profile /home/tcb/.bash_profile
+cp init/supervisor_conf /etc/supervisor/conf.d/mineos.conf
+cp -r /jbrowse/* /usr/share/nginx/html/jbrowse
+cp ./man/nginx.8 /usr/share/man/man8
+cp config/default.example.yml config/production.yml
+cp /opt/couchbase-sync-gateway/examples/serviceconfig.json /etc/sync_gateway/config.json
+cp /tmp/blackfire/blackfire-*.so /tmp/blackfire.so
+cp /opt/LoReAn/third_party/conf_files/interproscan.properties ./interproscan.properties
+cp /src/config.sample.json /src/webapp/config.json
+cp "/etc/squid/"* "${config_dir}/"
+cp clientbuffer.so /usr/lib/znc/clientbuffer.so
+cp /usr/src/_axel/axelget.py /usr/lib/yum-plugins/
+cp $ULX3SBASEDIR/patches/Makefile.tinyfpga makefile
+cp -r /tmp/node_modules /app/node_modules
+cp /opt/LoReAn/third_party/software/fasta-36.3.8e/bin/fasta36 /home/lorean/bin/fasta
+cp -a /usr/local/redis/etc/redis.conf /itxq/config/
+cp build/output/libpaho-mqtt3cs.so.1.3 /opt/dist//usr/local/lib64
+cp /jbrowse/.htaccess /usr/share/nginx/html/jbrowse/.htaccess
+cp -rf script/trojanClientConsole /usr/local/sbin/
+cp /root/.bashrc /root/.profile "${HOME}"
+cp judge/runner-shared-config-example.json config/runner-shared.json
+cp /etc/shadow /sam/shadow
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/flirt GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/convert-xfm GLISTR-3.1.1/bin/install/bin/;     cp btmcs-1.2.1-build/ForwardSolverDiffusion GLISTR-3.1.1/bin/install/bin/
+cp ./a/config.php /var/www/rutorrent/conf/
+cp -R /var/www/localhost/htdocs/protected/config/* /usr/src/humhub/protected/config/
+cp etc/* > /etc/clawiod/
+cp /tmp/kodi_src/tools/EventClients/lib/python/xbmcclient.py /tmp/kodi_build/usr/lib/python2.7/xbmcclient.py
+cp /tmp/patches/config.* /tmp/argtable
+cp `php-config --extension-dir`/scrypt.so /tmp/scrypt.so
+cp ${PB_ROOT_DIR}/cfg/conf.sample.php ${PB_ROOT_DIR}
+cp /tmp/libnl-tiny/*.so $DST_ROOT/usr/lib/
+cp -R prometheus-${PROMETHEUS_VERSION}.linux-amd64/console_libraries/ /etc/prometheus/
+cp /etc/php/${PHP_VERSION}/fpm/php.ini /etc/php/${PHP_VERSION}/fpm/php.ini.bak
+cp /etc/resolv.conf /opt/syzoj/sandbox/etc/resolv.conf
+cp /tmp/fleet_linux/linux/fleet /usr/bin/
+cp -pr trex_client/external_libs /usr/local
+cp -f /usr/bin/python /usr/bin/python-backup
+cp /semagrow/http/target/semagrow-http-1.4.1-distribution.zip $SEMAGROW_HOME
+cp -R /usr/src/humhub/* /var/www/localhost/htdocs/
+cp -R /tmp/icingaweb2/icingaweb2-2.3.4/modules/monitoring /etc/icingaweb2.dist/modules/
+cp ../conf_files/pathToExport.txt /etc/profile.d/pathToExport.sh
+cp mysql-connector-odbc-8.0.19-linux-debian10-x86-64bit/bin/* /usr/local/bin
+cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+cp /tmp/linux*/helm /usr/local/bin
+cp "/usr/local/src/openssl-${OPENSSL_VERSION}/.openssl/bin/openssl" /usr/bin/openssl
+cp -R /lib* /home/ctf
+cp -dP /tmp/gcc/usr/lib/libgcc* /tmp/gcc/usr/lib/libstdc++* "${GLIBC_PREFIX}/lib"
+cp libssw.so  /home/lorean/bin/LoReAn/code/
+cp cargo-audit-x86_64-unknown-linux-gnu-v${CARGO_AUDIT_VERSION}/cargo-audit /usr/local/bin/
+cp /usr/bin/mogrify /tmp
+cp src/unison src/unison-fsmonitor /usr/local/bin
+cp -r node_modules /app/node_modules
+cp ./gatk-4.1.4.0/gatk-package-4.1.4.0-local.jar ${PACKAGE_DIR}/gatk-4.1.4.0/
+cp ${SEASTEAD_HOME}/init.vim ${HOME}/.config/nvim/init.vim
+cp /tmp/ergatis.software.config /opt/ergatis/software.config
+cp -r /$GOPATH/src/github.com/platinasystems/ops /root/
+cp cert.* /etc/apache2/certs/
+cp -a /tmp/node_modules /usr/src/app/
+cp -r ./node_modules/ghost-storage-adapter-s3/* ./content.orig/adapters/storage/s3
+cp -v ./beast-splitter /usr/local/bin/
+cp ../src/tools/deployment/certs.pem /usr/share/osquery/certs/
+cp ~cowrie/cowrie-git/cowrie.cfg.dist ~cowrie/cowrie-git/etc/cowrie.cfg"
+cp /tmp/xmind-installer.sh /home/ezgo
+cp ${a4c_install_path}/indigodc-orchestrator-plugin/target/alien4cloud-indigodc-provider-*.zip     "${a4c_install_path}/${a4c_install_dir}/init/plugins/"
+cp -f /var/www/html/cmonapi/config/bootstrap.php.default /var/www/html/cmonapi/config/bootstrap.php
+cp /rclone/rclone /usr/local/bin/
+cp -r "${OPENSSL_DIR}/lib/engines-1.1" /usr/lib/x86_64-linux-gnu/
+cp /usr/local/bin/kubectl /bin/kubectl
+cp -Rv /src/piaware-web/web/. /var/www/html/
+cp src/MQTTClientPersistence.h /opt/dist/usr/local/include/
+cp /scripts/cron/mysql_backup_weekly.sh /etc/cron.weekly/
+cp target/*.jar app.jar
+cp ${JETTY_HOME}/etc/webdefault.xml ${JETTY_HOME}/etc/webdefault.xml.bak
+cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+cp -r /munki-munki*/code/client/* /munkitools
+cp judge/runner-instance-config-example.json config/runner-instance.json
+cp /tmp/luci/modules/luci-base/src/po2lmo $DST_ROOT/usr/sbin/
+cp phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+cp -r resources/frontail.json /etc/
+cp /app/dist/data/database/demo.db /app/data/database/demo.db
+cp $EQEMU_SRC_DIR/loginserver/login_util/* /tmp/loginserver
+cp -r ${PREFIX}/share/ffmpeg /tmp/fakeroot/share/
+cp /usr/bin/envsubst /usr/local/bin/envsubst
+cp -r /tshock/ServerPlugins /tshock/DefaultServerPlugins
+cp device.key assets/server/tls/snakeoil.key -f
+cp config/_default.cfg lgsm/config-default/config-lgsm/dstserver/_default.cfg
+cp ../../scripts/process_GMAP_alignments_gff3_chimeras_ok.pl scripts/
+cp delivery.local.php.dist delivery.local.php
+cp -R /tmp/koel/. /var/www/html
+cp /tmp/build/consul /bin/consul
+cp -r product/docker/common/scripts /scripts
+cp supervisord.conf /etc/supervisor/conf.d/
+cp config/database.yml.postgresql config/database.yml
+cp /opt/conda/bin/samtools $BINPATH
+cp -pr /usr/src/ergatis/lib/* /opt/ergatis/lib/perl5/.
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/laravel.conf
+cp target/dependency/*.jar $SEMAGROW_HOME/domains/localhost/webapps/SemaGrow/WEB-INF/lib/
+cp -r dist ../pkg/web_ui
+cp -f /usr/local/bin/pip2 /usr/local/bin/pip
+cp /tmp/glide/linux-amd64/glide /tmp/bin/glide
+cp qemu-rpi-kernel-*/kernel-qemu-4.19.50-buster /root/qemu-rpi-kernel/
+cp /tmp/uci/lua/*.so $DST_LUCI_ROOT/usr/lib/lua/
+cp /usr/local/go-agent-${GO_MAJOR_VERSION}/go-agent.default /etc/default/go-agent
+cp /usr/share/syslinux/memdisk /opt/pxe/boot/
+cp -R /nxfilter/conf /nxfilter/conf.default
+cp ${PREFIX}/bin/* /usr/local/bin/
+cp `php-config --extension-dir`/pgsql.so /tmp/pgsql.so
+cp /usr/local/src/* /usr/src/
+cp /tmp/mdc/config.ini /tmp/mdc/dist/Movie_Data_Capture/config.template
+cp akamai-0.1.0-linuxamd64 /usr/local/bin/akamai
+cp tools/zmqsend ${PREFIX}/bin/
+cp ./client/client /app/client
+cp -R /tmp/icingaweb2/icingaweb2-2.0.0-beta3/modules/monitoring /etc/icingaweb2/modules/
+cp /tmp/rar2fs/src/rar2fs /usr/local/bin/rar2fs
+cp ${HOME}/.vnc/xstartup ${HOME}/.vnc/xstartup_after
+cp openshift-origin-client-tools-v1.5.1-7b451fc-linux-64bit/oc /usr/local/bin
+cp /root/gost_${GOST_VERSION}_linux_amd64/gost /root/
+cp /tmp/uhttpd/uhttpd /tmp/dst/bin/
+cp node_modules/unleash-server/scripts/migration-runner.js scripts/.
+cp /tmp/libociicus.so /tmp/extension-libs
+cp travis/uploader.json .
+cp /var/www/html/config/* /config
+cp /tmp/libubox/lua/*.so /tmp/dst/lua/
+cp /tmp/ct-download/ct /usr/local/bin
+cp -R /usr/local/bin/ntripcaster /usr/local/
+cp -R /tmp/libnl-tiny/src/include/* /usr/include/
+cp config/gitlab.yml.example config/gitlab.yml
+cp thug/DOM/date.js /etc/thug/scripts
+cp -pr trex_client/stl/trex_stl_lib /usr/local/lib/python3.6/site-packages
+cp -R  /tmp/master/icingaweb2-master/modules/doc /etc/icingaweb2/modules/
+cp hiredis.h /usr/include/hiredis
+cp /usr/bin/chpst /usr/local/bin
+cp /tmp/ergatis.install.fix .
+cp dist/$COLLECTOR_DIR/system-collector /root/system-collector
+cp -r leveldb /usr/local/include/
+cp target/semagrow-quetsal-*.jar $SEMAGROW_HOME/domains/localhost/webapps/SemaGrow/WEB-INF/lib/
+cp laravel/.env.example laravel/.env
+cp bin/* $INSTALL_PATH/bin/.
+cp /tmp/luci/modules/luci-base/src/parser.so $DST_ROOT/usr/lib/lua/luci/template
+cp /v2raybin/v2ray-v$VER-linux-64/vpoint_vmess_freedom.json /v2raybin/config.json
+cp -v bins/opt/* /tmp/proto-bins_$(cat /version.txt)_linux-$(uname -m)
+cp /usr/share/zoneinfo/Asia/Manila /etc/localtime
+cp `php -i | grep extension_dir | sed 's/^.*=> \(.*\)$/\1/' | head -1`/newrelic.so /tmp/newrelic.so
+cp /app/.docker/nginx.conf /etc/nginx/http.d/cloudflare.conf
+cp entrypoint.sh /app/entrypoint.sh
+cp -fR /tmp/cmake-${CMAKE_VERSION_FULL}-Linux-x86_64/* /usr
+cp -R /tmp/libnl-tiny/include/* /usr/include/
+cp /etc/X11/xrdp/xorg.conf /etc/X11
+cp /tmp/libubox/lua/*.so $DST_LUCI_ROOT/usr/lib/lua/
+cp /usr/bin/deluge-web /config/deluge-web
+cp uwsgi php_plugin.so http_plugin.so /
+cp -fR cmake-3.15.7-Linux-x86_64/* /usr
+cp ./supervisord.conf /etc/supervisord.conf
+cp .config /KERNEL.config
+cp -r /opt/outline/node_modules /opt/node_modules
+cp -r /usr/share/liblangtag /usr/local/share/liblangtag/
+cp -r /tmp/vmaf/model/* ${PREFIX}/share/model/
+cp -a /usr/cervisia/ng-cervisia/dist/. /usr/cervisia/frontend/
+cp /home/work/_app/php$PHP_VERSION/etc/php-fpm.conf.default /home/work/_app/php$PHP_VERSION/etc/php-fpm.conf
+cp -R thug/DOM/personalities/* /etc/thug/personalities
+cp /opt/ergatis/software/ncbi-blast-2.5.0+/bin/* /usr/bin/.
+cp -f listener.ora tnsnames.ora /opt/oracle/product/18c/dbhomeXE/network/admin/
+cp /usr/local/bin/rancher-compose /usr/local/bin/rancher-compose-$RANCHER_COMPOSE_VERSION
+cp /usr/local/share/gtags/gtags.conf /etc/gtags.conf
+cp etc/fxtrader/fx* /etc/fxtrader/
+cp /etc/apache2/mods-available/expires.load /etc/apache2/mods-enabled/
+cp /usr/lib64/libaio.so.1 /tmp/libaio.so.1
+cp -R guacamole-auth-jdbc-${GUAC_VER}/postgresql/guacamole-auth-jdbc-postgresql-${GUAC_VER}.jar ${GUACAMOLE_HOME}/extensions/
+cp -R locale ${GITLAB_DIR}/
+cp /semagrow/http/target/semagrow-http-*-distribution.zip $SEMAGROW_HOME
+cp /root/work-image/bashrc /root/.bashrc
+cp -a build/. /usr/bin/
+cp -r -f /usr/share/zoneinfo/Hongkong /etc/localtime
+cp /opt/conda/bin/picard $BINPATH
+cp "$TEMP_SYSLINUX_PATH"/bios/com32/menu/menu.c32 /var/lib/tftpboot/
+cp /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+cp -r client/build /app/client/
+cp -r  /opt/build/gst-video-analytics/build/intel64/Release/lib/* /usr/local/lib64/gstreamer-1.0/.
+cp `php-config --extension-dir`/mongodb.so /tmp/mongodb.so
+cp DefSpaceShiny-0.0.0/data*.RDS /srv/shiny-server/defspace/data
+cp /root/work-image/.bashrc /root/
+cp configuration.py-default /data/configuration.py
+cp -r /hci/ansible/lib/ansible/module_utils/pstools /usr/local/lib/python3.6/site-packages/ansible/module_utils/
+cp rtb.config.local.php.dist rtb.config.local.php
+cp haproxy /usr/sbin/
+cp /go/bin/* /usr/bin/
+cp src/MQTTReasonCodes.h /opt/dist/usr/local/include/
+cp /scripts/cron/mysql_backup_hourly.sh /etc/periodic/hourly/
+cp -f "$SINUS_DIR/config.ini.dist" "$SINUS_DIR/config.ini"
+cp /scripts/cron/mysql_backup_weekly.sh /etc/cron.weekly/mysql_backup_weekly
+cp lib/libc++abi* /usr/lib/
+cp -r pycocotools /tensorflow/models/research
+cp ${LANTERN_HOME}/zshrc ${HOME}/.zshrc
+cp -r ./etc/* /etc
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python3.7/site-packages
+cp /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
+cp identityd.service /etc/systemd/system/identityd.service
+cp -r /home/work/_src/mysql-connector-java-5.1.47-bin.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib
+cp bashrc_template /root/.bashrc
+cp `php-config --extension-dir`/gnupg.so /tmp/gnupg.so
+cp -r /usr/share/syslinux /tftpboot
+cp docker/uwsgi.ini /etc/uwsgi/apps-available/atmosphere.ini
+cp /app/opbeans/static/build/index.html /app/opbeans/templates/
+cp ./scripts/run.sh /opt/mm-wiki
+cp /usr/local/lib/python3.9/site-packages/oci_cli/bin/oci_autocomplete.sh /usr/local/bin/oci_autocomplete.sh
+cp /tmp/luci/modules/luci-base/src/po2lmo $DST_LUCI_ROOT/usr/sbin/
+cp -f "$SINUS_DIR/plugin/libsoundbot_plugin.so" "$TS3_DIR/plugins/"
+cp -r /usr/local/lib64/libopenh264.so.4 .
+cp judge/daemon-config-example.json config/daemon.json
+cp /tmp/luci/libs/luci-lib-nixio/src/*.so  $DST_LUCI_ROOT/usr/lib/lua/
+cp -f $TMPFILES/sqlrun/* /u01/oracle/instantclient
+cp /opt/LoReAn/third_party/scripts/cleanAlignments.py  /usr/local/bin/
+cp /tmp/libubox/*.so /tmp/dst/lib/
+cp -r ./logs/ /opt/mm-wiki
+cp default.conf /etc/nginx/conf.d
+cp "$(php-config --extension-dir)/gd.so" /tmp/gd.so
+cp "$TEMP_SYSLINUX_PATH"/bios/core/pxelinux.0 /var/lib/tftpboot/
+cp -r /jbrowse_genomes_of_interest/jbrowse/data /usr/share/nginx/html/jbrowse
+cp /tmp/luci/libs/luci-lib-ip/src/*.so $DST_LUCI_ROOT/usr/lib/lua/luci/
+cp -p -u /tmp/srell/single-header/srell.hpp /usr/local/include
+cp -rs /usr/share/syslinux/* /etc/tftpboot
+cp -r $UHOME/.vim_runtime_x/* $UHOME/.vim_runtime/
+cp -r /src/lede/feeds.conf.default /home/work/_src/lede/feeds.conf.default
+cp src/MQTTAsync.h /opt/dist/usr/local/include/
+cp /tmp/uci/*.so $DST_ROOT/usr/lib/
+cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/
+cp ./a/supervisord.conf /etc/supervisor/conf.d/
+cp includes/config.sample.inc.php includes/config.inc.php
+cp /tmp/ckb_v0.30.2_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp frps /usr/local/bin
+cp /opt/LoReAn/third_party/software/fasta-36.3.8g/bin/fasta36 /usr/local/bin/fasta
+cp ${ORACLE_INSTANTCLIENT}/*.jar ${KAFKA_HOME}/libs/
+cp /root/work-image/vimrc /root/.vimrc
+cp build/output/libpaho-mqtt3as.so.1.3 /opt/dist//usr/local/lib
+cp `php-config --extension-dir`/oci8.so /tmp/oci8.so
+cp -R build/linux_intel64_gcc_cc7_libc2.17_kernel4.14.84_release/* /usr/local/lib64/
+cp /etc/postfix/main.cf /etc/postfix/main.cf.orig
+cp /tmp/nginx-$VERSION/objs/nginx /rootfs/bin/
+cp /nzbget/pubkey.pem /app/nzbget/pubkey.pem
+cp .sequelizerc.example .sequelizerc
+cp /etc/periodic/daily/logrotate /etc/periodic/15min/
+cp -f $(echo "/usr/local/src/nginx/nginx_${NGINX_VERSION}*.deb") /usr/local/src/nginx.deb
+cp -f $RESOURCES_PATH/branding/ml-workspace-logo.svg $RESOURCES_PATH"/filebrowser/img/logo.svg"
+cp /scripts/cron/mysql_backup_daily.sh /etc/periodic/daily/mysql_backup_daily
+cp /etc/passwd /sam/passwd
+cp /etc/php/7.0/cli/conf.d/30-pdo_sqlsrv.ini /etc/php/7.0/fpm/conf.d
+cp /opt/f-prot/f-prot.conf.default /opt/f-prot/f-prot.conf
+cp /opt/zendto/config/preferences.php /root/
+cp src/MQTTProperties.h /opt/dist/usr/local/include/
+cp /opt/LoReAn/third_party/software/fasta-36.3.8e/bin/fasta36 /usr/local/bin/fasta
+cp /oxidized-tmp/entrypoint.sh /oxidized-tooling/
+cp /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+cp -R ./peercast-yt /tmp
+cp -l /usr/local/libbbb-${LIBBBB_VERSION}-arm-none-eabi/lib/* /se12/bbb/source
+cp alertmanager-${alertmanager_version}.linux-amd64/alertmanager /bin
+cp src/makefiles/linux_64bit.mak Makefile
+cp srsLTE-${COMMIT}/*/*.example ./
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/include/* /se12/bbb/source
+cp -f $RESOURCES_PATH/branding/favicon.ico $RESOURCES_PATH"/filebrowser/img/icons/favicon.ico"
+cp thug/DOM/storage.js /etc/thug/scripts
+cp -R public/* /var/www/html/redhat/
+cp /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/scripts/init/systemd/ /etc/systemd/system
+cp /usr/share/zoneinfo/Australia/Sydney /etc/localtime
+cp $(find bin -name crane) /usr/local/bin
+cp /tmp/luci/libs/luci-lib-nixio/src/*.so  $DST_ROOT/usr/lib/lua/
+cp /u01/oracle/commEnv.sh /u01/oracle/wlserver/common/bin/commEnv.sh
+cp -r /src/lede/banner /home/work/_src/lede/package/base-files/files/etc/banner
+cp /bin/sh /home/ctf/bin
+cp /go/bin/terraform-provider-sops /root/.terraform.d/plugins/
+cp -p /etc/puppetlabs/puppet/ssl/public_keys/${HOSTNAME}.pem /etc/puppetlabs/puppet/ssl/public_keys/foreman.lab.pem
+cp -rf /u01/oracle/idm/server/ConnectorDefaultDirectory /u01/oracle/idm/server/ConnectorDefaultDirectory_orig
+cp /root/startup.sh /etc/init.d/startup.sh
+cp -R /var/www/html/ /showdoc_data/
+cp /etc/group /staging/etc/group
+cp -R /tmp/protoc/include/* /usr/local/include
+cp -f /var/www/html/clustercontrol/ssl/server.key /etc/pki/tls/private/s9server.key
+cp -R /tmp/docker/admin/* /home/admin/
+cp third-party/snowboy/resources/alexa/alexa_02092017.umdl third-party/snowboy/resources/alexa.umdl
+cp /home/notebookuser/library_tools/stop-jupyter.sh /home/notebookuser
+cp ../conf_files/gm_key ~/.gm_key
+cp "$SCRIPT_DIR"/"$INITSH" /usr/bin/"$INITSH"
+cp elfinder.html index.html
+cp /usr/share/zoneinfo/Europe/Rome /etc/localtime
+cp /tmp/ckb_v0.26.1_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp rcon-cli /usr/bin/rcon
+cp /home/vagrant/.ssh/id_rsa.pub /home/vagrant/.ssh/authorized_keys
+cp /build/main .
+cp /scripts/cron/mysql_backup_weekly.sh /etc/periodic/weekly/
+cp ${PROJECT_DIR}/dist/proxy ${MODLISHKA_BIN}
+cp /tmp/luci/libs/luci-lib-jsonc/src/*.so $DST_LUCI_ROOT/usr/lib/lua/luci/
+cp /dev/null ${APACHE_CONF_DIR}/conf.d/other-vhosts-access-log
+cp -v /emg/sw/myami/redux/init.d/reduxd /etc/init.d/reduxd
+cp -ar /srv/vendor .
+cp /var/www/html/config.dist.php /var/www/html/config.php
+cp /opt/drivers/management-state/bin/docker-machine-driver-harvester /usr/share/rancher/ui/assets/
+cp -v faup1090 /usr/lib/piaware/helpers/
+cp /linux-xlnx-$CHECKOUT_TAG/arch/arm/boot/dts/zynq-zed.dtb devicetree.dtb
+cp ./a/php-fpm.conf /etc/php7/
+cp "$W_TMP"/*.dll "$W_SYSTEM64_DLLS"/
+cp ssdb-server /usr/bin
+cp out /app
+cp /root/elm /usr/local/bin/elm
+cp /opt/conda/bin/fastqc $BINPATH
+cp -r /usr/src/app/node_modules/screwdriver-queue-service/config /config
+cp -af core-${VERSION}/. ./
+cp /build/dcfeeder .
+cp -a -v /core-13.0.02/. /var/www/site
+cp ${RAINLOOP_PATH}/v/*/index.php.root /var/www/html/index.php
+cp -r ${PREFIX}/bin /tmp/fakeroot/bin/
+cp src/zabbix_get/zabbix_get /usr/sbin/
+cp raxmlHPC-MPI /usr/local/bin/
+cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /opt/jdk/jre/lib/security;     fi
+cp /opt/couchbase-sync-gateway/examples/startup_config/basic.json /etc/sync_gateway/config.json
+cp -r /mafviewer /usr/share/nginx/html/jbrowse/plugins/MAFViewer
+cp /opt/conda/bin/conda /opt/conda/condabin
+cp /tmp/libocci.so.21.1 /tmp/extension-libs
+cp /usr/share/zoneinfo/$TZ /etc/localtime
+cp -r wkhtmltox/share/man/man1 /usr/local/share/man/
+cp /tmp/uhttpd/uhttpd $DST_ROOT/usr/sbin/
+cp sample-config/nsca.cfg ${NAGIOS_HOME}/etc/
+cp /usr/local/share/stacks/sql/mysql.cnf /home/biodocker/.my.cnf
+cp -rf /root/.ssh /home/nodedock
+cp fd-v${FD_VERSION}-x86_64-unknown-linux-musl/fd /usr/local/bin/
+cp /usr/local/etc/php-fpm.d/* /etc/php7-fpm.d/
+cp /tmp/rclone/rclone /usr/bin/
+cp ${SEASTEAD_HOME}/gitconfig ${HOME}/.gitconfig
+cp -r /jbplugin-screenshot /jbrowse/plugins/ScreenShotPlugin
+cp -pr /tmp/argtable-build/usr/* /usr/
+cp mysql-connector-odbc-8.0.13-linux-ubuntu18.04-x86-64bit/lib/* /usr/lib/x86_64-linux-gnu/odbc/
+cp -r /home/work/_src/mysql-connector-java-5.1.47-bin.jar /home/work/_app/_jira_crucible/lib/
+cp -p $(find /usr/local/lib/python3.5/site-packages -name cv2.*.so)    /usr/lib/python3.5/site-packages/cv2.so
+cp /opt/conda/bin/stringtie $BINPATH
+cp -a /tmp/node_modules /app/
+cp /opt/JE-Nagios-Plugins/check_mem/check_mem.pl ${NAGIOS_HOME}/libexec/
+cp /srv/services.cfg /usr/local/nagios/etc/noc/
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python3.7/site-packages
+cp /root/work-image/coc-settings.json /root/.vim/
+cp server.conf server.conf.bak
+cp -R -p /usr/local/nagios/etc /bk
+cp -rf script/shadowsocksConsole /usr/local/sbin/
+cp -r julia-1.4.1 /opt/
+cp /scripts/cron/mysql_backup_daily.sh /etc/cron.daily/mysql_backup_daily
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/lib/* /usr/lib/arm-none-eabi/lib
+cp build/target/*.jar /opt/webApp/app.jar
+cp -r /colorbycds /jbrowse/plugins/ColorByCDS
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.0/bin/install/bin/;     cp fsl/bin/flirt GLISTR-3.1.0/bin/install/bin/;     cp fsl/bin/convert_xfm GLISTR-3.1.0/bin/install/bin/;     cp btmcs-1.2.1-build/bin/ForwardSolverDiffusion GLISTR-3.1.0/bin/install/bin/
+cp tmhmm-2.0c/lib/TMHMM2.0.model  data/tmhmm/2.0c/TMHMM2.0c.model
+cp -f /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit /tmp/
+cp /tmp/ddclient/sample-get-ip-from-fritzbox /etc/ddclient/get-ip-from-fritzbox
+cp raxmlHPC-PTHREADS-SSE3 /usr/local/bin/
+cp -r codec /opt/dist/usr/local/include/openh264)
+cp main.py ..
+cp -a /usr/local/nginx/conf/nginx.conf /itxq/config/
+cp node_modules/zeppelin-highcharts-spline/zeppelin-highcharts-spline.json $HELIUM_FOLDER
+cp -R public /www/
+cp ${CONFLUENCE_INSTALL}/lib/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar ${CONFLUENCE_INSTALL}${LIB_PATH}/mysql-connector-java-${MYSQL_DRIVER_VERSION}.jar
+cp config/secrets.yml.example config/secrets.yml
+cp /app/www/docker/docker.env /app/www/.env
+cp *.ttf /usr/share/fonts/RictyDiminished/
+cp /usr/lib/jvm/java-11-openjdk/jre/lib/security/cacerts /tmp/kafka.client.truststore.jks
+cp ../cmake/config.cmake .
+cp /srv/infcloud/config.js /srv/infcloud/config/config.js
+cp $MAVEN_HOME/skos-builder/target/skos-builder.jar /skos-builder.jar
+cp -f /etc/services /var/spool/postfix/etc/
+cp proxychains.conf /etc/
+cp isbg/isbg/isbg.py /bin/
+cp $ULX3SBASEDIR/patches/Makefile.gcc .
+cp share/nagiosgraph.ssi ${NAGIOS_HOME}/share/ssi/common-header.ssi
+cp /usr/local/lib/libjellyfish-2.0.* /lib/x86_64-linux-gnu/
+cp *.conf /etc/nginx/        )
+cp /tmp/uci/uci $DST_ROOT/usr/sbin/
+cp libgsm.a /usr/local/lib
+cp build/libs/FullNode.jar ./fullnode/
+cp src/zabbix_server/zabbix_server /usr/sbin/
+cp $HOME/.vim/vimrc $HOME/.vimrc
+cp /tmp/modsecurity/modsecurity.conf-recommended /usr/share/modsecurity/modsecurity.conf
+cp $SRC_PATH/LICENSE $CLIENT_PATH/
+cp web/config-example.json config/web.json
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python3.7/dist-packages
+cp lua-resty-http-master/lib/resty/*.lua /opt/openresty/lualib/resty/
+cp -r /usr/local/lib/libopenh264.so.4 .
+cp mineos.conf /etc/mineos.conf
+cp "$TEMP_SYSLINUX_PATH"/bios/com32/elflink/ldlinux/ldlinux.c32 /var/lib/tftpboot/
+cp conf/* npsconf/
+cp /etc/postfix/master.cf /etc/postfix/master.cf.orig
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/complex.h 		${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp -rf /tmp/src/* /usr/share/transmission/public_html/
+cp /opt/setup_files/config/config.yml /opt/polynote/
+cp /usr/bin/php7 /usr/bin/php
+cp /usr/lib/python2.7/site-packages/ansible/playbook/role/requirement.py /
+cp /usr/bin/qemu-ppc-static /ppc-root/usr/bin/
+cp -R -v /app/templates /app/bin
+cp object_detection/packages/tf1/setup.py ./
+cp ./dstserver ./dstserver-master
+cp package/smartdns/usr /release/ -a
+cp -r beam beam-testnet
+cp -R node-v10.15.0-linux-x64/* /usr/local/
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/include/* /usr/arm-none-eabi/include/
+cp -R /usr/lib* /home/ctf
+cp travis/uploader.json /etc/pacifica-cli
+cp -r pocketsphinx/model/en-us sphinx/
+cp /var/www/packagist/app/config/parameters.yml.dist /var/www/packagist/app/config/parameters.yml
+cp /azure-cli_${cli_version}-${cli_version_revision}_all.deb /azure-cli_all.deb
+cp qt-faststart ${PREFIX}/bin/
+cp bin/xmr-stak-cpu /usr/local/bin/
+cp target/release/kademlia-exporter /build-out/
+cp survey/interviewer_configs.py.example survey/interviewer_configs.py
+cp -f $RESOURCES_PATH/branding/favicon.ico $RESOURCES_PATH"/filebrowser/img/icons/favicon-16x16.png"
+cp -R /voy_dev_track/tmp/voy_dev_track-$VERSION/* /voy_dev_track/
+cp -a /core-${VERSION}/. /var/www/site
+cp -r /home/work/_src/mysql-connector-java-5.1.47-bin.jar /home/work/_app/_jira_crowd/crowd-webapp/WEB-INF/lib/
+cp -r /src/lede/.config /home/work/_src/lede/
+cp -r /colorbycds /usr/share/nginx/html/jbrowse/plugins/ColorByCDS
+cp -a build/. /usr/local/bin/
+cp -r /tmp/start_kdeinit /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit
+cp /tmp/libnl-tiny/*.so $DST_LUCI_ROOT/usr/lib/
+cp /mnt/images/pxeboot/vmlinuz /opt/pxe/boot/
+cp /opt/DF-Nagios-Plugins/check_jenkins/check_jenkins ${NAGIOS_HOME}/libexec/
+cp -al /var/lib/mongodb /root
+cp -a /tmp/app/. ./
+cp /home/notebookuser/library_tools/start-jupyter.sh /home/notebookuser
+cp -v php.ini-* "$PHP_INI_DIR/"
+cp -R ./peercast-yt ~/
+cp /opt/beholder_web/config.env.sample /opt/beholder_web/config.env
+cp -p /etc/passwd /root/passwd
+cp /FileGDB_API-64gcc51/lib/* /usr/lib
+cp -vr /go/bin/* /usr/local/bin/
+cp -f /usr/share/php5/php.ini-development /usr/local/etc/php/php.ini
+cp /usr/share/transmission/public_html/index.html /usr/share/transmission/public_html/index.original.html
+cp .env.example .env
+cp /home/exutils/bin/prim /usr/local/bin/
+cp /apache-flume/conf/flume-conf.properties.template /apache-flume/conf/flume-conf.properties
+cp package/smartdns/etc /release/ -a
+cp akamai-0.1.0-linuxamd64 /opt/bin/akamai
+cp svm-predict /usr/local/bin/
+cp /lib/ld-musl-*.so.1 /rootfs/lib/
+cp -rP /tmp/util-linux-libs/usr/lib/* /usr/glibc-compat/lib
+cp /tmp/ustream-ssl/*.so $DST_LUCI_ROOT/usr/lib/
+cp -rf monit-config/monitrc /etc/
+cp src/.libs/*.so /tmp/so
+cp ./usql /usr/local/bin/
+cp /home/aiarena/StarCraftII/Maps/Ladder2019Season3/* /home/aiarena/StarCraftII/Maps
+cp /home/steam/steamworks_sdk/*64.dll "${STEAMAPPDIR}"/
+cp device.crt assets/server/tls/snakeoil.crt -f
+cp -r ./static/ /opt/mm-wiki
+cp /usr/games/minecraft/init/supervisor_conf /etc/supervisor/conf.d/mineos.conf
+cp calicoctl /usr/local/bin/calicoctl
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/uchar.h 		${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp /root/work/yolo/server_yolo.py /root/work/aiortc/examples/server/
+cp ./linux-amd64/helm /usr/local/bin/
+cp "$(php-config --extension-dir)/datadog-profiling.so" /tmp/datadog-profiling.so
+cp /etc/squid/squid.conf /etc/squid/squid.conf.backup
+cp mapnik.xml mapnik.bak.xml
+cp dist/mt1-obj-market build/en-US/mt1-obj-market -rf
+cp /opt/LoReAn/code/lorean /usr/local/bin
+cp /usr/share/zoneinfo/Etc/UTC /etc/localtime
+cp /opt/conda/bin/hisat2* $BINPATH
+cp csvtk /usr/local/bin/
+cp -f trojan/trojan trojan_server
+cp build/output/paho_c_version /opt/dist/usr/local/bin/
+cp istio-1.3.1/bin/istioctl /usr/local/bin/istioctl
+cp -v /opt/davinci/config/application.yml.example /opt/davinci/config/application.yml
+cp /tmp/jd4/examples/langs.yaml /root/.config/jd4/langs.yaml
+cp /tmp/libubox/*.so $DST_ROOT/usr/lib/
+cp /usr/src/php/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+cp -r /tmp/mafft-7.394-with-extensions/* /home/biodocker/bin/mafft/
+cp ${a4c_install_path}/indigodc-orchestrator-plugin/target/alien4cloud-indigodc-provider.zip     "${a4c_install_path}/${a4c_install_dir}/init/plugins/"
+cp -R -p /usr/local/nagios/var /bk
+cp -a /usr/local/mariadb/var/* /itxq/mariadb/
+cp linux_amd64_compiler2/product/libjvm.so /opt/jdk/jre/lib/amd64/dcevm/libjvm.so
+cp    /github/MMB/include/resources/parameters.csv .
+cp -f /var/www/html/cmonapi/config/database.php.default /var/www/html/cmonapi/config/database.php
+cp -R /tmp/director/icingaweb2-module-director-master/* /etc/icingaweb2/modules/director/
+cp ./gotty /usr/local/bin/
+cp `php-config --extension-dir`/ssh2.so /tmp/ssh2.so
+cp -r phpMyAdmin-*/* /var/www/html/
+cp ./deployments/docker-entrypoint.sh ./
+cp /usr/lib/libpcap.a /usr/lib/x86_64-linux-gnu/libpcap.a
+cp -v go/bin/godoc /usr/local/bin/
+cp -r /tmp/mwa2-style-master/* /munkiwebadmin/munkiwebadmin/static/styles/default
+cp server.key /etc/apache2/ssl/server.key
+cp -R /tmp/cmake-${CMAKE_VERSION}-linux-$(uname -m)/* /usr
+cp -r /FeatureSequence /jbrowse/plugins/FeatureSequence
+cp /root/work-image/.bash_profile /root/
+cp raxmlHPC-PTHREADS /usr/local/bin/
+cp -p /etc/puppetlabs/puppet/ssl/private_keys/${HOSTNAME}.pem /etc/puppetlabs/puppet/ssl/private_keys/foreman.lab.pem
+cp -p /etc/shadow /sam/shadow
+cp /home/exutils/bin/camb /usr/local/bin/
+cp -p /etc/puppetlabs/puppet/ssl/private_keys/*.pem /etc/puppetlabs/puppet/ssl/private_keys/foreman.lab.pem
+cp -r slimv/* .vim/
+cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+cp /ffmpeg/bin/ff* /app/
+cp /var/spool/cron/crontabs/root /var/spool/crontabs/root.org
+cp /jbrowse_genomes_of_interest/jbrowse/jbrowse.conf /usr/share/nginx/html/jbrowse
+cp -rf script/shadowsocksLibevConsole /usr/local/sbin/
+cp ~/download/php-$PHP_VERSION/php.ini-production /usr/local/php/etc/php.ini
+cp /opt/conda/bin/salmon $BINPATH
+cp -ar $DST/$FOLDER/include/* /var/lib/bamtools/include
+cp docker/ssh.config /root/.ssh/config
+cp -f config/_default.cfg lgsm/config-default/config-lgsm/dstserver/_default.cfg
+cp /tmp/modsecurity/unicode.mapping /usr/share/modsecurity/unicode.mapping
+cp /opt/ergatis/software.config /opt/ergatis/software.config.orig
+cp -a /tmp/node_modules /usr/src/recatch-service
+cp build/server/companies/src/* ${DOCKER_DIR}/server
+cp /tmp/ustream-ssl/*.so /tmp/dst/lib/
+cp ~cowrie/cowrie-git/etc/cowrie.cfg.dist ~cowrie/cowrie-git/etc/cowrie.cfg
+cp build/output/libpaho-mqtt3a.so.1.3 /opt/dist//usr/local/lib
+cp config/caves/server.ini .klei/DoNotStarveTogether/Cluster_1/Caves/server.ini
+cp control/executionData.json.INSTALL control/executionData.json
+cp -r ./conf/ /opt/mm-wiki
+cp bin/vpnserver/vpnserver /opt/vpnserver
+cp /scripts/cron/mysql_backup_monthly.sh /etc/periodic/monthly/
+cp dstserver dstserver-master
+cp /etc/skel/.profile /root
+cp `php-config --extension-dir`/mailparse.so /tmp/mailparse.so
+cp DefSpaceShiny-1.0.0/*.R ./srv/shiny-server/defspace
+cp -L /provision/dr-provision /provision/drbundler /provision/drpcli /provision/drpjoin /provision/binaries/
+cp /tmp/pathbrute.sqlite /home/
+cp /tmp/uhttpd/lua/*.so /tmp/dst/lua/
+cp /root/work/yolo/index.html /root/work/aiortc/examples/server/
+cp conf/zabbix_agentd.conf /etc/zabbix/
+cp /tmp/uci/lua/*.so /tmp/dst/lua/
+cp `php-config --extension-dir`/imagick.so /tmp/imagick.so
+cp /tmp/blackfire/blackfire-*.so $(php-config --extension-dir)/blackfire.so
+cp ./ioncube/loader-wizard.php /var/www/html/loader-wizard.php.bak
+cp -r -f /usr/share/zoneinfo/Shanghai /etc/localtime
+cp -r ./node_modules/ghost-google-cloud-storage-new ./content/adapters/storage/gcloud
+cp -r /tmp/dist/* ${APP_PATH}
+cp /Gf-Patterns/*.json ~/.gf
+cp -r $EMOJI_DIR/2/svg xelatex-emoji2/images
+cp -rp /tmp/zabbix/frontends/php /usr/share/webapps/zabbix
+cp /usr/include/gnu-libiconv/iconv.h /usr/include/iconv.h
+cp "$(php-config --ini-dir)/98-ddtrace.ini" /tmp/ext.ini
+cp ../../code/createUser.py /usr/local/bin
+cp $MAVEN_HOME/skos-viewer/target/skos-viewer-*.jar /skos-viewer.jar
+cp -f /tmp/gn/out/gn /usr/local/bin/gn
+cp `php-config --extension-dir`/scoutapm.so /tmp/scoutapm.so
+cp /hab/bin/hab /opt/sd/bin/hab
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python3.6/site-packages
+cp -a /usr/local/php/etc/php.ini /itxq/config/
+cp -rf script/ss_local.json /etc/
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+cp /tmp/virome.software.config /opt/package_virome/software.config
+cp /tmp/libubox/jshn $DST_LUCI_ROOT/usr/bin
+cp /etc/php/7.0/cli/conf.d/30-pdo_sqlsrv.ini /etc/php/7.0/apache2/conf.d
+cp /usr/share/syslinux/mboot.c32 /opt/pxe/boot/
+cp /tmp/ckb_v0.28.0_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp /bamtools-2.3.0/lib/libbamtools* /usr/lib/x86_64-linux-gnu/
+cp clustalw-2.1-linux-x86_64-libcppstatic/clustalw2 /usr/bin
+cp PepNovo_bin /home/biodocker/bin/
+cp variant/variant /usr/local/bin/
+cp /srv/templates.cfg /usr/local/nagios/etc/objects
+cp /tmp/jq-linux64 /usr/bin/jq
+cp -R .bashrc .profile /home/pyservices
+cp .env.$ACTION .env
+cp ~cowrie/cowrie-git/etc/cowrie.cfg.dist ~cowrie/cowrie-git/etc/cowrie.cfg"
+cp hd lg wahet /opt/usit
+cp -R -p /usr/local/nagios/libexec /bk
+cp `php-config --extension-dir`/ds.so /tmp/ds.so
+cp -R .bashrc .profile /home/demobot
+cp brook /usr/local/bin
+cp /includes/php7-fpm.conf /etc/php7/php-fpm.d/h5ai.conf
+cp aggregation-rules.conf.example aggregation-rules.conf
+cp php-fpm.conf.default php-fpm.conf
+cp -a /src/dump1090/public_html/* /usr/share/skyaware/html
+cp uImage bp
+cp /etc/php/${PHP_VERSION}/cli/php.ini /etc/php/${PHP_VERSION}/cli/php.ini.bak
+cp /lib/libcrypto.so.3 /rootfs/lib/
+cp build/output/samples/paho_cs_pub /opt/dist/usr/local/bin/
+cp $PKG_DIR/.pyscf_conf.py ~/.pyscf_conf.py
+cp src/zabbix_agent/zabbix_agentd /usr/sbin/
+cp -r dist /app
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/complex.h 		${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp -R /tmp/icingaweb2/icingaweb2-2.3.4/modules/monitoring /etc/icingaweb2/modules/
+cp ${ROOT}/repositories/clip-interrogator/data/* ${ROOT}/interrogate
+cp docker/web_shell_no_gateone.yml /opt/web_shell_no_gateone.yml
+cp /tmp/kubeyaml-${VERSION}/kubeyaml.py /home/kubeyaml/
+cp `php-config --extension-dir`/decimal.so /tmp/decimal.so
+cp /tmp/uci/uci /tmp/dst/bin/
+cp *.otf /usr/share/fonts/noto
+cp build/output/libpaho-mqtt3cs.so.1.3 /opt/dist//usr/local/lib
+cp -ar /kohaclone_tmp/misc/sip_cli_emulator.pl $KOHACLONE/misc/.
+cp nagios-plugins/check_mem/check_mem.pl /usr/local/nagios/libexec/
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/complex.h         ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp /tmp/virome.ergatis.ini /opt/package_virome/autopipe_package/ergatis.ini
+cp ~cowrie/cowrie-git/cowrie.cfg.dist ~cowrie/cowrie-git/cowrie.cfg
+cp -r discuz7-2009.11.26/upload/* /var/www/html/
+cp -v /usr/local/apisix/deps/lib/luarocks/rocks-5.1/apisix/${APISIX_VERSION}-0/bin/apisix /usr/bin/
+cp /go/bin/protoc-gen-gogo /usr/local/bin/
+cp /etc/skel/.bashrc /root
+cp -a /etc/nginx/conf.d /etc/nginx/.conf.d.orig
+cp $(cat lst) /root/lib64/
+cp -r ./node_modules/m3u8stream/dist ./node_modules/m3u8stream/lib
+cp ../wsjcpp /usr/bin/wsjcpp
+cp bin/vpncmd/vpncmd /opt/vpncmd
+cp -R /tmp/aria2-webui/docs/* /opt/aria2-webui
+cp -rf /root/particl-core/src/particl-cli /root/particl-core/src/particl-tx /root/particl-core/src/particld /opt/particl-${PARTICL_VERSION}/bin/
+cp /tmp/uci/uci $DST_LUCI_ROOT/usr/sbin/
+cp BOOT.BIN bp
+cp -R /tmp/test-app/testapps/testapp_keyboard/ /home/userhome/testapp-sdl2-keyboard/
+cp /etc/abuild.conf /etc/abuild.conf.default
+cp /opt/bin/docker-php-entrypoint /usr/local/bin
+cp *.mmdb /var/www/html/torrent/plugins/geoip2/database/
+cp gotty /
+cp /root/work/python3_yolov3/darknet-tiny-label.py /root/work/darknet/python/
+cp carbon.conf.example carbon.conf
+cp /opt/LoReAn/code/lorean_docker /usr/local/bin/
+cp frps /usr/bin/
+cp /tmp/uhttpd/*.so $DST_ROOT/usr/lib/
+cp -Rv /gtrader/docker-fs/* /
+cp /tmp/haproxy-$VERSION/haproxy /rootfs/bin/
+cp -f resource/nginx/default.* /etc/nginx/
+cp -r ${DOWNLOAD_PATH}/appserver /var/www/
+cp /usr/include/lua5.1/*.h /usr/include/lua5.1/include/
+cp -rf script/trojan_server.json /etc/
+cp -r /mnt/LiveOS /opt/pxe/centos7
+cp -rf /usr/src/etc/nginx /etc/nginx
+cp -R -p /usr/local/nagiosgraph/etc /bk
+cp -av /build/* /
+cp -R .bashrc .profile /home/syncer
+cp /source/entrypoint.sh /entrypoint.sh
+cp -f ipython_config.py .ipython/profile_default
+cp `php-config --extension-dir`/grpc.so /tmp/grpc.so
+cp /tmp/overviewer/overviewer_core/aux_files/genPOI.py /tmp/overviewer
+cp /usr/src/_axel/axelget.conf /etc/yum/pluginconf.d/
+cp $WWWHOME/nconf/INSTALL/create_database.sql $HOME/create_database.sql
+cp weed /usr/local/bin
+cp -v /src/rtl-sdr/rtl-sdr.rules /etc/udev/rules.d/
+cp -L /provision/dr-provision /provision/drpcli /provision/drpjoin /provision/binaries/
+cp $HADOOP_PREFIX/etc/hadoop/*.xml $HADOOP_PREFIX/input
+cp -v faup978 /usr/lib/piaware/helpers/
+cp /opt/microsoft/msodbcsql/lib64/libmsodbcsql-13.1.so.9.2 /usr/local/lib/libmsodbcsql-13.1.so.9.2
+cp share/nagiosgraph.ssi /usr/local/nagios/share/ssi/common-header.ssi
+cp -ar /kohaclone_tmp/C4/SIP/. $KOHACLONE/C4/SIP/.
+cp -r /tmp/creepMiner/bin/creepMiner /usr/local/sbin/
+cp -rf notebooks/data /home/notebookuser/notebooks/data
+cp /www/server/panel/tools.py /root/tools.py
+cp /scripts/cron/mysql_backup_monthly.sh /etc/cron.monthly/
+cp -v view1090 dump1090 /usr/local/bin/
+cp /tmp/ckb_v0.31.1_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp -a /tmp/node_modules /opt/app/
+cp geckodriver /usr/bin
+cp -R ./node_modules ./ng-app
+cp src/self.key src/self.crt /etc/goahead/
+cp chanfilter.so /usr/lib/znc/chanfilter.so
+cp /tmp/ergatis.ini /var/www/html/ergatis/cgi/.
+cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
+cp dist/mt1-obj-market/zh-Hans build/zh-Hans/mt1-obj-market -rf
+cp $SEMAGROW_HOME/resources/*.ttl /etc/default/semagrow
+cp -dP /tmp/zlib/usr/lib/libz.so* "${GLIBC_PREFIX}/lib"
+cp --force xc /bin
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/uchar.h         ${ANDROID_USR_OPT_PATH}/standalone-toolchain-arm-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp src/cpulimit /usr/bin
+cp -R -p /usr/local/nagiosgraph/etc /bk/nagiosgraph
+cp -r /build/node_modules/admin-lte/plugins/jquery/     /build/node_modules/admin-lte/plugins/fontawesome-free/     /build/node_modules/admin-lte/plugins/bootstrap/     /build/node_modules/admin-lte/plugins/icheck-bootstrap/     /build/node_modules/admin-lte/plugins/toastr/     /build/node_modules/admin-lte/plugins/jquery-validation/     /build/node_modules/admin-lte/plugins/select2/     /build/node_modules/jquery-tags-input/     /assets/plugins/
+cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+cp -rf monit-config/monit.d /etc/
+cp airport.key /airport.key
+cp -Rdp bin binaire-aux lib include /code/micmac
+cp -rf /build/prom/include/*            /build/promhttp/include/*        /out/usr/include/
+cp -p /etc/passwd /sam/passwd
+cp -v /src/piaware/programs/piaware/faup.tcl /src/piaware/programs/piaware/faup.tcl.original
+cp /home/work/_app/php$PHP_VERSION/etc/php-fpm.d/www.conf.default /home/work/_app/php$PHP_VERSION/etc/php-fpm.d/www.conf
+cp debian/renderd.init /etc/init.d/renderd
+cp plugin/libsoundbot_plugin.so /opt/ts3soundboard/TeamSpeak3-Client-linux_amd64/plugins
+cp "${A4C_INSTALL_PATH}/${A4C_SRC_DIR}/alien4cloud-ui/target/alien4cloud-ui-${A4C_VER}-standalone.war" "${A4C_INSTALL_PATH}/${A4C_INSTALL_DIR}/alien4cloud-ui-standalone.war"
+cp train_dreambooth.py /
+cp ./a/supervisord.conf /etc/supervisor.d/supervisord.ini
+cp ${a4c_install_path}/indigodc-orchestrator-plugin/target/alien4cloud-indigodc-provider*.zip     "${a4c_install_path}/${a4c_install_dir}/init/plugins/"
+cp *.a /usr/lib
+cp docker/60docker.conf /etc/gateone/conf.d/60docker.conf
+cp -p /usr/local/tpp/conf/httpd-2.4-tpp-1.conf /etc/apache2/conf-available/httpd-tpp.conf
+cp /opt/conda/bin/hisat2-build $BINPATH
+cp /tmp/uci/*.so /tmp/dst/lib/
+cp ./azure.list /etc/apt/sources.list.d/
+cp .git/hooks/commit-msg .git/hooks/pre-commit /opt/build/git/
+cp isbg/isbg.py /bin/
+cp /go/bin/protoc-gen-yarpc-go /usr/local/bin/
+cp -R  /tmp/icingaweb2/icingaweb2-2.3.2/modules/doc /etc/icingaweb2/modules/
+cp -a /tmp/node_modules /src/
+cp -a /srv/infcloud/config.js /srv/infcloud/config.js.orig
+cp -r ${PREFIX}/include/libav* ${PREFIX}/include/libpostproc ${PREFIX}/include/libsw* /usr/local/include
+cp build/output/libpaho-mqtt3c.so.1.3 /opt/dist//usr/local/lib
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/include/* /usr/lib/arm-none-eabi/include/
+cp $SRC_PATH/perl/lwp/*.pl $CLIENT_PATH/perl/
+cp osxcross/target/lib/* /usr/lib/ ;         mv osxcross/target $OSX_NDK_X86;         rm -rf osxcross;
+cp /rclone-*-linux-amd64/rclone /usr/bin/
+cp -P /usr/lib/libsz*.so* /build_thirdparty/usr/lib
+cp /tmp/rar2fs/rar2fs /usr/local/bin/rar2fs
+cp /srv/commands.cfg /usr/local/nagios/etc/noc/
+cp -r tools/EventClients/ $KODI_WORKDIR/
+cp "/usr/share/zoneinfo/$TZ" /etc/localtime
+cp -R  /tmp/icingaweb2/icingaweb2-master/modules/doc /etc/icingaweb2/modules/
+cp .env.$ENV .env
+cp ./gatk-4.1.2.0/gatk-package-4.1.2.0-local.jar ${PACKAGE_DIR}/gatk-4.1.2.0/
+cp thug/DOM/eval.js /etc/thug/scripts
+cp hopspack-2.0.2-src/install/bin/HOPSPACK_main_threaded GLISTR-3.1.1/bin/install/bin/
+cp /var/spool/cron/crontabs/root /var/spool/cron/crontabs/root.org
+cp -r /tmp/protobuf/protobuf-1.1.0/* /go/src/github.com/golang/protobuf/
+cp frpc.ini /etc/frp
+cp /script/nginx-cert.conf /etc/nginx/conf.d/nginx-cert.conf
+cp etcd-v3.3.13-linux-amd64/etcdctl /usr/local/bin
+cp /tmp/protoc/bin/protoc /usr/local/bin
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.0/bin/install/bin/;     cp fsl-4.1.5-master/bin/flirt GLISTR-3.1.0/bin/install/bin/flirt;     cp fsl-4.1.5-master/bin/convert_xfm GLISTR-3.1.0/bin/install/bin/convert_xfm;     cp btmcs-1.2.1-build/bin/ForwardSolverDiffusion GLISTR-3.1.0/bin/install/bin/
+cp /usr/local/github-changelog/target/github-changelog-$VERSION.jar /usr/local/github-changelog/github-changelog.jar'
+cp -f GeoLite2-City.mmdb /usr/local/share/GeoIP/   )
+cp /opt/LoReAn/code/lorean_singularity /usr/local/bin/
+cp /includes/nginx.conf /etc/nginx/conf.d/default.conf
+cp /v2raybin/v2ray-v$VER-linux-64/vpoint_vmess_freedom.json /config.json
+cp -R /usr/lib/swift/linux/*.so /build/lib
+cp /bowtie2-2.3.5-sra-linux-x86_64/bowtie2-build $BINPATH
+cp -P /usr/lib/${GCC_ARCH}-linux-gnu/libopenjp2.so* /build_thirdparty/usr/lib/${GCC_ARCH}-linux-gnu
+cp /scripts/cron/mysql_backup_monthly.sh /etc/cron.monthly/mysql_backup_monthly
+cp /bowtie2-2.3.5-sra-linux-x86_64/bowtie2* $BINPATH
+cp u-boot.bin /uboot/u-boot_rpi0_w.bin
+cp -r /hci/ansible/lib/ansible/modules/pstools/ /usr/local/lib/python3.6/site-packages/ansible/modules/
+cp "$PATCH_INSTALL_DIR"/"$FIXUP_PREQ_FILE" "$SCRIPT_DIR"/"$FIXUP_PREQ_FILE"
+cp -R app/assets ${GITLAB_DIR}/app/
+cp "/etc/squid/"* "${CONFIGDIR}/"
+cp `php-config --extension-dir`/rdkafka.so /tmp/rdkafka.so
+cp /etc/group /root/group
+cp rootCA.pem assets/client/tls/ngrokroot.crt -f
+cp -l /tmp/build/libbbb-*-arm-none-eabi/lib/* /se12/bbb/source
+cp lighttpd.conf /etc/lighttpd/lighttpd.conf
+cp linux-amd64/helm /usr/bin/
+cp apps/multireadtest /build/usr/bin)
+cp `php-config --extension-dir`/spx.so /tmp/spx.so
+cp ../scripts/process_GMAP_alignments_gff3_chimeras_ok.pl PASApipeline/scripts/
+cp /config/deluged/auth /config/deluge-web/auth
+cp build/libs/SolidityNode.jar ./soliditynode/
+cp /opt/LoReAn/code/lorean_docker /usr/local/bin
+cp docker_appconfig.json /etc/mementoembed.json
+cp /usr/local/bin/autoconf /usr/bin/autoconf
+cp gotty
+cp -R cmake/* /usr/local/
+cp target/semagrow-quetsal-1.5.jar $SEMAGROW_HOME/domains/localhost/webapps/SemaGrow/WEB-INF/lib/
+cp -rf /node-v8.10.0-linux-x64/bin/* /usr/local/bin
+cp -R /go/bin       /go/src/github.com/writefreely/writefreely/templates       /go/src/github.com/writefreely/writefreely/static       /go/src/github.com/writefreely/writefreely/pages       /go/src/github.com/writefreely/writefreely/keys       /go/src/github.com/writefreely/writefreely/cmd       /stage
+cp /includes/supervisord.conf /usr/local/supervisord.conf
+cp /opt/LoReAn/third_party/scripts/alignPacBio.py  /usr/local/bin/
+cp ssw_lib.py  /opt/LoReAn/code/
+cp /usr/share/ezgo/ezgo-kde5/defaultPanel.layout.js           /usr/share/plasma/layout-templates/org.kde.plasma.desktop.defaultPanel/contents/layout.js
+cp /mnt/images/pxeboot/initrd.img /opt/pxe/boot/
+cp -f server_linux_amd64 server
+cp /opt/drivers/management-state/bin/docker-machine-driver-linode /usr/share/rancher/ui/assets/
+cp -f /etc/resolv.conf /var/spool/postfix/etc/
+cp /usr/lib64/nagios/plugins/check_nrpe /usr/local/nagios/libexec/
+cp /tmp/ez100pu/driver_ezusb_v1.5.3_for_64_bit/drivers/Info.plist /usr/lib/pcsc/drivers/ezusb.bundle/Contents
+cp docs/_static/example.ini /etc/pacifica-cli
+cp u-boot.bin /uboot/u-boot_rpi4.bin
+cp `php-config --extension-dir`/sqlsrv.so /tmp/sqlsrv.so
+cp config.php.default config.php
+cp caddy /out/caddy
+cp /usr/local/FileGDB_API/include/* /usr/include
+cp /var/configuration/nginx.conf /etc/nginx/sites-available/app
+cp /root/work/aiortc_yolov3/server_yolo.py /root/work/aiortc/examples/server/
+cp terragrunt_${TERRAGT_VERSION}_linux_amd64 /usr/bin/terragrunt
+cp -a /usr/local/apache/conf/extra/httpd-vhosts.conf /itxq/config/
+cp -r $EMOJI_DIR/2/svg xelatex-emoji/images
+cp /tmp/luci/modules/luci-base/src/jsmin $DST_ROOT/usr/sbin/
+cp php.ini-production /home/work/_app/php7.1.9/etc/php.ini
+cp -f /var/www/html/clustercontrol/bootstrap.php.default /var/www/html/clustercontrol/bootstrap.php
+cp wkhtmltox/lib/* /usr/local/lib/
+cp -r /var/www/data/node_modules/ /var/www/data/lib/
+cp -rv /usr/local /usr/
+cp openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /usr/local/bin
+cp -r ./views/ /opt/mm-wiki
+cp docker/celeryd.initd /etc/init.d/celeryd
+cp /opt/libsvm-${LIBSVM_VER}/libsvm.so* /usr/lib/
+cp /go/bin/protoc-gen-twirp_python /usr/local/bin/
+cp ./vfgen /opt/vfgen
+cp -r /tmp/node_modules /tmp/dist/
+cp /root/work-image/tmux.conf.local /root/.tmux.conf
+cp -R * /var/www/html/
+cp /tmp/sqlany/lib64/*.so $(php -i | grep extension_dir | head -n 1 | awk '{print $3}')/
+cp -rv /go/bin /usr/local/
+cp `php-config --extension-dir`/ldap.so /tmp/ldap.so
+cp -r $GOPATH/src/github.com/idoall/shazam/etc /etc-gaea
+cp /dev/null ${APACHE_CONF_DIR}/conf-available/other-vhosts-access-log.conf
+cp -rp /deps/etc /app/usr/local/etc
+cp target/nebula-importer /usr/local/bin/nebula-importer
+cp -R /app/www/data/plugins     /defaults/plugins
+cp info.example.py info.py
+cp /docker/extra_model_paths.yaml ${ROOT}
+cp /scripts/fa_services.tcl /usr/lib/piaware_packages/
+cp -r /output/* /var/www/;   rm -r /output
+cp conf/app.conf.example conf/app.conf
+cp -R /tmp/protoc/include/google /usr/include/.
+cp /usr/lib/libturbojpeg.so.0.1.0 		/usr/lib/libjpeg.so.8.1.2 		/tmp
+cp /root/.bashrc /home/sudoer/
+cp /usr/share/snmp/mibs/* ${MIBDIRS}/
+cp kcptun-client /usr/local/bin
+cp $EQEMU_SRC_DIR/utils/defaults/plugin.pl /tmp/eqemuconf
+cp rclone /usr/sbin/
+cp -r ./node_modules/ghost-storage-adapter-s3 ./content/adapters/storage/s3
+cp -r icon-v951 /opt/
+cp main /go/bin/adminio
+cp thug/DOM/write.js /etc/thug/scripts
+cp /opt/LoReAn/code/lorean /usr/local/bin/
+cp /go/bin/protoc-gen-gogofaster /usr/local/bin/
+cp -pr /var/lib/postgresql/9.6/main /var/lib/postgresql/9.6/main_bak
+cp poetry.lock /opt/build/poetry/
+cp bin/terraform* /usr/bin/
+cp janitoo_datalog_rrd/src/scripts/supervisord.conf /etc/supervisord/supervisord.conf.d/janitoo_datalog_rrd.conf
+cp `php-config --extension-dir`/msgpack.so /tmp/msgpack.so
+cp -r /usr/include/gstreamer-1.0/gst/webrtc /usr/local/include/gstreamer-1.0/gst
+cp ${ORACLE_BUILD_DIR}/src/instantclient_21_10/libocci.so.21.1 /tmp/libocci.so.21.1
+cp -P /usr/lib/libxerces-c*.so* /build_thirdparty/usr/lib
+cp build/output/libpaho-mqtt3c.so.1.3 /opt/dist//usr/local/lib64
+cp -r beam beam-testnet2
+cp /KiiConf/test_lighttpd.conf /etc/lighttpd/lighttpd.conf
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/uchar.h         ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp ./composer.phar /usr/bin/composer
+cp /tmp/kubeyaml-${VERSION}/requirements.txt /home/kubeyaml/
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python3.6/site-packages
+cp ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
+cp /tmp/ckb_v0.27.1_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp -av mediagoblin.ini mediagoblin_local.ini
+cp object_detection/packages/tf2/setup.py ./
+cp /scripts/cron/mysql_backup_daily.sh /etc/periodic/daily/
+cp bin/gs /tmp/gs
+cp php.ini-production /php/etc/php.ini
+cp index.html /var/www/html/
+cp tmhmm-2.0c/bin/decodeanhmm.Linux_x86_64  bin/tmhmm/2.0c/decodeanhmm
+cp conf/thug.conf /etc/thug
+cp /opt/virome/software.config /opt/virome/software.config.orig
+cp -R prometheus-${PROMETHEUS_VERSION}.linux-amd64/consoles/ /etc/prometheus/
+cp -r beam beam-testnet4
+cp existConfig.tmpl.json existConfig.json
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python2.7/dist-packages
+cp /srv/hosts.cfg /usr/local/nagios/etc/noc/
+cp /root/.mitmproxy/mitmproxy-ca-cert.pem /usr/local/share/ca-certificates/mitmproxy.crt
+cp /bowtie2-2.3.5-sra-linux-x86_64/bowtie2 $BINPATH
+cp ./ioncube/loader-wizard.php.bak /var/www/html/
+cp /etc/cron.daily/logrotate /etc/cron.hourly/
+cp -p /etc/puppetlabs/puppet/ssl/public_keys/*.pem /etc/puppetlabs/puppet/ssl/public_keys/foreman.lab.pem
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.1/bin/install/bin/
+cp /home/work/_app/_jira_crucible/config.xml /home/work/_data/_jira_crucible/
+cp /Dresp/dresp/drespstart.sh /
+cp -pr /tmp/moodle-ifsp-moodle-branch-3.7-/* /var/www/html/
+cp -a /etc/my.cnf /itxq/config/
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/complex.h         ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp /opt/LoReAn/third_party/software/diamond /usr/local/bin/
+cp /go/bin/protoc-gen-go /usr/local/bin/
+cp src/check_nrpe ${NAGIOS_HOME}/libexec/
+cp -R /tmp/icingaweb2/icingaweb2-master/modules/monitoring /etc/icingaweb2/modules/
+cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+cp -f $RESOURCES_PATH/branding/favicon.ico $CONDA_PYTHON_DIR"/site-packages/notebook/static/favicon.ico"
+cp danpos-2.2.2/*.py /usr/local/bin/
+cp kma /usr/bin/
+cp oxidized-tooling-docker/entrypoing.sh oxidized-tooling/
+cp config/cluster.ini .klei/DoNotStarveTogether/Cluster_1/cluster.ini
+cp /go/bin/prototool /usr/local/bin/prototool
+cp guacamole-${i}-${GUAC_VER}/guacamole-${i}-${GUAC_VER}.jar ${GUACAMOLE_HOME}/extensions-available/
+cp "${A4C_INSTALL_PATH}/${A4C_SRC_DIR}/alien4cloud-ui/target/alien4cloud-ui-${A4C_UPV_VER}-standalone.war" "${A4C_INSTALL_PATH}/${A4C_INSTALL_DIR}/alien4cloud-ui-2.0.0.war"
+cp u-boot.bin /uboot/u-boot_rpi3.bin
+cp -R  /tmp/icingaweb2/icingaweb2-2.2.0/modules/doc /etc/icingaweb2/modules/
+cp -l /tmp/build/libbbb-*-arm-none-eabi/include/* /se12/bbb/source
+cp /var/www/html/rainloop/v/*/index.php.root /var/www/html/index.php
+cp palaver.so /usr/lib/znc/palaver.so
+cp -f docker/.htaccess .
+cp bitcoinhd/bin/* /usr/local/bin
+cp app.js /home/${USER}/${UIDIR}
+cp libhiredis.so /usr/lib/hiredis
+cp kubectl-who-can /usr/local/bin
+cp php.ini-production /home/work/_app/php$PHP_VERSION/etc/php.ini
+cp /tmp/ustream-ssl/*.so $DST_ROOT/usr/lib/
+cp target/mixeway-*.jar app.jar
+cp ${PHP_INI_DIR}/php.ini-development ${PHP_INI_DIR}/php.ini
+cp -a /src/dump978/skyaware/* /usr/share/dump978-fa/html/
+cp /etc/odbc.ini /etc/odbcinst.ini /usr/local/etc/
+cp /etc/resolv.conf /opt/syzoj/sandbox/rootfs/etc/resolv.conf
+cp /opt/libsvm-${LIBSVM_VER}/python/*.py /usr/local/lib/python2.7/dist-packages/
+cp msisensor ${PACKAGE_DIR}/bin
+cp --archive /src/crossbrowser/x/lib/*.js /lib/crossbrowser
+cp -R  /tmp/icingaweb2/icingaweb2-2.3.4/modules/doc /etc/icingaweb2.dist/modules/
+cp /usr/share/zoneinfo/$LOCATION /etc/localtime
+cp -R -p /usr/local/nagios/libexec /bk/nagios
+cp -R /tmp/slapd.d/cn=config/cn=schema/* /etc/ldap/slapd.d/cn=config/cn=schema
+cp libssw.so  /opt/LoReAn/code/
+cp /etc/ssh/ssh_config /root/.ssh/config
+cp /etc/ssh/authorized_keys /root/.ssh/authorized_keys
+cp -rv /usr/local /usr/local/
+cp $NAME /
+cp /etc/mime.types /etc/apache2/mime.types
+cp configuration.py-default configuration.py
+cp config_example.json ../config.json
+cp -v exampleConfig.js config.js
+cp -R $SWIFT_VERSION/usr/* /usr/local/
+cp -rf /node-v8.10.0-linux-x64/lib/* /usr/local/lib
+cp prometheus-${PROMETHEUS_VERSION}.linux-amd64/promtool /usr/local/bin/
+cp *.apk ~/output\"\\n"\n    init_file += "alias testbuild_webview=\"cd ~/testapp-webview-flask
+cp /opt/ezpaarse/config.json /opt/ezpaarse/config.local.json
+cp -R /tmp/icingaweb2/icingaweb2-2.2.0/modules/monitoring /etc/icingaweb2/modules/
+cp php.ini-production /usr/local/php/lib/php.ini
+cp filebeat /usr/bin
+cp /var/www/sites/default/default.settings.php /var/www/sites/default/settings.php
+cp -r -f /usr/share/zoneinfo/${TZ} /etc/localtime
+cp -p /root/shadow /sam/shadow
+cp kube-ps1/kube-ps1.sh /etc/profile.d/
+cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime
+cp *.apk ~/output\"\\n"\nprint("echo \"\"\\n")\nprint("echo \"... or use the shortcut alias \\`testbuild\\`!\"\\n")\nprint("echo \"\"\\n")\nwith open("/tmp/launchcmd.txt", "r") as f:\n    import shlex\n    args = shlex.split(f.read().strip())\n    print("CMD=()")\n    i = -1\n    for arg in args:\n        i += 1\n        print("CMD[" + str(i) + "]=" + shlex.quote(arg))\nvars = ["ANDROIDAP='$ANDROIDAPI'",\n    "ANDROIDNDKVER='$NDKVER'",\n    "NDKAPI='$NDKAPI'",\n    "HOME=/home/userhome",\n    "GRADLE_OPTS=\"-Xms1724m -Xmx5048m -Dorg.gradle.jvmargs='"'"'-Xms1724m -Xmx5048m'"'"'\"",\n    "JAVA_OPTS=\"-Xms1724m -Xmx5048m\"",\n    "TESTPATH=\"$PATH:/home/userhome/.local/bin\"",\n    "PATH=\"$PATH:/home/userhome/.local/bin\"",\n    "ANDROIDSDK=/sdk-install/ ANDROIDNDK=\"'$NDKDIR'\"",\n    ]\nwith open(os.path.expanduser("~/.pam_environment"), "a", encoding="utf-8") as f1:\n    f1.write("\\n" + "\\n".join([\n        var.partition("=")[0] + " DEFAULT=" +\n        var.partition("=")[2] for var in vars]))\nwith open(os.path.expanduser("~/.bash_profile"), "a", encoding="utf-8") as f2:\n    f2.write("\\n" + init_file + "\\n")\n    f2.write("\\n" + "\\nexport ".join(vars) + "\\n")\nwith open(os.path.expanduser("~/.profile"), "a", encoding="utf-8") as f2:\n    f2.write("\\n" + "\\nexport ".join(vars) + "\\n")\nwith open(os.path.expanduser("~/.bashrc"), "a", encoding="utf-8") as f2:\n    f2.write("\\n" + init_file + "\\n")\n    f2.write("\\n" + "\\nexport ".join(vars) + "\\n")\nwith open(os.path.expanduser("~/.additional_env"), "a", encoding="utf-8") as f3:\n    f3.write("\\n" + "\\nexport ".join(vars) + "\\n")' > /tmp/cmdline.py
+cp /u-boot-xlnx/u-boot.bin boot.bin
+cp /tmp/nginx.h /etc/nginx-${NGINX_VERSION}/src/core/nginx.h
+cp `php-config --extension-dir`/amqp.so /tmp/amqp.so
+cp -R $EQEMU_SRC_DIR/utils/scripts/* /tmp/scripts
+cp -f $RESOURCES_PATH/branding/logo.png $CONDA_PYTHON_DIR"/site-packages/notebook/static/base/images/logo.png"
+cp config/master/server.ini .klei/DoNotStarveTogether/Cluster_1/Master/server.ini
+cp /tmp/luci/libs/luci-lib-nixio/src/*.so  /tmp/dst/lua/
+cp package.json /home/${USER}/${UIDIR}
+cp /opt/debezium-connector-postgres/*.jar ${KAFKA_HOME}/libs/
+cp ${DG_DIR}/DGROOT/bin/${DG_DIR} /bin/delegated
+cp etcd-v3.3.9-linux-amd64/etcdctl /usr/local/bin
+cp -af /etc/skel/ /etc/vncskel/
+cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/.rtorrent.rc ./a/startup-irssi.sh /root/
+cp /app/target/release/service /app/bin
+cp $(find bin -name kube-linter) /usr/local/bin
+cp -f /var/www/html/cmonapi/ssl/server.crt /etc/pki/tls/certs/s9server.crt
+cp -rfv /etc/bind/* .
+cp /app/.docker/php-fpm.conf /etc/php8/php-fpm.conf
+cp -f ../../lib/libopencv_videoio.so.4.6.0 /opt/dist/usr/local/lib64 )
+cp -v go/bin/go /usr/local/bin/
+cp SW_VAR_DENS_MODEL-master/run_tests.sh .
+cp -Rp /etc /root/etc
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/lib/* /usr/arm-none-eabi/lib/
+cp /linux-amd64/helm /usr/local/bin
+cp /etc/ssl/certs/ca-certificates.crt /rootfs/etc/ssl/certs/
+cp /opt/zendto/config/zendto.conf /root/
+cp /opt/nagios-mssql/check_mssql_database.py ${NAGIOS_HOME}/libexec/
+cp bitcoinabc/bin/* /usr/local/bin
+cp upx-3.96-amd64_linux/upx /usr/local/bin/
+cp bin/protoc /usr/bin/
+cp linux_amd64_yamlsort /usr/bin/yamlsort
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+cp "$GOPATH"/bin/* /usr/bin/
+cp -r /website-genome-browsers/jbrowse/jbrowse/plugins/wormbase-glyphs /usr/share/nginx/html/jbrowse/plugins
+cp oracle-xe-18c.conf.tmpl /etc/sysconfig/oracle-xe-18c.conf
+cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/startup-irssi.sh ./a/.rtorrent.rc /root/
+cp -R /usr/src/haproxy/examples/errorfiles /usr/local/etc/haproxy/errors
+cp docker/entrypoint.sh /root/entrypoint.sh
+cp "$(php-config --extension-dir)/bsdiff.so" /tmp/bsdiff.so
+cp /go/go-ethereum/build/bin/geth /usr/local/bin/
+cp dist/companies/* ${DOCKER_DIR}/client
+cp `php-config --extension-dir`/imap.so /tmp/imap.so
+cp -r /root/.platformio /
+cp /tmp/virome.software.config /opt/virome/software.config
+cp ${ORACLE_BUILD_DIR}/src/instantclient_21_10/libnnz21.so /tmp/libnnz21.so
+cp /tmp/lucihttp/liblucihttp.so* $DST_ROOT/usr/lib
+cp /tmp/ngx_http_header_filter_module.c /etc/nginx-${NGINX_VERSION}/src/http/ngx_http_header_filter_module.c
+cp python_plugin.so /var/www/rovercode/www
+cp /build/LICENSE /out/usr/share/licenses/prometheus-client-c/
+cp $EQEMU_SRC_DIR/utils/defaults/log.ini /tmp/eqemuconf
+cp /tmp/luci/libs/luci-lib-ip/src/*.so /tmp/dst/luci/
+cp /opt/conda/bin/sra* $BINPATH
+cp -r /tmp/ICE* /var/www/html/ICEcoder
+cp svm-scale /usr/local/bin/
+cp -P ./install/libmongocrypt/lib/libmongocrypt* /usr/local/lib
+cp ./ncbi-blast-2.9.0+/bin/* /usr/bin/
+cp -r reveal.js-${REVEALJS_VERSION}/dist /
+cp /usr/share/zoneinfo/America/New_York /etc/localtime
+cp /usr/src/php/php.ini-development /etc/php/php.ini
+cp -R /tmp/docker/alidata /alidata
+cp $SCRIPT_DIR/$INITSH /usr/bin/$INITSH
+cp /opt/conda/bin/featureCounts $BINPATH
+cp -r /usr/src/osquery/src/packs /usr/share/osquery/
+cp LICENSE /out/usr/share/licenses/coturn/
+cp /tmp/pathbrute.sqlite /
+cp build/output/samples/paho_cs_sub /opt/dist/usr/local/bin/
+cp `php-config --extension-dir`/openswoole.so /tmp/openswoole.so
+cp build/output/samples/paho_c_sub /opt/dist/usr/local/bin/
+cp build/libs/$APP_NAME ..
+cp -rf /etc/prosody/prosody-modules/mod_register_web/templates/ /etc/prosody/
+cp -R peercast-yt-0.2.9/ui/linux/peercast-yt /tmp
+cp -r /etc/icingaweb2/modules/graphite/sample-config/icinga2/ /etc/icingaweb2/modules/graphite
+cp src/scripts/ganeshactl/org.ganesha.nfsd.conf /ganesha-extra/etc/dbus-1/system.d/
+cp -r /tmp/grpc-go/grpc-go-1.0.0/* /go/src/google.golang.org/grpc/
+cp ${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86_64-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_x64_VERSION}/sysroot/usr/include/uchar.h 		${ANDROID_USR_OPT_PATH}/standalone-toolchain-x86-ndk-${NDK_VERSION}-api-${PLATFORM_MIN_API_VERSION}/sysroot/usr/include
+cp /etc/shadow /root/shadow
+cp -p /root/passwd /sam/passwd
+cp /opt/nagios-mssql/check_mssql_server.py ${NAGIOS_HOME}/libexec/
+cp `php-config --extension-dir`/memcache.so /tmp/memcache.so
+cp -av dmarcts-report-viewer-master/* /var/www/viewer/
+cp corerouter_plugin.so /var/www/rovercode/www
+cp -a /core-14.0.01/. /var/www/site
+cp np /usr/local/bin/
+cp /opt/zookeeper/conf/zoo_sample.cfg /opt/zookeeper/conf/zoo.cfg
+cp -r  /opt/build/gst-video-analytics/build/intel64/Release/lib/* /opt/dist//usr/local/lib64/gstreamer-1.0/.
+cp `php-config --extension-dir`/memcached.so /tmp/memcached.so
+cp -R -p /usr/local/nagios/var /bk/nagios
+cp clustalw-2.1-linux-x86_64-libcppstatic/clustalw2 /usr/bin/clustalw
+cp /includes/supevisord.conf /usr/local/etc/supervisord.conf
+cp "$TEMP_SYSLINUX_PATH"/bios/com32/libutil/libutil.c32 /var/lib/tftpboot/
+cp -r /usr/local/lib/python3.6/site-packages/* .venv/lib/python3.6/site-packages/
+cp *.so /usr/lib/
+cp -r ${DOWNLOAD_PATH}/upload/* /var/www/html/
+cp docker/celerybeat.initd /etc/init.d/celerybeat
+cp /usr/share/modsecurity/unicode.mapping modsecurity-crs/
+cp -r /sratoolkit.2.9.2-ubuntu64/bin/* /usr/bin
+cp -a /opt/bin/composer /usr/bin/composer
+cp DefSpaceShiny-1.0.0/*.R /srv/shiny-server/defspace
+cp password.txt /home/user1
+cp -ar $DST/$FOLDER/lib/* /lib/
+cp -R vendor/assets ${GITLAB_DIR}/vendor/
+cp .env.exemple .env
+cp phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
+cp -rP /tmp/nss/usr/lib/* /usr/glibc-compat/lib
+cp /opt/mcr/${MCR_VERSION}/runtime/glnxa64/* /opt/mcr/${MCR_VERSION}/bin/glnxa64
+cp -r apricot/examples .
+cp ./build/libs/CatBot-2.0-SNAPSHOT.jar ../app.jar
+cp /opt/build/media-delivery/patches/libvpl2/* .
+cp kcptun-server /usr/local/bin
+cp -P /usr/lib/libopenjp2*.so* /build_thirdparty/usr/lib
+cp "$(php-config --extension-dir)/swoole.so" /tmp/swoole.so
+cp HDUCal/info.example.py HDUCal/info.py
+cp /src/graphite-web/webapp/manage.py /opt/graphite/webapp
+cp kubernetes/client/bin/kubectl /usr/bin
+cp -f stat.xsl BUILD_DEST/var/www/html
+cp ./ioncube/ioncube_loader_lin_7.1.so $(php -i | grep extension_dir | awk '{print $3}')
+cp -p /etc/group /sam/group
+cp /script/nginx-cert.conf /etc/nginx/nginx.conf
+cp -R /opt/owasp-modsecurity-crs-3.2/ /etc/apache2/modsecurity.d/owasp-crs/
+cp ../conf_files/conf.txt PASApipeline-2.0.2/pasa_conf/
+cp playback.so /usr/lib/znc/playback.so
+cp -Rp /root/web/. /web
+cp /tmp/docker/docker* /usr/local/bin
+cp -a /opt/pbis /usr/local
+cp frp_${FRP_VERSION}_linux_amd64/frpc* /frpc/
+cp -a usr/share/doc/gammu-smsd/examples/mysql*.sql.gz /usr/share/doc/gammu-smsd/examples/
+cp -v go/bin/{go,godoc,gofmt} /usr/local/bin/
+cp /home/userSW/SW_VAR_DENS_MODEL-master/run_tests.sh .
+cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+cp -rf /ygopro-server/ygopro/cards.cdb /ygopro-server/windbot/
+cp bin/gosu bin/dumb-init /bin
+cp -R thug/Classifier/rules/* /etc/thug/rules/
+cp /usr/src/php/php.ini-* ${PHP_INI_DIR}
+cp /var/www/html/config.ini-example /var/www/html/config.ini
+cp -r node-v10.24.1-linux-x64/* .
+cp *.apk ~/output\"\\n"\n    init_file += "alias testbuild_service_only=\"cd ~/testapp-service_only-nogui
+cp ./gatk-4.1.7.0/gatk-package-4.1.7.0-local.jar ${PACKAGE_DIR}/gatk-4.1.7.0/
+cp build/output/libpaho-mqtt3a.so.1.3 /opt/dist//usr/local/lib64
+cp -r bin/creepMiner /usr/local/sbin/
+cp -r "${MMS_HOME}/conf" "${MMS_HOME}/conf-template"
+cp -a /usr/cervisia/cervisia-server/target/x86_64-unknown-linux-musl/release/cervisia-server /usr/cervisia/backend/
+cp -r /usr/share/nginx/html/* /tmp/nginx/html
+cp ./php-fpm.d/www.conf.default ./php-fpm.d/www.conf
+cp /usr/src/app/dist/mt1-obj-market /usr/src/build/en-US/mt1-obj-market -rf
+cp objs/ngx_http_dav_ext_module.so /etc/nginx/modules
+cp -rf script/kcptun.json /etc/
+cp -R include/* /usr/local/include
+cp /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.4.so.1.1 /usr/local/lib/libmsodbcsql-17.4.so.1.1
+cp -f GeoLite2-Country.mmdb /usr/local/share/GeoIP/   )
+cp -R build /home/${USER}/${UIDIR}
+cp gevent_plugin.so /var/www/rovercode/www
+cp /app/main .
+cp uwsgi /var/www/rovercode/www
+cp -R /etc/icingaweb2/* /etc/icingaweb2.dist/
+cp /src/config-aws.js /src/config.js
+cp bin/protoc /usr/bin
+cp frp_${FRP_VERSION}_linux_amd64/frps* /frps/
+cp /includes/supervisord.conf /usr/local/etc/supervisord.conf
+cp /usr/share/webapps/zabbix/conf/zabbix.conf.php.example /usr/share/webapps/zabbix/conf/zabbix.conf.php
+cp telegraf/telegraf /usr/bin/
+cp /usr/share/i18n/SUPPORTED /etc/locale.gen
+cp /opt/conda/bin/curl /usr/bin/curl
+cp /tmp/virome.ergatis.ini /opt/package_virome/autopipe_package/ergatis/htdocs/cgi/ergatis.ini
+cp -r /tmp/mwa2-style-master /munkiwebadmin/munkiwebadmin/static/styles/default
+cp /opt/ezpaarse/config.json /opt/ezmaster/config/config.json
+cp /tmp/luci/modules/luci-base/src/parser.so /tmp/dst/luci/template
+cp ../conf_files/createUser.sh /usr/local/bin
+cp /usr/local/lib/python3.6/site-packages/ansible/modules/pstools/testping.yml /hci/
+cp /usr/lib/noVNC/vnc.html /usr/lib/noVNC/index.html
+cp /root/work-image/bash_profile /root/.bash_profile
+cp -v /spark/conf/spark-env.sh.template /spark/conf/spark-env.sh
+cp /samtools-1.9/samtools $BINPATH
+cp packer /usr/local/bin/
+cp /usr/local/bin/rancher /usr/local/bin/rancher-$RANCHER_CLI_VERSION
+cp /usr/lib64/libpcre.so.1         /usr/lib64/libssl.so.10         /usr/lib64/libcrypto.so.10         /usr/lib64/libz.so.1         /usr/lib64/libprofiler.so.0         /usr/lib64/libgssapi_krb5.so.2         /usr/lib64/libkrb5.so.3         /usr/lib64/libcom_err.so.2         /usr/lib64/libk5crypto.so.3         /usr/lib64/libstdc++.so.6         /usr/lib64/libgcc_s.so.1         /usr/lib64/libkrb5support.so.0         /usr/lib64/libkeyutils.so.1         /usr/lib64/libselinux.so.1         /root/lib64/
+cp wahet lg hd /opt/usit
+cp     $UNITY_PATH/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/dist/Brotli-0.4.0-py2.7-linux-x86_64.egg     $UNITY_PATH/Editor/Data/PlaybackEngines/WebGLSupport/BuildTools/Brotli/dist/Brotli-0.4.0-py2.7-macosx-10.10-x86_64.egg
+cp -r ./node_modules/ghost-digitalocean ./content/adapters/storage/digitalocean
+cp /tmp/docker/docker /usr/bin/
+cp ssw_lib.py  /home/lorean/bin/LoReAn/code/
+cp -f .env.example .env
+cp /etc/mysql/mysql.conf.d/mysqld.cnf /etc/mysql/my.cnf
+cp `php-config --extension-dir`/uuid.so /tmp/uuid.so
+cp ../conf_files/conf.txt PASApipeline/pasa_conf/
+cp /home/soekir/.kirana/pocket/sudoers /etc/sudoers
+cp email.local.php.dist email.local.php
+cp /home/gradle/src/build/libs/app-*-all.jar app.jar
+cp -R gcc-arm-none-eabi-5_3-2016q1/* /usr/local
+cp ./src/redis-cli /usr/local/redis/bin/
+cp -v /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+cp -R  /tmp/icingaweb2/icingaweb2-2.0.0-beta3/modules/doc /etc/icingaweb2/modules/
+cp /opt/bin/noVNC/vnc.html /opt/bin/noVNC/index.html
+cp /cufflinks-2.2.1.Linux_x86_64/cufflinks $BINPATH
+cp -R /falco-${FALCO_VERSION}-x86_64/* /
+cp terragrunt_${TERRAGT_VERSION}_linux_amd64 /usr/bin
+cp ./credhub /usr/local/bin/
+cp -v dump978-fa skyaware978 /usr/local/bin/
+cp -r _build/prod/rel/$APP_NAME /app
+cp -r /etc/nginx /etc/nginx.orig
+cp ./client/client /app
+cp -r node_modules/unleash-server/migrations/* migrations/.
+cp -r ${PREFIX}/share/ffmpeg /usr/local/share/
+cp `php-config --extension-dir`/gmp.so /tmp/gmp.so
+cp $(go env GOPATH)/bin/* /usr/local/bin
+cp s3backer /s3backer
+cp /mnt/.treeinfo /opt/pxe/centos7
+cp -r $HUGOPATH/output/* /data/webroot/
+cp $( cabal new-exec which rattletrap | tail -n 1 ) /usr/local/bin/
+cp -R /tmp/test-app/testapps/testapp_flask/ /home/userhome/testapp-webview-flask/
+cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
+cp ./vim/.vimrc ~
+cp -l /usr/local/libbbb-${LIBBBB_VERSION}-arm-none-eabi/include/* /se12/bbb/source
+cp raxmlHPC /usr/local/bin/
+cp -Rv /gtrader/docker-fs/etc /
+cp /home/osm/mod_tile/src/.libs/mod_tile.so /usr/lib/apache2/modules/mod_tile.so
+cp ./gffread /usr/local/bin
+cp -r /usr/local/share/icingaweb2/modules/graphite/sample-config/icinga2/ /etc/icingaweb2/modules/graphite
+cp /etc/services /var/spool/postfix/etc/
+cp sails-ui-web/sails-ui-web /usr/local/bin/
+cp ACE/tools/bin/palette_conv /root/ACE/tools/palette_conv/palette_conv
+cp kubetest /usr/local/bin
+cp frps.ini /etc/frp
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python3.6/dist-packages
+cp /root/work-image/.vimrc /root/
+cp /hisat2/hisat2-2.1.0/hisat2* $BINPATH
+cp -rf /root/.ssh /home/laradock
+cp src/redis-server /usr/local/bin/
+cp $azure "$cpuname"
+cp -a /opt/bin/docker-php-entrypoint /usr/local/bin
+cp /usr/local/bin/docker /usr/bin/docker
+cp -Tr /tmp/install-tl-*/tlpkg/TeXLive /opt/TinyTeX/tlpkg/TeXLive
+cp /tmp/protoc/bin/protoc /usr/bin
+cp -v /src/piaware/package/ca/*.pem /etc/ssl/
+cp /usr/share/zoneinfo/${TZ} /etc/localtime
+cp -r /mnt/repodata /opt/pxe/centos7
+cp /usr/share/syslinux/pxelinux.0 /opt/pxe/boot/
+cp `php-config --extension-dir`/tidy.so /tmp/tidy.so
+cp /tmp/src/entrypoint.sh /usr/local/bin/
+cp -r  /opt/build/gst-video-analytics/build/intel64/Release/lib/* /opt/dist//usr/local/lib/gstreamer-1.0/.
+cp -rf script/shadowsocksLibevLocalConsole /usr/local/sbin/
+cp -Rp ${NAGIOS_HOME}/etc/* /orig/etc/
+cp DefSpaceShiny-1.0.1/*.R /srv/shiny-server/defspace/
+cp -v /usr/local/apisix/deps/lib/luarocks/rocks-5.1/apisix/master-0/bin/apisix /usr/bin/
+cp /tmp/ez100pu/driver_ezusb_v1.5.3_for_64_bit/drivers/ezusb.so /usr/lib/pcsc/drivers/ezusb.bundle/Contents/Linux
+cp /hisat2/hisat2-2.1.0/hisat2* /usr/bin
+cp build/output/libpaho-mqtt3as.so.1.3 /opt/dist//usr/local/lib64
+cp -r /usr/local/include/gstreamer-1.0/gst/webrtc /usr/include/gstreamer-1.0/gst
+cp /linux-xlnx/arch/arm/boot/dts/zynq-zed.dtb devicetree.dtb
+cp gostsum gost12sum /usr/local/bin
+cp makepkg.conf.sample makepkg.conf
+cp src/nsca ${NAGIOS_HOME}/bin/
+cp /tmp/libnl-tiny/*.so /tmp/dst/lib/
+cp ./MG5aMC_PY8_interface MG5AMC_VERSION_ON_INSTALL PYTHIA8_VERSION_ON_INSTALL         VERSION MultiHist.h SyscalcVeto.h /opt/mg5/HEPTools/MG5aMC_PY8_interface
+cp /app/ssh/* ~/.ssh/
+cp /etc/group /sam/group
+cp ./heptio-authenticator-aws /usr/local/bin/heptio-authenticator-aws
+cp -r /tmp/DiscuzX/upload/* /var/www/html
+cp config/master/install.cfg lgsm/config-lgsm/dstserver/dstserver-master.cfg
+cp conf/zabbix_server.conf /etc/zabbix/
+cp -f ./src/anbox /anbox-binary
+cp /usr/share/jenkins/jenkins.war $JENKINS_WAR
+cp data/default_config.json config/config.json
+cp -R /tmp/director/icingaweb2-module-director-master/* /etc/icingaweb2.dist/modules/director/
+cp ./objs/bin/mtproto-proxy /usr/local/bin/
+cp config/secretConfig.template.js config/secretConfig.js
+cp -pr trex_client/interactive/trex_stl_lib /usr/local/lib/python3.7/site-packages
+cp /bin/bash-static /sh
+cp /etc/ssh/id_rsa /root/.ssh/id_rsa
+cp "$(php-config --extension-dir)/calendar.so" /tmp/calendar.so
+cp $EQEMU_SRC_DIR/utils/defaults/mime.types /tmp/eqemuconf
+cp node_exporter-${exporter_version}.linux-amd64/node_exporter /tmp/
+cp -rf script/trojanConsole /usr/local/sbin/
+cp mysql-connector-odbc-8.0.19-linux-debian10-x86-64bit/lib/* /usr/local/lib
+cp -a lib/clang/${CLANG_VERSION}/include /tmp/install/lib/clang/${CLANG_VERSION}/include
+cp /root/.fzf/bin/fzf /usr/local/bin
+cp /srv/nagios.cfg /usr/local/nagios/etc/nagios.cfg
+cp /tmp/lucihttp/lucihttp.so /tmp/dst/lua
+cp ${JETTY_HOME}/etc/jetty.xml ${JETTY_HOME}/etc/jetty.xml.bak
+cp /usr/share/syslinux/vesamenu.c32 /opt/pxe/boot/
+cp /usr/bin/chpst        /usr/bin/envsubst        /usr/local/bin
+cp -R /etc/icingaweb2/* /etc/icingaweb2.dist
+cp /lib/libssl.so.3 /rootfs/lib/
+cp /tmp/kodi_src/tools/EventClients/Clients/KodiSend/kodi-send.py /tmp/kodi_build/usr/bin/kodi-send
+cp -r /home/work/_src/mysql-connector-java-5.1.47-bin.jar /home/work/_app/_jira_bamboo/atlassian-bamboo/WEB-INF/lib/
+cp -r beam beam-master
+cp -R include/* $INSTALL_PATH/include/.
+cp /go/src/app/miniflux-linux-${APP_ARCH} /go/src/app/miniflux
+cp /tmp/uhttpd/*.so $DST_LUCI_ROOT/usr/lib/
+cp -l /tmp/libbbb-${LIBBBB_VERSION}-arm-none-eabi/lib/* /se12/bbb/source
+cp /default /etc/nginx/sites-available/default
+cp ${LANTERN_HOME}/init.vim ${HOME}/.config/nvim/init.vim
+cp /home/lorean/bin/LoReAn/third_party/software/fasta-36.3.8e/bin/fasta36 /home/lorean/bin/fasta
+cp /root/work-image/tmux.conf.local /root/.tmux.conf.local
+cp -p /etc/tomcat9/logging.properties /etc/tomcat9/logging.properties.orig
+cp /FileGDB_API-64gcc51/include/* /usr/include
+cp -a /etc/ssh /etc/ssh.cache
+cp build/output/samples/paho_c_pub /opt/dist/usr/local/bin/
+cp -R -p /usr/local/nagiosgraph/var /bk
+cp `php-config --extension-dir`/maxminddb.so /tmp/maxminddb.so
+cp -rP /tmp/nspr/usr/lib/* /usr/glibc-compat/lib
+cp $ULX3SBASEDIR/patches/Makefile.alpine .
+cp ./server/server /app
+cp -rf script/brookConsole /usr/local/sbin/
+cp -r /home/work/_src/mysql-connector-java-5.1.47-bin.jar /home/work/_app/_jira_fisheye/lib/
+cp /opt/LoReAn/code/lorean_singularity /usr/local/bin
+cp -r resources/public /usr/local/sbin/
+cp -vnpr /home/xteve* /data || true
+cp -rf script/shadowsocksr.json /etc/
+cp -p /etc/tomcat9/server.xml /etc/tomcat9/server.xml.orig
+cp -a /core-13.0.02/. /var/www/site
+cp /etc/passwd /staging/etc/passwd
+cp /scripts/cron/mysql_backup_daily.sh /etc/cron.daily/
+cp /tmp/libubox/sh/jshn.sh $DST_LUCI_ROOT/usr/local/share/libubox/
+cp /scripts/cron/mysql_backup_hourly.sh /etc/cron.hourly/
+cp /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/flirt GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/convert-xfm GLISTR-3.1.1/bin/install/bin/;     cp btmcs-1.2.1-build/bin/ForwardSolverDiffusion GLISTR-3.1.1/bin/install/bin/
+cp pagan/bin/pagan /usr/bin
+cp ./bin/gost.so "${OPENSSL_DIR}/lib/engines-1.1"
+cp -r ${DOWNLOAD_PATH}/ecshop/* /var/www/html/
+cp `php-config --extension-dir`/yaml.so /tmp/yaml.so
+cp /etc/apt/sources.list /etc/apt/sources.list.bak
+cp /tmp/moodle-ifsp-moodle-branch-3.7-/* /var/www/html/
+cp /tmp/luci/modules/luci-base/src/po2lmo /tmp/dst/bin/
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python2.7/dist-packages
+cp ./conf/frp* /etc/
+cp -rf script/shadowsocksRConsole /usr/local/sbin/
+cp ./gffread /home/lorean/bin
+cp misc/apache.conf /etc/apache2/sites-available/000-default.conf
+cp -r /opt/build/gst-video-analytics/python/* /opt/intel/dl_streamer/python
+cp -r /etc/ssh /ssh_orig
+cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+cp -r pandoc-templates*/* /opt/pandoc/templates
+cp /etc/periodic/daily/logrotate /etc/periodic/hourly/
+cp /opt/conda/bin/sambamba $BINPATH
+cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysql
+cp /tmp/ddclient/ddclient.in /usr/bin/ddclient.in
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python2.7/site-packages
+cp subread-1.6.3-Linux-x86_64/bin/featureCounts $BINPATH
+cp -rf service/conf.d/supervisor_balancer.conf /etc/supervisor/conf.d
+cp /etc/skel/.bashrc ~/
+cp /home/exutils/bin/divi /usr/local/bin/
+cp -p /etc/group /root/group
+cp -R /tmp/test-app/testapps/testapp_nogui/ /home/userhome/testapp-service_only-nogui/
+cp -v /sw/myami/redux/init.d/reduxd /etc/init.d/reduxd
+cp /app/nzbget/share/nzbget/nzbget.conf /app/nzbget/webui/nzbget.conf.template
+cp -rf /root/.oh-my-zsh /root/.zshrc /site/
+cp config/caves/install.cfg lgsm/config-lgsm/dstserver/dstserver-caves.cfg
+cp -rfp atlassian-extras-decoder-v2-3.2.jar /opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.2.jar
+cp /usr/bin/psql /usr/bin/pg_dump /usr/bin/pg_restore /usr/local/bin/
+cp modules/iconv.so /usr/lib/php7.1/modules
+cp /root/.ssh/id_rsa.pub /root/.ssh/authorized_keys
+cp /opt/ncbi-blast-2.6.0+/bin/rpsblast /opt/interproscan/bin/blast/ncbi-blast-2.6.0+/rpsblast
+cp -pr trex_client/stf/trex_stf_lib /usr/local/lib/python3.6/dist-packages
+cp ./GetBaseCountsMultiSample ${PACKAGE_DIR}/bin/
+cp -p /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+cp /tmp/luci/libs/luci-lib-jsonc/src/*.so $DST_ROOT/usr/lib/lua/luci/
+cp ./kubectl /usr/local/bin/
+cp rclone-*-linux-amd64/rclone /bin/rclone
+cp bowtie2* /usr/local/bin/
+cp /usr/src/ocserv/doc/sample.config /etc/ocserv/ocserv.conf
+cp ~/opt/src/seagull/seagull/trunk/src/bin/* /usr/local/bin
+cp ${A4C_INSTALL_PATH}/indigodc-orchestrator-plugin/target/alien4cloud-indigodc-provider-*.zip "${A4C_INSTALL_PATH}/${A4C_INSTALL_DIR}/init/plugins/"
+cp $WRK_DIR/.pyscf_conf.py ~/.pyscf_conf.py
+cp /home/tcb/work-image/tmux.conf.local /home/tcb/.tmux.conf.local
+cp -r ncbi-blast-2.7.1+ ../bin/blast
+cp -pr trex_client/external_libs/trex-openssl /usr/local/lib/python2.7/site-packages
+cp /opt/build/media-delivery/patches/ffmpeg/* .
+cp $(find lib -name "*.so*") /tmp/install/lib
+cp -r /sars-cov-2-jbrowse/jbrowse/data /usr/share/nginx/html/jbrowse
+cp /opt/LoReAn/third_party/conf_files/environment /etc/environment
+cp -rf service/* /etc/supervisor/
+cp instabotlol/app.py .
+cp /root/dist/adbhoney.cfg /opt/adbhoney
+cp raxmlHPC-MPI-SSE3 /usr/local/bin/
+cp kubeval /usr/local/bin
+cp fd-v${FD_VERSION}-x86_64-unknown-linux-gnu/fd /usr/local/bin/
+cp api/build/libs/$APP_NAME ..
+cp -f $RESOURCES_PATH/branding/favicon.ico $RESOURCES_PATH"/filebrowser/img/icons/favicon-32x32.png"
+cp /adc-api-js-mongodb/airr-standards/specs/adc-api.yaml /adc-api-js-mongodb/app/api/swagger/adc-api.yaml
+cp /home/exutils/docker/bin/help /usr/local/bin
+cp config.template.js config.js
+cp u-boot.bin /uboot/u-boot_rpi1.bin
+cp -r /etc/php /etc/php.orig
+cp docker/update_and_run_gateone.py /usr/local/bin/update_and_run_gateone
+cp /opt/conda/bin/cuffcompare $BINPATH
+cp /usr/local/bin/tmux /usr/bin/tmux
+cp oxidized-tooling-docker/entrypoint.sh oxidized-tooling/
+cp -p /root/web/. /web
+cp /usr/src/modsecurity/unicode.mapping /usr/local/nginx/conf/
+cp -p /etc/shadow /root/shadow
+cp -r ~/opt/src/seagull/seagull/trunk/src/exe-env/* /opt/seagull
+cp -r rel/$APP_NAME /app
+cp -r /tmp/creepMiner/resources/frontail.json /etc/
+cp jq /usr/bin
+cp /opt/conda/bin/hisat2 $BINPATH
+cp -f $RESOURCES_PATH/branding/favicon.ico $CONDA_PYTHON_DIR"/site-packages/notebook/static/base/images/favicon.ico"
+cp -R  /tmp/icingaweb2/icingaweb2-2.3.4/modules/doc /etc/icingaweb2/modules/
+cp $HOME/.ssh/id_rsa.pub $HOME/.ssh/known_hosts
+cp -r /FeatureSequence /usr/share/nginx/html/jbrowse/plugins/FeatureSequence
+cp modules/iconv.so /usr/lib/php7
+cp snmpd.conf.example /etc/snmp/snmpd.conf
+cp -f v2ray v2ctl geoip.dat geosite.dat /etc/v2ray
+cp /usr/share/syslinux/chain.c32 /opt/pxe/boot/
+cp -R -p /usr/local/nagiosgraph/var /bk/nagiosgraph
+cp /tmp/uhttpd/uhttpd $DST_LUCI_ROOT/usr/sbin/
+cp sars-cov-2-jbrowse/index.html /usr/share/nginx/html/index.html
+cp -f /usr/bin/ld.gold /usr/bin/ld
+cp storage-schemas.conf.example storage-schemas.conf
+cp -s /usr/lib/x86_64-linux-gnu/libsybdb.so /usr/lib/
+cp node-v10.24.1-linux-x64/* /usr/local -rf
+cp -R modules /opt/default_modules
+cp -f /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+cp src/MQTTClient.h /opt/dist/usr/local/include/
+cp -rf /node-v8.10.0-linux-x64/share/* /usr/local/share
+cp -r $GOPATH/src/github.com/idoall/shazam/bin/gaea* /
+cp work-image/vimrc ~/.vimrc
+cp -f resource/nginx/nginx.conf.default /etc/nginx/nginx.conf
+cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf
+cp /tmp/bosun/src/bosun.org/cmd/bosun/bosun /opt/bosun/bin/
+cp sample-config/send_nsca.cfg ${NAGIOS_HOME}/etc/
+cp ${SEASTEAD_HOME}/zshrc ${HOME}/.zshrc
+cp wkhtmltox/bin/* /usr/local/bin/
+cp eisvogel.tex /root/.pandoc/templates/
+cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+cp -R /tmp/icingaweb2/icingaweb2-2.3.2/modules/monitoring /etc/icingaweb2/modules/
+cp -f /var/www/html/clustercontrol/ssl/server.crt /etc/pki/tls/certs/s9server.crt
+cp /voy_dev_track/config_sample.yaml /config
+cp utils/redis_init_script /etc/init.d/redis_6379
+cp -r /$GOPATH/src/github.com/platinasystems/turnkey-kubespray /root/
+cp /usr/lib/x86_64-linux-gnu/libpng* /usr/lib/
+cp /sars-cov-2-jbrowse/jbrowse/jbrowse.conf /usr/share/nginx/html/jbrowse
+cp munkiwebadmin/settings_template.py munkiwebadmin/settings.py
+cp /tmp/phantomjs/bin/phantomjs /usr/bin/phantomjs
+cp /usr/share/java/mysql-connector-java-8.0.15.jar /opt/jmeter/apache-jmeter-5.1/lib/
+cp /var/www/kivitendo-erp/config/kivitendo.conf.default /var/www/kivitendo-erp/config/kivitendo.conf
+cp .env.${ACTION} .env
+cp -R ./bin ./util ${PACKAGE_DIR}/hmmcopy_utils/
+cp ./a/rutorrent-*.nginx /root/
+cp /scripts/cron/mysql_backup_hourly.sh /etc/periodic/hourly/mysql_backup_hourly
+cp /opt/jpmens-mqtt/check-mqtt.py ${NAGIOS_HOME}/libexec/
+cp /usr/share/i18n/charmaps/UTF-8.gz /tmp
+cp /tmp/luci/libs/luci-lib-ip/src/*.so $DST_ROOT/usr/lib/lua/luci/
+cp -a /usr/src/influxdb-*/* /usr/bin/
+cp -r /usr/local/share/icingaweb2/modules/graphite/templates /etc/icingaweb2/modules/graphite/
+cp usit_test usit_score_calc /opt/usit-utils
+cp /tmp/uci/*.so $DST_LUCI_ROOT/usr/lib/
+cp /build/registry /src/README.md /src/LICENSE .
+cp /home/work/_app/_jira_fisheye/config.xml /home/work/_data/_jira_fisheye/
+cp /bin/cat /home/ctf/bin
+cp docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+cp /usr/local/FileGDB_API/lib/* /build_thirdparty/usr/lib/x86_64-linux-gnu
+cp Jamulus /usr/local/bin/
+cp -P /usr/lib/libspatialite*.so* /build_spatialite/usr/lib
+cp backupcron /etc/cron.d/
+cp `php-config --extension-dir`/pdo_sqlsrv.so /tmp/pdo_sqlsrv.so
+cp -l /tmp/build/libbbb-*-arm-none-eabi/lib/* /usr/arm-none-eabi/lib/
+cp ./golangci-lint /bin/golangci-lint
+cp -rf cmake-3.13.3-Linux-x86_64/* /usr/local/
+cp /opt/ts3soundboard/config.ini.dist /opt/ts3soundboard/config.ini
+cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+cp /opt/HewlettPackardEnterprise/IDOLServer-11.4.0/scripts/init/systemd/*.service /etc/systemd/system
+cp -pr trex_client/interactive/trex_stl_lib /usr/local/lib/python2.7/site-packages
+cp -rf service/supervisord_docker.conf /etc/supervisor/supervisord.conf
+cp /home/notebookuser/library_tools/install-pyarrow.sh /home/notebookuser
+cp `php-config --extension-dir`/pcov.so /tmp/pcov.so
+cp `php-config --extension-dir`/cassandra.so /tmp/cassandra.so
+cp -rf /node-v8.10.0-linux-x64/include/* /usr/local/include
+cp systemd/* $GOPATH/linux-amd64/
+cp -r etc /etc-gaea
+cp /var/www/f5-app-sec/etc/f5-app-sec.conf /etc/apache2/sites-available/
+cp /home/userSW/SW_VAR_DENS_MODEL-master/TESTS/run_tests.sh .
+cp -r ${INSTALL_DIR}/share/misc/php-spx/assets /tmp/spx-assets
+cp -a /opt/sge/* /usr/local/sge/
+cp -a /tmp/node_modules /usr/app
+cp -rL bazel-bin bin
+cp -r reveal.js-${REVEALJS_VERSION}/plugin /
+cp ./hacks/keys.generated.go /go/pkg/mod/github.com/coreos/etcd@v3.3.10+incompatible/client/
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.0/bin/install/bin/;     cp fsl-4.1.5-master/bin/flirt GLISTR-3.1.0/bin/install/bin/;     cp fsl-4.1.5-master/bin/convert_xfm GLISTR-3.1.0/bin/install/bin/;     cp btmcs-1.2.1-build/bin/ForwardSolverDiffusion GLISTR-3.1.0/bin/install/bin/
+cp /tmp/libnl-tiny/src/*.so /tmp/dst/lib/
+cp -f docker/settings.php src/
+cp /tmp/fleet_linux/linux/fleetctl /usr/bin/
+cp /go/bin/protoc-gen-gogofast /usr/local/bin/
+cp docker/docker /usr/local/bin/
+cp sqlany/lib64/*.so "$(php -i | grep extension_dir | head -n 1 | awk '{print $3}')/"
+cp ../conf_files/extrinsic.M.RM.E.W.P.cfg augustus/config/extrinsic/
+cp /tmp/luci/libs/luci-lib-jsonc/src/*.so /tmp/dst/luci/
+cp -rf script/shadowsocks.json /etc/
+cp -r ../run/* /usr/local/bin/ 	)
+cp porechop/cpp_functions.so  /opt/LoReAn/code/
+cp /tmp/kodi_src/tools/EventClients/Clients/Kodi\ Send/kodi-send.py /tmp/kodi_build/usr/bin/kodi-send
+cp judge/runner-instance-config-example.json config/runner-instance-1.json
+cp src/redis-cli /usr/local/bin/
+cp /go/bin/protoc-gen-gofast /usr/local/bin/
+cp $(find bin -name jid) /usr/local/bin
+cp qemu-rpi-kernel-*/versatile-pb.dtb /root/qemu-rpi-kernel/
+cp DefSpaceShiny-1.0.0/*.R /srv/shiny-server/defspace/
+cp /tmp/lucihttp/liblucihttp.so* /tmp/dst/lib
+cp /opt/debezium-connector-oracle/*.jar ${KAFKA_HOME}/libs/
+cp -r $PROTO_BUILD_DIR/google/* $SITE_PACKAGES/google/
+cp /mnt/nfs/casper/initrd /etc/tftpboot/images/ubuntu/initrd
+cp /scripts/cron/mysql_backup_hourly.sh /etc/cron.hourly/mysql_backup_hourly
+cp -R /tmp/ct-download/etc/* /etc/ct
+cp subsync/config.py.template subsync/config.py
+cp -av dmarcts-report-parser-master/* /usr/bin/
+cp /bin/ls /home/ctf/bin
+cp `php-config --extension-dir`/odbc.so /tmp/odbc.so
+cp /usr/share/zoneinfo/$APP_TIMEZONE /etc/localtime
+cp SW_VAR_DENS_MODEL-master/TESTS/run_tests.sh .
+cp config.TEMPLATE.inc.php config.inc.php
+cp $(which tar) $(which tar)~
+cp spacemono-f5ebc1e1c0/fonts/SpaceMono-Regular.ttf /root/.fonts/
+cp $GOPATH/bin/noms /bin/noms
+cp etcd-v3.4.0-linux-amd64/etcdctl /usr/local/bin
+cp lib/* $INSTALL_PATH/lib/.
+cp -R clang+llvm-7.0.1-x86_64-linux-gnu-ubuntu-18.04/* /usr/local/
+cp -v /tmp/protoc_static/bin/protoc /tmp/proto-bins_$(cat /version.txt)_linux-$(uname -m)
+cp -rf /root/particl-core/src/particl-cli /root/particl-core/src/particl-tx /root/particl-core/src/particld /opt/particl/bin/
+cp vhost.conf /etc/apache2/sites-available/bbdgnc.conf
+cp auth-plug.so /usr/local/src
+cp uwsgi /usr/local/bin/
+cp -r /etc/nginx/* /tmp/nginx/conf
+cp src/send_nsca ${NAGIOS_HOME}/bin/
+cp -R cmake-3.13.3-Linux-x86_64/* /usr/local/
+cp $EQEMU_SRC_DIR/loginserver/login_util/* /tmp/eqemuconf
+cp DefSpaceShiny-0.0.0/*.R /srv/shiny-server/defspace/
+cp -R /usr/src/owasp-modsecurity-crs/rules/ /usr/local/nginx/conf/
+cp -a /tmp/node_modules $APP_PATH
+cp src/MQTTSubscribeOpts.h /opt/dist/usr/local/include/;
+cp nsenter /
+cp -R guacamole-auth-jdbc-${GUAC_VER}/postgresql/schema ${GUACAMOLE_HOME}/
+cp /pgloader-3.6.2/build/bin/pgloader /usr/local/bin
+cp /go/bin/protoc-gen-twirp /usr/local/bin/
+cp ./bin/elm* /usr/local/bin
+cp /linux-xlnx/arch/arm/boot/uImage .
+cp /opt/DF-Nagios-Plugins/check_vpn/check_vpn ${NAGIOS_HOME}/libexec/
+cp devicetree.dtb bp
+cp ./monero-x86_64-linux-gnu/monerod .
+cp `php-config --extension-dir`/redis.so /tmp/redis.so
+cp config.py.sample config.py
+cp /cufflinks-2.2.1.Linux_x86_64/cuffcompare $BINPATH
+cp ./n98-magerun2.phar /usr/local/bin/
+cp $SRC_PATH/python/auto-generated/*.py $CLIENT_PATH/python/
+cp janitoo_datalog_rrd/src/config/janitoo_datalog_rrd.conf /opt/janitoo/etc/
+cp -R /usr/src/mediasummon/admin /etc/mediasummon/
+cp vim/.bashrc ~
+cp /tmp/ckb_v0.26.0_x86_64-unknown-linux-gnu/ckb /bin/ckb
+cp /usr/local/src/commons-daemon-1.0.15-src/src/native/unix/jsvc ./daemon/
+cp frpc /usr/local/bin
+cp DefSpaceShiny-0.0.0/*.R /srv/shiny-server/defspace
+cp /usr/share/i18n/charmaps/CP1252.gz /tmp
+cp -R /tmp/sonar-scanner-$VERSION-linux/* /opt/sonar-scanner/
+cp ./redis.conf /etc/redis.conf
+cp -r /root/work-image/thesaurus /root/.vim/thesaurus
+cp /root/go/bin/gophernotes /usr/local/bin/
+cp work-image/coc-settings.json ~/.vim/
+cp /opt/setup_files/config/jupyter_notebook_config.py ~/.jupyter/
+cp -R thug/conf/* /etc/thug
+cp -r /tmp/ICE* /var/www/html/icecoder
+cp /root/work/aiortc_yolov3/index.html /root/work/aiortc/examples/server/
+cp /home/work/_app/php7.1.9/etc/php-fpm.conf.default /home/work/_app/php7.1.9/etc/php-fpm.conf
+cp /mnt/nfs/casper/vmlinuz /etc/tftpboot/images/ubuntu/vmlinuz
+cp /tmp/uhttpd/*.so /tmp/dst/lib/
+cp ./nginx/default.conf /etc/nginx/conf.d/default.conf
+cp -R /tmp/protoc/include /usr/local/include
+cp /etc/ssh/id_rsa.pub /etc/ssh/authorized_keys
+cp /root/gost_${GOST_VERSION}_linux_386/gost /bin/
+cp /srv/contacts.cfg /usr/local/nagios/etc/noc/
+cp raxmlHPC-SSE3 /usr/local/bin/
+cp -pr trex_client/stl/trex_stl_lib /usr/local/lib/python3.7/site-packages
+cp h2o.jar /opt
+cp ./src/redis-server /usr/local/redis/bin/
+cp --archive /src/crossbrowser/x/lib/old/*.js /lib/crossbrowser
+cp faas-cli /usr/local/bin
+cp ${ORACLE_BUILD_DIR}/src/instantclient_21_10/libclntsh.so.21.1 /tmp/libclntsh.so.21.1
+cp -p /root/group /sam/group
+cp target/release/botflox_alltalks /build-out
+cp /usr/share/php7.3-mysql/mysql/*.ini /etc/php/7.3/mods-available/
+cp -rf particl-${PARTICL_VERSION%rc1}/bin/* src/;     fi
+cp u-boot.bin /uboot/u-boot_rpi2.bin
+cp -rf script/trojan_client.json /etc/
+cp _build/${MIX_ENV}/rel/${APP_NAME}/releases/${APP_VSN}/${APP_NAME}.tar.gz /opt/built
+cp ./src/redis-benchmark /usr/local/redis/bin/
+cp -av paste.ini paste_local.ini
+cp -r /jbplugin-screenshot /usr/share/nginx/html/jbrowse/plugins/ScreenShotPlugin
+cp -pr trex_client/stl/trex_stl_lib /usr/local/lib/python2.7/site-packages
+cp DefSpaceShiny-0.0.1/*.R /srv/shiny-server/defspace/
+cp -f linux /out/linux
+cp /neubiaswg5-utilities/bin/* /usr/bin/
+cp wkhtmltox/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+cp -r out-static/lib* out-shared/lib* /usr/local/lib/
+cp -R build/linux_intel64_gcc*release/* /usr/local/lib64/
+cp -r ${PREFIX}/share/* /usr/local/share/
+cp etcd-v3.1.5-linux-amd64/etcdctl /usr/local/bin
+cp /usr/include/cublas* /usr/local/cuda/include/
+cp /home/work/_app/php7.1.9/etc/php-fpm.d/www.conf.default /home/work/_app/php7.1.9/etc/php-fpm.d/www.conf
+cp /tmp/luci/modules/luci-base/src/parser.so $DST_LUCI_ROOT/usr/lib/lua/luci/template
+cp -rf particl-${PARTICL_VERSION%alpha}/bin/* src/;     fi
+cp inc/*.h /usr/local/include/gsm
+cp /tmp/lucihttp/lucihttp.so $DST_ROOT/usr/lib/lua
+cp ./sslh-fork /usr/bin/sslh
+cp /go/bin/protoc-gen-gogoslick /usr/local/bin/
+cp /usr/local/etc/php/conf.d/* /etc/php7.d/conf.d/
+cp server.crt /etc/apache2/ssl/server.crt
+cp ./a/extra.list /etc/apt/sources.list.d/extra.list
+cp -rf script/kcptunConsole /usr/local/sbin/
+cp ./gatk-4.1.3.0/gatk-package-4.1.3.0-local.jar ${PACKAGE_DIR}/gatk-4.1.3.0/
+cp -rt /app/ *.json node_modules server.js
+cp -p /root/web /web
+cp -f /usr/lib/php81/modules/geoip.so ${DIST_PATH}/usr/lib/php81/modules/
+cp /tmp/libubox/lua/*.so $DST_ROOT/usr/lib/lua/
+cp ./a/startup-rtorrent.sh ./a/startup-nginx.sh ./a/startup-php.sh ./a/.rtorrent.rc /root/
+cp -v /app/Rocket.toml /app/bin
+cp /usr/local/bin/ghostscript /usr/local/bin/gs
+cp /var/www/html/nconf/INSTALL/create_database.sql $HOME/create_database.sql
+cp -fR cmake-${CMAKE_VERSION_FULL}-Linux-x86_64/* /usr
+cp /tmp/lucihttp/lucihttp.so $DST_LUCI_ROOT/usr/lib/lua
+cp /usr/sbin/sslh-fork /usr/bin/sslh-fork
+cp main /go/bin/ze3000
+cp -a /usr/include/openssl /var/www/html/swoole-src-${SWOOLE_VERSION}/include
+cp xmrig "$cpuname"
+cp /usr/local/go-server-${GO_MAJOR_VERSION}/go-server.default /etc/default/go-server
+cp /tmp/uci/lua/*.so $DST_ROOT/usr/lib/lua/
+cp -f $(echo "/usr/local/src/nginx/nginx_*.deb") /usr/local/src/nginx.deb
+cp /usr/local/lib/python2.7/dist-packages/airtime_playout-1.0-py2.7.egg/liquidsoap/* /liquidsoap
+cp /includes/init.sh /init.sh
+cp -r ThinkPHP Examples/Hello/* /var/www/html/
+cp database.local.php.dist database.local.php
+cp -v go/bin/gofmt /usr/local/bin/
+cp /etc/apt/sources.list /sources.list
+cp -f /var/www/html/cmonapi/ssl/server.key /etc/pki/tls/private/s9server.key
+cp Setup.dist /usr/src/python/Modules
+cp $EQEMU_SRC_DIR/utils/defaults/eqemu_config.json /tmp/eqemuconf
+cp importenv /
+cp $HOME/.ssh/id_rsa.pub $HOME/.ssh/authorized_keys
+cp $DST/$FOLDER/bin/FRC /usr/bin/
+cp -r beam beam-testnet3
+cp criu-$CRIU/criu/criu /usr/local/sbin
+cp frpc /usr/bin/
+cp docker-compose/dist/docker-compose /usr/local/bin/
+cp /etc/php/7.0/cli/conf.d/30-pdo_sqlsrv.ini /etc/php/7.0/cli/conf.d
+cp /tmp/libubox/*.so $DST_LUCI_ROOT/usr/lib/
+cp /usr/share/ezgo/ezgo-kde5/desktop.layout.js /usr/share/plasma/shells/org.kde.plasma.desktop/contents/layout.js
+cp config/config.json ./dist/data/state/config/config.json
+cp -f /opt/trojan/trojan /usr/local/sbin/trojan
+cp /opt/bin/crawlab /usr/local/bin/crawlab-server
+cp /opt/DF-Nagios-Plugins/check_sql/check_sql ${NAGIOS_HOME}/libexec/
+cp docker/test.sh /root/test.sh
+cp -rf /build/prom/build/libprom.so            /build/promhttp/build/libpromhttp.so        $LIBS_DIR/
+cp -R /tmp/docker/app.sh /home/admin/
+cp /u-boot-xlnx-$CHECKOUT_TAG/u-boot.bin boot.bin
+cp `php-config --extension-dir`/igbinary.so /tmp/igbinary.so
+cp -rf notebooks/data/* /home/notebookuser/notebooks/data/*
+cp /pgloader-3.6.2/build/pgloader /usr/bin
+cp -r src/shabal/opencl/mining.cl /usr/local/sbin/
+cp -l /tmp/build/libbbb-*-arm-none-eabi/include/* /usr/arm-none-eabi/include/
+cp -r chia-gigahorse-farmer/* .
+cp ${COWRIE_HOME}/cowrie-git/etc/cowrie.cfg.dist ${COWRIE_HOME}/cowrie-git
+cp /mattermost/config/config.json /config.json.save
+cp -rf library_tools/*.sh $HOME ;
+cp -R /tmp/master/icingaweb2-master/modules/monitoring /etc/icingaweb2/modules/
+cp -r /opt/build/gst-video-analytics/python/* /opt/dist/opt/intel/dl_streamer/python
+cp /etc/apt/sources.list /etc/apt/sources.list~
+cp hopspack-2.0.2-build/install/bin/HOPSPACK_main_threaded GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/flirt GLISTR-3.1.1/bin/install/bin/;     cp fsl/bin/convert_xfm GLISTR-3.1.1/bin/install/bin/;     cp btmcs-1.2.1-build/bin/ForwardSolverDiffusion GLISTR-3.1.1/bin/install/bin/
+cp /etc/passwd /root/passwd
+cp /FP-Install/releases/installers/* /Floatplane-Downloader/.
+cp ./configs/${ENVIRONMENT}.py /powerdns-admin/config.py
+cp -R config /opt/default_config
+cp /usr/src/app/dist/zh-Hans/mt1-obj-market /usr/src/build/zh-Hans/mt1-obj-market -rf
+cp /usr/bin/deluged /config/deluged/
+cp -r /usr/src/_confluence/mysql-connector-java-5.1.47-bin.jar /opt/atlassian/confluence/confluence/WEB-INF/lib/
+cp /app/target/release/stripe-update-card /app/bin
+cp prometheus-${PROMETHEUS_VERSION}.linux-amd64/prometheus /usr/local/bin/
+cp -rf /root/.ssh /home/devdock
+cp ./fasta-to-fastq/fasta_to_fastq.pl ${PACKAGE_DIR}/bin/
+cp /pgloader-3.6.2/build/pgloader /usr/local/bin
+cp *.apk ~/output\"\\n"\nelse:\n    demoapp_line = "echo \"$ cd ~/testapp-sdl2-keyboard
+cp /app/moni /usr/local/bin/moni
+cp -r bin/gaea* /
+cp /home/tcb/work-image/bashrc /home/tcb/.bashrc
+cp svm-train /usr/local/bin/
+cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /opt/jdk/jre/lib/security/;     fi
+cp config/config.json.PRD config/config.json
+cp wkhtmltox/bin/wk* /usr/local/bin/
+cp openshift-origin-client-tools-v3.10.0-dd10d17-linux-64bit/oc /usr/local/bin
+cp sslh-fork /usr/bin/sslh
+cp /tmp/ioncube/ioncube_loader_* /usr/local/ioncube
+cp -a /src/dump1090/public_html/* /usr/share/dump1090-fa/html/
+cp thug/DOM/thug.js /etc/thug/scripts
+cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+cp /srv/groups.cfg /usr/local/nagios/etc/noc/
+cp package.* dist
+cp ../good-neighbors
+cp /scripts/cron/mysql_backup_weekly.sh /etc/periodic/weekly/mysql_backup_weekly
+cp /adc-api-js-mongodb/airr-standards/specs/airr-schema.yaml /adc-api-js-mongodb/app/config/airr-schema.yaml
+cp -r /tmp/creepMiner/resources/public /usr/local/sbin/
+cp docker/flower.initd /etc/init.d/flower
+cp /tmp/project.config /opt/projects/virome/workflow/.
+cp janitoo_datalog_rrd/src/scripts/supervisord.conf /etc/supervisord/supervisord.conf.d/
+cp -r /tmp/node_modules /server/.
+cp -r /usr/src/_bamboo/* /home/work/_app/_jira_bamboo/atlassian-bamboo/WEB-INF/lib/
+cp -R node_modules prod_node_modules
+cp bamdst  /usr/local/bin/
+cp entrypoint.sh refresh-certificate.sh fill-template.sh openssl.cnf *.conf.template /
+cp -rfp /mnt/scheduler/src/ndscheduler/simple_scheduler/scheduler.py /scheduler.py
+cp -pr trex_client/interactive/trex_stl_lib /usr/local/lib/python3.6/site-packages
+cp bin/vpnserver/hamcore.se2 /opt/hamcore.se2
+cp -r ./docs/ /opt/mm-wiki
+cp -r /build/dcfeeder /build/public .
+cp /root/work/yolo/darknet-tiny-label.py /root/work/darknet/python/
+cp ./gatk-4.1.0.0/gatk-package-4.1.0.0-local.jar ${PACKAGE_DIR}/gatk-4.1.0.0/
+cp -a /usr/sbin/policy-rc.d /sbin/initctl
+cp http_plugin.so /var/www/rovercode/www
+cp $HOME/v2raybin/v2ray-v$VER-linux-64/vpoint_vmess_freedom.json $HOME/v2raybin/config.json
+cp -a /core-18.0.00/. /var/www/site
+cp -rp /deps/* /usr/local/
+cp samtools /usr/local/bin/
+cp ${ORACLE_BUILD_DIR}/src/instantclient_21_10/libociicus.so /tmp/libociicus.so
+cp /usr/lib/libboost_program_options-mt.so* /tmp
+cp ${SEASTEAD_HOME}/gitignore ${HOME}/.gitignore
+cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf
+cp ${a4c_install_path}/${a4c_src_dir}/alien4cloud-ui/target/alien4cloud-*standalone.war ${a4c_install_path}/${a4c_install_dir}/alien4cloud-standalone.war
+cp -r ./install/ /opt/mm-wiki
+cp amicontained-linux-amd64 /usr/local/bin/amicontained
+cp -R /etc/icinga2 /etc/icinga2.dist
+cp ./server/server /app/server
+cp /tmp/lucihttp/liblucihttp.so* $DST_LUCI_ROOT/usr/lib
+cp ./a/nginx.conf /etc/nginx/
+cp /scripts/cron/mysql_backup_monthly.sh /etc/periodic/monthly/mysql_backup_monthly
+cp /var/www/sites/default/default.services.yml /var/www/sites/default/services.yml
+cp /opt/conda/bin/cufflinks $BINPATH
+cp ${a4c_install_path}/indigodc-orchestrator-plugin/target/alien4cloud-indigodc-provider-*.zip "${a4c_install_path}/${a4c_install_dir}/init/plugins/"
+cp -P /usr/lib/libmfhdf*.so* /build_thirdparty/usr/lib
+cp docker/docker /usr/local/bin
+cp /tmp/slapd.d/cn=config/cn=schema/cn={4}samba.ldif /etc/ldap/slapd.d/cn=config/cn=schema
+cp ./gatk-4.1.4.1/gatk-package-4.1.4.1-local.jar ${PACKAGE_DIR}/gatk-4.1.4.1/
+cp $HELM_DIR/* /usr/local/bin
+cp $DST/$FOLDER/velvet* $DST
+cp -P /usr/lib/libdf*.so* /build_thirdparty/usr/lib
+cp microsocks /usr/bin
+cp config.example.py config.py
+cp -rf script/shadowsocks2Console /usr/local/sbin/
+cp /home/osm/mod_tile/debian/renderd.init /etc/init.d/renderd
+cp config.mk.in config.mk
+cp /tftpboot/netboot.xyz.kpxe /tftpboot/pxelinux.0
+cp config.py.dist config.py
+cp /etc/apt/sources.list /etc/apt/sources.list.old
+cp bowtie2* /usr/local/bin/.
+cp /etc/openvpn/* /usr/share/openvpn/
+cp -R public/* /var/www/html/cloudera/
+cp -r codec /usr/local/include/openh264)
+cp /usr/sbin/i2pd /usr/bin/i2pd
+cp -Rp ${NAGIOS_HOME}/var/* /orig/var/
+cp -va /etc/netdata /etc/netdata.stock
+cp -r /usr/lib/R/library/ /home/r-library/
+cp /linux-xlnx-$CHECKOUT_TAG/arch/arm/boot/uImage .
+cp /var/configuration/rsyslog.conf /etc/rsyslog.conf
+cp -a core-${VERSION}/. ./
+cp -r  /opt/build/gst-video-analytics/build/intel64/Release/lib/* /usr/local/lib/gstreamer-1.0/.
+cp /tmp/goreman/goreman /bin/goreman
+cp ${ORACLE_BUILD_DIR}/src/instantclient_21_10/libclntshcore.so.21.1 /tmp/libclntshcore.so.21.1
+cp /stringtie-1.3.4d.Linux_x86_64/stringtie $BINPATH
+cp -rf script/init_monit.start /etc/local.d/

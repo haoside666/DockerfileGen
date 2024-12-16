@@ -1,0 +1,42 @@
+FROM triblercore/libtorrent:1.2.10-x
+RUN apt update && apt upgrade -y
+RUN apt install -y libsodium23 python3-pip git
+RUN useradd -ms /bin/bash user
+USER user
+WORKDIR /home/user
+RUN mkdir requirements
+COPY ./requirements-core.txt requirements/core-requirements.txt
+RUN pip3 install -r requirements/core-requirements.txt
+COPY ./ tribler
+WORKDIR /home/user/tribler
+ENV CORE_API_PORT=20100
+EXPOSE 20100
+CMD ["./src/tribler.sh", "--core"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(0, 13),	# Image dependency
+	(1, 2),	# install 依赖于 update
+	(2, 8),	# pip依赖
+	(4, 6),	# user dependency
+	(4, 8),	# user dependency
+	(5, 7),	# WORKDIR目录依赖
+	(5, 8),	# WORKDIR目录依赖
+	(5, 9),	# WORKDIR目录依赖
+	(6, 8),	# 目录依赖
+	(7, 8),	# 文件依赖
+]
+
+所用时间：170.23

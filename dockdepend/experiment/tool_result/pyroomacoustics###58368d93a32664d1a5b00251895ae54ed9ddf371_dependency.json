@@ -1,0 +1,51 @@
+[
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN dpkg --add-architecture i386",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get update",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN apt-get install -y python3-dev python3-pip",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN python3 -m pip install --user --ignore-installed pip",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM ubuntu:18.04",
+        "after_instruct": "RUN pip3 install pyroomacoustics",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update",
+        "after_instruct": "RUN apt-get install -y python3-dev python3-pip",
+        "edge": "(2, 3)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'apt-get'}"
+    },
+    {
+        "before_instruct": "RUN apt-get install -y python3-dev python3-pip",
+        "after_instruct": "RUN pip3 install pyroomacoustics",
+        "edge": "(3, 5)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'pip3'}"
+    }
+]

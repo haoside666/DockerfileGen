@@ -1,0 +1,36 @@
+FROM ubuntu:20.04
+ENV TZ=UTC
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential git ninja-build nasm doxygen python3 python3-dev python3-pip python3-setuptools python3-wheel python3-tk && apt-get clean && rm -rf /var/lib/apt/lists
+COPY . /vmaf
+RUN pip3 install --upgrade pip
+RUN pip3 install --no-cache-dir meson cython numpy
+ENV PATH=/vmaf:/vmaf/libvmaf/build/tools:$PATH
+RUN cd /vmaf && make clean && make
+RUN pip3 install --no-cache-dir -r /vmaf/python/requirements.txt
+WORKDIR /vmaf
+ENV PYTHONPATH=python
+ENTRYPOINT [ "./python/vmaf/script/run_vmaf.py" ]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(0, 11),	# Image dependency
+	(0, 12),	# Image dependency
+	(1, 2),	# environment variable dependencies
+	(3, 5),	# pip3依赖
+	(3, 6),	# pip3依赖
+	(3, 9),	# pip3依赖
+	(4, 8),	# 文件依赖
+	(4, 9),	# 文件依赖
+]
+
+所用时间：140.30

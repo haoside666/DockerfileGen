@@ -1,0 +1,79 @@
+[
+    {
+        "before_instruct": "FROM swift:4.1",
+        "after_instruct": "WORKDIR /package",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM swift:4.1",
+        "after_instruct": "COPY . ./",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM swift:4.1",
+        "after_instruct": "RUN swift package resolve",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM swift:4.1",
+        "after_instruct": "RUN swift package clean",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM swift:4.1",
+        "after_instruct": "CMD swift test --parallel",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /package",
+        "after_instruct": "COPY . ./",
+        "edge": "(1, 2)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /package",
+        "after_instruct": "RUN swift package resolve",
+        "edge": "(1, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /package"
+    },
+    {
+        "before_instruct": "WORKDIR /package",
+        "after_instruct": "RUN swift package clean",
+        "edge": "(1, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /package"
+    },
+    {
+        "before_instruct": "COPY . ./",
+        "after_instruct": "RUN swift package resolve",
+        "edge": "(2, 3)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /package"
+    },
+    {
+        "before_instruct": "COPY . ./",
+        "after_instruct": "RUN swift package clean",
+        "edge": "(2, 4)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /package"
+    },
+    {
+        "before_instruct": "RUN swift package resolve",
+        "after_instruct": "RUN swift package clean",
+        "edge": "(3, 4)",
+        "type": "RUN_PKG",
+        "dependency_description": "have shell pkg intersection,because exist intersection {'swift'}"
+    }
+]

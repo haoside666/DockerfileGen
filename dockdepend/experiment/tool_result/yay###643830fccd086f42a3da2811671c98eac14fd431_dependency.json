@@ -1,0 +1,93 @@
+[
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "LABEL maintainer \"Jguer,docker@jguer.space\"",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "ARG VERSION=\"\"",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "ARG PREFIX=\"\"",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "ARG ARCH=\"\"",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "WORKDIR /app",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "COPY . .",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM docker.io/jguer/yay-builder:latest",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "ARG VERSION=\"\"",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(2, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG PREFIX=\"\"",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(3, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "ARG ARCH=\"\"",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(4, 7)",
+        "type": "ENV_VAR",
+        "dependency_description": "environment variable dependencies"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "COPY . .",
+        "edge": "(5, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "WORKDIR /app",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use /app"
+    },
+    {
+        "before_instruct": "COPY . .",
+        "after_instruct": "RUN make release VERSION=${VERSION} PREFIX=${PREFIX} ARCH=${ARCH}",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path /app"
+    }
+]

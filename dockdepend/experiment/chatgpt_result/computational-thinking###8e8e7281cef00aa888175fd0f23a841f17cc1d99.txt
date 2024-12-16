@@ -1,0 +1,28 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+0 FROM julia:1.8.2
+1 EXPOSE 1234
+2 RUN apt-get update -y && apt-get upgrade -y
+3 RUN useradd -ms /bin/bash pluto
+4 WORKDIR /home/pluto
+5 USER pluto
+6 COPY --chown=pluto . ${HOME}
+7 RUN julia --project=${HOME}/pluto-deployment-environment -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"
+8 CMD ["julia", "--project=/home/pluto/pluto-deployment-environment", "-e", "import PlutoSliderServer; PlutoSliderServer.run_directory(\".\"; SliderServer_port=1234 , SliderServer_host=\"0.0.0.0\")"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+注意不是只判断前后两条指令行间的依赖关系，存在(1,3)这种情况，且前后两条指令不一定有依赖关系，依赖关系定义是即不可交换的偏序关系，交换后会导致原镜像构建失败。
+
+[
+    (0, 1),  # FROM 指令需要在 EXPOSE 指令之前执行
+    (0, 2),  # FROM 指令需要在 RUN apt-get update 之前执行
+    (0, 3),  # FROM 指令需要在 useradd 指令之前执行
+    (0, 4),  # FROM 指令需要在 WORKDIR 指令之前执行
+    (0, 5),  # FROM 指令需要在 USER 指令之前执行
+    (0, 6),  # FROM 指令需要在 COPY 指令之前执行
+    (4, 6),  # WORKDIR 指令需要在 COPY 指令之前执行
+    (5, 7),  # USER 指令需要在 RUN julia 命令之前执行
+    (6, 7),  # COPY 指令需要在 RUN julia 命令之前执行
+    (0, 8)   # FROM 指令需要在 CMD 指令之前执行
+]

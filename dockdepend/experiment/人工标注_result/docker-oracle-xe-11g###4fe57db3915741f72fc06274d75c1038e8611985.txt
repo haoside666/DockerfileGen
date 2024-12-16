@@ -1,0 +1,19 @@
+FROM ubuntu:18.04
+COPY assets /assets
+RUN /assets/setup.sh
+EXPOSE 22
+EXPOSE 1521
+EXPOSE 8080
+CMD /usr/sbin/startup.sh && tail -f /dev/null
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(1, 2),	# 文件依赖
+]
+
+所用时间：6.50

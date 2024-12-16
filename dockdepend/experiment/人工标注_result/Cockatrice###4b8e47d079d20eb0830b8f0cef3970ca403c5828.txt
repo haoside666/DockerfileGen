@@ -1,0 +1,30 @@
+FROM ubuntu:bionic
+MAINTAINER Zach Halpern <zahalpern+github@gmail.com>
+RUN apt-get update && apt-get install -y build-essential cmake git libprotobuf-dev libqt5sql5-mysql libmysqlclient-dev libqt5websockets5-dev protobuf-compiler qt5-default qtbase5-dev qttools5-dev-tools qttools5-dev
+COPY . /home/servatrice/code/
+WORKDIR /home/servatrice/code
+WORKDIR build
+RUN cmake .. -DWITH_SERVER=1 -DWITH_CLIENT=0 -DWITH_ORACLE=0 -DWITH_DBCONVERTER=0 && make && make install
+WORKDIR /home/servatrice
+EXPOSE 4747
+ENTRYPOINT [ "servatrice", "--log-to-console" ]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(3, 5),	# 顺序有关依赖
+	(3, 6),	# 文件间接依赖
+    (4, 5)，# WORKDIR顺序依赖
+	(5, 6),	# WORKDIR目录依赖
+	(6, 7),	# 顺序有关依赖
+]
+
+所用时间：86.02

@@ -1,0 +1,86 @@
+[
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "ENV PHP_OPEN_BASEDIR=$WEBUSER_HOME:/config/:/dev/stdout:/tmp",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "ENV SSL_MODE=mixed",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends cron htop php8.2-pgsql && echo \"MAILTO=\\\"\\\"\\n* * * * * webuser /usr/bin/php /var/www/html/artisan schedule:run\" > /etc/cron.d/laravel && curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash && apt-get install -y --no-install-recommends speedtest && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "COPY --chmod=755 docker/deploy/etc/s6-overlay/ /etc/s6-overlay/",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "COPY --chown=webuser:webgroup src_dir=['.'] dst_dir=$WEBUSER_HOME",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "WORKDIR $WEBUSER_HOME",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-cache",
+        "edge": "(0, 7)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM serversideup/php:8.2-fpm-nginx",
+        "after_instruct": "VOLUME /config",
+        "edge": "(0, 8)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN apt-get update && apt-get install -y --no-install-recommends cron htop php8.2-pgsql && echo \"MAILTO=\\\"\\\"\\n* * * * * webuser /usr/bin/php /var/www/html/artisan schedule:run\" > /etc/cron.d/laravel && curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | bash && apt-get install -y --no-install-recommends speedtest && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*",
+        "after_instruct": "RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-cache",
+        "edge": "(3, 7)",
+        "type": "SIDE_EFFECT",
+        "dependency_description": "Because previous instruction contain side effect command: {'bash'}"
+    },
+    {
+        "before_instruct": "COPY --chmod=755 docker/deploy/etc/s6-overlay/ /etc/s6-overlay/",
+        "after_instruct": "WORKDIR $WEBUSER_HOME",
+        "edge": "(4, 6)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency"
+    },
+    {
+        "before_instruct": "COPY --chown=webuser:webgroup src_dir=['.'] dst_dir=$WEBUSER_HOME",
+        "after_instruct": "RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-cache",
+        "edge": "(5, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because common path $WEBUSER_HOME"
+    },
+    {
+        "before_instruct": "WORKDIR $WEBUSER_HOME",
+        "after_instruct": "RUN composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev --no-cache",
+        "edge": "(6, 7)",
+        "type": "FILE_DIR",
+        "dependency_description": "exist file or directory dependency,because RUN instruct use $WEBUSER_HOME"
+    }
+]

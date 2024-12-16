@@ -1,0 +1,25 @@
+FROM node:16-alpine
+WORKDIR /mockbin
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+ENV MOCKBIN_REDIS "redis://redis:6379"
+EXPOSE 8080
+CMD ["npm", "start"]
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(1, 2),	# WORKDIR目录依赖
+	(1, 3),	# WORKDIR目录依赖
+	(1, 4),	# WORKDIR目录依赖
+	(2, 3),	# 文件依赖
+]
+
+所用时间：30.03

@@ -1,0 +1,14 @@
+```
+[(0, 1),  # LABEL依赖于FROM
+ (0, 2),  # RUN apk add依赖于FROM
+ (1, 2),  # RUN apk add依赖于LABEL（尽管通常没有直接依赖，但按照题目要求编号顺序）
+ (2, 3),  # COPY依赖于上一个RUN
+ (2, 4),  # 下一个RUN依赖于上一个RUN
+ (3, 4),  # RUN mkdir依赖于COPY
+ (4, 5),  # VOLUME依赖于上一个RUN
+ (4, 6),  # WORKDIR依赖于上一个RUN
+ (5, 6),  # WORKDIR依赖于VOLUME（尽管VOLUME通常不直接影响WORKDIR，但按编号顺序）
+ (6, 7)]  # ENTRYPOINT依赖于WORKDIR
+```
+
+注：这个依赖关系列表是按照Dockerfile指令的编写顺序来确定的，而非基于指令间的实际逻辑依赖。在Dockerfile的实际执行过程中，某些指令（如`VOLUME`）可能并不直接依赖于之前的指令，但在这个列表中，它们被标记为依赖于前一个指令，以满足题目中的编号顺序依赖要求。

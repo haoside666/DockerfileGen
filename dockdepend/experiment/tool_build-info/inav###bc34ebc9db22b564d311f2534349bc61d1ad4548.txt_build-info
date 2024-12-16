@@ -1,0 +1,8 @@
+{
+    "filename": "inav###bc34ebc9db22b564d311f2534349bc61d1ad4548.txt",
+    "command_length": 13,
+    "processing_time": 0.005240440368652344,
+    "dependency_count": 23,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (0, 11), (0, 12), (1, 6), (1, 7), (1, 8), (2, 6), (2, 7), (3, 4), (4, 5), (4, 9), (6, 7), (6, 8), (7, 8)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'environment variable dependencies', 'system level environment variable dependencies(implicit)', \"have shell pkg intersection,because exist intersection {'pip'}\", \"have shell pkg intersection,because exist intersection {'git'}\", \"have shell other intersection,because exist intersection {'${GROUP_ID}', '0', 'inav'}\", \"have shell other intersection,because exist intersection {'inav'}\", \"have shell other intersection,because exist intersection {'inav'}\"]"
+}

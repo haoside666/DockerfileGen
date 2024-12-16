@@ -1,0 +1,27 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM python:3.9
+WORKDIR /usr/src/app
+RUN apt-get update && apt-get install -y libssl-dev
+COPY web3 ./web3/
+COPY tests ./tests/
+COPY ens ./ens/
+COPY ethpm ./ethpm/
+COPY setup.py .
+COPY README.md .
+RUN pip install -e .[dev]
+WORKDIR /code
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # WORKDIR 依赖于 FROM，因为工作目录的设置基于基础镜像  
+ (2, 1),  # RUN apt-get update && apt-get install 依赖于 WORKDIR，因为通常在设置工作目录后安装依赖  
+ (3, 2),  # COPY web3 依赖于 apt-get 安装，因为需要在安装依赖后复制源代码  
+ (4, 3),  # COPY tests 依赖于 COPY web3，因为通常按照文件之间的逻辑关系顺序复制  
+ (5, 4),  # COPY ens 依赖于 COPY tests，同上  
+ (6, 5),  # COPY ethpm 依赖于 COPY ens，同上  
+ (7, 6),  # COPY setup.py 依赖于 COPY ethpm，同上  
+ (8, 7),  # COPY README.md 依赖于 COPY setup.py，同上  
+ (9, 8),  # RUN pip install 依赖于 COPY README.md，因为需要在复制所有必要的文件后安装Python包  
+ (10, 9)] # WORKDIR /code 依赖于 pip install，因为通常在安装完所有依赖后切换工作目录

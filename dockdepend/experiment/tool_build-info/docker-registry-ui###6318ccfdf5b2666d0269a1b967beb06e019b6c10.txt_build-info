@@ -1,0 +1,8 @@
+{
+    "filename": "docker-registry-ui###6318ccfdf5b2666d0269a1b967beb06e019b6c10.txt",
+    "command_length": 11,
+    "processing_time": 0.0012102127075195312,
+    "dependency_count": 16,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (0, 6), (0, 7), (0, 8), (0, 9), (0, 10), (2, 8), (2, 9), (2, 10), (6, 10), (8, 10), (9, 10)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency', 'exist file or directory dependency', 'exist file or directory dependency,because RUN instruct use /usr/share/nginx/html/', 'exist file or directory dependency,because common path /etc/nginx', 'exist file or directory dependency,because common path /usr/share/nginx/html', 'exist file or directory dependency,because common path /usr/share/nginx/html']"
+}

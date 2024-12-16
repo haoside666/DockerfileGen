@@ -1,0 +1,28 @@
+FROM node:alpine
+RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
+WORKDIR /usr/src/node-app
+COPY package.json yarn.lock ./
+USER node
+RUN yarn install --pure-lockfile
+COPY --chown=node:node . .
+EXPOSE 3000
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+    (1, 2),	# 目录依赖
+    (1, 4),	# node用户依赖
+	(1, 5),	# 目录间接依赖
+	(2, 3),	# WORKDIR目录依赖
+	(2, 5),	# WORKDIR目录依赖
+	(2, 6),	# WORKDIR目录依赖
+	(3, 5),	# 文件依赖
+	(4, 5),	# user dependency
+]
+
+所用时间：35.22

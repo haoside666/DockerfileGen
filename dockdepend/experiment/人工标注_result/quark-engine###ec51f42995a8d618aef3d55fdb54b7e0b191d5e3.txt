@@ -1,0 +1,26 @@
+FROM python:3.8-slim
+COPY . /app
+WORKDIR /app
+RUN apt-get update && apt-get install --no-install-recommends -y git graphviz && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN pip install pipenv && pipenv install --skip-lock
+RUN pipenv run freshquark
+WORKDIR /app/quark
+ENTRYPOINT ["pipenv", "run"]
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(1, 4),	# 目录依赖
+	(1, 5),	# 目录依赖
+	(1, 6),	# 目录依赖
+	(2, 4),	# WORKDIR目录依赖
+	(2, 5),	# WORKDIR目录依赖
+    (4, 5),	# pipenv依赖
+]
+
+所用时间：31.64

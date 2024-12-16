@@ -1,0 +1,65 @@
+[
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "RUN useradd ethercalc --create-home",
+        "edge": "(0, 1)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "RUN npm install -g ethercalc pm2 || true",
+        "edge": "(0, 2)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "RUN rm -rf /usr/local/lib/node_modules/ethercalc/node_modules/nodemailer/ || true",
+        "edge": "(0, 3)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "USER ethercalc",
+        "edge": "(0, 4)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "EXPOSE 8000",
+        "edge": "(0, 5)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "FROM node:4.8",
+        "after_instruct": "CMD sh -c REDIS_HOST=$REDIS_PORT_6379_TCP_ADDR REDIS_PORT=$REDIS_PORT_6379_TCP_PORT pm2 start -x `which ethercalc` -- --cors && pm2 logs",
+        "edge": "(0, 6)",
+        "type": "BASIC_IMAGE",
+        "dependency_description": "Image dependency"
+    },
+    {
+        "before_instruct": "RUN useradd ethercalc --create-home",
+        "after_instruct": "USER ethercalc",
+        "edge": "(1, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN npm install -g ethercalc pm2 || true",
+        "after_instruct": "USER ethercalc",
+        "edge": "(2, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    },
+    {
+        "before_instruct": "RUN rm -rf /usr/local/lib/node_modules/ethercalc/node_modules/nodemailer/ || true",
+        "after_instruct": "USER ethercalc",
+        "edge": "(3, 4)",
+        "type": "RUN_USER1",
+        "dependency_description": "shell command user is different from the USER instruction"
+    }
+]

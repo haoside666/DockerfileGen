@@ -1,0 +1,32 @@
+FROM nginx:alpine-slim
+LABEL maintainer="Jones MAGLOIRE @Joxit"
+WORKDIR /usr/share/nginx/html/
+ENV NGINX_PROXY_HEADER_Host '$http_host'
+ENV NGINX_LISTEN_PORT '80'
+ENV SHOW_CATALOG_NB_TAGS 'false'
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY bin/90-docker-registry-ui.sh /docker-entrypoint.d/90-docker-registry-ui.sh
+COPY dist/ /usr/share/nginx/html/
+COPY favicon.ico /usr/share/nginx/html/
+RUN chown -R nginx:nginx /etc/nginx/ /usr/share/nginx/html/ /var/cache/nginx
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(0, 9),	# Image dependency
+	(0, 10),	# Image dependency
+	(2, 8),	# WORKDIR目录依赖
+	(2, 9),	# WORKDIR目录依赖
+	(2, 10),	# 目录依赖
+	(6, 10),	# 目录依赖
+	(8, 10),	# 目录依赖
+	(9, 10),	# 目录依赖
+]
+
+所用时间：36.69

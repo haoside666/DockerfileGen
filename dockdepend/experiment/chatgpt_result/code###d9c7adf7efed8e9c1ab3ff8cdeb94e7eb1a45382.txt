@@ -1,0 +1,40 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+0 FROM ubuntu:14.04
+1 MAINTAINER Dongweiming "ciici123@gmail.com"
+2 ENV DEBIAN_FRONTEND noninteractive
+3 ENV CODE_ENV "unset"
+4 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
+5 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+6 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+7 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+8 RUN echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+9 RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list
+10 RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
+11 RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
+12 RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list
+13 RUN echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+14 RUN apt-get update
+15 RUN apt-get install curl python -yq
+16 RUN curl -O https://raw.githubusercontent.com/douban/code/master/scripts/install_code.sh
+17 RUN /bin/bash install_code.sh
+18 RUN rm -rf install_code.sh
+19 EXPOSE 8000
+20 WORKDIR /code
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+注意不是只判断前后两条指令行间的依赖关系，存在(1,3)这种情况，且前后两条指令不一定有依赖关系，依赖关系定义是即不可交换的偏序关系，交换后会导致原镜像构建失败。
+
+[
+    (0, 1),  # FROM 指令需要在 MAINTAINER 指令之前执行
+    (1, 2),  # MAINTAINER 指令需要在 ENV 指令之前执行
+    (2, 3),  # 第一个 ENV 指令需要在第二个 ENV 指令之前执行
+    (2, 4),  # 第一个 ENV 指令需要在所有的 RUN 指令之前执行
+    (4, 14), # 第一个 RUN 指令需要在更新之前执行
+    (14, 15),# apt-get update 需要在安装软件包之前执行
+    (15, 16),# 安装软件包需要在下载脚本之前执行
+    (16, 17),# 下载脚本需要在运行安装之前执行
+    (17, 18) # 安装脚本需要在删除脚本之前执行
+]
+

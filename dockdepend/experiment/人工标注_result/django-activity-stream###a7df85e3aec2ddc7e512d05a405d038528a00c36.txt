@@ -1,0 +1,27 @@
+FROM python:3.9
+ENV PYTHONUNBUFFERED 1
+ENV LC_ALL=C.UTF-8
+WORKDIR /app
+ADD runtests/requirements.txt /app/
+RUN pip install -r requirements.txt
+ENV DJANGO_SETTINGS_MODULE settings
+EXPOSE 8000
+CMD ["/app/manage.py", "runserver", "0.0.0.0:8000"]
+
+
+
+[
+	(0, 1),	# Image dependency
+	(0, 2),	# Image dependency
+	(0, 3),	# Image dependency
+	(0, 4),	# Image dependency
+	(0, 5),	# Image dependency
+	(0, 6),	# Image dependency
+	(0, 7),	# Image dependency
+	(0, 8),	# Image dependency
+	(3, 4),	# WORKDIR目录依赖
+	(3, 5),	# WORKDIR目录依赖
+	(4, 5),	# 文件依赖
+]
+
+所用时间：29.03

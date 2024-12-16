@@ -1,0 +1,8 @@
+{
+    "filename": "autocut###638f6d8bab9ddfb07017267befd4c40208809dfc.txt",
+    "command_length": 6,
+    "processing_time": 0.0025186538696289062,
+    "dependency_count": 9,
+    "dependency": "[(0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (1, 3), (1, 5), (2, 5), (3, 5)]",
+    "dependency_description": "['Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'Image dependency', 'exist file or directory dependency,because RUN instruct create /autocut', 'have shell io intersection,because common path /autocut', 'exist file or directory dependency,because common path /autocut', 'exist file or directory dependency,because RUN instruct use /autocut']"
+}

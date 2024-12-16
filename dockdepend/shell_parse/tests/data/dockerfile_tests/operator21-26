@@ -1,0 +1,26 @@
+# NAPPEND nfile			# fd>> fname
+echo "123">>1.txt
+
+# NTOFD ndup			# fd<&dupfd
+cat <& /dev/stdin < input.txt
+
+# NFROMFD ndup			# fd>&dupfd
+echo msg 2>&$x
+
+# NHERE nhere			# fd<<\!
+cat << "123"
+a
+123
+
+# NXHERE nhere			# fd<<!
+cat <<END
+This is a multiline
+text block.
+It can contain multiple lines
+without the need for quoting.
+END
+
+# NNOT nnot			# ! command  (actually pipeline)
+if ! grep "pattern" file.txt; then
+  echo "Pattern not found"
+fi

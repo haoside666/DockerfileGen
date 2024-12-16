@@ -1,0 +1,33 @@
+-a FILE
+-b FILE
+-c FILE
+-d FILE
+-ef
+-e FILE
+-eq
+-f FILE
+-ge
+-g FILE
+-G FILE
+-gt
+-h FILE
+-k FILE
+-le
+-L FILE
+-lt
+-n
+-ne
+-N FILE
+-nt
+-o
+-O FILE
+-ot
+-p FILE
+-r FILE
+-s FILE
+-S FILE
+-t FD
+-u FILE
+-w FILE
+-x FILE
+-z

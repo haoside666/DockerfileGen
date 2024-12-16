@@ -1,0 +1,39 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+FROM python:3.9-slim-bullseye
+WORKDIR /app
+ENV VIRTUAL_ENV /app/.venv
+RUN python -m venv $VIRTUAL_ENV
+ENV PATH $VIRTUAL_ENV/bin:$PATH
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel pip-tools
+COPY pyproject.toml .
+RUN pip-compile -o requirements.txt pyproject.toml -v --strip-extras
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+COPY MANIFEST.in .
+COPY README.md .
+COPY src ./src
+RUN pip install --no-cache-dir --no-dependencies .
+USER 5000
+WORKDIR /sql
+ENTRYPOINT ["sqlfluff"]
+CMD ["--help"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(1, 0),  # WORKDIR 依赖于 FROM，因为工作目录的设置是基于基础镜像的  
+ (2, 1),  # ENV 依赖于 WORKDIR，因为环境变量可能依赖于工作目录的设置  
+ (3, 2),  # RUN 依赖于 ENV，因为需要环境变量来创建虚拟环境  
+ (4, 3),  # 第二个 ENV 依赖于第一个 RUN，因为环境变量 PATH 的更新依赖于虚拟环境的创建  
+ (5, 4),  # 第二个 RUN 依赖于第二个 ENV，因为需要更新后的 PATH 来安装 pip 工具  
+ (6, 5),  # COPY 依赖于第二个 RUN，因为需要在安装了 pip 工具后才能复制 pyproject.toml 文件  
+ (7, 6),  # 第三个 RUN 依赖于 COPY，因为需要 pyproject.toml 文件来生成 requirements.txt  
+ (8, 7),  # 第四个 RUN 依赖于第三个 RUN，因为需要在生成 requirements.txt 后才能安装依赖  
+ (9, 8),  # 第一个 COPY (MANIFEST.in) 依赖于第四个 RUN，因为需要在安装依赖后才能复制其他文件  
+ (10, 9), # 第二个 COPY (README.md) 依赖于第一个 COPY (MANIFEST.in)，因为这两个操作在逻辑上是连续的  
+ (11, 10),# 第三个 COPY (src) 依赖于第二个 COPY (README.md)，同理  
+ (12, 11),# 第五个 RUN 依赖于第三个 COPY (src)，因为需要在复制源代码后才能安装应用本身  
+ (13, 12),# USER 依赖于第五个 RUN，因为用户切换通常发生在应用安装完成之后  
+ (14, 13),# 第二个 WORKDIR 依赖于 USER，因为工作目录的变更可能需要根据用户权限进行  
+ (15, 14),# ENTRYPOINT 依赖于第二个 WORKDIR，因为入口点通常设置在工作目录之后  
+ (16, 15)] # CMD 依赖于 ENTRYPOINT，因为命令是入口点的一部分，用于指定容器启动时的默认行为

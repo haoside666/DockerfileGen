@@ -1,0 +1,11 @@
+FROM ubuntu
+ENV aaa=${aaa:-word}
+ENV bbb=${bbb:+word}
+ENV ccc=${ccc:?word}
+ENV ddd=${ddd:=word}
+ENV GOPROXY ${GOPROXY:-direct}
+ENV commit_hash="dev"
+ENV tag_name="dev"
+ARG CGO=1
+ENV CGO_ENABLED=${CGO}
+RUN echo $CONT_IMG_VER

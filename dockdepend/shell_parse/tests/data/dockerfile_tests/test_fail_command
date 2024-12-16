@@ -1,0 +1,2 @@
+
+openssl req -x509 -config < (printf "extendedKeyUsage=serverAuth")

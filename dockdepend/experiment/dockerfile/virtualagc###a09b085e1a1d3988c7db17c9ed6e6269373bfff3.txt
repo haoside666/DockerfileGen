@@ -1,0 +1,6 @@
+FROM jlawton/virtualagc
+MAINTAINER Jim Lawton
+RUN mkdir /virtualagc
+COPY . /virtualagc
+RUN cd virtualagc && make clean
+RUN cd virtualagc && make yaLEMAP yaAGC yaAGS yaYUL missions corediffs

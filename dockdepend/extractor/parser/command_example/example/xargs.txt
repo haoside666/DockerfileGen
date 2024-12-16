@@ -1,0 +1,2 @@
+xargs -a /tmp/apt-packages.txt apt-get install -y
+xargs rm -rf < /filelist

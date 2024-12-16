@@ -1,0 +1,64 @@
+已知Dockerfile中的最小单元是以指令开头的行，并且从0开始给每个指令行进行编号，即第n个指令行对应n-1。若(0,1)表示第二个指令行依赖于第一个指令行，注意前后逻辑关系，现在需要得到Dockerfile的所有指令行之间的依赖关系列表。要求返回一个列表，其中每个元素的形式类似于(0,1)这种形式。
+
+
+ARG BASE_IMAGE="ubuntu"
+ARG TAG="22.04"
+FROM ${BASE_IMAGE}:${TAG}
+WORKDIR /ardupilot
+ARG DEBIAN_FRONTEND=noninteractive
+ARG USER_NAME=ardupilot
+ARG USER_UID=1000
+ARG USER_GID=1000
+ARG SKIP_AP_EXT_ENV=1
+ARG SKIP_AP_GRAPHIC_ENV=1
+ARG SKIP_AP_COV_ENV=1
+ARG SKIP_AP_GIT_CHECK=1
+RUN groupadd ${USER_NAME} --gid ${USER_GID} && useradd -l -m ${USER_NAME} -u ${USER_UID} -g ${USER_GID} -s /bin/bash
+RUN apt-get update && apt-get install --no-install-recommends -y lsb-release sudo tzdata bash-completion
+COPY Tools/environment_install/install-prereqs-ubuntu.sh /ardupilot/Tools/environment_install/
+COPY Tools/completion /ardupilot/Tools/completion/
+ENV USER=${USER_NAME}
+RUN echo "ardupilot ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
+RUN chmod 0440 /etc/sudoers.d/${USER_NAME}
+RUN chown -R ${USER_NAME}:${USER_NAME} /${USER_NAME}
+USER ${USER_NAME}
+ENV SKIP_AP_EXT_ENV=$SKIP_AP_EXT_ENV SKIP_AP_GRAPHIC_ENV=$SKIP_AP_GRAPHIC_ENV SKIP_AP_COV_ENV=$SKIP_AP_COV_ENV SKIP_AP_GIT_CHECK=$SKIP_AP_GIT_CHECK
+RUN Tools/environment_install/install-prereqs-ubuntu.sh -y
+RUN echo "alias waf=\"/${USER_NAME}/waf\"" >> ~/.ardupilot_env
+RUN echo "if [ -d \"\$HOME/.local/bin\" ] ; then\nPATH=\"\$HOME/.local/bin:\$PATH\"\nfi" >> ~/.ardupilot_env
+RUN export ARDUPILOT_ENTRYPOINT="/home/${USER_NAME}/ardupilot_entrypoint.sh" && echo "#!/bin/bash" > $ARDUPILOT_ENTRYPOINT && echo "set -e" >> $ARDUPILOT_ENTRYPOINT && echo "source /home/${USER_NAME}/.ardupilot_env" >> $ARDUPILOT_ENTRYPOINT && echo 'exec "$@"' >> $ARDUPILOT_ENTRYPOINT && chmod +x $ARDUPILOT_ENTRYPOINT && sudo mv $ARDUPILOT_ENTRYPOINT /ardupilot_entrypoint.sh
+ENV BUILDLOGS=/tmp/buildlogs
+RUN sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+ENV CCACHE_MAXSIZE=1G
+ENTRYPOINT ["/ardupilot_entrypoint.sh"]
+CMD ["bash"]
+
+请给出Dockerfile的所有指令行之间的依赖关系列表，只给出答案和一条注释描述即可，每个依赖关系后面跟着注释描述，不需要其余描述。
+
+[(2, 0),  # FROM依赖于ARG，因为需要知道基础镜像和标签  
+ (3, 2),  # WORKDIR依赖于FROM，设置工作目录需要在基础镜像上  
+ (4, 0),  # ARG指令之间没有直接的依赖关系，但它们为后续的指令提供了变量值  
+ (5, 0),  
+ (6, 0),  
+ (7, 0),  
+ (8, 0),  
+ (9, 0),  
+ (10, 0),  
+ (11, 0),  
+ (12, 3),  # RUN创建用户组和用户依赖于WORKDIR，因为用户需要在特定的工作目录下创建  
+ (13, 2),  # RUN安装软件包依赖于FROM，因为需要在基础镜像上安装  
+ (14, 2),  # COPY文件依赖于FROM和WORKDIR，因为文件需要被复制到工作目录  
+ (15, 2),  # COPY另一个目录依赖于FROM和WORKDIR  
+ (16, 2),  # ENV设置环境变量依赖于FROM和之前的指令，因为环境变量需要在容器内部设置  
+ (17, 2),  # RUN修改sudoers文件依赖于FROM和ENV，因为需要知道用户名来修改配置  
+ (18, 17), # RUN修改文件权限依赖于上一行RUN指令，因为权限修改需要基于已存在的文件  
+ (19, 12), # RUN改变文件所有者依赖于RUN创建用户和用户组  
+ (20, 19), # USER切换用户依赖于之前设置用户和用户组的RUN指令  
+ (21, 20), # ENV设置更多环境变量依赖于USER，因为环境变量可能涉及用户特定的设置  
+ (22, 21), # RUN执行脚本安装依赖依赖于之前的所有设置，特别是ENV和USER  
+ (23, 22), # RUN修改用户的环境文件依赖于RUN执行脚本安装依赖  
+ (24, 23), # RUN设置ardupilot_entrypoint.sh脚本依赖于之前的所有设置  
+ (25, 24), # RUN清理和删除临时文件依赖于之前的所有安装步骤  
+ (26, 2),  # ENV设置编译缓存大小依赖于FROM，因为环境变量需要在容器内部设置  
+ (27, 26), # ENTRYPOINT设置入口点脚本依赖于之前的所有设置，特别是ENV和RUN设置脚本的指令  
+ (28, 27)] # CMD设置默认执行的命令依赖于ENTRYPOINT，因为CMD定义了容器启动时要运行的命令
