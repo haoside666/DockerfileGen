@@ -73,6 +73,34 @@ def get_command_list_feature(command_list: Union[List[str], List[List[str]]], at
     return instruct_feature, attribute_dir
 
 
+def get_command_feature_list(command_list: Union[List[str], List[List[str]]], attribute_user: str,
+                             attribute_dir: str) -> Tuple[List[CommandInvocationFeature], str]:
+    cmd_inv_feat_list = []
+    for command in command_list:
+        if isinstance(command, str):
+            cmd_feature, current_dir = get_cmd_inv_feature_in_cmd_mode(command)
+            if cmd_feature is None:
+                attribute_dir = get_real_attribute_dir(attribute_user, attribute_dir, current_dir)
+                cmd_feature = CommandInvocationFeature("cd", [attribute_dir], [], [], [], [])
+                cmd_inv_feat_list.append(cmd_feature)
+            else:
+                cmd_feature.get_real_input_and_output_path_by_path_pointer(attribute_dir, attribute_user)
+                cmd_inv_feat_list.append(cmd_feature)
+        elif isinstance(command, List):
+            pipe = ""
+            for item in command:
+                cmd_feature, current_dir, pipe = get_cmd_inv_feature_in_pipe_mode(item, pipe)
+                if cmd_feature is None:
+                    attribute_dir = get_real_attribute_dir(attribute_user, attribute_dir, current_dir)
+                    cmd_feature = CommandInvocationFeature("cd", [attribute_dir], [], [], [], [])
+                    cmd_inv_feat_list.append(cmd_feature)
+                else:
+                    cmd_feature.get_real_input_and_output_path_by_path_pointer(attribute_dir, attribute_user)
+                    cmd_inv_feat_list.append(cmd_feature)
+
+    return cmd_inv_feat_list, attribute_dir
+
+
 def get_real_attribute_dir(attribute_user: str, attribute_dir: str, current_dir: str):
     if os.path.isabs(current_dir):
         attribute_dir = current_dir

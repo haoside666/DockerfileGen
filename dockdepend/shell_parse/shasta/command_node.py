@@ -95,13 +95,13 @@ class CommandNode(Command):
         return str
 
     def feature(self) -> CommandFeature:
-        var_p_list: List[str] = []
+        var_p_list: List[Tuple[str, str]] = []
         command_list: List[str] = []
         other_list: List[str] = []
 
         for item in self.assignments:
-            var_p_list.append(item.var)
-            other_list.append(item.get_val_string())
+            var_p_list.append((item.var, item.get_var_string()))
+            # other_list.append(item.get_var_string())
 
         if len(self.arguments) != 0:
             command_list.append(separated(string_of_arg, self.arguments))
@@ -343,6 +343,7 @@ class DefunNode(Command):
         other_list.append(self.name.__repr__())
         feat: CommandFeature = self.body.feature()
         feat.add_other_list_to_feature(other_list)
+        feat.set_is_complex_flag()
         return feat
 
 
@@ -385,6 +386,7 @@ class ForNode(Command):
 
         feat: CommandFeature = self.body.feature()
         feat.add_other_list_to_feature(other_list)
+        feat.set_is_complex_flag()
         return feat
 
 
@@ -431,7 +433,9 @@ class WhileNode(Command):
                     string = string.strip()
             command_list[index] = string
         feat2: CommandFeature = self.body.feature()
-        return union_command_feature(feat1, feat2)
+        feat: CommandFeature = union_command_feature(feat1, feat2)
+        feat.set_is_complex_flag()
+        return feat
 
 
 class IfNode(Command):
@@ -494,7 +498,9 @@ class IfNode(Command):
             command_list[index] = string
         feat2: CommandFeature = self.then_b.feature()
         feat3: CommandFeature = self.else_b.feature()
-        return get_command_feature_by_union_command_feature_list([feat1, feat2, feat3])
+        feat: CommandFeature = get_command_feature_by_union_command_feature_list([feat1, feat2, feat3])
+        feat.set_is_complex_flag()
+        return feat
 
 
 class CaseNode(Command):
@@ -530,7 +536,9 @@ class CaseNode(Command):
         for case in self.cases:
             cmd: Command = case["cbody"]
             feat_list.append(cmd.feature())
-        return get_command_feature_by_union_command_feature_list(feat_list)
+        feat: CommandFeature = get_command_feature_by_union_command_feature_list(feat_list)
+        feat.set_is_complex_flag()
+        return feat
 
 
 class AssignNode(AstNode):
@@ -552,7 +560,7 @@ class AssignNode(AstNode):
     def pretty(self):
         return f'{self.var}={string_of_arg(self.val)}'
 
-    def get_val_string(self) -> str:
+    def get_var_string(self) -> str:
         return string_of_arg(self.val)
 
 

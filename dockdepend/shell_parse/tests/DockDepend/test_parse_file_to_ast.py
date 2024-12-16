@@ -14,37 +14,37 @@ class TestASTCmdFileParse(unittest.TestCase):
     #     print(parse_shell_to_asts(input_script_path))
 
     def test_command_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_command_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_command_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_pipe_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_pipe_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_pipe_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_if_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_if_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_if_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_while_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_while_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_while_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_for_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_for_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_for_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_fun_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_fun_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_fun_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 
     def test_case_node_parse(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_case_node")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_case_node")
         for typed_ast_object in parse_shell_to_asts(input_script_path):
             print(typed_ast_object)
 

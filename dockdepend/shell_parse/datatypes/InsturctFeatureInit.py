@@ -5,10 +5,10 @@ CMD_TYPE = Union[List[str], List[List[str]]]
 
 
 class InstructFeatureInit:
-    def __init__(self, var_p_list: List[str] = None, command_list: CMD_TYPE = None,
+    def __init__(self, var_p_list: List[Tuple[str, str]] = None, command_list: CMD_TYPE = None,
                  redir_input_list: List[str] = None, redir_output_list: List[str] = None, var_c_list: List[str] = None,
                  other_list: List[str] = None) -> None:
-        self.var_p_list: List[str] = return_empty_list_if_none_else_itself(var_p_list)
+        self.var_p_list: List[Tuple[str, str]] = return_empty_list_if_none_else_itself(var_p_list)
         self.command_list: CMD_TYPE = return_empty_list_if_none_else_itself(command_list)
         self.redir_input_list: List[str] = return_empty_list_if_none_else_itself(redir_input_list)
         self.redir_output_list: List[str] = return_empty_list_if_none_else_itself(redir_output_list)

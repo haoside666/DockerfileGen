@@ -23,12 +23,12 @@ class TestASTCmdFeatureParse(unittest.TestCase):
         print(parse_shell_script_file_to_instruct_feature(input_script_path))
 
     def test_parse_shell_script4(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_fail_command")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_fail_command")
         # 测试是否抛出ParsingException
         with self.assertRaises(ParsingException):
             parse_shell_script_file_to_instruct_feature(input_script_path)
         print("test passed!")
 
     def test_parse_shell_script5(self):
-        input_script_path = os.path.join(CURRENT_DIR, "data/dockerfile_tests/test_end_of_CTLENDQUOTEMARK")
+        input_script_path = os.path.join(CURRENT_DIR, "../data/dockerfile_tests/test_end_of_CTLENDQUOTEMARK")
         print(parse_shell_script_file_to_instruct_feature(input_script_path))

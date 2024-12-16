@@ -44,7 +44,7 @@ class DockerfileMeta:
                 if command.cmd == "FROM":
                     cut_pos.append(index)
             cut_pos.append(length)
-            # TODO: In order to solve the situation of ARG from FROM
+            # NOTE: In order to solve the situation of ARG from FROM
             cut_pos[0] = 0
             for i in range(len(cut_pos) - 1):
                 start = cut_pos[i]

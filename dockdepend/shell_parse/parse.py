@@ -125,6 +125,57 @@ def parse_shell_cmd_to_instruct_feature(cmd: str) -> Optional[InstructFeatureIni
         raise
 
 
+# 不考虑包括以下几种含有shell语法Dockerfile
+# 含有复杂结构 即 含有def,for,while,if,case都为复杂命令
+# 含有重定向符 即redir_input_list或redir_output_list不为空
+# 含有子命令，即``或$()形式
+def parse_shell_cmd_to_instruct_feature_with_dockerfile_gen(cmd: str) -> Optional[InstructFeatureInit]:
+    with open(TEMP_CMD_PATH, "w") as file:
+        file.write(cmd)
+    clear_file(TEMP_VAR_C_LIST_PATH)
+    clear_file(TEMP_B_TYPE_PATH)
+    try:
+        global Flag
+        new_ast_objects = parser.parse(TEMP_CMD_PATH, Flag)
+        if Flag:
+            Flag = False
+        feat_list = []
+        for untyped_ast, _, _, _ in new_ast_objects:
+            typed_ast = to_ast_node(untyped_ast)
+            feat_list.append(typed_ast.feature())
+        assert len(feat_list) <= 1
+        if len(feat_list) == 0:
+            return None
+        var_c_list: List[str] = get_var_c_list()
+        b_type_feat: CommandFeature = get_b_type_feature()
+        # 含有子命令
+        if not b_type_feat.is_empty():
+            return None
+        total_cmd_feat: CommandFeature = feat_list[0]
+        # 含有重定向符
+        if total_cmd_feat.redir_input_list or total_cmd_feat.redir_output_list:
+            return None
+        # 含有复杂结构
+        if total_cmd_feat.is_complex:
+            return None
+        instruct_feature_init: InstructFeatureInit = total_cmd_feat.get_instruct_feature_init_add_var_c_list(var_c_list)
+
+        return instruct_feature_init
+    except ParsingException:
+        print(f"ParsingException: The shell parsing process fails for the command: {cmd}", file=sys.stderr)
+        raise
+    except ExceptEndQuotemark as e:
+        cmd = process_inside_braces(cmd)
+        try:
+            return parse_shell_cmd_to_instruct_feature(cmd)
+        except Exception:
+            print(f"ExceptEndQuotemark: The shell parsing process fails for the command: {cmd}", file=sys.stderr)
+            raise
+    except Exception:
+        print(f"Exception: The shell parsing process fails for the command: {cmd}", file=sys.stderr)
+        raise
+
+
 def parse_shell_script_file_to_instruct_feature(input_script_path: str) -> Optional[InstructFeatureInit]:
     clear_file(TEMP_VAR_C_LIST_PATH)
     clear_file(TEMP_B_TYPE_PATH)
