@@ -15,6 +15,8 @@ class PrimitiveFeatureList:
         self.is_complex: bool = is_complex  # 用于标识命令是否复杂，如 def,for,while,if,case都为复杂命令
 
     def add_var_c_list(self, var_c_list: List[str]):
+        if len(var_c_list) == 0:
+            return self
         for p_feat in self.p_feat_list:
             for var_c in var_c_list:
                 if isinstance(p_feat.command, str):
@@ -23,6 +25,7 @@ class PrimitiveFeatureList:
                 elif isinstance(p_feat.command, list):
                     if var_c in " | ".join(p_feat.command):
                         p_feat.var_c_list.append(var_c)
+        return self
 
     def set_is_complex_flag(self):
         self.is_complex = True

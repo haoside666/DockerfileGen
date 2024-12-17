@@ -17,3 +17,7 @@ class InstructNotFoundError(Exception):
 
 class ParameterMissError(Exception):
     pass
+
+
+class SyntaxNonSupportError(Exception):
+    pass

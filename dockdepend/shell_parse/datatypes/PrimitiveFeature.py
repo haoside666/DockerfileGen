@@ -33,3 +33,14 @@ class PrimitiveFeature:
 
     def __eq__(self, other) -> bool:
         return standard_eq(self, other)
+
+    def split_other_list_to_two_part(self) -> Tuple[List[str], List[str]]:
+        one_part: list[str] = []
+        two_part: list[str] = []
+        other_list: list = list(set(self.other_list))
+        for item in other_list:
+            if "/" in item:
+                one_part.append(item)
+            else:
+                two_part.append(item)
+        return one_part, two_part

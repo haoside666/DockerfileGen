@@ -4,7 +4,7 @@ from dockdepend.shell_parse.datatypes.PrimitiveFeatureList import PrimitiveFeatu
 from dockdepend.shell_parse.libdash import parser
 from dockdepend.shell_parse.shasta.json_to_ast import to_ast_node
 from dockdepend.shell_parse.shasta.ast_node import AstNode
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Union
 from dockdepend.shell_parse.datatypes.CommandFeature import CommandFeature, read_jsons, union_command_feature, \
     get_command_feature_by_union_command_feature_list
 from dockdepend.shell_parse.datatypes.InsturctFeatureInit import InstructFeatureInit
@@ -89,7 +89,10 @@ def clear_file(file_path):
 #         raise
 #
 #
-# def parse_shell_cmd_to_instruct_feature(cmd: str) -> Optional[InstructFeatureInit]:
+def parse_shell_cmd_to_instruct_feature(cmd: str) -> Optional[InstructFeatureInit]:
+    pass
+
+
 #     with open(TEMP_CMD_PATH, "w") as file:
 #         file.write(cmd)
 #     clear_file(TEMP_VAR_C_LIST_PATH)
@@ -127,9 +130,9 @@ def clear_file(file_path):
 
 
 # 不考虑包括以下几种含有shell语法Dockerfile
-# 含有复杂结构 即 含有def,for,while,if,case都为复杂命令
+# 含有复杂结构 即 含有def,for,while,if,case等为复杂命令
 # 含有子命令，即``或$()形式
-def parse_shell_cmd_to_primitive_feature(cmd: str) -> Optional[PrimitiveFeatureList]:
+def parse_shell_cmd_to_primitive_feature(cmd: str) -> Union[str, PrimitiveFeatureList]:
     with open(TEMP_CMD_PATH, "w") as file:
         file.write(cmd)
     clear_file(TEMP_VAR_C_LIST_PATH)
@@ -145,14 +148,18 @@ def parse_shell_cmd_to_primitive_feature(cmd: str) -> Optional[PrimitiveFeatureL
             feat_list.append(typed_ast.feature())
         assert len(feat_list) <= 1
         if len(feat_list) == 0:
-            return None
+            return "None"
         var_c_list: List[str] = get_var_c_list()
+        b_type_feat: str = get_b_type_feature()
         total_cmd_feat: PrimitiveFeatureList = feat_list[0]
         # 含有复杂结构
         if total_cmd_feat.is_complex:
-            return None
-        total_cmd_feat.add_var_c_list(list(set(var_c_list)))
-        return total_cmd_feat
+            return "含有复杂结构"
+        # 含有子命令
+        if b_type_feat:
+            return "含有子命令"
+
+        return total_cmd_feat.add_var_c_list(list(set(var_c_list)))
     except ParsingException:
         print(f"ParsingException: The shell parsing process fails for the command: {cmd}", file=sys.stderr)
         raise
@@ -247,8 +254,10 @@ def get_var_c_list() -> List[str]:
         return [line.strip() for line in file]
 
 
-def get_b_type_feature() -> CommandFeature:
-    return read_jsons(TEMP_B_TYPE_PATH)
+def get_b_type_feature() -> str:
+    with open(TEMP_B_TYPE_PATH, "r") as file:
+        return file.read()
+    # return read_jsons(TEMP_B_TYPE_PATH)
 
 
 def process_inside_braces(cmd):

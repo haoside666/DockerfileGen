@@ -16,7 +16,7 @@ class TestDependencyJudge(unittest.TestCase):
     # Judging dependencies on a single dockerfile
     # Print in a beautiful way and will get the command meta structure of the dockerfile
     def test_single_dockerfile(self):
-        dockerfile_name = "./example/m1n1###71125063e4f80265a8464cb63f9b54258b38bb10.txt"
+        dockerfile_name = "./example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfileMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -28,7 +28,7 @@ class TestDependencyJudge(unittest.TestCase):
 
     # Print only dependency tuples
     def test_single_dockerfile_with_simple_way(self):
-        dockerfile_name = "./data/Dockerfile2"
+        dockerfile_name = "./data/Dockerfile3"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfileMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:

@@ -60,7 +60,7 @@ class InstructMetaList:
         self.get_arg_dict_by_fulled_command_meta_list(cmd_meta_list)
         self.set_null_value_in_the_dictionary_to_original_form()
         self.__get_real_command_meta_list_by_arg_dict(cmd_meta_list)
-        self.__mark_attribute_dir_and_user(cmd_meta_list)
+        # self.__mark_attribute_dir_and_user(cmd_meta_list)
         return cmd_meta_list
 
     # Get a dictionary of arg in the build phase
