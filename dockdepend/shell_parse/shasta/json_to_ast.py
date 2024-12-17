@@ -131,7 +131,7 @@ def to_arg_char(arg_char) -> ArgChar:
         return QArgChar(to_arg(v))
     elif k == "B":
         cmd: Command = to_ast_node(v)
-        print_to_file(TEMP_B_TYPE_PATH, cmd.feature().json())
+        # print_to_file(TEMP_B_TYPE_PATH, cmd.feature().json())
         return BArgChar(cmd)
     assert False
 

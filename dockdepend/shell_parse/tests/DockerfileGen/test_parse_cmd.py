@@ -60,3 +60,7 @@ class TestASTCmdParse(unittest.TestCase):
     def test_parse_cmd9(self):
         cmd = '''aaa="123"'''
         print(parse_shell_cmd_to_instruct_feature_with_dockerfile_gen(cmd))
+
+    def test_parse_cmd10(self):
+        cmd = '''unzip -qd ${APPS_BASE} /tmp/wildfly.zip && ln -s ${APPS_BASE}/wildfly-${WILDFLY_VERSION} ${WILDFLY_HOME}'''
+        print(parse_shell_cmd_to_instruct_feature_with_dockerfile_gen(cmd))

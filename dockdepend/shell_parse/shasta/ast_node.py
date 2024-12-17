@@ -1,6 +1,6 @@
 from abc import abstractmethod, ABCMeta
 from typing import List, Tuple
-from dockdepend.shell_parse.datatypes.CommandFeature import CommandFeature
+from dockdepend.shell_parse.datatypes.PrimitiveFeatureList import PrimitiveFeatureList
 
 
 class AstNode(metaclass=ABCMeta):
@@ -20,7 +20,7 @@ class AstNode(metaclass=ABCMeta):
 
 class Command(AstNode):
     @abstractmethod
-    def feature(self) -> CommandFeature:
+    def feature(self) -> PrimitiveFeatureList:
         pass
 
     @staticmethod

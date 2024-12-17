@@ -3,7 +3,7 @@ from dockdepend.shell_parse.shasta.ast_node import AstNode, Command
 from dockdepend.shell_parse.shasta.print_lib import *
 from dockdepend.shell_parse.shasta.char_type import ArgChar, string_of_arg
 from dockdepend.shell_parse.shasta.util import make_kv
-from dockdepend.shell_parse.datatypes.CommandFeature import *
+from dockdepend.shell_parse.datatypes.PrimitiveFeatureList import *
 from typing import Tuple, Literal, Dict
 
 
@@ -46,9 +46,9 @@ class PipeNode(Command):
         else:
             return p
 
-    def feature(self) -> CommandFeature:
+    def feature(self) -> PrimitiveFeatureList:
         feat_list = [item.feature() for item in self.items]
-        return get_pipe_command_feature_by_union_command_feature_list(feat_list)
+        return get_pipe_primitive_feature_by_union_primitive_feature_list(feat_list)
 
 
 class CommandNode(Command):
@@ -94,21 +94,18 @@ class CommandNode(Command):
 
         return str
 
-    def feature(self) -> CommandFeature:
+    def feature(self) -> PrimitiveFeatureList:
         var_p_list: List[Tuple[str, str]] = []
-        command_list: List[str] = []
-        other_list: List[str] = []
 
         for item in self.assignments:
             var_p_list.append((item.var, item.get_var_string()))
-            # other_list.append(item.get_var_string())
 
-        if len(self.arguments) != 0:
-            command_list.append(separated(string_of_arg, self.arguments))
+        command: str = self.pretty()
 
-        redir_input_list, redir_output_list, other1_list = self.get_redir_list_info(self.redir_list)
+        redir_input_list, redir_output_list, other_list = self.get_redir_list_info(self.redir_list)
 
-        return CommandFeature(var_p_list, command_list, redir_input_list, redir_output_list, other_list + other1_list)
+        p_feat = PrimitiveFeature(var_p_list, command, redir_input_list, redir_output_list, other_list)
+        return PrimitiveFeatureList([p_feat])
 
 
 class SubshellNode(Command):
@@ -138,9 +135,9 @@ class SubshellNode(Command):
     def pretty(self):
         return parens(self.body.pretty() + string_of_redirs(self.redir_list))
 
-    def feature(self) -> CommandFeature:
-        feat: CommandFeature = self.body.feature()
-        feat.add_redir_list_to_feature(*self.get_redir_list_info(self.redir_list))
+    def feature(self) -> PrimitiveFeatureList:
+        feat: PrimitiveFeatureList = self.body.feature()
+        feat.set_is_complex_flag()
         return feat
 
 
@@ -166,8 +163,8 @@ class AndNode(Command):
     def pretty(self):
         return f'{braces(self.left_operand.pretty())} && {braces(self.right_operand.pretty())}'
 
-    def feature(self) -> CommandFeature:
-        return union_command_feature(self.left_operand.feature(), self.right_operand.feature())
+    def feature(self) -> PrimitiveFeatureList:
+        return union_primitive_feature(self.left_operand.feature(), self.right_operand.feature())
 
 
 class OrNode(Command):
@@ -192,8 +189,8 @@ class OrNode(Command):
     def pretty(self):
         return f'{braces(self.left_operand.pretty())} || {braces(self.right_operand.pretty())}'
 
-    def feature(self) -> CommandFeature:
-        return union_command_feature(self.left_operand.feature(), self.right_operand.feature())
+    def feature(self) -> PrimitiveFeatureList:
+        return union_primitive_feature(self.left_operand.feature(), self.right_operand.feature())
 
 
 class SemiNode(Command):
@@ -218,8 +215,8 @@ class SemiNode(Command):
     def pretty(self):
         return f'{braces(self.left_operand.pretty())},{braces(self.right_operand.pretty())}'
 
-    def feature(self) -> CommandFeature:
-        return union_command_feature(self.left_operand.feature(), self.right_operand.feature())
+    def feature(self) -> PrimitiveFeatureList:
+        return union_primitive_feature(self.left_operand.feature(), self.right_operand.feature())
 
 
 class NotNode(Command):
@@ -241,7 +238,7 @@ class NotNode(Command):
     def pretty(self):
         return f'! {braces(self.body.pretty())}'
 
-    def feature(self) -> CommandFeature:
+    def feature(self) -> PrimitiveFeatureList:
         return self.body.feature()
 
 
@@ -272,9 +269,9 @@ class RedirNode(Command):
     def pretty(self):
         return self.node.pretty() + string_of_redirs(self.redir_list)
 
-    def feature(self) -> CommandFeature:
-        feat: CommandFeature = self.node.feature()
-        feat.add_redir_list_to_feature(*self.get_redir_list_info(self.redir_list))
+    def feature(self) -> PrimitiveFeatureList:
+        feat: PrimitiveFeatureList = self.node.feature()
+        feat.set_is_complex_flag()
         return feat
 
 
@@ -305,9 +302,9 @@ class BackgroundNode(Command):
     def pretty(self):
         return background(self.node.pretty() + string_of_redirs(self.redir_list))
 
-    def feature(self) -> CommandFeature:
-        feat: CommandFeature = self.node.feature()
-        feat.add_redir_list_to_feature(*self.get_redir_list_info(self.redir_list))
+    def feature(self) -> PrimitiveFeatureList:
+        feat: PrimitiveFeatureList = self.node.feature()
+        feat.set_is_complex_flag()
         return feat
 
 
@@ -338,11 +335,8 @@ class DefunNode(Command):
         body = self.body
         return name.__repr__() + "() {\n" + body.pretty() + "\n}"
 
-    def feature(self) -> CommandFeature:
-        other_list: List[str] = []
-        other_list.append(self.name.__repr__())
-        feat: CommandFeature = self.body.feature()
-        feat.add_other_list_to_feature(other_list)
+    def feature(self) -> PrimitiveFeatureList:
+        feat: PrimitiveFeatureList = self.body.feature()
         feat.set_is_complex_flag()
         return feat
 
@@ -378,14 +372,8 @@ class ForNode(Command):
         var = self.variable
         return f'for {var} in {separated(string_of_arg, a)}; do {body.pretty()}; done'
 
-    def feature(self) -> CommandFeature:
-        other_list: List[str] = []
-        other_list.append(self.variable.__repr__())
-        if len(self.argument) != 0:
-            other_list.append(separated(string_of_arg, self.argument))
-
-        feat: CommandFeature = self.body.feature()
-        feat.add_other_list_to_feature(other_list)
+    def feature(self) -> PrimitiveFeatureList:
+        feat: PrimitiveFeatureList = self.body.feature()
         feat.set_is_complex_flag()
         return feat
 
@@ -420,20 +408,10 @@ class WhileNode(Command):
             t = first
             return f'while {t.pretty()}; do {b.pretty()}; done '
 
-    def feature(self) -> CommandFeature:
-        feat1: CommandFeature = self.test.feature()
-        command_list = feat1.command_list
-        length = len(command_list)
-        for index in range(length):
-            string = command_list[index]
-            if isinstance(string, str):
-                if "[" in string or "]" in string:
-                    string = "ifcond " + string.replace("[", "").replace("]", "").strip()
-                else:
-                    string = string.strip()
-            command_list[index] = string
-        feat2: CommandFeature = self.body.feature()
-        feat: CommandFeature = union_command_feature(feat1, feat2)
+    def feature(self) -> PrimitiveFeatureList:
+        feat1: PrimitiveFeatureList = self.test.feature()
+        feat2: PrimitiveFeatureList = self.body.feature()
+        feat: PrimitiveFeatureList = union_primitive_feature(feat1, feat2)
         feat.set_is_complex_flag()
         return feat
 
@@ -484,21 +462,11 @@ class IfNode(Command):
 
         return str1
 
-    def feature(self) -> CommandFeature:
-        feat1: CommandFeature = self.cond.feature()
-        command_list = feat1.command_list
-        length = len(command_list)
-        for index in range(length):
-            string = command_list[index]
-            if isinstance(string, str):
-                if "[" in string or "]" in string:
-                    string = "ifcond " + string.replace("[", "").replace("]", "").strip()
-                else:
-                    string = string.strip()
-            command_list[index] = string
-        feat2: CommandFeature = self.then_b.feature()
-        feat3: CommandFeature = self.else_b.feature()
-        feat: CommandFeature = get_command_feature_by_union_command_feature_list([feat1, feat2, feat3])
+    def feature(self) -> PrimitiveFeatureList:
+        feat1: PrimitiveFeatureList = self.cond.feature()
+        feat2: PrimitiveFeatureList = self.then_b.feature()
+        feat3: PrimitiveFeatureList = self.else_b.feature()
+        feat: PrimitiveFeatureList = union_primitive_feature_list([feat1, feat2, feat3])
         feat.set_is_complex_flag()
         return feat
 
@@ -531,12 +499,12 @@ class CaseNode(Command):
         cs = self.cases
         return f'case {string_of_arg(a)} in {separated(string_of_case, cs)} esac'
 
-    def feature(self) -> CommandFeature:
-        feat_list: List[CommandFeature] = []
+    def feature(self) -> PrimitiveFeatureList:
+        feat_list: List[PrimitiveFeatureList] = []
         for case in self.cases:
             cmd: Command = case["cbody"]
             feat_list.append(cmd.feature())
-        feat: CommandFeature = get_command_feature_by_union_command_feature_list(feat_list)
+        feat: PrimitiveFeatureList = union_primitive_feature_list(feat_list)
         feat.set_is_complex_flag()
         return feat
 
