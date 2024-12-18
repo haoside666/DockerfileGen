@@ -34,7 +34,7 @@ def beautiful_command_meta_print(p_meta_list: PrimitiveMetaList, out_path, curre
 
 class TestMeta(unittest.TestCase):
     def test_process_dockerfile1(self):
-        filename = "Dockerfile3"
+        filename = "Dockerfile_test_add"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)

@@ -15,7 +15,7 @@ class PrimitiveMeta:
         self.arg_list = instruct_meta.arg_list
         self.attribute_user = instruct_meta.attribute_user
         self.attribute_dir = instruct_meta.attribute_dir
-        self.eigenvector = instruct_meta.eigenvector
+        self.eigenvector: Union[DirectoryTree, InstructFeature, ShellFeature] = instruct_meta.eigenvector
         self.eigenvector_init = instruct_meta.eigenvector_init
         self.group = 0
         self.is_master = False

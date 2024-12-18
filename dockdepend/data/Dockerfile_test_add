@@ -1,0 +1,9 @@
+FROM python:3.8-slim as build
+ADD git@git.example.com:foo/bar.git /bar
+ADD https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py /speedtest
+ADD http://master.bioconductor.org/todays-date /tmp/
+ADD release.sh create-credentials.js .releaserc.json /semantic-release/
+ADD --chown=10:11 files /somedir/
+
+FROM python:3.8-slim as build
+COPY --from=builder /app/entrypoint.sh /

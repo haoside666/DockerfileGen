@@ -7,7 +7,7 @@ from dockdepend.extractor.datatypes.CommandInvocationAfterIOChange import Comman
 from dockdepend.extractor import InputOutputInfo
 
 ### directory paths
-ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../..'))
+# ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '../../..'))
 INPUTOUTPUT_INFO_GENERATORS = "extractor.feature_extract.InputOutputInfo_generators"
 
 DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {

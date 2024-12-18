@@ -1,0 +1,7 @@
+from dockdepend.graph.Entity.EntityNode import EntityNode
+from dockdepend.graph.Entity.transformer.transform_interface import TransformInterface
+
+
+class Transform{{ command }}(TransformInterface):
+    def transform(self) -> EntityNode:
+        pass
