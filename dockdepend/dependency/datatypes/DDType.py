@@ -21,3 +21,4 @@ class DDType(Enum):
     SIDE_EFFECT = 15  # instruction contain side effect command
     UNKNOWN_COMMAND = 16  # instruction has unrecognized command
     CONSISTENCY = 17  # consistency dependency
+    BASIC_GROUP = 18  # Group dependency

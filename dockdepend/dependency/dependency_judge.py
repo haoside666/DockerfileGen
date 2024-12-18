@@ -26,6 +26,8 @@ from .judgeor.JudgeUserWorkdir import JudgeUserWorkdir
 from .judgeor.JudgeDirWorkdir import JudgeDirWorkdir
 from typing import List, Tuple
 
+from ..dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
+
 instruct_dependency_table = [
     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 20, 0, 0, 0, 0, 0, 0, 0],
@@ -97,7 +99,7 @@ DICT_DEPENDENCY_TYPE_TRANSFORMER_MODULE_MAPPER = {
 }
 
 
-def dependency_judge(command_meta1: InstructMeta, command_meta2: InstructMeta) -> Tuple[DDType, str]:
+def dependency_judge(command_meta1: PrimitiveMeta, command_meta2: PrimitiveMeta) -> Tuple[DDType, str]:
     instruct1_code = instruct_code_table[command_meta1.cmd_name]
     instruct2_code = instruct_code_table[command_meta2.cmd_name]
     dependency_type: DType = DType(instruct_dependency_table[instruct1_code][instruct2_code])

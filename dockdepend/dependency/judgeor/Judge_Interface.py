@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from dockdepend.dockerfile_process.preprocess.datatypes.InstructMeta import InstructMeta
+from dockdepend.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from dockdepend.dockerfile_process.datatypes.DirectoryTree import DirectoryTree, trees_have_intersection, \
     path_have_intersection_with_tree
 from dockdepend.dockerfile_process.datatypes.InsturctFeature import InstructFeature
@@ -11,9 +11,9 @@ from dockdepend.config import global_config
 
 
 class JudgeInterface(ABC):
-    def __init__(self, command_meta1: InstructMeta, command_meta2: InstructMeta) -> None:
-        self.command_meta1: InstructMeta = command_meta1
-        self.command_meta2: InstructMeta = command_meta2
+    def __init__(self, command_meta1: PrimitiveMeta, command_meta2: PrimitiveMeta) -> None:
+        self.command_meta1: PrimitiveMeta = command_meta1
+        self.command_meta2: PrimitiveMeta = command_meta2
 
     @abstractmethod
     def get_dependence(self) -> Tuple[DDType, str]:

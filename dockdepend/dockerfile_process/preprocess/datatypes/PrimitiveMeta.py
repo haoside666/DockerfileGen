@@ -84,3 +84,9 @@ class PrimitiveMeta:
 
     def get_attribute_dir(self) -> str:
         return self.attribute_dir
+
+    def set_is_master(self, is_master: bool) -> None:
+        self.is_master = is_master
+
+    def get_is_master(self) -> bool:
+        return self.is_master

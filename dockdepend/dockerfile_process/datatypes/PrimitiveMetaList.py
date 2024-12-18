@@ -1,6 +1,8 @@
 import os.path
 from copy import deepcopy
 
+from dockdepend.util import standard_eq
+
 from dockdepend.dockerfile_process.datatypes.DirectoryTree import DirectoryTree
 
 from dockdepend.config.definitions import IGNORE_DIRECTIVES
@@ -46,6 +48,12 @@ class PrimitiveMetaList:
         for item in self.p_meta_list:
             repr_str += f'\t {item.__str__()}\n'
         return repr_str
+
+    def __eq__(self, other) -> bool:
+        return standard_eq(self, other)
+
+    def length(self) -> int:
+        return len(self.p_meta_list)
 
     def get_primitive_list(self, instruct_meta_list: InstructMetaList) -> List[PrimitiveMeta]:
         cmd_meta_list: List[InstructMeta] = instruct_meta_list.cmd_meta_list
@@ -162,8 +170,8 @@ class PrimitiveMetaList:
         try:
             p_feat: PrimitiveFeature = cmd_meta.get_eigenvector_init()
             cmd_list_feat, attribute_dir = get_command_list_feature([p_feat.command], current_user, current_dir)
-            instruct_feat: ShellFeature = ShellFeature(p_feat, cmd_list_feat, current_user)
-            cmd_meta.set_eigenvector(instruct_feat)
+            shell_feat: ShellFeature = ShellFeature(p_feat, cmd_list_feat, current_user)
+            cmd_meta.set_eigenvector(shell_feat)
             return attribute_dir
         except ParsingException:
             raise
