@@ -1,5 +1,7 @@
 import unittest
 
+from dockdepend.config.definitions import ROOT_DIR
+
 from dockdepend.config import global_config
 from dockdepend.dockerfile_process.process import process
 from dockdepend.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
@@ -16,7 +18,7 @@ class TestDependencyJudge(unittest.TestCase):
     # Judging dependencies on a single dockerfile
     # Print in a beautiful way and will get the command meta structure of the dockerfile
     def test_single_dockerfile(self):
-        dockerfile_name = "./example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
+        dockerfile_name = f"{ROOT_DIR}/data/example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -28,7 +30,7 @@ class TestDependencyJudge(unittest.TestCase):
 
     # Print only dependency tuples
     def test_single_dockerfile_with_simple_way(self):
-        dockerfile_name = "./data/Dockerfile3"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile3"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -69,7 +71,7 @@ class TestDependencyJudge(unittest.TestCase):
     # root_dir (The input directory contains a large number of dockerfiles)
     # output_dir (Directory for storing the results of judged dependencies)
     def test_generate_multiple_dockerfiles_processing_info(self):
-        root_dir = "./example"
+        root_dir = f"{ROOT_DIR}/data/example"
         build_ctx = "/home/haoside/Desktop/aaa"
         output_dir = "processing_info"
         if not os.path.exists(output_dir):
@@ -138,7 +140,7 @@ class TestDependencyJudge(unittest.TestCase):
 
     def test_get_multiple_dockerfiles_dependency_info(self):
         # Filtering certain functional consistency types (not part of our defined dependencies)
-        root_dir = "./example"
+        root_dir = f"{ROOT_DIR}/data/example"
         build_ctx = "/home/haoside/Desktop/aaa"
         output_dir = "/home/haoside/Desktop/stage3"
         global_config.ignore_unknown_command = True

@@ -64,3 +64,8 @@ class TestASTCmdParse(unittest.TestCase):
     def test_parse_cmd10(self):
         cmd = '''unzip -qd ${APPS_BASE} /tmp/wildfly.zip && ln -s ${APPS_BASE}/wildfly-${WILDFLY_VERSION} ${WILDFLY_HOME}'''
         print(parse_shell_cmd_to_primitive_feature(cmd))
+
+
+    def test_parse_cmd11(self):
+        cmd = '''curl -s https://api.github.com/repos/arvidn/libtorrent/releases/latest | grep "lib*.*gz" | cut -d : -f 2,3 | wget -qi - tar xf *gz rm *gz cd lib* ./configure --enable-debug=no --enable-python-binding --with-libiconv make make -j$(nproc) checkinstall ldconfig'''
+        print(parse_shell_cmd_to_primitive_feature(cmd))

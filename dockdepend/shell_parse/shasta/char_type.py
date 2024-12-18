@@ -245,7 +245,8 @@ class BArgChar(ArgChar):
 
     def pretty(self, quote_mode=UNQUOTED):
         param = self.node
-        return "$(command)"
+        return "$(" + param.pretty() + ")"
+        # return "$(command)"
 
 
 def string_of_arg(args, quote_mode=UNQUOTED):

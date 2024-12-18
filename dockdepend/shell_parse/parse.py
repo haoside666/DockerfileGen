@@ -150,14 +150,14 @@ def parse_shell_cmd_to_primitive_feature(cmd: str) -> Union[str, PrimitiveFeatur
         if len(feat_list) == 0:
             return "None"
         var_c_list: List[str] = get_var_c_list()
-        b_type_feat: str = get_b_type_feature()
+        # b_type_feat: str = get_b_type_feature()
         total_cmd_feat: PrimitiveFeatureList = feat_list[0]
         # 含有复杂结构
         if total_cmd_feat.is_complex:
             return "含有复杂结构"
         # 含有子命令
-        if b_type_feat:
-            return "含有子命令"
+        # if b_type_feat:
+        #     return "含有子命令"
 
         return total_cmd_feat.add_var_c_list(list(set(var_c_list)))
     except ParsingException:

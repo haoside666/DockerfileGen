@@ -3,10 +3,14 @@ import pathlib
 import unittest
 import os
 
+from dockdepend.config.definitions import ROOT_DIR
+
 from dockdepend.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from dockdepend.dockerfile_process.process import process
 from dockdepend.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from typing import Optional, List
+
+
 
 
 # Printing command meta information in a pretty way for a dockerfile
@@ -30,8 +34,8 @@ def beautiful_command_meta_print(p_meta_list: PrimitiveMetaList, out_path, curre
 
 class TestMeta(unittest.TestCase):
     def test_process_dockerfile1(self):
-        filename = "Dockerfile5"
-        dockerfile_name = f"./data/{filename}"
+        filename = "Dockerfile3"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -43,7 +47,7 @@ class TestMeta(unittest.TestCase):
 
     def test_process_dockerfile2(self):
         filename = "Dockerfile2"
-        dockerfile_name = f"./data/{filename}"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -55,7 +59,7 @@ class TestMeta(unittest.TestCase):
 
     def test_process_dockerfile3(self):
         filename = "Dockerfile3"
-        dockerfile_name = f"./data/{filename}"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -67,7 +71,7 @@ class TestMeta(unittest.TestCase):
 
     def test_process_dockerfile4(self):
         filename = "Dockerfile4"
-        dockerfile_name = f"./data/{filename}"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -79,7 +83,7 @@ class TestMeta(unittest.TestCase):
 
     def test_process_mutil_dockerfile1(self):
         filename = "Dockerfile5"
-        dockerfile_name = f"./data/{filename}"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -91,7 +95,7 @@ class TestMeta(unittest.TestCase):
 
     def test_process_mutil_dockerfile2(self):
         filename = "Dockerfile_mutil"
-        dockerfile_name = f"./data/{filename}"
+        dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:

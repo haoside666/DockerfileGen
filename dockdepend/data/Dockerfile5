@@ -2,7 +2,6 @@ FROM ubuntu
 RUN apt-get update
 RUN apt-get install -y checkinstall libboost-system-dev libboost-python-dev libboost-chrono-dev libboost-random-dev libssl-dev curl wget software-properties-common python-software-properties unrar unzip
 RUN rm -rf /var/lib/apt/lists/*
-ADD
 RUN curl -s https://api.github.com/repos/arvidn/libtorrent/releases/latest | grep "lib*.*gz" | cut -d : -f 2,3 | tr -d \" | wget -qi - tar xf *gz rm *gz cd lib* ./configure --enable-debug=no --enable-python-binding --with-libiconv make make -j$(nproc) checkinstall ldconfig
 RUN add-apt-repository ppa:deluge-team/ppa -y
 RUN apt-get update
