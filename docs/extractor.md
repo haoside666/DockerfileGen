@@ -69,7 +69,7 @@ tar -czvf archive.tar.gz file1.txt file2.txt directory1 directory2
 ### 命令行的使用
 
 ```bash
-dockdepend extractor -f ./data/extractor/shell_example.sh --only_parse
+graphgen extractor -f ./data/extractor/shell_example.sh --only_parse
 ```
 
 ## 命令特征提取器
@@ -256,7 +256,7 @@ rm -rf /tmp/*
 使用
 
 ```bash
-dockdepend extractor -f ./data/extractor/shell_example.sh
+graphgen extractor -f ./data/extractor/shell_example.sh
 ```
 
 对于多行命令，想单独得到每个命令的命令特征结构，可以使用--detach选项:

@@ -35,7 +35,7 @@ AST后结果:
 ### 命令行使用
 
 ```bash
-dockdepend ast -f ./data/ast/shell_example.sh --raw
+graphgen ast -f ./data/ast/shell_example.sh --raw
 ```
 
 ## shasta介绍
@@ -224,7 +224,7 @@ rm -rf /tmp/*
 ### 命令行使用
 
 ```bash
-dockdepend ast -f ./data/ast/shell_example.sh
+graphgen ast -f ./data/ast/shell_example.sh
 ```
 
 对于多行命令，想单独得到每个命令的命令特征结构，可以使用--detach选项:

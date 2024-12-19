@@ -163,5 +163,5 @@ RUN指令示例
 ## 命令行的使用
 
 ```bash
-dockdepend meta -f ./data/meta/Dockerfile
+graphgen meta -f ./data/meta/Dockerfile
 ```

@@ -5,7 +5,7 @@ from pathlib import Path
 
 long_description = (Path(__file__).parent / "README.md").read_text()
 
-# for item in find_packages(exclude=['dockdepend.graph', 'dockdepend.test', '*.old*', '*.tests', 'dockdepend.extractor.parser.*']):
+# for item in find_packages(exclude=['graphgen.graph', 'graphgen.test', '*.old*', '*.tests', 'graphgen.extractor.parser.*']):
 #     print(item)
 
 ##
@@ -14,11 +14,11 @@ long_description = (Path(__file__).parent / "README.md").read_text()
 setup(
     name='DockDepend',
     version='1.0.0',
-    py_modules=['dockdepend.util',
-                'dockdepend.cli'],
+    py_modules=['graphgen.util',
+                'graphgen.cli'],
     packages=find_packages(
-        exclude=['dockdepend.graph', 'dockdepend.test', '*.old*', '*.tests',
-                 'dockdepend.extractor.parser.*'],
+        exclude=['graphgen.graph', 'graphgen.test', '*.old*', '*.tests',
+                 'graphgen.extractor.parser.*'],
     ),
     include_package_data=True,
     ## Necessary for the markdown to be properly rendered
@@ -28,6 +28,6 @@ setup(
     install_requires=['dockerfile'],
     entry_points={
         'console_scripts': [
-            'dockdepend=dockdepend.cli:main']
+            'graphgen=graphgen.cli:main']
     },
 )

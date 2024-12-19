@@ -45,79 +45,79 @@ docker run --rm -v /home/user/data:/data dockdepend dependency -f /data/Dockerfi
 
 ```bash
 # -f 指定脚本文件，默认输出到标准输出，默认含有原指令信息对，依赖指令行号对，依赖类型，依赖原因
-dockdepend dependency -f ./data/dependency/Dockerfile
+graphgen dependency -f ./data/dependency/Dockerfile
 # -o 指定输出文件，默认输出到标准输出
-dockdepend dependency -f ./data/dependency/Dockerfile -o dependency_result.json
+graphgen dependency -f ./data/dependency/Dockerfile -o dependency_result.json
 如果Dckerfile含有多个阶段,则输出文件名会加上阶段名
 例如Dockerfile1 含有两个阶段,则会得到如下两个文件
     dependency_result_1.json
     dependency_result_2.json
 # -d 指定输出文件,使用-d选项时-o选项也必须是目录
-dockdepend dependency -d ./data/dependency -o ./data/output 
+graphgen dependency -d ./data/dependency -o ./data/output 
 # --simple-mode 简单模式，只输出依赖指令行号对
-dockdepend dependency -f ./data/dependency/Dockerfile --simple-mode
+graphgen dependency -f ./data/dependency/Dockerfile --simple-mode
 # --no-instruct-mode 不输出指令模式，不输出原指令信息对
-dockdepend dependency -f ./data/dependency/Dockerfile --no-instruct-mode
+graphgen dependency -f ./data/dependency/Dockerfile --no-instruct-mode
 # --ignore-side-effect 不显示副作用影响依赖
-dockdepend dependency -f ./data/dependency/Dockerfile --ignore-side-effect
+graphgen dependency -f ./data/dependency/Dockerfile --ignore-side-effect
 # --ignore-unknown-command 不显示未识别命令依赖
-dockdepend dependency -f ./data/dependency/Dockerfile --ignore-unknown-command
+graphgen dependency -f ./data/dependency/Dockerfile --ignore-unknown-command
 ## 可以同时使用--ignore-side-effect 和 --ignore-unknown-command
-dockdepend dependency -f ./data/dependency/Dockerfile --ignore-side-effect --ignore-unknown-command
+graphgen dependency -f ./data/dependency/Dockerfile --ignore-side-effect --ignore-unknown-command
 # --show-consistency-dependency 显示一致性依赖
-dockdepend dependency -f ./data/dependency/Dockerfile --show-consistency-dependency
+graphgen dependency -f ./data/dependency/Dockerfile --show-consistency-dependency
 # --build-info 获取构建时间，依赖数量，指令数等信息,显示所有依赖，不支持--ignore-side-effect等选项
-dockdepend dependency -f ./data/dependency/Dockerfile --build-info
+graphgen dependency -f ./data/dependency/Dockerfile --build-info
 ```
 
 ## meta
 
 ```bash
 # -f 指定脚本文件，默认输出到标准输出，输出格式为meta元信息结构
-dockdepend meta -f ./data/meta/Dockerfile
+graphgen meta -f ./data/meta/Dockerfile
 # -o 指定输出文件，默认输出到标准输出
-dockdepend meta -f ./data/meta/Dockerfile -o meta_result.json
+graphgen meta -f ./data/meta/Dockerfile -o meta_result.json
 如果Dckerfile含有多个阶段,则输出文件名会加上阶段名
 例如Dockerfile1 含有两个阶段,则会得到如下两个文件
     meta_result_1.json
     meta_result_2.json
 # -d 指定输出文件,使用-d选项时-o选项也必须是目录
-dockdepend meta -d ./data/mate -o ./data/output
+graphgen meta -d ./data/mate -o ./data/output
 ```
 
 ## ast
 
 ```bash
 # -f 指定脚本文件，默认输出到标准输出，，默认情况会合并所有命令仅输出一个初始指令特征结构(InstructFeatureInit)
-dockdepend ast -f ./data/ast/shell_example.sh 
+graphgen ast -f ./data/ast/shell_example.sh 
 # --raw 指定输出格式为libdash原始解析结构
-dockdepend ast -f ./data/ast/shell_example.sh --raw
+graphgen ast -f ./data/ast/shell_example.sh --raw
 # -o 指定输出文件
-dockdepend ast -f ./data/ast/shell_example.sh -o ast_result.json
+graphgen ast -f ./data/ast/shell_example.sh -o ast_result.json
 # -d 指定输出文件,使用-d选项时-o选项也必须是目录
-dockdepend ast -d ./data/ast -o ./data/output
-dockdepend ast -d ./data/ast -o ./data/output --raw
+graphgen ast -d ./data/ast -o ./data/output
+graphgen ast -d ./data/ast -o ./data/output --raw
 # --detach 分离命令，以最小命令为基元，一个基元生成一个初始指令特征结构
-dockdepend ast -f ./data/ast/mutil_shell_command.sh --detach
+graphgen ast -f ./data/ast/mutil_shell_command.sh --detach
 ```
 
 ## extractor
 
 ```bash
 # -f 指定脚本文件，默认输出到标准输出，输出格式为指令特征结构(InstructFeature)
-dockdepend extractor -f ./data/extractor/shell_example.sh 
+graphgen extractor -f ./data/extractor/shell_example.sh 
 # -o 指定输出文件
-dockdepend extractor -f ./data/extractor/shell_example.sh -o feature_result.json
+graphgen extractor -f ./data/extractor/shell_example.sh -o feature_result.json
 # -d 指定输出文件,使用-d选项时-o选项也必须是目录
-dockdepend extractor -d ./data/extractor -o ./data/output
+graphgen extractor -d ./data/extractor -o ./data/output
 # --current_user 指定当前用户，默认用户为root
-dockdepend extractor -f ./data/extractor/shell_example.sh --current_user root
+graphgen extractor -f ./data/extractor/shell_example.sh --current_user root
 # --current_dir 指定当前脚本目录，默认用户为/tmp,会影响cd,wget等命令的指令特征结果
-dockdepend extractor -f ./data/extractor/shell_example.sh --current_dir /tmp
+graphgen extractor -f ./data/extractor/shell_example.sh --current_dir /tmp
 # --only_parse 只对命令特征结构中的命令列表进行命令解析操作，不进行特征提取
-dockdepend extractor -f ./data/extractor/shell_example.sh --only_parse
+graphgen extractor -f ./data/extractor/shell_example.sh --only_parse
 # --detach 分离命令，以最小命令为基元，一个基元生成一个指令特征结构(InstructFeature)
-dockdepend extractor -f ./data/extractor/mutil_shell_command.sh --detach
+graphgen extractor -f ./data/extractor/mutil_shell_command.sh --detach
 ```
 
 # DockDepend介绍
