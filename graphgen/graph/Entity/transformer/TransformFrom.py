@@ -6,6 +6,6 @@ from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import Primi
 class TransformFrom(TransformInterface):
     def transform(self) -> EntityNode:
         p_meta: PrimitiveMeta = self.p_meta
-        flags = p_meta.operand.flags
-        value = p_meta.operand.value
+        flags = list(p_meta.operand.flags)
+        value = list(p_meta.operand.value)
         return ImageNode(flags, value)

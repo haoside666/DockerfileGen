@@ -6,6 +6,6 @@ from graphgen.graph.Entity.transformer.transform_interface import TransformInter
 class TransformEnv(TransformInterface):
     def transform(self) -> EntityNode:
         p_meta: PrimitiveMeta = self.p_meta
-        flags = p_meta.operand.flags
+        flags = list(p_meta.operand.flags)
         value = p_meta.operand.value
         return EnvNode(flags, value)

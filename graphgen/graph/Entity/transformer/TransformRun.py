@@ -1,4 +1,4 @@
-from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET
+from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX
 from graphgen.dockerfile_process.datatypes.ShellFeature import ShellFeature
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.graph.Entity.EntityNode import *
@@ -10,7 +10,7 @@ class TransformRun(TransformInterface):
         p_meta: PrimitiveMeta = self.p_meta
         eigenvector: ShellFeature = p_meta.eigenvector
         cmd_set = eigenvector.command_set
-        flags = p_meta.operand.flags
+        flags = list(p_meta.operand.flags)
         value = eigenvector.command
         cmd_type = self.get_cmd_type()
         if cmd_type == "general":
@@ -19,10 +19,13 @@ class TransformRun(TransformInterface):
             return CommandNode(cmd_set, flags, value, cmd_type)
         elif cmd_type == "pkg":
             assert len(cmd_set) == 1
-            pkg_cmd = cmd_set.pop()
+            pkg_cmd = list(cmd_set)[0]
             cmd_flag_list = eigenvector.cmd_flag_list
-            cmd_operand_list = eigenvector.cmd_operand_list
-            pkg_set = eigenvector.pkg_set
+            pkg_set = eigenvector.pkg_set & set(eigenvector.cmd_operand_list)
+            # 未识别包类型点转换为命令结点
+            if len(pkg_set) == 1 and list(pkg_set)[0].startswith(UNKNOWN_PREFIX):
+                return CommandNode(cmd_set, flags, value, "general")
+            cmd_operand_list = [item for item in eigenvector.cmd_operand_list if item not in pkg_set]
             return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_set)
 
     def get_cmd_type(self) -> str:

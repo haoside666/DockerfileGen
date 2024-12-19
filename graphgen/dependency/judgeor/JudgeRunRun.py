@@ -1,7 +1,7 @@
 from graphgen.dependency.datatypes.DDType import DDType
 from graphgen.dependency.judgeor.Judge_Interface import JudgeInterface
 from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature, instruct_feature_have_intersection
-from graphgen.config.definitions import side_effect_command_set
+from graphgen.config.definitions import side_effect_command_set, UNKNOWN_PREFIX
 from typing import Optional, Tuple
 from graphgen.config import global_config
 
@@ -35,4 +35,4 @@ class JudgeRunRun(JudgeInterface):
 
 
 def get_unknown_command_set(command_set: set) -> set:
-    return {x.replace('unknown_', '') for x in command_set if x.startswith("unknown_")}
+    return {x.replace(UNKNOWN_PREFIX, '') for x in command_set if x.startswith(UNKNOWN_PREFIX)}

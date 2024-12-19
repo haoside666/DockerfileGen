@@ -1,3 +1,4 @@
+from graphgen.config.definitions import UNKNOWN_PREFIX
 from graphgen.extractor.feature_extract.FeatureInfo_generators.FeatureInfoGenerator_Interface import \
     FeatureInfoGeneratorInterface
 from graphgen.extractor.datatypes.AccessKindCommon import WhichClassForFeature, make_other_input, make_other_io
@@ -21,4 +22,4 @@ class FeatureInfoGeneratorDefault(FeatureInfoGeneratorInterface):
         elif "." in cmd_name or "/" in cmd_name:
             self.add_one_element_to_operand_list(cmd_name, (WhichClassForFeature.FILESTD, make_other_input()))
         if cmd_name not in IGNORE_COMMAND_SET:
-            self.add_one_element_to_operand_list(f"unknown_{cmd_name}", (WhichClassForFeature.PKG, None))
+            self.add_one_element_to_operand_list(f"{UNKNOWN_PREFIX}{cmd_name}", (WhichClassForFeature.PKG, None))
