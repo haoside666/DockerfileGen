@@ -1,5 +1,5 @@
 
-cmd = "node"
+cmd = "make"
 cmd_list = set()
 with open("RUN_total.txt", "r") as file:
     for line in file:

@@ -47,7 +47,6 @@ class FeatureInfoGeneratorCurl(FeatureInfoGeneratorInterface):
                     operand = operand_list[index].get_name()
                     if operand.startswith("https://") or operand.startswith("http://"):
                         operand = operand.rpartition("/")[-1]
-                        self.add_one_element_to_operand_list(operand,
-                                                             (WhichClassForFeature.FILESTD, make_other_output()))
+                        self.add_one_element_to_operand_list(operand, (WhichClassForFeature.FILESTD, make_other_output()))
             else:
                 pass

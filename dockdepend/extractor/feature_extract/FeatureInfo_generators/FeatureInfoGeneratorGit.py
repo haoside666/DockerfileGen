@@ -24,17 +24,15 @@ class FeatureInfoGeneratorGit(FeatureInfoGeneratorInterface):
                 else:
                     for index in range(len(operand_list)):
                         operand = operand_list[index].get_name()
-                        if operand.startswith("https://") or operand.startswith("http://"):
+                        if operand.startswith("https://") or operand.startswith("http://") or operand.startswith("git@"):
                             dir_name = extract_git_dir_name(operand)
-                            self.add_one_element_to_operand_list(dir_name,
-                                                                 (WhichClassForFeature.FILESTD, make_other_output()))
+                            self.add_one_element_to_operand_list(dir_name, (WhichClassForFeature.FILESTD, make_other_output()))
             else:
                 length = len(operand_list)
                 for index in range(length):
                     operand = operand_list[index].get_name()
                     if "/" in operand:
-                        self.set_operand_element_by_index(index,
-                                                          (WhichClassForFeature.FILESTD, make_other_io()))
+                        self.set_operand_element_by_index(index, (WhichClassForFeature.FILESTD, make_other_io()))
         self.add_one_element_to_operand_list("git", (WhichClassForFeature.PKG, None))
 
 

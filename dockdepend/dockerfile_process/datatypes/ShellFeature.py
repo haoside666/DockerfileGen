@@ -1,4 +1,4 @@
-from typing import Set, List, Tuple
+from typing import Set, List, Tuple, Union
 
 from dockdepend.dependency.datatypes.DDType import DDType
 from dockdepend.util import standard_repr, standard_eq
@@ -27,6 +27,8 @@ class ShellFeature:
 
         self.input_path_tree: DirectoryTree = DirectoryTree(self.remove_wave_in_path(input_list, current_user))
         self.output_path_tree: DirectoryTree = DirectoryTree(self.remove_wave_in_path(output_list, current_user))
+        self.cmd_flag_list: Union[List[List[str], List[str]]] = cmd_list_feature.cmd_flag_list
+        self.cmd_operand_list: Union[List[List[str], List[str]]] = cmd_list_feature.cmd_operand_list
 
         # Remove the effect of subcommands
         # self.other_set.discard("$(command)")
@@ -48,6 +50,8 @@ class ShellFeature:
         json_data["VarCSet"] = list(self.var_c_set)
         json_data["InputTree"] = self.input_path_tree.to_dict()
         json_data["OutputTree"] = self.output_path_tree.to_dict()
+        json_data["cmd_flag_list"] = self.cmd_flag_list
+        json_data["cmd_operand_list"] = self.output_path_tree
         return json_data
 
     @staticmethod

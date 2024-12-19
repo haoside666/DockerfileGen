@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECharts Graph Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <style>
+        #main {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script>
+        // 定义节点文本映射
+        const nodeLabels= {{ nodeLabels }};
+        // 定义边列表
+        const edgeList = {{ edgeList }};
+        // 转换为ECharts格式
+        const nodes = Object.keys(nodeLabels).map(key => ({ name: nodeLabels[key], draggable: true }));
+        const links = edgeList.map(edge => ({ source: nodeLabels[edge[0]], target: nodeLabels[edge[1]] }));
+
+        // 初始化ECharts实例
+        const myChart = echarts.init(document.getElementById('main'));
+
+        // 配置图表选项
+        const option = {
+            title: {
+                text: 'Graph Example with Movable Nodes',
+                subtext: 'ECharts Graph',
+                left: 'center'
+            },
+            tooltip: {},
+            series: [{
+                type: 'graph',
+                layout: 'force',
+                data: nodes,
+                links: links,
+                roam: true, // 允许整体拖动
+                label: {
+                    show: true
+                },
+                force: {
+                    repulsion: 100
+                }
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

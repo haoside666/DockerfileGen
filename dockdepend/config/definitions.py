@@ -10,6 +10,7 @@ side_effect_command_set = {"sh", "bash", "sudo"}
 PROGRAM_COMMAND_SET = {"python", "python3", "node", "java", "go", "php", "git", "curl", "wget", "make", "npm", "pip",
                        "pip3"}
 DIR_COMMAND_SET = {"mkdir", "touch", "echo", "cat", "sed", "awk", "curl", "wget", "tar", "git"}
+URL_DOWNLOAD_COMMAND_SET = {"git", "curl", "wget"}
 VALID_DIRECTIVES = [
     'FROM',
     'RUN',

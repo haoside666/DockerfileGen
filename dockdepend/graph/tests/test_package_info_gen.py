@@ -1,5 +1,7 @@
 import unittest
 
+from dockdepend.config.definitions import ROOT_DIR
+
 from dockdepend.config import global_config
 from dockdepend.dockerfile_process.process import process
 from dockdepend.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
@@ -11,30 +13,51 @@ import os
 import json
 import pandas as pd
 
+from dockdepend.graph.Entity.EntityGen import entity_gen
+from dockdepend.graph.Entity.EntityNode import EntityNode
+from dockdepend.graph.template.gen_graph import generate_graph_html
+
 
 class TestGraphInfoGen(unittest.TestCase):
     def test_single_dockerfile(self):
-        dockerfile_name = "./example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
+        dockerfile_name = f"{ROOT_DIR}/data/example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             # print(dockerfile_meta)
-            for command_meta_list in dockerfile_meta.stage_meta_list:
-                # self.beautiful_command_meta_print(command_meta_list, "./output/example.json")
-                edge_index_list: EdgeIndexList = get_dependency_relation(command_meta_list)
-                edge_index_list.pretty()
+            for stage_meta in dockerfile_meta.stage_meta_list:
+                edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
+                node_labels = {}
+                for idx, p_meta in enumerate(stage_meta.p_meta_list):
+                    entity_node: EntityNode = entity_gen(p_meta)
+                    text = entity_node.pretty()
+                    node_labels[idx] = f'{idx}-{text[:20]}'
+                    print(f"{idx}-{text}")
+                edge_list = edge_index_list.transform_to_list_print()
+                generate_graph_html(os.path.basename(dockerfile_name), node_labels, edge_list)
+                # edge_index_list.pretty()
+                print(edge_list)
+        else:
+            print("process failed")
 
     # Print only dependency tuples
-    def test_single_dockerfile_with_simple_way(self):
-        dockerfile_name = "./data/Dockerfile3"
+    def test_single_dockerfile2(self):
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile3"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             # print(dockerfile_meta)
-            for command_meta_list in dockerfile_meta.stage_meta_list:
-                edge_index_list: EdgeIndexList = get_dependency_relation(command_meta_list)
-                # print(edge_index_list.edge_index_list)
-                edge_index_list.pretty()
+            for stage_meta in dockerfile_meta.stage_meta_list:
+                edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
+                node_labels = {}
+                for idx, p_meta in enumerate(stage_meta.p_meta_list):
+                    entity_node: EntityNode = entity_gen(p_meta)
+                    text = entity_node.pretty()
+                    node_labels[idx] = f'{idx}-{text[:20]}'
+                    print(f"{idx}-{text}")
+                edge_list = edge_index_list.transform_to_list_print()
+                generate_graph_html(os.path.basename(dockerfile_name), node_labels, edge_list)
+                # edge_index_list.pretty()
 
     # Test system stability (Large number of dockerfile samples to test)
     def test_system_stability(self):
@@ -61,43 +84,6 @@ class TestGraphInfoGen(unittest.TestCase):
                     raise
             with open("/home/haoside/Desktop/finish_record.txt", "a") as f:
                 print(project_name, file=f)
-
-    # Get dockerfile meta and time information for multiple dockerfiles
-    # Just set the root_dir and the output_dir
-    # root_dir (The input directory contains a large number of dockerfiles)
-    # output_dir (Directory for storing the results of judged dependencies)
-    def test_generate_multiple_dockerfiles_processing_info(self):
-        root_dir = "./example"
-        build_ctx = "/home/haoside/Desktop/aaa"
-        output_dir = "processing_info"
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-        d = dict()
-        for filename in os.listdir(root_dir):
-            start_time = time.time()
-            file_path = os.path.join(root_dir, filename)
-            d["repo_name"] = filename
-            try:
-                dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
-                if dockerfile_meta is not None:
-                    for command_meta_list in dockerfile_meta.stage_meta_list:
-                        d["command_length"] = command_meta_list.length()
-                        edge_index_list: EdgeIndexList = get_dependency_relation(command_meta_list)
-                        end_time = time.time()
-                        d["processing_time"] = end_time - start_time
-                        d["dependency_count"] = edge_index_list.length()
-                        d["dependency"] = str(edge_index_list.edge_index_list)
-                        with open(os.path.join(output_dir, filename + ".json"), "w") as file:
-                            file.write(json.dumps(d, indent=4))
-                else:
-                    with open(os.path.join(output_dir, filename + ".json"), "w") as file:
-                        file.write("ERROR")
-            except Exception as e:
-                print("----------------------")
-                print(filename)
-                print(e)
-                continue
-        self.json_to_table()
 
     # Judging dependencies on a multiple dockerfiles
     # Just set the root_dir and the output_dir
@@ -136,7 +122,7 @@ class TestGraphInfoGen(unittest.TestCase):
 
     def test_get_multiple_dockerfiles_dependency_info(self):
         # Filtering certain functional consistency types (not part of our defined dependencies)
-        root_dir = "./example"
+        root_dir = f"{ROOT_DIR}/example"
         build_ctx = "/home/haoside/Desktop/aaa"
         output_dir = "/home/haoside/Desktop/stage3"
         global_config.ignore_unknown_command = True
@@ -183,26 +169,3 @@ class TestGraphInfoGen(unittest.TestCase):
             lis.append(d)
         with open(output_json, "w") as file:
             file.write(json.dumps(lis, indent=4))
-
-    # Convert the json file generated by function get_multiple_dockerfiles_processing_info to table form
-    def json_to_table(self):
-        d = {
-            "repo_name": [],
-            "command_length": [],
-            "processing_time": [],
-            "dependency_count": [],
-            "dependency": []
-        }
-        root_dir = "processing_info"
-        for filename in os.listdir(root_dir):
-            with open(os.path.join(root_dir, filename), "r") as file:
-                text = file.read()
-                if text != "ERROR":
-                    data = json.loads(text)
-                    d["repo_name"].append(data["repo_name"])
-                    d["command_length"].append(data["command_length"])
-                    d["processing_time"].append(data["processing_time"])
-                    d["dependency_count"].append(data["dependency_count"])
-                    d["dependency"].append(data["dependency"])
-        df = pd.DataFrame(data=d)
-        df.to_csv("./效率性能表.csv")

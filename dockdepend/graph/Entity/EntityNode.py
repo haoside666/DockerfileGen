@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABCMeta
-from typing import Tuple, Dict, List
+from typing import Tuple, Dict, List, Set
 
 from dockdepend.util import standard_repr, standard_eq
 
@@ -42,15 +42,42 @@ class ImageNode(EntityNode):
 class CommandNode(EntityNode):
     NodeName = 'Cmd'
 
-    def __init__(self, flags: Tuple, value: str) -> None:
+    def __init__(self, cmd_set: Set, flags: Tuple, value: str, cmd_type: str) -> None:
+        self.cmd_set: Set = cmd_set
         self.flags: Tuple = flags
         self.value: str = value
+        self.cmd_type: str = cmd_type
 
     def pretty(self) -> str:
         original_instruct = "RUN "
         if len(self.flags) != 0:
             original_instruct += " ".join(self.flags) + " "
         original_instruct += self.value
+        return original_instruct
+
+
+# apt,pip等的包管理命令
+class PkgNode(EntityNode):
+    NodeName = 'Pkg'
+
+    def __init__(self, flags: Tuple, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_set: Set) -> None:
+        self.flags: Tuple = flags
+        self.pkg_cmd: str = pkg_cmd
+        self.cmd_flag_list: List = cmd_flag_list
+        self.cmd_operand_list: List = cmd_operand_list
+        self.pkg_set: Set = pkg_set
+
+    def pretty(self) -> str:
+        original_instruct = "RUN "
+        if len(self.flags) != 0:
+            original_instruct += " ".join(self.flags) + " "
+        original_instruct += self.pkg_cmd + " "
+        if len(self.cmd_operand_list) != 0:
+            original_instruct += self.cmd_operand_list[0] + " "
+        if len(self.cmd_flag_list) != 0:
+            original_instruct += " ".join(self.cmd_flag_list) + " "
+        if len(self.cmd_operand_list) > 1:
+            original_instruct += " ".join(self.cmd_operand_list[1:]) + " "
         return original_instruct
 
 
