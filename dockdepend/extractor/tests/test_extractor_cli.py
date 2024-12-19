@@ -5,14 +5,14 @@ from dockdepend.extractor.extractor_cli import get_command_list_feature
 # Test the command list extraction function
 class TestExtractorCli(unittest.TestCase):
     def test_cmd1(self):
-        command_list = ["apt install vim"]
+        command_list = ["apt install -y vim"]
         attribute_user = "root"
         attribute_dir = "/tmp"
         instruct1_feature, attribute_dir = get_command_list_feature(command_list, attribute_user, attribute_dir)
         print(instruct1_feature)
 
     def test_cmd2(self):
-        command_list = ["cd /tmp", "wget https://github.com/opencv/opencv/archive/3.2.0.zip"]
+        command_list = ["cd /tmp"]
         attribute_user = "root"
         attribute_dir = "/tmp"
         instruct1_feature, attribute_dir = get_command_list_feature(command_list, attribute_user, attribute_dir)

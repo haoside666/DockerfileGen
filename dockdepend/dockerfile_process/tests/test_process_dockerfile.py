@@ -46,7 +46,7 @@ class TestMeta(unittest.TestCase):
             print(dockerfile_meta)
 
     def test_process_dockerfile2(self):
-        filename = "Dockerfile2"
+        filename = "Dockerfile3"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)

@@ -26,11 +26,11 @@ def compute_actual_el_for_output(output_el: str) -> FileNameOrStdDescriptor:
         return FileName(output_el)
 
 
-def return_empty_flag_option_list_if_none_else_itself(arg: Optional[List[FlagOption]]) -> List[FlagOption]:
-    if arg is None:
-        return []
-    else:
-        return arg
+# def return_empty_flag_option_list_if_none_else_itself(arg: Optional[List[FlagOption]]) -> List[FlagOption]:
+#     if arg is None:
+#         return []
+#     else:
+#         return arg
 
 
 def return_empty_pos_config_list_if_none_else_itself(arg: Optional[List[OptionArg]]) -> List[OptionArg]:
@@ -40,11 +40,11 @@ def return_empty_pos_config_list_if_none_else_itself(arg: Optional[List[OptionAr
         return arg
 
 
-def return_empty_list_if_none_else_itself(arg: Optional[TType]) -> Union[TType, List[Any]]:  # list always empty
-    if arg is None:
-        return []
-    else:
-        return arg
+# def return_empty_list_if_none_else_itself(arg: Optional[TType]) -> Union[TType, List[Any]]:  # list always empty
+#     if arg is None:
+#         return []
+#     else:
+#         return arg
 
 
 def return_default_if_none_else_itself(arg: Optional[TType], default: TType) -> TType:

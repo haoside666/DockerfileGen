@@ -16,6 +16,9 @@ class EdgeIndexList:
     def __eq__(self, other) -> bool:
         return standard_eq(self, other)
 
+    def transform_to_list_print(self) -> List[List]:
+        return [list(item) for item in self.edge_index_list]
+
     def pretty(self):
         new_list = [*zip(self.edge_index_list, self.msg_list)]
         s = ""

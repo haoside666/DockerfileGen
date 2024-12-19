@@ -8,7 +8,7 @@ from dockdepend.extractor.datatypes.CommandInvocationInitial import CommandInvoc
 from dockdepend.extractor.datatypes.CommandInvocationWithFeature import CommandInvocationWithFeature
 from dockdepend.extractor.datatypes.CommandListFeature import CommandListFeature, make_command_list_feature
 from dockdepend.extractor.datatypes.CommandInvocationFeature import CommandInvocationFeature, \
-    union_xargs_command_feature
+    union_xargs_command_feature, make_pipe_feature
 from dockdepend.extractor.parser.parser import parse, parse_xargs
 from dockdepend.extractor.datatypes.StringProcessor import StringProcessor
 
@@ -34,7 +34,9 @@ def get_cmd_inv_feature_in_pipe_mode(cmd_invocation: str, pipe: str = "") -> \
             if feature_info is not None:
                 cmd_inv_with_feature: CommandInvocationWithFeature = feature_info.apply_feature_info_to_command_invocation(
                     cmd_inv_after_io)
-                return cmd_inv_with_feature.get_command_feature_info(), "", pipe
+                cmd_feat: CommandInvocationFeature = cmd_inv_with_feature.get_command_feature_info()
+                cmd_feat.set_cmd_info(*command_invocation.get_info_list())
+                return cmd_feat, "", pipe
             else:
                 print(f"error: {cmd_invocation}", file=sys.stderr)
                 raise
@@ -53,21 +55,26 @@ def get_command_list_feature(command_list: Union[List[str], List[List[str]]], at
             if cmd_feature is None:
                 attribute_dir = get_real_attribute_dir(attribute_user, attribute_dir, current_dir)
                 cmd_feature = CommandInvocationFeature("cd", [attribute_dir], [], [], [], [])
+                cmd_feature.set_cmd_operand_list([attribute_dir])
                 cmd_inv_feat_list.append(cmd_feature)
             else:
                 cmd_feature.get_real_input_and_output_path_by_path_pointer(attribute_dir, attribute_user)
                 cmd_inv_feat_list.append(cmd_feature)
         elif isinstance(command, List):
             pipe = ""
+            pipe_feat_list = []
             for item in command:
                 cmd_feature, current_dir, pipe = get_cmd_inv_feature_in_pipe_mode(item, pipe)
                 if cmd_feature is None:
                     attribute_dir = get_real_attribute_dir(attribute_user, attribute_dir, current_dir)
                     cmd_feature = CommandInvocationFeature("cd", [attribute_dir], [], [], [], [])
-                    cmd_inv_feat_list.append(cmd_feature)
+                    cmd_feature.set_cmd_operand_list([attribute_dir])
+                    pipe_feat_list.append(cmd_feature)
                 else:
                     cmd_feature.get_real_input_and_output_path_by_path_pointer(attribute_dir, attribute_user)
-                    cmd_inv_feat_list.append(cmd_feature)
+                    pipe_feat_list.append(cmd_feature)
+            feat = make_pipe_feature(pipe_feat_list)
+            cmd_inv_feat_list.append(feat)
 
     instruct_feature: CommandListFeature = make_command_list_feature(cmd_inv_feat_list)
     return instruct_feature, attribute_dir
@@ -128,7 +135,8 @@ def get_xargs_feature_in_pipe_mode(cmd_invocation: str, pipe: str = "") -> Tuple
                                                                                                    pipe)
         obj2: CommandInvocationFeature = feature_info2.apply_feature_info_to_command_invocation(
             cmd_inv_after_io2).get_command_feature_info()
-
+        obj1.set_cmd_info(*cmd_inv_init1.get_info_list())
+        obj2.set_cmd_info(*cmd_inv_init2.get_info_list())
         return union_xargs_command_feature(obj1, obj2), "", pipe
 
 

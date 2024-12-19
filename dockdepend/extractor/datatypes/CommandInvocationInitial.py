@@ -1,7 +1,7 @@
 import json
-from typing import List
+from typing import List, Tuple
 
-from dockdepend.extractor.datatypes.BasicDatatypes import FlagOption, Operand
+from dockdepend.extractor.datatypes.BasicDatatypes import FlagOption, Operand, Flag, Option
 from dockdepend.extractor.util_standard import standard_repr, standard_eq
 
 
@@ -30,3 +30,16 @@ class CommandInvocationInitial:
             if item in operand_list_str:
                 return True
         return False
+
+    def get_info_list(self) -> Tuple[List, List]:
+        cmd_flag_list: List = []
+        cmd_operand_list: List = []
+        for item in self.flag_option_list:
+            if isinstance(item, Flag):
+                cmd_flag_list.append(item.get_name())
+            elif isinstance(item, Option):
+                cmd_flag_list.append(item.get_name() + " " + item.get_arg())
+
+        for item in self.operand_list:
+            cmd_operand_list.append(item.get_name())
+        return cmd_flag_list, cmd_operand_list

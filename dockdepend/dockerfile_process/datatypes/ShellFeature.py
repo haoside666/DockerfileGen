@@ -15,7 +15,8 @@ class ShellFeature:
             self.command = p_feat.command
         else:
             self.command = " | ".join(p_feat.command)
-        self.command_set: Set = set(cmd_list_feature.cmd_name_list)
+        assert len(cmd_list_feature.cmd_name_list) == 1
+        self.command_set: Set = set(cmd_list_feature.cmd_name_list[0].split(','))
         self.pkg_set: Set = set([item.split("==")[0] for item in cmd_list_feature.pkg_list])
         self.other_set: Set = set(cmd_list_feature.other_list + other_list)
         self.user_set: Set = set(cmd_list_feature.user_list)
