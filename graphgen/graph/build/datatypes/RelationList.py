@@ -26,12 +26,36 @@ class RelationList:
         if relation not in self.relation_list:
             self.relation_list.append(relation)
 
+    def __add__(self, other):
+        return RelationList(self.relation_list + other.relation_list)
+
+    def union(self, other: 'RelationList') -> 'RelationList':
+        return RelationList(self.relation_list + other.relation_list)
+
     # 生成neo4j脚本
     def gen_neo4j_script(self) -> str:
-        content = ""
-        for r in self.relation_list:
-            content += f"{r.get_neo4j_entity_create_script()}\n"
-        return content
+        entities = {}
+        cypher_statements = []
+
+        for relation in self.relation_list:
+            entity1, entity2, relation_type = relation.entity1, relation.entity2, relation.relation_type
+
+            # 处理第一个实体
+            hash_val1 = entity1.__hash__()
+            if hash_val1 not in entities:
+                entities[hash_val1] = f"{hash_val1}{entity1.get_entity_create_script()}"
+                cypher_statements.append(f"MERGE ({entities[hash_val1]})")
+
+            # 处理第二个实体
+            hash_val2 = entity2.__hash__()
+            if hash_val2 not in entities:
+                entities[hash_val2] = f"{hash_val2}{entity2.get_entity_create_script()}"
+                cypher_statements.append(f"MERGE ({entities[hash_val2]})")
+
+            # 添加关系
+            cypher_statements.append(f"MERGE ({hash_val1})-[:{relation_type.name}]->({hash_val2})")
+
+        return "\n".join(cypher_statements)
 
 
 def make_relation_list_from_image_and_execute_node(img_node: EntityNode, execute_node_list: List[EntityNode]) -> RelationList:

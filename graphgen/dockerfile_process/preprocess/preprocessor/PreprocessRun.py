@@ -80,5 +80,6 @@ class PreprocessRun(PreprocessInterface):
         pattern = r'\s-[-]*[a-z][a-z-]*='
         if re.search(pattern, values):
             values = re.sub(pattern, lambda x: x.group()[:-1] + ' ', values)
+        values = values.replace("DEBIAN_FRONTEND=noninteractive", "")
         operand.set_type(types)
         operand.set_value(values)

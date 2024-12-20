@@ -16,6 +16,6 @@ class Relation:
     def __eq__(self, other) -> bool:
         return standard_eq(self, other)
 
-    # CREATE (a:EntityA {name: 'EntityA_Name'})-[r:RELATIONSHIP_TYPE]->(b:EntityB {name: 'EntityB_Name'})
-    def get_neo4j_entity_create_script(self) -> str:
-        return f"CREATE ({self.entity1.get_entity_create_script()})-[r:{self.relation_type.name}]->({self.entity2.get_entity_create_script()})"
+    # # CREATE (a:EntityA {name: 'EntityA_Name'})-[r:RELATIONSHIP_TYPE]->(b:EntityB {name: 'EntityB_Name'})
+    # def get_neo4j_entity_create_script(self) -> str:
+    #     return f"CREATE ({self.entity1.get_entity_create_script()})-[r:{self.relation_type.name}]->({self.entity2.get_entity_create_script()})"

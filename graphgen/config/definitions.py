@@ -56,3 +56,10 @@ IGNORE_DIRECTIVES = [
     'STOPSIGNAL',
     'HEALTHCHECK',
 ]
+
+PKG_CUT_DICT = {
+    "mvn": {'java'},
+    "npm": {'node'},
+    "pip": {'pip', 'python'},
+    "pip3": {'pip', 'python'}
+}

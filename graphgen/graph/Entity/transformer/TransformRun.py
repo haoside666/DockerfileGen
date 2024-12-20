@@ -1,4 +1,4 @@
-from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX
+from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX, PKG_CUT_DICT
 from graphgen.dockerfile_process.datatypes.ShellFeature import ShellFeature
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.graph.Entity.EntityNode import *
@@ -9,24 +9,27 @@ class TransformRun(TransformInterface):
     def transform(self) -> EntityNode:
         p_meta: PrimitiveMeta = self.p_meta
         eigenvector: ShellFeature = p_meta.eigenvector
-        cmd_set = eigenvector.command_set
+        cmd_list = list(eigenvector.command_set)
         flags = list(p_meta.operand.flags)
         value = eigenvector.command
         cmd_type = self.get_cmd_type()
         if cmd_type == "general":
-            return CommandNode(cmd_set, flags, value, cmd_type)
+            return CommandNode(cmd_list, flags, value, cmd_type)
         elif cmd_type == "url":
-            return CommandNode(cmd_set, flags, value, cmd_type)
+            return CommandNode(cmd_list, flags, value, cmd_type)
         elif cmd_type == "pkg":
-            assert len(cmd_set) == 1
-            pkg_cmd = list(cmd_set)[0]
+            assert len(cmd_list) == 1
+            pkg_cmd = cmd_list[0]
             cmd_flag_list = eigenvector.cmd_flag_list
-            pkg_set = eigenvector.pkg_set & set(eigenvector.cmd_operand_list)
+            if pkg_cmd.lower() in PKG_CUT_DICT:
+                pkg_list = list(eigenvector.pkg_set - PKG_CUT_DICT[pkg_cmd.lower()])
+            else:
+                pkg_list = list(eigenvector.pkg_set)
             # 未识别包类型点转换为命令结点
-            if len(pkg_set) == 1 and list(pkg_set)[0].startswith(UNKNOWN_PREFIX):
-                return CommandNode(cmd_set, flags, value, "general")
-            cmd_operand_list = [item for item in eigenvector.cmd_operand_list if item not in pkg_set]
-            return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_set)
+            if len(pkg_list) == 1 and pkg_list[0].startswith(UNKNOWN_PREFIX):
+                return CommandNode(cmd_list, flags, value, "general")
+            cmd_operand_list = [item for item in eigenvector.cmd_operand_list if item not in pkg_list]
+            return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_list)
 
     def get_cmd_type(self) -> str:
         cmd_type = "general"
