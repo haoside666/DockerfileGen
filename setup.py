@@ -12,7 +12,7 @@ long_description = (Path(__file__).parent / "README.md").read_text()
 ## TODO: Rename the package names (and the name of the whole library)
 ##
 setup(
-    name='DockDepend',
+    name='dockerfileGen',
     version='1.0.0',
     py_modules=['graphgen.util',
                 'graphgen.cli'],

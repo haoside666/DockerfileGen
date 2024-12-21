@@ -54,5 +54,5 @@ class DockerfileMeta:
                 stage_list.append(command_list)
             return stage_list
         except Exception as ex:
-            print("ERROR: dockerfile parse is abnormal:{}\n".format(ex.args[0]), file=sys.stderr)
+            print("ERROR: dockerfile parse is abnormal,because {}!".format(ex.args[0]), file=sys.stderr)
             raise

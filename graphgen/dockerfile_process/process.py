@@ -40,10 +40,10 @@ def process(dockerfile_name: str, build_ctx: str) -> Optional[DockerfilePrimitiv
             return dockerfile_primitive_meta
         except (InstructNotFoundError, InstructFormatError, SyntaxNonSupportError) as e:
             print(f"ERROR: {e}！", file=sys.stderr)
-            raise
+            return None
         except ParsingException:
             print(f"ERROR: {dockerfile_name} shell parse exception！", file=sys.stderr)
-            raise
+            return None
         except Exception as e:
             print(type(e).__name__, file=sys.stderr)
             print(f"ERROR: {dockerfile_name} exception!!！", file=sys.stderr)

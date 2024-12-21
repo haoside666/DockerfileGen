@@ -1,7 +1,8 @@
 import base64
 import hashlib
+import re
 from abc import abstractmethod, ABCMeta
-from typing import Tuple, Dict, List, Set
+from typing import Tuple, Dict, List, Set, Optional
 
 from graphgen.util import standard_repr, standard_eq
 
@@ -41,7 +42,10 @@ class EntityNode(metaclass=ABCMeta):
         content += ", ".join(lis) + "}"
         return content
 
-    def __hash__(self):
+    def __hash__(self) -> int:
+        return hash(self.to_dict())
+
+    def calc_hash(self):
         hash_object = hashlib.sha256(self.to_dict().encode())
         hex_hash = hash_object.hexdigest()
         alpha_hash = ''.join(filter(str.isalpha, hex_hash))
@@ -115,13 +119,45 @@ class CommandNode(EntityNode):
     def __str__(self) -> str:
         return f"command_node({self.value})"
 
+    def to_tool_pkg_node(self) -> Optional["ToolPkgNode"]:
+        url = self.value.split()[-1]
+        return ToolPkgNode(url, self.name)
+
+
+class ToolPkgNode(EntityNode):
+    NodeName = 'ToolPkg'
+
+    def __init__(self, url: str, method: str) -> None:
+        filename = url.split("/")[-1]
+        pattern = re.compile(
+            r'^(?P<name>[a-zA-Z0-9]+)'  # 包名，通常包含字母、数字
+        )
+        # 尝试匹配文件名
+        match = pattern.match(filename)
+        if match:
+            name = match.group('name')
+        else:
+            name = filename
+        self.name: str = name
+        self.url: str = url
+        self.method: str = method
+
+    def pretty(self) -> str:
+        return ""
+
+    def get_entity_create_script(self) -> str:
+        return f''':{self.__class__.NodeName} {self.to_dict()}'''
+
+    def __str__(self) -> str:
+        return f'tool_package({self.name})'
+
 
 class SinglePkgNode(EntityNode):
     NodeName = 'Pkg'
 
-    def __init__(self, flags: List, pkg: Tuple[str, str], cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
-        self.name: str = pkg[0]
-        self.version: str = pkg[1]
+    def __init__(self, flags: List, pkg_name: str, version: str, cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
+        self.name: str = pkg_name
+        self.version: str = version
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
         self.cmd_operand_list: List = [cmd_operand_list[0]] if len(cmd_operand_list) > 1 else cmd_operand_list
@@ -151,15 +187,15 @@ class SinglePkgNode(EntityNode):
 
 # apt,pip等的包管理命令
 class PkgNode(EntityNode):
-    NodeName = 'Pkg'
+    NodeName = 'PkgCmd'
 
-    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List[Tuple[str, str]]) -> None:
+    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List, version_list: List) -> None:
         self.name: str = pkg_cmd
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
         self.cmd_operand_list: List = cmd_operand_list
-        # self.pkg_list List[str,str]
-        self.pkg_list: List[Tuple[str, str]] = [item for item in pkg_list if item[0] != self.name]
+        self.pkg_list: List = pkg_list
+        self.version_list: List = version_list
 
     def pretty(self) -> str:
         original_instruct = "RUN "
@@ -171,11 +207,12 @@ class PkgNode(EntityNode):
         if len(self.cmd_flag_list) != 0:
             original_instruct += " ".join(self.cmd_flag_list) + " "
         if len(self.pkg_list) > 1:
-            for pkg in self.pkg_list:
-                if pkg[1] != "latest":
-                    original_instruct += pkg[0] + "==" + pkg[1] + " "
+            for idx, version in enumerate(self.version_list):
+                pkg = self.pkg_list[idx]
+                if version != "latest":
+                    original_instruct += pkg + "==" + version + " "
                 else:
-                    original_instruct += pkg[0] + " "
+                    original_instruct += pkg + " "
         return original_instruct.strip()
 
     def get_entity_create_script(self) -> str:
@@ -187,8 +224,9 @@ class PkgNode(EntityNode):
         return f'package({self.pkg_list})'
 
     def split(self) -> List[SinglePkgNode]:
-        return [SinglePkgNode(self.flags, pkg, self.cmd_flag_list, self.cmd_operand_list, self.name) for pkg in
-                self.pkg_list]
+        # 拆分不考虑包名=命令名情况
+        return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, self.cmd_operand_list, self.name) for idx, pkg in
+                enumerate(self.pkg_list) if self.name != pkg]
 
 
 # CMD, ENTRYPOINT

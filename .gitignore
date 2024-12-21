@@ -1,0 +1,5 @@
+*.cypher
+**/__pycache__
+.idea/
+old/
+output/

@@ -1,7 +1,0 @@
-FROM alpine:3.8
-ADD git@git.example.com:foo/bar.git /bar
-ADD https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py /speedtest
-ADD http://master.bioconductor.org/todays-date /tmp/
-COPY --from=build /usr/local/bin/kubectl /usr/local/bin/kubectl
-COPY --from=builder /app/entrypoint.sh /
-COPY --from=buildstage /usr/local/bin/ctb-* /usr/local/bin/

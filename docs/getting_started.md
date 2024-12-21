@@ -1,11 +1,11 @@
-# DockDepend安装
+# dockerfileGen安装
 
 ## pip安装
 
 ```
 # 下载代码
-git clone https://github.com/haoside666/DockerDepend.git
-cd DockerDepend
+git clone https://github.com/haoside666/DockerfileGen.git
+cd DockerfileGen
 # 安装
 pip install .
 # 测试
@@ -16,15 +16,15 @@ dockdepend dependency -f ./dockdepend/test/data/dependency/Dockerfile1
 
 ```
 # 下载代码
-git clone https://github.com/haoside666/DockerDepend.git
-cd DockerDepend
+git clone https://github.com/haoside666/DockerfileGen.git
+cd DockerfileGen
 
 # 构建镜像
-docker build -f ./Dockerfile . -t dockdepend
+docker build -f ./Dockerfile . -t dockerfileGen
 
 # 使用
 # 显示帮助信息  
-docker run --rm dockdepend 
+docker run -it --rm dockerfileGen -h 
 
 # -v 使用挂载卷，挂载本地文件夹
 docker run --rm -v /home/user/data:/data dockdepend dependency -f /data/Dockerfile
@@ -37,8 +37,7 @@ docker run --rm -v /home/user/data:/data dockdepend dependency -f /data/Dockerfi
 有四个子模块 
 1.dependency  ---> 得到依赖结果
 2.meta  ---> 得到meta结构信息
-3.ast	---> 得到ast分析后的结果
-4.extractor ---> 得到特征结构信息
+3.graph	---> 得到ast分析后的结果
 ```
 
 ## dependency
@@ -85,7 +84,7 @@ graphgen meta -f ./data/meta/Dockerfile -o meta_result.json
 graphgen meta -d ./data/mate -o ./data/output
 ```
 
-## ast
+## graph
 
 ```bash
 # -f 指定脚本文件，默认输出到标准输出，，默认情况会合并所有命令仅输出一个初始指令特征结构(InstructFeatureInit)
@@ -101,24 +100,6 @@ graphgen ast -d ./data/ast -o ./data/output --raw
 graphgen ast -f ./data/ast/mutil_shell_command.sh --detach
 ```
 
-## extractor
-
-```bash
-# -f 指定脚本文件，默认输出到标准输出，输出格式为指令特征结构(InstructFeature)
-graphgen extractor -f ./data/extractor/shell_example.sh 
-# -o 指定输出文件
-graphgen extractor -f ./data/extractor/shell_example.sh -o feature_result.json
-# -d 指定输出文件,使用-d选项时-o选项也必须是目录
-graphgen extractor -d ./data/extractor -o ./data/output
-# --current_user 指定当前用户，默认用户为root
-graphgen extractor -f ./data/extractor/shell_example.sh --current_user root
-# --current_dir 指定当前脚本目录，默认用户为/tmp,会影响cd,wget等命令的指令特征结果
-graphgen extractor -f ./data/extractor/shell_example.sh --current_dir /tmp
-# --only_parse 只对命令特征结构中的命令列表进行命令解析操作，不进行特征提取
-graphgen extractor -f ./data/extractor/shell_example.sh --only_parse
-# --detach 分离命令，以最小命令为基元，一个基元生成一个指令特征结构(InstructFeature)
-graphgen extractor -f ./data/extractor/mutil_shell_command.sh --detach
-```
 
 # DockDepend介绍
 
@@ -144,7 +125,6 @@ parse模块和extractor模块进行处理，如果你只关注shell命令，可�
 
 # 子模块介绍
 
-- [shell parse](./shell_parse.md)
-- [extractor](./extractor.md)
 - [data process](./data_process.md)
+- [dependency judgment](./dependency.md)
 - [dependency judgment](./dependency.md)

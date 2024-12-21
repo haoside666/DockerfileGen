@@ -52,6 +52,9 @@ class PrimitiveMetaList:
     def __eq__(self, other) -> bool:
         return standard_eq(self, other)
 
+    def set_p_meta_list(self, p_meta_list: List[PrimitiveMeta]) -> None:
+        self.p_meta_list = p_meta_list
+
     def length(self) -> int:
         return len(self.p_meta_list)
 

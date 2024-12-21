@@ -1,0 +1,4 @@
+*.cypher
+docs/
+old/
+.idea/

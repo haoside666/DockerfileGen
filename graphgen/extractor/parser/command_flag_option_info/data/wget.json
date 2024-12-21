@@ -405,7 +405,7 @@
         [
             "-P",
             "--directory-prefix",
-            ["DIR","CONFIG_OUTPUT"]
+            ["DIR","CONFIG_INPUT_OR_OUTPUT"]
         ],
         [
             "--default-page",

@@ -17,7 +17,7 @@ class DirectoryTree:
     def to_dict(self):
         return self.root.__str__()
 
-    def build_tree(self, path_list: List[str]):
+    def build_tree(self, path_list: List[str]) -> Dict:
         root = {}
         for path in path_list:
             directory_list = self.get_directory_list_by_parse_path(path)

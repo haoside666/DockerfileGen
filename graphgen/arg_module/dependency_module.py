@@ -9,8 +9,10 @@ import dockerfile
 from graphgen.dependency.datatypes.DDType import DDType
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
 from graphgen.dependency.get_dependency_relation import get_dependency_relation
-from graphgen.dockerfile_process.datatypes.DockerfileMeta import DockerfileMeta
+from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
+from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.dockerfile_process.preprocess.datatypes.InstructMeta import InstructMeta
+from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.dockerfile_process.process import process
 from graphgen.config import global_config
 
@@ -65,7 +67,7 @@ def get_mode(simple_mode, no_instruct_mode):
         return 'default'
 
 
-def get_default_mode_result(edge_index_list: EdgeIndexList, meta_list: List[InstructMeta]):
+def get_default_mode_result(edge_index_list: EdgeIndexList, meta_list: List[PrimitiveMeta]):
     lis = []
     for idx, edge in enumerate(edge_index_list.edge_index_list):
         d = dict()
@@ -94,13 +96,13 @@ def get_no_instruct_mode_result(edge_index_list: EdgeIndexList):
     return lis
 
 
-def beautiful_command_dependency_print(command_meta_list, edge_index_list, out_path, current_num=1, stage_num=1,
+def beautiful_command_dependency_print(command_meta_list: PrimitiveMetaList, edge_index_list, out_path, current_num=1, stage_num=1,
                                        mode='default'):
     if stage_num == 1:
         if out_path == sys.stdout:
             print('===============================================================')
             if mode == 'default':
-                print(json.dumps(get_default_mode_result(edge_index_list, command_meta_list.cmd_meta_list), indent=4))
+                print(json.dumps(get_default_mode_result(edge_index_list, command_meta_list.p_meta_list), indent=4))
             elif mode == 'simple':
                 print(get_simple_mode_result(edge_index_list))
             elif mode == 'no_instruct':
@@ -109,7 +111,7 @@ def beautiful_command_dependency_print(command_meta_list, edge_index_list, out_p
             with open(out_path, "w") as file:
                 if mode == 'default':
                     file.write(
-                        json.dumps(get_default_mode_result(edge_index_list, command_meta_list.cmd_meta_list), indent=4))
+                        json.dumps(get_default_mode_result(edge_index_list, command_meta_list.p_meta_list), indent=4))
                 elif mode == 'simple':
                     file.write(str(get_simple_mode_result(edge_index_list)))
                 elif mode == 'no_instruct':
@@ -119,7 +121,7 @@ def beautiful_command_dependency_print(command_meta_list, edge_index_list, out_p
             print('=========================================================================')
             print(f'-------------------------stage {current_num}----------------------------')
             if mode == 'default':
-                print(json.dumps(get_default_mode_result(edge_index_list, command_meta_list.cmd_meta_list), indent=4))
+                print(json.dumps(get_default_mode_result(edge_index_list, command_meta_list.p_meta_list), indent=4))
             elif mode == 'simple':
                 print(get_simple_mode_result(edge_index_list))
             elif mode == 'no_instruct':
@@ -130,7 +132,7 @@ def beautiful_command_dependency_print(command_meta_list, edge_index_list, out_p
             with open(out_path, "w") as file:
                 if mode == 'default':
                     file.write(
-                        json.dumps(get_default_mode_result(edge_index_list, command_meta_list.cmd_meta_list), indent=4))
+                        json.dumps(get_default_mode_result(edge_index_list, command_meta_list.p_meta_list), indent=4))
                 elif mode == 'simple':
                     file.write(str(get_simple_mode_result(edge_index_list)))
                 elif mode == 'no_instruct':
@@ -162,7 +164,7 @@ def dockerfile_dependency_parse(file_path, output_path, build_ctx, mode):
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
         return
     try:
-        dockerfile_meta: Optional[DockerfileMeta] = process(file_path, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return
@@ -194,7 +196,7 @@ def dockerfile_build_info(file_path, output_path, build_ctx):
     filename = os.path.basename(file_path)
     build_info["filename"] = filename
     try:
-        dockerfile_meta: Optional[DockerfileMeta] = process(file_path, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return

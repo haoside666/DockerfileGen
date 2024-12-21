@@ -51,7 +51,7 @@ class ShellFeature:
         json_data["InputTree"] = self.input_path_tree.to_dict()
         json_data["OutputTree"] = self.output_path_tree.to_dict()
         json_data["cmd_flag_list"] = self.cmd_flag_list
-        json_data["cmd_operand_list"] = self.output_path_tree
+        json_data["cmd_operand_list"] = self.cmd_operand_list
         return json_data
 
     @staticmethod

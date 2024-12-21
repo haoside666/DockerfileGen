@@ -1,23 +1,23 @@
 import json
 import os
 import sys
-from typing import Optional, List
+from typing import Optional
 
 import dockerfile
 
-from graphgen.dockerfile_process.datatypes.DockerfileMeta import DockerfileMeta
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
-from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
+from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.dockerfile_process.process import process
 from graphgen.exception.CustomizedException import ParameterMissError
+from graphgen.graph.get_graph_info import gen_neo4j_script_by_meta
 
 
-def add_meta_module(prog, subparsers):
-    meta_module_description = '输入一个Dockerfile文件或Dockerfile文件目录,得到经过数据处理后的meta结构'
-    meta_parser = subparsers.add_parser('meta', prog=prog,
-                                        usage='%(prog)s meta (-f <file_path>| -d <dir_path>) [<选项>]',
+def add_graph_module(prog, subparsers):
+    meta_module_description = '输入一个Dockerfile文件或Dockerfile文件目录,解析得到其中所有实体与关系的neo4j创建脚本'
+    meta_parser = subparsers.add_parser('graph', prog=prog,
+                                        usage='%(prog)s graph (-f <file_path>| -d <dir_path>) [<选项>]',
                                         description=meta_module_description,
-                                        help='元信息模块,得到经过数据预处理器处理后的元信息')
+                                        help='图谱创建模块,解析Dockerfile得到其中所有实体与关系的neo4j创建脚本')
     meta_group = meta_parser.add_mutually_exclusive_group()
     meta_group.add_argument('-f', '--file', type=str, help='输入单个Dockerfile的文件路径')
     meta_group.add_argument('-d', '--dir', type=str, help='输入含有多个Dockerfile的目录路径')
@@ -27,34 +27,29 @@ def add_meta_module(prog, subparsers):
 
 
 # Printing command meta information in a pretty way for a dockerfile
-def beautiful_command_meta_print(command_meta_list, out_path, current_num=1, stage_num=1):
-    lis = []
-    p_meta_list: List[PrimitiveMeta] = command_meta_list.p_meta_list
-    for p_mete in p_meta_list:
-        d = dict()
-        d["Original"] = p_mete.pretty()
-        d["Meta"] = p_mete.to_dict()
-        lis.append(d)
+def beautiful_neo4j_print(neo4j_script_str: str, out_path, current_num=1, stage_num=1):
     if stage_num == 1:
         if out_path == sys.stdout:
-            print('===============================================================')
-            print(json.dumps(lis, indent=4))
+            print('// ===============================================================')
+            print(json.dumps(neo4j_script_str, indent=4))
         else:
+            if not out_path.endswith(".cypher"):
+                out_path = f'{out_path}_script.cypher'
             with open(out_path, "w") as file:
-                file.write(json.dumps(lis, indent=4))
+                file.write(neo4j_script_str)
     else:
         if out_path == sys.stdout:
-            print('=========================================================================')
-            print(f'-------------------------stage {current_num}----------------------------')
-            print(json.dumps(lis, indent=4))
+            print('// =========================================================================')
+            print(f'// -------------------------stage {current_num}----------------------------')
+            print(neo4j_script_str)
         else:
             base_name, ext = os.path.splitext(out_path)
             out_path = f'{base_name}_{current_num}{ext}'
             with open(out_path, "w") as file:
-                file.write(json.dumps(lis, indent=4))
+                file.write(neo4j_script_str)
 
 
-def dockerfile_meta_parse(file_path, output_path, build_ctx):
+def dockerfile_graph_gen(file_path, output_path, build_ctx):
     if output_path != sys.stdout and not os.path.isfile(output_path) and "." not in output_path:
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
         return
@@ -75,8 +70,9 @@ def dockerfile_meta_parse(file_path, output_path, build_ctx):
             return
 
         for i in range(stage_num):
-            command_meta_list = dockerfile_meta.stage_meta_list[i]
-            beautiful_command_meta_print(command_meta_list, output_path, i + 1, stage_num)
+            stage_meta_list: PrimitiveMetaList = dockerfile_meta.stage_meta_list[i]
+            neo4j_script = gen_neo4j_script_by_meta(stage_meta_list)
+            beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
     else:
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
 
@@ -95,7 +91,7 @@ def meta_module_func(args):
         build_ctx = os.path.dirname(file_path)
         if build_ctx == '':
             build_ctx = '.'
-        dockerfile_meta_parse(file_path, output_path, build_ctx)
+        dockerfile_graph_gen(file_path, output_path, build_ctx)
     elif dir_path:
         build_ctx = dir_path
         if not os.path.isdir(dir_path):
@@ -112,8 +108,8 @@ def meta_module_func(args):
             file_path = os.path.join(dir_path, file_name)
             if os.path.isfile(file_path):
                 if output_path != sys.stdout:
-                    new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_meta.json")
+                    new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
                 else:
                     print(f'-------------------------{file_path}----------------------------')
                     new_output_path = output_path
-                dockerfile_meta_parse(file_path, new_output_path, build_ctx)
+                dockerfile_graph_gen(file_path, new_output_path, build_ctx)

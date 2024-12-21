@@ -1,0 +1,9 @@
+FROM python:3.8-slim AS builder
+WORKDIR /app
+RUN sed -i "s|http://deb.debian.org/debian|http://mirror.sjtu.edu.cn/debian|g" /etc/apt/sources.list.d/debian.sources && \
+    apt update && \
+    apt install -y --no-install-recommends default-libmysqlclient-dev gcc libglib2.0-dev
+RUN pip3 install --upgrade pip && pip3 install requests flask
+COPY . .
+EXPOSE 8000
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

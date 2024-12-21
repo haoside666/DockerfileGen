@@ -21,19 +21,22 @@ class TransformRun(TransformInterface):
             assert len(cmd_list) == 1
             pkg_cmd = cmd_list[0]
             cmd_flag_list = eigenvector.cmd_flag_list
+            # 保留人工规则传递出来的包
             if pkg_cmd.lower() in PKG_CUT_DICT:
-                pkg_list = []
+                pkg_tuple_list = []
                 for item in eigenvector.pkg_set:
                     pkg_name = item[0]
                     if pkg_name not in PKG_CUT_DICT[pkg_cmd.lower()]:
-                        pkg_list.append(item)
+                        pkg_tuple_list.append(item)
             else:
-                pkg_list = list(eigenvector.pkg_set)
+                pkg_tuple_list = list(eigenvector.pkg_set)
             # 未识别包类型点转换为命令结点
-            if len(pkg_list) == 1 and pkg_list[0][0].startswith(UNKNOWN_PREFIX):
+            if len(pkg_tuple_list) == 1 and pkg_tuple_list[0][0].startswith(UNKNOWN_PREFIX):
                 return CommandNode(cmd_list, flags, value, "general")
+            pkg_list = [item[0] for item in pkg_tuple_list]
+            version_list = [item[1] for item in pkg_tuple_list]
             cmd_operand_list = [item for item in eigenvector.cmd_operand_list if item not in pkg_list]
-            return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_list)
+            return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_list, version_list)
 
     def get_cmd_type(self) -> str:
         cmd_type = "general"

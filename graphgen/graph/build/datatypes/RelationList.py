@@ -41,13 +41,13 @@ class RelationList:
             entity1, entity2, relation_type = relation.entity1, relation.entity2, relation.relation_type
 
             # 处理第一个实体
-            hash_val1 = entity1.__hash__()
+            hash_val1 = entity1.calc_hash()
             if hash_val1 not in entities:
                 entities[hash_val1] = f"{hash_val1}{entity1.get_entity_create_script()}"
                 cypher_statements.append(f"MERGE ({entities[hash_val1]})")
 
             # 处理第二个实体
-            hash_val2 = entity2.__hash__()
+            hash_val2 = entity2.calc_hash()
             if hash_val2 not in entities:
                 entities[hash_val2] = f"{hash_val2}{entity2.get_entity_create_script()}"
                 cypher_statements.append(f"MERGE ({entities[hash_val2]})")
@@ -64,5 +64,6 @@ def make_relation_list_from_image_and_execute_node(img_node: EntityNode, execute
         return r_list
     for exe_node in execute_node_list:
         r_list.relation_list.append(Relation(img_node, exe_node, RType.Contain))
+        r_list.relation_list.append(Relation(exe_node, img_node, RType.Compatible))
 
     return r_list

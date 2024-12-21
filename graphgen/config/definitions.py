@@ -57,6 +57,15 @@ IGNORE_DIRECTIVES = [
     'HEALTHCHECK',
 ]
 
+PKG_DIRECTIVES = [
+    'FROM',
+    'RUN',
+    'ADD',
+    'COPY',
+    'USER',
+    'WORKDIR',
+]
+
 PKG_CUT_DICT = {
     "mvn": {'java'},
     "npm": {'node'},
