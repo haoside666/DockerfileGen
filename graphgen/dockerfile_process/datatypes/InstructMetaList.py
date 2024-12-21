@@ -9,7 +9,7 @@ from graphgen.config.definitions import NOT_CHANGE_DIRECTIVES
 from graphgen.dockerfile_process.preprocess.datatypes.InstructMetaInit import InstructMetaInit
 from graphgen.dockerfile_process.preprocess.datatypes.InstructMeta import InstructMeta
 from graphgen.dockerfile_process.datatypes.DirectoryTree import DirectoryTree
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeature
 from graphgen.shell_parse.parse import parse_shell_cmd_to_instruct_feature
 from graphgen.shell_parse.datatypes import InsturctFeatureInit
 from graphgen.exception.CustomizedException import ParsingException

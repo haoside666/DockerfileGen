@@ -1,7 +1,7 @@
 from graphgen.util import standard_eq
 from typing import Optional, Union
 from .InstructMetaInit import InstructMetaInit
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeature
 from graphgen.dockerfile_process.datatypes.DirectoryTree import DirectoryTree
 from copy import deepcopy
 

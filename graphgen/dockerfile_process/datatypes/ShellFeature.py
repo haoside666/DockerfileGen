@@ -17,7 +17,7 @@ class ShellFeature:
             self.command = " | ".join(p_feat.command)
         assert len(cmd_list_feature.cmd_name_list) == 1
         self.command_set: Set = set(cmd_list_feature.cmd_name_list[0].split(','))
-        self.pkg_set: Set = set([item.split("==")[0] for item in cmd_list_feature.pkg_list])
+        self.pkg_set: Set[Tuple[str, str]] = set([(item.split("==")[0], item.split("==")[1]) if "==" in item else (item, "latest") for item in cmd_list_feature.pkg_list])
         self.other_set: Set = set(cmd_list_feature.other_list + other_list)
         self.user_set: Set = set(cmd_list_feature.user_list)
         self.var_p_set: Set = set(p_feat.var_p_list)
@@ -87,6 +87,7 @@ def instruct_feature_have_intersection(prior_feat: ShellFeature, latter_feat: Sh
 
 
 def pkg_union(prior_pkg_set: Set, latter_command_set: Set) -> Set:
+    prior_pkg_set = set([item[0] for item in prior_pkg_set])
     return prior_pkg_set & latter_command_set
 
 

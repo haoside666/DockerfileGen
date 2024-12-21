@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeature
 from graphgen.exception.CustomizedException import ParameterMissError, ParsingException
 from graphgen.extractor.extractor_cli import get_command_list_feature, get_command_list_parse_result
 from graphgen.shell_parse.parse import parse_shell_script_file_to_instruct_feature, \

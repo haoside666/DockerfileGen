@@ -35,7 +35,7 @@ class TestNodeGen(unittest.TestCase):
                 print(r2_list)
 
     def test_single_dockerfile2(self):
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_mutil_tool_package"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test3"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:

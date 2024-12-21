@@ -21,7 +21,7 @@ class FeatureInfoGeneratorPip(FeatureInfoGeneratorInterface):
                 else:
                     self.all_but_first_operand_is_pkg()
                     operand_arg = operand_list[-1].get_name()
-                    if "/" in operand_arg or "." in operand_arg:
+                    if "==" not in operand_arg and ("/" in operand_arg or "." in operand_arg):
                         self.only_last_operand_is_io()
             else:
                 self.add_one_element_to_operand_list(".",

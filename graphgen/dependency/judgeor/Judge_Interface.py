@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.dockerfile_process.datatypes.DirectoryTree import DirectoryTree, trees_have_intersection, \
     path_have_intersection_with_tree
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.ShellFeature import ShellFeature
 from typing import Tuple, Set, Optional
 from graphgen.config.system_env import SYSTEM_ENV_DICT
 from graphgen.config.definitions import PROGRAM_COMMAND_SET, DIR_COMMAND_SET, side_effect_command_set
@@ -30,7 +30,7 @@ class JudgeInterface(ABC):
     # ENV RUN or ARG RUN
     def get_special_env_with_run_dependence(self) -> Tuple[DDType, str]:
         env_set: Set = set(self.command_meta1.get_operand().if_value_is_dict_to_get_keys())
-        instruct_feat: Optional[InstructFeature] = self.command_meta2.get_eigenvector()
+        instruct_feat: Optional[ShellFeature] = self.command_meta2.get_eigenvector()
         if instruct_feat is None:
             return DDType.NONE, ""
         else:
@@ -44,7 +44,7 @@ class JudgeInterface(ABC):
 
     def get_add_or_copy_with_run_dependence(self) -> Tuple[DDType, str]:
         path_tree: DirectoryTree = self.command_meta1.get_eigenvector()
-        instruct_feat: Optional[InstructFeature] = self.command_meta2.get_eigenvector()
+        instruct_feat: Optional[ShellFeature] = self.command_meta2.get_eigenvector()
 
         if instruct_feat is None or path_tree is None:
             return DDType.NONE, ""
@@ -70,7 +70,7 @@ class JudgeInterface(ABC):
     # VOLUME RUN or WORKDIR RUN
     def get_dir_list_with_run_dependence(self) -> Tuple[DDType, str]:
         dir_list: Tuple[str] = self.command_meta1.get_operand().value
-        instruct_feat: Optional[InstructFeature] = self.command_meta2.get_eigenvector()
+        instruct_feat: Optional[ShellFeature] = self.command_meta2.get_eigenvector()
         if instruct_feat is None:
             return DDType.NONE, ""
         else:
@@ -91,7 +91,7 @@ class JudgeInterface(ABC):
             # RUN WORKDIR
 
     def get_run_with_dir_dependence(self) -> Tuple[DDType, str]:
-        instruct_feat: Optional[InstructFeature] = self.command_meta1.get_eigenvector()
+        instruct_feat: Optional[ShellFeature] = self.command_meta1.get_eigenvector()
         dir_list: Tuple[str] = self.command_meta2.get_operand().value
         if instruct_feat is None:
             return DDType.NONE, ""

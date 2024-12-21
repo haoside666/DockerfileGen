@@ -119,11 +119,12 @@ class CommandNode(EntityNode):
 class SinglePkgNode(EntityNode):
     NodeName = 'Pkg'
 
-    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
-        self.name: str = pkg_cmd
+    def __init__(self, flags: List, pkg: Tuple[str, str], cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
+        self.name: str = pkg[0]
+        self.version: str = pkg[1]
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
-        self.cmd_operand_list: List = cmd_operand_list
+        self.cmd_operand_list: List = [cmd_operand_list[0]] if len(cmd_operand_list) > 1 else cmd_operand_list
         self.method: str = method
 
     def pretty(self) -> str:
@@ -135,7 +136,10 @@ class SinglePkgNode(EntityNode):
             original_instruct += " ".join(self.cmd_operand_list) + " "
         if len(self.cmd_flag_list) != 0:
             original_instruct += " ".join(self.cmd_flag_list) + " "
-        original_instruct += self.name
+        if self.version != "latest":
+            original_instruct += self.name
+        else:
+            original_instruct += self.name + "==" + self.version
         return original_instruct
 
     def get_entity_create_script(self) -> str:
@@ -149,12 +153,13 @@ class SinglePkgNode(EntityNode):
 class PkgNode(EntityNode):
     NodeName = 'Pkg'
 
-    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List) -> None:
+    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List[Tuple[str, str]]) -> None:
         self.name: str = pkg_cmd
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
         self.cmd_operand_list: List = cmd_operand_list
-        self.pkg_list: List = [item for item in pkg_list if item != self.name]
+        # self.pkg_list List[str,str]
+        self.pkg_list: List[Tuple[str, str]] = [item for item in pkg_list if item[0] != self.name]
 
     def pretty(self) -> str:
         original_instruct = "RUN "
@@ -166,8 +171,12 @@ class PkgNode(EntityNode):
         if len(self.cmd_flag_list) != 0:
             original_instruct += " ".join(self.cmd_flag_list) + " "
         if len(self.pkg_list) > 1:
-            original_instruct += " ".join(self.pkg_list) + " "
-        return original_instruct
+            for pkg in self.pkg_list:
+                if pkg[1] != "latest":
+                    original_instruct += pkg[0] + "==" + pkg[1] + " "
+                else:
+                    original_instruct += pkg[0] + " "
+        return original_instruct.strip()
 
     def get_entity_create_script(self) -> str:
         return f''':{self.__class__.NodeName} {self.to_dict()}'''

@@ -18,7 +18,7 @@ from graphgen.shell_parse.datatypes.PrimitiveFeature import PrimitiveFeature
 from graphgen.shell_parse.parse import parse_shell_cmd_to_primitive_feature
 from graphgen.config.definitions import NOT_CHANGE_DIRECTIVES
 from graphgen.extractor.extractor_cli import get_command_list_feature
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeature
 
 
 class PrimitiveMetaList:

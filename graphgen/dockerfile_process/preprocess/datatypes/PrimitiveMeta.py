@@ -3,7 +3,7 @@ from graphgen.dockerfile_process.preprocess.datatypes import Operand
 from graphgen.dockerfile_process.preprocess.datatypes.InstructMeta import InstructMeta
 from graphgen.shell_parse.datatypes.PrimitiveFeature import PrimitiveFeature
 from graphgen.util import standard_repr, standard_eq
-from graphgen.dockerfile_process.datatypes.InsturctFeature import InstructFeature
+from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeature
 from graphgen.dockerfile_process.datatypes.DirectoryTree import DirectoryTree
 from typing import Optional, Union, List
 

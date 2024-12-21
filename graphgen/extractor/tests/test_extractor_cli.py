@@ -31,6 +31,13 @@ class TestExtractorCli(unittest.TestCase):
         instruct1_feature, attribute_dir = get_command_list_feature(command_list, attribute_user, attribute_dir)
         print(instruct1_feature)
 
+    def test_cmd4(self):
+        command_list = ["pip install --no-cache-dir requests==2.22.0 beautifulsoup4==4.7.1"]
+        attribute_user = "root"
+        attribute_dir = "/tmp"
+        instruct1_feature, attribute_dir = get_command_list_feature(command_list, attribute_user, attribute_dir)
+        print(instruct1_feature)
+
     def test_pipe_cmd1(self):
         command_list = [
             ["curl -L -s https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz", "tar zx"]
@@ -43,7 +50,7 @@ class TestExtractorCli(unittest.TestCase):
     def test_pipe_cmd2(self):
         command_list = [
             ["wget -O - https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.7.0/shadowsocks-v1.7.0-nightly.x86_64-unknown-linux-musl.tar.xz",
-                "tar -xJv -C /usr/local/bin sslocal"]
+             "tar -xJv -C /usr/local/bin sslocal"]
         ]
         attribute_user = "root"
         attribute_dir = "/tmp"
