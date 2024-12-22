@@ -1,8 +1,9 @@
 FROM ubuntu:latest
 
+ENV DEBIAN_FRONTEND noninteractive
 # HDF5 version 1.10.4
 RUN apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         bzip2 \
         file \
         make \

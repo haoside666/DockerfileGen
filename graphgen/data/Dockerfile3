@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-ARG DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 ENV GOROOT /opt/go
 ENV PATH ${GOROOT}/bin:${GOPATH}/bin:${PATH}
 ENV NFF_GO /nff-go

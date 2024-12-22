@@ -72,6 +72,9 @@
             "--no-bin-links"
         ],
         [
+            "--no-cache"
+        ],
+        [
             "--no-commit-hooks"
         ],
         [
@@ -187,6 +190,10 @@
         [
             "--otp",
             "OTP"
+        ],
+        [
+            "--omit",
+            "DEV"
         ],
         [
             "--package",

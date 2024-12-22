@@ -67,9 +67,18 @@ PKG_DIRECTIVES = [
     'WORKDIR',
 ]
 
-PKG_CUT_DICT = {
-    "mvn": {'java'},
-    "npm": {'node'},
-    "pip": {'pip', 'python'},
-    "pip3": {'pip', 'python'}
+# PKG_CUT_DICT = {
+#     "mvn": {'java'},
+#     "npm": {'node'},
+#     "pip": {'pip', 'python'},
+#     "pip3": {'pip', 'python'},
+#     "python": {'python', 'python3'},
+#     "python3": {'python', 'python3'},
+# }
+LANGUAGE_SET = {
+    "python", "python3", "java", "c++", "c", "c#", "javascript", "typescript", "ruby", "php", "swift", "kotlin", "go", "scala", "rust", "perl",
+    "objective-c", "haskell", "erlang", "r", "matlab", "raku", "julia", "kotlin", "groovy", "dart", "lua", "racket",
+    "clojure", "f#", "vb.net", "delphi", "vbscript", "tcl", "actionscript", "node",
 }
+
+TOOL_PKG_METHOD = {"git", "curl", "wget"}

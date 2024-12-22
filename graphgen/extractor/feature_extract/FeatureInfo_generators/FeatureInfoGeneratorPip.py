@@ -27,5 +27,5 @@ class FeatureInfoGeneratorPip(FeatureInfoGeneratorInterface):
                 self.add_one_element_to_operand_list(".",
                                                      (WhichClassForFeature.FILESTD, make_other_input()))
 
-        self.add_one_element_to_operand_list("pip", (WhichClassForFeature.PKG, None))
+        self.add_one_element_to_operand_list(self.cmd_inv_after_io.cmd_name, (WhichClassForFeature.PKG, None))
         self.add_one_element_to_operand_list("python", (WhichClassForFeature.PKG, None))

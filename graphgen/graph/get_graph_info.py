@@ -6,7 +6,7 @@ from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMet
 from graphgen.graph.Entity.EntityGen import entity_gen
 from graphgen.graph.Entity.EntityNode import EntityNode
 from graphgen.graph.build.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
-from graphgen.graph.build.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node
+from graphgen.graph.build.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_implicit_node
 from graphgen.graph.build.utils import strip_redundant_meta_info
 
 

@@ -1,9 +1,11 @@
 import base64
 import hashlib
+import os
 import re
 from abc import abstractmethod, ABCMeta
 from typing import Tuple, Dict, List, Set, Optional
 
+from graphgen.config.definitions import TOOL_PKG_METHOD
 from graphgen.util import standard_repr, standard_eq
 
 
@@ -61,7 +63,7 @@ class ImageNode(EntityNode):
         self.name: str = value[0].split(":")[0]
         self.tag: str = value[0].split(":")[1] if value[0].split(":")[1] else "latest"
         self.flags: List = flags
-        self.value: List = value
+        self.value: List = value[:1]
 
     def pretty(self) -> str:
         original_instruct = "FROM "
@@ -120,7 +122,13 @@ class CommandNode(EntityNode):
         return f"command_node({self.value})"
 
     def to_tool_pkg_node(self) -> Optional["ToolPkgNode"]:
-        url = self.value.split()[-1]
+        # 匹配以https://开头或http://git@开头url
+        pattern = r'((https?:\/\/)|(git@))+[^\s]+'
+        match = re.search(pattern, self.value)
+        if not match:
+            raise Exception("ERROR: cmd_type of the command node is not 'url'")
+        else:
+            url = match.group()
         return ToolPkgNode(url, self.name)
 
 
@@ -128,17 +136,12 @@ class ToolPkgNode(EntityNode):
     NodeName = 'ToolPkg'
 
     def __init__(self, url: str, method: str) -> None:
-        filename = url.split("/")[-1]
-        pattern = re.compile(
-            r'^(?P<name>[a-zA-Z0-9]+)'  # 包名，通常包含字母、数字
-        )
-        # 尝试匹配文件名
-        match = pattern.match(filename)
-        if match:
-            name = match.group('name')
+        union_set = set(method.split(",")) & TOOL_PKG_METHOD
+        if len(union_set) == 1:
+            method = list(union_set)[0]
         else:
-            name = filename
-        self.name: str = name
+            raise Exception("ERROR: method of the tool package node is not supported")
+        self.name: str = self.extract_dir_name(url, method)
         self.url: str = url
         self.method: str = method
 
@@ -151,6 +154,22 @@ class ToolPkgNode(EntityNode):
     def __str__(self) -> str:
         return f'tool_package({self.name})'
 
+    @staticmethod
+    def extract_dir_name(url: str, method: str):
+        if method == "git":
+            name = os.path.basename(url)
+            index = name.find(".git")
+            if index != -1:
+                return name[:index]
+            else:
+                t = name.rpartition(".")
+                if t[0] == "":
+                    return name
+                else:
+                    return t[0]
+        else:
+            return url.rpartition("/")[-1]
+
 
 class SinglePkgNode(EntityNode):
     NodeName = 'Pkg'
@@ -160,7 +179,7 @@ class SinglePkgNode(EntityNode):
         self.version: str = version
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
-        self.cmd_operand_list: List = [cmd_operand_list[0]] if len(cmd_operand_list) > 1 else cmd_operand_list
+        self.cmd_operand_list: List = cmd_operand_list
         self.method: str = method
 
     def pretty(self) -> str:
@@ -203,16 +222,18 @@ class PkgNode(EntityNode):
             original_instruct += " ".join(self.flags) + " "
         original_instruct += self.name + " "
         if len(self.cmd_operand_list) != 0:
-            original_instruct += " ".join(self.cmd_operand_list) + " "
+            original_instruct += self.cmd_operand_list[0] + " "
         if len(self.cmd_flag_list) != 0:
             original_instruct += " ".join(self.cmd_flag_list) + " "
-        if len(self.pkg_list) > 1:
-            for idx, version in enumerate(self.version_list):
-                pkg = self.pkg_list[idx]
-                if version != "latest":
-                    original_instruct += pkg + "==" + version + " "
-                else:
-                    original_instruct += pkg + " "
+        if len(self.cmd_operand_list) > 1:
+            original_instruct += " ".join(self.cmd_operand_list[1:]) + " "
+        # if len(self.pkg_list) > 1:
+        #     for idx, version in enumerate(self.version_list):
+        #         pkg = self.pkg_list[idx]
+        #         if version != "latest":
+        #             original_instruct += pkg + "==" + version + " "
+        #         else:
+        #             original_instruct += pkg + " "
         return original_instruct.strip()
 
     def get_entity_create_script(self) -> str:
@@ -224,9 +245,11 @@ class PkgNode(EntityNode):
         return f'package({self.pkg_list})'
 
     def split(self) -> List[SinglePkgNode]:
-        # 拆分不考虑包名=命令名情况
-        return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, self.cmd_operand_list, self.name) for idx, pkg in
-                enumerate(self.pkg_list) if self.name != pkg]
+        # # 拆分不考虑包名=命令名情况
+        # return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, self.cmd_operand_list, self.name) for idx, pkg in
+        #         enumerate(self.pkg_list) if self.name != pkg]
+        return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, [self.cmd_operand_list[0]], self.name) for idx, pkg in
+                enumerate(self.pkg_list)]
 
 
 # CMD, ENTRYPOINT

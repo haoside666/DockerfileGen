@@ -10,13 +10,12 @@ from graphgen.extractor.feature_extract.datatypes.FeatureInfo import FeatureInfo
 ### directory paths
 FEATURE_INFO_GENERATORS = f"{__name__.rsplit('.', maxsplit=1)[0]}.FeatureInfo_generators"
 
-DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
+PKG_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
     "apk": "Apk",
     "apt": "Apt",
     "apt-get": "Apt",
     "bundle": "Bundle",
     "cargo": "Cargo",
-    "chown": "Chown",
     "composer": "Composer",
     "default": "Default",
     "docker-php-ext-install": "DockerPhp",
@@ -25,15 +24,7 @@ DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
     "git": "Git",
     "go": "Go",
     "gradle": "Gradle",
-    "groupadd": "Groupadd",
-    "addgroup": "Groupadd",
-    "groupdel": "Groupdel",
-    "delgroup": "Groupdel",
     "ifcond": "Ifcond",
-    "useradd": "Useradd",
-    "adduser": "Useradd",
-    "userdel": "Userdel",
-    "deluser": "Userdel",
     "dnf": "Yum",
     "make": "Make",
     "mvn": "Mvn",
@@ -52,9 +43,24 @@ DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
     "yum": "Yum",
     "yarn": "Yarn",
     "zypper": "Zypper",
+}
+
+USER_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
+    "groupadd": "Groupadd",
+    "addgroup": "Groupadd",
+    "groupdel": "Groupdel",
+    "delgroup": "Groupdel",
+    "useradd": "Useradd",
+    "adduser": "Useradd",
+    "userdel": "Userdel",
+    "deluser": "Userdel",
+}
+
+IO_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
     "awk": "Awk",
     "cat": "Cat",
     "chmod": "Chmod",
+    "chown": "Chown",
     "col": "Col",
     "comm": "Comm",
     "cp": "Cp",
@@ -81,6 +87,13 @@ DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
     "unzip": "Unzip",
     "wc": "Wc",
     "wget": "Wget"
+}
+
+# 合并上述三类映射字典
+DICT_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES = {
+    **PKG_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES,
+    **USER_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES,
+    **IO_CMD_NAME_TO_REPRESENTATION_IN_MODULE_NAMES
 }
 
 FEATURE_INFO_FILENAME_MODULE_PREFIX = "FeatureInfoGenerator"

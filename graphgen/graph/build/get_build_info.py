@@ -54,7 +54,8 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
                 cmd_set.add(cmd)
         elif isinstance(entity_node, PkgNode):
             pkg_cmd = entity_node.name
-            if pkg_cmd not in entity_node.pkg_list:
+            # 长度为0表示实际没有安装或处理包
+            if len(entity_node.pkg_list) > 0:
                 cmd_set.add(pkg_cmd)
                 pkg_cmd_set = pkg_cmd_set.union(set(entity_node.pkg_list))
             else:
@@ -70,7 +71,7 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
 
 
 # 生成可执行文件节点和包结点节点
-def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_list: List[ExecutableNode]) -> Tuple[RelationList, List[SinglePkgNode]]:
+def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_list: List[ExecutableNode]) -> RelationList:
     r_list: RelationList = RelationList()
     all_pkg_node_list: List[SinglePkgNode] = []
     for entity_node in entity_list:
@@ -89,7 +90,7 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
                 if pkg_node != dest_node:
                     r: Relation = Relation(pkg_node, dest_node, RType.Dependency)
                     r_list.add_relation(r)
-    return r_list, all_pkg_node_list
+    return r_list
 
 
 # 生成隐式依赖节点
@@ -101,7 +102,8 @@ def generate_implicit_node(exe_cmd_node_list: List[ExecutableNode], all_pkg_node
             before_node = edge_index_list.edge_index_list[idx][0]
             after_node = edge_index_list.edge_index_list[idx][1]
             entity1 = entity_list[before_node]
-            pkg_name = entity_list[after_node].name
+            entity2 = entity_list[after_node]
+            pkg_name = entity2.name
             dest_node: Union[ExecutableNode, SinglePkgNode] = find_exe_cmd_node(pkg_name, exe_cmd_node_list)
             if dest_node is None:
                 dest_node = find_pkg_node(pkg_name, all_pkg_node_list)
@@ -183,7 +185,8 @@ def find_tool_node(start_node_index: int, all_url_index_list: List, edge_index_l
             for before_node_index in after_dict[cur_node_index]:
                 if before_node_index in all_url_index_list:
                     continue
-                rel_set.add((before_node_index, cur_node_index))
+                if not is_env_dependency((before_node_index, cur_node_index), edge_index_list):
+                    rel_set.add((before_node_index, cur_node_index))
                 queue.append(before_node_index)
 
     # 向后寻找
@@ -194,7 +197,8 @@ def find_tool_node(start_node_index: int, all_url_index_list: List, edge_index_l
             for after_node_index in before_dict[cur_node_index]:
                 if after_node_index in all_url_index_list:
                     continue
-                rel_set.add((cur_node_index, after_node_index))
+                if not is_env_dependency((cur_node_index, after_node_index), edge_index_list):
+                    rel_set.add((cur_node_index, after_node_index))
                 queue.append(after_node_index)
     return rel_set
 
@@ -225,3 +229,10 @@ def remove_redundant_edges(dependencies):
 
     result = list(edges_to_keep)
     return result
+
+
+def is_env_dependency(edge: Tuple[int, int], edge_index_list: EdgeIndexList) -> bool:
+    index = edge_index_list.edge_index_list.index(edge)
+    if edge_index_list.type_list[index] == DDType.ENV_VAR:
+        return True
+    return False

@@ -49,7 +49,7 @@ class TestNodeGen(unittest.TestCase):
                 img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
                 r_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)
                 print(r_list)
-                r2_list, all_pkg_node_list = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
+                r2_list = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
                 print(r2_list)
                 union_r_list: RelationList = r_list + r2_list
                 with open(f"{ROOT_DIR}/graph/script/script.cypher", "w") as file:
@@ -62,7 +62,7 @@ class TestNodeGen(unittest.TestCase):
                 conn.close()
 
     def test_implicit_node_gen(self):
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_env"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_npm"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -77,11 +77,9 @@ class TestNodeGen(unittest.TestCase):
                 img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
                 r_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)
                 print(r_list)
-                r2_list, all_pkg_node_list = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
+                r2_list: RelationList = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
                 print(r2_list)
-                r3_list: RelationList = generate_implicit_node(exe_cmd_node_list, all_pkg_node_list, entity_list, img_node, edge_index_list)
-                print(r3_list)
-                union_r_list: RelationList = r_list + r2_list + r3_list
+                union_r_list: RelationList = r_list + r2_list
                 with open(f"{ROOT_DIR}/graph/script/script.cypher", "w") as file:
                     file.write(union_r_list.gen_neo4j_script())
 
@@ -116,7 +114,7 @@ class TestNodeGen(unittest.TestCase):
                 conn.close()
 
     def test_single_dockerfile(self):
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile3"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -131,13 +129,11 @@ class TestNodeGen(unittest.TestCase):
                 img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
                 r1_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)
                 print(r1_list)
-                r2_list, all_pkg_node_list = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
+                r2_list: RelationList = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
                 print(r2_list)
-                r3_list: RelationList = generate_implicit_node(exe_cmd_node_list, all_pkg_node_list, entity_list, img_node, edge_index_list)
+                r3_list: RelationList = generate_tool_node(entity_list, edge_index_list)
                 print(r3_list)
-                r4_list: RelationList = generate_tool_node(entity_list, edge_index_list)
-                print(r4_list)
-                tool_r_list = r1_list + r2_list + r3_list + r4_list
+                tool_r_list = r1_list + r2_list + r3_list
                 with open(f"{ROOT_DIR}/graph/script/{os.path.basename(dockerfile_name)}.cypher", "w") as file:
                     file.write(tool_r_list.gen_neo4j_script())
 
