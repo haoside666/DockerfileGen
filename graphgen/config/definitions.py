@@ -60,6 +60,7 @@ IGNORE_DIRECTIVES = [
 PKG_DIRECTIVES = [
     'FROM',
     'RUN',
+    'ENV',
     'ADD',
     'COPY',
     'USER',

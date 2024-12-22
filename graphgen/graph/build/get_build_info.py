@@ -70,7 +70,7 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
 
 
 # 生成可执行文件节点和包结点节点
-def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_list: List[ExecutableNode]) -> RelationList:
+def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_list: List[ExecutableNode]) -> Tuple[RelationList, List[SinglePkgNode]]:
     r_list: RelationList = RelationList()
     all_pkg_node_list: List[SinglePkgNode] = []
     for entity_node in entity_list:
@@ -89,6 +89,26 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
                 if pkg_node != dest_node:
                     r: Relation = Relation(pkg_node, dest_node, RType.Dependency)
                     r_list.add_relation(r)
+    return r_list, all_pkg_node_list
+
+
+# 生成隐式依赖节点
+def generate_implicit_node(exe_cmd_node_list: List[ExecutableNode], all_pkg_node_list: List[SinglePkgNode],
+                           entity_list: List[EntityNode], img_node: ImageNode, edge_index_list: EdgeIndexList) -> RelationList:
+    r_list: RelationList = RelationList()
+    for idx, d_type in enumerate(edge_index_list.type_list):
+        if d_type == DDType.ENV_VAR_IMPLICIT:
+            before_node = edge_index_list.edge_index_list[idx][0]
+            after_node = edge_index_list.edge_index_list[idx][1]
+            entity1 = entity_list[before_node]
+            pkg_name = entity_list[after_node].name
+            dest_node: Union[ExecutableNode, SinglePkgNode] = find_exe_cmd_node(pkg_name, exe_cmd_node_list)
+            if dest_node is None:
+                dest_node = find_pkg_node(pkg_name, all_pkg_node_list)
+                if dest_node is None:
+                    raise Exception("pkg node not found")
+            r: Relation = Relation(dest_node, entity1, RType.Dependency)
+            r_list.add_relation(r)
     return r_list
 
 

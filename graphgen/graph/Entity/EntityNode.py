@@ -259,21 +259,24 @@ class EnvNode(EntityNode):
     def __init__(self, flags: List, value: Dict) -> None:
         self.name: str = "ENV"
         self.flags: List = flags
-        self.var_dict = value
+        var_info = []
+        for key, value in value.items():
+            var_info.append(f'{key}="{value}"')
+        self.var_info: List = var_info
 
     def pretty(self) -> str:
         original_instruct = "ENV "
         if len(self.flags) != 0:
             original_instruct += " ".join(self.flags) + " "
-        for key, value in self.var_dict.items():
-            original_instruct += f'{key}="{value}" '
+        for item in self.var_info:
+            original_instruct += f'{item} '
         return original_instruct.strip()
 
     def get_entity_create_script(self) -> str:
         return f''':{self.__class__.NodeName} {self.to_dict()}'''
 
     def __str__(self) -> str:
-        return f"env({str(self.var_dict)})"
+        return f"env({str(self.var_info)})"
 
 
 class ArgNode(EntityNode):
