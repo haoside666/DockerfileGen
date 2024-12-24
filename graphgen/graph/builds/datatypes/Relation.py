@@ -1,5 +1,5 @@
 from graphgen.graph.Entity.EntityNode import EntityNode
-from graphgen.graph.build.datatypes.RType import RType
+from graphgen.graph.builds.datatypes.RType import RType
 from graphgen.util import standard_repr, standard_eq
 
 

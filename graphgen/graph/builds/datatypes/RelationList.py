@@ -2,8 +2,8 @@ from typing import List
 
 from graphgen.config.definitions import ROOT_DIR
 from graphgen.graph.Entity.EntityNode import *
-from graphgen.graph.build.datatypes.RType import RType
-from graphgen.graph.build.datatypes.Relation import Relation
+from graphgen.graph.builds.datatypes.RType import RType
+from graphgen.graph.builds.datatypes.Relation import Relation
 from graphgen.util import return_empty_list_if_none_else_itself, standard_repr, standard_eq
 
 

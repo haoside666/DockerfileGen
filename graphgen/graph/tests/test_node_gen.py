@@ -10,10 +10,10 @@ from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import Docker
 from typing import Optional
 
 from graphgen.graph.Entity.EntityGen import entity_gen, entity_list_gen
-from graphgen.graph.build.datatypes.RelationList import *
-from graphgen.graph.build.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_implicit_node
-from graphgen.graph.build.neo4j_reader import Neo4jConnection
-from graphgen.graph.build.utils import strip_redundant_entity_node, split_meta_info
+from graphgen.graph.builds.datatypes.RelationList import *
+from graphgen.graph.builds.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_implicit_node
+from graphgen.graph.builds.neo4j_reader import Neo4jConnection
+from graphgen.graph.builds.utils import strip_redundant_entity_node, split_meta_info
 
 
 class TestNodeGen(unittest.TestCase):

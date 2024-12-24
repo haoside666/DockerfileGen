@@ -5,9 +5,9 @@ from graphgen.dependency.get_dependency_relation import get_dependency_relation
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.graph.Entity.EntityGen import entity_list_gen
 from graphgen.graph.Entity.EntityNode import EntityNode
-from graphgen.graph.build.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
-from graphgen.graph.build.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_implicit_node
-from graphgen.graph.build.utils import split_meta_info
+from graphgen.graph.builds.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
+from graphgen.graph.builds.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_implicit_node
+from graphgen.graph.builds.utils import split_meta_info
 
 
 # 输入Dockerfile单个阶段的Meta结构，生成其中包含的所有实体和边节点的neo4j脚本

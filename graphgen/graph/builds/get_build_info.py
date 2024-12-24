@@ -4,9 +4,9 @@ from graphgen.dependency.datatypes.DDType import DDType
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
 
 from graphgen.graph.Entity.EntityNode import *
-from graphgen.graph.build.datatypes.RType import RType
-from graphgen.graph.build.datatypes.Relation import Relation
-from graphgen.graph.build.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
+from graphgen.graph.builds.datatypes.RType import RType
+from graphgen.graph.builds.datatypes.Relation import Relation
+from graphgen.graph.builds.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
 
 
 # 生成基础镜像与可执行命令节点
