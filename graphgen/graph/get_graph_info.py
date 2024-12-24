@@ -21,7 +21,7 @@ def gen_neo4j_script_by_meta(stage_meta: PrimitiveMetaList) -> str:
     img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
     r1_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)
     r2_list: RelationList = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
-    r3_list: RelationList = generate_tool_node(entity_list, edge_index_list)
+    r3_list: RelationList = generate_tool_node(entity_list, edge_index_list, exe_cmd_node_list)
     tool_r_list = r1_list + r2_list + r3_list
     neo4j_script = tool_r_list.gen_neo4j_script()
     return neo4j_script

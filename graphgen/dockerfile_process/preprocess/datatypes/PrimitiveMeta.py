@@ -34,7 +34,19 @@ class PrimitiveMeta:
         return standard_eq(self, other)
 
     def pretty(self):
-        return self.cmd_name + " " + self.operand.pretty()
+        if self.cmd_name != "RUN":
+            return self.cmd_name + " " + self.operand.pretty()
+        else:
+            result = self.cmd_name + " "
+            operand = self.operand
+            if len(operand.flags) != 0:
+                result += " ".join(operand.flags) + " "
+            if operand.subcmd is not None:
+                result += operand.subcmd + " "
+            eigenvector = self.eigenvector
+            if eigenvector is not None and isinstance(eigenvector, ShellFeature):
+                result += eigenvector.command
+            return result
 
     def to_dict(self):
         meta = dict()

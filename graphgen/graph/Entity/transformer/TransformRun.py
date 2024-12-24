@@ -45,7 +45,7 @@ class TransformRun(TransformInterface):
             pkg_list = [item[0] for item in pkg_tuple_list]
             version_list = [item[1] for item in pkg_tuple_list]
 
-            return PkgNode(flags, pkg_cmd, cmd_flag_list, cmd_operand_list, pkg_list, version_list)
+            return PkgNode(pkg_cmd, flags, cmd_flag_list, cmd_operand_list, pkg_list, version_list)
 
     def get_cmd_type(self) -> str:
         cmd_type = "general"

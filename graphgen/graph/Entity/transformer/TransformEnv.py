@@ -8,4 +8,7 @@ class TransformEnv(TransformInterface):
         p_meta: PrimitiveMeta = self.p_meta
         flags = list(p_meta.operand.flags)
         value = p_meta.operand.value
-        return EnvNode(flags, value)
+        var_info = []
+        for key, value in value.items():
+            var_info.append(f'{key}="{value}"')
+        return EnvNode(flags, var_info)

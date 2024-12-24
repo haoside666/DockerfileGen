@@ -9,4 +9,6 @@ class TransformAddOrCopy(TransformInterface):
         flags = list(p_meta.operand.flags)
         value = p_meta.operand.value
         types = p_meta.operand.type
-        return AddOrCopyNode(flags, value, types)
+        src = value["src_dir"]
+        dest = value["dst_dir"]
+        return AddOrCopyNode(flags, src, dest, types)

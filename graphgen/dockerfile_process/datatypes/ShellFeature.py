@@ -42,6 +42,7 @@ class ShellFeature:
 
     def to_dict(self):
         json_data = dict()
+        json_data["Command"] = self.command
         json_data["CommandSet"] = list(self.command_set)
         json_data["PkgSet"] = list(self.pkg_set)
         json_data["OtherSet"] = list(self.other_set)

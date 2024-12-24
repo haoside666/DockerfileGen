@@ -116,9 +116,10 @@ def generate_implicit_node(exe_cmd_node_list: List[ExecutableNode], all_pkg_node
 
 # 生成工具包节点
 # 寻找命令结点中类型为url的节点
-def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList) -> RelationList:
+def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList, exe_cmd_node_list: List[ExecutableNode]) -> RelationList:
     r_list: RelationList = RelationList()
     url_node_index_list: List = []
+    all_exe_cmd_name = [exe_cmd.name for exe_cmd in exe_cmd_node_list]
     for idx, entity_node in enumerate(entity_list):
         if isinstance(entity_node, CommandNode) and entity_node.cmd_type == "url":
             url_node_index_list.append(idx)
@@ -130,14 +131,25 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
             rel_set = find_tool_node(index, url_node_index_list, edge_index_list)
             simplified_set = remove_redundant_edges(rel_set)
             all_entity_node: Set[EntityNode] = set()
+
             for id1, id2 in simplified_set:
                 entity1 = entity_list[id1]
                 if isinstance(entity1, ImageNode):
                     continue
                 entity2 = entity_list[id2]
                 all_entity_node.add(entity1)
+                all_entity_node.add(entity2)
                 r: Relation = Relation(entity2, entity1, RType.Dependency)
                 r_list.add_relation(r)
+
+            cmd_set = set()
+            for entity in all_entity_node:
+                if isinstance(entity, CommandNode) or isinstance(entity, PkgNode):
+                    cmd = entity.name
+                    if cmd in all_exe_cmd_name:
+                        cmd_set.add(entity.name)
+
+            tool_pkg_node.set_cmd_list(list(cmd_set))
 
             for entity in all_entity_node:
                 r: Relation = Relation(tool_pkg_node, entity, RType.Has)

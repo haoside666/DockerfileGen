@@ -67,7 +67,7 @@ class TestDependencyModule(unittest.TestCase):
             'ERROR: dockerfile parse is abnormal,because found invalid directive from!',
             file=sys.stderr)
 
-    @patch('sys.argv', new=['test_cli.py', 'dependency', '-f', './data/dependency/Dockerfile1'])
+    @patch('sys.argv', new=['test_cli.py', 'dependency', '-f', './data/meta/Dockerfile_test_tool_package'])
     def test_input_normal_dockerfile(self):
         main()
 
@@ -132,7 +132,7 @@ class TestMetaModule(unittest.TestCase):
         mock_print.assert_called_with(
             f"ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!", file=sys.stderr)
 
-    @patch('sys.argv', new=['test_cli.py', 'meta', '-f', './data/meta/abnormal_Dockerfile'])
+    @patch('sys.argv', new=['test_cli.py', 'meta', '-f', './data/meta/Dockerfile_test_tool_package'])
     def test_input_abnormal_dockerfile(self):
         main()
 

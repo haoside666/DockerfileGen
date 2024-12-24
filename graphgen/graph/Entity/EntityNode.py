@@ -3,9 +3,11 @@ import hashlib
 import os
 import re
 from abc import abstractmethod, ABCMeta
-from typing import Tuple, Dict, List, Set, Optional
+from copy import deepcopy
+from typing import Tuple, Dict, List, Set, Optional, Union
 
 from graphgen.config.definitions import TOOL_PKG_METHOD
+from graphgen.graph.Entity.cache import ENTITY_INFO_DICT, get_entity_to_dict_info_by_obj_id, set_entity_to_dict_info_by_obj_id
 from graphgen.util import standard_repr, standard_eq
 
 
@@ -23,9 +25,8 @@ class EntityNode(metaclass=ABCMeta):
         """
         pass
 
-    @abstractmethod
     def get_entity_create_script(self) -> str:
-        pass
+        return f''':{self.__class__.NodeName} {self.to_dict()}'''
 
     def __repr__(self):
         return standard_repr(self)
@@ -45,23 +46,48 @@ class EntityNode(metaclass=ABCMeta):
         return content
 
     def __hash__(self) -> int:
-        return hash(self.to_dict())
+        m_addr = id(self)
+        if m_addr in ENTITY_INFO_DICT:
+            return hash(get_entity_to_dict_info_by_obj_id(m_addr))
+        else:
+            value = self.get_flag_str()
+            set_entity_to_dict_info_by_obj_id(m_addr, value)
+            return hash(value)
 
     def calc_hash(self):
-        hash_object = hashlib.sha256(self.to_dict().encode())
-        hex_hash = hash_object.hexdigest()
-        alpha_hash = ''.join(filter(str.isalpha, hex_hash))
-        if not alpha_hash:
-            alpha_hash = 'a' * 64
-        return alpha_hash[:64]
+        m_addr = id(self)
+        if m_addr in ENTITY_INFO_DICT:
+            value = get_entity_to_dict_info_by_obj_id(m_addr)
+        else:
+            value = self.get_flag_str()
+            set_entity_to_dict_info_by_obj_id(m_addr, value)
+        hash_object = hashlib.sha256(value.encode())
+        base_hash = hash_object.hexdigest()
+        for i in range(16):  # 生成最多16个变体
+            unique_hash = hashlib.sha256((base_hash + str(i)).encode()).hexdigest()
+            if not unique_hash[0].isdigit():  # 检查是否以数字开头
+                return unique_hash[:128]
+        raise Exception("ERROR: hash collision")
+        # alpha_hash = ''.join(filter(str.isalpha, base_hash))
+        # if not alpha_hash:
+        #     alpha_hash = 'a' * 128
+        # return alpha_hash[:128]
+
+    @abstractmethod
+    def get_flag_str(self) -> str:
+        return ""
 
 
 class ImageNode(EntityNode):
     NodeName = 'Image'
 
     def __init__(self, flags: List, value: List) -> None:
-        self.name: str = value[0].split(":")[0]
-        self.tag: str = value[0].split(":")[1] if value[0].split(":")[1] else "latest"
+        if "@sha256" not in value[0]:
+            self.name: str = value[0].split(":")[0]
+            self.tag: str = value[0].split(":")[1] if value[0].split(":")[1] else "latest"
+        else:
+            self.name: str = value[0].split("@")[0]
+            self.tag: str = value[0].split("@")[1] if value[0].split("@")[1] else "latest"
         self.flags: List = flags
         self.value: List = value[:1]
 
@@ -72,32 +98,31 @@ class ImageNode(EntityNode):
         original_instruct += " ".join(self.value)
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f"img({self.name}:{self.tag})"
+
+    def get_flag_str(self) -> str:
+        return f"{self.name}:{self.tag}"
 
 
 # 可执行命令
 class ExecutableNode(EntityNode):
     NodeName = 'ExeCmd'
 
-    def __init__(self, cmd_name: str, cmd_type: str = "general") -> None:
-        self.name: str = cmd_name
+    def __init__(self, name: str, cmd_type: str = "general") -> None:
+        self.name: str = name
         self.type: str = cmd_type
 
     def pretty(self) -> str:
         return ""
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f"exe_cmd({self.name})"
 
+    def get_flag_str(self) -> str:
+        return f"{self.name} {self.type}"
 
-# RUN
+
 class CommandNode(EntityNode):
     NodeName = 'Cmd'
 
@@ -115,11 +140,11 @@ class CommandNode(EntityNode):
         original_instruct += self.value
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f"command_node({self.value})"
+
+    def get_flag_str(self) -> str:
+        return self.value
 
     def to_tool_pkg_node(self) -> Optional["ToolPkgNode"]:
         # 匹配以https://开头或http://git@开头url
@@ -135,7 +160,7 @@ class CommandNode(EntityNode):
 class ToolPkgNode(EntityNode):
     NodeName = 'ToolPkg'
 
-    def __init__(self, url: str, method: str) -> None:
+    def __init__(self, url: str, method: str, cmd_list: List = None) -> None:
         union_set = set(method.split(",")) & TOOL_PKG_METHOD
         if len(union_set) == 1:
             method = list(union_set)[0]
@@ -144,15 +169,16 @@ class ToolPkgNode(EntityNode):
         self.name: str = self.extract_dir_name(url, method)
         self.url: str = url
         self.method: str = method
+        self.cmd_list: List = cmd_list if cmd_list else []
 
     def pretty(self) -> str:
         return ""
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f'tool_package({self.name})'
+
+    def get_flag_str(self) -> str:
+        return self.url
 
     @staticmethod
     def extract_dir_name(url: str, method: str):
@@ -170,12 +196,15 @@ class ToolPkgNode(EntityNode):
         else:
             return url.rpartition("/")[-1]
 
+    def set_cmd_list(self, cmd_list):
+        self.cmd_list = cmd_list
+
 
 class SinglePkgNode(EntityNode):
     NodeName = 'Pkg'
 
-    def __init__(self, flags: List, pkg_name: str, version: str, cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
-        self.name: str = pkg_name
+    def __init__(self, name: str, version: str, flags: List, cmd_flag_list: List, cmd_operand_list: List, method: str) -> None:
+        self.name: str = name
         self.version: str = version
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
@@ -197,19 +226,27 @@ class SinglePkgNode(EntityNode):
             original_instruct += self.name + "==" + self.version
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f'package({self.name})'
+
+    def get_flag_str(self) -> str:
+        content = "{"
+        lis = []
+        for key, value in self.__dict__.items():
+            if isinstance(value, list):
+                lis.append(f"{key}: {value}")
+            else:
+                lis.append(f"{key}: '{value}'")
+        content += ", ".join(lis) + "}"
+        return content
 
 
 # apt,pip等的包管理命令
 class PkgNode(EntityNode):
     NodeName = 'PkgCmd'
 
-    def __init__(self, flags: List, pkg_cmd: str, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List, version_list: List) -> None:
-        self.name: str = pkg_cmd
+    def __init__(self, name: str, flags: List, cmd_flag_list: List, cmd_operand_list: List, pkg_list: List, version_list: List) -> None:
+        self.name: str = name
         self.flags: List = flags
         self.cmd_flag_list: List = cmd_flag_list
         self.cmd_operand_list: List = cmd_operand_list
@@ -236,19 +273,30 @@ class PkgNode(EntityNode):
         #             original_instruct += pkg + " "
         return original_instruct.strip()
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         if len(self.pkg_list) == 1:
             return f'package({self.pkg_list[0]})'
         return f'package({self.pkg_list})'
 
+    def get_flag_str(self) -> str:
+        real_dict = deepcopy(self.__dict__)
+        real_dict.pop("pkg_list")
+        real_dict.pop("version_list")
+        content = "{"
+        lis = []
+        for key, value in real_dict.items():
+            if isinstance(value, list):
+                lis.append(f"{key}: {value}")
+            else:
+                lis.append(f"{key}: '{value}'")
+        content += ", ".join(lis) + "}"
+        return content
+
     def split(self) -> List[SinglePkgNode]:
         # # 拆分不考虑包名=命令名情况
         # return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, self.cmd_operand_list, self.name) for idx, pkg in
         #         enumerate(self.pkg_list) if self.name != pkg]
-        return [SinglePkgNode(self.flags, pkg, self.version_list[idx], self.cmd_flag_list, [self.cmd_operand_list[0]], self.name) for idx, pkg in
+        return [SinglePkgNode(pkg, self.version_list[idx], self.flags, self.cmd_flag_list, [self.cmd_operand_list[0]], self.name) for idx, pkg in
                 enumerate(self.pkg_list)]
 
 
@@ -256,8 +304,8 @@ class PkgNode(EntityNode):
 class BootNode(EntityNode):
     NodeName = 'Boot'
 
-    def __init__(self, instruct_name: str, flags: List, value: List) -> None:
-        self.name: str = instruct_name
+    def __init__(self, name: str, flags: List, value: List) -> None:
+        self.name: str = name
         self.flags: List = flags
         self.value: List = value
 
@@ -269,75 +317,72 @@ class BootNode(EntityNode):
         original_instruct += " ".join(self.value)
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f'boot({self.name} {self.value})'
+
+    def get_flag_str(self) -> str:
+        return f"{self.name} {self.flags} {self.value}"
 
 
 class EnvNode(EntityNode):
     NodeName = 'Env'
 
-    def __init__(self, flags: List, value: Dict) -> None:
+    def __init__(self, flags: List, value: List) -> None:
         self.name: str = "ENV"
         self.flags: List = flags
-        var_info = []
-        for key, value in value.items():
-            var_info.append(f'{key}="{value}"')
-        self.var_info: List = var_info
+        self.value: List = value
 
     def pretty(self) -> str:
         original_instruct = "ENV "
         if len(self.flags) != 0:
             original_instruct += " ".join(self.flags) + " "
-        for item in self.var_info:
+        for item in self.value:
             original_instruct += f'{item} '
         return original_instruct.strip()
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
-        return f"env({str(self.var_info)})"
+        return f"env({str(self.value)})"
+
+    def get_flag_str(self) -> str:
+        return f"{self.value}"
 
 
 class ArgNode(EntityNode):
     NodeName = 'Arg'
 
-    def __init__(self, flags: List, value: Dict) -> None:
+    def __init__(self, flags: List, value: List) -> None:
         self.name: str = "ARG"
         self.flags: List = flags
-        self.var_dict = value
+        self.value: List = value
 
     def pretty(self) -> str:
         original_instruct = "ARG "
         if len(self.flags) != 0:
             original_instruct += " ".join(self.flags) + " "
-        for key, value in self.var_dict.items():
-            original_instruct += f'{key}="{value}" '
+        for item in self.value:
+            original_instruct += f'{item} '
         return original_instruct.strip()
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
-        return f"arg({str(self.var_dict)})"
+        return f"arg({str(self.value)})"
+
+    def get_flag_str(self) -> str:
+        return f"{self.value}"
 
 
 class AddOrCopyNode(EntityNode):
     NodeName = 'File'
 
-    def __init__(self, flags: List, value: Dict, types: str) -> None:
+    def __init__(self, flags: List, src: List, dest: str, types: str) -> None:
         self.name: str = "File"
         self.flags: List = flags
-        self.src: List = value["src_dir"]
-        self.dest: str = value["dst_dir"]
-        self.type: str = types
+        self.src: List = src
+        self.dest: str = dest
+        self.types: str = types
 
     def pretty(self) -> str:
         original_instruct = ""
-        if self.type == "special":
+        if self.types == "special":
             original_instruct += "ADD "
         else:
             original_instruct += "COPY "
@@ -349,19 +394,19 @@ class AddOrCopyNode(EntityNode):
             original_instruct += self.dest
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
-        return f'(file):{" ".join(self.flags)} {" ".join(self.src)}'
+        return f'(file):{" ".join(self.flags)} {" ".join(self.src)} {self.dest}'
+
+    def get_flag_str(self) -> str:
+        return f'{self.name} {self.src} {self.dest}'
 
 
 # 'EXPOSE','VOLUME','USER','WORKDIR','SHELL'
 class DefaultNode(EntityNode):
     NodeName = 'OTHER'
 
-    def __init__(self, instruct_name: str, flags: List, value: List) -> None:
-        self.name: str = instruct_name
+    def __init__(self, name: str, flags: List, value: List) -> None:
+        self.name: str = name
         self.flags: List = flags
         self.value: List = value
 
@@ -373,8 +418,29 @@ class DefaultNode(EntityNode):
         original_instruct += " ".join(self.value)
         return original_instruct
 
-    def get_entity_create_script(self) -> str:
-        return f''':{self.__class__.NodeName} {self.to_dict()}'''
-
     def __str__(self) -> str:
         return f'(other):{self.name} {self.value}'
+
+    def get_flag_str(self) -> str:
+        return f"{self.name} {self.value}"
+
+
+def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> EntityNode:
+    if label == "Cmd":
+        return CommandNode(property_dict["cmd_list"], property_dict["flags"], property_dict["value"], property_dict["cmd_type"])
+    elif label == "PkgCmd":
+        return PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
+                       property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
+    elif label == "File":
+        return AddOrCopyNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
+    elif label == "Env":
+        return EnvNode(property_dict["flags"], property_dict["value"])
+    elif label == "Other":
+        return DefaultNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+    elif label == "ToolPkg":
+        return ToolPkgNode(property_dict["url"], property_dict["method"], property_dict["cmd_list"])
+    elif label == "Arg":
+        return ArgNode(property_dict["flags"], property_dict["value"])
+    elif label == "Boot":
+        return BootNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+    raise Exception("Unknown entity node type: " + label)

@@ -89,32 +89,8 @@ class TestNodeGen(unittest.TestCase):
                 conn.run_script(cypher_script)
                 conn.close()
 
-    def test_tool_node_gen(self):
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
-        build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
-        if dockerfile_meta is not None:
-            for stage_meta in dockerfile_meta.stage_meta_list:
-                entity_list = []
-                stage_meta = strip_redundant_meta_info(stage_meta)
-                edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
-                for p_meta in stage_meta.p_meta_list:
-                    entity_node: EntityNode = entity_gen(p_meta)
-                    print(entity_node.pretty())
-                    entity_list.append(entity_node)
-                tool_r_list: RelationList = generate_tool_node(entity_list, edge_index_list)
-                print(tool_r_list)
-                with open(f"{ROOT_DIR}/graph/script/script.cypher", "w") as file:
-                    file.write(tool_r_list.gen_neo4j_script())
-
-                conn = Neo4jConnection()
-                with open(f"{ROOT_DIR}/graph/script/script.cypher", "r") as file:
-                    cypher_script = file.read()
-                conn.run_script(cypher_script)
-                conn.close()
-
     def test_single_dockerfile(self):
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile3"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -131,7 +107,7 @@ class TestNodeGen(unittest.TestCase):
                 print(r1_list)
                 r2_list: RelationList = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
                 print(r2_list)
-                r3_list: RelationList = generate_tool_node(entity_list, edge_index_list)
+                r3_list: RelationList = generate_tool_node(entity_list, edge_index_list, exe_cmd_node_list)
                 print(r3_list)
                 tool_r_list = r1_list + r2_list + r3_list
                 with open(f"{ROOT_DIR}/graph/script/{os.path.basename(dockerfile_name)}.cypher", "w") as file:

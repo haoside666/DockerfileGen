@@ -1,5 +1,6 @@
 from typing import List
 
+from graphgen.config.definitions import ROOT_DIR
 from graphgen.graph.Entity.EntityNode import *
 from graphgen.graph.build.datatypes.RType import RType
 from graphgen.graph.build.datatypes.Relation import Relation
@@ -56,6 +57,14 @@ class RelationList:
             cypher_statements.append(f"MERGE ({hash_val1})-[:{relation_type.name}]->({hash_val2})")
 
         return "\n".join(cypher_statements)
+
+    # @staticmethod
+    # def add_constraint() -> str:
+    #     with open(f"{ROOT_DIR}/graph/Entity/EntityNode.py") as file:
+    #         pattern = r"class (.*?)\(EntityNode\):\s+NodeName = '(.*?)'\s"
+    #         re.findall(r"pattern", file.read())
+    #     constraint_list = []
+    #     return "\n".join(constraint_list) + "\n"
 
 
 def make_relation_list_from_image_and_execute_node(img_node: EntityNode, execute_node_list: List[EntityNode]) -> RelationList:
