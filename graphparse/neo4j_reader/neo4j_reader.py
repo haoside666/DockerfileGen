@@ -26,8 +26,10 @@ class Neo4jConnection:
 
     def get_tool_pkg_node_by_name(self, tool_pkg_name: str):
         with self.driver.session() as session:
-            cypher = "MATCH (n:ToolPkg{{name: '{}'}}) RETURN n".format(tool_pkg_name)
-            result = session.run(cypher)
+            result = session.run(
+                "MATCH (n:ToolPkg {name: $name}) RETURN n",
+                name=tool_pkg_name
+            )
             data = result.data()
             if len(data) == 0:
                 return None
@@ -36,20 +38,24 @@ class Neo4jConnection:
 
     def get_single_tool_pkg_node_all_has_relation(self, tool_pkg_name: str):
         with self.driver.session() as session:
-            cypher = "MATCH (:ToolPkg{{name: '{}'}})-[:Has]-(m) RETURN m".format(tool_pkg_name)
-            result = session.run(cypher)
+            result = session.run(
+                "MATCH (:ToolPkg {name: $name})-[:Has]-(m) RETURN m",
+                name=tool_pkg_name
+            )
             data = result.data()
             return data
 
     def get_single_tool_pkg_node_real_step(self, tool_pkg_name: str):
         with self.driver.session() as session:
-            cypher = """
-MATCH (pkg:ToolPkg{{name: '{}'}})-[:Has]->(s1)
-MATCH (s1)-[:Dependency]->(s2)
-  WHERE (pkg)-[:Has]->(s2)
-RETURN DISTINCT s1, s2, labels(s1) AS s1_labels, labels(s2) AS s2_labels;
-""".format(tool_pkg_name)
-            result = session.run(cypher)
+            result = session.run(
+                """
+                MATCH (pkg:ToolPkg {name: $name})-[:Has]->(s1)
+                MATCH (s1)-[:Dependency]->(s2)
+                  WHERE (pkg)-[:Has]->(s2)
+                RETURN DISTINCT s1, s2, labels(s1) AS s1_labels, labels(s2) AS s2_labels;
+                """,
+                name=tool_pkg_name
+            )
             data = result.data()
             relations = []
             for record in data:

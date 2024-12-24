@@ -1,3 +1,5 @@
+from typing import List
+
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.graph.Entity.EntityNode import EntityNode
 from .transformer.TransformFrom import TransformFrom
@@ -31,3 +33,10 @@ def entity_gen(p_meta: PrimitiveMeta) -> EntityNode:
     entity_gen_class = DICT_ENTITY_TYPE_TRANSFORMER_MODULE_MAPPER[instruct_name]
     entity_gen_object = entity_gen_class(p_meta)
     return entity_gen_object.transform()
+
+
+def entity_list_gen(p_meta_list: List[PrimitiveMeta]) -> List[EntityNode]:
+    entity_list: List[EntityNode] = []
+    for p_meta in p_meta_list:
+        entity_list.append(entity_gen(p_meta))
+    return entity_list

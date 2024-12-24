@@ -67,6 +67,12 @@ PKG_DIRECTIVES = [
     'WORKDIR',
 ]
 
+CONFIG_DIRECTIVES = [
+    'EXPOSE',
+    'CMD',
+    # 'ENTRYPOINT',
+]
+
 # PKG_CUT_DICT = {
 #     "mvn": {'java'},
 #     "npm": {'node'},

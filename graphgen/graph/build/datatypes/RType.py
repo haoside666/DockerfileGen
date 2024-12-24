@@ -7,3 +7,4 @@ class RType(Enum):
     Compatible = "Compatible"
     Dependency = "Dependency"
     Has = "Has"
+    Settings = "Settings"

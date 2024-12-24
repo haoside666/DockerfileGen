@@ -17,17 +17,17 @@ setup(
     py_modules=['graphgen.util',
                 'graphgen.cli'],
     packages=find_packages(
-        exclude=['graphgen.graph', 'graphgen.test', '*.old*', '*.tests',
-                 'graphgen.extractor.parser.*'],
+        exclude=['graphgen.test', '*.old*', '*.tests',
+                 'graphgen.extractor.parser.*', 'output', 'experiment'],
     ),
     include_package_data=True,
     ## Necessary for the markdown to be properly rendered
     long_description=long_description,
     long_description_content_type="text/markdown",
     python_requires='>=3.8',
-    install_requires=['dockerfile'],
+    install_requires=['dockerfile', 'neo4j==5.27.0'],
     entry_points={
         'console_scripts': [
-            'graphgen=graphgen.cli:main']
+            'dockerfileGen=graphgen.cli:main']
     },
 )
