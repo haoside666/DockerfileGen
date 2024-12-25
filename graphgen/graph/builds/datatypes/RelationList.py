@@ -58,25 +58,26 @@ class RelationList:
 
         return "\n".join(cypher_statements)
 
-    # @staticmethod
-    # def add_constraint() -> str:
-    #     # with open(f"{ROOT_DIR}/graph/Entity/EntityNode.py") as file:
-    #     #     pattern = r"class (.*?)\(EntityNode\):\s+NodeName = '(.*?)'\s"
-    #     #     re.findall(r"pattern", file.read())
-    #     constraint_list = [
-    #         "CREATE CONSTRAINT ON (p:Image) ASSERT (p.name, p.tag) IS UNIQUE;",
-    #         "CREATE CONSTRAINT ON (p:ExeCmd) ASSERT (p.name, p.type) IS UNIQUE;",
-    #         "CREATE CONSTRAINT ON (p:Cmd) ASSERT p.value IS UNIQUE;",
-    #         "CREATE CONSTRAINT ON (p:ToolPkg) ASSERT p.url IS UNIQUE;",
-    #         "CREATE CONSTRAINT ON (p:Pkg) ASSERT (p.name, p.version, p.flags, p.cmd_flag_list,p.cmd_flag_list) IS UNIQUE;",
-    #         "CREATE CONSTRAINT ON (p:PkgCmd) ASSERT (p.name, p.flags, p.cmd_flag_list, p.cmd_flag_list) IS UNIQUE;",
-    #         # "CREATE CONSTRAINT ON (p:Boot) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
-    #         # "CREATE CONSTRAINT ON (p:Env) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
-    #         # "CREATE CONSTRAINT ON (p:Arg) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
-    #         # "CREATE CONSTRAINT ON (p:File) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
-    #         # "CREATE CONSTRAINT ON (p:OTHER) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
-    #     ]
-    #     return "\n".join(constraint_list) + "\n"
+    @staticmethod
+    def add_constraint() -> str:
+        # with open(f"{ROOT_DIR}/graph/Entity/EntityNode.py") as file:
+        #     pattern = r"class (.*?)\(EntityNode\):\s+NodeName = '(.*?)'\s"
+        #     re.findall(r"pattern", file.read())
+        # 预执行一遍即可
+        constraint_list = [
+            "CREATE CONSTRAINT constraints_Image FOR (p:Image) REQUIRE (p.name, p.tag) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_ExeCmd FOR (p:ExeCmd) REQUIRE (p.name, p.type) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Cmd FOR (p:Cmd) REQUIRE p.value IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_ToolPkg FOR (p:ToolPkg) REQUIRE (p.url, p.cmd_list) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Pkg FOR (p:Pkg) REQUIRE (p.name, p.version, p.flags, p.cmd_flag_list, p.cmd_operand_list) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_PkgCmd FOR (p:PkgCmd) REQUIRE (p.name, p.flags, p.cmd_flag_list, p.cmd_operand_list) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Boot FOR (p:Boot) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Env FOR (p:Env) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Arg FOR (p:Arg) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_File FOR (p:File) REQUIRE (p.name, p.flags, p.src, p.dest) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_OTHER FOR (p:OTHER) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"
+        ]
+        return "\n".join(constraint_list) + "\n"
 
 
 def make_relation_list_from_image_and_execute_node(img_node: EntityNode, execute_node_list: List[EntityNode]) -> RelationList:

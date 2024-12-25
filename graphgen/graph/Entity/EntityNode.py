@@ -80,8 +80,8 @@ class ImageNode(EntityNode):
                 self.name: str = value[0]
                 self.tag: str = "latest"
             else:
-                self.name: str = value[0].split(":")[0]
-                self.tag: str = value[0].split(":")[1]
+                self.name: str = value[0].split(":")[0].strip()
+                self.tag: str = value[0].split(":")[1].strip()
         else:
             self.name: str = value[0].split("@")[0]
             self.tag: str = value[0].split("@")[1] if value[0].split("@")[1] else "latest"
@@ -159,7 +159,7 @@ class ToolPkgNode(EntityNode):
 
     def __init__(self, url: str, method: str, cmd_list: List = None) -> None:
         union_set = set(method.split(",")) & TOOL_PKG_METHOD
-        if len(union_set) == 1:
+        if len(union_set) >= 1:
             method = list(union_set)[0]
         else:
             raise Exception("ERROR: method of the tool package node is not supported")
@@ -175,7 +175,7 @@ class ToolPkgNode(EntityNode):
         return f'tool_package({self.name})'
 
     def get_flag_str(self) -> str:
-        return self.url
+        return f'{self.url} {self.cmd_list}'
 
     @staticmethod
     def extract_dir_name(url: str, method: str):

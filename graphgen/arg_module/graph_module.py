@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import sys
 import traceback
@@ -7,11 +8,22 @@ from typing import Optional, List
 
 import dockerfile
 from dockerfile import Command
+
+from graphgen.config.definitions import ROOT_DIR
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.dockerfile_process.processer import processer, processer_mutil_process
 from graphgen.exception.CustomizedException import ParameterMissError
 from graphgen.graph.get_graph_info import gen_neo4j_script_by_meta
+
+LOG_PATH = f"{ROOT_DIR}/../logs/errors.txt"
+# 创建日志
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler(filename=LOG_PATH, encoding='utf-8')
+formatter = logging.Formatter('[{levelname}:{asctime}:{module}:{funcName}:{lineno}] {message}', style='{')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 
 def add_graph_module(prog, subparsers):
@@ -55,6 +67,7 @@ def dockerfile_graph_gen(arg):
     file_path, output_path, build_ctx = arg
     if output_path != sys.stdout and not os.path.isfile(output_path) and "." not in output_path:
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
+        logger.error(f'ERROR: {output_path} is not a file!!! please enter a file path')
         return file_path
     try:
         postfix = str(os.getpid())
@@ -64,6 +77,7 @@ def dockerfile_graph_gen(arg):
             if stage_num == 0:
                 print("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!",
                       file=sys.stderr)
+                logger.error("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!")
                 return file_path
 
             for i in range(stage_num):
@@ -72,12 +86,17 @@ def dockerfile_graph_gen(arg):
                 beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
         else:
             print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+            logger.error(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!')
         return file_path
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
+        logger.error(f"ERROR: {e.args[0]}!")
         return file_path
     except Exception as e:
         print(traceback.format_exc())
+        logger.error("---------------------------------")
+        logger.error(traceback.format_exc())
+        logger.error("---------------------------------")
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return file_path
@@ -87,6 +106,7 @@ def dockerfile_graph_gen_with_mutil_process(arg):
     file_path, output_path, build_ctx, parsed_dockerfile = arg
     if output_path != sys.stdout and not os.path.isfile(output_path) and "." not in output_path:
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
+        logger.error(f'ERROR: {output_path} is not a file!!! please enter a file path')
         return file_path
     try:
         postfix = str(os.getpid())
@@ -96,6 +116,7 @@ def dockerfile_graph_gen_with_mutil_process(arg):
             if stage_num == 0:
                 print("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!",
                       file=sys.stderr)
+                logger.error("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!")
                 return file_path
 
             for i in range(stage_num):
@@ -104,15 +125,27 @@ def dockerfile_graph_gen_with_mutil_process(arg):
                 beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
         else:
             print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+            logger.error(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!')
         return file_path
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
+        logger.error(f"ERROR: {e.args[0]}!")
         return file_path
     except Exception as e:
         print(traceback.format_exc())
+        logger.error("---------------------------------")
+        logger.error(traceback.format_exc())
+        logger.error("---------------------------------")
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return file_path
+
+
+def clear_temp_file():
+    dir_path = f"{ROOT_DIR}/shell_parse"
+    for file_name in os.listdir(dir_path):
+        if file_name.startswith("temp_cmd"):
+            os.remove(os.path.join(dir_path, file_name))
 
 
 def meta_module_func(args):
@@ -124,7 +157,7 @@ def meta_module_func(args):
     if file_path and dir_path:
         print("ERROR: -f and -d option can not be used at the same time!", file=sys.stderr)
         return
-
+    clear_temp_file()
     if file_path:
         build_ctx = os.path.dirname(file_path)
         if build_ctx == '':
@@ -165,14 +198,20 @@ def meta_module_func(args):
                 if not os.path.exists(build_ctx) or not os.path.isdir(build_ctx):
                     print(f'error: {build_ctx} path does not exist or it is not a directory!!!')
                     continue
-                with open(file_path, "r") as dfh:
-                    # dockerfile.parse_string 不支持多进程操作，放外部
-                    parsed_dockerfile: List[Command] = dockerfile.parse_string(dfh.read())
-                    new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
-                    arg_list.append((file_path, new_output_path, build_ctx, parsed_dockerfile))
-            with ProcessPoolExecutor(max_workers=1) as executor:
+                try:
+                    with open(file_path, "r") as dfh:
+                        # dockerfile.parse_string 不支持多进程操作，放外部
+                        parsed_dockerfile: List[Command] = dockerfile.parse_string(dfh.read())
+                        new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
+                        arg_list.append((file_path, new_output_path, build_ctx, parsed_dockerfile))
+                except:
+                    print(f'ERROR: {file_path} 调用parse_string解析失败!', file=sys.stderr, flush=True)
+                    # 删除无效文件
+                    # os.remove(file_path)
+                    continue
+            with ProcessPoolExecutor(max_workers=4) as executor:
                 futures = {executor.submit(dockerfile_graph_gen_with_mutil_process, arg): arg for arg in arg_list}
-                for future in as_completed(futures, timeout=5):
+                for future in as_completed(futures):
                     try:
                         result = future.result()
                         # Process the result

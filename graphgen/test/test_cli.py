@@ -238,16 +238,17 @@ class TestGraphModule(unittest.TestCase):
         main()
 
     @patch('sys.argv', new=['test_cli.py', 'graph',
-                            '-f', '/home/haoside/Desktop/input/robertdebock___docker-cntlm###1052590###141901e71b701f4bd7293ae921c321e8378eef51'])
+                            '-f', '/home/haoside/Desktop/input/nottt___deluge###490211###81cd67bbd14b38f0fac988f4a458b2580cc05f56'])
     def test_input_abnormal_dockerfile(self):
         # /home/haoside/Desktop/input/mmozeiko___mingw-w64###340952###42cece5de44fd6d627e114960155b0e98ec0fd37
+        # /home/haoside/Desktop/input/nottt___deluge###490211###81cd67bbd14b38f0fac988f4a458b2580cc05f56
         main()
 
-    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input', '-o', '/home/haoside/Desktop/output2'])
+    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input', '-o', '/home/haoside/Desktop/output'])
     def test_d_and_o_option_to_output(self):
         main()
 
-    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input'])
+    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input2'])
     def test_d_option(self):
         main()
 

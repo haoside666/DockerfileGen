@@ -70,7 +70,6 @@ class Neo4jConnection:
     def run_script(self, script):
         with self.driver.session() as session:
             session.run(script)
-        print("执行脚本成功")
 
 
 if __name__ == "__main__":
