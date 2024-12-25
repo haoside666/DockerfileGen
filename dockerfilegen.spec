@@ -86,7 +86,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='graphgen',
+    name='dockerfileGen',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

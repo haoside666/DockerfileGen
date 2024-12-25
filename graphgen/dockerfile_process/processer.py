@@ -15,7 +15,7 @@ from graphgen.exception.CustomizedException import InstructFormatError, Instruct
     ParsingException, SyntaxNonSupportError
 
 
-def process(dockerfile_name: str, build_ctx: str) -> Optional[DockerfilePrimitiveMeta]:
+def processer(dockerfile_name: str, build_ctx: str, postfix: str = "") -> Optional[DockerfilePrimitiveMeta]:
     if not os.path.exists(dockerfile_name) or not os.path.isfile(dockerfile_name):
         print(f'error: {dockerfile_name} path does not exist or it is not a file!!!')
         return None
@@ -35,7 +35,7 @@ def process(dockerfile_name: str, build_ctx: str) -> Optional[DockerfilePrimitiv
                                                                     for item in cmd_meta_init_list]
                 dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
                 instruct_meta_list: InstructMetaList = InstructMetaList(build_ctx, cmd_meta_init_list)
-                p_meta_list: PrimitiveMetaList = PrimitiveMetaList(build_ctx, instruct_meta_list)
+                p_meta_list: PrimitiveMetaList = PrimitiveMetaList(build_ctx, instruct_meta_list, postfix)
                 dockerfile_primitive_meta.add_element_to_stage_meta_list(p_meta_list)
             return dockerfile_primitive_meta
         except (InstructNotFoundError, InstructFormatError, SyntaxNonSupportError) as e:
@@ -48,3 +48,30 @@ def process(dockerfile_name: str, build_ctx: str) -> Optional[DockerfilePrimitiv
             print(type(e).__name__, file=sys.stderr)
             print(f"ERROR: {dockerfile_name} exception!!！", file=sys.stderr)
             raise
+
+
+def processer_mutil_process(dockerfile_name: str, build_ctx: str, parsed_dockerfile: List[Command], postfix: str = "") -> Optional[DockerfilePrimitiveMeta]:
+    try:
+        dockerfile_meta: DockerfileMeta = DockerfileMeta(parsed_dockerfile)
+        dockerfile_primitive_meta: DockerfilePrimitiveMeta = DockerfilePrimitiveMeta(dockerfile_meta.is_mutil_stage)
+        for stage in dockerfile_meta.stage_list:
+            cmd_meta_init_list: List[InstructMetaInit] = []
+            for command in stage.cmd_list:
+                cmd_meta_init_list.append(Preprocess.preprocess(command, build_ctx))
+            stage_meta_prefix_list: List[InstructMetaPrefix] = [InstructMetaPrefix(item.cmd_name, item.get_operand())
+                                                                for item in cmd_meta_init_list]
+            dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
+            instruct_meta_list: InstructMetaList = InstructMetaList(build_ctx, cmd_meta_init_list)
+            p_meta_list: PrimitiveMetaList = PrimitiveMetaList(build_ctx, instruct_meta_list, postfix)
+            dockerfile_primitive_meta.add_element_to_stage_meta_list(p_meta_list)
+        return dockerfile_primitive_meta
+    except (InstructNotFoundError, InstructFormatError, SyntaxNonSupportError) as e:
+        print(f"ERROR: {dockerfile_name} exception,{e}！", file=sys.stderr)
+        return None
+    except ParsingException:
+        print(f"ERROR: {dockerfile_name} shell parse exception！", file=sys.stderr)
+        return None
+    except Exception as e:
+        print(type(e).__name__, file=sys.stderr)
+        print(f"ERROR: {dockerfile_name} exception!!！", file=sys.stderr)
+        return None

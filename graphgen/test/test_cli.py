@@ -204,10 +204,6 @@ class TestGraphModule(unittest.TestCase):
         mock_print.assert_called_with(
             f"ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!", file=sys.stderr)
 
-    @patch('sys.argv', new=['test_cli.py', 'graph', '-f', './data/meta/abnormal_Dockerfile'])
-    def test_input_abnormal_dockerfile(self):
-        main()
-
     @patch('sys.argv', new=['test_cli.py', 'graph', '-f', './data/meta/instruct_except_Dockerfile'])
     @patch('builtins.print')
     def test_input_instruct_except_dockerfile(self, mock_print):
@@ -241,8 +237,18 @@ class TestGraphModule(unittest.TestCase):
     def test_d_option_to_output(self):
         main()
 
-    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', './data/graph', '-o', './data/output/graph'])
+    @patch('sys.argv', new=['test_cli.py', 'graph',
+                            '-f', '/home/haoside/Desktop/input/robertdebock___docker-cntlm###1052590###141901e71b701f4bd7293ae921c321e8378eef51'])
+    def test_input_abnormal_dockerfile(self):
+        # /home/haoside/Desktop/input/mmozeiko___mingw-w64###340952###42cece5de44fd6d627e114960155b0e98ec0fd37
+        main()
+
+    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input', '-o', '/home/haoside/Desktop/output2'])
     def test_d_and_o_option_to_output(self):
+        main()
+
+    @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input'])
+    def test_d_option(self):
         main()
 
     @patch('sys.argv', new=['test_cli.py', 'graph', '-d', './data/graph', '-o', './data/output/graph/grade_raw.txt'])
@@ -252,5 +258,3 @@ class TestGraphModule(unittest.TestCase):
         mock_print.assert_called_with(
             'ERROR: When using the -d option, the -o option must be a directory path!',
             file=sys.stderr)
-
-

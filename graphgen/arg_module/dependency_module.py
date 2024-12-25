@@ -13,7 +13,7 @@ from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import Docker
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.dockerfile_process.preprocess.datatypes.InstructMeta import InstructMeta
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer
 from graphgen.config import global_config
 
 from graphgen.exception.CustomizedException import ParameterMissError
@@ -164,7 +164,7 @@ def dockerfile_dependency_parse(file_path, output_path, build_ctx, mode):
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
         return
     try:
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return
@@ -196,7 +196,7 @@ def dockerfile_build_info(file_path, output_path, build_ctx):
     filename = os.path.basename(file_path)
     build_info["filename"] = filename
     try:
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return

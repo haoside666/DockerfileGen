@@ -1,13 +1,15 @@
 import json
 import os
 import sys
-from typing import Optional
+import traceback
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from typing import Optional, List
 
 import dockerfile
-
+from dockerfile import Command
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer, processer_mutil_process
 from graphgen.exception.CustomizedException import ParameterMissError
 from graphgen.graph.get_graph_info import gen_neo4j_script_by_meta
 
@@ -31,7 +33,7 @@ def beautiful_neo4j_print(neo4j_script_str: str, out_path, current_num=1, stage_
     if stage_num == 1:
         if out_path == sys.stdout:
             print('// ===============================================================')
-            print(json.dumps(neo4j_script_str, indent=4))
+            print(neo4j_script_str)
         else:
             if not out_path.endswith(".cypher"):
                 out_path = f'{out_path}_script.cypher'
@@ -49,32 +51,68 @@ def beautiful_neo4j_print(neo4j_script_str: str, out_path, current_num=1, stage_
                 file.write(neo4j_script_str)
 
 
-def dockerfile_graph_gen(file_path, output_path, build_ctx):
+def dockerfile_graph_gen(arg):
+    file_path, output_path, build_ctx = arg
     if output_path != sys.stdout and not os.path.isfile(output_path) and "." not in output_path:
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
-        return
+        return file_path
     try:
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+        postfix = str(os.getpid())
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx, postfix)
+        if dockerfile_meta is not None:
+            stage_num = len(dockerfile_meta.stage_meta_list)
+            if stage_num == 0:
+                print("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!",
+                      file=sys.stderr)
+                return file_path
+
+            for i in range(stage_num):
+                stage_meta_list: PrimitiveMetaList = dockerfile_meta.stage_meta_list[i]
+                neo4j_script = gen_neo4j_script_by_meta(stage_meta_list)
+                beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
+        else:
+            print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+        return file_path
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
-        return
+        return file_path
     except Exception as e:
-        print(f"ERROR: {e.args[0]}!", file=sys.stderr)
-        return
-
-    if dockerfile_meta is not None:
-        stage_num = len(dockerfile_meta.stage_meta_list)
-        if stage_num == 0:
-            print("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!",
-                  file=sys.stderr)
-            return
-
-        for i in range(stage_num):
-            stage_meta_list: PrimitiveMetaList = dockerfile_meta.stage_meta_list[i]
-            neo4j_script = gen_neo4j_script_by_meta(stage_meta_list)
-            beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
-    else:
+        print(traceback.format_exc())
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+        print(f"ERROR: {e.args[0]}!", file=sys.stderr)
+        return file_path
+
+
+def dockerfile_graph_gen_with_mutil_process(arg):
+    file_path, output_path, build_ctx, parsed_dockerfile = arg
+    if output_path != sys.stdout and not os.path.isfile(output_path) and "." not in output_path:
+        print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
+        return file_path
+    try:
+        postfix = str(os.getpid())
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer_mutil_process(file_path, build_ctx, parsed_dockerfile, postfix)
+        if dockerfile_meta is not None:
+            stage_num = len(dockerfile_meta.stage_meta_list)
+            if stage_num == 0:
+                print("ERROR: Didn't parse to any valid build stage, make sure to include the FROM directive!",
+                      file=sys.stderr)
+                return file_path
+
+            for i in range(stage_num):
+                stage_meta_list: PrimitiveMetaList = dockerfile_meta.stage_meta_list[i]
+                neo4j_script = gen_neo4j_script_by_meta(stage_meta_list)
+                beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
+        else:
+            print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+        return file_path
+    except dockerfile.GoParseError as e:
+        print(f"ERROR: {e.args[0]}!", file=sys.stderr)
+        return file_path
+    except Exception as e:
+        print(traceback.format_exc())
+        print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
+        print(f"ERROR: {e.args[0]}!", file=sys.stderr)
+        return file_path
 
 
 def meta_module_func(args):
@@ -91,7 +129,7 @@ def meta_module_func(args):
         build_ctx = os.path.dirname(file_path)
         if build_ctx == '':
             build_ctx = '.'
-        dockerfile_graph_gen(file_path, output_path, build_ctx)
+        dockerfile_graph_gen((file_path, output_path, build_ctx))
     elif dir_path:
         build_ctx = dir_path
         if not os.path.isdir(dir_path):
@@ -104,12 +142,49 @@ def meta_module_func(args):
                 return
             os.makedirs(output_path, exist_ok=True)
 
-        for file_name in os.listdir(dir_path):
-            file_path = os.path.join(dir_path, file_name)
-            if os.path.isfile(file_path):
-                if output_path != sys.stdout:
+        # for file_name in os.listdir(dir_path):
+        #     file_path = os.path.join(dir_path, file_name)
+        #     if os.path.isfile(file_path):
+        #         print(f"----start handle {file_path}-----")
+        #         if output_path != sys.stdout:
+        #             new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
+        #         else:
+        #             print(f'-------------------------{file_path}----------------------------')
+        #             new_output_path = output_path
+        #         dockerfile_graph_gen(file_path, new_output_path, build_ctx)
+        #         print(f"----handle {file_path} finish!!!")
+
+        # 利用进程池进行并发处理
+        if output_path != sys.stdout:
+            arg_list = []
+            for file_name in os.listdir(dir_path):
+                file_path = os.path.join(dir_path, file_name)
+                if not os.path.exists(file_path) or not os.path.isfile(file_path):
+                    print(f'error: {file_path} path does not exist or it is not a file!!!')
+                    continue
+                if not os.path.exists(build_ctx) or not os.path.isdir(build_ctx):
+                    print(f'error: {build_ctx} path does not exist or it is not a directory!!!')
+                    continue
+                with open(file_path, "r") as dfh:
+                    # dockerfile.parse_string 不支持多进程操作，放外部
+                    parsed_dockerfile: List[Command] = dockerfile.parse_string(dfh.read())
                     new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
-                else:
+                    arg_list.append((file_path, new_output_path, build_ctx, parsed_dockerfile))
+            with ProcessPoolExecutor(max_workers=1) as executor:
+                futures = {executor.submit(dockerfile_graph_gen_with_mutil_process, arg): arg for arg in arg_list}
+                for future in as_completed(futures, timeout=5):
+                    try:
+                        result = future.result()
+                        # Process the result
+                        print(result)
+                    except TimeoutError:
+                        print("Task timed out")
+                    except Exception as e:
+                        print(f"Task generated an exception: {e}")
+        else:
+            for file_name in os.listdir(dir_path):
+                file_path = os.path.join(dir_path, file_name)
+                if os.path.isfile(file_path):
                     print(f'-------------------------{file_path}----------------------------')
                     new_output_path = output_path
-                dockerfile_graph_gen(file_path, new_output_path, build_ctx)
+                    dockerfile_graph_gen((file_path, new_output_path, build_ctx))

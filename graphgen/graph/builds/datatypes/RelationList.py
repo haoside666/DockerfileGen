@@ -60,10 +60,22 @@ class RelationList:
 
     # @staticmethod
     # def add_constraint() -> str:
-    #     with open(f"{ROOT_DIR}/graph/Entity/EntityNode.py") as file:
-    #         pattern = r"class (.*?)\(EntityNode\):\s+NodeName = '(.*?)'\s"
-    #         re.findall(r"pattern", file.read())
-    #     constraint_list = []
+    #     # with open(f"{ROOT_DIR}/graph/Entity/EntityNode.py") as file:
+    #     #     pattern = r"class (.*?)\(EntityNode\):\s+NodeName = '(.*?)'\s"
+    #     #     re.findall(r"pattern", file.read())
+    #     constraint_list = [
+    #         "CREATE CONSTRAINT ON (p:Image) ASSERT (p.name, p.tag) IS UNIQUE;",
+    #         "CREATE CONSTRAINT ON (p:ExeCmd) ASSERT (p.name, p.type) IS UNIQUE;",
+    #         "CREATE CONSTRAINT ON (p:Cmd) ASSERT p.value IS UNIQUE;",
+    #         "CREATE CONSTRAINT ON (p:ToolPkg) ASSERT p.url IS UNIQUE;",
+    #         "CREATE CONSTRAINT ON (p:Pkg) ASSERT (p.name, p.version, p.flags, p.cmd_flag_list,p.cmd_flag_list) IS UNIQUE;",
+    #         "CREATE CONSTRAINT ON (p:PkgCmd) ASSERT (p.name, p.flags, p.cmd_flag_list, p.cmd_flag_list) IS UNIQUE;",
+    #         # "CREATE CONSTRAINT ON (p:Boot) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
+    #         # "CREATE CONSTRAINT ON (p:Env) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
+    #         # "CREATE CONSTRAINT ON (p:Arg) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
+    #         # "CREATE CONSTRAINT ON (p:File) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
+    #         # "CREATE CONSTRAINT ON (p:OTHER) ASSERT (p.name, p.flags, p.value) IS UNIQUE;",
+    #     ]
     #     return "\n".join(constraint_list) + "\n"
 
 

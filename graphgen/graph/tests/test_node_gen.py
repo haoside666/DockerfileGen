@@ -5,7 +5,7 @@ from graphgen.config.definitions import ROOT_DIR
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
 from graphgen.dependency.get_dependency_relation import get_dependency_relation
 
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from typing import Optional
 
@@ -20,7 +20,7 @@ class TestNodeGen(unittest.TestCase):
     def test_cmd_node_gen(self):
         dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             for stage_meta in dockerfile_meta.stage_meta_list:
                 entity_list = []
@@ -36,7 +36,7 @@ class TestNodeGen(unittest.TestCase):
     def test_pkg_node_gen(self):
         dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             for stage_meta in dockerfile_meta.stage_meta_list:
                 entity_list = []
@@ -92,7 +92,7 @@ class TestNodeGen(unittest.TestCase):
     def test_single_dockerfile(self):
         dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             for stage_meta in dockerfile_meta.stage_meta_list:
                 stage_meta, config_meta_list = split_meta_info(stage_meta)
@@ -108,7 +108,9 @@ class TestNodeGen(unittest.TestCase):
                 print(r3_list)
                 tool_r_list = r1_list + r2_list + r3_list
                 with open(f"{ROOT_DIR}/graph/script/{os.path.basename(dockerfile_name)}.cypher", "w") as file:
-                    file.write(tool_r_list.gen_neo4j_script())
+                    script_str = tool_r_list.gen_neo4j_script()
+                    file.write(script_str)
+                    print(script_str)
 
                 conn = Neo4jConnection()
                 with open(f"{ROOT_DIR}/graph/script/{os.path.basename(dockerfile_name)}.cypher", "r") as file:

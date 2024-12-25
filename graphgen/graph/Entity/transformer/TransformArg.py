@@ -7,8 +7,8 @@ class TransformArg(TransformInterface):
     def transform(self) -> EntityNode:
         p_meta: PrimitiveMeta = self.p_meta
         flags = list(p_meta.operand.flags)
-        value = p_meta.operand.value
+        value: Dict = p_meta.operand.value
         var_info = []
         for key, value in value.items():
             var_info.append(f'{key}="{value}"')
-        return ArgNode(flags, value)
+        return ArgNode(flags, sorted(var_info))

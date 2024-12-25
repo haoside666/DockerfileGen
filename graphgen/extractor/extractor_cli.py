@@ -27,7 +27,10 @@ def get_cmd_inv_feature_in_pipe_mode(cmd_invocation: str, pipe: str = "") -> \
             elif len(command_invocation.operand_list) == 0:
                 return None, "~", pipe
             else:
-                assert False
+                path = ""
+                for operand in command_invocation.operand_list:
+                    path += operand.get_name() + " "
+                return None, path.strip(), pipe
         else:
             cmd_inv_after_io, feature_info, pipe = get_feature_info_from_cmd_invocation_in_pipe_mode(command_invocation,
                                                                                                      pipe)

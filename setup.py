@@ -18,7 +18,7 @@ setup(
                 'graphgen.cli'],
     packages=find_packages(
         exclude=['graphgen.test', '*.old*', '*.tests',
-                 'graphgen.extractor.parser.*', 'output', 'experiment'],
+                 'graphgen.extractor.parser.*', 'output', 'experiment', 'template'],
     ),
     include_package_data=True,
     ## Necessary for the markdown to be properly rendered

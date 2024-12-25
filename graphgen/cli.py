@@ -1,5 +1,6 @@
 import argparse
 import os
+import traceback
 
 from graphgen.arg_module.dependency_module import add_dependency_module
 from graphgen.arg_module.meta_module import add_meta_module
@@ -36,6 +37,8 @@ def main():
         os.makedirs(dir_path, exist_ok=True)
         print(f"{dir_path}不存在，现在已经创建!")
     except Exception as e:
+        print(traceback.format_exc())
+        print(e)
         raise
     return 0
 

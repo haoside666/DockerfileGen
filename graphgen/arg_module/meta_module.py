@@ -8,7 +8,7 @@ import dockerfile
 from graphgen.dockerfile_process.datatypes.DockerfileMeta import DockerfileMeta
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer
 from graphgen.exception.CustomizedException import ParameterMissError
 
 
@@ -59,7 +59,7 @@ def dockerfile_meta_parse(file_path, output_path, build_ctx):
         print(f'ERROR: {output_path} is not a file!!! please enter a file path', file=sys.stderr)
         return
     try:
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
     except dockerfile.GoParseError as e:
         print(f"ERROR: {e.args[0]}!", file=sys.stderr)
         return

@@ -2,6 +2,7 @@ import base64
 import hashlib
 import os
 import re
+import time
 from abc import abstractmethod, ABCMeta
 from copy import deepcopy
 from typing import Tuple, Dict, List, Set, Optional, Union
@@ -63,15 +64,7 @@ class EntityNode(metaclass=ABCMeta):
             set_entity_to_dict_info_by_obj_id(m_addr, value)
         hash_object = hashlib.sha256(value.encode())
         base_hash = hash_object.hexdigest()
-        for i in range(16):  # 生成最多16个变体
-            unique_hash = hashlib.sha256((base_hash + str(i)).encode()).hexdigest()
-            if not unique_hash[0].isdigit():  # 检查是否以数字开头
-                return unique_hash[:128]
-        raise Exception("ERROR: hash collision")
-        # alpha_hash = ''.join(filter(str.isalpha, base_hash))
-        # if not alpha_hash:
-        #     alpha_hash = 'a' * 128
-        # return alpha_hash[:128]
+        return self.NodeName.lower() + base_hash[:128]
 
     @abstractmethod
     def get_flag_str(self) -> str:
@@ -83,8 +76,12 @@ class ImageNode(EntityNode):
 
     def __init__(self, flags: List, value: List) -> None:
         if "@sha256" not in value[0]:
-            self.name: str = value[0].split(":")[0]
-            self.tag: str = value[0].split(":")[1] if value[0].split(":")[1] else "latest"
+            if ":" not in value[0]:
+                self.name: str = value[0]
+                self.tag: str = "latest"
+            else:
+                self.name: str = value[0].split(":")[0]
+                self.tag: str = value[0].split(":")[1]
         else:
             self.name: str = value[0].split("@")[0]
             self.tag: str = value[0].split("@")[1] if value[0].split("@")[1] else "latest"

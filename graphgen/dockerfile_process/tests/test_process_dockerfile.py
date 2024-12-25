@@ -6,7 +6,7 @@ import os
 from graphgen.config.definitions import ROOT_DIR
 
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from typing import Optional, List
 
@@ -37,7 +37,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile_test_add"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):
@@ -49,7 +49,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile3"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):
@@ -61,7 +61,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile3"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):
@@ -73,7 +73,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile4"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):
@@ -85,7 +85,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile5"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):
@@ -97,7 +97,7 @@ class TestMeta(unittest.TestCase):
         filename = "Dockerfile_mutil"
         dockerfile_name = f"{ROOT_DIR}/data/{filename}"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             stage_num = len(dockerfile_meta.stage_meta_list)
             for i in range(stage_num):

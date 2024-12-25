@@ -1,3 +1,4 @@
+import os
 import sys
 
 from graphgen.shell_parse.datatypes.PrimitiveFeatureList import PrimitiveFeatureList
@@ -9,10 +10,12 @@ from graphgen.shell_parse.datatypes.CommandFeature import CommandFeature, read_j
     get_command_feature_by_union_command_feature_list
 from graphgen.shell_parse.datatypes.InsturctFeatureInit import InstructFeatureInit
 from graphgen.config.definitions import TEMP_CMD_PATH, TEMP_VAR_C_LIST_PATH, TEMP_B_TYPE_PATH
+from graphgen.config import definitions
 from graphgen.exception.CustomizedException import ExceptEndQuotemark, ParsingException
 import re
 
-Flag: bool = True
+
+# Flag: bool = True
 
 
 def clear_file(file_path):
@@ -132,20 +135,24 @@ def parse_shell_cmd_to_instruct_feature(cmd: str) -> Optional[InstructFeatureIni
 # 不考虑包括以下几种含有shell语法Dockerfile
 # 含有复杂结构 即 含有def,for,while,if,case等为复杂命令
 # 含有子命令，即``或$()形式
-def parse_shell_cmd_to_primitive_feature(cmd: str) -> Union[str, PrimitiveFeatureList]:
-    with open(TEMP_CMD_PATH, "w") as file:
+def parse_shell_cmd_to_primitive_feature(cmd: str, postfix: str = "") -> Union[str, PrimitiveFeatureList]:
+    temp_cmd_path = TEMP_CMD_PATH + postfix
+
+    with open(temp_cmd_path, "w") as file:
         file.write(cmd)
-    clear_file(TEMP_VAR_C_LIST_PATH)
-    clear_file(TEMP_B_TYPE_PATH)
+    # clear_file(TEMP_VAR_C_LIST_PATH)
+    # clear_file(TEMP_B_TYPE_PATH)
     try:
-        global Flag
-        new_ast_objects = parser.parse(TEMP_CMD_PATH, Flag)
-        if Flag:
-            Flag = False
+        # print(f"{postfix}:{definitions.PARSER_FLAG}", file=sys.stderr, flush=True)
+        # print(f"开始处理{cmd}", file=sys.stderr, flush=True)
+        new_ast_objects = parser.parse(temp_cmd_path, definitions.PARSER_FLAG)
+        if definitions.PARSER_FLAG:
+            definitions.PARSER_FLAG = False
         feat_list = []
         for untyped_ast, _, _, _ in new_ast_objects:
             typed_ast = to_ast_node(untyped_ast)
             feat_list.append(typed_ast.feature())
+        # print(f"已处理{cmd}", file=sys.stderr, flush=True)
         assert len(feat_list) <= 1
         if len(feat_list) == 0:
             return "None"

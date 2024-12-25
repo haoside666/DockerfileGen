@@ -59,7 +59,7 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
                 cmd_set.add(pkg_cmd)
                 pkg_cmd_set = pkg_cmd_set.union(set(entity_node.pkg_list))
             else:
-                cmd_set = cmd_set.union(set(entity_node.pkg_list))
+                cmd_set.add(pkg_cmd)
         elif isinstance(entity_node, ImageNode):
             img_node = entity_node
     for cmd in cmd_set:
@@ -82,7 +82,11 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
                 dest_node = find_pkg_node(pkg_name, all_pkg_node_list)
                 if dest_node is None:
                     raise Exception("pkg node not found")
-            pkg_node_list: list[SinglePkgNode] = entity_node.split()
+            try:
+                pkg_node_list: list[SinglePkgNode] = entity_node.split()
+            except:
+                print(f"{entity_node} split fail!")
+                return r_list
             for pkg_node in pkg_node_list:
                 if pkg_node not in all_pkg_node_list:
                     all_pkg_node_list.append(pkg_node)
@@ -130,10 +134,10 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
             assert isinstance(entity_node, CommandNode)
             tool_pkg_node: ToolPkgNode = entity_node.to_tool_pkg_node()
             rel_set = find_tool_node(index, url_node_index_list, edge_index_list)
-            simplified_set = remove_redundant_edges(rel_set)
+            # simplified_set = remove_redundant_edges(rel_set)
             all_entity_node: Set[EntityNode] = set()
 
-            for id1, id2 in simplified_set:
+            for id1, id2 in rel_set:
                 entity1 = entity_list[id1]
                 if isinstance(entity1, ImageNode):
                     continue
@@ -150,7 +154,7 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
                     if cmd in all_exe_cmd_name:
                         cmd_set.add(entity.name)
 
-            tool_pkg_node.set_cmd_list(list(cmd_set))
+            tool_pkg_node.set_cmd_list(list(sorted(cmd_set)))
 
             for entity in all_entity_node:
                 r: Relation = Relation(tool_pkg_node, entity, RType.Has)

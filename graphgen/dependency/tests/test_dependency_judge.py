@@ -3,7 +3,7 @@ import unittest
 from graphgen.config.definitions import ROOT_DIR
 
 from graphgen.config import global_config
-from graphgen.dockerfile_process.process import process
+from graphgen.dockerfile_process.processer import processer
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from graphgen.dependency.get_dependency_relation import get_dependency_relation
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
@@ -20,7 +20,7 @@ class TestDependencyJudge(unittest.TestCase):
     def test_single_dockerfile(self):
         dockerfile_name = f"{ROOT_DIR}/data/example/aero###1e921f6297c23bed7446f6e909fb01c421985424.txt"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             # print(dockerfile_meta)
             for command_meta_list in dockerfile_meta.stage_meta_list:
@@ -32,7 +32,7 @@ class TestDependencyJudge(unittest.TestCase):
     def test_single_dockerfile_with_simple_way(self):
         dockerfile_name = f"{ROOT_DIR}/data/Dockerfile3"
         build_ctx = "/home/haoside/Desktop/aaa"
-        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(dockerfile_name, build_ctx)
+        dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
             # print(dockerfile_meta)
             for command_meta_list in dockerfile_meta.stage_meta_list:
@@ -57,7 +57,7 @@ class TestDependencyJudge(unittest.TestCase):
                     time.sleep(2)
                 file_path = os.path.join(project_path, filename)
                 try:
-                    dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+                    dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
                     if dockerfile_meta is not None:
                         for command_meta_list in dockerfile_meta.stage_meta_list:
                             edge_index_list: EdgeIndexList = get_dependency_relation(command_meta_list)
@@ -82,7 +82,7 @@ class TestDependencyJudge(unittest.TestCase):
             file_path = os.path.join(root_dir, filename)
             d["repo_name"] = filename
             try:
-                dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+                dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
                 if dockerfile_meta is not None:
                     for command_meta_list in dockerfile_meta.stage_meta_list:
                         d["command_length"] = command_meta_list.length()
@@ -121,7 +121,7 @@ class TestDependencyJudge(unittest.TestCase):
             os.makedirs(output_dir)
         for filename in os.listdir(root_dir):
             file_path = os.path.join(root_dir, filename)
-            dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+            dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
             if dockerfile_meta is not None:
                 # print(dockerfile_meta)
                 for command_meta_list in dockerfile_meta.stage_meta_list:
@@ -148,7 +148,7 @@ class TestDependencyJudge(unittest.TestCase):
             os.makedirs(output_dir)
         for filename in os.listdir(root_dir):
             file_path = os.path.join(root_dir, filename)
-            dockerfile_meta: Optional[DockerfilePrimitiveMeta] = process(file_path, build_ctx)
+            dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(file_path, build_ctx)
             if dockerfile_meta is not None:
                 # print(dockerfile_meta)
                 for command_meta_list in dockerfile_meta.stage_meta_list:

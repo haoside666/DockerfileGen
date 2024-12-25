@@ -5,7 +5,7 @@ from graphgen.extractor.extractor_cli import get_command_list_feature
 # Test the command list extraction function
 class TestExtractorCli(unittest.TestCase):
     def test_cmd1(self):
-        command_list = ["apt install -y vim"]
+        command_list = ["swift --version"]
         attribute_user = "root"
         attribute_dir = "/tmp"
         instruct1_feature, attribute_dir = get_command_list_feature(command_list, attribute_user, attribute_dir)

@@ -1,6 +1,9 @@
+import os
 import unittest
 
 from graphgen.shell_parse.parse import parse_shell_cmd_to_primitive_feature
+
+CURRENT_DIR = os.path.dirname(__file__)
 
 
 # Test: Parse the shell command into initial instruction feature structure
@@ -65,7 +68,21 @@ class TestASTCmdParse(unittest.TestCase):
         cmd = '''unzip -qd ${APPS_BASE} /tmp/wildfly.zip && ln -s ${APPS_BASE}/wildfly-${WILDFLY_VERSION} ${WILDFLY_HOME}'''
         print(parse_shell_cmd_to_primitive_feature(cmd))
 
-
     def test_parse_cmd11(self):
         cmd = '''curl -s https://api.github.com/repos/arvidn/libtorrent/releases/latest | grep "lib*.*gz" | cut -d : -f 2,3 | wget -qi - tar xf *gz rm *gz cd lib* ./configure --enable-debug=no --enable-python-binding --with-libiconv make make -j$(nproc) checkinstall ldconfig'''
         print(parse_shell_cmd_to_primitive_feature(cmd))
+
+    def test_parse_cmd_list(self):
+        command_list = [
+            "curl -sSL https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub > /etc/apk/keys/sgerrand.rsa.pub",
+            "curl -sSL https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk > /tmp/glibc.apk",
+            "apk add --no-cache /tmp/glibc.apk",
+            "apk add --no-cache gcc make musl-dev",
+            "wget http://ftp.gnu.org/gnu/gawk/gawk-5.1.0.tar.xz",
+            "tar -xJvf gawk-5.1.0.tar.xz",
+            "grep pattern < input.txt",
+            "echo \"123\">>1.txt",
+        ]
+
+        for cmd in command_list:
+            print(parse_shell_cmd_to_primitive_feature(cmd, "123456"))

@@ -1,4 +1,5 @@
 import os.path
+import sys
 from copy import deepcopy
 
 from graphgen.util import standard_eq
@@ -22,8 +23,9 @@ from graphgen.dockerfile_process.datatypes.InstructFeature import InstructFeatur
 
 
 class PrimitiveMetaList:
-    def __init__(self, build_ctx: str, instruct_meta_list: InstructMetaList) -> None:
+    def __init__(self, build_ctx: str, instruct_meta_list: InstructMetaList, postfix="") -> None:
         self.build_ctx: str = build_ctx
+        self.postfix: str = postfix
         init_p_meta_list: List[PrimitiveMeta] = self.get_primitive_list(instruct_meta_list)
         self.p_meta_list: List[PrimitiveMeta] = self.__mark_attribute_dir_and_user(init_p_meta_list)
 
@@ -109,16 +111,15 @@ class PrimitiveMetaList:
         return p_meta_list
 
     # 将一个RUN指令拆分成多个RUN指令，以基础命令或管道命令为基元
-    @staticmethod
-    def split_run_instruct(idx: int, cmd_meta: InstructMeta) -> List[PrimitiveMeta]:
+    def split_run_instruct(self, idx: int, cmd_meta: InstructMeta) -> List[PrimitiveMeta]:
         p_meta_list: List[PrimitiveMeta] = []
         cmd: str = cmd_meta.get_operand().value
         try:
-            p_list: Union[str, PrimitiveFeatureList] = parse_shell_cmd_to_primitive_feature(cmd)
+            p_list: Union[str, PrimitiveFeatureList] = parse_shell_cmd_to_primitive_feature(cmd, self.postfix)
             if isinstance(p_list, str):
                 if p_list == "None":
                     return p_meta_list
-                raise SyntaxNonSupportError(f"含有{p_list}语法,不用作样本！")
+                raise SyntaxNonSupportError(f"{p_list}语法,不用作样本！")
             else:
                 p_feat_list: List[PrimitiveFeature] = p_list.p_feat_list
                 for p_feat in p_feat_list:
@@ -180,4 +181,5 @@ class PrimitiveMetaList:
             raise
         except Exception as e:
             # print(cmd_meta.get_operand().value, file=sys.stderr)
-            return current_dir
+            # return current_dir
+            raise

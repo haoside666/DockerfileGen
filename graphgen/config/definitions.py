@@ -88,3 +88,4 @@ LANGUAGE_SET = {
 }
 
 TOOL_PKG_METHOD = {"git", "curl", "wget"}
+PARSER_FLAG = True

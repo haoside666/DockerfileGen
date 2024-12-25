@@ -1,6 +1,6 @@
 import sys
 
-from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX, LANGUAGE_SET
+from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX, LANGUAGE_SET, ROOT_DIR
 from graphgen.dockerfile_process.datatypes.ShellFeature import ShellFeature
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
 from graphgen.graph.Entity.EntityNode import *
@@ -31,7 +31,8 @@ class TransformRun(TransformInterface):
                 real_pkg_list = []
             # 保留人工规则传递出来的包
             pkg_tuple_list = []
-            for item in eigenvector.pkg_set:
+            pkg_set = sorted(list(eigenvector.pkg_set))  # 确保唯一
+            for item in pkg_set:
                 pkg_name = item[0]
                 # 去除规则赋予的语言包
                 if pkg_name not in LANGUAGE_SET and pkg_name != pkg_cmd:
@@ -39,8 +40,11 @@ class TransformRun(TransformInterface):
                 else:
                     if pkg_name in real_pkg_list:
                         pkg_tuple_list.append(item)
-            # 未识别包类型点转换为命令结点
-            if len(pkg_tuple_list) == 1 and pkg_tuple_list[0][0].startswith(UNKNOWN_PREFIX):
+
+            if len(pkg_tuple_list) == 0:
+                return CommandNode(cmd_list, flags, value, "general")
+            # # 未识别包类型点转换为命令结点
+            elif len(pkg_tuple_list) == 1 and pkg_tuple_list[0][0].startswith(UNKNOWN_PREFIX):
                 return CommandNode(cmd_list, flags, value, "general")
             pkg_list = [item[0] for item in pkg_tuple_list]
             version_list = [item[1] for item in pkg_tuple_list]
@@ -54,10 +58,15 @@ class TransformRun(TransformInterface):
             pattern = r'((https?:\/\/)|(git@))+[^\s]+'
             if re.search(pattern, eigenvector.command):
                 cmd_type = "url"
-        elif len(eigenvector.pkg_set) > 0:
-            # 管道命令一定不会是包命令
-            assert "|" not in eigenvector.command
-            cmd_type = "pkg"
+        else:
+            if len(eigenvector.pkg_set) > 0:
+                # 管道命令一定不会是包命令
+                if "|" in eigenvector.command:
+                    with open(f"{ROOT_DIR}/../logs/error.txt", "a") as f:
+                        f.write(eigenvector.command + "\n")
+                    cmd_type = "general"
+                    return cmd_type
+                cmd_type = "pkg"
 
         return cmd_type
 
