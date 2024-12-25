@@ -82,7 +82,7 @@ def dockerfile_graph_gen(arg):
 
             for i in range(stage_num):
                 stage_meta_list: PrimitiveMetaList = dockerfile_meta.stage_meta_list[i]
-                neo4j_script = gen_neo4j_script_by_meta(stage_meta_list)
+                neo4j_script = gen_neo4j_script_by_meta(stage_meta_list, file_path)
                 beautiful_neo4j_print(neo4j_script, output_path, i + 1, stage_num)
         else:
             print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)

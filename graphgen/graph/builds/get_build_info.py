@@ -121,7 +121,8 @@ def generate_implicit_node(exe_cmd_node_list: List[ExecutableNode], all_pkg_node
 # 生成工具包节点
 # 寻找命令结点中类型为url的节点
 def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList,
-                       exe_cmd_node_list: List[ExecutableNode], config_entity_list: List[EntityNode] = None) -> RelationList:
+                       exe_cmd_node_list: List[ExecutableNode], config_entity_list: List[EntityNode] = None,
+                       file_path: str = "") -> RelationList:
     r_list: RelationList = RelationList()
     url_node_index_list: List = []
     all_exe_cmd_name = [exe_cmd.name for exe_cmd in exe_cmd_node_list]
@@ -132,7 +133,7 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
         for index in url_node_index_list:
             entity_node = entity_list[index]
             assert isinstance(entity_node, CommandNode)
-            tool_pkg_node: ToolPkgNode = entity_node.to_tool_pkg_node()
+            tool_pkg_node: ToolPkgNode = entity_node.to_tool_pkg_node(file_path)
             rel_set = find_tool_node(index, url_node_index_list, edge_index_list)
             # simplified_set = remove_redundant_edges(rel_set)
             all_entity_node: Set[EntityNode] = set()

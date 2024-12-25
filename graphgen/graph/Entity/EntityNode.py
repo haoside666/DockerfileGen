@@ -143,7 +143,7 @@ class CommandNode(EntityNode):
     def get_flag_str(self) -> str:
         return self.value
 
-    def to_tool_pkg_node(self) -> Optional["ToolPkgNode"]:
+    def to_tool_pkg_node(self, file_path: str) -> Optional["ToolPkgNode"]:
         # 匹配以https://开头或http://git@开头url
         pattern = r'((https?:\/\/)|(git@))+[^\s]+'
         match = re.search(pattern, self.value)
@@ -151,13 +151,13 @@ class CommandNode(EntityNode):
             raise Exception("ERROR: cmd_type of the command node is not 'url'")
         else:
             url = match.group()
-        return ToolPkgNode(url, self.name)
+        return ToolPkgNode(url, self.name, file_path=os.path.basename(file_path))
 
 
 class ToolPkgNode(EntityNode):
     NodeName = 'ToolPkg'
 
-    def __init__(self, url: str, method: str, cmd_list: List = None) -> None:
+    def __init__(self, url: str, method: str, cmd_list: List = None, file_path: str = "") -> None:
         union_set = set(method.split(",")) & TOOL_PKG_METHOD
         if len(union_set) >= 1:
             method = list(union_set)[0]
@@ -167,6 +167,7 @@ class ToolPkgNode(EntityNode):
         self.url: str = url
         self.method: str = method
         self.cmd_list: List = cmd_list if cmd_list else []
+        self.file_path: str = file_path
 
     def pretty(self) -> str:
         return ""
@@ -175,7 +176,7 @@ class ToolPkgNode(EntityNode):
         return f'tool_package({self.name})'
 
     def get_flag_str(self) -> str:
-        return f'{self.url} {self.cmd_list}'
+        return f'{self.url} {self.method} {self.cmd_list}'
 
     @staticmethod
     def extract_dir_name(url: str, method: str):
@@ -432,7 +433,7 @@ def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> En
         return AddOrCopyNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
     elif label == "Env":
         return EnvNode(property_dict["flags"], property_dict["value"])
-    elif label == "Other":
+    elif label == "OTHER":
         return DefaultNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     elif label == "ToolPkg":
         return ToolPkgNode(property_dict["url"], property_dict["method"], property_dict["cmd_list"])

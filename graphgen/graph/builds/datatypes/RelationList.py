@@ -25,7 +25,8 @@ class RelationList:
 
     def add_relation(self, relation: Relation) -> None:
         if relation not in self.relation_list:
-            self.relation_list.append(relation)
+            if relation.entity1 != relation.entity2:
+                self.relation_list.append(relation)
 
     def __add__(self, other):
         return RelationList(self.relation_list + other.relation_list)
@@ -69,7 +70,7 @@ class RelationList:
             "CREATE CONSTRAINT constraints_ExeCmd FOR (p:ExeCmd) REQUIRE (p.name, p.type) IS UNIQUE;"
             "CREATE CONSTRAINT constraints_Cmd FOR (p:Cmd) REQUIRE p.value IS UNIQUE;"
             "CREATE CONSTRAINT constraints_ToolPkg FOR (p:ToolPkg) REQUIRE (p.url, p.cmd_list) IS UNIQUE;"
-            "CREATE CONSTRAINT constraints_Pkg FOR (p:Pkg) REQUIRE (p.name, p.version, p.flags, p.cmd_flag_list, p.cmd_operand_list) IS UNIQUE;"
+            "CREATE CONSTRAINT constraints_Pkg FOR (p:Pkg) REQUIRE (p.name, p.version, p.flags, p.cmd_flag_list, p.cmd_operand_list, p.method) IS UNIQUE;"
             "CREATE CONSTRAINT constraints_PkgCmd FOR (p:PkgCmd) REQUIRE (p.name, p.flags, p.cmd_flag_list, p.cmd_operand_list) IS UNIQUE;"
             "CREATE CONSTRAINT constraints_Boot FOR (p:Boot) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"
             "CREATE CONSTRAINT constraints_Env FOR (p:Env) REQUIRE (p.name, p.flags, p.value) IS UNIQUE;"

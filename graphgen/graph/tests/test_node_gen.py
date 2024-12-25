@@ -104,7 +104,7 @@ class TestNodeGen(unittest.TestCase):
                 print(r1_list)
                 r2_list: RelationList = generate_pkg_node_and_cmd_node(entity_list, exe_cmd_node_list)
                 print(r2_list)
-                r3_list: RelationList = generate_tool_node(entity_list, edge_index_list, exe_cmd_node_list, config_entity_list)
+                r3_list: RelationList = generate_tool_node(entity_list, edge_index_list, exe_cmd_node_list, config_entity_list, dockerfile_name)
                 print(r3_list)
                 tool_r_list = r1_list + r2_list + r3_list
                 with open(f"{ROOT_DIR}/graph/script/{os.path.basename(dockerfile_name)}.cypher", "w") as file:
