@@ -51,7 +51,7 @@ class Neo4jConnection:
             data = result.data()
             return data
 
-    def get_single_tool_pkg_node_real_step(self, tool_pkg_name: str):
+    def get_single_tool_pkg_node_real_step(self, tool_pkg_name: str) -> List[Tuple[Tuple, Tuple]]:
         with self.driver.session() as session:
             result = session.run(
                 """

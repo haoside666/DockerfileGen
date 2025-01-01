@@ -12,7 +12,7 @@ class ToolGraph:
         self.url: str = url
         self.entity_node_list: List[EntityNode] = entity_node_list
         self.edge_list: List[Tuple[int, int]] = edge_list  # 前一个节点依赖于后一个节点
-        self.weight_list: List[int] = [1] * len(entity_node_list) if weight_list is None else weight_list  # 权重列表
+        self.weight_list: List[int] = [1] * len(self.entity_node_list) if weight_list is None else weight_list  # 权重列表
 
     def __repr__(self):
         return standard_repr(self)
@@ -69,5 +69,4 @@ def make_tool_graph(name: str, url: str, relations: List[Tuple[Tuple, Tuple]]) -
         index1 = entity_node_list.index(entity1)
         index2 = entity_node_list.index(entity2)
         edge_list.append((index1, index2))
-
     return ToolGraph(name, url, entity_node_list, edge_list)

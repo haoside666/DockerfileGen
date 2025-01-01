@@ -21,3 +21,7 @@ class ParameterMissError(Exception):
 
 class SyntaxNonSupportError(Exception):
     pass
+
+
+class PkgNotFoundError(Exception):
+    pass

@@ -22,9 +22,10 @@ def split_meta_info(stage_meta: PrimitiveMetaList) -> Tuple[PrimitiveMetaList, L
     p_meta_list: List[PrimitiveMeta] = []
     c_meta_list: List[PrimitiveMeta] = []
     for p_meta in new_p_meta_list.p_meta_list:
-        if p_meta.cmd_name in PKG_DIRECTIVES:
+        if p_meta.cmd_name in PKG_DIRECTIVES and p_meta not in p_meta_list:
             p_meta_list.append(p_meta)
-        elif p_meta.cmd_name in CONFIG_DIRECTIVES:
+        elif p_meta.cmd_name in CONFIG_DIRECTIVES and p_meta not in c_meta_list:
             c_meta_list.append(p_meta)
     new_p_meta_list.set_p_meta_list(p_meta_list)
+    # print(len(stage_meta.p_meta_list)-len(p_meta_list))
     return new_p_meta_list, c_meta_list

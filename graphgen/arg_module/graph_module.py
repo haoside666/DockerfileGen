@@ -94,7 +94,8 @@ def dockerfile_graph_gen(arg):
         return file_path
     except Exception as e:
         print(traceback.format_exc())
-        logger.error("---------------------------------")
+        logger.error(f"---------------------------------")
+        logger.error(f"================={file_path}=================")
         logger.error(traceback.format_exc())
         logger.error("---------------------------------")
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
@@ -134,6 +135,7 @@ def dockerfile_graph_gen_with_mutil_process(arg):
     except Exception as e:
         print(traceback.format_exc())
         logger.error("---------------------------------")
+        logger.error(f"================={file_path}=================")
         logger.error(traceback.format_exc())
         logger.error("---------------------------------")
         print(f'ERROR: {file_path} fails to be handled or the Dockerfile is incorrect!', file=sys.stderr)
@@ -144,7 +146,7 @@ def dockerfile_graph_gen_with_mutil_process(arg):
 def clear_temp_file():
     dir_path = f"{ROOT_DIR}/shell_parse"
     for file_name in os.listdir(dir_path):
-        if file_name.startswith("temp_cmd"):
+        if file_name.startswith("temp_cmd") or file_name.startswith("temp_var"):
             os.remove(os.path.join(dir_path, file_name))
 
 
@@ -205,9 +207,9 @@ def meta_module_func(args):
                         new_output_path = os.path.join(output_path, os.path.splitext(file_name)[0] + "_script.cypher")
                         arg_list.append((file_path, new_output_path, build_ctx, parsed_dockerfile))
                 except:
-                    print(f'ERROR: {file_path} 调用parse_string解析失败!', file=sys.stderr, flush=True)
+                    print(f'ERROR: {file_path} 调用parse_string解析失败,删除中!', file=sys.stderr, flush=True)
                     # 删除无效文件
-                    # os.remove(file_path)
+                    os.remove(file_path)
                     continue
             with ProcessPoolExecutor(max_workers=4) as executor:
                 futures = {executor.submit(dockerfile_graph_gen_with_mutil_process, arg): arg for arg in arg_list}

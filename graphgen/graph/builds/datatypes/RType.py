@@ -8,3 +8,5 @@ class RType(Enum):
     Dependency = "Dependency"
     Has = "Has"
     Settings = "Settings"
+    Exist = "Exist"
+    Dependency2 = "Dependency2"

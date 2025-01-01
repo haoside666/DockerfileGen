@@ -31,14 +31,14 @@ class ShellFeature:
         self.cmd_operand_list: Union[List[List[str], List[str]]] = cmd_list_feature.cmd_operand_list
 
         # Remove the effect of subcommands
-        # self.other_set.discard("$(command)")
-        # self.other_set.discard('"$(command)"')
+        self.other_set.discard("$(subcommand)")
+        self.other_set.discard('"$(subcommand)"')
 
     def __repr__(self):
         return standard_repr(self)
 
     def __eq__(self, other):
-        return standard_eq(self, other)
+        return self.command == other.command
 
     def to_dict(self):
         json_data = dict()

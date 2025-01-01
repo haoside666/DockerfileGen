@@ -140,8 +140,8 @@ def parse_shell_cmd_to_primitive_feature(cmd: str, postfix: str = "") -> Union[s
 
     with open(temp_cmd_path, "w") as file:
         file.write(cmd)
-    # clear_file(TEMP_VAR_C_LIST_PATH)
-    # clear_file(TEMP_B_TYPE_PATH)
+    clear_file(TEMP_VAR_C_LIST_PATH + postfix)
+    # clear_file(TEMP_B_TYPE_PATH + postfix)
     try:
         # print(f"{postfix}:{definitions.PARSER_FLAG}", file=sys.stderr, flush=True)
         # print(f"开始处理{cmd}", file=sys.stderr, flush=True)
@@ -156,7 +156,7 @@ def parse_shell_cmd_to_primitive_feature(cmd: str, postfix: str = "") -> Union[s
         assert len(feat_list) <= 1
         if len(feat_list) == 0:
             return "None"
-        var_c_list: List[str] = get_var_c_list()
+        var_c_list: List[str] = get_var_c_list(postfix)
         # b_type_feat: str = get_b_type_feature()
         total_cmd_feat: PrimitiveFeatureList = feat_list[0]
         # 含有复杂结构
@@ -256,13 +256,13 @@ def parse_shell_cmd_to_primitive_feature(cmd: str, postfix: str = "") -> Union[s
 #         raise
 
 
-def get_var_c_list() -> List[str]:
-    with open(TEMP_VAR_C_LIST_PATH, "r") as file:
+def get_var_c_list(postfix="") -> List[str]:
+    with open(TEMP_VAR_C_LIST_PATH + postfix, "r") as file:
         return [line.strip() for line in file]
 
 
-def get_b_type_feature() -> str:
-    with open(TEMP_B_TYPE_PATH, "r") as file:
+def get_b_type_feature(postfix="") -> str:
+    with open(TEMP_B_TYPE_PATH + postfix, "r") as file:
         return file.read()
     # return read_jsons(TEMP_B_TYPE_PATH)
 

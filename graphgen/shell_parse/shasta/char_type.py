@@ -245,7 +245,11 @@ class BArgChar(ArgChar):
 
     def pretty(self, quote_mode=UNQUOTED):
         param = self.node
-        return "$(" + param.pretty() + ")"
+        text = param.pretty()
+        if "|" in text:
+            return "$(subcommand)"
+        else:
+            return "$(" + text + ")"
         # return "$(command)"
 
 

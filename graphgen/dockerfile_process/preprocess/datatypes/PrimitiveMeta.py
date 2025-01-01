@@ -31,7 +31,12 @@ class PrimitiveMeta:
                f'attribute_dir: {self.attribute_dir}, eigenvector: {self.eigenvector}'
 
     def __eq__(self, other) -> bool:
-        return standard_eq(self, other)
+        if self.cmd_name == "RUN" and other.cmd_name == "RUN":
+            if self.operand.flags == other.operand.flags and self.eigenvector == other.eigenvector:
+                return True
+            return False
+        else:
+            return standard_eq(self, other)
 
     def pretty(self):
         if self.cmd_name != "RUN":

@@ -238,7 +238,7 @@ class TestGraphModule(unittest.TestCase):
         main()
 
     # 请在此处修改文件名
-    filename = "qmcgaw___youtube-dl-alpine###1661906###c4ceaacd891eb856387d26ec4cf4bf1e31357f01_script.cypher"
+    filename = "bartixxx32___hidden-eye###174526###4d82cb4515b4d36cb9080f7c76df076ca0580910_script.cypher"
 
     @patch('sys.argv',
            new=['test_cli.py', 'graph', '-f', f"/home/haoside/Desktop/input/{filename.replace('_script.cypher', '')}", '-o',
@@ -247,10 +247,9 @@ class TestGraphModule(unittest.TestCase):
         main()
 
     @patch('sys.argv', new=['test_cli.py', 'graph',
-                            '-f', '/home/haoside/Desktop/input/nottt___deluge###490211###81cd67bbd14b38f0fac988f4a458b2580cc05f56'])
+                            '-f', '/home/haoside/Desktop/input/joselfonsecadt___nginx-php7.3###424887###87fc85f137178e83737843cc66c2660c1f3b20c9'])
     def test_input_abnormal_dockerfile(self):
-        # /home/haoside/Desktop/input/mmozeiko___mingw-w64###340952###42cece5de44fd6d627e114960155b0e98ec0fd37
-        # /home/haoside/Desktop/input/nottt___deluge###490211###81cd67bbd14b38f0fac988f4a458b2580cc05f56
+        # /home/haoside/Desktop/input/usuresearch___scala-sbt-extras-gcloud###942632###a77df2cd8be3f9de87691ff7663ec67460bc19dc
         main()
 
     @patch('sys.argv', new=['test_cli.py', 'graph', '-d', '/home/haoside/Desktop/input', '-o', '/home/haoside/Desktop/output'])

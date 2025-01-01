@@ -89,3 +89,9 @@ LANGUAGE_SET = {
 
 TOOL_PKG_METHOD = {"git", "curl", "wget"}
 PARSER_FLAG = True
+
+# 系统包管理工具集合,不包括pip等语言包管理工具
+SYSTEM_PACKAGE_TOOL_SET = {
+    "apt", "apt-get", "apk", "aptitude", "yum", "dnf", "rpm", "zypper", "pacman", "homebrew", "portage", "slackpkg",
+    "nix", "flatpak", "snap", "pkg", "pkgsrc"
+}

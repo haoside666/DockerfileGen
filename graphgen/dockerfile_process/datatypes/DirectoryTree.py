@@ -36,6 +36,9 @@ class DirectoryTree:
     def is_empty(self):
         return len(self.root) == 0
 
+    def is_not_empty(self):
+        return len(self.root) != 0
+
 
 def trees_have_intersection(prior_output_tree: DirectoryTree, latter_input_tree: DirectoryTree) -> Tuple[bool, str]:
     root1 = prior_output_tree.root

@@ -8,12 +8,13 @@ from copy import deepcopy
 from typing import Tuple, Dict, List, Set, Optional, Union
 
 from graphgen.config.definitions import TOOL_PKG_METHOD
-from graphgen.graph.Entity.cache import ENTITY_INFO_DICT, get_entity_to_dict_info_by_obj_id, set_entity_to_dict_info_by_obj_id
 from graphgen.util import standard_repr, standard_eq
 
 
 class EntityNode(metaclass=ABCMeta):
     NodeName = 'None'
+    _hash_cache = {}
+    _eq_cache = {}
 
     @abstractmethod
     def __init__(self, name: str) -> None:
@@ -51,23 +52,19 @@ class EntityNode(metaclass=ABCMeta):
         return content
 
     def __hash__(self) -> int:
-        m_addr = id(self)
-        if m_addr in ENTITY_INFO_DICT:
-            return hash(get_entity_to_dict_info_by_obj_id(m_addr))
-        else:
-            value = self.get_flag_str()
-            set_entity_to_dict_info_by_obj_id(m_addr, value)
-            return hash(value)
+        value = self.NodeName.lower() + self.get_flag_str()
+        if value not in self._eq_cache:
+            self._eq_cache[value] = hash(value)
+        return self._eq_cache[value]
 
     def calc_hash(self):
-        m_addr = id(self)
-        if m_addr in ENTITY_INFO_DICT:
-            value = get_entity_to_dict_info_by_obj_id(m_addr)
+        value = self.get_flag_str()
+        if value in self._hash_cache:
+            base_hash = self._hash_cache[value]
         else:
-            value = self.get_flag_str()
-            set_entity_to_dict_info_by_obj_id(m_addr, value)
-        hash_object = hashlib.sha256(value.encode())
-        base_hash = hash_object.hexdigest()
+            hash_object = hashlib.sha256(value.encode())
+            base_hash = hash_object.hexdigest()
+            self._hash_cache[value] = base_hash
         return self.NodeName.lower() + base_hash[:128]
 
     @abstractmethod
@@ -156,6 +153,28 @@ class CommandNode(EntityNode):
         else:
             url = match.group()
         return ToolPkgNode(url, self.name, file_path=os.path.basename(file_path))
+
+
+class FilePkgNode(EntityNode):
+    NodeName = 'FilePkg'
+
+    def __init__(self, name: str, flags: List, value: str) -> None:
+        self.name: str = name
+        self.flags: List = flags
+        self.value: str = value
+
+    def pretty(self) -> str:
+        original_instruct = "RUN "
+        if len(self.flags) != 0:
+            original_instruct += " ".join(self.flags) + " "
+        original_instruct += self.value
+        return original_instruct
+
+    def __str__(self) -> str:
+        return f"file_pkg_node({self.value})"
+
+    def get_flag_str(self) -> str:
+        return self.value
 
 
 class ToolPkgNode(EntityNode):
@@ -433,6 +452,8 @@ def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> En
     elif label == "PkgCmd":
         return PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
                        property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
+    elif label == "FilePkg":
+        return FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     elif label == "File":
         return AddOrCopyNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
     elif label == "Env":

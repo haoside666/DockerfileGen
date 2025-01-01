@@ -2,6 +2,7 @@ from typing import List, Optional, Union
 
 from graphgen.dependency.datatypes.DDType import DDType
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList, remove_redundant_edges_in_graph
+from graphgen.exception.CustomizedException import PkgNotFoundError
 
 from graphgen.graph.Entity.EntityNode import *
 from graphgen.graph.builds.datatypes.RType import RType
@@ -60,6 +61,8 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
                 pkg_cmd_set = pkg_cmd_set.union(set(entity_node.pkg_list))
             else:
                 cmd_set.add(pkg_cmd)
+        elif isinstance(entity_node, FilePkgNode):
+            cmd_set.add(entity_node.name)
         elif isinstance(entity_node, ImageNode):
             img_node = entity_node
     for cmd in cmd_set:
@@ -81,12 +84,13 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
             if dest_node is None:
                 dest_node = find_pkg_node(pkg_name, all_pkg_node_list)
                 if dest_node is None:
-                    raise Exception("pkg node not found")
+                    raise PkgNotFoundError("pkg node not found")
             try:
                 pkg_node_list: list[SinglePkgNode] = entity_node.split()
             except:
                 print(f"{entity_node} split fail!")
-                return r_list
+                raise
+                # return r_list
             for pkg_node in pkg_node_list:
                 if pkg_node not in all_pkg_node_list:
                     all_pkg_node_list.append(pkg_node)
@@ -97,24 +101,32 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
     return r_list
 
 
-# 生成隐式依赖节点
-def generate_implicit_node(exe_cmd_node_list: List[ExecutableNode], all_pkg_node_list: List[SinglePkgNode],
-                           entity_list: List[EntityNode], img_node: ImageNode, edge_index_list: EdgeIndexList) -> RelationList:
+# 生成文件包结点节点,包括COPY,ADD，CMD,EXPOSE等信息
+def generate_file_pkg_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList,
+                           img_node: ImageNode, config_entity_list: List[EntityNode] = None) -> RelationList:
     r_list: RelationList = RelationList()
-    for idx, d_type in enumerate(edge_index_list.type_list):
-        if d_type == DDType.ENV_VAR_IMPLICIT:
-            before_node = edge_index_list.edge_index_list[idx][0]
-            after_node = edge_index_list.edge_index_list[idx][1]
-            entity1 = entity_list[before_node]
-            entity2 = entity_list[after_node]
-            pkg_name = entity2.name
-            dest_node: Union[ExecutableNode, SinglePkgNode] = find_exe_cmd_node(pkg_name, exe_cmd_node_list)
-            if dest_node is None:
-                dest_node = find_pkg_node(pkg_name, all_pkg_node_list)
-                if dest_node is None:
-                    raise Exception("pkg node not found")
-            r: Relation = Relation(dest_node, entity1, RType.Dependency)
+    all_file_pkg_node_list: List[FilePkgNode] = []
+    for idx, entity_node in enumerate(entity_list):
+        if isinstance(entity_node, FilePkgNode):
+            # 寻找文件依赖,并添加文件依赖
+            dest_index_list = find_all_file_dir_dependency(idx, edge_index_list)
+            for dest_index in dest_index_list:
+                dest_node = entity_list[dest_index]
+                r: Relation = Relation(entity_node, dest_node, RType.Dependency2)
+                r_list.add_relation(r)
+
+            # 填充文件包节点与配置信息的依赖关系
+            if config_entity_list:
+                for entity in config_entity_list:
+                    r: Relation = Relation(entity_node, entity, RType.Settings)
+                    r_list.add_relation(r)
+
+            # 添加与基础镜像的依赖关系
+            r: Relation = Relation(img_node, entity_node, RType.Exist)
             r_list.add_relation(r)
+            all_file_pkg_node_list.append(entity_node)
+
+
     return r_list
 
 
@@ -198,6 +210,19 @@ def find_all_pkg_dependency(entity_list: List[EntityNode], edge_index_list: Edge
             after_node = entity_list[dependency_pkg_idx]
             if before_node.name != after_node.name:
                 pkg_index_list.append(dependency_pkg_idx)
+
+    return pkg_index_list
+
+
+# 寻找指定节点的所有文件目录依赖
+def find_all_file_dir_dependency(index: int, edge_index_list: EdgeIndexList) -> List[int]:
+    pkg_index_list: List[int] = []
+    for idx, d_type in enumerate(edge_index_list.type_list):
+        if d_type == DDType.FILE_DIR:
+            before_index = edge_index_list.edge_index_list[idx][0]
+            file_pkg_idx = edge_index_list.edge_index_list[idx][1]
+            if index == file_pkg_idx:
+                pkg_index_list.append(before_index)
 
     return pkg_index_list
 

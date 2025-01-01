@@ -37,7 +37,7 @@ class TestToolGraph(unittest.TestCase):
 
 class TestBatchScriptToBuildGraph(unittest.TestCase):
     def test_single_script(self):
-        filename = "qmcgaw___youtube-dl-alpine###1661906###c4ceaacd891eb856387d26ec4cf4bf1e31357f01_script.cypher"
+        filename = "bartixxx32___hidden-eye###174526###4d82cb4515b4d36cb9080f7c76df076ca0580910_script.cypher"
         script_path = f"/home/haoside/Desktop/output/{filename}"
         conn = Neo4jConnection()
         with open(script_path, "r") as file:
