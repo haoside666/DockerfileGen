@@ -33,7 +33,7 @@ class EntityNode(metaclass=ABCMeta):
         return standard_repr(self)
 
     def __eq__(self, other) -> bool:
-        return standard_eq(self, other)
+        return self.__hash__() == other.__hash__()
 
     def to_dict(self) -> str:
         content = "{"
@@ -41,8 +41,12 @@ class EntityNode(metaclass=ABCMeta):
         for key, value in self.__dict__.items():
             if isinstance(value, list):
                 lis.append(f"{key}: {value}")
+            elif isinstance(value, str):
+                value = value.replace("'", "")
+                lis.append(f"{key}: '{value}'")
             else:
                 lis.append(f"{key}: '{value}'")
+
         content += ", ".join(lis) + "}"
         return content
 

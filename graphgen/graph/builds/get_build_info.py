@@ -1,7 +1,7 @@
 from typing import List, Optional, Union
 
 from graphgen.dependency.datatypes.DDType import DDType
-from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
+from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList, remove_redundant_edges_in_graph
 
 from graphgen.graph.Entity.EntityNode import *
 from graphgen.graph.builds.datatypes.RType import RType
@@ -47,7 +47,7 @@ def generate_base_image_and_execute_node(entity_list: List[EntityNode], edge_ind
     pkg_cmd_set = set()
     pkg_index_list = find_all_pkg_dependency(entity_list, edge_index_list)
     for idx, entity_node in enumerate(entity_list):
-        if idx in pkg_index_list:
+        if idx in pkg_index_list:  # 跳过包依赖命令
             continue
         if isinstance(entity_node, CommandNode):
             for cmd in entity_node.cmd_list:
@@ -126,6 +126,8 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
     r_list: RelationList = RelationList()
     url_node_index_list: List = []
     all_exe_cmd_name = [exe_cmd.name for exe_cmd in exe_cmd_node_list]
+    # 删除冗余边，只保留最近边
+    new_edge_index_list = remove_redundant_edges_in_graph(edge_index_list)
     for idx, entity_node in enumerate(entity_list):
         if isinstance(entity_node, CommandNode) and entity_node.cmd_type == "url":
             url_node_index_list.append(idx)
@@ -134,10 +136,11 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
             entity_node = entity_list[index]
             assert isinstance(entity_node, CommandNode)
             tool_pkg_node: ToolPkgNode = entity_node.to_tool_pkg_node(file_path)
-            rel_set = find_tool_node(index, url_node_index_list, edge_index_list)
+            rel_set = find_tool_node(index, url_node_index_list, new_edge_index_list)
             # simplified_set = remove_redundant_edges(rel_set)
             all_entity_node: Set[EntityNode] = set()
 
+            # 生成安装块
             for id1, id2 in rel_set:
                 entity1 = entity_list[id1]
                 if isinstance(entity1, ImageNode):
@@ -148,19 +151,21 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
                 r: Relation = Relation(entity2, entity1, RType.Dependency)
                 r_list.add_relation(r)
 
+            # 生存安装块中所有用到的命令列表
             cmd_set = set()
             for entity in all_entity_node:
                 if isinstance(entity, CommandNode) or isinstance(entity, PkgNode):
                     cmd = entity.name
                     if cmd in all_exe_cmd_name:
                         cmd_set.add(entity.name)
-
+            # 填充工具包节点的命令列表
             tool_pkg_node.set_cmd_list(list(sorted(cmd_set)))
-
+            # 填充工具包节点与安装块的依赖关系
             for entity in all_entity_node:
                 r: Relation = Relation(tool_pkg_node, entity, RType.Has)
                 r_list.add_relation(r)
 
+            # 填充工具包节点与配置信息的依赖关系
             if config_entity_list:
                 for entity in config_entity_list:
                     r: Relation = Relation(tool_pkg_node, entity, RType.Settings)
@@ -183,6 +188,7 @@ def find_pkg_node(pkg_name: str, all_pkg_node_set: List[SinglePkgNode]) -> Optio
     return None
 
 
+# 寻找所有包依赖，根据包依赖识别当前命令是否为系统原生命令
 def find_all_pkg_dependency(entity_list: List[EntityNode], edge_index_list: EdgeIndexList) -> List[int]:
     pkg_index_list: List[int] = []
     for idx, d_type in enumerate(edge_index_list.type_list):

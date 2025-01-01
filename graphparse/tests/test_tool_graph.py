@@ -1,12 +1,22 @@
+import logging
+import os
 import sys
 import unittest
-from unittest.mock import patch
+from concurrent.futures import ThreadPoolExecutor
 
-from graphgen.cli import main
 from graphgen.config.definitions import ROOT_DIR
 from graphgen.graph.Entity.EntityNode import *
 from graphparse.datatypes.tool_graph import ToolGraph, make_tool_graph
 from graphparse.neo4j_reader.neo4j_reader import Neo4jConnection
+
+LOG_PATH = f"{ROOT_DIR}/../logs/script_build.log"
+# 创建日志
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler(filename=LOG_PATH, encoding='utf-8')
+formatter = logging.Formatter('[{levelname}:{asctime}:{module}:{funcName}:{lineno}] {message}', style='{')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 
 class TestToolGraph(unittest.TestCase):
@@ -27,7 +37,7 @@ class TestToolGraph(unittest.TestCase):
 
 class TestBatchScriptToBuildGraph(unittest.TestCase):
     def test_single_script(self):
-        filename = "oberbichler___kratos-dev###1876473###bc6b211839622b3582f4d2adf19906610d4d61c4_script.cypher"
+        filename = "qmcgaw___youtube-dl-alpine###1661906###c4ceaacd891eb856387d26ec4cf4bf1e31357f01_script.cypher"
         script_path = f"/home/haoside/Desktop/output/{filename}"
         conn = Neo4jConnection()
         with open(script_path, "r") as file:
@@ -50,31 +60,49 @@ class TestBatchScriptToBuildGraph(unittest.TestCase):
                         f.write(f"{filename}脚本重新运行错误！\n")
         conn.close()
 
+    # def test_batch_script_to_build_graph(self):
+    #     script_dir_path = "/home/haoside/Desktop/output"
+    #     conn = Neo4jConnection()
+    #
+    #     cnt = 1
+    #     for file_name in os.listdir(script_dir_path):
+    #         try:
+    #             if cnt % 500 == 0:
+    #                 print(f"{cnt}个脚本已处理！")
+    #             if file_name.endswith(".cypher"):
+    #                 script_path = os.path.join(script_dir_path, file_name)
+    #                 with open(script_path, "r") as file:
+    #                     cypher_script = file.read()
+    #                 conn.run_script(cypher_script)
+    #                 cnt += 1
+    #         except Exception as e:
+    #             print(f"{file_name}脚本构建错误！", file=sys.stderr)
+    #
+    #     conn.close()
+
+    @staticmethod
+    def process_cypher_script(script_dir_path, file_name, conn):
+        script_path = os.path.join(script_dir_path, file_name)
+        try:
+            with open(script_path, "r") as file:
+                cypher_script = file.read()
+            if cypher_script:
+                conn.run_script(cypher_script)
+            logging.info(f"成功处理脚本: {file_name}")
+        except Exception as e:
+            logging.error(f"处理文件 {file_name} 时出错: {e}", exc_info=True)
+
     def test_batch_script_to_build_graph(self):
         script_dir_path = "/home/haoside/Desktop/output"
-        conn = Neo4jConnection()
 
-        cnt = 1
-        for file_name in os.listdir(script_dir_path):
-            try:
-                if cnt % 500 == 0:
-                    print(f"{cnt}个脚本已处理！")
-                if file_name.endswith(".cypher"):
-                    script_path = os.path.join(script_dir_path, file_name)
-                    with open(script_path, "r") as file:
-                        cypher_script = file.read()
-                    conn.run_script(cypher_script)
+        cnt = 0
+        # 要求以.cypher结尾
+        cypher_files = [file_name for file_name in os.listdir(script_dir_path) if file_name.endswith(".cypher")]
+
+        with Neo4jConnection() as conn:
+            with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
+                for file_name in cypher_files:
                     cnt += 1
-            except Exception as e:
-                print(f"{file_name}脚本构建错误！", file=sys.stderr)
-
-        conn.close()
-
-    # 请在此处修改文件名
-    filename = "deyvisonpenha___moobitest###30081###cb0e01478aaf89b263531dbfbad9fb7b32ec477b_script.cypher"
-
-    @patch('sys.argv',
-           new=['test_cli.py', 'graph', '-f', f"/home/haoside/Desktop/input/{filename.replace('_script.cypher', '')}", '-o',
-                f"/home/haoside/Desktop/output/{filename}"])
-    def test_rebuild_single_script(self):
-        main()
+                    if cnt % 500 == 0:
+                        logging.info(f"{cnt}个脚本已处理！")
+                    executor.submit(self.process_cypher_script, script_dir_path, file_name, conn)

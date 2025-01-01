@@ -237,6 +237,15 @@ class TestGraphModule(unittest.TestCase):
     def test_d_option_to_output(self):
         main()
 
+    # 请在此处修改文件名
+    filename = "qmcgaw___youtube-dl-alpine###1661906###c4ceaacd891eb856387d26ec4cf4bf1e31357f01_script.cypher"
+
+    @patch('sys.argv',
+           new=['test_cli.py', 'graph', '-f', f"/home/haoside/Desktop/input/{filename.replace('_script.cypher', '')}", '-o',
+                f"/home/haoside/Desktop/output/{filename}"])
+    def test_rebuild_single_script(self):
+        main()
+
     @patch('sys.argv', new=['test_cli.py', 'graph',
                             '-f', '/home/haoside/Desktop/input/nottt___deluge###490211###81cd67bbd14b38f0fac988f4a458b2580cc05f56'])
     def test_input_abnormal_dockerfile(self):
