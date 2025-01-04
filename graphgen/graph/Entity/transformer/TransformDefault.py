@@ -9,4 +9,4 @@ class TransformDefault(TransformInterface):
         instruct_name = p_meta.cmd_name
         flags = list(p_meta.operand.flags)
         value = list(p_meta.operand.value)
-        return DefaultNode(instruct_name, flags, value)
+        return OtherNode(instruct_name, flags, value)

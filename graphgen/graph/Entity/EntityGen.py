@@ -1,7 +1,7 @@
 from typing import List
 
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
-from graphgen.graph.Entity.EntityNode import EntityNode
+from graphgen.graph.Entity.EntityNode import EntityNode, ConfigNode
 from .transformer.TransformFrom import TransformFrom
 from .transformer.TransformRun import TransformRun
 from .transformer.TransformCmdOrEntrypoint import TransformCmdOrEntrypoint
@@ -39,4 +39,13 @@ def entity_list_gen(p_meta_list: List[PrimitiveMeta]) -> List[EntityNode]:
     entity_list: List[EntityNode] = []
     for p_meta in p_meta_list:
         entity_list.append(entity_gen(p_meta))
+    return entity_list
+
+
+def config_entity_list_gen(p_meta_list: List[PrimitiveMeta]) -> List[ConfigNode]:
+    entity_list: List[ConfigNode] = []
+    for p_meta in p_meta_list:
+        entity = entity_gen(p_meta)
+        config_entity = ConfigNode(entity)
+        entity_list.append(config_entity)
     return entity_list

@@ -1,5 +1,3 @@
-from typing import List, Optional, Union
-
 from graphgen.dependency.datatypes.DDType import DDType
 from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList, remove_redundant_edges_in_graph
 from graphgen.exception.CustomizedException import PkgNotFoundError
@@ -7,7 +5,7 @@ from graphgen.exception.CustomizedException import PkgNotFoundError
 from graphgen.graph.Entity.EntityNode import *
 from graphgen.graph.builds.datatypes.RType import RType
 from graphgen.graph.builds.datatypes.Relation import Relation
-from graphgen.graph.builds.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
+from graphgen.graph.builds.datatypes.RelationList import RelationList
 
 
 # 生成基础镜像与可执行命令节点
@@ -103,7 +101,7 @@ def generate_pkg_node_and_cmd_node(entity_list: List[EntityNode], exe_cmd_node_l
 
 # 生成文件包结点节点,包括COPY,ADD，CMD,EXPOSE等信息
 def generate_file_pkg_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList,
-                           img_node: ImageNode, config_entity_list: List[EntityNode] = None) -> RelationList:
+                           img_node: ImageNode, config_entity_list: List[ConfigNode] = None) -> RelationList:
     r_list: RelationList = RelationList()
     all_file_pkg_node_list: List[FilePkgNode] = []
     for idx, entity_node in enumerate(entity_list):
@@ -112,13 +110,14 @@ def generate_file_pkg_node(entity_list: List[EntityNode], edge_index_list: EdgeI
             dest_index_list = find_all_file_dir_dependency(idx, edge_index_list)
             for dest_index in dest_index_list:
                 dest_node = entity_list[dest_index]
-                r: Relation = Relation(entity_node, dest_node, RType.Dependency2)
+                step_entity_node = StepNode(dest_node)
+                r: Relation = Relation(entity_node, step_entity_node, RType.Dependency)
                 r_list.add_relation(r)
 
             # 填充文件包节点与配置信息的依赖关系
             if config_entity_list:
-                for entity in config_entity_list:
-                    r: Relation = Relation(entity_node, entity, RType.Settings)
+                for config_entity in config_entity_list:
+                    r: Relation = Relation(entity_node, config_entity, RType.Settings)
                     r_list.add_relation(r)
 
             # 添加与基础镜像的依赖关系
@@ -126,14 +125,13 @@ def generate_file_pkg_node(entity_list: List[EntityNode], edge_index_list: EdgeI
             r_list.add_relation(r)
             all_file_pkg_node_list.append(entity_node)
 
-
     return r_list
 
 
 # 生成工具包节点
 # 寻找命令结点中类型为url的节点
 def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndexList,
-                       exe_cmd_node_list: List[ExecutableNode], config_entity_list: List[EntityNode] = None,
+                       exe_cmd_node_list: List[ExecutableNode], config_entity_list: List[ConfigNode] = None,
                        file_path: str = "") -> RelationList:
     r_list: RelationList = RelationList()
     url_node_index_list: List = []
@@ -150,7 +148,7 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
             tool_pkg_node: ToolPkgNode = entity_node.to_tool_pkg_node(file_path)
             rel_set = find_tool_node(index, url_node_index_list, new_edge_index_list)
             # simplified_set = remove_redundant_edges(rel_set)
-            all_entity_node: Set[EntityNode] = set()
+            all_step_entity_node: Set[StepNode] = set()
 
             # 生成安装块
             for id1, id2 in rel_set:
@@ -158,14 +156,17 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
                 if isinstance(entity1, ImageNode):
                     continue
                 entity2 = entity_list[id2]
-                all_entity_node.add(entity1)
-                all_entity_node.add(entity2)
-                r: Relation = Relation(entity2, entity1, RType.Dependency)
+                step_entity1 = StepNode(entity1, tool_pkg_node.url)
+                step_entity2 = StepNode(entity2, tool_pkg_node.url)
+                all_step_entity_node.add(step_entity1)
+                all_step_entity_node.add(step_entity2)
+                r: Relation = Relation(step_entity2, step_entity1, RType.Dependency)
                 r_list.add_relation(r)
 
             # 生存安装块中所有用到的命令列表
             cmd_set = set()
-            for entity in all_entity_node:
+            for step_entity in all_step_entity_node:
+                entity = step_entity.entity_node
                 if isinstance(entity, CommandNode) or isinstance(entity, PkgNode):
                     cmd = entity.name
                     if cmd in all_exe_cmd_name:
@@ -173,14 +174,14 @@ def generate_tool_node(entity_list: List[EntityNode], edge_index_list: EdgeIndex
             # 填充工具包节点的命令列表
             tool_pkg_node.set_cmd_list(list(sorted(cmd_set)))
             # 填充工具包节点与安装块的依赖关系
-            for entity in all_entity_node:
+            for entity in all_step_entity_node:
                 r: Relation = Relation(tool_pkg_node, entity, RType.Has)
                 r_list.add_relation(r)
 
             # 填充工具包节点与配置信息的依赖关系
             if config_entity_list:
-                for entity in config_entity_list:
-                    r: Relation = Relation(tool_pkg_node, entity, RType.Settings)
+                for config_entity in config_entity_list:
+                    r: Relation = Relation(tool_pkg_node, config_entity, RType.Settings)
                     r_list.add_relation(r)
 
     return r_list

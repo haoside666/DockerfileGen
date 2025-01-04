@@ -9,7 +9,7 @@ from graphgen.graph.Entity.EntityNode import *
 def strip_redundant_entity_node(entity_list: List[EntityNode]):
     new_entity_list: List[EntityNode] = []
     for entity_node in entity_list:
-        if isinstance(entity_node, DefaultNode) or isinstance(entity_node, BootNode) \
+        if isinstance(entity_node, OtherNode) or isinstance(entity_node, BootNode) \
                 or isinstance(entity_node, ArgNode) or isinstance(entity_node, EnvNode):
             continue
         else:

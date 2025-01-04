@@ -9,7 +9,7 @@ from graphgen.dockerfile_process.processer import processer
 from graphgen.dockerfile_process.datatypes.DockerfilePrimitiveMeta import DockerfilePrimitiveMeta
 from typing import Optional
 
-from graphgen.graph.Entity.EntityGen import entity_gen, entity_list_gen
+from graphgen.graph.Entity.EntityGen import entity_gen, entity_list_gen, config_entity_list_gen
 from graphgen.graph.builds.datatypes.RelationList import *
 from graphgen.graph.builds.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_file_pkg_node
 from graphgen.graph.builds.neo4j_reader import Neo4jConnection
@@ -63,7 +63,7 @@ class TestNodeGen(unittest.TestCase):
 
     def test_single_dockerfile(self):
         # dockerfile_name = f"/home/haoside/Desktop/output/leejoneshane___ezgo-vdi###1343644###70579ac9688627897b3050f82dfaaf1547cdc365_script.cypher"
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test3"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:
@@ -71,7 +71,7 @@ class TestNodeGen(unittest.TestCase):
                 stage_meta, config_meta_list = split_meta_info(stage_meta)
                 edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
                 entity_list = entity_list_gen(stage_meta.p_meta_list)
-                config_entity_list = entity_list_gen(config_meta_list)
+                config_entity_list = config_entity_list_gen(config_meta_list)
                 img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
                 r1_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)
                 print(r1_list)

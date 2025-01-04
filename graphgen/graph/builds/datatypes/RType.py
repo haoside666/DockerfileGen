@@ -9,4 +9,4 @@ class RType(Enum):
     Has = "Has"
     Settings = "Settings"
     Exist = "Exist"
-    Dependency2 = "Dependency2"
+    # Dependency2 = "Dependency2"

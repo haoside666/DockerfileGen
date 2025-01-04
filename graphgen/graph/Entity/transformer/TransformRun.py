@@ -1,7 +1,6 @@
 import logging
 import sys
 
-from graphgen.arg_module.graph_module import logger
 from graphgen.config.definitions import URL_DOWNLOAD_COMMAND_SET, UNKNOWN_PREFIX, LANGUAGE_SET, ROOT_DIR, SYSTEM_PACKAGE_TOOL_SET
 from graphgen.dockerfile_process.datatypes.ShellFeature import ShellFeature
 from graphgen.dockerfile_process.preprocess.datatypes.PrimitiveMeta import PrimitiveMeta
@@ -34,10 +33,9 @@ class TransformRun(TransformInterface):
                 # 获取真实的包名，不包括版本信息
                 real_pkg_list = self.get_real_pkg_list(cmd_operand_list)
             except:
+                print(f"---------------------------------------------", file=sys.stderr)
                 print(f"ERROR: 包类型命令含有管道，命令为{eigenvector.command}！", file=sys.stderr)
-                logger.error(f"---------------------------------------------")
-                logger.error(f"ERROR: 包类型命令含有管道，命令为{eigenvector.command}！")
-                logger.error(f"---------------------------------------------")
+                print(f"---------------------------------------------", file=sys.stderr)
                 real_pkg_list = []
             # 保留人工规则传递出来的包
             pkg_tuple_list = []

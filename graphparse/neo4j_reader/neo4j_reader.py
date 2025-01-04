@@ -77,17 +77,16 @@ class Neo4jConnection:
         with self.driver.session() as session:
             session.run(script)
 
-
-if __name__ == "__main__":
-    key_word = "hdf5"
-    conn = Neo4jConnection()
-    all_tool_pkg_node_name = conn.get_all_tool_pkg_node_name()
-    all_tool_pkg_graph = []
-    for tool_pkg_name in all_tool_pkg_node_name:
-        if key_word in tool_pkg_name:
-            # conn.get_single_tool_pkg_node_all_has_relation(tool_pkg_name)
-            dependencies = conn.get_single_tool_pkg_node_real_step(tool_pkg_name)
-            for dep in dependencies:
-                print(f"{dep[0]} dependency {dep[1]}")
-
-    conn.close()
+# if __name__ == "__main__":
+#     key_word = "hdf5"
+#     conn = Neo4jConnection()
+#     all_tool_pkg_node_name = conn.get_all_tool_pkg_node_name()
+#     all_tool_pkg_graph = []
+#     for tool_pkg_name in all_tool_pkg_node_name:
+#         if key_word in tool_pkg_name:
+#             # conn.get_single_tool_pkg_node_all_has_relation(tool_pkg_name)
+#             dependencies = conn.get_single_tool_pkg_node_real_step(tool_pkg_name)
+#             for dep in dependencies:
+#                 print(f"{dep[0]} dependency {dep[1]}")
+#
+#     conn.close()

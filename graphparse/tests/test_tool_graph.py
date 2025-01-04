@@ -88,6 +88,7 @@ class TestBatchScriptToBuildGraph(unittest.TestCase):
                 cypher_script = file.read()
             if cypher_script:
                 conn.run_script(cypher_script)
+
             logging.info(f"成功处理脚本: {file_name}")
         except Exception as e:
             logging.error(f"处理文件 {file_name} 时出错: {e}", exc_info=True)

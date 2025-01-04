@@ -65,6 +65,7 @@ PKG_DIRECTIVES = [
     'COPY',
     'USER',
     'WORKDIR',
+    'SHELL'
 ]
 
 CONFIG_DIRECTIVES = [

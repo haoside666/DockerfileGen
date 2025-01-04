@@ -14,7 +14,7 @@ class FeatureInfoGeneratorPip(FeatureInfoGeneratorInterface):
                                                          (WhichClassForFeature.FILESTD, make_other_input()))
                 elif len(operand_list) == 2:
                     operand_arg = operand_list[-1].get_name()
-                    if "/" in operand_arg or "." in operand_arg:
+                    if "==" not in operand_arg and ("/" in operand_arg or "." in operand_arg):
                         self.only_last_operand_is_io()
                     else:
                         self.all_but_first_operand_is_pkg()

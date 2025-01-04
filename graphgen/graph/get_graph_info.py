@@ -4,7 +4,7 @@ from graphgen.dependency.datatypes.EdgeIndexList import EdgeIndexList
 from graphgen.dependency.get_dependency_relation import get_dependency_relation
 from graphgen.dockerfile_process.datatypes.PrimitiveMetaList import PrimitiveMetaList
 from graphgen.exception.CustomizedException import PkgNotFoundError
-from graphgen.graph.Entity.EntityGen import entity_list_gen
+from graphgen.graph.Entity.EntityGen import entity_list_gen, config_entity_list_gen
 from graphgen.graph.Entity.EntityNode import EntityNode
 from graphgen.graph.builds.datatypes.RelationList import RelationList, make_relation_list_from_image_and_execute_node
 from graphgen.graph.builds.get_build_info import generate_base_image_and_execute_node, generate_pkg_node_and_cmd_node, generate_tool_node, generate_file_pkg_node
@@ -17,7 +17,7 @@ def gen_neo4j_script_by_meta(stage_meta: PrimitiveMetaList, file_path="") -> str
     edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
     # new_edge_index_list = remove_redundant_edges_in_graph(edge_index_list)，放置到生成工具包节点内部
     entity_list = entity_list_gen(stage_meta.p_meta_list)
-    config_entity_list = entity_list_gen(config_meta_list)
+    config_entity_list = config_entity_list_gen(config_meta_list)
     # 注意这里需要传入edge_index_list,而不是去重之后的,因为去重后只保留了最近依赖关系
     img_node, exe_cmd_node_list = generate_base_image_and_execute_node(entity_list, edge_index_list)
     r1_list: RelationList = make_relation_list_from_image_and_execute_node(img_node, exe_cmd_node_list)

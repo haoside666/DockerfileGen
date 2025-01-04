@@ -121,6 +121,95 @@ class ExecutableNode(EntityNode):
         return f"{self.name} {self.type}"
 
 
+class ToolPkgNode(EntityNode):
+    NodeName = 'ToolPkg'
+
+    def __init__(self, url: str, method: str, cmd_list: List = None, file_path: str = "") -> None:
+        union_set = set(method.split(",")) & TOOL_PKG_METHOD
+        if len(union_set) >= 1:
+            method = list(union_set)[0]
+        else:
+            raise Exception("ERROR: method of the tool package node is not supported")
+        self.name: str = self.extract_dir_name(url, method)
+        self.url: str = url
+        self.method: str = method
+        self.cmd_list: List = cmd_list if cmd_list else []
+        self.file_path: str = file_path
+
+    def pretty(self) -> str:
+        return ""
+
+    def __str__(self) -> str:
+        return f'tool_package({self.name})'
+
+    def get_flag_str(self) -> str:
+        return f'{self.url} {self.method} {self.cmd_list}'
+
+    @staticmethod
+    def extract_dir_name(url: str, method: str):
+        if method == "git":
+            name = os.path.basename(url)
+            index = name.find(".git")
+            if index != -1:
+                return name[:index]
+            else:
+                t = name.rpartition(".")
+                if t[0] == "":
+                    return name
+                else:
+                    return t[0]
+        else:
+            return url.rpartition("/")[-1]
+
+    def set_cmd_list(self, cmd_list):
+        self.cmd_list = cmd_list
+
+
+# 包括: CommandNode, FilePkgNode, PkgNode, EnvNode, FileNode, OtherNode(Workdir,User,Shell)
+class StepNode(EntityNode):
+    NodeName = 'Step'
+
+    def __init__(self, entity_node: EntityNode, tool_pkg_url: str = "") -> None:
+        self.entity_node: EntityNode = entity_node
+        self.tool_pkg_url: str = tool_pkg_url
+
+    def pretty(self) -> str:
+        return self.entity_node.pretty()
+
+    def __str__(self) -> str:
+        return f"step_node({self.entity_node.__str__()})"
+
+    def get_flag_str(self) -> str:
+        return self.entity_node.get_flag_str()
+
+    def get_entity_create_script(self) -> str:
+        attr_str = self.entity_node.to_dict()
+        attr_str = attr_str[:-1] + f", label_name: '{self.entity_node.NodeName}'" + f", tool_pkg_url: '{self.tool_pkg_url}'" + "}"
+        return f''':{self.NodeName} {attr_str}'''
+
+
+# 包括: BootNode, OtherNode(Expose)
+class ConfigNode(EntityNode):
+    NodeName = 'Config'
+
+    def __init__(self, entity_node: EntityNode) -> None:
+        self.entity_node: EntityNode = entity_node
+
+    def pretty(self) -> str:
+        return self.entity_node.pretty()
+
+    def __str__(self) -> str:
+        return f"config_node({self.entity_node.__str__()})"
+
+    def get_flag_str(self) -> str:
+        return self.entity_node.get_flag_str()
+
+    def get_entity_create_script(self) -> str:
+        attr_str = self.entity_node.to_dict()
+        attr_str = attr_str[:-1] + f", label_name: '{self.entity_node.NodeName}'" + "}"
+        return f''':{self.NodeName} {attr_str}'''
+
+
 class CommandNode(EntityNode):
     NodeName = 'Cmd'
 
@@ -175,50 +264,6 @@ class FilePkgNode(EntityNode):
 
     def get_flag_str(self) -> str:
         return self.value
-
-
-class ToolPkgNode(EntityNode):
-    NodeName = 'ToolPkg'
-
-    def __init__(self, url: str, method: str, cmd_list: List = None, file_path: str = "") -> None:
-        union_set = set(method.split(",")) & TOOL_PKG_METHOD
-        if len(union_set) >= 1:
-            method = list(union_set)[0]
-        else:
-            raise Exception("ERROR: method of the tool package node is not supported")
-        self.name: str = self.extract_dir_name(url, method)
-        self.url: str = url
-        self.method: str = method
-        self.cmd_list: List = cmd_list if cmd_list else []
-        self.file_path: str = file_path
-
-    def pretty(self) -> str:
-        return ""
-
-    def __str__(self) -> str:
-        return f'tool_package({self.name})'
-
-    def get_flag_str(self) -> str:
-        return f'{self.url} {self.method} {self.cmd_list}'
-
-    @staticmethod
-    def extract_dir_name(url: str, method: str):
-        if method == "git":
-            name = os.path.basename(url)
-            index = name.find(".git")
-            if index != -1:
-                return name[:index]
-            else:
-                t = name.rpartition(".")
-                if t[0] == "":
-                    return name
-                else:
-                    return t[0]
-        else:
-            return url.rpartition("/")[-1]
-
-    def set_cmd_list(self, cmd_list):
-        self.cmd_list = cmd_list
 
 
 class SinglePkgNode(EntityNode):
@@ -368,30 +413,30 @@ class EnvNode(EntityNode):
         return f"{self.value}"
 
 
-class ArgNode(EntityNode):
-    NodeName = 'Arg'
+# class ArgNode(EntityNode):
+#     NodeName = 'Arg'
+#
+#     def __init__(self, flags: List, value: List) -> None:
+#         self.name: str = "ARG"
+#         self.flags: List = flags
+#         self.value: List = value
+#
+#     def pretty(self) -> str:
+#         original_instruct = "ARG "
+#         if len(self.flags) != 0:
+#             original_instruct += " ".join(self.flags) + " "
+#         for item in self.value:
+#             original_instruct += f'{item} '
+#         return original_instruct.strip()
+#
+#     def __str__(self) -> str:
+#         return f"arg({str(self.value)})"
+#
+#     def get_flag_str(self) -> str:
+#         return f"{self.value}"
 
-    def __init__(self, flags: List, value: List) -> None:
-        self.name: str = "ARG"
-        self.flags: List = flags
-        self.value: List = value
 
-    def pretty(self) -> str:
-        original_instruct = "ARG "
-        if len(self.flags) != 0:
-            original_instruct += " ".join(self.flags) + " "
-        for item in self.value:
-            original_instruct += f'{item} '
-        return original_instruct.strip()
-
-    def __str__(self) -> str:
-        return f"arg({str(self.value)})"
-
-    def get_flag_str(self) -> str:
-        return f"{self.value}"
-
-
-class AddOrCopyNode(EntityNode):
+class FileNode(EntityNode):
     NodeName = 'File'
 
     def __init__(self, flags: List, src: List, dest: str, types: str) -> None:
@@ -423,8 +468,8 @@ class AddOrCopyNode(EntityNode):
 
 
 # 'EXPOSE','VOLUME','USER','WORKDIR','SHELL'
-class DefaultNode(EntityNode):
-    NodeName = 'OTHER'
+class OtherNode(EntityNode):
+    NodeName = 'Other'
 
     def __init__(self, name: str, flags: List, value: List) -> None:
         self.name: str = name
@@ -446,24 +491,45 @@ class DefaultNode(EntityNode):
         return f"{self.name} {self.value}"
 
 
+# ImageNode
+# ExecutableNode(查询专用)
+# SinglePkgNode
+# ToolPkgNode
+# FilePkgNode(特殊)
+# StepNode
+#   CommandNode, FilePkgNode, PkgNode, EnvNode, FileNode, OtherNode(Workdir,User,Shell)
+# ConfigNode
+#   BootNode, OtherNode(Expose)
+
 def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> EntityNode:
-    if label == "Cmd":
-        return CommandNode(property_dict["cmd_list"], property_dict["flags"], property_dict["value"], property_dict["cmd_type"])
-    elif label == "PkgCmd":
-        return PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
-                       property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
+    if label == "Image":
+        return ImageNode(property_dict["flags"], property_dict["value"])
+    elif label == "SinglePkg":
+        return SinglePkgNode(property_dict["name"], property_dict["version"], property_dict["flags"], property_dict["cmd_flag_list"],
+                             property_dict["cmd_operand_list"], property_dict["method"])
     elif label == "FilePkg":
         return FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
-    elif label == "File":
-        return AddOrCopyNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
-    elif label == "Env":
-        return EnvNode(property_dict["flags"], property_dict["value"])
-    elif label == "OTHER":
-        return DefaultNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     elif label == "ToolPkg":
         return ToolPkgNode(property_dict["url"], property_dict["method"], property_dict["cmd_list"])
-    elif label == "Arg":
-        return ArgNode(property_dict["flags"], property_dict["value"])
-    elif label == "Boot":
-        return BootNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+    elif label == "Step":
+        label_name = property_dict["label_name"]
+        if label_name == "Cmd":
+            return CommandNode(property_dict["cmd_list"], property_dict["flags"], property_dict["value"], property_dict["cmd_type"])
+        elif label_name == "PkgCmd":
+            return PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
+                           property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
+        elif label_name == "FilePkg":
+            return FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+        elif label_name == "File":
+            return FileNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
+        elif label_name == "Env":
+            return EnvNode(property_dict["flags"], property_dict["value"])
+        elif label_name == "Other":
+            return OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+    elif label == "Config":
+        label_name = property_dict["label_name"]
+        if label_name == "Boot":
+            return BootNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+        elif label_name == "Other":
+            return OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     raise Exception("Unknown entity node type: " + label)
