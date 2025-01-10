@@ -1,7 +1,7 @@
 from typing import List
 
 from graphgen.config.definitions import ROOT_DIR
-from graphgen.config.neo4j_config import *
+from graphgen.config.db_config import *
 
 from neo4j import GraphDatabase
 
@@ -20,6 +20,15 @@ class Neo4jConnection:
 
     def close(self):
         self.driver.close()
+
+    def clear(self):
+        try:
+            with self.driver.session() as session:
+                # 执行Cypher查询以清空数据库
+                session.run("MATCH (n) DETACH DELETE n")
+            print("Database cleared successfully.")
+        except Exception as e:
+            print(f"An error occurred while clearing the database: {e}")
 
     def get_all_tool_pkg_node_name(self) -> List[str]:
         with self.driver.session() as session:

@@ -1,7 +1,7 @@
 from queue import Queue
 
 from graphgen.config.definitions import ROOT_DIR
-from graphgen.config.neo4j_config import *
+from graphgen.config.db_config import *
 
 from neo4j import GraphDatabase
 
