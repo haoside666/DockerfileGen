@@ -51,11 +51,50 @@ class MysqlLink(object):
         if self.con is not None:
             self.con.close()
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.__del__()
+
+    def clear_weight_info_table(self):
+        try:
+            sql = f'truncate table entity_weight_info'
+            self.cur.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
     def insert_all_data_to_entity_weight_info_table(self, datas):
         try:
             sql = f'insert into entity_weight_info values(%s,%s,%s)'
             self.cur.executemany(sql, datas)
             self.con.commit()
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
+    def get_max_weight_by_hash_values(self, hash_values):
+        try:
+            hash_values = tuple(hash_values)
+            sql = f'select hash_value,weight_value from entity_weight_info where hash_value in {hash_values} ORDER BY weight_value desc LIMIT 1;'
+            self.cur.execute(sql)
+            result = self.cur.fetchone()
+            return result[0]
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
+    def get_all_hash_value_and_weight_value(self):
+        try:
+            sql = f'select hash_value,weight_value from entity_weight_info;'
+            self.cur.execute(sql)
+            result = self.cur.fetchall()
+            return result
         except Exception as e:
             print(traceback.format_exc())
             print(e.args[0])

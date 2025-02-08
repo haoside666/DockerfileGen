@@ -125,7 +125,7 @@ class PrimitiveMetaList:
                 for p_feat in p_feat_list:
                     p_meta = PrimitiveMeta(cmd_meta)
                     p_meta.set_eigenvector_init(p_feat)
-                    p_meta.group = idx
+                    # p_meta.group_id = idx
                     p_meta_list.append(p_meta)
                 p_meta_list[0].is_master = True
                 return p_meta_list

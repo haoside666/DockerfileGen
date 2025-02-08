@@ -2,11 +2,11 @@
 # 1.基础镜像及其版本
 # 2.软件包(包括系统包和工具包)
 from graphparse.datatypes.demand import Demand
-from graphparse.dockerfile_gen.demand_solver.SolverType1 import SolverType1
-from graphparse.dockerfile_gen.demand_solver.SolverType2 import SolverType2
-from graphparse.dockerfile_gen.demand_solver.SolverType3 import SolverType3
-from graphparse.dockerfile_gen.demand_solver.SolverType4 import SolverType4
-from graphparse.dockerfile_gen.demand_solver.SolverType5 import SolverType5
+from graphparse.dockerfile_gen.Demand_solvers.SolverType1 import SolverType1
+from graphparse.dockerfile_gen.Demand_solvers.SolverType2 import SolverType2
+from graphparse.dockerfile_gen.Demand_solvers.SolverType3 import SolverType3
+from graphparse.dockerfile_gen.Demand_solvers.SolverType4 import SolverType4
+from graphparse.dockerfile_gen.Demand_solvers.SolverType5 import SolverType5
 
 # 1.只输入镜像名，不输入版本号，根据镜像权重推荐镜像版本，并根据文件系统包推荐软件包
 # 2.输入镜像名和版本号，根据文件系统包推荐软件包

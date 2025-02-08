@@ -1,4 +1,4 @@
-from graphparse.dockerfile_gen.demand_solver.solve_interface import SolveInterface
+from graphparse.dockerfile_gen.Demand_solvers.solve_interface import SolveInterface
 
 
 # 3.只输入软件包名

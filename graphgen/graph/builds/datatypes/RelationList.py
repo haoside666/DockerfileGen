@@ -45,13 +45,15 @@ class RelationList:
             # 处理第一个实体
             hash_val1 = entity1.calc_hash()
             if hash_val1 not in entities:
-                entities[hash_val1] = f"{hash_val1}{entity1.get_entity_create_script()}"
+                attr1 = entity1.get_entity_create_script()[:-1] + ",hash_value:'" + hash_val1 + "'}"
+                entities[hash_val1] = f"{hash_val1}{attr1}"
                 cypher_statements.append(f"MERGE ({entities[hash_val1]})")
 
             # 处理第二个实体
             hash_val2 = entity2.calc_hash()
             if hash_val2 not in entities:
-                entities[hash_val2] = f"{hash_val2}{entity2.get_entity_create_script()}"
+                attr2 = entity2.get_entity_create_script()[:-1] + ",hash_value:'" + hash_val2 + "'}"
+                entities[hash_val2] = f"{hash_val2}{attr2}"
                 cypher_statements.append(f"MERGE ({entities[hash_val2]})")
 
             # 添加关系

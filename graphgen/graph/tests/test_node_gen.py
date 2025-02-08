@@ -63,7 +63,7 @@ class TestNodeGen(unittest.TestCase):
 
     def test_single_dockerfile(self):
         # dockerfile_name = f"/home/haoside/Desktop/output/leejoneshane___ezgo-vdi###1343644###70579ac9688627897b3050f82dfaaf1547cdc365_script.cypher"
-        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_test_tool_package"
+        dockerfile_name = f"{ROOT_DIR}/data/Dockerfile_all_instruction"
         build_ctx = "/home/haoside/Desktop/aaa"
         dockerfile_meta: Optional[DockerfilePrimitiveMeta] = processer(dockerfile_name, build_ctx)
         if dockerfile_meta is not None:

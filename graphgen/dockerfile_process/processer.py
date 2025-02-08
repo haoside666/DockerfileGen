@@ -31,9 +31,9 @@ def processer(dockerfile_name: str, build_ctx: str, postfix: str = "") -> Option
                 cmd_meta_init_list: List[InstructMetaInit] = []
                 for command in stage.cmd_list:
                     cmd_meta_init_list.append(Preprocess.preprocess(command, build_ctx))
-                stage_meta_prefix_list: List[InstructMetaPrefix] = [InstructMetaPrefix(item.cmd_name, item.get_operand())
-                                                                    for item in cmd_meta_init_list]
-                dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
+                # stage_meta_prefix_list: List[InstructMetaPrefix] = [InstructMetaPrefix(item.cmd_name, item.get_operand())
+                #                                                     for item in cmd_meta_init_list]
+                # dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
                 instruct_meta_list: InstructMetaList = InstructMetaList(build_ctx, cmd_meta_init_list)
                 p_meta_list: PrimitiveMetaList = PrimitiveMetaList(build_ctx, instruct_meta_list, postfix)
                 dockerfile_primitive_meta.add_element_to_stage_meta_list(p_meta_list)
@@ -58,9 +58,9 @@ def processer_mutil_process(dockerfile_name: str, build_ctx: str, parsed_dockerf
             cmd_meta_init_list: List[InstructMetaInit] = []
             for command in stage.cmd_list:
                 cmd_meta_init_list.append(Preprocess.preprocess(command, build_ctx))
-            stage_meta_prefix_list: List[InstructMetaPrefix] = [InstructMetaPrefix(item.cmd_name, item.get_operand())
-                                                                for item in cmd_meta_init_list]
-            dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
+            # stage_meta_prefix_list: List[InstructMetaPrefix] = [InstructMetaPrefix(item.cmd_name, item.get_operand())
+            #                                                     for item in cmd_meta_init_list]
+            # dockerfile_meta.add_element_to_stage_meta_init_list(stage_meta_prefix_list)
             instruct_meta_list: InstructMetaList = InstructMetaList(build_ctx, cmd_meta_init_list)
             p_meta_list: PrimitiveMetaList = PrimitiveMetaList(build_ctx, instruct_meta_list, postfix)
             dockerfile_primitive_meta.add_element_to_stage_meta_list(p_meta_list)

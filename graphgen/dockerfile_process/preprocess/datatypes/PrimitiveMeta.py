@@ -17,7 +17,7 @@ class PrimitiveMeta:
         self.attribute_dir = instruct_meta.attribute_dir
         self.eigenvector: Union[DirectoryTree, InstructFeature, ShellFeature] = instruct_meta.eigenvector
         self.eigenvector_init = instruct_meta.eigenvector_init
-        self.group = 0
+        # self.group_id = 0
         self.is_master = False
 
     def __repr__(self):

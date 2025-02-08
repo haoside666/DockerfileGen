@@ -39,6 +39,12 @@ def gen_weight_info_db(total_weight_dict):
     db.insert_all_data_to_entity_weight_info_table(datas)
 
 
+def clear_weight_info_db():
+    db = MysqlLink()
+    db.clear_weight_info_table()
+    print("清空权重数据库成功!")
+
+
 if __name__ == '__main__':
     cypher_script_path = f"{ROOT_DIR}/graph/script/Dockerfile_test_tool_package.cypher"
     with open(cypher_script_path, "r") as file:

@@ -2,6 +2,7 @@ FROM ubuntu
 
 RUN apk --update --no-cache add curl tini libcap bash python openssl net-tools ca-certificates && \
     rm -rf /var/cache/apk/*
+RUN curl xxx
 RUN --network=none pip install aaa
 RUN ["/bin/sh","-c","sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
 && apk add --no-cache  tini tzdata ttf-dejavu fontconfig"]

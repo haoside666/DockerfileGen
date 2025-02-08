@@ -1,4 +1,4 @@
-from graphparse.dockerfile_gen.demand_solver.solve_interface import SolveInterface
+from graphparse.dockerfile_gen.Demand_solvers.solve_interface import SolveInterface
 
 
 # 4.输入镜像名和软件包名，不输入版本号

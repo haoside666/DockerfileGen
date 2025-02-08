@@ -1,2 +1,3 @@
 include graphgen/extractor/parser/command_flag_option_info/data/*.json
 include graphgen/shell_parse/libdash/libdash.so
+include logs/*

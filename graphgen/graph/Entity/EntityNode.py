@@ -19,6 +19,7 @@ class EntityNode(metaclass=ABCMeta):
     @abstractmethod
     def __init__(self, name: str) -> None:
         self.name = name
+        self.hash_value = self.calc_hash()
 
     @abstractmethod
     def pretty(self) -> str:
@@ -70,6 +71,9 @@ class EntityNode(metaclass=ABCMeta):
     @abstractmethod
     def get_flag_str(self) -> str:
         return ""
+
+    def set_hash_value(self, hash_value):
+        self.hash_value = hash_value
 
 
 class ImageNode(EntityNode):
@@ -380,7 +384,7 @@ class BootNode(EntityNode):
         original_instruct += self.name + " "
         if len(self.flags) != 0:
             original_instruct += " ".join(self.flags) + " "
-        original_instruct += " ".join(self.value)
+        original_instruct += '["' + '" , "'.join(self.value) + '"]'
         return original_instruct
 
     def __str__(self) -> str:
@@ -502,34 +506,39 @@ class OtherNode(EntityNode):
 #   BootNode, OtherNode(Expose)
 
 def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> EntityNode:
+    entity_node = None
     if label == "Image":
-        return ImageNode(property_dict["flags"], property_dict["value"])
+        entity_node = ImageNode(property_dict["flags"], property_dict["value"])
     elif label == "SinglePkg":
-        return SinglePkgNode(property_dict["name"], property_dict["version"], property_dict["flags"], property_dict["cmd_flag_list"],
-                             property_dict["cmd_operand_list"], property_dict["method"])
+        entity_node = SinglePkgNode(property_dict["name"], property_dict["version"], property_dict["flags"], property_dict["cmd_flag_list"],
+                                    property_dict["cmd_operand_list"], property_dict["method"])
     elif label == "FilePkg":
-        return FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+        entity_node = FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     elif label == "ToolPkg":
-        return ToolPkgNode(property_dict["url"], property_dict["method"], property_dict["cmd_list"])
+        entity_node = ToolPkgNode(property_dict["url"], property_dict["method"], property_dict["cmd_list"])
     elif label == "Step":
         label_name = property_dict["label_name"]
         if label_name == "Cmd":
-            return CommandNode(property_dict["cmd_list"], property_dict["flags"], property_dict["value"], property_dict["cmd_type"])
+            entity_node = CommandNode(property_dict["cmd_list"], property_dict["flags"], property_dict["value"], property_dict["cmd_type"])
         elif label_name == "PkgCmd":
-            return PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
-                           property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
+            entity_node = PkgNode(property_dict["name"], property_dict["flags"], property_dict["cmd_flag_list"],
+                                  property_dict["cmd_operand_list"], property_dict["pkg_list"], property_dict["version_list"])
         elif label_name == "FilePkg":
-            return FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+            entity_node = FilePkgNode(property_dict["name"], property_dict["flags"], property_dict["value"])
         elif label_name == "File":
-            return FileNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
+            entity_node = FileNode(property_dict["flags"], property_dict["src"], property_dict["dest"], property_dict["types"])
         elif label_name == "Env":
-            return EnvNode(property_dict["flags"], property_dict["value"])
+            entity_node = EnvNode(property_dict["flags"], property_dict["value"])
         elif label_name == "Other":
-            return OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+            entity_node = OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     elif label == "Config":
         label_name = property_dict["label_name"]
         if label_name == "Boot":
-            return BootNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+            entity_node = BootNode(property_dict["name"], property_dict["flags"], property_dict["value"])
         elif label_name == "Other":
-            return OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
-    raise Exception("Unknown entity node type: " + label)
+            entity_node = OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
+    if entity_node:
+        entity_node.set_hash_value(property_dict["hash_value"])
+        return entity_node
+    else:
+        raise Exception("Unknown entity node type: " + label)
