@@ -129,12 +129,29 @@ class Neo4jConnection:
             result = session.run(
                 """
                 MATCH (n:Image {name: $name})
-                WITH n, n.weight_value AS weight_value
-                ORDER BY weight_value DESC
+                RETURN n, n.weight_value
+                ORDER BY n.weight_value DESC
                 LIMIT 1
-                RETURN n, weight_value
                 """,
                 name=image_name
+            )
+            data = result.data()
+            if len(data) == 0:
+                return None
+            property_dict = data[0]['n']
+            entity_node = gen_entity_node_by_label_and_property("Image", property_dict)
+            return entity_node
+
+    def get_image_node_by_image_name_and_version(self, image_name, image_version) -> Optional[EntityNode]:
+        with self.driver.session() as session:
+            result = session.run(
+                """
+                MATCH (n:Image {name: $name,tag: $version})   
+                RETURN n
+                LIMIT 1
+                """,
+                name=image_name,
+                version=image_version
             )
             data = result.data()
             if len(data) == 0:
@@ -149,10 +166,9 @@ class Neo4jConnection:
             result = session.run(
                 """
                 MATCH (base:Image {hash_value: $hash_value})-[:Exist]->(fp:FilePkg)
-                WITH fp
+                RETURN fp
                 ORDER BY fp.weight_value DESC
                 LIMIT 1
-                RETURN fp
                 """,
                 hash_value=hash_value
             )
@@ -164,6 +180,7 @@ class Neo4jConnection:
             return entity_node
 
     def get_dependency_node_list_of_file_pkg(self, hash_value: str) -> Optional[List[EntityNode]]:
+        dependency_node_list = []
         with self.driver.session() as session:
             result = session.run(
                 """
@@ -174,8 +191,7 @@ class Neo4jConnection:
             )
             data = result.data()
             if len(data) == 0:
-                return None
-            dependency_node_list = []
+                return dependency_node_list
             dependency_info_dict = {}
             for idx, record in enumerate(data):
                 s = record['s']
@@ -192,6 +208,7 @@ class Neo4jConnection:
             return dependency_node_list
 
     def get_config_node_list_of_file_pkg(self, hash_value: str) -> Optional[List[EntityNode]]:
+        config_node_list = []
         with self.driver.session() as session:
             result = session.run(
                 """
@@ -202,17 +219,17 @@ class Neo4jConnection:
             )
             data = result.data()
             if len(data) == 0:
-                return None
-            config_node_list = []
+                return config_node_list
             config_info_dict = {}
             for idx, record in enumerate(data):
                 s = record['c']
                 name = s["name"]
-                if name in config_info_dict:
-                    if config_info_dict[name][0] < s['weight_value']:
+                if "weight_value" in s:
+                    if name in config_info_dict:
+                        if config_info_dict[name][0] < s['weight_value']:
+                            config_info_dict[name] = (s['weight_value'], idx)
+                    else:
                         config_info_dict[name] = (s['weight_value'], idx)
-                else:
-                    config_info_dict[name] = (s['weight_value'], idx)
             for name, info in config_info_dict.items():
                 property_dict = data[info[1]]['c']
                 entity_node = gen_entity_node_by_label_and_property("Config", property_dict)

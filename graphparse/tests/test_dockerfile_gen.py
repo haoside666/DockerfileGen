@@ -10,3 +10,8 @@ class TestDockerfileGen(unittest.TestCase):
         demand = Demand("ubuntu")
         dockerfile_str = dockerfile_generator(demand)
         print(dockerfile_str)
+
+    def test_demand_2(self):
+        demand = Demand("ubuntu", "latest")
+        dockerfile_str = dockerfile_generator(demand)
+        print(dockerfile_str)
