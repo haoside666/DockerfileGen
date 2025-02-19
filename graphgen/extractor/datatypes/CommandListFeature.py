@@ -15,8 +15,8 @@ class CommandListFeature:
         self.pkg_list: List[str] = pkg_list
         self.other_list: List[str] = other_list
         self.user_list: List[str] = user_list
-        self.cmd_flag_list: Union[List[List[str], List[str]]] = return_empty_list_if_none_else_itself(cmd_flag_list)
-        self.cmd_operand_list: Union[List[List[str], List[str]]] = return_empty_list_if_none_else_itself(cmd_operand_list)
+        self.cmd_flag_list: Union[List[List[str]], List[str]] = return_empty_list_if_none_else_itself(cmd_flag_list)
+        self.cmd_operand_list: Union[List[List[str]], List[str]] = return_empty_list_if_none_else_itself(cmd_operand_list)
 
     def __repr__(self):
         return standard_repr(self)

@@ -20,6 +20,7 @@ class EntityNode(metaclass=ABCMeta):
     def __init__(self, name: str) -> None:
         self.name = name
         self.hash_value = self.calc_hash()
+        self.weight_value = 1
 
     @abstractmethod
     def pretty(self) -> str:
@@ -74,6 +75,9 @@ class EntityNode(metaclass=ABCMeta):
 
     def set_hash_value(self, hash_value):
         self.hash_value = hash_value
+
+    def set_weight_value(self, weight_value):
+        self.weight_value = weight_value
 
 
 class ImageNode(EntityNode):
@@ -291,9 +295,9 @@ class SinglePkgNode(EntityNode):
         if len(self.cmd_flag_list) != 0:
             original_instruct += " ".join(self.cmd_flag_list) + " "
         if self.version != "latest":
-            original_instruct += self.name
-        else:
             original_instruct += self.name + "==" + self.version
+        else:
+            original_instruct += self.name
         return original_instruct
 
     def __str__(self) -> str:
@@ -309,6 +313,29 @@ class SinglePkgNode(EntityNode):
                 lis.append(f"{key}: '{value}'")
         content += ", ".join(lis) + "}"
         return content
+
+    # 格式优化
+    def optimize(self):
+        if self.name in ['apt', 'apt-get'] and self.method in ['apt', 'apt-get']:
+            self.name = ''
+            self.method = 'apt-get'
+
+        prefix = ""
+        if len(self.flags) != 0:
+            prefix += " ".join(self.flags) + " "
+        prefix += self.method + " "
+        if len(self.cmd_operand_list) != 0:
+            prefix += " ".join(self.cmd_operand_list)
+
+        flag_str = ""
+        if len(self.cmd_flag_list) != 0:
+            flag_str = " ".join(self.cmd_flag_list)
+
+        if self.version != "latest":
+            pkg_info = self.name + "==" + self.version
+        else:
+            pkg_info = self.name
+        return prefix.strip(), (flag_str, pkg_info)
 
 
 # apt,pip等的包管理命令
@@ -495,6 +522,22 @@ class OtherNode(EntityNode):
         return f"{self.name} {self.value}"
 
 
+class CommentNode(EntityNode):
+    NodeName = 'Comment'
+
+    def __init__(self, msg: str) -> None:
+        self.msg: str = msg
+
+    def pretty(self) -> str:
+        return f'# {self.msg}'
+
+    def __str__(self) -> str:
+        return self.msg
+
+    def get_flag_str(self) -> str:
+        return self.msg
+
+
 # ImageNode
 # ExecutableNode(查询专用)
 # SinglePkgNode
@@ -539,6 +582,7 @@ def gen_entity_node_by_label_and_property(label: str, property_dict: Dict) -> En
             entity_node = OtherNode(property_dict["name"], property_dict["flags"], property_dict["value"])
     if entity_node:
         entity_node.set_hash_value(property_dict["hash_value"])
+        entity_node.set_weight_value(property_dict["weight_value"] if "weight_value" in property_dict else 1)
         return entity_node
     else:
         raise Exception("Unknown entity node type: " + label)

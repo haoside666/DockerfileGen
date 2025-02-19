@@ -47,6 +47,20 @@ class Neo4jConnection:
         except Exception as e:
             print(f"An error occurred during the session: {e}")
 
+    # 重新设置所有工具包结点权重信息
+    def reset_tool_pkg_weight_info(self):
+        with self.driver.session() as session:
+            try:
+                session.run(
+                    """
+                    MATCH (a:ToolPkg)-[:Has]->(s:Step)
+                    WITH a, SUM(s.weight_value) AS totalWeight
+                    SET a.weight_value = a.weight_value * totalWeight
+                    RETURN a
+                    """)
+            except Exception as e:
+                print(f"An error occurred while setting weight to tool pkg node")
+
     def get_all_tool_pkg_node_name(self) -> List[str]:
         with self.driver.session() as session:
             result = session.run("MATCH (n:ToolPkg) RETURN n")
@@ -55,6 +69,18 @@ class Neo4jConnection:
             for item in data:
                 name_list.append(item['n']['name'])
             return name_list
+
+    def get_all_tool_pkg_node_name_and_weight_value(self) -> Tuple[List[str], List[str]]:
+        with self.driver.session() as session:
+            result = session.run("MATCH (n:ToolPkg) RETURN n")
+            data = result.data()
+            name_list = []
+            weight_value_list = []
+            for item in data:
+                node = item['n']
+                name_list.append(node['name'])
+                weight_value_list.append(node['weight_value'] if 'weight_value' in node else 1)
+            return name_list, weight_value_list
 
     def get_tool_pkg_node_by_name(self, tool_pkg_name: str):
         with self.driver.session() as session:
@@ -243,6 +269,137 @@ class Neo4jConnection:
             # 使用 sorted 函数并按照优先级排序
             sorted_config_node_list = sorted(config_node_list, key=lambda x: priority[x.name])
             return sorted_config_node_list
+
+    def get_config_node_list_of_tool_pkg(self, hash_value: str) -> Optional[List[EntityNode]]:
+        config_node_list = []
+        with self.driver.session() as session:
+            result = session.run(
+                """
+                MATCH (base:ToolPkg {hash_value: $hash_value})-[:Settings]-> (c:Config)
+                RETURN c
+                """,
+                hash_value=hash_value
+            )
+            data = result.data()
+            if len(data) == 0:
+                return config_node_list
+            config_info_dict = {}
+            for idx, record in enumerate(data):
+                s = record['c']
+                name = s["name"]
+                if "weight_value" in s:
+                    if name in config_info_dict:
+                        if config_info_dict[name][0] < s['weight_value']:
+                            config_info_dict[name] = (s['weight_value'], idx)
+                    else:
+                        config_info_dict[name] = (s['weight_value'], idx)
+            for name, info in config_info_dict.items():
+                property_dict = data[info[1]]['c']
+                entity_node = gen_entity_node_by_label_and_property("Config", property_dict)
+                config_node_list.append(entity_node)
+            priority = {
+                "EXPOSE": 0,  # EXPOSE 优先级最高
+                "ENTRYPOINT": 1,  # ENTRYPOINT 排第二
+                "CMD": 2  # CMD 排最后
+            }
+
+            # 使用 sorted 函数并按照优先级排序
+            sorted_config_node_list = sorted(config_node_list, key=lambda x: priority[x.name])
+            return sorted_config_node_list
+
+    # 获取所有包节点名称
+    def get_all_pkg_node(self) -> List[EntityNode]:
+        with self.driver.session() as session:
+            result = session.run("MATCH (n:Pkg) RETURN n")
+            data = result.data()
+            pkg_node_list = []
+            for item in data:
+                property_dict = item['n']
+                entity_node = gen_entity_node_by_label_and_property("SinglePkg", property_dict)
+                pkg_node_list.append(entity_node)
+            return pkg_node_list
+
+    # 获取包节点的依赖链
+    def get_pkg_node_dependency_chain(self, hash_value: str) -> List[EntityNode]:
+        with self.driver.session() as session:
+            result = session.run(
+                """
+                MATCH p = (A:Pkg{hash_value: $hash_value})-[:Dependency*]->(leaf)
+                WHERE NOT (leaf)-[:Dependency]->() 
+                WITH nodes(p) AS path
+                RETURN collect(path) AS all_paths
+                """,
+                hash_value=hash_value
+            )
+            data = result.data()
+            pkg_node_list = []
+            if data:
+                all_paths = data[0]['all_paths']
+                current_max_weight_index = 0
+                current_max_avg_weight = 0
+                for idx, path in enumerate(all_paths):
+                    weight_sum = 0
+                    length = len(path)
+                    for property_dict in path:
+                        weight_sum += property_dict['weight_value'] if "weight_value" in property_dict else 1
+                    weight_avg = weight_sum / length
+                    if weight_avg > current_max_avg_weight:
+                        current_max_avg_weight = weight_avg
+                        current_max_weight_index = idx
+                max_path = all_paths[current_max_weight_index]
+
+                for property_dict in max_path[:-1]:
+                    entity_node = gen_entity_node_by_label_and_property("SinglePkg", property_dict)
+                    pkg_node_list.append(entity_node)
+            return pkg_node_list[::-1]
+
+    # 寻找符合命令集合的基础镜像列表
+    def find_image_list_by_cmd_list(self, exe_cmd_list: List, image_name="", image_version=""):
+        with self.driver.session() as session:
+            if image_name:
+                if image_version:
+                    result = session.run(
+                        """
+                        WITH $exe_cmd_list AS A_list
+                        MATCH (B)
+                        WHERE ALL(exe_cmd IN A_list WHERE (:ExeCmd {name: exe_cmd})-[:Compatible]->(B:Image))
+                            AND B.name = $image_name
+                            AND B.tag = $image_version
+                        RETURN B
+                        """,
+                        exe_cmd_list=exe_cmd_list,
+                        image_name=image_name,
+                        image_version=image_version
+                    )
+                else:
+                    result = session.run(
+                        """
+                        WITH $exe_cmd_list AS A_list
+                        MATCH (B)
+                        WHERE ALL(exe_cmd IN A_list WHERE (:ExeCmd {name: exe_cmd})-[:Compatible]->(B:Image))
+                            AND B.name = $image_name
+                        RETURN B
+                        """,
+                        exe_cmd_list=exe_cmd_list,
+                        image_name=image_name
+                    )
+            else:
+                result = session.run(
+                    """
+                    WITH $exe_cmd_list AS A_list
+                    MATCH (B)
+                    WHERE ALL(exe_cmd IN A_list WHERE (:ExeCmd {name: exe_cmd})-[:Compatible]->(B:Image))
+                    RETURN B
+                    """,
+                    exe_cmd_list=exe_cmd_list,
+                )
+            data = result.data()
+            pkg_node_list = []
+            for item in data:
+                property_dict = item['B']
+                entity_node = gen_entity_node_by_label_and_property("Image", property_dict)
+                pkg_node_list.append(entity_node)
+        return pkg_node_list
 
     def run_script(self, script):
         with self.driver.session() as session:

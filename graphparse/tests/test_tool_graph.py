@@ -19,6 +19,7 @@ class TestToolGraph(unittest.TestCase):
                 tool_pkg_node: ToolPkgNode = conn.get_tool_pkg_node_by_name(tool_pkg_name)
                 dependencies = conn.get_single_tool_pkg_node_real_step(tool_pkg_name)
                 tool_graph: ToolGraph = make_tool_graph(tool_pkg_name, tool_pkg_node.url, dependencies)
-                print(tool_graph.gen_install_script)
+                for entity in tool_graph.gen_install_step():
+                    print(entity.pretty())
 
         conn.close()

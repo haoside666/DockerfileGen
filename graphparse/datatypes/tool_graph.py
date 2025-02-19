@@ -21,8 +21,8 @@ class ToolGraph:
         return standard_eq(self, other)
 
     # 采用带权值的拓扑排序算法生成包安装文本
-    def gen_install_script(self) -> str:
-        install_script: str = ""
+    def gen_install_step(self) -> List[EntityNode]:
+        # install_script: str = ""
 
         graph = defaultdict(list)
         in_degree = defaultdict(int)
@@ -48,9 +48,12 @@ class ToolGraph:
                     heapq.heappush(priority_queue, (-self.weight_list[neighbor_index], neighbor_index))
         # 根据拓扑排序结果生成安装文本
         order_entity_list = [self.entity_node_list[node_index] for node_index, weight in topological_order]
-        for entity_node in order_entity_list:
-            install_script += entity_node.pretty() + "\n"
-        return install_script
+        # for entity_node in order_entity_list:
+        #     install_script += entity_node.pretty() + "\n"
+        return order_entity_list
+
+    def gen_config_info(self):
+        pass
 
 
 def make_tool_graph(name: str, url: str, relations: List[Tuple[Tuple, Tuple]]) -> ToolGraph:

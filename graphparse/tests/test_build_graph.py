@@ -136,3 +136,7 @@ class TestBatchScriptToBuildGraph(unittest.TestCase):
         with Neo4jConnection() as conn, MysqlLink() as db:
             weight_info = db.get_all_hash_value_and_weight_value()
             conn.add_weight_to_graph(weight_info)
+
+    def test_reset_tool_pkg_weight_info(self):
+        with Neo4jConnection() as conn:
+            conn.reset_tool_pkg_weight_info()

@@ -13,6 +13,7 @@ from graphgen.graph.builds.utils import split_meta_info
 
 # 输入Dockerfile单个阶段的Meta结构，生成其中包含的所有实体和边节点的neo4j脚本
 def gen_neo4j_script_by_meta(stage_meta: PrimitiveMetaList, file_path="") -> str:
+    # 拆分并去重Meta结构，得到stage_meta和config_meta_list
     stage_meta, config_meta_list = split_meta_info(stage_meta)
     edge_index_list: EdgeIndexList = get_dependency_relation(stage_meta)
     # new_edge_index_list = remove_redundant_edges_in_graph(edge_index_list)，放置到生成工具包节点内部

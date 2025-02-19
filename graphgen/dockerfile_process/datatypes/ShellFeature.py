@@ -27,8 +27,8 @@ class ShellFeature:
 
         self.input_path_tree: DirectoryTree = DirectoryTree(self.remove_wave_in_path(input_list, current_user))
         self.output_path_tree: DirectoryTree = DirectoryTree(self.remove_wave_in_path(output_list, current_user))
-        self.cmd_flag_list: Union[List[List[str], List[str]]] = cmd_list_feature.cmd_flag_list
-        self.cmd_operand_list: Union[List[List[str], List[str]]] = cmd_list_feature.cmd_operand_list
+        self.cmd_flag_list: Union[List[List[str]], List[str]] = cmd_list_feature.cmd_flag_list
+        self.cmd_operand_list: Union[List[List[str]], List[str]] = cmd_list_feature.cmd_operand_list
 
         # Remove the effect of subcommands
         self.other_set.discard("$(subcommand)")
