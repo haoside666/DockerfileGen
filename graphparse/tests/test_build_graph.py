@@ -4,7 +4,8 @@ from concurrent.futures import ProcessPoolExecutor
 
 from graphgen.config.definitions import ROOT_DIR
 from graphgen.graph.Entity.EntityNode import *
-from graphparse.mysql_gen.mysql_gen import parse_cypher_script, gen_weight_info_db, clear_weight_info_db
+from graphparse.mysql_gen.mysql_gen import parse_cypher_script, gen_weight_info_db, clear_weight_info_db, gen_weight_info_by_neo4j_script_db, parse_cypher_script2, \
+    gen_relation_info_by_neo4j_script_db, gen_entity_info_by_neo4j_script_db, parse_cypher_script3
 from graphparse.mysql_gen.mysql_link import MysqlLink
 from graphparse.neo4j_reader.neo4j_reader import Neo4jConnection
 
@@ -80,6 +81,22 @@ class TestBatchScriptToBuildGraph(unittest.TestCase):
         weight_dict = parse_cypher_script(cypher_script)
         return weight_dict
 
+    @staticmethod
+    def process_cypher_script_with_weight2(script_dir_path, file_name):
+        script_path = os.path.join(script_dir_path, file_name)
+        with open(script_path, "r") as file:
+            cypher_script = file.read()
+        weight_dict, relation_set = parse_cypher_script2(cypher_script)
+        return weight_dict, relation_set
+
+    @staticmethod
+    def process_cypher_script_with_weight3(script_dir_path, file_name):
+        script_path = os.path.join(script_dir_path, file_name)
+        with open(script_path, "r") as file:
+            cypher_script = file.read()
+        entity_dict = parse_cypher_script3(cypher_script)
+        return entity_dict
+
     def test_batch_script_to_build_graph(self):
         # 清空日志文件
         clear_file(LOG_PATH)
@@ -140,3 +157,32 @@ class TestBatchScriptToBuildGraph(unittest.TestCase):
     def test_reset_tool_pkg_weight_info(self):
         with Neo4jConnection() as conn:
             conn.reset_tool_pkg_weight_info()
+
+    def test_generate_weight_by_neo4j_script_db(self):
+        total_handled_file = os.listdir(self.script_dir_path)
+        # 创建权重数据库
+        total_weight_dict = dict()
+        total_relation_set = set()
+        for file_name in total_handled_file:
+            weight_value, relation_set = self.process_cypher_script_with_weight2(self.script_dir_path, file_name)
+
+            for hash_value, info_dict in weight_value.items():
+                if hash_value in total_weight_dict:
+                    total_weight_dict[hash_value]["weight_value"] += info_dict["weight_value"]
+                else:
+                    total_weight_dict[hash_value] = info_dict
+            total_relation_set.update(relation_set)
+
+        gen_weight_info_by_neo4j_script_db(total_weight_dict)
+        gen_relation_info_by_neo4j_script_db(total_relation_set)
+
+    def test_generate_entity_info_db(self):
+        total_handled_file = os.listdir(self.script_dir_path)
+        # 创建权重数据库
+        total_entity_dict = dict()
+
+        for file_name in total_handled_file:
+            entity_dict = self.process_cypher_script_with_weight3(self.script_dir_path, file_name)
+            total_entity_dict.update(entity_dict)
+
+        gen_entity_info_by_neo4j_script_db(total_entity_dict)

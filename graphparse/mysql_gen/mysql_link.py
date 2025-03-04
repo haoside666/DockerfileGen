@@ -77,6 +77,36 @@ class MysqlLink(object):
             print(e.args[0])
             raise
 
+    def insert_all_data_to_entity_weight_info_by_neo4j_script_table(self, datas):
+        try:
+            sql = f'insert into entity_weight_info_by_neo4j_script values(%s,%s,%s)'
+            self.cur.executemany(sql, datas)
+            self.con.commit()
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
+    def insert_all_data_to_relation_weight_info_by_neo4j_script_table(self, datas):
+        try:
+            sql = f'insert into relation_weight_info_by_neo4j_script values(%s,%s,%s)'
+            self.cur.executemany(sql, datas)
+            self.con.commit()
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
+    def insert_all_data_to_entity_info_by_neo4j_script_table(self, datas):
+        try:
+            sql = f'insert into entity_info_by_neo4j_script values(%s,%s)'
+            self.cur.executemany(sql, datas)
+            self.con.commit()
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e.args[0])
+            raise
+
     def get_max_weight_by_hash_values(self, hash_values):
         try:
             hash_values = tuple(hash_values)
